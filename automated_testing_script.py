@@ -18,9 +18,13 @@ with open('signup_urls_SMALL.csv', newline='') as csvfile:
                 page = browser.new_page()
 
                 # Need to account for 'playwright._impl._errors.Error: Page.goto: net::ERR_EMPTY_RESPONSE' error here
-                page.goto(row['Signup'])
-                results = axe.run(page)
-                browser.close()
+                try:
+                    page.goto(row['Signup'])
+                    results = axe.run(page)
+                    browser.close()
+                except Exception as error:
+                     print("Error occured: ", error)
+                     continue
     
 print(results.save_to_file())
 
