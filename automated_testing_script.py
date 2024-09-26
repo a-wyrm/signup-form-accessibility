@@ -5,8 +5,9 @@
 from playwright.sync_api import sync_playwright
 from axe_core_python.sync_playwright import Axe
 import csv
+from pathlib import Path
 
-
+cwd = Path.cwd()
 axe = Axe()
 
 
@@ -21,12 +22,14 @@ with open('signup_urls_SMALL.csv', newline='') as csvfile:
                 try:
                     page.goto(row['Signup'])
                     results = axe.run(page)
+                    results.save_to_file(cwd/'JSON/', row['Website']+'.json')
                     browser.close()
                 except Exception as error:
-                     print("Error occured: ", error)
-                     continue
+                    with open('invalid.csv', 'a', newline='') as invalid_file:
+                        writer = csv.writer(invalid_file)
+                        writer.writerow([row['Website'], str(error)])
+                    continue
     
-print(results.save_to_file())
 
 
 # Filter results for WCAG 2.A violations

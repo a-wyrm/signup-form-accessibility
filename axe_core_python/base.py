@@ -111,7 +111,7 @@ class AxeResults:
         return report_str
 
     def save_to_file(
-        self, file_path: str | Path | None = None, violations_only: bool = False
+        self, file_path: str | Path | None = None, file_name: str | None = None, violations_only: bool = False
     ) -> None:
         """Save results to file.
         @param results: Results from Axe analysis
@@ -125,5 +125,6 @@ class AxeResults:
             #del response["passes"]
         if file_path is None:
             cwd = Path.cwd()
-            file_path = cwd / "results.json"
-        Path(file_path).write_text(json.dumps(response, indent=4))
+            file_path = cwd / file_name
+        print("HERE: ", file_path)
+        Path(file_path/file_name).write_text(json.dumps(response, indent=4))
