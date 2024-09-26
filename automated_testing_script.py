@@ -11,7 +11,7 @@ cwd = Path.cwd()
 axe = Axe()
 
 
-with open('signup_urls_SMALL.csv', newline='') as csvfile:
+with open('signup_urls_fix.csv', newline='') as csvfile:
         with sync_playwright() as playwright:
             reader = csv.DictReader(csvfile)
             for row in reader:

@@ -13,7 +13,7 @@
         "orientationAngle": 0,
         "orientationType": "landscape-primary"
     },
-    "timestamp": "2024-09-26T03:17:40.908Z",
+    "timestamp": "2024-09-26T03:52:37.319Z",
     "url": "https://scholasticlibrary.digital.scholastic.com/customer/account/create/",
     "toolOptions": {
         "resultTypes": [
@@ -195,19 +195,6 @@
             "nodes": []
         },
         {
-            "id": "avoid-inline-spacing",
-            "impact": null,
-            "tags": [
-                "cat.structure",
-                "wcag21aa",
-                "wcag1412"
-            ],
-            "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
-            "help": "Inline text spacing must be adjustable with custom stylesheets",
-            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/avoid-inline-spacing?application=axeAPI",
-            "nodes": []
-        },
-        {
             "id": "blink",
             "impact": null,
             "tags": [
@@ -271,47 +258,6 @@
             "description": "Ensures <frame> and <iframe> elements with focusable content do not have tabindex=-1",
             "help": "Frames with focusable content must not have tabindex=-1",
             "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/frame-focusable-content?application=axeAPI",
-            "nodes": []
-        },
-        {
-            "id": "frame-tested",
-            "impact": null,
-            "tags": [
-                "cat.structure",
-                "review-item",
-                "best-practice"
-            ],
-            "description": "Ensures <iframe> and <frame> elements contain the axe-core script",
-            "help": "Frames should be tested with axe-core",
-            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/frame-tested?application=axeAPI",
-            "nodes": []
-        },
-        {
-            "id": "frame-title-unique",
-            "impact": null,
-            "tags": [
-                "cat.text-alternatives",
-                "best-practice"
-            ],
-            "description": "Ensures <iframe> and <frame> elements contain a unique title attribute",
-            "help": "Frames should have a unique title attribute",
-            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/frame-title-unique?application=axeAPI",
-            "nodes": []
-        },
-        {
-            "id": "frame-title",
-            "impact": null,
-            "tags": [
-                "cat.text-alternatives",
-                "wcag2a",
-                "wcag241",
-                "wcag412",
-                "section508",
-                "section508.22.i"
-            ],
-            "description": "Ensures <iframe> and <frame> elements have an accessible name",
-            "help": "Frames must have an accessible name",
-            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/frame-title?application=axeAPI",
             "nodes": []
         },
         {
@@ -412,18 +358,6 @@
             "description": "Ensures <object> elements have alternate text",
             "help": "<object> elements must have alternate text",
             "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/object-alt?application=axeAPI",
-            "nodes": []
-        },
-        {
-            "id": "presentation-role-conflict",
-            "impact": null,
-            "tags": [
-                "cat.aria",
-                "best-practice"
-            ],
-            "description": "Flags elements whose role is none or presentation and which cause the role conflict resolution to trigger.",
-            "help": "Elements of role none or presentation should be flagged",
-            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/presentation-role-conflict?application=axeAPI",
             "nodes": []
         },
         {
@@ -813,9 +747,9 @@
                     "all": [],
                     "none": [],
                     "impact": null,
-                    "html": "<div aria-atomic=\"true\" role=\"alert\" data-bind=\"foreach: { data: cookieMessages, as: 'message' }\" class=\"messages\">",
+                    "html": "<span id=\"tooltip\" class=\"field-tooltip-action action-help\" tabindex=\"0\" data-toggle=\"dropdown\" data-bind=\"mageInit: {'dropdown':{'activeClass': '_active', 'parent': '.field-tooltip.toggle'}}\" aria-labelledby=\"tooltip-label\" aria-haspopup=\"true\" aria-expanded=\"false\" role=\"button\">\n         </span>",
                     "target": [
-                        ".messages[aria-atomic=\"true\"][role=\"alert\"]:nth-child(1)"
+                        "#tooltip"
                     ]
                 }
             ]
@@ -991,6 +925,38 @@
             ]
         },
         {
+            "id": "avoid-inline-spacing",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag21aa",
+                "wcag1412"
+            ],
+            "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+            "help": "Inline text spacing must be adjustable with custom stylesheets",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/avoid-inline-spacing?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "avoid-inline-spacing",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No inline styles with '!important' that affect text spacing has been specified"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div style=\"width: 304px; height: 78px;\">",
+                    "target": [
+                        "#recaptcha-f979c2ff515d921c34af9bd2aee8ef076b719d03 > div"
+                    ]
+                }
+            ]
+        },
+        {
             "id": "button-name",
             "impact": null,
             "tags": [
@@ -1018,7 +984,7 @@
                     "all": [],
                     "none": [],
                     "impact": null,
-                    "html": "<button type=\"submit\" title=\"Search\" class=\"btn-searchbox\">\n\t\t\t\t\t\t<span>Search</span>\n                </button>",
+                    "html": "<button type=\"submit\" title=\"Search\" class=\"btn-searchbox\" disabled=\"\">\n\t\t\t\t\t\t<span>Search</span>\n                </button>",
                     "target": [
                         ".btn-searchbox"
                     ]
@@ -1169,7 +1135,7 @@
         },
         {
             "id": "duplicate-id-active",
-            "impact": null,
+            "impact": "serious",
             "tags": [
                 "cat.parsing",
                 "wcag2a",
@@ -1247,7 +1213,7 @@
                     "any": [
                         {
                             "id": "duplicate-id",
-                            "data": "html-body",
+                            "data": "schheadtag",
                             "relatedNodes": [],
                             "impact": "minor",
                             "message": "Document has no static elements that share the same id attribute"
@@ -1256,9 +1222,9 @@
                     "all": [],
                     "none": [],
                     "impact": null,
-                    "html": "<body data-container=\"body\" id=\"html-body\" class=\"layout-boxed enable-ladyloading header-1-style product-1-style footer-1-style customer-account-create page-layout-1column\">",
+                    "html": "<script id=\"schheadtag\" src=\"//ltm.scholastic.com/ltm/headtag/&quot;scholasticlibrary.digital.scholastic.com/default\"></script>",
                     "target": [
-                        "#html-body"
+                        "#schheadtag"
                     ]
                 }
             ]
@@ -1327,6 +1293,81 @@
             ]
         },
         {
+            "id": "frame-title-unique",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ],
+            "description": "Ensures <iframe> and <frame> elements contain a unique title attribute",
+            "help": "Frames should have a unique title attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/frame-title-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "unique-frame-title",
+                            "data": "recaptcha",
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element's title attribute is unique"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<iframe title=\"reCAPTCHA\" width=\"304\" height=\"78\" role=\"presentation\" name=\"a-fos6f8phbnr5\" frameborder=\"0\" scrolling=\"no\" sandbox=\"allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation\" src=\"https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LeFxhshAAAAAATRGxT76skYecHbB2emagqb6ORE&amp;co=aHR0cHM6Ly9zY2hvbGFzdGljbGlicmFyeS5kaWdpdGFsLnNjaG9sYXN0aWMuY29tOjQ0Mw..&amp;hl=en&amp;v=EGbODne6buzpTnWrrBprcfAY&amp;theme=light&amp;size=normal&amp;cb=8vqvviftku7j\">",
+                    "target": [
+                        "iframe[title=\"reCAPTCHA\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "frame-title",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag241",
+                "wcag412",
+                "section508",
+                "section508.22.i"
+            ],
+            "description": "Ensures <iframe> and <frame> elements have an accessible name",
+            "help": "Frames must have an accessible name",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/frame-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "non-empty-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a title attribute"
+                        },
+                        {
+                            "id": "presentational-role",
+                            "data": {
+                                "role": "presentation"
+                            },
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element's default semantics were overriden with role=\"presentation\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<iframe title=\"reCAPTCHA\" width=\"304\" height=\"78\" role=\"presentation\" name=\"a-fos6f8phbnr5\" frameborder=\"0\" scrolling=\"no\" sandbox=\"allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation\" src=\"https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LeFxhshAAAAAATRGxT76skYecHbB2emagqb6ORE&amp;co=aHR0cHM6Ly9zY2hvbGFzdGljbGlicmFyeS5kaWdpdGFsLnNjaG9sYXN0aWMuY29tOjQ0Mw..&amp;hl=en&amp;v=EGbODne6buzpTnWrrBprcfAY&amp;theme=light&amp;size=normal&amp;cb=8vqvviftku7j\">",
+                    "target": [
+                        "iframe[title=\"reCAPTCHA\"]"
+                    ]
+                }
+            ]
+        },
+        {
             "id": "heading-order",
             "impact": null,
             "tags": [
@@ -1345,15 +1386,21 @@
                                 "headingOrder": [
                                     {
                                         "ancestry": [
-                                            "html > body > div:nth-child(8) > header:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1) > h1"
+                                            "html > body > div:nth-child(9) > header:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(1) > h1"
                                         ],
                                         "level": 1
                                     },
                                     {
                                         "ancestry": [
-                                            "html > body > div:nth-child(8) > div:nth-child(3) > div > div > h1"
+                                            "html > body > div:nth-child(9) > div:nth-child(3) > div > div > h1"
                                         ],
                                         "level": 1
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(9) > main:nth-child(4) > div:nth-child(3) > div > form:nth-child(3) > fieldset:nth-child(4) > div:nth-child(2) > div > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > iframe"
+                                        ],
+                                        "level": -1
                                     }
                                 ]
                             },
@@ -1476,7 +1523,7 @@
                     "impact": null,
                     "html": "<a href=\"https://scholasticlibrary.digital.scholastic.com/about-us/\">About</a>",
                     "target": [
-                        "p:nth-child(2) > a"
+                        ".hotline:nth-child(2) > a"
                     ]
                 }
             ]
@@ -1588,7 +1635,7 @@
         },
         {
             "id": "label",
-            "impact": null,
+            "impact": "critical",
             "tags": [
                 "cat.forms",
                 "wcag2a",
@@ -1933,7 +1980,7 @@
                     "impact": null,
                     "html": "<a href=\"https://scholasticlibrary.digital.scholastic.com/about-us/\">About</a>",
                     "target": [
-                        "p:nth-child(2) > a"
+                        ".hotline:nth-child(2) > a"
                     ]
                 }
             ]
@@ -2110,6 +2157,44 @@
             ]
         },
         {
+            "id": "presentation-role-conflict",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "best-practice"
+            ],
+            "description": "Flags elements whose role is none or presentation and which cause the role conflict resolution to trigger.",
+            "help": "Elements of role none or presentation should be flagged",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/presentation-role-conflict?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "is-element-focusable",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element is focusable."
+                        },
+                        {
+                            "id": "has-global-aria-attribute",
+                            "data": [],
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has global ARIA attributes: "
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<iframe title=\"reCAPTCHA\" width=\"304\" height=\"78\" role=\"presentation\" name=\"a-fos6f8phbnr5\" frameborder=\"0\" scrolling=\"no\" sandbox=\"allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation\" src=\"https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LeFxhshAAAAAATRGxT76skYecHbB2emagqb6ORE&amp;co=aHR0cHM6Ly9zY2hvbGFzdGljbGlicmFyeS5kaWdpdGFsLnNjaG9sYXN0aWMuY29tOjQ0Mw..&amp;hl=en&amp;v=EGbODne6buzpTnWrrBprcfAY&amp;theme=light&amp;size=normal&amp;cb=8vqvviftku7j\">",
+                    "target": [
+                        "iframe[title=\"reCAPTCHA\"]"
+                    ]
+                }
+            ]
+        },
+        {
             "id": "region",
             "impact": "moderate",
             "tags": [
@@ -2203,7 +2288,7 @@
                     "impact": "minor",
                     "html": "<aside role=\"dialog\" class=\"modal-popup smcqp-modal-popup\n               modal-slide\n               _inner-scroll\" aria-describedby=\"modal-content-1\" data-role=\"modal\" data-type=\"popup\" tabindex=\"0\">",
                     "target": [
-                        "aside"
+                        ".smcqp-modal-popup"
                     ],
                     "failureSummary": "Fix any of the following:\n  ARIA role dialog must be removed when the element is made visible, as it is not allowed for the element"
                 }
@@ -2255,6 +2340,39 @@
                         ".header-top > .container > .row > .col-lg-6:nth-child(1)"
                     ],
                     "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+                }
+            ]
+        },
+        {
+            "id": "frame-tested",
+            "impact": "critical",
+            "tags": [
+                "cat.structure",
+                "review-item",
+                "best-practice"
+            ],
+            "description": "Ensures <iframe> and <frame> elements contain the axe-core script",
+            "help": "Frames should be tested with axe-core",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/frame-tested?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "frame-tested",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "The iframe still has to be tested with axe-core"
+                        }
+                    ],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<iframe title=\"reCAPTCHA\" width=\"304\" height=\"78\" role=\"presentation\" name=\"a-fos6f8phbnr5\" frameborder=\"0\" scrolling=\"no\" sandbox=\"allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation\" src=\"https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LeFxhshAAAAAATRGxT76skYecHbB2emagqb6ORE&amp;co=aHR0cHM6Ly9zY2hvbGFzdGljbGlicmFyeS5kaWdpdGFsLnNjaG9sYXN0aWMuY29tOjQ0Mw..&amp;hl=en&amp;v=EGbODne6buzpTnWrrBprcfAY&amp;theme=light&amp;size=normal&amp;cb=8vqvviftku7j\">",
+                    "target": [
+                        "iframe[title=\"reCAPTCHA\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  The iframe still has to be tested with axe-core"
                 }
             ]
         }
@@ -2338,7 +2456,7 @@
                     "impact": "serious",
                     "html": "<p class=\"hotline\">Hotline: (800) 621-1115</p>",
                     "target": [
-                        "p:nth-child(1)"
+                        ".hotline:nth-child(1)"
                     ],
                     "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.65 (foreground color: #999999, background color: #f7f7f7, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
                 },
@@ -2373,7 +2491,7 @@
                     "impact": "serious",
                     "html": "<a href=\"https://scholasticlibrary.digital.scholastic.com/about-us/\">About</a>",
                     "target": [
-                        "p:nth-child(2) > a"
+                        ".hotline:nth-child(2) > a"
                     ],
                     "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.65 (foreground color: #999999, background color: #f7f7f7, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
                 },
@@ -2408,7 +2526,7 @@
                     "impact": "serious",
                     "html": "<a href=\"https://scholasticlibrary.digital.scholastic.com/customer-service/\">Customer Service</a>",
                     "target": [
-                        "p:nth-child(3) > a"
+                        ".hotline:nth-child(3) > a"
                     ],
                     "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.65 (foreground color: #999999, background color: #f7f7f7, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
                 },
@@ -2443,7 +2561,7 @@
                     "impact": "serious",
                     "html": "<a href=\"https://scholasticlibrary.digital.scholastic.com/contact-us/\">Contact</a>",
                     "target": [
-                        "p:nth-child(4) > a"
+                        ".hotline:nth-child(4) > a"
                     ],
                     "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.65 (foreground color: #999999, background color: #f7f7f7, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
                 },
@@ -2695,6 +2813,46 @@
             ]
         },
         {
+            "id": "duplicate-id-active",
+            "impact": "serious",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value of active elements is unique",
+            "help": "IDs of active elements must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-active",
+                            "data": "send2",
+                            "relatedNodes": [
+                                {
+                                    "html": "<button type=\"submit\" class=\"action action-login secondary\" name=\"send\" id=\"send2\">\n                                <span data-bind=\"i18n: 'Sign In'\">Sign In</span>\n                            </button>",
+                                    "target": [
+                                        ".action-login"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Document has active elements with the same id attribute: send2"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<button type=\"submit\" class=\"action submit primary\" title=\"Create an Account\" id=\"send2\">\n                <span>Create an Account</span>\n            </button>",
+                    "target": [
+                        ".submit"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has active elements with the same id attribute: send2"
+                }
+            ]
+        },
+        {
             "id": "image-alt",
             "impact": "critical",
             "tags": [
@@ -2757,6 +2915,89 @@
                         ".schl-foot-logo > img"
                     ],
                     "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                }
+            ]
+        },
+        {
+            "id": "label",
+            "impact": "critical",
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag412",
+                "wcag131",
+                "section508",
+                "section508.22.n",
+                "ACT"
+            ],
+            "description": "Ensures every form element has a label",
+            "help": "Form elements must have labels",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "implicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element does not have an implicit (wrapped) <label>"
+                        },
+                        {
+                            "id": "explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element does not have an explicit <label>"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        },
+                        {
+                            "id": "non-empty-placeholder",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no placeholder attribute"
+                        },
+                        {
+                            "id": "presentational-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<input type=\"checkbox\" value=\"\" class=\"required-captcha checkbox\" name=\"recaptcha-validate-\" data-validate=\"{required:true}\" tabindex=\"-1\">",
+                    "target": [
+                        ".required-captcha"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
                 }
             ]
         },
