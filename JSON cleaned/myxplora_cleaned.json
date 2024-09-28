@@ -1,0 +1,3709 @@
+{
+    "testEngine": {
+        "name": "axe-core",
+        "version": "4.4.3"
+    },
+    "testRunner": {
+        "name": "axe"
+    },
+    "timestamp": "2024-09-26T06:52:42.811Z",
+    "url": "https://xplora.co.uk/",
+    "toolOptions": {
+        "resultTypes": [
+            "violations"
+        ],
+        "reporter": "v1"
+    },
+    "passes": [
+        {
+            "id": "aria-allowed-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures ARIA attributes are allowed for an element's role",
+            "help": "Elements must only use allowed ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attributes are used correctly for the defined role"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "aria-unsupported-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute is supported"
+                        },
+                        {
+                            "id": "aria-prohibited-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "ARIA attribute is allowed"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a href=\"/\" title=\"Home\" aria-current=\"page\">Home</a>",
+                    "target": [
+                        "a[aria-current=\"page\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-allowed-role",
+            "impact": "minor",
+            "tags": [
+                "cat.aria",
+                "best-practice"
+            ],
+            "description": "Ensures role attribute has an appropriate value for the element",
+            "help": "ARIA role should be appropriate for the element",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-role?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is allowed for given element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-facebook\" viewBox=\"0 0 18 18\">",
+                    "target": [
+                        ".mobile-menu-drawer--inner > .social-links > li:nth-child(1) > .facebook.social[title=\"Facebook\"] > .icon-facebook.icon[viewBox=\"0 0 18 18\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-body",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures aria-hidden='true' is not present on the document body.",
+            "help": "aria-hidden='true' must not be present on the document body",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-hidden-body",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "No aria-hidden attribute is present on document body"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<body class=\"animations-false button-uppercase-false navigation-uppercase-false product-card-spacing-medium article-card-spacing-large template-index header-sticky--active\">",
+                    "target": [
+                        "body"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-focus",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag131"
+            ],
+            "description": "Ensures aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "focusable-modal-open",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements while a modal is open"
+                        },
+                        {
+                            "id": "focusable-disabled",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        },
+                        {
+                            "id": "focusable-not-tabbable",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<svg aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" class=\"icon icon-facebook\" viewBox=\"0 0 18 18\">",
+                    "target": [
+                        ".mobile-menu-drawer--inner > .social-links > li:nth-child(1) > .facebook.social[title=\"Facebook\"] > .icon-facebook.icon[viewBox=\"0 0 18 18\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-required-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures elements with ARIA roles have all required ARIA attributes",
+            "help": "Required ARIA attributes must be provided",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-required-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-required-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "All required ARIA attributes are present"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<ul class=\"thb-full-menu\" role=\"menubar\">",
+                    "target": [
+                        ".thb-full-menu"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-roles",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all elements with a role attribute use a valid value",
+            "help": "ARIA roles used must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-roles?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "fallbackrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Only one role value used"
+                        },
+                        {
+                            "id": "invalidrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is valid"
+                        },
+                        {
+                            "id": "abstractrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Abstract roles are not used"
+                        },
+                        {
+                            "id": "unsupportedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is supported"
+                        },
+                        {
+                            "id": "deprecatedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is not deprecated"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<ul class=\"thb-full-menu\" role=\"menubar\">",
+                    "target": [
+                        ".thb-full-menu"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr-value",
+            "impact": "critical",
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all ARIA attributes have valid values",
+            "help": "ARIA attributes must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr-value?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "aria-valid-attr-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute values are valid"
+                        },
+                        {
+                            "id": "aria-errormessage",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "aria-errormessage exists and references elements visible to screen readers that use a supported aria-errormessage technique"
+                        },
+                        {
+                            "id": "aria-level",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-level values are valid"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"/\" title=\"Home\" aria-current=\"page\">Home</a>",
+                    "target": [
+                        "a[aria-current=\"page\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures attributes that begin with aria- are valid ARIA attributes",
+            "help": "ARIA attributes must conform to valid names",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-valid-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute name is valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"/\" title=\"Home\" aria-current=\"page\">Home</a>",
+                    "target": [
+                        "a[aria-current=\"page\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "autocomplete-valid",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag21aa",
+                "wcag135"
+            ],
+            "description": "Ensure the autocomplete attribute is correct and suitable for the form field",
+            "help": "autocomplete attribute must be used correctly",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/autocomplete-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "autocomplete-valid",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "the autocomplete attribute is correctly formatted"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input placeholder=\"Email\" type=\"email\" id=\"NewsletterForm--sections--15529037496380__footer\" name=\"contact[email]\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"email\" value=\"\" pattern=\"^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$\" title=\"xxx@xxx.xxx\" required=\"\">",
+                    "target": [
+                        "#NewsletterForm--sections--15529037496380__footer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "avoid-inline-spacing",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag21aa",
+                "wcag1412"
+            ],
+            "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+            "help": "Inline text spacing must be adjustable with custom stylesheets",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/avoid-inline-spacing?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "avoid-inline-spacing",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No inline styles with '!important' that affect text spacing has been specified"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"js\" lang=\"en\" dir=\"ltr\" style=\"--header-offset: 0px; --header-height: 70px;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "button-name",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures buttons have discernible text",
+            "help": "Buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/button-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "button-has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has inner text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button class=\"thb-widget-title collapsible\" tabindex=\"0\">",
+                    "target": [
+                        ".medium-3.widget--menu-column.small-12:nth-child(1) > .widget--menu.widget > .collapsible.thb-widget-title"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "bypass",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag241",
+                "section508",
+                "section508.22.o"
+            ],
+            "description": "Ensures each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+            "help": "Page must have means to bypass repeated blocks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/bypass?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "internal-link-present",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Valid skip link found"
+                        },
+                        {
+                            "id": "header-present",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1 class=\"split-text slideshow__slide-heading h1\">The safe kids smartwatch</h1>",
+                                    "target": [
+                                        ".content-middle-left > .slideshow__slide-content > h1"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h3\">",
+                                    "target": [
+                                        ".grid--image-small > .image-with-text--content.image-with-text--inner > .image-with-text--content--inner > .h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h3 \">",
+                                    "target": [
+                                        ".rich-text__inner > .h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h4 class=\"h5\">XGO3</h4>",
+                                    "target": [
+                                        ".multicolumn__inner.text-center > .align-stretch.no-padding.row > .multicolumn__column.medium-6.small-6:nth-child(1) > h4"
+                                    ]
+                                },
+                                {
+                                    "html": "<h4 class=\"h5\">X6Play</h4>",
+                                    "target": [
+                                        ".multicolumn__inner.text-center > .align-stretch.no-padding.row > .multicolumn__column.medium-6.small-6:nth-child(2) > h4"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"section-header--title\">\n\t\t\t\tReviews\n\n\t\t\t</h3>",
+                                    "target": [
+                                        ".small-12.columns > .section-header > .section-header--content > .section-header--title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h6>So happy!</h6>",
+                                    "target": [
+                                        ".is-selected.carousel__slide.medium-4 > .customer-reviews--review.customer-reviews--review--has-bg > .customer-reviews--content > h6"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h3\">",
+                                    "target": [
+                                        "#shopify-section-template--15529041952828__3d06b5df-c9a6-4f6b-bb2b-43c8d719c121 > .row > .small-12.columns > .text_first.grid--image-medium.image-with-text > .image-with-text--content.image-with-text--inner > .image-with-text--content--inner > .h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h3\">",
+                                    "target": [
+                                        ".image_first.grid--image-medium.image-with-text > .image-with-text--content.image-with-text--inner > .image-with-text--content--inner > .h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h3\">",
+                                    "target": [
+                                        "#shopify-section-template--15529041952828__bf756cd6-44b7-425e-aa94-c399fc3b0056 > .row > .small-12.columns > .text_first.grid--image-medium.image-with-text > .image-with-text--content.image-with-text--inner > .image-with-text--content--inner > .h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"section-header--title\">\n\t\t\t\tShop by Category\n\n\t\t\t</h3>",
+                                    "target": [
+                                        ".list-collections > .section-header > .section-header--content > .section-header--title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"section-header--title\">\n\t\t\t\tBlog\n\n\t\t\t</h3>",
+                                    "target": [
+                                        ".blog-posts > .section-header > .section-header--content > .section-header--title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h5><a href=\"/blogs/blog/kids-smartwatch-kids-smartphone\" title=\"Kids Smartwatch or Smartphone? 10 Reasons Why We Should Not Be Giving Our Children Smartphones.\">Kids Smartwatch or Smartphone? 10 Reasons Why We Should Not Be Giving Our Children Smartphones.</a></h5>",
+                                    "target": [
+                                        ".medium-4.small-12.columns:nth-child(1) > .blog-post.blog-post--content-spacing-true.blog-post--border-false > .blog-post-info > h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h5><a href=\"/blogs/blog/xploras-activity-platform-our-own-universe-for-children\" title=\"Xplora's activity platform \u2013 our own universe for children!\">Xplora's activity platform \u2013 our own universe for children!</a></h5>",
+                                    "target": [
+                                        ".medium-4.small-12.columns:nth-child(2) > .blog-post.blog-post--content-spacing-true.blog-post--border-false > .blog-post-info > h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h5><a href=\"/blogs/blog/school-mode-no-distractions-in-class-with-xplora\" title=\"School mode - no distractions in class with Xplora!\">School mode - no distractions in class with Xplora!</a></h5>",
+                                    "target": [
+                                        ".medium-4.small-12.columns:nth-child(3) > .blog-post.blog-post--content-spacing-true.blog-post--border-false > .blog-post-info > h5"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Page has a heading"
+                        },
+                        {
+                            "id": "landmark",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<div role=\"main\" id=\"main-content\">",
+                                    "target": [
+                                        "#main-content"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Page has a landmark region"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"js\" lang=\"en\" dir=\"ltr\" style=\"--header-offset: 0px; --header-height: 70px;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#2c2d2e",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 13.79,
+                                "fontSize": "25.5pt (34px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "3:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 13.79"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h3 class=\"h3\">",
+                    "target": [
+                        ".grid--image-small > .image-with-text--content.image-with-text--inner > .image-with-text--content--inner > .h3"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "document-title",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag242",
+                "ACT"
+            ],
+            "description": "Ensures each HTML document contains a non-empty <title> element",
+            "help": "Documents must have <title> element to aid in navigation",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/document-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "doc-has-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has a non-empty <title> element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"js\" lang=\"en\" dir=\"ltr\" style=\"--header-offset: 0px; --header-height: 70px;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-active",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value of active elements is unique",
+            "help": "IDs of active elements must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-active",
+                            "data": "cart-drawer-toggle",
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has no active elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a class=\"thb-secondary-area-item thb-secondary-cart\" href=\"/cart\" id=\"cart-drawer-toggle\">",
+                    "target": [
+                        "#cart-drawer-toggle"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-aria",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value used in ARIA and in labels is unique",
+            "help": "IDs used in ARIA and labels must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-aria",
+                            "data": "NewsletterForm--sections--15529037496380__footer",
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input placeholder=\"Email\" type=\"email\" id=\"NewsletterForm--sections--15529037496380__footer\" name=\"contact[email]\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"email\" value=\"\" pattern=\"^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$\" title=\"xxx@xxx.xxx\" required=\"\">",
+                    "target": [
+                        "#NewsletterForm--sections--15529037496380__footer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "kindly-chat",
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<script id=\"kindly-chat\" src=\"https://chat.kindlycdn.com/kindly-chat.js\" data-bot-key=\"74b27c5d-f213-4bf8-ba9f-444dd3e60643\" data-shadow-dom=\"\" defer=\"\"></script>",
+                    "target": [
+                        "#kindly-chat"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "empty-heading",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "best-practice"
+            ],
+            "description": "Ensures headings have discernible text",
+            "help": "Headings should not be empty",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/empty-heading?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h1 class=\"split-text slideshow__slide-heading h1\">The safe kids smartwatch</h1>",
+                    "target": [
+                        ".content-middle-left > .slideshow__slide-content > h1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "form-field-multiple-labels",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag332"
+            ],
+            "description": "Ensures form field does not have multiple label elements",
+            "help": "Form field must not have multiple label elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/form-field-multiple-labels?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "multiple-label",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<label class=\"field__label\" for=\"NewsletterForm--sections--15529037496380__footer\">\n\t        Email\n\t      </label>",
+                                    "target": [
+                                        ".field__label"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Form field does not have multiple label elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input placeholder=\"Email\" type=\"email\" id=\"NewsletterForm--sections--15529037496380__footer\" name=\"contact[email]\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"email\" value=\"\" pattern=\"^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$\" title=\"xxx@xxx.xxx\" required=\"\">",
+                    "target": [
+                        "#NewsletterForm--sections--15529037496380__footer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "heading-order",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": {
+                                "headingOrder": [
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(5) > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > div > slide-show > div:nth-child(2) > div > div > div:nth-child(4) > div > h1:nth-child(1)"
+                                        ],
+                                        "level": 1
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(5) > div:nth-child(3) > div:nth-child(3) > div:nth-child(3) > div > div > div:nth-child(2) > div > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(5) > div:nth-child(3) > div:nth-child(7) > div:nth-child(2) > div > div > div > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(5) > div:nth-child(3) > div:nth-child(10) > div:nth-child(2) > div > div > div > div > div:nth-child(1) > h4:nth-child(2)"
+                                        ],
+                                        "level": 4
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(5) > div:nth-child(3) > div:nth-child(10) > div:nth-child(2) > div > div > div > div > div:nth-child(2) > h4:nth-child(2)"
+                                        ],
+                                        "level": 4
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(5) > div:nth-child(3) > div:nth-child(13) > customer-reviews:nth-child(2) > div > div > div:nth-child(1) > div > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(5) > div:nth-child(3) > div:nth-child(13) > customer-reviews:nth-child(2) > div > div > slide-show:nth-child(2) > div > div > div:nth-child(1) > div > div > h6:nth-child(2)"
+                                        ],
+                                        "level": 6
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(5) > div:nth-child(3) > div:nth-child(14) > div:nth-child(3) > div > div > div:nth-child(2) > div > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(5) > div:nth-child(3) > div:nth-child(15) > div:nth-child(3) > div > div > div:nth-child(2) > div > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(5) > div:nth-child(3) > div:nth-child(16) > div:nth-child(3) > div > div > div:nth-child(2) > div > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(5) > div:nth-child(3) > div:nth-child(17) > div:nth-child(1) > div > div > div:nth-child(1) > div > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(5) > div:nth-child(3) > div:nth-child(18) > div:nth-child(1) > div > div > div:nth-child(1) > div > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(5) > div:nth-child(3) > div:nth-child(18) > div:nth-child(1) > div > div > div:nth-child(2) > div:nth-child(1) > div > div:nth-child(2) > h5:nth-child(2)"
+                                        ],
+                                        "level": 5
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(5) > div:nth-child(3) > div:nth-child(18) > div:nth-child(1) > div > div > div:nth-child(2) > div:nth-child(2) > div > div:nth-child(2) > h5:nth-child(2)"
+                                        ],
+                                        "level": 5
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(5) > div:nth-child(3) > div:nth-child(18) > div:nth-child(1) > div > div > div:nth-child(2) > div:nth-child(3) > div > div:nth-child(2) > h5:nth-child(2)"
+                                        ],
+                                        "level": 5
+                                    }
+                                ]
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h1 class=\"split-text slideshow__slide-heading h1\">The safe kids smartwatch</h1>",
+                    "target": [
+                        ".content-middle-left > .slideshow__slide-content > h1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-has-lang",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures every HTML document has a lang attribute",
+            "help": "<html> element must have a lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-has-lang?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "The <html> element has a lang attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"js\" lang=\"en\" dir=\"ltr\" style=\"--header-offset: 0px; --header-height: 70px;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-lang-valid",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures the lang attribute of the <html> element has a valid value",
+            "help": "<html> element must have a valid value for the lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-lang-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "valid-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Value of lang attribute is included in the list of valid languages"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<html class=\"js\" lang=\"en\" dir=\"ltr\" style=\"--header-offset: 0px; --header-height: 70px;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "identical-links-same-purpose",
+            "impact": "minor",
+            "tags": [
+                "cat.semantics",
+                "wcag2aaa",
+                "wcag249"
+            ],
+            "description": "Ensure that links with the same accessible name serve a similar purpose",
+            "help": "Links with the same name must have a similar purpose",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/identical-links-same-purpose?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "identical-links-same-purpose",
+                            "data": {
+                                "name": "skip to content",
+                                "urlProps": {
+                                    "protocol": "http:",
+                                    "hostname": "xplora.co.uk",
+                                    "port": "",
+                                    "pathname": "/",
+                                    "search": {},
+                                    "hash": "",
+                                    "filename": ""
+                                }
+                            },
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "There are no other links with the same name, that go to a different URL"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a class=\"screen-reader-shortcut\" href=\"#main-content\">Skip to content</a>",
+                    "target": [
+                        ".screen-reader-shortcut"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures <img> elements have alternate text or a role of none or presentation",
+            "help": "Images must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-alt",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has an alt attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "alt-space-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has a valid alt attribute value"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img src=\"//xplora.co.uk/cdn/shop/files/Xplora_Logo_51add505-61c9-4534-a2fc-1ffa38e67877.png?v=1671528972\" class=\"logoimg\" alt=\"Xplora UK\" width=\"203\" height=\"64\">",
+                    "target": [
+                        ".logoimg[alt=\"Xplora UK\"][width=\"203\"]:nth-child(1)"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-redundant-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ],
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-redundant-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img src=\"//xplora.co.uk/cdn/shop/files/Xplora_Logo_51add505-61c9-4534-a2fc-1ffa38e67877.png?v=1671528972\" class=\"logoimg\" alt=\"Xplora UK\" width=\"203\" height=\"64\">",
+                    "target": [
+                        ".logoimg[alt=\"Xplora UK\"][width=\"203\"]:nth-child(1)"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label-title-only",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "best-practice"
+            ],
+            "description": "Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes",
+            "help": "Form elements should have a visible label",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "title-only",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Form element does not solely use title attribute for its label"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input placeholder=\"Email\" type=\"email\" id=\"NewsletterForm--sections--15529037496380__footer\" name=\"contact[email]\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"email\" value=\"\" pattern=\"^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$\" title=\"xxx@xxx.xxx\" required=\"\">",
+                    "target": [
+                        "#NewsletterForm--sections--15529037496380__footer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag412",
+                "wcag131",
+                "section508",
+                "section508.22.n",
+                "ACT"
+            ],
+            "description": "Ensures every form element has a label",
+            "help": "Form elements must have labels",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element has an explicit <label>"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a title attribute"
+                        },
+                        {
+                            "id": "non-empty-placeholder",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a placeholder attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "hidden-explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element has a visible explicit <label>"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input placeholder=\"Email\" type=\"email\" id=\"NewsletterForm--sections--15529037496380__footer\" name=\"contact[email]\" autocorrect=\"off\" autocapitalize=\"off\" autocomplete=\"email\" value=\"\" pattern=\"^([a-zA-Z0-9_\\-\\.]+)@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.)|(([a-zA-Z0-9\\-]+\\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)$\" title=\"xxx@xxx.xxx\" required=\"\">",
+                    "target": [
+                        "#NewsletterForm--sections--15529037496380__footer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-complementary-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the complementary landmark or aside is at top level",
+            "help": "Aside should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-complementary-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "complementary"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The complementary landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<aside class=\"post-meta\">\n\t\t\tMarch 15 2024\n\t\t</aside>",
+                    "target": [
+                        ".medium-4.small-12.columns:nth-child(1) > .blog-post.blog-post--content-spacing-true.blog-post--border-false > .blog-post-info > aside"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-main-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the main landmark is at top level",
+            "help": "Main landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-main-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "main"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The main landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div role=\"main\" id=\"main-content\">",
+                    "target": [
+                        "#main-content"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-main",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one main landmark",
+            "help": "Document should not have more than one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-main",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one main landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div role=\"main\" id=\"main-content\">",
+                    "target": [
+                        "#main-content"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-one-main",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has a main landmark",
+            "help": "Document should have one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-one-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-main",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<div role=\"main\" id=\"main-content\">",
+                                    "target": [
+                                        "#main-content"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Document has at least one main landmark"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"js\" lang=\"en\" dir=\"ltr\" style=\"--header-offset: 0px; --header-height: 70px;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-unique",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "help": "Ensures landmarks are unique",
+            "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-unique",
+                            "data": {
+                                "role": "main",
+                                "accessibleText": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Landmarks must have a unique role or role/label/title (i.e. accessible name) combination"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div role=\"main\" id=\"main-content\">",
+                    "target": [
+                        "#main-content"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a class=\"screen-reader-shortcut\" href=\"#main-content\">Skip to content</a>",
+                    "target": [
+                        ".screen-reader-shortcut"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "list",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures that lists are structured correctly",
+            "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/list?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "only-listitems",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List element only has direct children that are allowed inside <li> elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<ul><li><strong>Calls &amp; Voice Messages</strong></li><li><strong>No Internet, No Social Media, No Unwanted Calls</strong></li><li><strong>GPS &amp; Step Counter</strong></li><li><strong>SOS Button for emergencies</strong></li><li><strong>High-Quality Camera</strong></li></ul>",
+                    "target": [
+                        ".image-with-text--content--inner > .rte > ul"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "listitem",
+            "impact": "serious",
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures <li> elements are used semantically",
+            "help": "<li> elements must be contained in a <ul> or <ol>",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/listitem?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<li><strong>Calls &amp; Voice Messages</strong></li>",
+                    "target": [
+                        ".image-with-text--content--inner > .rte > ul > li:nth-child(1)"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport-large",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> can scale a significant amount",
+            "help": "Users should be able to zoom and scale the text up to 500%",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport-large?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport-large",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "<meta> tag does not prevent significant zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice",
+                "ACT"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> does not disable text scaling and zooming",
+            "help": "Zooming and scaling should not be disabled",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "<meta> tag does not disable zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "nested-interactive",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+            "help": "Interactive controls must not be nested",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/nested-interactive?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "no-focusable-content",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have focusable descendants"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<img src=\"//xplora.co.uk/cdn/shop/files/Xplora_Logo_51add505-61c9-4534-a2fc-1ffa38e67877.png?v=1671528972\" class=\"logoimg\" alt=\"Xplora UK\" width=\"203\" height=\"64\">",
+                    "target": [
+                        ".logoimg[alt=\"Xplora UK\"][width=\"203\"]:nth-child(1)"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "page-has-heading-one",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+            "help": "Page should contain a level-one heading",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/page-has-heading-one?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-heading-one",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1 class=\"split-text slideshow__slide-heading h1\">The safe kids smartwatch</h1>",
+                                    "target": [
+                                        ".content-middle-left > .slideshow__slide-content > h1"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Page has at least one level-one heading"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"js\" lang=\"en\" dir=\"ltr\" style=\"--header-offset: 0px; --header-height: 70px;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "presentation-role-conflict",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "best-practice"
+            ],
+            "description": "Flags elements whose role is none or presentation and which cause the role conflict resolution to trigger.",
+            "help": "Elements of role none or presentation should be flagged",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/presentation-role-conflict?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "is-element-focusable",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element is focusable."
+                        },
+                        {
+                            "id": "has-global-aria-attribute",
+                            "data": [],
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has global ARIA attributes: "
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<svg role=\"presentation\" focusable=\"false\" width=\"27\" height=\"27\" class=\"icon icon-linkedin\" viewBox=\"0 0 24 24\">",
+                    "target": [
+                        ".social-links--has-label > li:nth-child(4) > .linkedin.social[title=\"Linkedin\"] > .icon-linkedin[width=\"27\"][height=\"27\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "All page content is contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<noscript><iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-WLMJSWJ\"\nheight=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></noscript>",
+                    "target": [
+                        "body > noscript"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "scrollable-region-focusable",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag211"
+            ],
+            "description": "Ensure elements that have scrollable content are accessible by keyboard",
+            "help": "Scrollable region must have keyboard access",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/scrollable-region-focusable?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "focusable-content",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Element contains focusable elements"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<ul class=\"products row small-up-1 medium-up-2\">",
+                    "target": [
+                        ".products"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "skip-link",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensure all skip links have a focusable target",
+            "help": "The skip-link target should exist and be focusable",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/skip-link?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "skip-link",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Skip link target exists"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a class=\"screen-reader-shortcut\" href=\"#main-content\">Skip to content</a>",
+                    "target": [
+                        ".screen-reader-shortcut"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "svg-img-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures <svg> elements with an img, graphics-document or graphics-symbol role have an accessible text",
+            "help": "<svg> elements with an img role must have an alternative text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/svg-img-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "svg-non-empty-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a child that is a title"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute exists and references elements that are visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<svg class=\"payment-icons__icon\" viewBox=\"0 0 38 24\" xmlns=\"http://www.w3.org/2000/svg\" width=\"38\" height=\"24\" role=\"img\" aria-labelledby=\"pi-paypal\">",
+                    "target": [
+                        ".payment-icons__icon"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "tabindex",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures tabindex attribute values are not greater than 0",
+            "help": "Elements should not have tabindex greater than zero",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/tabindex?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "tabindex",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have a tabindex greater than 0"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<slide-show class=\"slideshow main-slideshow slideshow--full-width-true carousel mobile-height-auto desktop-height-image section-spacing section-spacing--disable-top section-spacing--disable-bottom transition--slide flickity-enabled\" data-dots=\"false\" data-autoplay=\"6000\" data-fade=\"false\" data-transition=\"slide\" style=\"--dot-speed: 6s;--color-text: #fff;\" tabindex=\"0\" data-initiated=\"true\">",
+                    "target": [
+                        "slide-show[data-autoplay=\"6000\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "valid-lang",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2aa",
+                "wcag312"
+            ],
+            "description": "Ensures lang attributes have valid values",
+            "help": "lang attribute must have a valid value",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/valid-lang?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "valid-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Value of lang attribute is included in the list of valid languages"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<div id=\"ChatButtonContainer\" class=\"styles__ChatButtonContainer-sc-1fbujwe-0 jGPwpG\" lang=\"en\">",
+                    "target": [
+                        [
+                            "#kindly-chat-api > div",
+                            "#ChatButtonContainer"
+                        ]
+                    ]
+                }
+            ]
+        }
+    ],
+    "violations": [
+        {
+            "id": "aria-required-children",
+            "impact": "critical",
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures elements with an ARIA role that require child roles contain them",
+            "help": "Certain ARIA roles must contain particular children",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-required-children?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-required-children",
+                            "data": [
+                                "group",
+                                "menuitemradio",
+                                "menuitem",
+                                "menuitemcheckbox"
+                            ],
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Required ARIA children role not present: group, menuitemradio, menuitem, menuitemcheckbox"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<ul class=\"thb-full-menu\" role=\"menubar\">",
+                    "target": [
+                        ".thb-full-menu"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Required ARIA children role not present: group, menuitemradio, menuitem, menuitemcheckbox"
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr-value",
+            "impact": "critical",
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all ARIA attributes have valid values",
+            "help": "ARIA attributes must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr-value?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "aria-valid-attr-value",
+                            "data": [
+                                "aria-disabled=\"\""
+                            ],
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Invalid ARIA attribute value: aria-disabled=\"\""
+                        }
+                    ],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<a class=\"logo-list--logo logo-list--logo--has-bg\" aria-disabled=\"\">",
+                    "target": [
+                        ".logo-list--logo.logo-list--logo--has-bg:nth-child(1)"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-disabled=\"\""
+                },
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "aria-valid-attr-value",
+                            "data": [
+                                "aria-disabled=\"\""
+                            ],
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Invalid ARIA attribute value: aria-disabled=\"\""
+                        }
+                    ],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<a class=\"logo-list--logo logo-list--logo--has-bg\" aria-disabled=\"\">",
+                    "target": [
+                        ".logo-list--logo.logo-list--logo--has-bg:nth-child(2)"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-disabled=\"\""
+                },
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "aria-valid-attr-value",
+                            "data": [
+                                "aria-disabled=\"\""
+                            ],
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Invalid ARIA attribute value: aria-disabled=\"\""
+                        }
+                    ],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<a class=\"logo-list--logo logo-list--logo--has-bg\" aria-disabled=\"\">",
+                    "target": [
+                        ".logo-list--logo.logo-list--logo--has-bg:nth-child(3)"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-disabled=\"\""
+                },
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "aria-valid-attr-value",
+                            "data": [
+                                "aria-disabled=\"\""
+                            ],
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Invalid ARIA attribute value: aria-disabled=\"\""
+                        }
+                    ],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<a class=\"logo-list--logo logo-list--logo--has-bg\" aria-disabled=\"\">",
+                    "target": [
+                        ".logo-list--logo.logo-list--logo--has-bg:nth-child(4)"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-disabled=\"\""
+                },
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "aria-valid-attr-value",
+                            "data": [
+                                "aria-disabled=\"\""
+                            ],
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Invalid ARIA attribute value: aria-disabled=\"\""
+                        }
+                    ],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<a class=\"logo-list--logo logo-list--logo--has-bg\" aria-disabled=\"\">",
+                    "target": [
+                        ".logo-list--logo.logo-list--logo--has-bg:nth-child(5)"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-disabled=\"\""
+                },
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "aria-valid-attr-value",
+                            "data": [
+                                "aria-disabled=\"\""
+                            ],
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Invalid ARIA attribute value: aria-disabled=\"\""
+                        }
+                    ],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<a class=\"logo-list--logo logo-list--logo--has-bg\" aria-disabled=\"\">",
+                    "target": [
+                        ".logo-list--logo.logo-list--logo--has-bg:nth-child(6)"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Invalid ARIA attribute value: aria-disabled=\"\""
+                }
+            ]
+        },
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#f45b5a",
+                                "contrastRatio": 3.23,
+                                "fontSize": "11.3pt (15px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a class=\"button\" href=\"/products/x6play-smartwatch\" role=\"button\" title=\"Buy now\"><span>Buy now</span></a>",
+                                    "target": [
+                                        "a[title=\"Buy now\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.23 (foreground color: #ffffff, background color: #f45b5a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span>Buy now</span>",
+                    "target": [
+                        "a[title=\"Buy now\"] > span"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.23 (foreground color: #ffffff, background color: #f45b5a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#f45b5a",
+                                "contrastRatio": 3.23,
+                                "fontSize": "11.3pt (15px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"/products/xgo3-smartwatch\" title=\"Buy Now\" role=\"link\" class=\"text-button  text-button--has-icon\">",
+                                    "target": [
+                                        ".multicolumn__inner.text-center > .align-stretch.no-padding.row > .multicolumn__column.medium-6.small-6:nth-child(1) > .text-button[title=\"Buy Now\"][href$=\"xgo3-smartwatch\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.23 (foreground color: #ffffff, background color: #f45b5a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/products/xgo3-smartwatch\" title=\"Buy Now\" role=\"link\" class=\"text-button  text-button--has-icon\">",
+                    "target": [
+                        ".multicolumn__inner.text-center > .align-stretch.no-padding.row > .multicolumn__column.medium-6.small-6:nth-child(1) > .text-button[title=\"Buy Now\"][href$=\"xgo3-smartwatch\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.23 (foreground color: #ffffff, background color: #f45b5a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#f45b5a",
+                                "contrastRatio": 3.23,
+                                "fontSize": "11.3pt (15px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"/products/x6play-smartwatch\" title=\"Buy Now\" role=\"link\" class=\"text-button  text-button--has-icon\">",
+                                    "target": [
+                                        ".multicolumn__inner.text-center > .align-stretch.no-padding.row > .multicolumn__column.medium-6.small-6:nth-child(2) > .text-button[title=\"Buy Now\"][href$=\"x6play-smartwatch\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.23 (foreground color: #ffffff, background color: #f45b5a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/products/x6play-smartwatch\" title=\"Buy Now\" role=\"link\" class=\"text-button  text-button--has-icon\">",
+                    "target": [
+                        ".multicolumn__inner.text-center > .align-stretch.no-padding.row > .multicolumn__column.medium-6.small-6:nth-child(2) > .text-button[title=\"Buy Now\"][href$=\"x6play-smartwatch\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.23 (foreground color: #ffffff, background color: #f45b5a, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#f45b5a",
+                                "bgColor": "#f2f5f8",
+                                "contrastRatio": 2.95,
+                                "fontSize": "11.3pt (15px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"blog-post text-left blog-post--content-spacing-true blog-post--border-false has-shadow--false\">",
+                                    "target": [
+                                        ".medium-4.small-12.columns:nth-child(1) > .blog-post.blog-post--content-spacing-true.blog-post--border-false"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.95 (foreground color: #f45b5a, background color: #f2f5f8, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/blogs/blog/kids-smartwatch-kids-smartphone\" title=\"Read more\" role=\"link\" class=\"text-button read-more text-button--has-icon\">",
+                    "target": [
+                        ".medium-4.small-12.columns:nth-child(1) > .blog-post.blog-post--content-spacing-true.blog-post--border-false > .blog-post-info > .read-more.text-button[title=\"Read more\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.95 (foreground color: #f45b5a, background color: #f2f5f8, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#f45b5a",
+                                "bgColor": "#f2f5f8",
+                                "contrastRatio": 2.95,
+                                "fontSize": "11.3pt (15px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"blog-post text-left blog-post--content-spacing-true blog-post--border-false has-shadow--false\">",
+                                    "target": [
+                                        ".medium-4.small-12.columns:nth-child(2) > .blog-post.blog-post--content-spacing-true.blog-post--border-false"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.95 (foreground color: #f45b5a, background color: #f2f5f8, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/blogs/blog/xploras-activity-platform-our-own-universe-for-children\" title=\"Read more\" role=\"link\" class=\"text-button read-more text-button--has-icon\">",
+                    "target": [
+                        ".medium-4.small-12.columns:nth-child(2) > .blog-post.blog-post--content-spacing-true.blog-post--border-false > .blog-post-info > .read-more.text-button[title=\"Read more\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.95 (foreground color: #f45b5a, background color: #f2f5f8, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#f45b5a",
+                                "bgColor": "#f2f5f8",
+                                "contrastRatio": 2.95,
+                                "fontSize": "11.3pt (15px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"blog-post text-left blog-post--content-spacing-true blog-post--border-false has-shadow--false\">",
+                                    "target": [
+                                        ".medium-4.small-12.columns:nth-child(3) > .blog-post.blog-post--content-spacing-true.blog-post--border-false"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.95 (foreground color: #f45b5a, background color: #f2f5f8, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/blogs/blog/school-mode-no-distractions-in-class-with-xplora\" title=\"Read more\" role=\"link\" class=\"text-button read-more text-button--has-icon\">",
+                    "target": [
+                        ".medium-4.small-12.columns:nth-child(3) > .blog-post.blog-post--content-spacing-true.blog-post--border-false > .blog-post-info > .read-more.text-button[title=\"Read more\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.95 (foreground color: #f45b5a, background color: #f2f5f8, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#f45b5a",
+                                "contrastRatio": 3.23,
+                                "fontSize": "9.8pt (13px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"/products/football-accessory-pack\" class=\"product-card--add-to-cart-button button accent\">Buy now</a>",
+                                    "target": [
+                                        ".columns:nth-child(1) > product-card > .product-card-info > .product-card--add-to-cart-button.accent.button"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.23 (foreground color: #ffffff, background color: #f45b5a, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/products/football-accessory-pack\" class=\"product-card--add-to-cart-button button accent\">Buy now</a>",
+                    "target": [
+                        ".columns:nth-child(1) > product-card > .product-card-info > .product-card--add-to-cart-button.accent.button"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.23 (foreground color: #ffffff, background color: #f45b5a, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#f45b5a",
+                                "contrastRatio": 3.23,
+                                "fontSize": "9.8pt (13px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"/products/elastic-wristband-x6play\" class=\"product-card--add-to-cart-button button accent\">Buy now</a>",
+                                    "target": [
+                                        ".columns:nth-child(2) > product-card > .product-card-info > .product-card--add-to-cart-button.accent.button"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.23 (foreground color: #ffffff, background color: #f45b5a, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/products/elastic-wristband-x6play\" class=\"product-card--add-to-cart-button button accent\">Buy now</a>",
+                    "target": [
+                        ".columns:nth-child(2) > product-card > .product-card-info > .product-card--add-to-cart-button.accent.button"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.23 (foreground color: #ffffff, background color: #f45b5a, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#f45b5a",
+                                "contrastRatio": 3.23,
+                                "fontSize": "9.8pt (13px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"/products/xgo3-smartwatch\" class=\"product-card--add-to-cart-button button accent\">Buy now</a>",
+                                    "target": [
+                                        ".columns:nth-child(3) > product-card > .product-card-info > .product-card--add-to-cart-button.accent.button"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.23 (foreground color: #ffffff, background color: #f45b5a, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/products/xgo3-smartwatch\" class=\"product-card--add-to-cart-button button accent\">Buy now</a>",
+                    "target": [
+                        ".columns:nth-child(3) > product-card > .product-card-info > .product-card--add-to-cart-button.accent.button"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.23 (foreground color: #ffffff, background color: #f45b5a, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+            ]
+        },
+        {
+            "id": "heading-order",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order invalid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h3 class=\"h3\">",
+                    "target": [
+                        ".grid--image-small > .image-with-text--content.image-with-text--inner > .image-with-text--content--inner > .h3"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Heading order invalid"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order invalid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h6>So happy!</h6>",
+                    "target": [
+                        ".is-selected.carousel__slide.medium-4 > .customer-reviews--review.customer-reviews--review--has-bg > .customer-reviews--content > h6"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Heading order invalid"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order invalid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h5><a href=\"/blogs/blog/kids-smartwatch-kids-smartphone\" title=\"Kids Smartwatch or Smartphone? 10 Reasons Why We Should Not Be Giving Our Children Smartphones.\">Kids Smartwatch or Smartphone? 10 Reasons Why We Should Not Be Giving Our Children Smartphones.</a></h5>",
+                    "target": [
+                        ".medium-4.small-12.columns:nth-child(1) > .blog-post.blog-post--content-spacing-true.blog-post--border-false > .blog-post-info > h5"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Heading order invalid"
+                }
+            ]
+        },
+        {
+            "id": "landmark-unique",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "help": "Ensures landmarks are unique",
+            "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-unique",
+                            "data": {
+                                "role": "complementary",
+                                "accessibleText": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<aside class=\"post-meta\">\n\t\t\tJanuary 15 2024\n\t\t</aside>",
+                                    "target": [
+                                        ".medium-4.small-12.columns:nth-child(2) > .blog-post.blog-post--content-spacing-true.blog-post--border-false > .blog-post-info > aside"
+                                    ]
+                                },
+                                {
+                                    "html": "<aside class=\"post-meta\">\n\t\t\tJanuary 15 2024\n\t\t</aside>",
+                                    "target": [
+                                        ".medium-4.small-12.columns:nth-child(3) > .blog-post.blog-post--content-spacing-true.blog-post--border-false > .blog-post-info > aside"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<aside class=\"post-meta\">\n\t\t\tMarch 15 2024\n\t\t</aside>",
+                    "target": [
+                        ".medium-4.small-12.columns:nth-child(1) > .blog-post.blog-post--content-spacing-true.blog-post--border-false > .blog-post-info > aside"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"/products/xgo3-smartwatch\">",
+                    "target": [
+                        ".multicolumn__inner.text-center > .align-stretch.no-padding.row > .multicolumn__column.medium-6.small-6:nth-child(1) > .multicolumn__image > .multicolumn__image--inner.aspect-ratio--adapt.aspect-ratio > a[href$=\"xgo3-smartwatch\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"/products/x6play-smartwatch\">",
+                    "target": [
+                        ".multicolumn__inner.text-center > .align-stretch.no-padding.row > .multicolumn__column.medium-6.small-6:nth-child(2) > .multicolumn__image > .multicolumn__image--inner.aspect-ratio--adapt.aspect-ratio > a[href$=\"x6play-smartwatch\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a target=\"_blank\" rel=\"nofollow\" href=\"https://www.shopify.com?utm_campaign=poweredby&amp;utm_medium=shopify&amp;utm_source=onlinestore\"> </a>",
+                    "target": [
+                        "a[rel=\"nofollow\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                }
+            ]
+        },
+        {
+            "id": "listitem",
+            "impact": "serious",
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures <li> elements are used semantically",
+            "help": "<li> elements must be contained in a <ul> or <ol>",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/listitem?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": {
+                                "messageKey": "roleNotValid"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item does not have a <ul>, <ol> parent element without a role, or a role=\"list\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<li class=\" active\">\n\t\t    <a href=\"/\" title=\"Home\" aria-current=\"page\">Home</a></li>",
+                    "target": [
+                        ".thb-full-menu > .active"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  List item does not have a <ul>, <ol> parent element without a role, or a role=\"list\""
+                },
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": {
+                                "messageKey": "roleNotValid"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item does not have a <ul>, <ol> parent element without a role, or a role=\"list\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<li class=\"menu-item-has-children\" data-item-title=\"Our Watches\">",
+                    "target": [
+                        ".menu-item-has-children"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  List item does not have a <ul>, <ol> parent element without a role, or a role=\"list\""
+                },
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": {
+                                "messageKey": "roleNotValid"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item does not have a <ul>, <ol> parent element without a role, or a role=\"list\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<li class=\"\">\n\t\t    <a href=\"/collections/accessories\" title=\"Accessories\">Accessories</a></li>",
+                    "target": [
+                        ".thb-full-menu > li:nth-child(3)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  List item does not have a <ul>, <ol> parent element without a role, or a role=\"list\""
+                },
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": {
+                                "messageKey": "roleNotValid"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item does not have a <ul>, <ol> parent element without a role, or a role=\"list\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<li class=\"\">\n\t\t    <a href=\"/pages/xplora-connect\" title=\"Xplora Connect\">Xplora Connect</a></li>",
+                    "target": [
+                        ".thb-full-menu > li:nth-child(4)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  List item does not have a <ul>, <ol> parent element without a role, or a role=\"list\""
+                },
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": {
+                                "messageKey": "roleNotValid"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item does not have a <ul>, <ol> parent element without a role, or a role=\"list\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<li class=\"\">\n\t\t    <a href=\"http://goplay.myxplora.com/\" title=\"Activity Platform\">Activity Platform</a></li>",
+                    "target": [
+                        ".thb-full-menu > li:nth-child(5)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  List item does not have a <ul>, <ol> parent element without a role, or a role=\"list\""
+                },
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": {
+                                "messageKey": "roleNotValid"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item does not have a <ul>, <ol> parent element without a role, or a role=\"list\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<li class=\"\">\n\t\t    <a href=\"https://start.xplora.com/\" title=\"Activate\">Activate</a></li>",
+                    "target": [
+                        ".thb-full-menu > li:nth-child(6)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  List item does not have a <ul>, <ol> parent element without a role, or a role=\"list\""
+                },
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": {
+                                "messageKey": "roleNotValid"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item does not have a <ul>, <ol> parent element without a role, or a role=\"list\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<li class=\"\">\n\t\t    <a href=\"/pages/support\" title=\"Support\">Support</a></li>",
+                    "target": [
+                        ".thb-full-menu > li:nth-child(7)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  List item does not have a <ul>, <ol> parent element without a role, or a role=\"list\""
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a class=\"logolink\" href=\"/\">",
+                    "target": [
+                        ".logolink"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<li class=\" active\">\n\t\t    <a href=\"/\" title=\"Home\" aria-current=\"page\">Home</a></li>",
+                    "target": [
+                        ".thb-full-menu > .active"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a href=\"/collections/kids-watches\" title=\"Our Watches\">",
+                    "target": [
+                        "a[title=\"Our Watches\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<li class=\"\">\n\t\t    <a href=\"/collections/accessories\" title=\"Accessories\">Accessories</a></li>",
+                    "target": [
+                        ".thb-full-menu > li:nth-child(3)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<li class=\"\">\n\t\t    <a href=\"/pages/xplora-connect\" title=\"Xplora Connect\">Xplora Connect</a></li>",
+                    "target": [
+                        ".thb-full-menu > li:nth-child(4)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<li class=\"\">\n\t\t    <a href=\"http://goplay.myxplora.com/\" title=\"Activity Platform\">Activity Platform</a></li>",
+                    "target": [
+                        ".thb-full-menu > li:nth-child(5)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<li class=\"\">\n\t\t    <a href=\"https://start.xplora.com/\" title=\"Activate\">Activate</a></li>",
+                    "target": [
+                        ".thb-full-menu > li:nth-child(6)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<li class=\"\">\n\t\t    <a href=\"/pages/support\" title=\"Support\">Support</a></li>",
+                    "target": [
+                        ".thb-full-menu > li:nth-child(7)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<span class=\"thb-item-count\">0</span>",
+                    "target": [
+                        ".thb-item-count"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<ul class=\"thb-widget-menu\">",
+                    "target": [
+                        ".medium-3.widget--menu-column.small-12:nth-child(1) > .widget--menu.widget > .thb-widget-menu"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<ul class=\"thb-widget-menu\">",
+                    "target": [
+                        ".medium-3.widget--menu-column.small-12:nth-child(2) > .widget--menu.widget > .thb-widget-menu"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"thb-widget-title\">Follow Us</div>",
+                    "target": [
+                        ".widget--social > .thb-widget-title"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<span>Facebook</span>",
+                    "target": [
+                        ".facebook.social[title=\"Facebook\"] > span"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<span>Instagram</span>",
+                    "target": [
+                        ".instagram.social[title=\"Instagram\"] > span"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<span>YouTube</span>",
+                    "target": [
+                        ".youtube.social[title=\"YouTube\"] > span"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<span>Linkedin</span>",
+                    "target": [
+                        ".linkedin.social[title=\"Linkedin\"] > span"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"thb-widget-title\">Sign up to our newsletter</div>",
+                    "target": [
+                        ".widget--signup > .thb-widget-title"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p>Sign up for our newsletter to stay informed about the latest news, offers and parenting tips.</p>",
+                    "target": [
+                        ".widget--signup > p"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"field\">",
+                    "target": [
+                        ".field"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"small-12 columns\">\n        <p>\n          \u00a9 2024\n          Xplora UK, All rights reserved.\n          <a target=\"_blank\" rel=\"nofollow\" href=\"https://www.shopify.com?utm_campaign=poweredby&amp;utm_medium=shopify&amp;utm_source=onlinestore\"> </a>\n        </p>\n      </div>",
+                    "target": [
+                        ".sub-footer > .row > .small-12.columns:nth-child(4)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<span class=\"h6\">Cart <sup>0</sup></span>",
+                    "target": [
+                        ".h6"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p>Your cart is currently empty.</p>",
+                    "target": [
+                        ".cart-drawer__empty-cart > p"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a class=\"button accent2\" href=\"/collections/all\"><span>Start Shopping</span></a>",
+                    "target": [
+                        ".accent2"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<span class=\"thb-predictive-search--label\">Trending Now</span>",
+                    "target": [
+                        ".thb-predictive-search--label"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img class=\"lazyload product-secondary-image\" width=\"882\" height=\"1037\" data-sizes=\"auto\" src=\"//xplora.co.uk/cdn/shop/files/Footballstraps5_20x_crop_center.png?v=1718105989\" data-srcset=\"//xplora.co.uk/cdn/shop/files/Footballstraps5_298x_crop_center.png?v=1718105989 298w,//xplora.co.uk/cdn/shop/files/Footballstraps5_596x_crop_center.png?v=1718105989 596w\" alt=\"Football Pack (X6Play)\">",
+                    "target": [
+                        "img[width=\"882\"][height=\"1037\"][alt=\"Football Pack (X6Play)\"]:nth-child(1)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img class=\"lazyload product-primary-image\" width=\"882\" height=\"1037\" data-sizes=\"auto\" src=\"//xplora.co.uk/cdn/shop/files/X6fotball_20x_crop_center.png?v=1718105989\" data-srcset=\"//xplora.co.uk/cdn/shop/files/X6fotball_298x_crop_center.png?v=1718105989 298w,//xplora.co.uk/cdn/shop/files/X6fotball_596x_crop_center.png?v=1718105989 596w\" alt=\"Football Pack (X6Play)\" style=\"object-position: 50.0% 50.0%;\">",
+                    "target": [
+                        "img[width=\"882\"][height=\"1037\"][alt=\"Football Pack (X6Play)\"]:nth-child(3)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a href=\"/products/football-accessory-pack\" title=\"Football Pack (X6Play)\" class=\"product-card-title\">Football Pack (X6Play)</a>",
+                    "target": [
+                        ".product-card-title[title=\"Football Pack (X6Play)\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<ins><span class=\"amount \">\u00a329.99</span></ins>",
+                    "target": [
+                        ".columns:nth-child(1) > product-card > .product-card-info > .price > ins"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a href=\"/products/football-accessory-pack\" class=\"product-card--add-to-cart-button button accent\">Buy now</a>",
+                    "target": [
+                        ".columns:nth-child(1) > product-card > .product-card-info > .product-card--add-to-cart-button.accent.button"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img class=\"lazyload product-secondary-image\" width=\"900\" height=\"1000\" data-sizes=\"auto\" src=\"//xplora.co.uk/cdn/shop/files/BlueElastic_20x_crop_center.png?v=1706864960\" data-srcset=\"//xplora.co.uk/cdn/shop/files/BlueElastic_298x_crop_center.png?v=1706864960 298w,//xplora.co.uk/cdn/shop/files/BlueElastic_596x_crop_center.png?v=1706864960 596w\" alt=\"Elastic Fabric Wristband (X6Play)\">",
+                    "target": [
+                        ".columns:nth-child(2) > product-card > .product-featured-image.thb-hover > .product-featured-image-link.aspect-ratio--adapt.aspect-ratio > .product-secondary-image[width=\"900\"][height=\"1000\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img class=\"lazyload product-primary-image\" width=\"900\" height=\"1000\" data-sizes=\"auto\" src=\"//xplora.co.uk/cdn/shop/files/BlackElastic_20x_crop_center.png?v=1706864960\" data-srcset=\"//xplora.co.uk/cdn/shop/files/BlackElastic_298x_crop_center.png?v=1706864960 298w,//xplora.co.uk/cdn/shop/files/BlackElastic_596x_crop_center.png?v=1706864960 596w\" alt=\"Elastic Fabric Wristband (X6Play)\" style=\"object-position: 50.0% 50.0%;\">",
+                    "target": [
+                        ".columns:nth-child(2) > product-card > .product-featured-image.thb-hover > .product-featured-image-link.aspect-ratio--adapt.aspect-ratio > .product-primary-image[width=\"900\"][height=\"1000\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a href=\"/products/elastic-wristband-x6play\" title=\"Elastic Fabric Wristband (X6Play)\" class=\"product-card-title\">Elastic Fabric Wristband (X6Play)</a>",
+                    "target": [
+                        ".columns:nth-child(2) > product-card > .product-card-info > .product-card-title"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<ins><span class=\"amount \">\u00a315.99</span></ins>",
+                    "target": [
+                        ".columns:nth-child(2) > product-card > .product-card-info > .price > ins"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"product-card-swatches--container no-js-hidden\">",
+                    "target": [
+                        ".columns:nth-child(2) > product-card > .product-card-info > .product-card-swatches--container.no-js-hidden"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a href=\"/products/elastic-wristband-x6play\" class=\"product-card--add-to-cart-button button accent\">Buy now</a>",
+                    "target": [
+                        ".columns:nth-child(2) > product-card > .product-card-info > .product-card--add-to-cart-button.accent.button"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img class=\"lazyload product-secondary-image\" width=\"900\" height=\"1000\" data-sizes=\"auto\" src=\"//xplora.co.uk/cdn/shop/files/XGO3BLue_20x_crop_center.png?v=1699953601\" data-srcset=\"//xplora.co.uk/cdn/shop/files/XGO3BLue_298x_crop_center.png?v=1699953601 298w,//xplora.co.uk/cdn/shop/files/XGO3BLue_596x_crop_center.png?v=1699953601 596w\" alt=\"XGO3 Kids Smartwatch\">",
+                    "target": [
+                        ".product-secondary-image[alt=\"XGO3 Kids Smartwatch\"][width=\"900\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img class=\"lazyload product-primary-image\" width=\"900\" height=\"1000\" data-sizes=\"auto\" src=\"//xplora.co.uk/cdn/shop/files/XGO3Black_20x_crop_center.png?v=1699953601\" data-srcset=\"//xplora.co.uk/cdn/shop/files/XGO3Black_298x_crop_center.png?v=1699953601 298w,//xplora.co.uk/cdn/shop/files/XGO3Black_596x_crop_center.png?v=1699953601 596w\" alt=\"XGO3 Kids Smartwatch\" style=\"object-position: 50.0% 50.0%;\">",
+                    "target": [
+                        ".product-primary-image[alt=\"XGO3 Kids Smartwatch\"][width=\"900\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a href=\"/products/xgo3-smartwatch\" title=\"XGO3 Kids Smartwatch\" class=\"product-card-title\">XGO3 Kids Smartwatch</a>",
+                    "target": [
+                        ".product-card-title[title=\"XGO3 Kids Smartwatch\"][href$=\"xgo3-smartwatch\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<ins><span class=\"amount \"><span class=\"from\">From</span> \u00a3139.99</span></ins>",
+                    "target": [
+                        ".columns:nth-child(3) > product-card > .product-card-info > .price > ins"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"product-card-swatches--container no-js-hidden\">",
+                    "target": [
+                        ".columns:nth-child(3) > product-card > .product-card-info > .product-card-swatches--container.no-js-hidden"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a href=\"/products/xgo3-smartwatch\" class=\"product-card--add-to-cart-button button accent\">Buy now</a>",
+                    "target": [
+                        ".columns:nth-child(3) > product-card > .product-card-info > .product-card--add-to-cart-button.accent.button"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,2812 @@
+{
+    "testEngine": {
+        "name": "axe-core",
+        "version": "4.4.3"
+    },
+    "testRunner": {
+        "name": "axe"
+    },
+    "timestamp": "2024-09-26T22:29:08.724Z",
+    "url": "https://www.medonet.pl/",
+    "toolOptions": {
+        "resultTypes": [
+            "violations"
+        ],
+        "reporter": "v1"
+    },
+    "passes": [
+        {
+            "id": "aria-allowed-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures ARIA attributes are allowed for an element's role",
+            "help": "Elements must only use allowed ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attributes are used correctly for the defined role"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "aria-unsupported-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute is supported"
+                        },
+                        {
+                            "id": "aria-prohibited-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "ARIA attribute is allowed"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a class=\"logo\" href=\"/\" data-section=\"header-navigation-logo\" aria-label=\"Logo Medonet\">\n        <svg class=\"page-header__site-logo\" aria-hidden=\"true\">\n            <use xlink:href=\"#logo\"></use>\n        </svg>\n    </a>",
+                    "target": [
+                        ".logo"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-body",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures aria-hidden='true' is not present on the document body.",
+            "help": "aria-hidden='true' must not be present on the document body",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-hidden-body",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "No aria-hidden attribute is present on document body"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<body id=\"pageBody\" class=\"medonet has-dialog cmp\">",
+                    "target": [
+                        "#pageBody"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-focus",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag131"
+            ],
+            "description": "Ensures aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "focusable-modal-open",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements while a modal is open"
+                        },
+                        {
+                            "id": "focusable-disabled",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        },
+                        {
+                            "id": "focusable-not-tabbable",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<svg class=\"page-header__site-logo\" aria-hidden=\"true\">\n            <use xlink:href=\"#logo\"></use>\n        </svg>",
+                    "target": [
+                        ".page-header__site-logo"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr-value",
+            "impact": "critical",
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all ARIA attributes have valid values",
+            "help": "ARIA attributes must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr-value?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "aria-valid-attr-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute values are valid"
+                        },
+                        {
+                            "id": "aria-errormessage",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "aria-errormessage exists and references elements visible to screen readers that use a supported aria-errormessage technique"
+                        },
+                        {
+                            "id": "aria-level",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-level values are valid"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a class=\"logo\" href=\"/\" data-section=\"header-navigation-logo\" aria-label=\"Logo Medonet\">\n        <svg class=\"page-header__site-logo\" aria-hidden=\"true\">\n            <use xlink:href=\"#logo\"></use>\n        </svg>\n    </a>",
+                    "target": [
+                        ".logo"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures attributes that begin with aria- are valid ARIA attributes",
+            "help": "ARIA attributes must conform to valid names",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-valid-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute name is valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a class=\"logo\" href=\"/\" data-section=\"header-navigation-logo\" aria-label=\"Logo Medonet\">\n        <svg class=\"page-header__site-logo\" aria-hidden=\"true\">\n            <use xlink:href=\"#logo\"></use>\n        </svg>\n    </a>",
+                    "target": [
+                        ".logo"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "avoid-inline-spacing",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag21aa",
+                "wcag1412"
+            ],
+            "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+            "help": "Inline text spacing must be adjustable with custom stylesheets",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/avoid-inline-spacing?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "avoid-inline-spacing",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No inline styles with '!important' that affect text spacing has been specified"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<picture class=\"teaser__author-image-block\" style=\"height: 24px\">",
+                    "target": [
+                        ".l-size > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__author > .teaser__author-image-block"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "button-name",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures buttons have discernible text",
+            "help": "Buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/button-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "button-has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has inner text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button type=\"submit\" class=\"page-header__search-submit\">",
+                    "target": [
+                        ".page-header__search-submit"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "bypass",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag241",
+                "section508",
+                "section508.22.o"
+            ],
+            "description": "Ensures each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+            "help": "Page must have means to bypass repeated blocks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/bypass?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "internal-link-present",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Valid skip link found"
+                        },
+                        {
+                            "id": "header-present",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1 class=\"heading-for-screen-readers\">Artyku\u0142y</h1>",
+                                    "target": [
+                                        "h1"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Co kryje woda powodziowa? Toksykolog o najgorszym scenariuszu. \"Bardzo niebezpieczne\"</h3>",
+                                    "target": [
+                                        ".l-size > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Zmiany dla pacjent\u00f3w od pa\u017adziernika. Za te leki zap\u0142acisz mniej w aptece</h3>",
+                                    "target": [
+                                        "div[data-section=\"new_sg_recommended\"] > .one-plus-three__teasers-list > .one-plus-three__item--n-item.one-plus-three__item.item1 > .s-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Sprawd\u017a teraz, czy zdrowo si\u0119 od\u017cywiasz. Zr\u00f3b TEST</h3>",
+                                    "target": [
+                                        "div[data-section=\"new_sg_recommended\"] > .one-plus-three__teasers-list > .one-plus-three__item--n-item.one-plus-three__item.item2 > .s-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Wysyp nowotwor\u00f3w u m\u0142odych. Na co choruj\u0105 najcz\u0119\u015bciej i dlaczego? Eksperci m\u00f3wi\u0105 wprost</h3>",
+                                    "target": [
+                                        "div[data-section=\"new_sg_recommended\"] > .one-plus-three__teasers-list > .one-plus-three__item--n-item.one-plus-three__item.item3 > .s-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Bierzesz magnez? Dorzu\u0107 do niego jedn\u0105 witamin\u0119. To najlepsze combo</h3>",
+                                    "target": [
+                                        "div[data-section=\"new_sg_recommended\"] > .one-plus-three__teasers-list > .one-plus-three__item--last-item.one-plus-three__item--n-item.one-plus-three__item > .s-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"default__title\">O tym si\u0119 m\u00f3wi</h3>",
+                                    "target": [
+                                        "div[data-section=\"theme_of_the_week\"] > .default__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Zakaz sprzeda\u017cy popularnych tabletek na gard\u0142o. \"Dla ochrony zdrowia i \u017cycia pacjent\u00f3w\"</h3>",
+                                    "target": [
+                                        "div[data-section=\"theme_of_the_week\"] > .default__teasers-list > .item0.default__item > .m-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Zmiana dla pacjent\u00f3w od pa\u017adziernika. Lek na cukrzyc\u0119 znika z listy refundacyjnej</h3>",
+                                    "target": [
+                                        "div[data-section=\"theme_of_the_week\"] > .default__teasers-list > .item1.default__item > .m-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Nowy cennik w sanatoriach ju\u017c od 1 pa\u017adziernika. Kuracjusze zap\u0142ac\u0105 mniej</h3>",
+                                    "target": [
+                                        "div[data-section=\"theme_of_the_week\"] > .default__teasers-list > .item2.default__item > .m-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"s-size-with-search__title\">Najcz\u0119\u015bciej czytane</h3>",
+                                    "target": [
+                                        ".s-size-with-search__teasers-block > .s-size-with-search__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Zakaz sprzeda\u017cy popularnych tabletek na gard\u0142o. \"Dla ochrony zdrowia i \u017cycia pacjent\u00f3w\"</h3>",
+                                    "target": [
+                                        ".s-size-with-search__item.item0 > .s-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">\"Jestem kardiologiem. Oto najwa\u017cniejsze badanie, jakie musisz zrobi\u0107\"</h3>",
+                                    "target": [
+                                        ".s-size-with-search__item.item1 > .s-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Z czym nie \u0142\u0105czy\u0107 witaminy B12? To dla niej najgorsze towarzystwo</h3>",
+                                    "target": [
+                                        ".s-size-with-search__item.item2 > .s-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Tych lek\u00f3w nie wolno bra\u0107 na noc. Nie zadzia\u0142aj\u0105 jak nale\u017cy</h3>",
+                                    "target": [
+                                        ".s-size-with-search__item.item3 > .s-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"s-size-with-search__title\">Tematy na topie</h3>",
+                                    "target": [
+                                        ".s-size-with-search__search-block > .s-size-with-search__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"default__title\">Wa\u017cne tematy</h3>",
+                                    "target": [
+                                        "div[data-section=\"new_sg_editors_recommend\"] > .default__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Nie pozw\u00f3l, by grypa zmieni\u0142a twoje \u017cycie. 10 powod\u00f3w, dla kt\u00f3rych powiniene\u015b si\u0119 zaszczepi\u0107</h3>",
+                                    "target": [
+                                        "div[data-section=\"new_sg_editors_recommend\"] > .default__teasers-list > .item0.default__item > .m-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Choruj\u0105 tylko kobiety 50+? Fakty i mity na temat zaka\u017ce\u0144 dr\u00f3g moczowych</h3>",
+                                    "target": [
+                                        "div[data-section=\"new_sg_editors_recommend\"] > .default__teasers-list > .item1.default__item > .m-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Bezpieczny senior dzi\u0119ki szczepieniu przeciw grypie</h3>",
+                                    "target": [
+                                        ".item2.default__item > .teaser--video.m-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Mamy wysyp kobiecych nowotwor\u00f3w. Diagnoz\u0119 \"rak\" s\u0142ysz\u0105 coraz m\u0142odsze Polki. Ginekolog wskaza\u0142 trzy przyczyny</h3>",
+                                    "target": [
+                                        ".item3.default__item > .m-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">To si\u0119 zmieni w wystawianiu L4 od 1 pa\u017adziernika. ZUS zapowiada nowe zasady</h3>",
+                                    "target": [
+                                        ".item4.default__item > .m-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Wyczekane sanatorium zmieni\u0142o si\u0119 w koszmar. \"Spa\u0142am jak zaj\u0105c pod miedz\u0105\", \"wsiedli\u015bmy do samochodu i wr\u00f3cili\u015bmy do domu\"</h3>",
+                                    "target": [
+                                        ".item5.default__item > .m-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">7 cech ludzi z wysokim IQ oraz inteligencj\u0105 emocjonaln\u0105. Oni odnosz\u0105 sukcesy w \u017cyciu</h3>",
+                                    "target": [
+                                        ".item6.default__item > .m-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Mama nie odbiera\u0142a telefonu. To by\u0142 jeden z pierwszych objaw\u00f3w choroby Alzheimera</h3>",
+                                    "target": [
+                                        ".item7.default__item > .m-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Jak zabezpieczy\u0107 m\u00f3zg przed demencj\u0105? Odkryto 12 czynnik\u00f3w, kt\u00f3re go ochroni\u0105</h3>",
+                                    "target": [
+                                        ".item8.default__item > .m-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Padaczka, depresja, schizofrenia \u2013 trzy choroby m\u00f3zgu. Co warto o nich wiedzie\u0107?</h3>",
+                                    "target": [
+                                        ".item9.default__item > .m-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Baby blues \u2013 jak go rozpozna\u0107?</h3>",
+                                    "target": [
+                                        ".item10.default__item > .m-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Ulubie\u0144cy Polak\u00f3w \u2013 kto zwyci\u0119\u017cy w plebiscycie Znakomito\u015b\u0107 roku DOZ.pl 2024?</h3>",
+                                    "target": [
+                                        ".item11 > .teaser--video.m-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Czy potrafisz rozpozna\u0107 objawy baby blues?</h3>",
+                                    "target": [
+                                        ".item12 > .m-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">241 lek\u00f3w, kt\u00f3rych mo\u017ce zabrakn\u0105\u0107 w aptekach. Jest nowa lista</h3>",
+                                    "target": [
+                                        ".item13 > .m-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Mia\u0142a 58 lat, gdy zdiagnozowano u niej alzheimera. M\u00f3wi, jakie by\u0142y wczesne objawy [FRAGMENT KSI\u0104\u017bKI]</h3>",
+                                    "target": [
+                                        ".item14 > .m-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"m-size-right-ad__title\">Najnowsze</h3>",
+                                    "target": [
+                                        ".m-size-right-ad__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Nawet co trzecie L4 okazuje si\u0119 \"lewe\". Oto co grozi pracownikowi, je\u015bli kontrola ujawni nadu\u017cycie</h3>",
+                                    "target": [
+                                        "#onet-ad-flat-natleft-pos-1 > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Co si\u0119 stanie z twoim cia\u0142em, kiedy zaczniesz codziennie bra\u0107 witaminy?</h3>",
+                                    "target": [
+                                        ".m-size-right-ad__item.item1 > .m-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Najcz\u0119stsze przyczyny b\u00f3lu \u0142ydek. Tak boli np. przy zakrzepicy \u017cy\u0142</h3>",
+                                    "target": [
+                                        ".m-size-right-ad__item.item2 > .m-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">\u015apisz na plecach? Mo\u017cesz si\u0119 nara\u017ca\u0107 na alzheimera i parkinsona</h3>",
+                                    "target": [
+                                        "#onet-ad-flat-natleft-pos-2 > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Przera\u017caj\u0105cy syndrom. Wygl\u0105da jak demencja, ale atakuje znacznie szybciej</h3>",
+                                    "target": [
+                                        "#onet-ad-flat-natleft-pos-3 > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Od pa\u017adziernika pacjent\u00f3w czeka mn\u00f3stwo zmian. B\u0119d\u0105 te\u017c trzy nowe \u015bwiadczenia</h3>",
+                                    "target": [
+                                        ".m-size-right-ad__item.item5 > .m-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"newest-from-services__title\">Najciekawsze tre\u015bci z naszych serwis\u00f3w</h3>",
+                                    "target": [
+                                        ".newest-from-services__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Grecy z wyspy d\u0142ugowieczno\u015bci jedz\u0105 to codziennie. \u017byj\u0105 po 100 lat w zdrowiu</h3>",
+                                    "target": [
+                                        "div[data-section=\"zywienie\"] > .newest-from-services__teasers > .m-size.teaser:nth-child(1) > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">W czym jest du\u017co \u017celaza? Te produkty zawieraj\u0105 go najwi\u0119cej LISTA</h3>",
+                                    "target": [
+                                        "div[data-section=\"zywienie\"] > .newest-from-services__teasers > .m-size.teaser:nth-child(2) > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">GIS wycofuje popularny kosmetyk. P\u0142yn mo\u017ce zawiera\u0107 bakterie</h3>",
+                                    "target": [
+                                        "div[data-section=\"uroda\"] > .newest-from-services__teasers > .m-size.teaser:nth-child(1) > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Dwuetapowe oczyszczanie twarzy - korea\u0144ski spos\u00f3b na pi\u0119kn\u0105 sk\u00f3r\u0119 bez niedoskona\u0142o\u015bci</h3>",
+                                    "target": [
+                                        "div[data-section=\"uroda\"] > .newest-from-services__teasers > .m-size.teaser:nth-child(2) > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Czy wiesz, jak dba\u0107 o higien\u0119 jamy ustnej swojego dziecka? Sprawd\u017a swoj\u0105 wiedz\u0119</h3>",
+                                    "target": [
+                                        "div[data-section=\"dziecko\"] > .newest-from-services__teasers > .m-size.teaser:nth-child(1) > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Tego przenigdy nie m\u00f3w najstarszemu dziecku. 12 zakazanych zda\u0144</h3>",
+                                    "target": [
+                                        "div[data-section=\"dziecko\"] > .newest-from-services__teasers > .m-size.teaser:nth-child(2) > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"tiles_title\">\n                \u017byj zdrowo \u2013 czytaj nasze cykle\n            </h2>",
+                                    "target": [
+                                        "div[data-section=\"editorial_cycles\"] > .tiles_header-container > .tiles_title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"section-heading_title\">\n        Okiem eksperta\n    </h2>",
+                                    "target": [
+                                        ".section-heading_title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Czy warto wykona\u0107 lakierowanie z\u0119b\u00f3w? Dentystka wyja\u015bnia</h3>",
+                                    "target": [
+                                        "div[data-section=\"new_sg_expert\"] > .default__teasers-list > .item0.default__item > .m-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Co zrobi\u0107, gdy ma si\u0119 krzywe z\u0119by? Dentystka t\u0142umaczy</h3>",
+                                    "target": [
+                                        "div[data-section=\"new_sg_expert\"] > .default__teasers-list > .item1.default__item > .m-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Jak dba\u0107 o protez\u0119, \u017ceby nie \u015bmierdzia\u0142o z ust? Dentystka wyja\u015bnia</h3>",
+                                    "target": [
+                                        "div[data-section=\"new_sg_expert\"] > .default__teasers-list > .item2.default__item > .m-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"tiles_title\">\n                Poznaj narz\u0119dzia i kalkulatory\n            </h2>",
+                                    "target": [
+                                        ".tiles--with-border > .tiles_header-container > .tiles_title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"one-plus-three__title\">Zobacz nasze wideo</h3>",
+                                    "target": [
+                                        ".one-plus-three__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Jak rozpozna\u0107 czerniaka? Zasada \"ABCDE\" mo\u017ce uratowa\u0107 ci \u017cycie</h3>",
+                                    "target": [
+                                        ".one-plus-three__item--n-item.one-plus-three__item.item1 > .teaser--video.s-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">W jaki spos\u00f3b \u201epracujemy\u201d na choroby nowotworowe? Mo\u017cemy zrobi\u0107 znacznie wi\u0119cej, by si\u0119 przed nimi chroni\u0107!</h3>",
+                                    "target": [
+                                        ".one-plus-three__item--n-item.one-plus-three__item.item2 > .teaser--video.s-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"teaser__title\">Pi\u0119\u0107 powod\u00f3w, dla kt\u00f3rych warto je\u015b\u0107 kapust\u0119</h3>",
+                                    "target": [
+                                        ".one-plus-three__item--last-item.one-plus-three__item--n-item.one-plus-three__item > .teaser--video.s-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Page has a heading"
+                        },
+                        {
+                            "id": "landmark",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<main id=\"mainHolder\" class=\"mainHolder\" aria-label=\"artyku\u0142y\">",
+                                    "target": [
+                                        "#mainHolder"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Page has a landmark region"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"pl\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#000000",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 21,
+                                "fontSize": "12.0pt (16px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 21"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input class=\"page-header__search\" id=\"search\" name=\"q\" placeholder=\"szukaj leku, choroby, informacji\">",
+                    "target": [
+                        "#search"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "document-title",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag242",
+                "ACT"
+            ],
+            "description": "Ensures each HTML document contains a non-empty <title> element",
+            "help": "Documents must have <title> element to aid in navigation",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/document-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "doc-has-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has a non-empty <title> element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"pl\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-active",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value of active elements is unique",
+            "help": "IDs of active elements must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-active",
+                            "data": "loginBar",
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has no active elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a class=\"page-header__login-button svg-icon\" id=\"loginBar\" data-section=\"loginbar-init\" href=\"#\" aria-label=\"profil u\u017cytkownika\">",
+                    "target": [
+                        "#loginBar"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-aria",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value used in ARIA and in labels is unique",
+            "help": "IDs used in ARIA and labels must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-aria",
+                            "data": "search",
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input class=\"page-header__search\" id=\"search\" name=\"q\" placeholder=\"szukaj leku, choroby, informacji\">",
+                    "target": [
+                        "#search"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": "minor",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "adsinit",
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<script id=\"adsinit\" data-original=\"https://sgqcvfjvr.onet.pl/YnVpbGQvezlza2x0NDY4fWRsQXBpL2RsLmxpYntOTWFzXzQ2OH0ubWluLmpz\">",
+                    "target": [
+                        "#adsinit"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "empty-heading",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "best-practice"
+            ],
+            "description": "Ensures headings have discernible text",
+            "help": "Headings should not be empty",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/empty-heading?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h1 class=\"heading-for-screen-readers\">Artyku\u0142y</h1>",
+                    "target": [
+                        "h1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "form-field-multiple-labels",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag332"
+            ],
+            "description": "Ensures form field does not have multiple label elements",
+            "help": "Form field must not have multiple label elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/form-field-multiple-labels?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "multiple-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Form field does not have multiple label elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input class=\"page-header__search\" id=\"search\" name=\"q\" placeholder=\"szukaj leku, choroby, informacji\">",
+                    "target": [
+                        "#search"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "frame-title-unique",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ],
+            "description": "Ensures <iframe> and <frame> elements contain a unique title attribute",
+            "help": "Frames should have a unique title attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/frame-title-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "unique-frame-title",
+                            "data": "cmp-consent-store",
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element's title attribute is unique"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<iframe style=\"width:1px;height:1px;position:absolute;left:-99px;top:-99px;\" src=\"https://csr.onet.pl/1746213/cmp?v=3\" title=\"cmp-consent-store\"></iframe>",
+                    "target": [
+                        "iframe[title=\"cmp-consent-store\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "frame-title",
+            "impact": "serious",
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag241",
+                "wcag412",
+                "section508",
+                "section508.22.i"
+            ],
+            "description": "Ensures <iframe> and <frame> elements have an accessible name",
+            "help": "Frames must have an accessible name",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/frame-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "non-empty-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<iframe style=\"width:1px;height:1px;position:absolute;left:-99px;top:-99px;\" src=\"https://csr.onet.pl/1746213/cmp?v=3\" title=\"cmp-consent-store\"></iframe>",
+                    "target": [
+                        "iframe[title=\"cmp-consent-store\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "heading-order",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": {
+                                "headingOrder": [
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > h1:nth-child(1)"
+                                        ],
+                                        "level": 1
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(2) > div > ul > li:nth-child(1) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(2) > div > ul > li:nth-child(2) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(2) > div > ul > li:nth-child(3) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(2) > div > ul > li:nth-child(4) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(2) > div > ul > li:nth-child(5) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(4) > div > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(4) > div > ul:nth-child(2) > li:nth-child(1) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(4) > div > ul:nth-child(2) > li:nth-child(2) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(4) > div > ul:nth-child(2) > li:nth-child(3) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(5) > div > div:nth-child(1) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(5) > div > div:nth-child(1) > ul:nth-child(2) > li:nth-child(1) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(5) > div > div:nth-child(1) > ul:nth-child(2) > li:nth-child(2) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(5) > div > div:nth-child(1) > ul:nth-child(2) > li:nth-child(3) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(5) > div > div:nth-child(1) > ul:nth-child(2) > li:nth-child(4) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(5) > div > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(6) > div > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(6) > div > ul:nth-child(2) > li:nth-child(1) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(6) > div > ul:nth-child(2) > li:nth-child(2) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(6) > div > ul:nth-child(2) > li:nth-child(3) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(6) > div > ul:nth-child(2) > li:nth-child(4) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(6) > div > ul:nth-child(2) > li:nth-child(5) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(6) > div > ul:nth-child(2) > li:nth-child(6) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(6) > div > ul:nth-child(2) > li:nth-child(7) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(6) > div > ul:nth-child(2) > li:nth-child(8) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(6) > div > ul:nth-child(2) > li:nth-child(9) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(6) > div > ul:nth-child(2) > li:nth-child(10) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(6) > div > ul:nth-child(2) > li:nth-child(11) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(6) > div > ul:nth-child(2) > li:nth-child(12) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(6) > div > ul:nth-child(2) > li:nth-child(13) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(6) > div > ul:nth-child(2) > li:nth-child(14) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(6) > div > ul:nth-child(2) > li:nth-child(15) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(8) > div > div:nth-child(1) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(8) > div > div:nth-child(1) > ul:nth-child(2) > li:nth-child(1) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(8) > div > div:nth-child(1) > ul:nth-child(2) > li:nth-child(2) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(8) > div > div:nth-child(1) > ul:nth-child(2) > li:nth-child(3) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(8) > div > div:nth-child(1) > ul:nth-child(2) > li:nth-child(4) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(8) > div > div:nth-child(1) > ul:nth-child(2) > li:nth-child(5) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(8) > div > div:nth-child(1) > ul:nth-child(2) > li:nth-child(6) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(9) > div:nth-child(1) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(9) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(9) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(9) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(1) > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(9) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(9) > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(9) > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(11) > div > div:nth-child(1) > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(12) > div > h2:nth-child(1)"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(13) > div > ul > li:nth-child(1) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(13) > div > ul > li:nth-child(2) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(13) > div > ul > li:nth-child(3) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(14) > div > div:nth-child(1) > h2:nth-child(1)"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(15) > div > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(15) > div > ul:nth-child(2) > li:nth-child(1) > div:nth-child(1) > div > iframe"
+                                        ],
+                                        "level": -1
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(15) > div > ul:nth-child(2) > li:nth-child(2) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(15) > div > ul:nth-child(2) > li:nth-child(3) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div:nth-child(15) > div > ul:nth-child(2) > li:nth-child(4) > div > a > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > iframe:nth-child(14)"
+                                        ],
+                                        "level": -1
+                                    }
+                                ]
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h1 class=\"heading-for-screen-readers\">Artyku\u0142y</h1>",
+                    "target": [
+                        "h1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-has-lang",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures every HTML document has a lang attribute",
+            "help": "<html> element must have a lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-has-lang?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "The <html> element has a lang attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"pl\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-lang-valid",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures the lang attribute of the <html> element has a valid value",
+            "help": "<html> element must have a valid value for the lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-lang-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "valid-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Value of lang attribute is included in the list of valid languages"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<html lang=\"pl\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "identical-links-same-purpose",
+            "impact": "minor",
+            "tags": [
+                "cat.semantics",
+                "wcag2aaa",
+                "wcag249"
+            ],
+            "description": "Ensure that links with the same accessible name serve a similar purpose",
+            "help": "Links with the same name must have a similar purpose",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/identical-links-same-purpose?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "identical-links-same-purpose",
+                            "data": {
+                                "name": "przejd\u017a do artyku\u0142\u00f3w",
+                                "urlProps": {
+                                    "protocol": "http:",
+                                    "hostname": "www.medonet.pl",
+                                    "port": "",
+                                    "pathname": "/",
+                                    "search": {},
+                                    "hash": "",
+                                    "filename": ""
+                                }
+                            },
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "There are no other links with the same name, that go to a different URL"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a class=\"skip-main\" href=\"#mainHolder\">Przejd\u017a do artyku\u0142\u00f3w</a>",
+                    "target": [
+                        ".skip-main"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures <img> elements have alternate text or a role of none or presentation",
+            "help": "Images must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-alt",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has an alt attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "alt-space-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has a valid alt attribute value"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img class=\"image\" alt=\"Co kryje woda powodziowa? Toksykolog o najgorszym scenariuszu. &amp;quot;Bardzo niebezpieczne&amp;quot;\" width=\"744\" height=\"376\" src=\"//ocdn.eu/pulscms-transforms/1/gmCk9kpTURBXy8wNmQ4Mjk0Y2Q2MzQ5OTE2NGQwZjEwNGRjZWNiNmYxZC5wbmeRkwXNAujNAXjeAAGhMAE\">",
+                    "target": [
+                        "img[width=\"744\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-redundant-alt",
+            "impact": "minor",
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ],
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-redundant-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img class=\"image\" alt=\"Co kryje woda powodziowa? Toksykolog o najgorszym scenariuszu. &amp;quot;Bardzo niebezpieczne&amp;quot;\" width=\"744\" height=\"376\" src=\"//ocdn.eu/pulscms-transforms/1/gmCk9kpTURBXy8wNmQ4Mjk0Y2Q2MzQ5OTE2NGQwZjEwNGRjZWNiNmYxZC5wbmeRkwXNAujNAXjeAAGhMAE\">",
+                    "target": [
+                        "img[width=\"744\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label-title-only",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "best-practice"
+            ],
+            "description": "Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes",
+            "help": "Form elements should have a visible label",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "title-only",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Form element does not solely use title attribute for its label"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input class=\"page-header__search\" id=\"search\" name=\"q\" placeholder=\"szukaj leku, choroby, informacji\">",
+                    "target": [
+                        "#search"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag412",
+                "wcag131",
+                "section508",
+                "section508.22.n",
+                "ACT"
+            ],
+            "description": "Ensures every form element has a label",
+            "help": "Form elements must have labels",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element has an explicit <label>"
+                        },
+                        {
+                            "id": "non-empty-placeholder",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a placeholder attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "hidden-explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element has a visible explicit <label>"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input class=\"page-header__search\" id=\"search\" name=\"q\" placeholder=\"szukaj leku, choroby, informacji\">",
+                    "target": [
+                        "#search"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-banner-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the banner landmark is at top level",
+            "help": "Banner landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-banner-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "banner"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The banner landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header id=\"pageHeader\" class=\"page-header xl:mb-8\">",
+                    "target": [
+                        "#pageHeader"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-complementary-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the complementary landmark or aside is at top level",
+            "help": "Aside should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-complementary-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "complementary"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The complementary landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<aside class=\"adRight\">\n                    <div class=\"onet-ad\" id=\"onet-ad-right\" data-slot=\"right\" data-refresh=\"true\"></div>\n                </aside>",
+                    "target": [
+                        ".m-size-right-ad__ad > aside"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-contentinfo-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the contentinfo landmark is at top level",
+            "help": "Contentinfo landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-contentinfo-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "contentinfo"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The contentinfo landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<footer class=\"site-footer\">\n        <div data-lazy-component=\"\" data-lazy-component-block-name=\"partnersSlider\" data-lazy-component-script=\"partners-slider\"></div>\n        <div data-lazy-component=\"\" data-lazy-component-block-name=\"footer\" data-lazy-component-script=\"\"></div>\n    </footer>",
+                    "target": [
+                        "footer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-main-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the main landmark is at top level",
+            "help": "Main landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-main-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "main"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The main landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<main id=\"mainHolder\" class=\"mainHolder\" aria-label=\"artyku\u0142y\">",
+                    "target": [
+                        "#mainHolder"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-banner",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one banner landmark",
+            "help": "Document should not have more than one banner landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-banner?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-banner",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one banner landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header id=\"pageHeader\" class=\"page-header xl:mb-8\">",
+                    "target": [
+                        "#pageHeader"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-contentinfo",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one contentinfo landmark",
+            "help": "Document should not have more than one contentinfo landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-contentinfo?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-contentinfo",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one contentinfo landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<footer class=\"site-footer\">\n        <div data-lazy-component=\"\" data-lazy-component-block-name=\"partnersSlider\" data-lazy-component-script=\"partners-slider\"></div>\n        <div data-lazy-component=\"\" data-lazy-component-block-name=\"footer\" data-lazy-component-script=\"\"></div>\n    </footer>",
+                    "target": [
+                        "footer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-main",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one main landmark",
+            "help": "Document should not have more than one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-main",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one main landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<main id=\"mainHolder\" class=\"mainHolder\" aria-label=\"artyku\u0142y\">",
+                    "target": [
+                        "#mainHolder"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-one-main",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has a main landmark",
+            "help": "Document should have one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-one-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-main",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<main id=\"mainHolder\" class=\"mainHolder\" aria-label=\"artyku\u0142y\">",
+                                    "target": [
+                                        "#mainHolder"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Document has at least one main landmark"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"pl\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-unique",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "help": "Ensures landmarks are unique",
+            "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-unique",
+                            "data": {
+                                "role": "banner",
+                                "accessibleText": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Landmarks must have a unique role or role/label/title (i.e. accessible name) combination"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header id=\"pageHeader\" class=\"page-header xl:mb-8\">",
+                    "target": [
+                        "#pageHeader"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a class=\"skip-main\" href=\"#mainHolder\">Przejd\u017a do artyku\u0142\u00f3w</a>",
+                    "target": [
+                        ".skip-main"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "list",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures that lists are structured correctly",
+            "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/list?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "only-listitems",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List element only has direct children that are allowed inside <li> elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<ul class=\"siteNavList siteNavList--services\">",
+                    "target": [
+                        ".siteNavList"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "listitem",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures <li> elements are used semantically",
+            "help": "<li> elements must be contained in a <ul> or <ol>",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/listitem?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<li class=\"siteNavItem  item0\">",
+                    "target": [
+                        ".siteNavItem.item0"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport-large",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> can scale a significant amount",
+            "help": "Users should be able to zoom and scale the text up to 500%",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport-large?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport-large",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "<meta> tag does not prevent significant zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice",
+                "ACT"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> does not disable text scaling and zooming",
+            "help": "Zooming and scaling should not be disabled",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "<meta> tag does not disable zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "nested-interactive",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+            "help": "Interactive controls must not be nested",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/nested-interactive?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "no-focusable-content",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have focusable descendants"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button type=\"submit\" class=\"page-header__search-submit\">",
+                    "target": [
+                        ".page-header__search-submit"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "page-has-heading-one",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+            "help": "Page should contain a level-one heading",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/page-has-heading-one?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-heading-one",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1 class=\"heading-for-screen-readers\">Artyku\u0142y</h1>",
+                                    "target": [
+                                        "h1"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Page has at least one level-one heading"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"pl\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "All page content is contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<noscript>\n<iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-PTKFSH2\" height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe>\n</noscript>",
+                    "target": [
+                        "#pageBody > noscript"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "skip-link",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensure all skip links have a focusable target",
+            "help": "The skip-link target should exist and be focusable",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/skip-link?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "skip-link",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Skip link target exists"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a class=\"skip-main\" href=\"#mainHolder\">Przejd\u017a do artyku\u0142\u00f3w</a>",
+                    "target": [
+                        ".skip-main"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "tabindex",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures tabindex attribute values are not greater than 0",
+            "help": "Elements should not have tabindex greater than zero",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/tabindex?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "tabindex",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have a tabindex greater than 0"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div tabindex=\"0\"></div>",
+                    "target": [
+                        ".cmp-popup_popup > div:nth-child(2)"
+                    ]
+                }
+            ]
+        }
+    ],
+    "violations": [
+        {
+            "id": "duplicate-id",
+            "impact": "minor",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "Warstwa_1-2",
+                            "relatedNodes": [
+                                {
+                                    "html": "<g id=\"Warstwa_1-2\" data-name=\"Warstwa 1-2\">      <path id=\"Path_1517\" data-name=\"Path 1517\" class=\"cls-2\" d=\"M9.51,1.15l3.66-.84v4.28h3.74v3.58h-3.74v3.09l-3.66,1v-4.28h-2.07v-3.39h2.07V1.15Z\"></path>    </g>",
+                                    "target": [
+                                        "g[data-name=\"Warstwa 1-2\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: Warstwa_1-2"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<g id=\"Warstwa_1-2\" data-name=\"Warstwa 1\">",
+                    "target": [
+                        "g[data-name=\"Warstwa 1\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: Warstwa_1-2"
+                }
+            ]
+        },
+        {
+            "id": "frame-title",
+            "impact": "serious",
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag241",
+                "wcag412",
+                "section508",
+                "section508.22.i"
+            ],
+            "description": "Ensures <iframe> and <frame> elements have an accessible name",
+            "help": "Frames must have an accessible name",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/frame-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "presentational-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<iframe src=\"https://pulsembed.eu/p2em/w2X3KYbNb/\" frameborder=\"0\" sandbox=\"allow-forms allow-scripts allow-same-origin allow-popups allow-top-navigation-by-user-activation allow-popups-to-escape-sandbox allow-presentation\" webkitallowfullscreen=\"webkitallowfullscreen\" mozallowfullscreen=\"mozallowfullscreen\" allowfullscreen=\"allowfullscreen\" allow=\"autoplay; encrypted-media\" style=\"position: absolute; top: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%; border: none;\">",
+                    "target": [
+                        "iframe[frameborder=\"0\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has no title attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                }
+            ]
+        },
+        {
+            "id": "heading-order",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order invalid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h3 class=\"teaser__title\">Co kryje woda powodziowa? Toksykolog o najgorszym scenariuszu. \"Bardzo niebezpieczne\"</h3>",
+                    "target": [
+                        ".l-size > .teaser__link[data-allow-layer=\"\"] > .teaser__information > .teaser__title"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Heading order invalid"
+                }
+            ]
+        },
+        {
+            "id": "image-redundant-alt",
+            "impact": "minor",
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ],
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-redundant-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img class=\"tiles_item_image\" alt=\"Psychologiczne poniedzia\u0142ki\" width=\"168\" height=\"176\" src=\"https://ocdn.eu/pulscms-transforms/1/Qank9kpTURBXy81OGFkNDY3MWRjYmJkZmNjMjczN2ZiMThjODdiNDM5My5wbmeSlQMAAMyozKiTBcyozLDeAAKhMAGhMQE\" loading=\"lazy\">",
+                    "target": [
+                        "img[alt=\"Psychologiczne poniedzia\u0142ki\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img class=\"tiles_item_image\" alt=\"Quizy\" width=\"168\" height=\"176\" src=\"https://ocdn.eu/pulscms-transforms/1/Zd4k9kpTURBXy8wZjBlNGY4NDE3MzdiZjVlMzc3YjE1NTA2YzczOTY4ZS5wbmeSlQMAAMypzKmTBcyozLDeAAKhMAGhMQE\" loading=\"lazy\">",
+                    "target": [
+                        "img[alt=\"Quizy\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img class=\"tiles_item_image\" alt=\"Akademia Medonet\" width=\"168\" height=\"176\" src=\"https://ocdn.eu/pulscms-transforms/1/Qhqk9kpTURBXy9lMGVhNDg0MWQ4ZGUyOWE5NmIzOWUzNjdiNzQzYWVlYi5wbmeSlQMAAMypzKmTBcyozLDeAAKhMAGhMQE\" loading=\"lazy\">",
+                    "target": [
+                        "img[alt=\"Akademia Medonet\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img class=\"tiles_item_image\" alt=\"Grzybowy elementarz\" width=\"168\" height=\"176\" src=\"https://ocdn.eu/pulscms-transforms/1/GM4k9kpTURBXy9jNGZiMmNiYmMzZTMwM2VkZjY5OTdkODM0YzA5YzQ3My5qcGeSlQMACc0B-M0B-JMFzKjMsN4AAqEwAaExAQ\" loading=\"lazy\">",
+                    "target": [
+                        "img[alt=\"Grzybowy elementarz\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img class=\"tiles_item_image\" alt=\"Ogrodowa apteczka\" width=\"168\" height=\"176\" src=\"https://ocdn.eu/pulscms-transforms/1/zTdk9kpTURBXy8wYmU4YmU4YTJmZjg3MWVmNjhhM2I4MzIyYmM3NDk0YS5qcGeSlQMACM0B-M0B-JMFzKjMsN4AAqEwAaExAQ\" loading=\"lazy\">",
+                    "target": [
+                        "img[alt=\"Ogrodowa apteczka\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img class=\"tiles_item_image\" alt=\"Zdrowie pracownik\u00f3w\" width=\"168\" height=\"176\" src=\"https://ocdn.eu/pulscms-transforms/1/veUk9kpTURBXy85ODRhZGNjZDA1MmMxYjliZDBlZDExY2U4YmUyOTRjMi5wbmeSlQMAAMypzKmTBcyozLDeAAKhMAGhMQE\" loading=\"lazy\">",
+                    "target": [
+                        "img[alt=\"Zdrowie pracownik\u00f3w\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img class=\"tiles_item_image\" alt=\"Symptom checker\" width=\"168\" height=\"168\" src=\"https://ocdn.eu/pulscms-transforms/1/ihOk9kpTURBXy81NjY5MGRmZmYwM2VjMGQxNzFmNDkxMWM4NDM4MDQ4ZS5wbmeSlQMAAMyozKiTBcyozKjeAAKhMAGhMQE\" loading=\"lazy\">",
+                    "target": [
+                        "img[alt=\"Symptom checker\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img class=\"tiles_item_image\" alt=\"Kalkulator wieku biologicznego\" width=\"168\" height=\"168\" src=\"https://ocdn.eu/pulscms-transforms/1/7D7k9kpTURBXy83OWQzYjEyODNmZjI2MTM3YTM1NTFiMGVmZmIzY2JiNS5wbmeSlQMAAMyozKiTBcyozKjeAAKhMAGhMQE\" loading=\"lazy\">",
+                    "target": [
+                        "img[alt=\"Kalkulator wieku biologicznego\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img class=\"tiles_item_image\" alt=\"Kalkulator BMI\" width=\"168\" height=\"168\" src=\"https://ocdn.eu/pulscms-transforms/1/MNEk9kpTURBXy81NTU1OTVmNTMzMTZiODlmOTY5ZDlhODAwOGJmYzI2OC5wbmeSlQMAAMyozKiTBcyozKjeAAKhMAGhMQE\" loading=\"lazy\">",
+                    "target": [
+                        "img[alt=\"Kalkulator BMI\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img class=\"tiles_item_image\" alt=\"Sprawd\u017a ryzyko chor\u00f3b serca\" width=\"168\" height=\"168\" src=\"https://ocdn.eu/pulscms-transforms/1/5HDk9kpTURBXy80N2QwNDY2NTRjZmE3YTliMzIwYjRiNDJjOTU3N2RhNi5wbmeSlQMAAMyozKiTBcyozKjeAAKhMAGhMQE\" loading=\"lazy\">",
+                    "target": [
+                        "img[alt=\"Sprawd\u017a ryzyko chor\u00f3b serca\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img class=\"tiles_item_image\" alt=\"Sprawd\u017a jako\u015b\u0107 swojego snu\" width=\"168\" height=\"168\" src=\"https://ocdn.eu/pulscms-transforms/1/AV8k9kpTURBXy84NTNmN2Y2ZDYwZDhjNmE2N2YzNDk5MjgwOTdjYmNlMy5wbmeSlQMAAMyozKiTBcyozKjeAAKhMAGhMQE\" loading=\"lazy\">",
+                    "target": [
+                        "img[alt=\"Sprawd\u017a jako\u015b\u0107 swojego snu\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img class=\"tiles_item_image\" alt=\"Kalendarz dni p\u0142odnych\" width=\"168\" height=\"168\" src=\"https://ocdn.eu/pulscms-transforms/1/YZ-k9kpTURBXy8wOWFiNDM2NDA2NDMyMmIwZjg3NjIxMjk3YWJkZDNhOS5wbmeSlQMAAMyozKiTBcyozKjeAAKhMAGhMQE\" loading=\"lazy\">",
+                    "target": [
+                        "img[alt=\"Kalendarz dni p\u0142odnych\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img class=\"image\" alt=\"W jaki spos\u00f3b \u201epracujemy\u201d na choroby nowotworowe? Mo\u017cemy zrobi\u0107 znacznie wi\u0119cej, by si\u0119 przed nimi chroni\u0107!\" width=\"144\" height=\"104\" src=\"//ocdn.eu/pulscms-transforms/1/y2_k9kpTURBXy8zZjY1NTQ4YmQ1NTQ2MDY3ZGYyNzE5YzM0MGE0YzFhYi5wbmeRkwXMkMxo3gABoTAB\" loading=\"lazy\">",
+                    "target": [
+                        ".one-plus-three__item--n-item.one-plus-three__item.item2 > .teaser--video.s-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__thumbnail > picture > .image[width=\"144\"][height=\"104\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img class=\"image\" alt=\"Pi\u0119\u0107 powod\u00f3w, dla kt\u00f3rych warto je\u015b\u0107 kapust\u0119\" width=\"144\" height=\"104\" src=\"//ocdn.eu/pulscms-transforms/1/qUwk9kpTURBXy9mNGE1YTZhYjExMjhjYmE4NmZmN2E4N2FkOWQ5OTEyNy5qcGeRkwXMkMxo3gABoTAB\" loading=\"lazy\">",
+                    "target": [
+                        ".one-plus-three__item--last-item.one-plus-three__item--n-item.one-plus-three__item > .teaser--video.s-size.teaser > .teaser__link[data-allow-layer=\"\"] > .teaser__thumbnail > picture > .image[width=\"144\"][height=\"104\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                }
+            ]
+        },
+        {
+            "id": "landmark-unique",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "help": "Ensures landmarks are unique",
+            "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-unique",
+                            "data": {
+                                "role": "complementary",
+                                "accessibleText": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<aside class=\"adRight\">\n                <div class=\"onet-ad\" id=\"onet-ad-right2-pos-1\" data-slot=\"right2\" data-opt-pos=\"1\" data-refresh=\"true\"></div>\n            </aside>",
+                                    "target": [
+                                        ".newest-from-services__ad > aside"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<aside class=\"adRight\">\n                    <div class=\"onet-ad\" id=\"onet-ad-right\" data-slot=\"right\" data-refresh=\"true\"></div>\n                </aside>",
+                    "target": [
+                        ".m-size-right-ad__ad > aside"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a class=\"whitelistLink\" name=\"whitelistLink_0\" aria-label=\"Adblock whitelist link (0)\" href=\"abp:subscribe?location=http%3A%2F%2Flib.onet.pl%2Fs.csr%2Fwhitelist%2Fmedonet.pl.txt&amp;title=medonet.pl\"></a>",
+                    "target": [
+                        "a[name=\"whitelistLink_0\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a class=\"whitelistLink\" name=\"whitelistLink_1\" aria-label=\"Adblock whitelist link (1)\" href=\"abp:subscribe?location=http%3A%2F%2Flib.onet.pl%2Fs.csr%2Fwhitelist%2Fmedonet.pl.txt&amp;title=medonet.pl\"></a>",
+                    "target": [
+                        "a[name=\"whitelistLink_1\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"cmp-intro_title\"><span class=\"\" style=\"\">Szanowna U\u017cytkowniczko, Szanowny U\u017cytkowniku,</span></div>",
+                    "target": [
+                        ".cmp-intro_title"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"cmp-intro_description\">",
+                    "target": [
+                        ".cmp-intro_description"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                }
+            ]
+        }
+    ]
+}

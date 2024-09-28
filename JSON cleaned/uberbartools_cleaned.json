@@ -1,0 +1,2087 @@
+{
+    "testEngine": {
+        "name": "axe-core",
+        "version": "4.4.3"
+    },
+    "testRunner": {
+        "name": "axe"
+    },
+    "timestamp": "2024-09-28T03:09:15.644Z",
+    "url": "https://www.uberbartools.com/account/register",
+    "toolOptions": {
+        "resultTypes": [
+            "violations"
+        ],
+        "reporter": "v1"
+    },
+    "passes": [
+        {
+            "id": "aria-allowed-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures ARIA attributes are allowed for an element's role",
+            "help": "Elements must only use allowed ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attributes are used correctly for the defined role"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "aria-unsupported-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute is supported"
+                        },
+                        {
+                            "id": "aria-prohibited-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "ARIA attribute is allowed"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<nav class=\"site-announcement\" style=\"\n      --text-color: #ffffff;\n      --background-color: #f37021;\n    \" aria-label=\"Announcement\" data-site-announcement=\"\">\n    \n      <p class=\"site-announcement__text\">Welcome to \u00dcberbartools\u2122!</p>\n    \n  </nav>",
+                    "target": [
+                        ".site-announcement"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-allowed-role",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "best-practice"
+            ],
+            "description": "Ensures role attribute has an appropriate value for the element",
+            "help": "ARIA role should be appropriate for the element",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-role?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is allowed for given element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<svg class=\"icon-star-reference\" aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"3 3 17 17\" fill=\"none\">",
+                    "target": [
+                        ".icon-star-reference"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-body",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures aria-hidden='true' is not present on the document body.",
+            "help": "aria-hidden='true' must not be present on the document body",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-hidden-body",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "No aria-hidden attribute is present on document body"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<body class=\"customers-register site-header--sticky\" data-money-format=\"<span class=money>",
+                    "target": [
+                        "body"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-focus",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag131"
+            ],
+            "description": "Ensures aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "focusable-modal-open",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements while a modal is open"
+                        },
+                        {
+                            "id": "focusable-disabled",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        },
+                        {
+                            "id": "focusable-not-tabbable",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<svg class=\"icon-star-reference\" aria-hidden=\"true\" focusable=\"false\" role=\"presentation\" xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewBox=\"3 3 17 17\" fill=\"none\">",
+                    "target": [
+                        ".icon-star-reference"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-required-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures elements with ARIA roles have all required ARIA attributes",
+            "help": "Required ARIA attributes must be provided",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-required-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-required-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "All required ARIA attributes are present"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<main id=\"main-content\" class=\"main-content--section-headings-center\" role=\"main\">",
+                    "target": [
+                        "#main-content"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-roles",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all elements with a role attribute use a valid value",
+            "help": "ARIA roles used must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-roles?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "fallbackrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Only one role value used"
+                        },
+                        {
+                            "id": "invalidrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is valid"
+                        },
+                        {
+                            "id": "abstractrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Abstract roles are not used"
+                        },
+                        {
+                            "id": "unsupportedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is supported"
+                        },
+                        {
+                            "id": "deprecatedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is not deprecated"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<main id=\"main-content\" class=\"main-content--section-headings-center\" role=\"main\">",
+                    "target": [
+                        "#main-content"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr-value",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all ARIA attributes have valid values",
+            "help": "ARIA attributes must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr-value?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "aria-valid-attr-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute values are valid"
+                        },
+                        {
+                            "id": "aria-errormessage",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "aria-errormessage exists and references elements visible to screen readers that use a supported aria-errormessage technique"
+                        },
+                        {
+                            "id": "aria-level",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-level values are valid"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<nav class=\"site-announcement\" style=\"\n      --text-color: #ffffff;\n      --background-color: #f37021;\n    \" aria-label=\"Announcement\" data-site-announcement=\"\">\n    \n      <p class=\"site-announcement__text\">Welcome to \u00dcberbartools\u2122!</p>\n    \n  </nav>",
+                    "target": [
+                        ".site-announcement"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures attributes that begin with aria- are valid ARIA attributes",
+            "help": "ARIA attributes must conform to valid names",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-valid-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute name is valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<nav class=\"site-announcement\" style=\"\n      --text-color: #ffffff;\n      --background-color: #f37021;\n    \" aria-label=\"Announcement\" data-site-announcement=\"\">\n    \n      <p class=\"site-announcement__text\">Welcome to \u00dcberbartools\u2122!</p>\n    \n  </nav>",
+                    "target": [
+                        ".site-announcement"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "avoid-inline-spacing",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag21aa",
+                "wcag1412"
+            ],
+            "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+            "help": "Inline text spacing must be adjustable with custom stylesheets",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/avoid-inline-spacing?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "avoid-inline-spacing",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No inline styles with '!important' that affect text spacing has been specified"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<body class=\"customers-register site-header--sticky\" data-money-format=\"<span class=money>",
+                    "target": [
+                        "body"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "button-name",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures buttons have discernible text",
+            "help": "Buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/button-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "button-has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has inner text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute exists and is not empty"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button type=\"button\" data-spec=\"toggle-button\" aria-label=\"Chat window\" aria-expanded=\"true\" __source=\"[object Object]\" class=\"chat-toggle chat-toggle--#444444 chat-toggle--icon-button chat-toggle--text-button\" style=\"background-color: rgb(68, 68, 68);\">",
+                    "target": [
+                        [
+                            "#ShopifyChat",
+                            ".chat-toggle"
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "bypass",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag241",
+                "section508",
+                "section508.22.o"
+            ],
+            "description": "Ensures each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+            "help": "Page must have means to bypass repeated blocks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/bypass?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "internal-link-present",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Valid skip link found"
+                        },
+                        {
+                            "id": "header-present",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h2 class=\"site-header__heading\" data-header-logo=\"\">",
+                                    "target": [
+                                        ".site-header__heading"
+                                    ]
+                                },
+                                {
+                                    "html": "<h1 class=\"registration-form__heading\">\n      Create Account\n    </h1>",
+                                    "target": [
+                                        "h1"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"footer-top__block-heading\" data-toggle-content=\"\">\n                About \u00dcberbartools\u2122\n              </h2>",
+                                    "target": [
+                                        ".footer-top__block:nth-child(1) > .footer-top__block-heading[data-toggle-content=\"\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"footer-top__block-heading\" data-toggle-content=\"\">\n                Explore\n              </h2>",
+                                    "target": [
+                                        ".footer-top__block:nth-child(2) > .footer-top__block-heading[data-toggle-content=\"\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"footer-top__block-heading\" data-toggle-content=\"\">\n                Quick Links\n              </h2>",
+                                    "target": [
+                                        ".footer-top__block:nth-child(3) > .footer-top__block-heading[data-toggle-content=\"\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"footer-top__block-heading footer-top__block-heading--newsletter_form\">\n              News &amp; Updates\n            </h2>",
+                                    "target": [
+                                        ".footer-top__block-heading--newsletter_form"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Page has a heading"
+                        },
+                        {
+                            "id": "landmark",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<main id=\"main-content\" class=\"main-content--section-headings-center\" role=\"main\">",
+                                    "target": [
+                                        "#main-content"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Page has a landmark region"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en\" class=\"js\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "messageKey": "hidden"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is hidden"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input class=\"predictive-search__input\" type=\"text\" name=\"q\" aria-label=\"Search...\" placeholder=\"Search...\" value=\"\" x-webkit-speech=\"\" autocapitalize=\"off\" autocomplete=\"off\" autocorrect=\"off\" data-predictive-search-terms=\"\">",
+                    "target": [
+                        ".predictive-search__input"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "document-title",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag242",
+                "ACT"
+            ],
+            "description": "Ensures each HTML document contains a non-empty <title> element",
+            "help": "Documents must have <title> element to aid in navigation",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/document-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "doc-has-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has a non-empty <title> element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en\" class=\"js\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-active",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value of active elements is unique",
+            "help": "IDs of active elements must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-active",
+                            "data": "customer_login_link",
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has no active elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"/account/login\" id=\"customer_login_link\">Sign In</a>",
+                    "target": [
+                        "#customer_login_link"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-aria",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value used in ARIA and in labels is unique",
+            "help": "IDs used in ARIA and labels must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-aria",
+                            "data": "first_name",
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input type=\"text\" value=\"\" name=\"customer[first_name]\" id=\"first_name\" size=\"30\" required=\"\">",
+                    "target": [
+                        "#first_name"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "shopify-digital-wallet",
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta id=\"shopify-digital-wallet\" name=\"shopify-digital-wallet\" content=\"/4750637/digital_wallets/dialog\">",
+                    "target": [
+                        "#shopify-digital-wallet"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "empty-heading",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "best-practice"
+            ],
+            "description": "Ensures headings have discernible text",
+            "help": "Headings should not be empty",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/empty-heading?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h2 class=\"site-header__heading\" data-header-logo=\"\">",
+                    "target": [
+                        ".site-header__heading"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "form-field-multiple-labels",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag332"
+            ],
+            "description": "Ensures form field does not have multiple label elements",
+            "help": "Form field must not have multiple label elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/form-field-multiple-labels?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "multiple-label",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<label class=\"registration-form__first-name\" for=\"first_name\">\n          First Name\n        </label>",
+                                    "target": [
+                                        ".registration-form__first-name"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Form field does not have multiple label elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"text\" value=\"\" name=\"customer[first_name]\" id=\"first_name\" size=\"30\" required=\"\">",
+                    "target": [
+                        "#first_name"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "heading-order",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": {
+                                "headingOrder": [
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(37) > header:nth-child(5) > div:nth-child(1) > h2:nth-child(2)"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(40) > div > div > section:nth-child(2) > div > h1:nth-child(1)"
+                                        ],
+                                        "level": 1
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(41) > footer:nth-child(2) > div:nth-child(1) > div > div:nth-child(1) > h2:nth-child(1)"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(41) > footer:nth-child(2) > div:nth-child(1) > div > div:nth-child(2) > h2:nth-child(1)"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(41) > footer:nth-child(2) > div:nth-child(1) > div > div:nth-child(3) > h2:nth-child(1)"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(41) > footer:nth-child(2) > div:nth-child(1) > div > div:nth-child(4) > h2:nth-child(1)"
+                                        ],
+                                        "level": 2
+                                    }
+                                ]
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h2 class=\"site-header__heading\" data-header-logo=\"\">",
+                    "target": [
+                        ".site-header__heading"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-has-lang",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures every HTML document has a lang attribute",
+            "help": "<html> element must have a lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-has-lang?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "The <html> element has a lang attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en\" class=\"js\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-lang-valid",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures the lang attribute of the <html> element has a valid value",
+            "help": "<html> element must have a valid value for the lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-lang-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "valid-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Value of lang attribute is included in the list of valid languages"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<html lang=\"en\" class=\"js\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "identical-links-same-purpose",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "wcag2aaa",
+                "wcag249"
+            ],
+            "description": "Ensure that links with the same accessible name serve a similar purpose",
+            "help": "Links with the same name must have a similar purpose",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/identical-links-same-purpose?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "identical-links-same-purpose",
+                            "data": {
+                                "name": "skip to main content",
+                                "urlProps": {
+                                    "protocol": "http:",
+                                    "hostname": "www.uberbartools.com",
+                                    "port": "",
+                                    "pathname": "/account/register/",
+                                    "search": {},
+                                    "hash": "",
+                                    "filename": ""
+                                }
+                            },
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "There are no other links with the same name, that go to a different URL"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a class=\"skip-to-main\" href=\"#main-content\">Skip to main content</a>",
+                    "target": [
+                        ".skip-to-main"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures <img> elements have alternate text or a role of none or presentation",
+            "help": "Images must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-alt",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has an alt attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "alt-space-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has a valid alt attribute value"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img src=\"//www.uberbartools.com/cdn/shop/files/Uber_Logo_black_daef572a-6bb5-40d0-a118-8cd108c69208_250x41.png?v=1697761745\" alt=\"Logo - \u00dcberbartools\" data-rimg=\"loaded\" data-rimg-scale=\"1\" data-rimg-template=\"//www.uberbartools.com/cdn/shop/files/Uber_Logo_black_daef572a-6bb5-40d0-a118-8cd108c69208_{size}.png?v=1697761745\" data-rimg-max=\"1675x270\" data-rimg-crop=\"false\" srcset=\"//www.uberbartools.com/cdn/shop/files/Uber_Logo_black_daef572a-6bb5-40d0-a118-8cd108c69208_256x64.png?v=1697761745 1.00x\" style=\"\n        object-fit:cover;object-position:50.0% 50.0%;\n      \n\" data-rimg-template-svg=\"data:image/svg+xml;utf8,<svg%20xmlns='http://www.w3.org/2000/svg'%20width='250'%20height='41'>",
+                    "target": [
+                        "img[data-rimg=\"loaded\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-redundant-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ],
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-redundant-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img src=\"//www.uberbartools.com/cdn/shop/files/Uber_Logo_black_daef572a-6bb5-40d0-a118-8cd108c69208_250x41.png?v=1697761745\" alt=\"Logo - \u00dcberbartools\" data-rimg=\"loaded\" data-rimg-scale=\"1\" data-rimg-template=\"//www.uberbartools.com/cdn/shop/files/Uber_Logo_black_daef572a-6bb5-40d0-a118-8cd108c69208_{size}.png?v=1697761745\" data-rimg-max=\"1675x270\" data-rimg-crop=\"false\" srcset=\"//www.uberbartools.com/cdn/shop/files/Uber_Logo_black_daef572a-6bb5-40d0-a118-8cd108c69208_256x64.png?v=1697761745 1.00x\" style=\"\n        object-fit:cover;object-position:50.0% 50.0%;\n      \n\" data-rimg-template-svg=\"data:image/svg+xml;utf8,<svg%20xmlns='http://www.w3.org/2000/svg'%20width='250'%20height='41'>",
+                    "target": [
+                        "img[data-rimg=\"loaded\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "input-button-name",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "section508",
+                "section508.22.a"
+            ],
+            "description": "Ensures input buttons have discernible text",
+            "help": "Input buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/input-button-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "non-empty-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has a non-empty value attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input class=\"registration-form__button\" type=\"submit\" value=\"Sign Up\">",
+                    "target": [
+                        ".registration-form__button"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label-title-only",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "best-practice"
+            ],
+            "description": "Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes",
+            "help": "Form elements should have a visible label",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "title-only",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Form element does not solely use title attribute for its label"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"text\" value=\"\" name=\"customer[first_name]\" id=\"first_name\" size=\"30\" required=\"\">",
+                    "target": [
+                        "#first_name"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag412",
+                "wcag131",
+                "section508",
+                "section508.22.n",
+                "ACT"
+            ],
+            "description": "Ensures every form element has a label",
+            "help": "Form elements must have labels",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element has an explicit <label>"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "hidden-explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element has a visible explicit <label>"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"text\" value=\"\" name=\"customer[first_name]\" id=\"first_name\" size=\"30\" required=\"\">",
+                    "target": [
+                        "#first_name"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-banner-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the banner landmark is at top level",
+            "help": "Banner landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-banner-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "banner"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The banner landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header class=\"\n    site-header\n    site-header--sticky\n  \" data-site-header=\"\">",
+                    "target": [
+                        "header"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-contentinfo-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the contentinfo landmark is at top level",
+            "help": "Contentinfo landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-contentinfo-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "contentinfo"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The contentinfo landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<footer class=\"footer-section\">",
+                    "target": [
+                        "footer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-main-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the main landmark is at top level",
+            "help": "Main landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-main-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "main"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The main landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<main id=\"main-content\" class=\"main-content--section-headings-center\" role=\"main\">",
+                    "target": [
+                        "#main-content"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-banner",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one banner landmark",
+            "help": "Document should not have more than one banner landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-banner?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-banner",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one banner landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header class=\"\n    site-header\n    site-header--sticky\n  \" data-site-header=\"\">",
+                    "target": [
+                        "header"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-contentinfo",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one contentinfo landmark",
+            "help": "Document should not have more than one contentinfo landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-contentinfo?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-contentinfo",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one contentinfo landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<footer class=\"footer-section\">",
+                    "target": [
+                        "footer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-main",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one main landmark",
+            "help": "Document should not have more than one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-main",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one main landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<main id=\"main-content\" class=\"main-content--section-headings-center\" role=\"main\">",
+                    "target": [
+                        "#main-content"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-one-main",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has a main landmark",
+            "help": "Document should have one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-one-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-main",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<main id=\"main-content\" class=\"main-content--section-headings-center\" role=\"main\">",
+                                    "target": [
+                                        "#main-content"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Document has at least one main landmark"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en\" class=\"js\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-unique",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "help": "Ensures landmarks are unique",
+            "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-unique",
+                            "data": {
+                                "role": "navigation",
+                                "accessibleText": "announcement"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Landmarks must have a unique role or role/label/title (i.e. accessible name) combination"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<nav class=\"site-announcement\" style=\"\n      --text-color: #ffffff;\n      --background-color: #f37021;\n    \" aria-label=\"Announcement\" data-site-announcement=\"\">\n    \n      <p class=\"site-announcement__text\">Welcome to \u00dcberbartools\u2122!</p>\n    \n  </nav>",
+                    "target": [
+                        ".site-announcement"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a class=\"skip-to-main\" href=\"#main-content\">Skip to main content</a>",
+                    "target": [
+                        ".skip-to-main"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "list",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures that lists are structured correctly",
+            "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/list?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "only-listitems",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List element only has direct children that are allowed inside <li> elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<ul class=\"main-nav\" data-main-nav=\"\">",
+                    "target": [
+                        ".main-nav"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "listitem",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures <li> elements are used semantically",
+            "help": "<li> elements must be contained in a <ul> or <ol>",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/listitem?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<li class=\"main-nav__tier-1-item\" data-main-nav-parent=\"\">",
+                    "target": [
+                        ".main-nav__tier-1-item[data-main-nav-parent=\"\"]:nth-child(1)"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport-large",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> can scale a significant amount",
+            "help": "Users should be able to zoom and scale the text up to 500%",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport-large?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport-large",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "<meta> tag does not prevent significant zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice",
+                "ACT"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> does not disable text scaling and zooming",
+            "help": "Zooming and scaling should not be disabled",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "<meta> tag does not disable zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "nested-interactive",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+            "help": "Interactive controls must not be nested",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/nested-interactive?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "no-focusable-content",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have focusable descendants"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<img src=\"//www.uberbartools.com/cdn/shop/files/Uber_Logo_black_daef572a-6bb5-40d0-a118-8cd108c69208_250x41.png?v=1697761745\" alt=\"Logo - \u00dcberbartools\" data-rimg=\"loaded\" data-rimg-scale=\"1\" data-rimg-template=\"//www.uberbartools.com/cdn/shop/files/Uber_Logo_black_daef572a-6bb5-40d0-a118-8cd108c69208_{size}.png?v=1697761745\" data-rimg-max=\"1675x270\" data-rimg-crop=\"false\" srcset=\"//www.uberbartools.com/cdn/shop/files/Uber_Logo_black_daef572a-6bb5-40d0-a118-8cd108c69208_256x64.png?v=1697761745 1.00x\" style=\"\n        object-fit:cover;object-position:50.0% 50.0%;\n      \n\" data-rimg-template-svg=\"data:image/svg+xml;utf8,<svg%20xmlns='http://www.w3.org/2000/svg'%20width='250'%20height='41'>",
+                    "target": [
+                        "img[data-rimg=\"loaded\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "page-has-heading-one",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+            "help": "Page should contain a level-one heading",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/page-has-heading-one?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-heading-one",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1 class=\"registration-form__heading\">\n      Create Account\n    </h1>",
+                                    "target": [
+                                        "h1"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Page has at least one level-one heading"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en\" class=\"js\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "All page content is contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div data-ph-meta=\"{&quot;buy_button&quot;:false,&quot;fields_63edd68b3776e708a5a8881d&quot;:{&quot;_id&quot;:&quot;63edd68b3776e708a5a8881d&quot;,&quot;id&quot;:&quot;7737&quot;,&quot;storeName&quot;:&quot;uberbartools.myshopify.com&quot;,&quot;fieldName&quot;:&quot;Your Logo Here&quot;,&quot;parentFieldName&quot;:&quot;Your Logo Here&quot;,&quot;data&quot;:&quot;{\\&quot;no\\&quot;: false, \\&quot;op2\\&quot;: false, \\&quot;pdf\\&quot;: false, \\&quot;yes\\&quot;: true, \\&quot;opt1\\&quot;: false, \\&quot;opt3\\&quot;: true, \\&quot;word\\&quot;: false, \\&quot;fopt1\\&quot;: true, \\&quot;fopt2\\&quot;: false, \\&quot;fopt3\\&quot;: false, \\&quot;atcTitle\\&quot;: \\&quot;Upload Your Logo Here\\&quot;, \\&quot;buttonBg\\&quot;: \\&quot;#F9C232\\&quot;, \\&quot;buttonCol\\&quot;: \\&quot;#FFFFFF\\&quot;, \\&quot;fieldname\\&quot;: \\&quot;Your Logo Here\\&quot;, \\&quot;fileTypes\\&quot;: [], \\&quot;fontStyle\\&quot;: \\&quot;Upload Field Font\\&quot;, \\&quot;customFile\\&quot;: false, \\&quot;imageWidth\\&quot;: \\&quot;1000\\&quot;, \\&quot;allVariants\\&quot;: true, \\&quot;buttonWidth\\&quot;: \\&quot;Auto\\&quot;, \\&quot;imageHeight\\&quot;: \\&quot;1000\\&quot;, \\&quot;thisProduct\\&quot;: true, \\&quot;allowEditing\\&quot;: true, \\&quot;buttonStatus\\&quot;: \\&quot;Enable\\&quot;, \\&quot;croppingType\\&quot;: \\&quot;crop_free\\&quot;, \\&quot;maximumFiles\\&quot;: \\&quot;\\&quot;, \\&quot;minimumfiles\\&quot;: \\&quot;\\&quot;, \\&quot;previewStyle\\&quot;: \\&quot;tile_preview\\&quot;, \\&quot;allowCropping\\&quot;: true, \\&quot;buttonStatus2\\&quot;: \\&quot;Enable\\&quot;, \\&quot;fieldHelpText\\&quot;: \\&quot;\\&quot;, \\&quot;showAllFields\\&quot;: false, \\&quot;textFieldName\\&quot;: \\&quot;Notes (if any)\\&quot;, \\&quot;buttonFontSize\\&quot;: \\&quot;14\\&quot;, \\&quot;buttonTextSize\\&quot;: \\&quot;14\\&quot;, \\&quot;dialogLanguage\\&quot;: \\&quot;en\\&quot;, \\&quot;thisCollection\\&quot;: false, \\&quot;allVariantValues\\&quot;: [], \\&quot;buttonDialogLang\\&quot;: \\&quot;English\\&quot;, \\&quot;productCondition\\&quot;: {\\&quot;collOpt\\&quot;: \\&quot;\\&quot;, \\&quot;prodOpt\\&quot;: \\&quot;\\&quot;, \\&quot;products\\&quot;: [\\&quot;Personalised Cocktail Chimney by \u00dcberbartools (sold in minimums of 6 units)    \\&quot;], \\&quot;condition\\&quot;: [], \\&quot;collection\\&quot;: [], \\&quot;prodTitleEqual\\&quot;: [], \\&quot;prodTitleContains\\&quot;: [], \\&quot;collectionTitleEqual\\&quot;: [], \\&quot;collectionTitleContains\\&quot;: []}, \\&quot;uploadButtonText\\&quot;: \\&quot;Choose Image\\&quot;, \\&quot;allConditionCheck\\&quot;: false, \\&quot;anyConditionCheck\\&quot;: false, \\&quot;textFieldMaxChars\\&quot;: \\&quot;\\&quot;, \\&quot;textFieldRequired\\&quot;: \\&quot;Yes\\&quot;, \\&quot;uploadButtonText2\\&quot;: \\&quot;Click here to change image\\&quot;, \\&quot;buttonBorderRadius\\&quot;: \\&quot;3\\&quot;, \\&quot;fileRequiredButton\\&quot;: \\&quot;\\&quot;, \\&quot;textFieldMaxLength\\&quot;: \\&quot;No\\&quot;, \\&quot;allConditionVariant\\&quot;: false, \\&quot;anyConditionVariant\\&quot;: false, \\&quot;croppingAspectRatio\\&quot;: \\&quot;3:2\\&quot;, \\&quot;fileRequiredMessage\\&quot;: \\&quot;Please upload your preferred logo before adding this product to your cart.\\&quot;, \\&quot;fileSizeRestriction\\&quot;: true, \\&quot;dialogInstructionOne\\&quot;: \\&quot;Choose an image from the list to crop or enhance it. To add more files, use the links on the left\\&quot;, \\&quot;dialogInstructionTwo\\&quot;: \\&quot;Choose an image from the list to crop or enhance it. To add more files, use the menu icon in the top left\\&quot;, \\&quot;noneConditionVariant\\&quot;: false, \\&quot;fileSizeMinMaxMaximum\\&quot;: \\&quot;10\\&quot;, \\&quot;fileSizeMinMaxMinimum\\&quot;: \\&quot;0.2\\&quot;, \\&quot;selectedUploadSources\\&quot;: \\&quot;file\\&quot;, \\&quot;ucCustomTransalations\\&quot;: {\\&quot;one\\&quot;: \\&quot;%1 file\\&quot;, \\&quot;draghere\\&quot;: \\&quot;Drop a file here\\&quot;, \\&quot;uploading\\&quot;: \\&quot;Uploading... Please wait.\\&quot;, \\&quot;file_other\\&quot;: \\&quot;%1 files\\&quot;, \\&quot;dialog_done\\&quot;: \\&quot;Done\\&quot;, \\&quot;errors_info\\&quot;: \\&quot;Can't load info\\&quot;, \\&quot;errors_size\\&quot;: \\&quot;File too big\\&quot;, \\&quot;errors_user\\&quot;: \\&quot;Upload canceled\\&quot;, \\&quot;loadingInfo\\&quot;: \\&quot;Loading info...\\&quot;, \\&quot;dialog_close\\&quot;: \\&quot;Close\\&quot;, \\&quot;errors_image\\&quot;: \\&quot;Only images allowed\\&quot;, \\&quot;errors_upload\\&quot;: \\&quot;Can't upload\\&quot;, \\&quot;notFound_text\\&quot;: \\&quot;Looks like you have no camera connected to this device.\\&quot;, \\&quot;buttons_cancel\\&quot;: \\&quot;Cancel\\&quot;, \\&quot;buttons_remove\\&quot;: \\&quot;Remove\\&quot;, \\&quot;errors_baddata\\&quot;: \\&quot;Incorrect value\\&quot;, \\&quot;errors_default\\&quot;: \\&quot;Error\\&quot;, \\&quot;notFound_title\\&quot;: \\&quot;No camera detected\\&quot;, \\&quot;dialog_showFiles\\&quot;: \\&quot;Show files\\&quot;, \\&quot;effects_apply_button\\&quot;: \\&quot;Apply\\&quot;, \\&quot;dialog_tabs_names_url\\&quot;: \\&quot;Direct Link\\&quot;, \\&quot;effects_captions_blur\\&quot;: \\&quot;Blur\\&quot;, \\&quot;effects_captions_crop\\&quot;: \\&quot;Crop\\&quot;, \\&quot;effects_captions_flip\\&quot;: \\&quot;Flip\\&quot;, \\&quot;dialog_tabs_names_file\\&quot;: \\&quot;Local Files\\&quot;, \\&quot;effects_captions_sharp\\&quot;: \\&quot;Sharpen\\&quot;, \\&quot;error_invalid_filetype\\&quot;: \\&quot;Invalid file type\\&quot;, \\&quot;effects_captions_invert\\&quot;: \\&quot;Invert\\&quot;, \\&quot;effects_captions_mirror\\&quot;: \\&quot;Mirror\\&quot;, \\&quot;effects_captions_rotate\\&quot;: \\&quot;Rotate\\&quot;, \\&quot;buttons_choose_files_one\\&quot;: \\&quot;Choose a file\\&quot;, \\&quot;effects_captions_enhance\\&quot;: \\&quot;Enhance\\&quot;, \\&quot;buttons_choose_images_one\\&quot;: \\&quot;Choose an image\\&quot;, \\&quot;dialog_tabs_names_file_or\\&quot;: \\&quot;or\\&quot;, \\&quot;dialog_tabs_names_preview\\&quot;: \\&quot;Preview\\&quot;, \\&quot;buttons_choose_files_other\\&quot;: \\&quot;Choose files\\&quot;, \\&quot;effects_captions_grayscale\\&quot;: \\&quot;Grayscale\\&quot;, \\&quot;buttons_choose_images_other\\&quot;: \\&quot;Choose images\\&quot;, \\&quot;dialog_tabs_names_file_also\\&quot;: \\&quot;or choose from\\&quot;, \\&quot;dialog_tabs_names_file_drag\\&quot;: \\&quot;drag \\u0026 drop\\u003cbr\\u003eany files\\&quot;, \\&quot;dialog_tabs_names_url_input\\&quot;: \\&quot;Paste your link here...\\&quot;, \\&quot;dialog_tabs_names_url_line2\\&quot;: \\&quot;Provide the link.\\&quot;, \\&quot;dialog_tabs_names_url_title\\&quot;: \\&quot;Files from the Web\\&quot;, \\&quot;dialog_tabs_names_url_button\\&quot;: \\&quot;Upload\\&quot;, \\&quot;dialog_tabs_names_file_button\\&quot;: \\&quot;Choose a local file\\&quot;, \\&quot;dialog_tabs_names_camera_retry\\&quot;: \\&quot;Request permissions again\\&quot;, \\&quot;dialog_tabs_names_camera_title\\&quot;: \\&quot;File from web camera\\&quot;, \\&quot;dialog_tabs_names_preview_back\\&quot;: \\&quot;Back\\&quot;, \\&quot;dialog_tabs_names_preview_done\\&quot;: \\&quot;Add\\&quot;, \\&quot;dialog_tabs_names_camera_mirror\\&quot;: \\&quot;Mirror\\&quot;, \\&quot;dialog_tabs_names_camera_capture\\&quot;: \\&quot;Take a photo\\&quot;, \\&quot;dialog_tabs_names_camera_stopRecord\\&quot;: \\&quot;Stop\\&quot;, \\&quot;dialog_tabs_names_preview_crop_free\\&quot;: \\&quot;free\\&quot;, \\&quot;dialog_tabs_names_camera_startRecord\\&quot;: \\&quot;Record a video\\&quot;, \\&quot;dialog_tabs_names_preview_crop_title\\&quot;: \\&quot;Crop and add this image\\&quot;, \\&quot;dialog_tabs_names_preview_image_title\\&quot;: \\&quot;Add this image?\\&quot;, \\&quot;dialog_tabs_names_preview_video_title\\&quot;: \\&quot;Add this video?\\&quot;, \\&quot;dialog_tabs_names_preview_unknown_done\\&quot;: \\&quot;Skip preview and accept\\&quot;, \\&quot;dialog_tabs_names_preview_regular_line1\\&quot;: \\&quot;You are about to add the file above.\\&quot;, \\&quot;dialog_tabs_names_preview_regular_line2\\&quot;: \\&quot;Please confirm.\\&quot;, \\&quot;dialog_tabs_names_preview_regular_title\\&quot;: \\&quot;Add this file?\\&quot;, \\&quot;dialog_tabs_names_preview_multiple_clear\\&quot;: \\&quot;Remove all\\&quot;, \\&quot;dialog_tabs_names_preview_multiple_title\\&quot;: \\&quot;You've chosen %files%.\\&quot;, \\&quot;dialog_tabs_names_camera_pleaseAllow_text\\&quot;: \\&quot;You have been prompted to allow camera access from this site.\\u003cbr\\u003eIn order to take pictures with your camera you must approve this request.\\&quot;, \\&quot;dialog_tabs_names_camera_pleaseAllow_title\\&quot;: \\&quot;Please allow access to your camera\\&quot;, \\&quot;dialog_tabs_names_preview_multiple_question\\&quot;: \\&quot;Add %files%?\\&quot;, \\&quot;dialog_tabs_names_preview_error_default_back\\&quot;: \\&quot;Please try again\\&quot;, \\&quot;dialog_tabs_names_preview_error_default_text\\&quot;: \\&quot;Something went wrong during the upload.\\&quot;, \\&quot;dialog_tabs_names_preview_error_default_title\\&quot;: \\&quot;Oops!\\&quot;, \\&quot;dialog_tabs_names_preview_error_loadImage_text\\&quot;: \\&quot;Can't load image\\&quot;, \\&quot;dialog_tabs_names_preview_multiple_tooFewFiles\\&quot;: \\&quot;You've chosen %files%. At least %min% required.\\&quot;, \\&quot;dialog_tabs_names_preview_multiple_tooManyFiles\\&quot;: \\&quot;You've chosen too many files. %max% is maximum.\\&quot;}, \\&quot;buttonLeftRightPadding\\&quot;: \\&quot;8\\&quot;, \\&quot;buttonTopBottomPadding\\&quot;: \\&quot;8\\&quot;, \\&quot;dialogInstructionThree\\&quot;: \\&quot;If you have trouble uploading, click \u22ee in the top right, then \u2018Open in Chrome\u2019\\&quot;, \\&quot;fileSizeRestrictionType\\&quot;: \\&quot;maximumFileSize\\&quot;, \\&quot;textFieldRequiredMessage\\&quot;: \\&quot;Please complete the 'notes' field\\&quot;, \\&quot;fileSizeMaximumRestriction\\&quot;: \\&quot;20\\&quot;, \\&quot;fileSizeMinimumRestriction\\&quot;: \\&quot;2\\&quot;, \\&quot;fileRequiredMessageButtonText\\&quot;: \\&quot;OK\\&quot;, \\&quot;textFieldrequiredMessageButtonText\\&quot;: \\&quot;OK\\&quot;}&quot;,&quot;position&quot;:1,&quot;status&quot;:true},&quot;field_63edd68b3776e708a5a8881d&quot;:{&quot;status&quot;:true,&quot;position&quot;:1,&quot;data&quot;:&quot;{\\&quot;no\\&quot;: false, \\&quot;op2\\&quot;: false, \\&quot;pdf\\&quot;: false, \\&quot;yes\\&quot;: true, \\&quot;opt1\\&quot;: false, \\&quot;opt3\\&quot;: true, \\&quot;word\\&quot;: false, \\&quot;fopt1\\&quot;: true, \\&quot;fopt2\\&quot;: false, \\&quot;fopt3\\&quot;: false, \\&quot;atcTitle\\&quot;: \\&quot;Upload Your Logo Here\\&quot;, \\&quot;buttonBg\\&quot;: \\&quot;#F9C232\\&quot;, \\&quot;buttonCol\\&quot;: \\&quot;#FFFFFF\\&quot;, \\&quot;fieldname\\&quot;: \\&quot;Your Logo Here\\&quot;, \\&quot;fileTypes\\&quot;: [], \\&quot;fontStyle\\&quot;: \\&quot;Upload Field Font\\&quot;, \\&quot;customFile\\&quot;: false, \\&quot;imageWidth\\&quot;: \\&quot;1000\\&quot;, \\&quot;allVariants\\&quot;: true, \\&quot;buttonWidth\\&quot;: \\&quot;Auto\\&quot;, \\&quot;imageHeight\\&quot;: \\&quot;1000\\&quot;, \\&quot;thisProduct\\&quot;: true, \\&quot;allowEditing\\&quot;: true, \\&quot;buttonStatus\\&quot;: \\&quot;Enable\\&quot;, \\&quot;croppingType\\&quot;: \\&quot;crop_free\\&quot;, \\&quot;maximumFiles\\&quot;: \\&quot;\\&quot;, \\&quot;minimumfiles\\&quot;: \\&quot;\\&quot;, \\&quot;previewStyle\\&quot;: \\&quot;tile_preview\\&quot;, \\&quot;allowCropping\\&quot;: true, \\&quot;buttonStatus2\\&quot;: \\&quot;Enable\\&quot;, \\&quot;fieldHelpText\\&quot;: \\&quot;\\&quot;, \\&quot;showAllFields\\&quot;: false, \\&quot;textFieldName\\&quot;: \\&quot;Notes (if any)\\&quot;, \\&quot;buttonFontSize\\&quot;: \\&quot;14\\&quot;, \\&quot;buttonTextSize\\&quot;: \\&quot;14\\&quot;, \\&quot;dialogLanguage\\&quot;: \\&quot;en\\&quot;, \\&quot;thisCollection\\&quot;: false, \\&quot;allVariantValues\\&quot;: [], \\&quot;buttonDialogLang\\&quot;: \\&quot;English\\&quot;, \\&quot;productCondition\\&quot;: {\\&quot;collOpt\\&quot;: \\&quot;\\&quot;, \\&quot;prodOpt\\&quot;: \\&quot;\\&quot;, \\&quot;products\\&quot;: [\\&quot;Personalised Cocktail Chimney by \u00dcberbartools (sold in minimums of 6 units)    \\&quot;], \\&quot;condition\\&quot;: [], \\&quot;collection\\&quot;: [], \\&quot;prodTitleEqual\\&quot;: [], \\&quot;prodTitleContains\\&quot;: [], \\&quot;collectionTitleEqual\\&quot;: [], \\&quot;collectionTitleContains\\&quot;: []}, \\&quot;uploadButtonText\\&quot;: \\&quot;Choose Image\\&quot;, \\&quot;allConditionCheck\\&quot;: false, \\&quot;anyConditionCheck\\&quot;: false, \\&quot;textFieldMaxChars\\&quot;: \\&quot;\\&quot;, \\&quot;textFieldRequired\\&quot;: \\&quot;Yes\\&quot;, \\&quot;uploadButtonText2\\&quot;: \\&quot;Click here to change image\\&quot;, \\&quot;buttonBorderRadius\\&quot;: \\&quot;3\\&quot;, \\&quot;fileRequiredButton\\&quot;: \\&quot;\\&quot;, \\&quot;textFieldMaxLength\\&quot;: \\&quot;No\\&quot;, \\&quot;allConditionVariant\\&quot;: false, \\&quot;anyConditionVariant\\&quot;: false, \\&quot;croppingAspectRatio\\&quot;: \\&quot;3:2\\&quot;, \\&quot;fileRequiredMessage\\&quot;: \\&quot;Please upload your preferred logo before adding this product to your cart.\\&quot;, \\&quot;fileSizeRestriction\\&quot;: true, \\&quot;dialogInstructionOne\\&quot;: \\&quot;Choose an image from the list to crop or enhance it. To add more files, use the links on the left\\&quot;, \\&quot;dialogInstructionTwo\\&quot;: \\&quot;Choose an image from the list to crop or enhance it. To add more files, use the menu icon in the top left\\&quot;, \\&quot;noneConditionVariant\\&quot;: false, \\&quot;fileSizeMinMaxMaximum\\&quot;: \\&quot;10\\&quot;, \\&quot;fileSizeMinMaxMinimum\\&quot;: \\&quot;0.2\\&quot;, \\&quot;selectedUploadSources\\&quot;: \\&quot;file\\&quot;, \\&quot;ucCustomTransalations\\&quot;: {\\&quot;one\\&quot;: \\&quot;%1 file\\&quot;, \\&quot;draghere\\&quot;: \\&quot;Drop a file here\\&quot;, \\&quot;uploading\\&quot;: \\&quot;Uploading... Please wait.\\&quot;, \\&quot;file_other\\&quot;: \\&quot;%1 files\\&quot;, \\&quot;dialog_done\\&quot;: \\&quot;Done\\&quot;, \\&quot;errors_info\\&quot;: \\&quot;Can't load info\\&quot;, \\&quot;errors_size\\&quot;: \\&quot;File too big\\&quot;, \\&quot;errors_user\\&quot;: \\&quot;Upload canceled\\&quot;, \\&quot;loadingInfo\\&quot;: \\&quot;Loading info...\\&quot;, \\&quot;dialog_close\\&quot;: \\&quot;Close\\&quot;, \\&quot;errors_image\\&quot;: \\&quot;Only images allowed\\&quot;, \\&quot;errors_upload\\&quot;: \\&quot;Can't upload\\&quot;, \\&quot;notFound_text\\&quot;: \\&quot;Looks like you have no camera connected to this device.\\&quot;, \\&quot;buttons_cancel\\&quot;: \\&quot;Cancel\\&quot;, \\&quot;buttons_remove\\&quot;: \\&quot;Remove\\&quot;, \\&quot;errors_baddata\\&quot;: \\&quot;Incorrect value\\&quot;, \\&quot;errors_default\\&quot;: \\&quot;Error\\&quot;, \\&quot;notFound_title\\&quot;: \\&quot;No camera detected\\&quot;, \\&quot;dialog_showFiles\\&quot;: \\&quot;Show files\\&quot;, \\&quot;effects_apply_button\\&quot;: \\&quot;Apply\\&quot;, \\&quot;dialog_tabs_names_url\\&quot;: \\&quot;Direct Link\\&quot;, \\&quot;effects_captions_blur\\&quot;: \\&quot;Blur\\&quot;, \\&quot;effects_captions_crop\\&quot;: \\&quot;Crop\\&quot;, \\&quot;effects_captions_flip\\&quot;: \\&quot;Flip\\&quot;, \\&quot;dialog_tabs_names_file\\&quot;: \\&quot;Local Files\\&quot;, \\&quot;effects_captions_sharp\\&quot;: \\&quot;Sharpen\\&quot;, \\&quot;error_invalid_filetype\\&quot;: \\&quot;Invalid file type\\&quot;, \\&quot;effects_captions_invert\\&quot;: \\&quot;Invert\\&quot;, \\&quot;effects_captions_mirror\\&quot;: \\&quot;Mirror\\&quot;, \\&quot;effects_captions_rotate\\&quot;: \\&quot;Rotate\\&quot;, \\&quot;buttons_choose_files_one\\&quot;: \\&quot;Choose a file\\&quot;, \\&quot;effects_captions_enhance\\&quot;: \\&quot;Enhance\\&quot;, \\&quot;buttons_choose_images_one\\&quot;: \\&quot;Choose an image\\&quot;, \\&quot;dialog_tabs_names_file_or\\&quot;: \\&quot;or\\&quot;, \\&quot;dialog_tabs_names_preview\\&quot;: \\&quot;Preview\\&quot;, \\&quot;buttons_choose_files_other\\&quot;: \\&quot;Choose files\\&quot;, \\&quot;effects_captions_grayscale\\&quot;: \\&quot;Grayscale\\&quot;, \\&quot;buttons_choose_images_other\\&quot;: \\&quot;Choose images\\&quot;, \\&quot;dialog_tabs_names_file_also\\&quot;: \\&quot;or choose from\\&quot;, \\&quot;dialog_tabs_names_file_drag\\&quot;: \\&quot;drag \\u0026 drop\\u003cbr\\u003eany files\\&quot;, \\&quot;dialog_tabs_names_url_input\\&quot;: \\&quot;Paste your link here...\\&quot;, \\&quot;dialog_tabs_names_url_line2\\&quot;: \\&quot;Provide the link.\\&quot;, \\&quot;dialog_tabs_names_url_title\\&quot;: \\&quot;Files from the Web\\&quot;, \\&quot;dialog_tabs_names_url_button\\&quot;: \\&quot;Upload\\&quot;, \\&quot;dialog_tabs_names_file_button\\&quot;: \\&quot;Choose a local file\\&quot;, \\&quot;dialog_tabs_names_camera_retry\\&quot;: \\&quot;Request permissions again\\&quot;, \\&quot;dialog_tabs_names_camera_title\\&quot;: \\&quot;File from web camera\\&quot;, \\&quot;dialog_tabs_names_preview_back\\&quot;: \\&quot;Back\\&quot;, \\&quot;dialog_tabs_names_preview_done\\&quot;: \\&quot;Add\\&quot;, \\&quot;dialog_tabs_names_camera_mirror\\&quot;: \\&quot;Mirror\\&quot;, \\&quot;dialog_tabs_names_camera_capture\\&quot;: \\&quot;Take a photo\\&quot;, \\&quot;dialog_tabs_names_camera_stopRecord\\&quot;: \\&quot;Stop\\&quot;, \\&quot;dialog_tabs_names_preview_crop_free\\&quot;: \\&quot;free\\&quot;, \\&quot;dialog_tabs_names_camera_startRecord\\&quot;: \\&quot;Record a video\\&quot;, \\&quot;dialog_tabs_names_preview_crop_title\\&quot;: \\&quot;Crop and add this image\\&quot;, \\&quot;dialog_tabs_names_preview_image_title\\&quot;: \\&quot;Add this image?\\&quot;, \\&quot;dialog_tabs_names_preview_video_title\\&quot;: \\&quot;Add this video?\\&quot;, \\&quot;dialog_tabs_names_preview_unknown_done\\&quot;: \\&quot;Skip preview and accept\\&quot;, \\&quot;dialog_tabs_names_preview_regular_line1\\&quot;: \\&quot;You are about to add the file above.\\&quot;, \\&quot;dialog_tabs_names_preview_regular_line2\\&quot;: \\&quot;Please confirm.\\&quot;, \\&quot;dialog_tabs_names_preview_regular_title\\&quot;: \\&quot;Add this file?\\&quot;, \\&quot;dialog_tabs_names_preview_multiple_clear\\&quot;: \\&quot;Remove all\\&quot;, \\&quot;dialog_tabs_names_preview_multiple_title\\&quot;: \\&quot;You've chosen %files%.\\&quot;, \\&quot;dialog_tabs_names_camera_pleaseAllow_text\\&quot;: \\&quot;You have been prompted to allow camera access from this site.\\u003cbr\\u003eIn order to take pictures with your camera you must approve this request.\\&quot;, \\&quot;dialog_tabs_names_camera_pleaseAllow_title\\&quot;: \\&quot;Please allow access to your camera\\&quot;, \\&quot;dialog_tabs_names_preview_multiple_question\\&quot;: \\&quot;Add %files%?\\&quot;, \\&quot;dialog_tabs_names_preview_error_default_back\\&quot;: \\&quot;Please try again\\&quot;, \\&quot;dialog_tabs_names_preview_error_default_text\\&quot;: \\&quot;Something went wrong during the upload.\\&quot;, \\&quot;dialog_tabs_names_preview_error_default_title\\&quot;: \\&quot;Oops!\\&quot;, \\&quot;dialog_tabs_names_preview_error_loadImage_text\\&quot;: \\&quot;Can't load image\\&quot;, \\&quot;dialog_tabs_names_preview_multiple_tooFewFiles\\&quot;: \\&quot;You've chosen %files%. At least %min% required.\\&quot;, \\&quot;dialog_tabs_names_preview_multiple_tooManyFiles\\&quot;: \\&quot;You've chosen too many files. %max% is maximum.\\&quot;}, \\&quot;buttonLeftRightPadding\\&quot;: \\&quot;8\\&quot;, \\&quot;buttonTopBottomPadding\\&quot;: \\&quot;8\\&quot;, \\&quot;dialogInstructionThree\\&quot;: \\&quot;If you have trouble uploading, click \u22ee in the top right, then \u2018Open in Chrome\u2019\\&quot;, \\&quot;fileSizeRestrictionType\\&quot;: \\&quot;maximumFileSize\\&quot;, \\&quot;textFieldRequiredMessage\\&quot;: \\&quot;Please complete the 'notes' field\\&quot;, \\&quot;fileSizeMaximumRestriction\\&quot;: \\&quot;20\\&quot;, \\&quot;fileSizeMinimumRestriction\\&quot;: \\&quot;2\\&quot;, \\&quot;fileRequiredMessageButtonText\\&quot;: \\&quot;OK\\&quot;, \\&quot;textFieldrequiredMessageButtonText\\&quot;: \\&quot;OK\\&quot;}&quot;}}\">",
+                    "target": [
+                        "body > div:nth-child(1)"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "skip-link",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensure all skip links have a focusable target",
+            "help": "The skip-link target should exist and be focusable",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/skip-link?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "skip-link",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Skip link target exists"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a class=\"skip-to-main\" href=\"#main-content\">Skip to main content</a>",
+                    "target": [
+                        ".skip-to-main"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "svg-img-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures <svg> elements with an img, graphics-document or graphics-symbol role have an accessible text",
+            "help": "<svg> elements with an img role must have an alternative text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/svg-img-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "svg-non-empty-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a child that is a title"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute exists and references elements that are visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<svg class=\"payment-icon\" xmlns=\"http://www.w3.org/2000/svg\" role=\"img\" aria-labelledby=\"pi-american_express\" viewBox=\"0 0 38 24\" width=\"38\" height=\"24\">",
+                    "target": [
+                        "svg[aria-labelledby=\"pi-american_express\"]"
+                    ]
+                }
+            ]
+        }
+    ],
+    "violations": [
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#f37021",
+                                "contrastRatio": 2.93,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<p class=\"site-announcement__text\">Welcome to \u00dcberbartools\u2122!</p>",
+                                    "target": [
+                                        ".site-announcement__text"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.93 (foreground color: #ffffff, background color: #f37021, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<p class=\"site-announcement__text\">Welcome to \u00dcberbartools\u2122!</p>",
+                    "target": [
+                        ".site-announcement__text"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.93 (foreground color: #ffffff, background color: #f37021, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#f37021",
+                                "bgColor": "#e7e7e7",
+                                "contrastRatio": 2.37,
+                                "fontSize": "12.0pt (16px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<header class=\"\n    site-header\n    site-header--sticky\n  \" data-site-header=\"\">",
+                                    "target": [
+                                        "header"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.37 (foreground color: #f37021, background color: #e7e7e7, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<summary data-href=\"/collections/all-our-products\" class=\"main-nav__tier-1-link\" data-main-nav-link=\"\" aria-haspopup=\"true\">",
+                    "target": [
+                        "summary[data-href$=\"all-our-products\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.37 (foreground color: #f37021, background color: #e7e7e7, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#f37021",
+                                "bgColor": "#e7e7e7",
+                                "contrastRatio": 2.37,
+                                "fontSize": "12.0pt (16px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<header class=\"\n    site-header\n    site-header--sticky\n  \" data-site-header=\"\">",
+                                    "target": [
+                                        "header"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.37 (foreground color: #f37021, background color: #e7e7e7, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<summary data-href=\"#\" class=\"main-nav__tier-1-link\" data-main-nav-link=\"\" aria-haspopup=\"true\">",
+                    "target": [
+                        "summary[data-href=\"#\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.37 (foreground color: #f37021, background color: #e7e7e7, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#f37021",
+                                "bgColor": "#e7e7e7",
+                                "contrastRatio": 2.37,
+                                "fontSize": "12.0pt (16px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<header class=\"\n    site-header\n    site-header--sticky\n  \" data-site-header=\"\">",
+                                    "target": [
+                                        "header"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.37 (foreground color: #f37021, background color: #e7e7e7, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/collections\" class=\"main-nav__tier-1-link\" data-main-nav-link=\"\">\n        Collections\n        \n      \n        </a>",
+                    "target": [
+                        ".main-nav__tier-1-link[href$=\"collections\"][data-main-nav-link=\"\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.37 (foreground color: #f37021, background color: #e7e7e7, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#f37021",
+                                "bgColor": "#e7e7e7",
+                                "contrastRatio": 2.37,
+                                "fontSize": "12.0pt (16px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<header class=\"\n    site-header\n    site-header--sticky\n  \" data-site-header=\"\">",
+                                    "target": [
+                                        "header"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.37 (foreground color: #f37021, background color: #e7e7e7, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/pages/innovations-catalogue\" class=\"main-nav__tier-1-link\" data-main-nav-link=\"\">\n        Catalogues\n        \n      \n        </a>",
+                    "target": [
+                        ".main-nav__tier-1-link[href$=\"innovations-catalogue\"][data-main-nav-link=\"\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.37 (foreground color: #f37021, background color: #e7e7e7, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#f37021",
+                                "bgColor": "#e7e7e7",
+                                "contrastRatio": 2.37,
+                                "fontSize": "12.0pt (16px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<header class=\"\n    site-header\n    site-header--sticky\n  \" data-site-header=\"\">",
+                                    "target": [
+                                        "header"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.37 (foreground color: #f37021, background color: #e7e7e7, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/blogs/news\" class=\"main-nav__tier-1-link\" data-main-nav-link=\"\">\n        News\n        \n      \n        </a>",
+                    "target": [
+                        ".main-nav__tier-1-link[href$=\"news\"][data-main-nav-link=\"\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.37 (foreground color: #f37021, background color: #e7e7e7, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#f37021",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 2.93,
+                                "fontSize": "22.5pt (30px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "3:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body class=\"customers-register site-header--sticky\" data-money-format=\"<span class=money>",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.93 (foreground color: #f37021, background color: #ffffff, font size: 22.5pt (30px), font weight: normal). Expected contrast ratio of 3:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<h1 class=\"registration-form__heading\">\n      Create Account\n    </h1>",
+                    "target": [
+                        "h1"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.93 (foreground color: #f37021, background color: #ffffff, font size: 22.5pt (30px), font weight: normal). Expected contrast ratio of 3:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#f37021",
+                                "contrastRatio": 2.93,
+                                "fontSize": "12.0pt (16px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<input class=\"registration-form__button\" type=\"submit\" value=\"Sign Up\">",
+                                    "target": [
+                                        ".registration-form__button"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.93 (foreground color: #ffffff, background color: #f37021, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<input class=\"registration-form__button\" type=\"submit\" value=\"Sign Up\">",
+                    "target": [
+                        ".registration-form__button"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.93 (foreground color: #ffffff, background color: #f37021, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#f37021",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 2.93,
+                                "fontSize": "12.0pt (16px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body class=\"customers-register site-header--sticky\" data-money-format=\"<span class=money>",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.93 (foreground color: #f37021, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/account/login\" id=\"customer_login_link\">Sign In</a>",
+                    "target": [
+                        "#customer_login_link"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.93 (foreground color: #f37021, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#f37021",
+                                "contrastRatio": 2.93,
+                                "fontSize": "12.0pt (16px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<input type=\"submit\" class=\"newsletter-form__sign-up\" aria-label=\"Subscribe\" value=\"Subscribe\">",
+                                    "target": [
+                                        ".newsletter-form__sign-up"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.93 (foreground color: #ffffff, background color: #f37021, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<input type=\"submit\" class=\"newsletter-form__sign-up\" aria-label=\"Subscribe\" value=\"Subscribe\">",
+                    "target": [
+                        ".newsletter-form__sign-up"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.93 (foreground color: #ffffff, background color: #f37021, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+            ]
+        }
+    ]
+}

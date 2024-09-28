@@ -1,0 +1,2744 @@
+{
+    "testEngine": {
+        "name": "axe-core",
+        "version": "4.4.3"
+    },
+    "testRunner": {
+        "name": "axe"
+    },
+    "timestamp": "2024-09-26T23:20:35.918Z",
+    "url": "https://promixnutrition.com/#status",
+    "toolOptions": {
+        "resultTypes": [
+            "violations"
+        ],
+        "reporter": "v1"
+    },
+    "passes": [
+        {
+            "id": "aria-allowed-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures ARIA attributes are allowed for an element's role",
+            "help": "Elements must only use allowed ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attributes are used correctly for the defined role"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "aria-unsupported-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute is supported"
+                        },
+                        {
+                            "id": "aria-prohibited-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "ARIA attribute is allowed"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<div class=\"uw-sl\" role=\"region\" data-uw-rm-ignore=\"true\" data-uw-ignore-translate=\"true\" aria-label=\"Quick Accessibility Options\">",
+                    "target": [
+                        ".uw-sl"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-allowed-role",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "best-practice"
+            ],
+            "description": "Ensures role attribute has an appropriate value for the element",
+            "help": "ARIA role should be appropriate for the element",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-role?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is allowed for given element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"uw-sl\" role=\"region\" data-uw-rm-ignore=\"true\" data-uw-ignore-translate=\"true\" aria-label=\"Quick Accessibility Options\">",
+                    "target": [
+                        ".uw-sl"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-dialog-name",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "best-practice"
+            ],
+            "description": "Ensures every ARIA dialog and alertdialog node has an accessible name",
+            "help": "ARIA dialog and alertdialog nodes should have an accessible name",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-dialog-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute exists and references elements that are visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div data-v-2bc1fac0=\"\" data-v-8cc7f5b6=\"\" id=\"status-flyout-container\" class=\"flyout left flyout\" aria-labelledby=\"status-widget-label\" aria-modal=\"true\" tabindex=\"-1\" role=\"dialog\">",
+                    "target": [
+                        [
+                            "#status-app",
+                            "#status-flyout-container"
+                        ]
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-body",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures aria-hidden='true' is not present on the document body.",
+            "help": "aria-hidden='true' must not be present on the document body",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-hidden-body",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "No aria-hidden attribute is present on document body"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<body class=\"body-index smart-cart--enabled\" style=\"overflow: hidden !important; padding-right: 0px;\" data-scroll-lock-saved-overflow-y-property=\"visible\" data-scroll-lock-saved-inline-overflow-property=\"\" data-scroll-lock-saved-inline-overflow-y-property=\"\" data-status-scroll-lock-locked=\"true\" data-scroll-lock-filled-gap=\"true\" data-scroll-lock-current-fill-gap-method=\"padding\">",
+                    "target": [
+                        "body"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-focus",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag131"
+            ],
+            "description": "Ensures aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "focusable-modal-open",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements while a modal is open"
+                        },
+                        {
+                            "id": "focusable-disabled",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        },
+                        {
+                            "id": "focusable-not-tabbable",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<img width=\"43\" height=\"43\" data-uw-rm-ignore=\"\" class=\"si_w\" aria-hidden=\"true\" alt=\"Spinner: White decorative\" src=\"https://cdn.userway.org/widgetapp/images/spin_wh.svg\">",
+                    "target": [
+                        "#userwayLstIcon > .ups > .si_w[width=\"43\"][height=\"43\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-required-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures elements with ARIA roles have all required ARIA attributes",
+            "help": "Required ARIA attributes must be provided",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-required-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-required-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "All required ARIA attributes are present"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"uw-sl\" role=\"region\" data-uw-rm-ignore=\"true\" data-uw-ignore-translate=\"true\" aria-label=\"Quick Accessibility Options\">",
+                    "target": [
+                        ".uw-sl"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-roles",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all elements with a role attribute use a valid value",
+            "help": "ARIA roles used must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-roles?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "fallbackrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Only one role value used"
+                        },
+                        {
+                            "id": "invalidrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is valid"
+                        },
+                        {
+                            "id": "abstractrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Abstract roles are not used"
+                        },
+                        {
+                            "id": "unsupportedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is supported"
+                        },
+                        {
+                            "id": "deprecatedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is not deprecated"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<div class=\"uw-sl\" role=\"region\" data-uw-rm-ignore=\"true\" data-uw-ignore-translate=\"true\" aria-label=\"Quick Accessibility Options\">",
+                    "target": [
+                        ".uw-sl"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr-value",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all ARIA attributes have valid values",
+            "help": "ARIA attributes must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr-value?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "aria-valid-attr-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute values are valid"
+                        },
+                        {
+                            "id": "aria-errormessage",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "aria-errormessage exists and references elements visible to screen readers that use a supported aria-errormessage technique"
+                        },
+                        {
+                            "id": "aria-level",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-level values are valid"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"uw-sl\" role=\"region\" data-uw-rm-ignore=\"true\" data-uw-ignore-translate=\"true\" aria-label=\"Quick Accessibility Options\">",
+                    "target": [
+                        ".uw-sl"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures attributes that begin with aria- are valid ARIA attributes",
+            "help": "ARIA attributes must conform to valid names",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-valid-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute name is valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"uw-sl\" role=\"region\" data-uw-rm-ignore=\"true\" data-uw-ignore-translate=\"true\" aria-label=\"Quick Accessibility Options\">",
+                    "target": [
+                        ".uw-sl"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "autocomplete-valid",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag21aa",
+                "wcag135"
+            ],
+            "description": "Ensure the autocomplete attribute is correct and suitable for the form field",
+            "help": "autocomplete attribute must be used correctly",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/autocomplete-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "autocomplete-valid",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "the autocomplete attribute is correctly formatted"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input id=\"email_61519214\" class=\"needsclick go945523494 kl-private-reset-css-Xuajs1\" type=\"email\" autocomplete=\"email\" name=\"email\" tabindex=\"0\" placeholder=\"Enter your email\" aria-label=\"Enter your email\" aria-required=\"true\" aria-invalid=\"false\" options=\"[object Object]\" style=\"box-sizing: border-box; border-radius: 2px; padding: 0px 0px 0px 16px; height: 38px; text-align: left; color: rgb(0, 0, 0); font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 14px; font-weight: 400; letter-spacing: 0px; background-color: rgb(255, 255, 255); border: 1px solid rgb(255, 255, 255);\">",
+                    "target": [
+                        "#email_61519214"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "avoid-inline-spacing",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag21aa",
+                "wcag1412"
+            ],
+            "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+            "help": "Inline text spacing must be adjustable with custom stylesheets",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/avoid-inline-spacing?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "avoid-inline-spacing",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No inline styles with '!important' that affect text spacing has been specified"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"no-js\" lang=\"en\" data-uw-w-loader=\"\" style=\"overflow: revert;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "button-name",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures buttons have discernible text",
+            "help": "Buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/button-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "button-has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has inner text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute exists and is not empty"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button class=\"uw-sl__item\" data-uw-rm-ignore=\"true\" data-uw-ignore-translate=\"true\" lang=\"en-US\" id=\"uw-skip-to-main\" aria-label=\"Skip to main content\">",
+                    "target": [
+                        "#uw-skip-to-main"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "bypass",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag241",
+                "section508",
+                "section508.22.o"
+            ],
+            "description": "Ensures each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+            "help": "Page must have means to bypass repeated blocks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/bypass?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "internal-link-present",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Valid skip link found"
+                        },
+                        {
+                            "id": "header-present",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h5>Free Shipping On Orders Over $90. &nbsp;<a class=\"underline\" href=\"/collections/all-health-products\">Shop All</a></h5>",
+                                    "target": [
+                                        ".bannerSlide:nth-child(1) > h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h5>Same Day Shipping Before 4PM EST (M-F)</h5>",
+                                    "target": [
+                                        ".bannerSlide:nth-child(2) > h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h5>90 Day Guarantee*</h5>",
+                                    "target": [
+                                        ".bannerSlide:nth-child(3) > h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h1>No Artificial Anything<sup>\u2122</sup></h1>",
+                                    "target": [
+                                        "h1"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2><a class=\"noScroll active\" href=\"#featured-products-best-sellers\">Best Sellers</a></h2>",
+                                    "target": [
+                                        "li:nth-child(1) > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2><a class=\"noScroll\" href=\"#featured-products-new-arrivals\">New Arrivals</a></h2>",
+                                    "target": [
+                                        "li:nth-child(2) > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h5 class=\"title\"><a href=\"/products/chocolate-whey-protein-isolate\">Chocolate Whey Protein Isolate Powder</a></h5>",
+                                    "target": [
+                                        ".product-chocolate-whey-protein-isolate > .itemInfo > .title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h5 class=\"title\"><a href=\"/products/vanilla-whey-protein-powder\">Vanilla Whey Protein Powder</a></h5>",
+                                    "target": [
+                                        ".product-vanilla-whey-protein-powder > .itemInfo > .title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h5 class=\"title\"><a href=\"/products/debloat-prebiotic-probiotic\">Debloat: Prebiotic + Probiotic Florida Orange</a></h5>",
+                                    "target": [
+                                        ".product-debloat-prebiotic-probiotic > .itemInfo > .title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h5 class=\"title\"><a href=\"/products/vanilla-protein-puff-bars\">Vanilla Protein Puff Bars</a></h5>",
+                                    "target": [
+                                        ".product-vanilla-protein-puff-bars > .itemInfo > .title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h4>",
+                                    "target": [
+                                        ".track > h4"
+                                    ]
+                                },
+                                {
+                                    "html": "<h4>Stay Connected</h4>",
+                                    "target": [
+                                        ".footerColumn-newsletter > h4"
+                                    ]
+                                },
+                                {
+                                    "html": "<h4>Company</h4>",
+                                    "target": [
+                                        ".footerColumn-nav-footer-menu-1 > h4"
+                                    ]
+                                },
+                                {
+                                    "html": "<h4>Customer Service</h4>",
+                                    "target": [
+                                        ".footerColumn-nav-footer-menu-2 > h4"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 data-v-a58f82a6=\"\" data-v-9182ea7c=\"\" class=\"base-text variant-700 color-default align-left header-heading\" id=\"status-widget-label\" tabindex=\"-1\">Welcome</h2>",
+                                    "target": [
+                                        [
+                                            "#status-app",
+                                            "#status-widget-label"
+                                        ]
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Page has a heading"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"no-js\" lang=\"en\" data-uw-w-loader=\"\" style=\"overflow: revert;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#fdf6eb",
+                                "bgColor": "#333333",
+                                "contrastRatio": 11.76,
+                                "fontSize": "12.0pt (16px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 11.76"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h5>Free Shipping On Orders Over $90. &nbsp;<a class=\"underline\" href=\"/collections/all-health-products\">Shop All</a></h5>",
+                    "target": [
+                        ".bannerSlide:nth-child(1) > h5"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "document-title",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag242",
+                "ACT"
+            ],
+            "description": "Ensures each HTML document contains a non-empty <title> element",
+            "help": "Documents must have <title> element to aid in navigation",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/document-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "doc-has-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has a non-empty <title> element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"no-js\" lang=\"en\" data-uw-w-loader=\"\" style=\"overflow: revert;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-active",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value of active elements is unique",
+            "help": "IDs of active elements must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-active",
+                            "data": "uw-skip-to-main",
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has no active elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button class=\"uw-sl__item\" data-uw-rm-ignore=\"true\" data-uw-ignore-translate=\"true\" lang=\"en-US\" id=\"uw-skip-to-main\" aria-label=\"Skip to main content\">",
+                    "target": [
+                        "#uw-skip-to-main"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-aria",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value used in ARIA and in labels is unique",
+            "help": "IDs used in ARIA and labels must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-aria",
+                            "data": "SmartCart_title",
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h2 id=\"SmartCart_title\" class=\"rebuy-cart__flyout-title\">\n                Your Cart <span class=\"cart-count cartCountIcon\"></span>\n            </h2>",
+                    "target": [
+                        "#SmartCart_title"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "script_tag_id",
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<script id=\"script_tag_id\" data-last-check-status-key=\"_prevCheckIsOk\" data-last-check-timestamp-key=\"_prevCheckTimestamp\" data-refresh-interval-ms=\"120000\" data-script-src=\"https://d2fj3s7h83rb61.cloudfront.net/Bm6loFlqAq/bin\" data-app-info=\"1-1--1.3.6\" data-app-platform=\"1\" data-app-type=\"1\" data-app-version=\"1.3.6\">",
+                    "target": [
+                        "#script_tag_id"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "empty-heading",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "best-practice"
+            ],
+            "description": "Ensures headings have discernible text",
+            "help": "Headings should not be empty",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/empty-heading?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h5>Free Shipping On Orders Over $90. &nbsp;<a class=\"underline\" href=\"/collections/all-health-products\">Shop All</a></h5>",
+                    "target": [
+                        ".bannerSlide:nth-child(1) > h5"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "form-field-multiple-labels",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag332"
+            ],
+            "description": "Ensures form field does not have multiple label elements",
+            "help": "Form field must not have multiple label elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/form-field-multiple-labels?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "multiple-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Form field does not have multiple label elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input id=\"email_61519214\" class=\"needsclick go945523494 kl-private-reset-css-Xuajs1\" type=\"email\" autocomplete=\"email\" name=\"email\" tabindex=\"0\" placeholder=\"Enter your email\" aria-label=\"Enter your email\" aria-required=\"true\" aria-invalid=\"false\" options=\"[object Object]\" style=\"box-sizing: border-box; border-radius: 2px; padding: 0px 0px 0px 16px; height: 38px; text-align: left; color: rgb(0, 0, 0); font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 14px; font-weight: 400; letter-spacing: 0px; background-color: rgb(255, 255, 255); border: 1px solid rgb(255, 255, 255);\">",
+                    "target": [
+                        "#email_61519214"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "heading-order",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": {
+                                "headingOrder": [
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(12) > div:nth-child(1) > div:nth-child(1) > h5"
+                                        ],
+                                        "level": 5
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(12) > div:nth-child(1) > div:nth-child(2) > h5"
+                                        ],
+                                        "level": 5
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(12) > div:nth-child(1) > div:nth-child(3) > h5"
+                                        ],
+                                        "level": 5
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(13) > div > section:nth-child(1) > div > div:nth-child(1) > div > h1:nth-child(1)"
+                                        ],
+                                        "level": 1
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(13) > div > div:nth-child(3) > div > div:nth-child(1) > nav:nth-child(1) > ul > li:nth-child(1) > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(13) > div > div:nth-child(3) > div > div:nth-child(1) > nav:nth-child(1) > ul > li:nth-child(2) > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(13) > div > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > h5:nth-child(1)"
+                                        ],
+                                        "level": 5
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(13) > div > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > h5:nth-child(1)"
+                                        ],
+                                        "level": 5
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(13) > div > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(2) > h5:nth-child(1)"
+                                        ],
+                                        "level": 5
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(13) > div > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > h5:nth-child(1)"
+                                        ],
+                                        "level": 5
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(13) > div > div:nth-child(4) > div > h4"
+                                        ],
+                                        "level": 4
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(14) > div > div:nth-child(3) > h4:nth-child(1)"
+                                        ],
+                                        "level": 4
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(14) > div > div:nth-child(4) > h4:nth-child(1)"
+                                        ],
+                                        "level": 4
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(14) > div > div:nth-child(5) > h4:nth-child(1)"
+                                        ],
+                                        "level": 4
+                                    },
+                                    {
+                                        "ancestry": [
+                                            [
+                                                "html > body > status-app:nth-child(46)",
+                                                "div > div > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > h2"
+                                            ]
+                                        ],
+                                        "level": 2
+                                    }
+                                ]
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h5>Free Shipping On Orders Over $90. &nbsp;<a class=\"underline\" href=\"/collections/all-health-products\">Shop All</a></h5>",
+                    "target": [
+                        ".bannerSlide:nth-child(1) > h5"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-has-lang",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures every HTML document has a lang attribute",
+            "help": "<html> element must have a lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-has-lang?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "The <html> element has a lang attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"no-js\" lang=\"en\" data-uw-w-loader=\"\" style=\"overflow: revert;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-lang-valid",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures the lang attribute of the <html> element has a valid value",
+            "help": "<html> element must have a valid value for the lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-lang-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "valid-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Value of lang attribute is included in the list of valid languages"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<html class=\"no-js\" lang=\"en\" data-uw-w-loader=\"\" style=\"overflow: revert;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "identical-links-same-purpose",
+            "impact": "minor",
+            "tags": [
+                "cat.semantics",
+                "wcag2aaa",
+                "wcag249"
+            ],
+            "description": "Ensure that links with the same accessible name serve a similar purpose",
+            "help": "Links with the same name must have a similar purpose",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/identical-links-same-purpose?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "identical-links-same-purpose",
+                            "data": {
+                                "name": "shop all",
+                                "urlProps": {
+                                    "protocol": "http:",
+                                    "hostname": "promixnutrition.com",
+                                    "port": "",
+                                    "pathname": "/collections/all-health-products/",
+                                    "search": {},
+                                    "hash": "",
+                                    "filename": ""
+                                }
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a class=\"mainNavLink withSub\" data-sub=\"shop-allfeatured\" href=\"/collections/all-health-products\">Shop All</a>",
+                                    "target": [
+                                        "a[data-sub=\"shop-allfeatured\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "There are no other links with the same name, that go to a different URL"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a class=\"underline\" href=\"/collections/all-health-products\">Shop All</a>",
+                    "target": [
+                        "h5 > .underline"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures <img> elements have alternate text or a role of none or presentation",
+            "help": "Images must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-alt",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has an alt attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "alt-space-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has a valid alt attribute value"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img src=\"//promixnutrition.com/cdn/shop/t/160/assets/promix-protein-powder-logo.png?v=171405470187072173881726675987\" alt=\"Promix Nutrition Protein Powder\">",
+                    "target": [
+                        ".headerLogo > a[href=\"/\"] > img"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-redundant-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ],
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-redundant-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img src=\"//promixnutrition.com/cdn/shop/t/160/assets/promix-protein-powder-logo.png?v=171405470187072173881726675987\" alt=\"Promix Nutrition Protein Powder\">",
+                    "target": [
+                        ".headerLogo > a[href=\"/\"] > img"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label-title-only",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "best-practice"
+            ],
+            "description": "Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes",
+            "help": "Form elements should have a visible label",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "title-only",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Form element does not solely use title attribute for its label"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input id=\"email_61519214\" class=\"needsclick go945523494 kl-private-reset-css-Xuajs1\" type=\"email\" autocomplete=\"email\" name=\"email\" tabindex=\"0\" placeholder=\"Enter your email\" aria-label=\"Enter your email\" aria-required=\"true\" aria-invalid=\"false\" options=\"[object Object]\" style=\"box-sizing: border-box; border-radius: 2px; padding: 0px 0px 0px 16px; height: 38px; text-align: left; color: rgb(0, 0, 0); font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 14px; font-weight: 400; letter-spacing: 0px; background-color: rgb(255, 255, 255); border: 1px solid rgb(255, 255, 255);\">",
+                    "target": [
+                        "#email_61519214"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag412",
+                "wcag131",
+                "section508",
+                "section508.22.n",
+                "ACT"
+            ],
+            "description": "Ensures every form element has a label",
+            "help": "Form elements must have labels",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute exists and is not empty"
+                        },
+                        {
+                            "id": "non-empty-placeholder",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a placeholder attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "hidden-explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element has a visible explicit <label>"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input id=\"email_61519214\" class=\"needsclick go945523494 kl-private-reset-css-Xuajs1\" type=\"email\" autocomplete=\"email\" name=\"email\" tabindex=\"0\" placeholder=\"Enter your email\" aria-label=\"Enter your email\" aria-required=\"true\" aria-invalid=\"false\" options=\"[object Object]\" style=\"box-sizing: border-box; border-radius: 2px; padding: 0px 0px 0px 16px; height: 38px; text-align: left; color: rgb(0, 0, 0); font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 14px; font-weight: 400; letter-spacing: 0px; background-color: rgb(255, 255, 255); border: 1px solid rgb(255, 255, 255);\">",
+                    "target": [
+                        "#email_61519214"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-unique",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "help": "Ensures landmarks are unique",
+            "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-unique",
+                            "data": {
+                                "role": "region",
+                                "accessibleText": "quick accessibility options"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Landmarks must have a unique role or role/label/title (i.e. accessible name) combination"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"uw-sl\" role=\"region\" data-uw-rm-ignore=\"true\" data-uw-ignore-translate=\"true\" aria-label=\"Quick Accessibility Options\">",
+                    "target": [
+                        ".uw-sl"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a class=\"underline\" href=\"/collections/all-health-products\">Shop All</a>",
+                    "target": [
+                        "h5 > .underline"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "list",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures that lists are structured correctly",
+            "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/list?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "only-listitems",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List element only has direct children that are allowed inside <li> elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<ul>",
+                    "target": [
+                        "#mainNav > ul"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "listitem",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures <li> elements are used semantically",
+            "help": "<li> elements must be contained in a <ul> or <ol>",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/listitem?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<li class=\"navItem-shop-allfeatured\"><a class=\"mainNavLink withSub\" data-sub=\"shop-allfeatured\" href=\"/collections/all-health-products\">Shop All</a></li>",
+                    "target": [
+                        ".navItem-shop-allfeatured"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport-large",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> can scale a significant amount",
+            "help": "Users should be able to zoom and scale the text up to 500%",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport-large?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport-large",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "<meta> tag does not prevent significant zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "nested-interactive",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+            "help": "Interactive controls must not be nested",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/nested-interactive?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "no-focusable-content",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have focusable descendants"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button class=\"uw-sl__item\" data-uw-rm-ignore=\"true\" data-uw-ignore-translate=\"true\" lang=\"en-US\" id=\"uw-skip-to-main\" aria-label=\"Skip to main content\">",
+                    "target": [
+                        "#uw-skip-to-main"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "page-has-heading-one",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+            "help": "Page should contain a level-one heading",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/page-has-heading-one?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-heading-one",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1>No Artificial Anything<sup>\u2122</sup></h1>",
+                                    "target": [
+                                        "h1"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Page has at least one level-one heading"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"no-js\" lang=\"en\" data-uw-w-loader=\"\" style=\"overflow: revert;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "All page content is contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"uw-sl\" role=\"region\" data-uw-rm-ignore=\"true\" data-uw-ignore-translate=\"true\" aria-label=\"Quick Accessibility Options\">",
+                    "target": [
+                        ".uw-sl"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "tabindex",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures tabindex attribute values are not greater than 0",
+            "help": "Elements should not have tabindex greater than zero",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/tabindex?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "tabindex",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have a tabindex greater than 0"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input id=\"email_61519214\" class=\"needsclick go945523494 kl-private-reset-css-Xuajs1\" type=\"email\" autocomplete=\"email\" name=\"email\" tabindex=\"0\" placeholder=\"Enter your email\" aria-label=\"Enter your email\" aria-required=\"true\" aria-invalid=\"false\" options=\"[object Object]\" style=\"box-sizing: border-box; border-radius: 2px; padding: 0px 0px 0px 16px; height: 38px; text-align: left; color: rgb(0, 0, 0); font-family: Arial, &quot;Helvetica Neue&quot;, Helvetica, sans-serif; font-size: 14px; font-weight: 400; letter-spacing: 0px; background-color: rgb(255, 255, 255); border: 1px solid rgb(255, 255, 255);\">",
+                    "target": [
+                        "#email_61519214"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "valid-lang",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2aa",
+                "wcag312"
+            ],
+            "description": "Ensures lang attributes have valid values",
+            "help": "lang attribute must have a valid value",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/valid-lang?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "valid-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Value of lang attribute is included in the list of valid languages"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<button class=\"uw-sl__item\" data-uw-rm-ignore=\"true\" data-uw-ignore-translate=\"true\" lang=\"en-US\" id=\"uw-skip-to-main\" aria-label=\"Skip to main content\">",
+                    "target": [
+                        "#uw-skip-to-main"
+                    ]
+                }
+            ]
+        }
+    ],
+    "violations": [
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#98958f",
+                                "bgColor": "#fdf6eb",
+                                "contrastRatio": 2.79,
+                                "fontSize": "19.1pt (25.5px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "3:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body class=\"body-index smart-cart--enabled\" style=\"overflow: hidden !important; padding-right: 0px;\" data-scroll-lock-saved-overflow-y-property=\"visible\" data-scroll-lock-saved-inline-overflow-property=\"\" data-scroll-lock-saved-inline-overflow-y-property=\"\" data-status-scroll-lock-locked=\"true\" data-scroll-lock-filled-gap=\"true\" data-scroll-lock-current-fill-gap-method=\"padding\">",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.79 (foreground color: #98958f, background color: #fdf6eb, font size: 19.1pt (25.5px), font weight: normal). Expected contrast ratio of 3:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a class=\"noScroll\" href=\"#featured-products-new-arrivals\">New Arrivals</a>",
+                    "target": [
+                        "li:nth-child(2) > h2 > .noScroll"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.79 (foreground color: #98958f, background color: #fdf6eb, font size: 19.1pt (25.5px), font weight: normal). Expected contrast ratio of 3:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#7b7b7b",
+                                "bgColor": "#fdf6eb",
+                                "contrastRatio": 3.94,
+                                "fontSize": "9.2pt (12.24px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body class=\"body-index smart-cart--enabled\" style=\"overflow: hidden !important; padding-right: 0px;\" data-scroll-lock-saved-overflow-y-property=\"visible\" data-scroll-lock-saved-inline-overflow-property=\"\" data-scroll-lock-saved-inline-overflow-y-property=\"\" data-status-scroll-lock-locked=\"true\" data-scroll-lock-filled-gap=\"true\" data-scroll-lock-current-fill-gap-method=\"padding\">",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.94 (foreground color: #7b7b7b, background color: #fdf6eb, font size: 9.2pt (12.24px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<p class=\"disclaimer\">",
+                    "target": [
+                        ".disclaimer:nth-child(3)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #7b7b7b, background color: #fdf6eb, font size: 9.2pt (12.24px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#7b7b7b",
+                                "bgColor": "#fdf6eb",
+                                "contrastRatio": 3.94,
+                                "fontSize": "9.2pt (12.24px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body class=\"body-index smart-cart--enabled\" style=\"overflow: hidden !important; padding-right: 0px;\" data-scroll-lock-saved-overflow-y-property=\"visible\" data-scroll-lock-saved-inline-overflow-property=\"\" data-scroll-lock-saved-inline-overflow-y-property=\"\" data-status-scroll-lock-locked=\"true\" data-scroll-lock-filled-gap=\"true\" data-scroll-lock-current-fill-gap-method=\"padding\">",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.94 (foreground color: #7b7b7b, background color: #fdf6eb, font size: 9.2pt (12.24px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<p class=\"disclaimer\">*Compare to rigid packaging of same volume</p>",
+                    "target": [
+                        ".disclaimer:nth-child(4)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #7b7b7b, background color: #fdf6eb, font size: 9.2pt (12.24px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#7b7b7b",
+                                "bgColor": "#fdf6eb",
+                                "contrastRatio": 3.94,
+                                "fontSize": "9.2pt (12.24px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body class=\"body-index smart-cart--enabled\" style=\"overflow: hidden !important; padding-right: 0px;\" data-scroll-lock-saved-overflow-y-property=\"visible\" data-scroll-lock-saved-inline-overflow-property=\"\" data-scroll-lock-saved-inline-overflow-y-property=\"\" data-status-scroll-lock-locked=\"true\" data-scroll-lock-filled-gap=\"true\" data-scroll-lock-current-fill-gap-method=\"padding\">",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.94 (foreground color: #7b7b7b, background color: #fdf6eb, font size: 9.2pt (12.24px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<p class=\"disclaimer\">\u2022Origin of ingredients by quantity used across all Promix products</p>",
+                    "target": [
+                        ".disclaimer:nth-child(5)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #7b7b7b, background color: #fdf6eb, font size: 9.2pt (12.24px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#7b7b7b",
+                                "bgColor": "#fdf6eb",
+                                "contrastRatio": 3.94,
+                                "fontSize": "9.2pt (12.24px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body class=\"body-index smart-cart--enabled\" style=\"overflow: hidden !important; padding-right: 0px;\" data-scroll-lock-saved-overflow-y-property=\"visible\" data-scroll-lock-saved-inline-overflow-property=\"\" data-scroll-lock-saved-inline-overflow-y-property=\"\" data-status-scroll-lock-locked=\"true\" data-scroll-lock-filled-gap=\"true\" data-scroll-lock-current-fill-gap-method=\"padding\">",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.94 (foreground color: #7b7b7b, background color: #fdf6eb, font size: 9.2pt (12.24px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<p class=\"disclaimer\">California Residents: <a href=\"/pages/prop-65-warning\">Learn about</a> Prop 65 Warning.</p>",
+                    "target": [
+                        ".disclaimer:nth-child(6)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #7b7b7b, background color: #fdf6eb, font size: 9.2pt (12.24px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#7b7b7b",
+                                "bgColor": "#fdf6eb",
+                                "contrastRatio": 3.94,
+                                "fontSize": "9.2pt (12.24px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body class=\"body-index smart-cart--enabled\" style=\"overflow: hidden !important; padding-right: 0px;\" data-scroll-lock-saved-overflow-y-property=\"visible\" data-scroll-lock-saved-inline-overflow-property=\"\" data-scroll-lock-saved-inline-overflow-y-property=\"\" data-status-scroll-lock-locked=\"true\" data-scroll-lock-filled-gap=\"true\" data-scroll-lock-current-fill-gap-method=\"padding\">",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.94 (foreground color: #7b7b7b, background color: #fdf6eb, font size: 9.2pt (12.24px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/pages/prop-65-warning\">Learn about</a>",
+                    "target": [
+                        "a[href$=\"prop-65-warning\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #7b7b7b, background color: #fdf6eb, font size: 9.2pt (12.24px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#7b7b7b",
+                                "bgColor": "#fdf6eb",
+                                "contrastRatio": 3.94,
+                                "fontSize": "9.2pt (12.24px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body class=\"body-index smart-cart--enabled\" style=\"overflow: hidden !important; padding-right: 0px;\" data-scroll-lock-saved-overflow-y-property=\"visible\" data-scroll-lock-saved-inline-overflow-property=\"\" data-scroll-lock-saved-inline-overflow-y-property=\"\" data-status-scroll-lock-locked=\"true\" data-scroll-lock-filled-gap=\"true\" data-scroll-lock-current-fill-gap-method=\"padding\">",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.94 (foreground color: #7b7b7b, background color: #fdf6eb, font size: 9.2pt (12.24px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<p class=\"disclaimer\">By using our site you agree to the following <a href=\"/pages/terms-conditions\">Terms of Service</a></p>",
+                    "target": [
+                        ".disclaimer:nth-child(7)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #7b7b7b, background color: #fdf6eb, font size: 9.2pt (12.24px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#7b7b7b",
+                                "bgColor": "#fdf6eb",
+                                "contrastRatio": 3.94,
+                                "fontSize": "9.2pt (12.24px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body class=\"body-index smart-cart--enabled\" style=\"overflow: hidden !important; padding-right: 0px;\" data-scroll-lock-saved-overflow-y-property=\"visible\" data-scroll-lock-saved-inline-overflow-property=\"\" data-scroll-lock-saved-inline-overflow-y-property=\"\" data-status-scroll-lock-locked=\"true\" data-scroll-lock-filled-gap=\"true\" data-scroll-lock-current-fill-gap-method=\"padding\">",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.94 (foreground color: #7b7b7b, background color: #fdf6eb, font size: 9.2pt (12.24px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/pages/terms-conditions\">Terms of Service</a>",
+                    "target": [
+                        ".disclaimer:nth-child(7) > a[href$=\"terms-conditions\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #7b7b7b, background color: #fdf6eb, font size: 9.2pt (12.24px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#fbf4e9",
+                                "bgColor": "#fdf6eb",
+                                "contrastRatio": 1.01,
+                                "fontSize": "11.3pt (15px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<nav data-v-1b0f42f8=\"\" data-v-27f1836d=\"\" class=\"nav main-nav nav-enter-active nav-enter-to\" style=\"--offset: 0; --amount: 3;\">",
+                                    "target": [
+                                        [
+                                            "#status-app",
+                                            ".nav"
+                                        ]
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 1.01 (foreground color: #fbf4e9, background color: #fdf6eb, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a data-v-1b0f42f8=\"\" class=\"nav-item\" href=\"#status-profile\">Profile</a>",
+                    "target": [
+                        [
+                            "#status-app",
+                            "a[href$=\"#status-profile\"]"
+                        ]
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.01 (foreground color: #fbf4e9, background color: #fdf6eb, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+            ]
+        },
+        {
+            "id": "heading-order",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order invalid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h5 class=\"title\"><a href=\"/products/chocolate-whey-protein-isolate\">Chocolate Whey Protein Isolate Powder</a></h5>",
+                    "target": [
+                        ".product-chocolate-whey-protein-isolate > .itemInfo > .title"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Heading order invalid"
+                }
+            ]
+        },
+        {
+            "id": "landmark-one-main",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has a main landmark",
+            "help": "Document should have one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-one-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-main",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have a main landmark"
+                        }
+                    ],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<html class=\"no-js\" lang=\"en\" data-uw-w-loader=\"\" style=\"overflow: revert;\">",
+                    "target": [
+                        "html"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+                }
+            ]
+        },
+        {
+            "id": "landmark-unique",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "help": "Ensures landmarks are unique",
+            "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-unique",
+                            "data": {
+                                "role": "navigation",
+                                "accessibleText": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<nav class=\"featuredProductsNav\"><ul class=\"toggle-featured-products\"><li><h2><a class=\"noScroll active\" href=\"#featured-products-best-sellers\">Best Sellers</a></h2></li><li><h2><a class=\"noScroll\" href=\"#featured-products-new-arrivals\">New Arrivals</a></h2></li></ul></nav>",
+                                    "target": [
+                                        ".featuredProductsNav"
+                                    ]
+                                },
+                                {
+                                    "html": "<nav>",
+                                    "target": [
+                                        ".footerColumn-nav-footer-menu-1 > nav"
+                                    ]
+                                },
+                                {
+                                    "html": "<nav><ul><li><a href=\"/pages/contact\">Contact Us</a></li><li><a href=\"https://promixnutrition.com/apps/wonderment/tracking\">Track Order</a></li><li><a href=\"/pages/wholesale-apply\">Wholesale</a></li><li><a target=\"_blank\" href=\"https://promix-nutrition.gorgias.help/en-US\">FAQ</a></li></ul></nav>",
+                                    "target": [
+                                        ".footerColumn-nav-footer-menu-2 > nav"
+                                    ]
+                                },
+                                {
+                                    "html": "<nav>",
+                                    "target": [
+                                        ".footerTerms > nav"
+                                    ]
+                                },
+                                {
+                                    "html": "<nav><ul><li><a target=\"_blank\" href=\"https://www.instagram.com/promix/\"><img alt=\"Instagram logo\" src=\"//promixnutrition.com/cdn/shop/t/160/assets/icon-instagram.png?v=40935812023775770881726675922\"></a></li></ul></nav>",
+                                    "target": [
+                                        ".footerSocial > nav"
+                                    ]
+                                },
+                                {
+                                    "html": "<nav data-v-1b0f42f8=\"\" data-v-27f1836d=\"\" class=\"nav main-nav nav-enter-active nav-enter-to\" style=\"--offset: 0; --amount: 3;\">",
+                                    "target": [
+                                        [
+                                            "#status-app",
+                                            ".nav"
+                                        ]
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<nav id=\"mainNav\" class=\"main\">",
+                    "target": [
+                        "#mainNav"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport",
+            "impact": "critical",
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice",
+                "ACT"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> does not disable text scaling and zooming",
+            "help": "Zooming and scaling should not be disabled",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport",
+                            "data": "maximum-scale",
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "maximum-scale on <meta> tag disables zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  maximum-scale on <meta> tag disables zooming on mobile devices"
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div id=\"bannerSlider\" class=\"aboveHeaderBanner\">",
+                    "target": [
+                        "#bannerSlider"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"headerLogo\">\n    <a href=\"/\">\n      <img src=\"//promixnutrition.com/cdn/shop/t/160/assets/promix-protein-powder-logo.png?v=171405470187072173881726675987\" alt=\"Promix Nutrition Protein Powder\">\n    </a>\n  </div>",
+                    "target": [
+                        ".headerLogo"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a class=\"headerIcon-search headerIcon open-searchBar\" href=\"/search\">\n    <img alt=\"Search Icon\" src=\"//promixnutrition.com/cdn/shop/t/160/assets/icon-search.png?v=110965060254019515151726675935\">\n  </a>",
+                    "target": [
+                        ".headerIcon-search"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a class=\"headerIcon-account headerIcon\" href=\"#status\">\n    <img alt=\"Account Icon\" src=\"//promixnutrition.com/cdn/shop/t/160/assets/icon-account.png?v=165312114404047996541726675913\">\n  </a>",
+                    "target": [
+                        ".headerIcon-account"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img alt=\"Cart Icon\" src=\"//promixnutrition.com/cdn/shop/t/160/assets/icon-shoppingBag.png?v=960180085189179811726675937\">",
+                    "target": [
+                        "img[alt=\"Cart Icon\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"sideContent\">",
+                    "target": [
+                        ".sideContent"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img alt=\"Promix Nutrition Supplements Online Store\" src=\"//promixnutrition.com/cdn/shop/files/promix-nutrition-debloat-hero_1500x.jpg?v=1706633537\" data-src=\"//promixnutrition.com/cdn/shop/files/promix-nutrition-debloat-hero_1500x.jpg?v=1706633537\" class=\"lazyload img-v1\">",
+                    "target": [
+                        ".img-v1"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"happySubscribers\">\n      <img alt=\"Promix Reviews\" src=\"//promixnutrition.com/cdn/shop/t/160/assets/promix-review_180x.png?v=92201712966405310551726675989\">\n      <span>125,000+ Happy Customers</span>\n    </div>",
+                    "target": [
+                        ".happySubscribers"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p>Everyone's favorites</p>",
+                    "target": [
+                        ".sectionTitle > p"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img class=\"productLoopImage lazyload\" src=\"//promixnutrition.com/cdn/shop/t/160/assets/placeholder-1x1-transparent.png?v=54962450015020009911726675953\" data-src=\"//promixnutrition.com/cdn/shop/files/1-promix-2_5lb-grass-fed-whey-isolate-dutch-chocolate-packaging-single_480x.png?v=1700672009\" alt=\"Chocolate Whey Protein Isolate Powder\">",
+                    "target": [
+                        ".product-chocolate-whey-protein-isolate > .itemImage > .imageContainer > .withHoverImage.image > .productLoopImage.lazyload"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"itemInfo\">\n    <h5 class=\"title\"><a href=\"/products/chocolate-whey-protein-isolate\">Chocolate Whey Protein Isolate Powder</a></h5><div class=\"quickExcerpt\">Building muscle and improving recovery</div></div>",
+                    "target": [
+                        ".product-chocolate-whey-protein-isolate > .itemInfo"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img class=\"productLoopImage lazyload\" src=\"//promixnutrition.com/cdn/shop/t/160/assets/placeholder-1x1-transparent.png?v=54962450015020009911726675953\" data-src=\"//promixnutrition.com/cdn/shop/files/1-promix-2_5lb-grass-fed-native-whey-protein-powder-madagascar-vanilla-packaging-single_480x.png?v=1718040223\" alt=\"Vanilla Whey Protein Powder\">",
+                    "target": [
+                        ".productLoopImage.lazyload[alt=\"Vanilla Whey Protein Powder\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"itemInfo\">\n    <h5 class=\"title\"><a href=\"/products/vanilla-whey-protein-powder\">Vanilla Whey Protein Powder</a></h5><div class=\"quickExcerpt\">Building muscle and improving recovery</div></div>",
+                    "target": [
+                        ".product-vanilla-whey-protein-powder > .itemInfo"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img class=\"productLoopImage lazyload\" src=\"//promixnutrition.com/cdn/shop/t/160/assets/placeholder-1x1-transparent.png?v=54962450015020009911726675953\" data-src=\"//promixnutrition.com/cdn/shop/files/promix-debloat-probiotic-and-prebiotic-30svg-jar-florida-orange-1_480x.png?v=1717609611\" alt=\"Debloat: Prebiotic + Probiotic Florida Orange\">",
+                    "target": [
+                        ".product-debloat-prebiotic-probiotic > .itemImage > .imageContainer > .withHoverImage.image > .productLoopImage.lazyload"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"itemInfo\">\n    <h5 class=\"title\"><a href=\"/products/debloat-prebiotic-probiotic\">Debloat: Prebiotic + Probiotic Florida Orange</a></h5><div class=\"quickExcerpt\">reducing bloating, gut health</div></div>",
+                    "target": [
+                        ".product-debloat-prebiotic-probiotic > .itemInfo"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img class=\"productLoopImage lazyload\" src=\"//promixnutrition.com/cdn/shop/t/160/assets/placeholder-1x1-transparent.png?v=54962450015020009911726675953\" data-src=\"//promixnutrition.com/cdn/shop/products/Promix-Protein-Puff-Bar-Vanilla-Individual-Bar-1_480x.png?v=1670353423\" alt=\"Vanilla Protein Puff Bars\">",
+                    "target": [
+                        ".productLoopImage.lazyload[alt=\"Vanilla Protein Puff Bars\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"itemInfo\">\n    <h5 class=\"title\"><a href=\"/products/vanilla-protein-puff-bars\">Vanilla Protein Puff Bars</a></h5><div class=\"quickExcerpt\">Curbing cravings and supporting recovery</div></div>",
+                    "target": [
+                        ".product-vanilla-protein-puff-bars > .itemInfo"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"sectionButton\"><a class=\"button buttonPrimary\" href=\"/collections/best-supplement-sellers\">Shop All Best Sellers</a></div>",
+                    "target": [
+                        "#featured-products-best-sellers > .sectionButton"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"ingredientsMarquee\">",
+                    "target": [
+                        ".ingredientsMarquee"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"footerColumn-logo footerColumn\">",
+                    "target": [
+                        ".footerColumn-logo"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h4>Stay Connected</h4>",
+                    "target": [
+                        ".footerColumn-newsletter > h4"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p>Sign up for new product drops, restocks, and more</p>",
+                    "target": [
+                        ".footerColumn-newsletter > p"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h4>Company</h4>",
+                    "target": [
+                        ".footerColumn-nav-footer-menu-1 > h4"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h4>Customer Service</h4>",
+                    "target": [
+                        ".footerColumn-nav-footer-menu-2 > h4"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p class=\"copyright\">\u00a9 2024 Promix Nutrition. All rights reserved. <span>2613 NW 24th Terrace Gainesville, FL 32605</span></p>",
+                    "target": [
+                        ".copyright"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p class=\"disclaimer\">",
+                    "target": [
+                        ".disclaimer:nth-child(3)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p class=\"disclaimer\">*Compare to rigid packaging of same volume</p>",
+                    "target": [
+                        ".disclaimer:nth-child(4)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p class=\"disclaimer\">\u2022Origin of ingredients by quantity used across all Promix products</p>",
+                    "target": [
+                        ".disclaimer:nth-child(5)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p class=\"disclaimer\">California Residents: <a href=\"/pages/prop-65-warning\">Learn about</a> Prop 65 Warning.</p>",
+                    "target": [
+                        ".disclaimer:nth-child(6)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p class=\"disclaimer\">By using our site you agree to the following <a href=\"/pages/terms-conditions\">Terms of Service</a></p>",
+                    "target": [
+                        ".disclaimer:nth-child(7)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                }
+            ]
+        }
+    ]
+}

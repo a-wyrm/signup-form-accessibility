@@ -1,0 +1,2494 @@
+{
+    "testEngine": {
+        "name": "axe-core",
+        "version": "4.4.3"
+    },
+    "testRunner": {
+        "name": "axe"
+    },
+    "timestamp": "2024-09-27T21:12:50.894Z",
+    "url": "https://merchandise-entertainment.com/",
+    "toolOptions": {
+        "resultTypes": [
+            "violations"
+        ],
+        "reporter": "v1"
+    },
+    "passes": [
+        {
+            "id": "aria-allowed-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures ARIA attributes are allowed for an element's role",
+            "help": "Elements must only use allowed ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attributes are used correctly for the defined role"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "aria-unsupported-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute is supported"
+                        },
+                        {
+                            "id": "aria-prohibited-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "ARIA attribute is allowed"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a href=\"https://merchandise-entertainment.com/onze-diensten/\" class=\"hfe-menu-item\" aria-haspopup=\"true\" aria-expanded=\"false\">Onze diensten<span class=\"hfe-menu-toggle sub-arrow hfe-menu-child-0\"><i class=\"fa\"></i></span></a>",
+                    "target": [
+                        "#menu-1-40dc61b > .menu-item-has-children.hfe-has-submenu.parent-has-child:nth-child(2) > .hfe-has-submenu-container > .hfe-menu-item[aria-haspopup=\"true\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-allowed-role",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "best-practice"
+            ],
+            "description": "Ensures role attribute has an appropriate value for the element",
+            "help": "ARIA role should be appropriate for the element",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-role?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is allowed for given element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div role=\"button\" class=\"hfe-nav-menu__toggle elementor-clickable\" aria-haspopup=\"true\" aria-expanded=\"false\">\n\t\t\t\t\t<span class=\"screen-reader-text\">Menu</span>\n\t\t\t\t\t<div class=\"hfe-nav-menu-icon\">\n\t\t\t\t\t\t<i aria-hidden=\"true\" class=\"fas fa-align-justify\"></i>\t\t\t\t\t</div>\n\t\t\t\t</div>",
+                    "target": [
+                        ".hfe-pointer__underline > .hfe-nav-menu__toggle.elementor-clickable[role=\"button\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-body",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures aria-hidden='true' is not present on the document body.",
+            "help": "aria-hidden='true' must not be present on the document body",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-hidden-body",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "No aria-hidden attribute is present on document body"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<body class=\"home page-template page-template-elementor_header_footer page page-id-7 wp-custom-logo ehf-header ehf-footer ehf-template-renden ehf-stylesheet-renden layout-sidebar-none layout-responsive header-style1 elementor-default elementor-template-full-width elementor-kit-1141 elementor-page elementor-page-7 e--ua-blink e--ua-webkit\" data-elementor-device-mode=\"desktop\">",
+                    "target": [
+                        "body"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-focus",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag131"
+            ],
+            "description": "Ensures aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "focusable-modal-open",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements while a modal is open"
+                        },
+                        {
+                            "id": "focusable-disabled",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        },
+                        {
+                            "id": "focusable-not-tabbable",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<i aria-hidden=\"true\" class=\"fas fa-align-justify\"></i>",
+                    "target": [
+                        ".hfe-nav-menu__toggle.elementor-clickable[role=\"button\"] > .hfe-nav-menu-icon > .fa-align-justify.fas[aria-hidden=\"true\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-required-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures elements with ARIA roles have all required ARIA attributes",
+            "help": "Required ARIA attributes must be provided",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-required-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-required-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "All required ARIA attributes are present"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"elementor-background-slideshow__slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active\" data-swiper-slide-index=\"0\" role=\"group\" aria-label=\"1 / 5\" style=\"width: 1280px; transition-duration: 0ms; opacity: 0; transform: translate3d(0px, 0px, 0px);\">",
+                    "target": [
+                        ".swiper-slide-duplicate-active[data-swiper-slide-index=\"0\"][aria-label=\"1 / 5\"]:nth-child(1)"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-roles",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all elements with a role attribute use a valid value",
+            "help": "ARIA roles used must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-roles?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "fallbackrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Only one role value used"
+                        },
+                        {
+                            "id": "invalidrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is valid"
+                        },
+                        {
+                            "id": "abstractrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Abstract roles are not used"
+                        },
+                        {
+                            "id": "unsupportedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is supported"
+                        },
+                        {
+                            "id": "deprecatedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is not deprecated"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<div class=\"elementor-background-slideshow__slide swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active\" data-swiper-slide-index=\"0\" role=\"group\" aria-label=\"1 / 5\" style=\"width: 1280px; transition-duration: 0ms; opacity: 0; transform: translate3d(0px, 0px, 0px);\">",
+                    "target": [
+                        ".swiper-slide-duplicate-active[data-swiper-slide-index=\"0\"][aria-label=\"1 / 5\"]:nth-child(1)"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr-value",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all ARIA attributes have valid values",
+            "help": "ARIA attributes must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr-value?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "aria-valid-attr-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute values are valid"
+                        },
+                        {
+                            "id": "aria-errormessage",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "aria-errormessage exists and references elements visible to screen readers that use a supported aria-errormessage technique"
+                        },
+                        {
+                            "id": "aria-level",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-level values are valid"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"https://merchandise-entertainment.com/onze-diensten/\" class=\"hfe-menu-item\" aria-haspopup=\"true\" aria-expanded=\"false\">Onze diensten<span class=\"hfe-menu-toggle sub-arrow hfe-menu-child-0\"><i class=\"fa\"></i></span></a>",
+                    "target": [
+                        "#menu-1-40dc61b > .menu-item-has-children.hfe-has-submenu.parent-has-child:nth-child(2) > .hfe-has-submenu-container > .hfe-menu-item[aria-haspopup=\"true\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures attributes that begin with aria- are valid ARIA attributes",
+            "help": "ARIA attributes must conform to valid names",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-valid-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute name is valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"https://merchandise-entertainment.com/onze-diensten/\" class=\"hfe-menu-item\" aria-haspopup=\"true\" aria-expanded=\"false\">Onze diensten<span class=\"hfe-menu-toggle sub-arrow hfe-menu-child-0\"><i class=\"fa\"></i></span></a>",
+                    "target": [
+                        "#menu-1-40dc61b > .menu-item-has-children.hfe-has-submenu.parent-has-child:nth-child(2) > .hfe-has-submenu-container > .hfe-menu-item[aria-haspopup=\"true\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "avoid-inline-spacing",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag21aa",
+                "wcag1412"
+            ],
+            "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+            "help": "Inline text spacing must be adjustable with custom stylesheets",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/avoid-inline-spacing?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "avoid-inline-spacing",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No inline styles with '!important' that affect text spacing has been specified"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-b71e132 elementor-section-full_width elementor-section-stretched elementor-hidden-mobile elementor-hidden-tablet elementor-section-height-default elementor-section-height-default\" data-id=\"b71e132\" data-element_type=\"section\" data-settings=\"{&quot;stretch_section&quot;:&quot;section-stretched&quot;}\" style=\"width: 1280px; left: 0px;\">",
+                    "target": [
+                        ".elementor-element-b71e132"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "bypass",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag241",
+                "section508",
+                "section508.22.o"
+            ],
+            "description": "Ensures each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+            "help": "Page must have means to bypass repeated blocks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/bypass?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "header-present",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1 class=\"elementor-heading-title elementor-size-default\">Welkom bij </h1>",
+                                    "target": [
+                                        ".elementor-element-df8a7b7 > .elementor-widget-container > h1"
+                                    ]
+                                },
+                                {
+                                    "html": "<h1 class=\"elementor-heading-title elementor-size-default\">Merchandise &amp; Entertainment!</h1>",
+                                    "target": [
+                                        ".elementor-element-b30a7fd > .elementor-widget-container > h1"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">For merchandise and more</h2>",
+                                    "target": [
+                                        ".elementor-element-8d7a60b > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Specialist in alle vormen van merchandising</h2>",
+                                    "target": [
+                                        ".elementor-element-52027d4 > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Gepersonaliseerde webwinkel, inclusief opslag en handling</h2>",
+                                    "target": [
+                                        ".elementor-element-8df088f > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Printing on demand</h2>",
+                                    "target": [
+                                        ".elementor-element-520170b > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Duurzaamheid voorop</h2>",
+                                    "target": [
+                                        ".elementor-element-5c2fb54 > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Korte levertijden</h2>",
+                                    "target": [
+                                        ".elementor-element-d462d31 > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">In-house designers</h2>",
+                                    "target": [
+                                        ".elementor-element-91cf14b > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Al jaren trotse partner van:</h2>",
+                                    "target": [
+                                        ".elementor-element-43b04bc > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-medium\"><a href=\"https://merchandise-entertainment.com/over-ons/samenwerkingen\">Bekijk alle samenwerkingen &gt;</a></h2>",
+                                    "target": [
+                                        ".elementor-size-medium"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Merchandise&amp;Entertainment</h2>",
+                                    "target": [
+                                        ".elementor-element-70fd28a > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Contact</h2>",
+                                    "target": [
+                                        ".elementor-element-56a6b52 > .elementor-widget-container > h2"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Page has a heading"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"nl-NL\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#2d8dc4",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.67,
+                                "fontSize": "15.0pt (20px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "3:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 3.67"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"https://merchandise-entertainment.com/\" class=\"hfe-menu-item\">Home</a>",
+                    "target": [
+                        "#menu-1-40dc61b > .menu-item-home.current-menu-item.page_item > .hfe-menu-item"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "document-title",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag242",
+                "ACT"
+            ],
+            "description": "Ensures each HTML document contains a non-empty <title> element",
+            "help": "Documents must have <title> element to aid in navigation",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/document-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "doc-has-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has a non-empty <title> element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"nl-NL\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": "minor",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "wp-emoji-styles-inline-css",
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<style id=\"wp-emoji-styles-inline-css\" type=\"text/css\">",
+                    "target": [
+                        "#wp-emoji-styles-inline-css"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "empty-heading",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "best-practice"
+            ],
+            "description": "Ensures headings have discernible text",
+            "help": "Headings should not be empty",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/empty-heading?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h1 class=\"elementor-heading-title elementor-size-default\">Welkom bij </h1>",
+                    "target": [
+                        ".elementor-element-df8a7b7 > .elementor-widget-container > h1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "heading-order",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": {
+                                "headingOrder": [
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div:nth-child(2) > section:nth-child(1) > div:nth-child(4) > div > div > div:nth-child(1) > div > h1"
+                                        ],
+                                        "level": 1
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div:nth-child(2) > section:nth-child(1) > div:nth-child(4) > div > div > div:nth-child(2) > div > h1"
+                                        ],
+                                        "level": 1
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div:nth-child(2) > section:nth-child(2) > div > div > div > div > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div:nth-child(2) > section:nth-child(3) > div > div:nth-child(1) > div > section:nth-child(1) > div > div:nth-child(2) > div > div > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div:nth-child(2) > section:nth-child(3) > div > div:nth-child(1) > div > section:nth-child(2) > div > div:nth-child(2) > div > div > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div:nth-child(2) > section:nth-child(3) > div > div:nth-child(1) > div > section:nth-child(3) > div > div:nth-child(2) > div > div > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div:nth-child(2) > section:nth-child(3) > div > div:nth-child(1) > div > section:nth-child(4) > div > div:nth-child(2) > div > div > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div:nth-child(2) > section:nth-child(3) > div > div:nth-child(1) > div > section:nth-child(5) > div > div:nth-child(2) > div > div > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div:nth-child(2) > section:nth-child(3) > div > div:nth-child(1) > div > section:nth-child(6) > div > div:nth-child(2) > div > div > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div:nth-child(2) > section:nth-child(5) > div > div > div > div > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div:nth-child(2) > section:nth-child(8) > div > div > div > div > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > footer:nth-child(3) > div > div > section:nth-child(1) > div > div:nth-child(2) > div > section:nth-child(1) > div > div:nth-child(1) > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > footer:nth-child(3) > div > div > section:nth-child(1) > div > div:nth-child(2) > div > section:nth-child(1) > div > div:nth-child(2) > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    }
+                                ]
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h1 class=\"elementor-heading-title elementor-size-default\">Welkom bij </h1>",
+                    "target": [
+                        ".elementor-element-df8a7b7 > .elementor-widget-container > h1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-has-lang",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures every HTML document has a lang attribute",
+            "help": "<html> element must have a lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-has-lang?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "The <html> element has a lang attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"nl-NL\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-lang-valid",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures the lang attribute of the <html> element has a valid value",
+            "help": "<html> element must have a valid value for the lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-lang-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "valid-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Value of lang attribute is included in the list of valid languages"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<html lang=\"nl-NL\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "identical-links-same-purpose",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "wcag2aaa",
+                "wcag249"
+            ],
+            "description": "Ensure that links with the same accessible name serve a similar purpose",
+            "help": "Links with the same name must have a similar purpose",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/identical-links-same-purpose?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "identical-links-same-purpose",
+                            "data": {
+                                "name": "me logo",
+                                "urlProps": {
+                                    "protocol": "http:",
+                                    "hostname": "merchandise-entertainment.com",
+                                    "port": "",
+                                    "pathname": "/",
+                                    "search": {},
+                                    "hash": "",
+                                    "filename": ""
+                                }
+                            },
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "There are no other links with the same name, that go to a different URL"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"https://merchandise-entertainment.com/\">",
+                    "target": [
+                        ".elementor-element-0f36c5b > .elementor-widget-container > a"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures <img> elements have alternate text or a role of none or presentation",
+            "help": "Images must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-alt",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has an alt attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "alt-space-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has a valid alt attribute value"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img fetchpriority=\"high\" width=\"1000\" height=\"1000\" src=\"https://merchandise-entertainment.com/wp-content/uploads/2022/08/ME-logo.png\" class=\"attachment-full size-full wp-image-4002\" alt=\"M&amp;E logo\" srcset=\"https://merchandise-entertainment.com/wp-content/uploads/2022/08/ME-logo.png 1000w, https://merchandise-entertainment.com/wp-content/uploads/2022/08/ME-logo-300x300.png 300w, https://merchandise-entertainment.com/wp-content/uploads/2022/08/ME-logo-150x150.png 150w, https://merchandise-entertainment.com/wp-content/uploads/2022/08/ME-logo-768x768.png 768w\" sizes=\"(max-width: 1000px) 100vw, 1000px\">",
+                    "target": [
+                        ".elementor-element-0f36c5b > .elementor-widget-container > a > .wp-image-4002[fetchpriority=\"high\"][width=\"1000\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-redundant-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ],
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-redundant-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img fetchpriority=\"high\" width=\"1000\" height=\"1000\" src=\"https://merchandise-entertainment.com/wp-content/uploads/2022/08/ME-logo.png\" class=\"attachment-full size-full wp-image-4002\" alt=\"M&amp;E logo\" srcset=\"https://merchandise-entertainment.com/wp-content/uploads/2022/08/ME-logo.png 1000w, https://merchandise-entertainment.com/wp-content/uploads/2022/08/ME-logo-300x300.png 300w, https://merchandise-entertainment.com/wp-content/uploads/2022/08/ME-logo-150x150.png 150w, https://merchandise-entertainment.com/wp-content/uploads/2022/08/ME-logo-768x768.png 768w\" sizes=\"(max-width: 1000px) 100vw, 1000px\">",
+                    "target": [
+                        ".elementor-element-0f36c5b > .elementor-widget-container > a > .wp-image-4002[fetchpriority=\"high\"][width=\"1000\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-banner-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the banner landmark is at top level",
+            "help": "Banner landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-banner-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "banner"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The banner landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header id=\"masthead\" itemscope=\"itemscope\" itemtype=\"https://schema.org/WPHeader\">",
+                    "target": [
+                        "#masthead"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-contentinfo-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the contentinfo landmark is at top level",
+            "help": "Contentinfo landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-contentinfo-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "contentinfo"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The contentinfo landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<footer itemtype=\"https://schema.org/WPFooter\" itemscope=\"itemscope\" id=\"colophon\" role=\"contentinfo\">",
+                    "target": [
+                        "#colophon"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-banner",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one banner landmark",
+            "help": "Document should not have more than one banner landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-banner?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-banner",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one banner landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header id=\"masthead\" itemscope=\"itemscope\" itemtype=\"https://schema.org/WPHeader\">",
+                    "target": [
+                        "#masthead"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-contentinfo",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one contentinfo landmark",
+            "help": "Document should not have more than one contentinfo landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-contentinfo?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-contentinfo",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one contentinfo landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<footer itemtype=\"https://schema.org/WPFooter\" itemscope=\"itemscope\" id=\"colophon\" role=\"contentinfo\">",
+                    "target": [
+                        "#colophon"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-unique",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "help": "Ensures landmarks are unique",
+            "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-unique",
+                            "data": {
+                                "role": "banner",
+                                "accessibleText": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Landmarks must have a unique role or role/label/title (i.e. accessible name) combination"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header id=\"masthead\" itemscope=\"itemscope\" itemtype=\"https://schema.org/WPHeader\">",
+                    "target": [
+                        "#masthead"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a href=\"https://merchandise-entertainment.com/\">",
+                    "target": [
+                        ".elementor-element-0f36c5b > .elementor-widget-container > a"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "list",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures that lists are structured correctly",
+            "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/list?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "only-listitems",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List element only has direct children that are allowed inside <li> elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<ul id=\"menu-1-40dc61b\" class=\"hfe-nav-menu\">",
+                    "target": [
+                        "#menu-1-40dc61b"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "listitem",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures <li> elements are used semantically",
+            "help": "<li> elements must be contained in a <ul> or <ol>",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/listitem?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<li id=\"menu-item-3437\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-7 current_page_item parent hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/\" class=\"hfe-menu-item\">Home</a></li>",
+                    "target": [
+                        "#menu-1-40dc61b > .menu-item-home.current-menu-item.page_item"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport-large",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> can scale a significant amount",
+            "help": "Users should be able to zoom and scale the text up to 500%",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport-large?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport-large",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "<meta> tag does not prevent significant zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice",
+                "ACT"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> does not disable text scaling and zooming",
+            "help": "Zooming and scaling should not be disabled",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "<meta> tag does not disable zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "nested-interactive",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+            "help": "Interactive controls must not be nested",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/nested-interactive?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "no-focusable-content",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have focusable descendants"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<img fetchpriority=\"high\" width=\"1000\" height=\"1000\" src=\"https://merchandise-entertainment.com/wp-content/uploads/2022/08/ME-logo.png\" class=\"attachment-full size-full wp-image-4002\" alt=\"M&amp;E logo\" srcset=\"https://merchandise-entertainment.com/wp-content/uploads/2022/08/ME-logo.png 1000w, https://merchandise-entertainment.com/wp-content/uploads/2022/08/ME-logo-300x300.png 300w, https://merchandise-entertainment.com/wp-content/uploads/2022/08/ME-logo-150x150.png 150w, https://merchandise-entertainment.com/wp-content/uploads/2022/08/ME-logo-768x768.png 768w\" sizes=\"(max-width: 1000px) 100vw, 1000px\">",
+                    "target": [
+                        ".elementor-element-0f36c5b > .elementor-widget-container > a > .wp-image-4002[fetchpriority=\"high\"][width=\"1000\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "page-has-heading-one",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+            "help": "Page should contain a level-one heading",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/page-has-heading-one?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-heading-one",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1 class=\"elementor-heading-title elementor-size-default\">Welkom bij </h1>",
+                                    "target": [
+                                        ".elementor-element-df8a7b7 > .elementor-widget-container > h1"
+                                    ]
+                                },
+                                {
+                                    "html": "<h1 class=\"elementor-heading-title elementor-size-default\">Merchandise &amp; Entertainment!</h1>",
+                                    "target": [
+                                        ".elementor-element-b30a7fd > .elementor-widget-container > h1"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Page has at least one level-one heading"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"nl-NL\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "All page content is contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div id=\"page\" class=\"hfeed site\">",
+                    "target": [
+                        "#page"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "scrollable-region-focusable",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag211"
+            ],
+            "description": "Ensure elements that have scrollable content are accessible by keyboard",
+            "help": "Scrollable region must have keyboard access",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/scrollable-region-focusable?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "focusable-content",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Element contains focusable elements"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"nl-NL\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        }
+    ],
+    "violations": [
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#148ecf",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.62,
+                                "fontSize": "12.0pt (16px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body class=\"home page-template page-template-elementor_header_footer page page-id-7 wp-custom-logo ehf-header ehf-footer ehf-template-renden ehf-stylesheet-renden layout-sidebar-none layout-responsive header-style1 elementor-default elementor-template-full-width elementor-kit-1141 elementor-page elementor-page-7 e--ua-blink e--ua-webkit\" data-elementor-device-mode=\"desktop\">",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.62 (foreground color: #148ecf, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span class=\"cretive-button-text\">Lees meer...</span>",
+                    "target": [
+                        ".elementor-element-1e7e9e7 > .elementor-widget-container > .eael-creative-button-wrapper > .eael-creative-button.eael-creative-button--default[data-text=\"Go!\"] > .creative-button-inner > .cretive-button-text"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.62 (foreground color: #148ecf, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#148ecf",
+                                "contrastRatio": 3.62,
+                                "fontSize": "12.0pt (16px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a class=\"eael-creative-button eael-creative-button--default\" href=\"https://merchandise-entertainment.com/contact/\" data-text=\"Go!\">",
+                                    "target": [
+                                        ".elementor-element-43f19b4 > .elementor-widget-container > .eael-creative-button-wrapper > .eael-creative-button.eael-creative-button--default[data-text=\"Go!\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.62 (foreground color: #ffffff, background color: #148ecf, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span class=\"cretive-button-text\">Contact</span>",
+                    "target": [
+                        ".elementor-element-43f19b4 > .elementor-widget-container > .eael-creative-button-wrapper > .eael-creative-button.eael-creative-button--default[data-text=\"Go!\"] > .creative-button-inner > .cretive-button-text"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.62 (foreground color: #ffffff, background color: #148ecf, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": "minor",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-3437",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-3437\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-7 current_page_item parent hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/\" class=\"hfe-menu-item\">Home</a></li>",
+                                    "target": [
+                                        "#menu-1-3058343 > .menu-item-home.current-menu-item.page_item"
+                                    ]
+                                },
+                                {
+                                    "html": "<li id=\"menu-item-3437\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-7 current_page_item parent hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/\" class=\"hfe-menu-item\">Home</a></li>",
+                                    "target": [
+                                        "#menu-1-cc181fb > .menu-item-home.current-menu-item.page_item"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-3437"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-3437\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-7 current_page_item parent hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/\" class=\"hfe-menu-item\">Home</a></li>",
+                    "target": [
+                        "#menu-1-40dc61b > .menu-item-home.current-menu-item.page_item"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-3437"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-3418",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-3418\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children parent hfe-has-submenu hfe-creative-menu parent-has-child\">",
+                                    "target": [
+                                        "#menu-1-3058343 > .menu-item-has-children.hfe-has-submenu.parent-has-child:nth-child(2)"
+                                    ]
+                                },
+                                {
+                                    "html": "<li id=\"menu-item-3418\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children parent hfe-has-submenu hfe-creative-menu parent-has-child\">",
+                                    "target": [
+                                        "#menu-1-cc181fb > .menu-item-has-children.hfe-has-submenu.parent-has-child:nth-child(2)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-3418"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-3418\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children parent hfe-has-submenu hfe-creative-menu parent-has-child\">",
+                    "target": [
+                        "#menu-1-40dc61b > .menu-item-has-children.hfe-has-submenu.parent-has-child:nth-child(2)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-3418"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-3448",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-3448\" class=\"menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/onze-diensten/productie/\" class=\"hfe-sub-menu-item\">Productie</a></li>",
+                                    "target": [
+                                        "#menu-1-3058343 > .menu-item-has-children.hfe-has-submenu.parent-has-child:nth-child(2) > .sub-menu > .menu-item-type-post_type.menu-item-object-page:nth-child(1)"
+                                    ]
+                                },
+                                {
+                                    "html": "<li id=\"menu-item-3448\" class=\"menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/onze-diensten/productie/\" class=\"hfe-sub-menu-item\">Productie</a></li>",
+                                    "target": [
+                                        "#menu-1-cc181fb > .menu-item-has-children.hfe-has-submenu.parent-has-child:nth-child(2) > .sub-menu > .menu-item-type-post_type.menu-item-object-page:nth-child(1)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-3448"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-3448\" class=\"menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/onze-diensten/productie/\" class=\"hfe-sub-menu-item\">Productie</a></li>",
+                    "target": [
+                        "#menu-1-40dc61b > .menu-item-has-children.hfe-has-submenu.parent-has-child:nth-child(2) > .sub-menu > .menu-item-type-post_type.menu-item-object-page:nth-child(1)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-3448"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-3421",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-3421\" class=\"menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/onze-diensten/opslag/\" class=\"hfe-sub-menu-item\">Opslag</a></li>",
+                                    "target": [
+                                        "#menu-1-3058343 > .menu-item-has-children.hfe-has-submenu.parent-has-child:nth-child(2) > .sub-menu > .menu-item-type-post_type.menu-item-object-page:nth-child(2)"
+                                    ]
+                                },
+                                {
+                                    "html": "<li id=\"menu-item-3421\" class=\"menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/onze-diensten/opslag/\" class=\"hfe-sub-menu-item\">Opslag</a></li>",
+                                    "target": [
+                                        "#menu-1-cc181fb > .menu-item-has-children.hfe-has-submenu.parent-has-child:nth-child(2) > .sub-menu > .menu-item-type-post_type.menu-item-object-page:nth-child(2)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-3421"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-3421\" class=\"menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/onze-diensten/opslag/\" class=\"hfe-sub-menu-item\">Opslag</a></li>",
+                    "target": [
+                        "#menu-1-40dc61b > .menu-item-has-children.hfe-has-submenu.parent-has-child:nth-child(2) > .sub-menu > .menu-item-type-post_type.menu-item-object-page:nth-child(2)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-3421"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-3422",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-3422\" class=\"menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/onze-diensten/verkoop/\" class=\"hfe-sub-menu-item\">Verkoop</a></li>",
+                                    "target": [
+                                        "#menu-1-3058343 > .menu-item-has-children.hfe-has-submenu.parent-has-child:nth-child(2) > .sub-menu > .menu-item-type-post_type.menu-item-object-page:nth-child(3)"
+                                    ]
+                                },
+                                {
+                                    "html": "<li id=\"menu-item-3422\" class=\"menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/onze-diensten/verkoop/\" class=\"hfe-sub-menu-item\">Verkoop</a></li>",
+                                    "target": [
+                                        "#menu-1-cc181fb > .menu-item-has-children.hfe-has-submenu.parent-has-child:nth-child(2) > .sub-menu > .menu-item-type-post_type.menu-item-object-page:nth-child(3)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-3422"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-3422\" class=\"menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/onze-diensten/verkoop/\" class=\"hfe-sub-menu-item\">Verkoop</a></li>",
+                    "target": [
+                        "#menu-1-40dc61b > .menu-item-has-children.hfe-has-submenu.parent-has-child:nth-child(2) > .sub-menu > .menu-item-type-post_type.menu-item-object-page:nth-child(3)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-3422"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-3904",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-3904\" class=\"menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/onze-diensten/samenwerkingen/\" class=\"hfe-sub-menu-item\">Samenwerkingen</a></li>",
+                                    "target": [
+                                        "#menu-1-3058343 > .menu-item-has-children.hfe-has-submenu.parent-has-child:nth-child(2) > .sub-menu > .menu-item-type-post_type.menu-item-object-page:nth-child(4)"
+                                    ]
+                                },
+                                {
+                                    "html": "<li id=\"menu-item-3904\" class=\"menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/onze-diensten/samenwerkingen/\" class=\"hfe-sub-menu-item\">Samenwerkingen</a></li>",
+                                    "target": [
+                                        "#menu-1-cc181fb > .menu-item-has-children.hfe-has-submenu.parent-has-child:nth-child(2) > .sub-menu > .menu-item-type-post_type.menu-item-object-page:nth-child(4)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-3904"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-3904\" class=\"menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/onze-diensten/samenwerkingen/\" class=\"hfe-sub-menu-item\">Samenwerkingen</a></li>",
+                    "target": [
+                        "#menu-1-40dc61b > .menu-item-has-children.hfe-has-submenu.parent-has-child:nth-child(2) > .sub-menu > .menu-item-type-post_type.menu-item-object-page:nth-child(4)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-3904"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-3424",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-3424\" class=\"menu-item menu-item-type-post_type menu-item-object-page parent hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/duurzaamheid-stanleystella/\" class=\"hfe-menu-item\">Stanley/Stella</a></li>",
+                                    "target": [
+                                        "#menu-1-3058343 > .parent.menu-item-type-post_type.menu-item-object-page:nth-child(3)"
+                                    ]
+                                },
+                                {
+                                    "html": "<li id=\"menu-item-3424\" class=\"menu-item menu-item-type-post_type menu-item-object-page parent hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/duurzaamheid-stanleystella/\" class=\"hfe-menu-item\">Stanley/Stella</a></li>",
+                                    "target": [
+                                        "#menu-1-cc181fb > .parent.menu-item-type-post_type.menu-item-object-page:nth-child(3)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-3424"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-3424\" class=\"menu-item menu-item-type-post_type menu-item-object-page parent hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/duurzaamheid-stanleystella/\" class=\"hfe-menu-item\">Stanley/Stella</a></li>",
+                    "target": [
+                        "#menu-1-40dc61b > .parent.menu-item-type-post_type.menu-item-object-page:nth-child(3)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-3424"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-3425",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-3425\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children parent hfe-has-submenu hfe-creative-menu parent-has-child\">",
+                                    "target": [
+                                        "#menu-1-3058343 > .menu-item-has-children.hfe-has-submenu.parent-has-child:nth-child(4)"
+                                    ]
+                                },
+                                {
+                                    "html": "<li id=\"menu-item-3425\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children parent hfe-has-submenu hfe-creative-menu parent-has-child\">",
+                                    "target": [
+                                        "#menu-1-cc181fb > .menu-item-has-children.hfe-has-submenu.parent-has-child:nth-child(4)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-3425"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-3425\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children parent hfe-has-submenu hfe-creative-menu parent-has-child\">",
+                    "target": [
+                        "#menu-1-40dc61b > .menu-item-has-children.hfe-has-submenu.parent-has-child:nth-child(4)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-3425"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-3426",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-3426\" class=\"menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/contact/vacatures/\" class=\"hfe-sub-menu-item\">Vacatures</a></li>",
+                                    "target": [
+                                        "#menu-1-3058343 > .menu-item-has-children.hfe-has-submenu.parent-has-child:nth-child(4) > .sub-menu > .menu-item-type-post_type.menu-item-object-page"
+                                    ]
+                                },
+                                {
+                                    "html": "<li id=\"menu-item-3426\" class=\"menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/contact/vacatures/\" class=\"hfe-sub-menu-item\">Vacatures</a></li>",
+                                    "target": [
+                                        "#menu-1-cc181fb > .menu-item-has-children.hfe-has-submenu.parent-has-child:nth-child(4) > .sub-menu > .menu-item-type-post_type.menu-item-object-page"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-3426"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-3426\" class=\"menu-item menu-item-type-post_type menu-item-object-page hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/contact/vacatures/\" class=\"hfe-sub-menu-item\">Vacatures</a></li>",
+                    "target": [
+                        "#menu-1-40dc61b > .menu-item-has-children.hfe-has-submenu.parent-has-child:nth-child(4) > .sub-menu > .menu-item-type-post_type.menu-item-object-page"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-3426"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-4067-en",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-4067-en\" class=\"lang-item lang-item-25 lang-item-en lang-item-first menu-item menu-item-type-custom menu-item-object-custom parent hfe-creative-menu\">",
+                                    "target": [
+                                        "#menu-1-3058343 > .lang-item.lang-item-25.lang-item-en"
+                                    ]
+                                },
+                                {
+                                    "html": "<li id=\"menu-item-4067-en\" class=\"lang-item lang-item-25 lang-item-en lang-item-first menu-item menu-item-type-custom menu-item-object-custom parent hfe-creative-menu\">",
+                                    "target": [
+                                        "#menu-1-cc181fb > .lang-item.lang-item-25.lang-item-en"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-4067-en"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-4067-en\" class=\"lang-item lang-item-25 lang-item-en lang-item-first menu-item menu-item-type-custom menu-item-object-custom parent hfe-creative-menu\">",
+                    "target": [
+                        "#menu-1-40dc61b > .lang-item.lang-item-25.lang-item-en"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-4067-en"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-3427",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-3427\" class=\"menu-item menu-item-type-post_type menu-item-object-page parent hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/algemene-voorwaarden/\" class=\"hfe-menu-item\">Algemene voorwaarden</a></li>",
+                                    "target": [
+                                        "#menu-1-756be73 > .parent.menu-item-type-post_type.menu-item-object-page:nth-child(1)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-3427"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-3427\" class=\"menu-item menu-item-type-post_type menu-item-object-page parent hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/algemene-voorwaarden/\" class=\"hfe-menu-item\">Algemene voorwaarden</a></li>",
+                    "target": [
+                        "#menu-1-81bb201 > .parent.menu-item-type-post_type.menu-item-object-page:nth-child(1)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-3427"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-3428",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-3428\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy parent hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/privacy-policy/\" class=\"hfe-menu-item\">Privacyverklaring</a></li>",
+                                    "target": [
+                                        "#menu-1-756be73 > .menu-item-privacy-policy.parent.menu-item-type-post_type"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-3428"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-3428\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy parent hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/privacy-policy/\" class=\"hfe-menu-item\">Privacyverklaring</a></li>",
+                    "target": [
+                        "#menu-1-81bb201 > .menu-item-privacy-policy.parent.menu-item-type-post_type"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-3428"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-3429",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-3429\" class=\"menu-item menu-item-type-post_type menu-item-object-page parent hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/contact/\" class=\"hfe-menu-item\">Contact</a></li>",
+                                    "target": [
+                                        "#menu-1-756be73 > .parent.menu-item-type-post_type.menu-item-object-page:nth-child(3)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-3429"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-3429\" class=\"menu-item menu-item-type-post_type menu-item-object-page parent hfe-creative-menu\"><a href=\"https://merchandise-entertainment.com/contact/\" class=\"hfe-menu-item\">Contact</a></li>",
+                    "target": [
+                        "#menu-1-81bb201 > .parent.menu-item-type-post_type.menu-item-object-page:nth-child(3)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-3429"
+                }
+            ]
+        },
+        {
+            "id": "landmark-one-main",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has a main landmark",
+            "help": "Document should have one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-one-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-main",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have a main landmark"
+                        }
+                    ],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<html lang=\"nl-NL\">",
+                    "target": [
+                        "html"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+                }
+            ]
+        },
+        {
+            "id": "landmark-unique",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "help": "Ensures landmarks are unique",
+            "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-unique",
+                            "data": {
+                                "role": "navigation",
+                                "accessibleText": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<nav class=\"hfe-nav-menu__layout-horizontal hfe-nav-menu__submenu-arrow\" data-toggle-icon=\"\" data-close-icon=\"\" data-full-width=\"\">",
+                                    "target": [
+                                        ".hfe-nav-menu__layout-horizontal[data-toggle-icon=\"\"][data-close-icon=\"\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<nav class=\"hfe-nav-menu__layout-horizontal hfe-nav-menu__submenu-arrow\" data-toggle-icon=\"<i aria-hidden=&quot;true&quot; tabindex=&quot;0&quot; class=&quot;fas fa-align-justify&quot;>",
+                    "target": [
+                        ".hfe-pointer__underline > .hfe-nav-menu__layout-horizontal.hfe-nav-menu__submenu-arrow[data-full-width=\"\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"https://stanleystella.com\" target=\"_blank\">\n\t\t\t\t\t\t\t<img width=\"200\" height=\"100\" src=\"https://merchandise-entertainment.com/wp-content/uploads/2022/08/StanleyStella_OfficialDealer-Logo-200px_Dark.png\" class=\"attachment-large size-large wp-image-4608\" alt=\"\">\t\t\t\t\t\t\t\t</a>",
+                    "target": [
+                        "a[href$=\"stanleystella.com\"][target=\"_blank\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"https://www.concertatsea.nl/\" target=\"_blank\">",
+                    "target": [
+                        "a[href$=\"concertatsea.nl/\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"https://www.merchandise.nu/en/collections/blof\" target=\"_blank\">",
+                    "target": [
+                        ".elementor-element-215d37c > .elementor-widget-container > figure > a[target=\"_blank\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"https://www.merchandise.nu/collections/ayreon-01011001\" target=\"_blank\">",
+                    "target": [
+                        ".elementor-element-6a700ef > .elementor-widget-container > figure > a[target=\"_blank\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"swiper-wrapper\" id=\"swiper-wrapper-9100342b5ef02106f0\" aria-live=\"off\" style=\"transition-duration: 0ms;\">",
+                    "target": [
+                        "#swiper-wrapper-9100342b5ef02106f0"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"elementor-container elementor-column-gap-default\">",
+                    "target": [
+                        ".elementor-element-5ebda96 > .elementor-column-gap-default.elementor-container"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-95d298e elementor-hidden-tablet elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"95d298e\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-95d298e"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-0f39407\" data-id=\"0f39407\" data-element_type=\"column\">",
+                    "target": [
+                        ".elementor-element-0f39407"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-e133292\" data-id=\"e133292\" data-element_type=\"column\">",
+                    "target": [
+                        ".elementor-element-e133292"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-51fd879\" data-id=\"51fd879\" data-element_type=\"column\">",
+                    "target": [
+                        ".elementor-element-51fd879"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-5a86199\" data-id=\"5a86199\" data-element_type=\"column\">",
+                    "target": [
+                        ".elementor-element-5a86199"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-e304149\" data-id=\"e304149\" data-element_type=\"column\">",
+                    "target": [
+                        ".elementor-element-e304149"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"elementor-column elementor-col-50 elementor-inner-column elementor-element elementor-element-76720e2\" data-id=\"76720e2\" data-element_type=\"column\">",
+                    "target": [
+                        ".elementor-element-76720e2"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"elementor-column elementor-col-50 elementor-top-column elementor-element elementor-element-137e7c5 elementor-hidden-tablet\" data-id=\"137e7c5\" data-element_type=\"column\">",
+                    "target": [
+                        ".elementor-element-137e7c5"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-126a2ba elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"126a2ba\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-126a2ba"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-63175f5 elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"63175f5\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-63175f5"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-ab6b6df elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"ab6b6df\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-ab6b6df"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-c692e86 elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"c692e86\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-c692e86"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                }
+            ]
+        }
+    ]
+}

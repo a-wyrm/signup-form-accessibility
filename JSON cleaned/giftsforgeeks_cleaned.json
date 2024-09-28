@@ -1,0 +1,3178 @@
+{
+    "testEngine": {
+        "name": "axe-core",
+        "version": "4.4.3"
+    },
+    "testRunner": {
+        "name": "axe"
+    },
+    "timestamp": "2024-09-26T04:38:27.142Z",
+    "url": "https://www.giftsforgeeks.org.uk/account/create",
+    "toolOptions": {
+        "resultTypes": [
+            "violations"
+        ],
+        "reporter": "v1"
+    },
+    "passes": [
+        {
+            "id": "aria-allowed-attr",
+            "impact": "critical",
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures ARIA attributes are allowed for an element's role",
+            "help": "Elements must only use allowed ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attributes are used correctly for the defined role"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "aria-unsupported-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute is supported"
+                        },
+                        {
+                            "id": "aria-prohibited-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "ARIA attribute is allowed"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<li role=\"menuitem\" class=\"is-dropdown-submenu-parent opens-right\" aria-haspopup=\"true\" aria-label=\"\n                                            Figure Cases\n                                        \">",
+                    "target": [
+                        ".is-dropdown-submenu-parent.opens-right[aria-haspopup=\"true\"]:nth-child(1)"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-allowed-role",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "best-practice"
+            ],
+            "description": "Ensures role attribute has an appropriate value for the element",
+            "help": "ARIA role should be appropriate for the element",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-role?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is allowed for given element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<ul class=\"mobile-menu vertical menu drilldown\" data-drilldown=\"7y7or5-drilldown\" data-scroll-top=\"true\" role=\"menubar\" data-mutate=\"pmatjh-drilldown\">",
+                    "target": [
+                        ".mobile-menu"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-command-name",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures every ARIA button, link and menuitem has an accessible name",
+            "help": "ARIA commands must have an accessible name",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-command-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute exists and is not empty"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<li role=\"menuitem\" class=\"is-dropdown-submenu-parent opens-right\" aria-haspopup=\"true\" aria-label=\"\n                                            Figure Cases\n                                        \">",
+                    "target": [
+                        ".is-dropdown-submenu-parent.opens-right[aria-haspopup=\"true\"]:nth-child(1)"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-body",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures aria-hidden='true' is not present on the document body.",
+            "help": "aria-hidden='true' must not be present on the document body",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-hidden-body",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "No aria-hidden attribute is present on document body"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<body class=\"js-no-touch\" data-pages=\"1\">",
+                    "target": [
+                        "body"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-focus",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag131"
+            ],
+            "description": "Ensures aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "focusable-modal-open",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements while a modal is open"
+                        },
+                        {
+                            "id": "focusable-disabled",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        },
+                        {
+                            "id": "focusable-not-tabbable",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<i class=\"sw-icon-menu\" aria-hidden=\"true\"></i>",
+                    "target": [
+                        ".sw-icon-menu"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-required-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures elements with ARIA roles have all required ARIA attributes",
+            "help": "Required ARIA attributes must be provided",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-required-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-required-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "All required ARIA attributes are present"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<ul class=\"main-nav vertical large-horizontal menu align-center dropdown\" data-responsive-menu=\"accordion large-dropdown\" data-close-on-click-inside=\"\" role=\"menubar\" data-dropdown-menu=\"jegvd3-dropdown-menu\" data-mutate=\"3xwpfb-responsive-menu\">",
+                    "target": [
+                        ".main-nav"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-required-children",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures elements with an ARIA role that require child roles contain them",
+            "help": "Certain ARIA roles must contain particular children",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-required-children?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-required-children",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Required ARIA children are present"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<ul class=\"main-nav vertical large-horizontal menu align-center dropdown\" data-responsive-menu=\"accordion large-dropdown\" data-close-on-click-inside=\"\" role=\"menubar\" data-dropdown-menu=\"jegvd3-dropdown-menu\" data-mutate=\"3xwpfb-responsive-menu\">",
+                    "target": [
+                        ".main-nav"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-required-parent",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures elements with an ARIA role that require parent roles are contained by them",
+            "help": "Certain ARIA roles must be contained by particular parents",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-required-parent?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-required-parent",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Required ARIA parent role present"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<li role=\"menuitem\" class=\"is-dropdown-submenu-parent opens-right\" aria-haspopup=\"true\" aria-label=\"\n                                            Figure Cases\n                                        \">",
+                    "target": [
+                        ".is-dropdown-submenu-parent.opens-right[aria-haspopup=\"true\"]:nth-child(1)"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-roles",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all elements with a role attribute use a valid value",
+            "help": "ARIA roles used must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-roles?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "fallbackrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Only one role value used"
+                        },
+                        {
+                            "id": "invalidrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is valid"
+                        },
+                        {
+                            "id": "abstractrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Abstract roles are not used"
+                        },
+                        {
+                            "id": "unsupportedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is supported"
+                        },
+                        {
+                            "id": "deprecatedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is not deprecated"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<ul class=\"main-nav vertical large-horizontal menu align-center dropdown\" data-responsive-menu=\"accordion large-dropdown\" data-close-on-click-inside=\"\" role=\"menubar\" data-dropdown-menu=\"jegvd3-dropdown-menu\" data-mutate=\"3xwpfb-responsive-menu\">",
+                    "target": [
+                        ".main-nav"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr-value",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all ARIA attributes have valid values",
+            "help": "ARIA attributes must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr-value?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "aria-valid-attr-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute values are valid"
+                        },
+                        {
+                            "id": "aria-errormessage",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "aria-errormessage exists and references elements visible to screen readers that use a supported aria-errormessage technique"
+                        },
+                        {
+                            "id": "aria-level",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-level values are valid"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a data-toggle=\"account-dropdown\" class=\"account-link header-link mod-account\" aria-controls=\"account-dropdown\" data-is-focus=\"false\" data-yeti-box=\"account-dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"><i class=\"sw-icon-user1\" aria-hidden=\"true\"></i><span class=\"span\">Account</span></a>",
+                    "target": [
+                        ".account-link"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures attributes that begin with aria- are valid ARIA attributes",
+            "help": "ARIA attributes must conform to valid names",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-valid-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute name is valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a data-toggle=\"account-dropdown\" class=\"account-link header-link mod-account\" aria-controls=\"account-dropdown\" data-is-focus=\"false\" data-yeti-box=\"account-dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"><i class=\"sw-icon-user1\" aria-hidden=\"true\"></i><span class=\"span\">Account</span></a>",
+                    "target": [
+                        ".account-link"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "autocomplete-valid",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag21aa",
+                "wcag135"
+            ],
+            "description": "Ensure the autocomplete attribute is correct and suitable for the form field",
+            "help": "autocomplete attribute must be used correctly",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/autocomplete-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "autocomplete-valid",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "the autocomplete attribute is correctly formatted"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input type=\"email\" name=\"email\" class=\"required jsv_email\" placeholder=\"Email address\" autocomplete=\"off\" aria-required=\"true\">",
+                    "target": [
+                        ".jsv_email"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "avoid-inline-spacing",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag21aa",
+                "wcag1412"
+            ],
+            "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+            "help": "Inline text spacing must be adjustable with custom stylesheets",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/avoid-inline-spacing?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "avoid-inline-spacing",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No inline styles with '!important' that affect text spacing has been specified"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div id=\"__shopwired_cookie_consent_container\" style=\"left: 20px; bottom: 20px; position: fixed; background-color: rgba(0, 0, 0, 0.8); padding: 15px 20px 20px; width: 320px; z-index: 9999; box-sizing: border-box; backface-visibility: hidden; display: block;\">",
+                    "target": [
+                        "#__shopwired_cookie_consent_container"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "button-name",
+            "impact": "critical",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures buttons have discernible text",
+            "help": "Buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/button-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "button-has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has inner text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button type=\"submit\" class=\"button expanded lg\" data-name=\"button_create_account\">Create your account</button>",
+                    "target": [
+                        "button[data-name=\"button_create_account\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "bypass",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag241",
+                "section508",
+                "section508.22.o"
+            ],
+            "description": "Ensures each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+            "help": "Page must have means to bypass repeated blocks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/bypass?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "internal-link-present",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Valid skip link found"
+                        },
+                        {
+                            "id": "header-present",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1 class=\"page-title\">\n                                    Welcome\n                                </h1>",
+                                    "target": [
+                                        "h1"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"page-subtitle\">Personal information</h3>",
+                                    "target": [
+                                        ".page-subtitle:nth-child(1)"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"page-subtitle padding-top-sm\">Sign in information</h3>",
+                                    "target": [
+                                        ".page-subtitle.padding-top-sm"
+                                    ]
+                                },
+                                {
+                                    "html": "<h4>\n\t\t\t\tCustomers\n\t\t\t</h4>",
+                                    "target": [
+                                        "h4:nth-child(1)"
+                                    ]
+                                },
+                                {
+                                    "html": "<h4 class=\"contact\">Contact Us</h4>",
+                                    "target": [
+                                        ".contact"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Page has a heading"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en\" class=\"js\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#4a1639",
+                                "contrastRatio": 14.33,
+                                "fontSize": "16.5pt (22px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "3:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 14.33"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h3 class=\"off-canvas-basket__heading\">Your shopping basket</h3>",
+                    "target": [
+                        ".off-canvas-basket__heading"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "document-title",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag242",
+                "ACT"
+            ],
+            "description": "Ensures each HTML document contains a non-empty <title> element",
+            "help": "Documents must have <title> element to aid in navigation",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/document-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "doc-has-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has a non-empty <title> element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en\" class=\"js\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-active",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value of active elements is unique",
+            "help": "IDs of active elements must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-active",
+                            "data": "password1",
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has no active elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input type=\"password\" name=\"password\" id=\"password1\" value=\"\" placeholder=\"Password\" required=\"\" aria-required=\"true\">",
+                    "target": [
+                        "#password1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-aria",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value used in ARIA and in labels is unique",
+            "help": "IDs used in ARIA and labels must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-aria",
+                            "data": "offCanvasMobile",
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"off-canvas position-left medium off-canvas-mobile is-transition-push\" id=\"offCanvasMobile\" data-off-canvas=\"dvlu7h-off-canvas\" aria-hidden=\"true\">",
+                    "target": [
+                        "#offCanvasMobile"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "offCanvasBasket",
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"off-canvas off-canvas-basket position-right is-transition-overlap\" id=\"offCanvasBasket\" data-off-canvas=\"4bspbp-off-canvas\" data-transition=\"overlap\" aria-hidden=\"true\">",
+                    "target": [
+                        "#offCanvasBasket"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "empty-heading",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "best-practice"
+            ],
+            "description": "Ensures headings have discernible text",
+            "help": "Headings should not be empty",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/empty-heading?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h1 class=\"page-title\">\n                                    Welcome\n                                </h1>",
+                    "target": [
+                        "h1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "form-field-multiple-labels",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag332"
+            ],
+            "description": "Ensures form field does not have multiple label elements",
+            "help": "Form field must not have multiple label elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/form-field-multiple-labels?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "multiple-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Form field does not have multiple label elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"search\" name=\"keywords\" placeholder=\"Search for brand, category or product\" class=\"input-group-field\">",
+                    "target": [
+                        ".large-6.show-for-large.col-cell > .header-search-form[action=\"/search/products\"][method=\"get\"] > .input-group.mod-icon.mod-rounded > .input-group-field[type=\"search\"][name=\"keywords\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "heading-order",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": {
+                                "headingOrder": [
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div:nth-child(3) > div:nth-child(5) > div > div > div > section > div:nth-child(1) > h1"
+                                        ],
+                                        "level": 1
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div:nth-child(3) > div:nth-child(5) > div > div > div > section > div:nth-child(3) > div > div > form > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div:nth-child(3) > div:nth-child(5) > div > div > div > section > div:nth-child(3) > div > div > form > h3:nth-child(5)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div:nth-child(3) > footer:nth-child(6) > div > div > div > div > div > h4:nth-child(1)"
+                                        ],
+                                        "level": 4
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div:nth-child(3) > footer:nth-child(6) > div > div > div > div > div > h4:nth-child(3)"
+                                        ],
+                                        "level": 4
+                                    }
+                                ]
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h1 class=\"page-title\">\n                                    Welcome\n                                </h1>",
+                    "target": [
+                        "h1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-has-lang",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures every HTML document has a lang attribute",
+            "help": "<html> element must have a lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-has-lang?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "The <html> element has a lang attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en\" class=\"js\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-lang-valid",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures the lang attribute of the <html> element has a valid value",
+            "help": "<html> element must have a valid value for the lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-lang-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "valid-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Value of lang attribute is included in the list of valid languages"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<html lang=\"en\" class=\"js\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "identical-links-same-purpose",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "wcag2aaa",
+                "wcag249"
+            ],
+            "description": "Ensure that links with the same accessible name serve a similar purpose",
+            "help": "Links with the same name must have a similar purpose",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/identical-links-same-purpose?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "identical-links-same-purpose",
+                            "data": {
+                                "name": "skip to main content",
+                                "urlProps": {
+                                    "protocol": "http:",
+                                    "hostname": "www.giftsforgeeks.org.uk",
+                                    "port": "",
+                                    "pathname": "/account/create/",
+                                    "search": {},
+                                    "hash": "",
+                                    "filename": ""
+                                }
+                            },
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "There are no other links with the same name, that go to a different URL"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"#content\">Skip to Main Content</a>",
+                    "target": [
+                        "a[href$=\"#content\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures <img> elements have alternate text or a role of none or presentation",
+            "help": "Images must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-alt",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has an alt attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "alt-space-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has a valid alt attribute value"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img src=\"https://cdn.ecommercedns.uk/files/3/221103/0/2427300/logo.gif\" alt=\"Gifts for Geeks LTD\" class=\"logo-image\">",
+                    "target": [
+                        ".logo-image"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-redundant-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ],
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-redundant-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img src=\"https://cdn.ecommercedns.uk/files/3/221103/0/2427300/logo.gif\" alt=\"Gifts for Geeks LTD\" class=\"logo-image\">",
+                    "target": [
+                        ".logo-image"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label-title-only",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "best-practice"
+            ],
+            "description": "Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes",
+            "help": "Form elements should have a visible label",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "title-only",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Form element does not solely use title attribute for its label"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"search\" name=\"keywords\" placeholder=\"Search for brand, category or product\" class=\"input-group-field\">",
+                    "target": [
+                        ".large-6.show-for-large.col-cell > .header-search-form[action=\"/search/products\"][method=\"get\"] > .input-group.mod-icon.mod-rounded > .input-group-field[type=\"search\"][name=\"keywords\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag412",
+                "wcag131",
+                "section508",
+                "section508.22.n",
+                "ACT"
+            ],
+            "description": "Ensures every form element has a label",
+            "help": "Form elements must have labels",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "non-empty-placeholder",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a placeholder attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "hidden-explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element has a visible explicit <label>"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"search\" name=\"keywords\" placeholder=\"Search for brand, category or product\" class=\"input-group-field\">",
+                    "target": [
+                        ".large-6.show-for-large.col-cell > .header-search-form[action=\"/search/products\"][method=\"get\"] > .input-group.mod-icon.mod-rounded > .input-group-field[type=\"search\"][name=\"keywords\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-banner-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the banner landmark is at top level",
+            "help": "Banner landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-banner-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "banner"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The banner landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header class=\"site-header\">",
+                    "target": [
+                        "header"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-contentinfo-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the contentinfo landmark is at top level",
+            "help": "Contentinfo landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-contentinfo-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "contentinfo"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The contentinfo landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<footer class=\"site-footer\">",
+                    "target": [
+                        "footer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-banner",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one banner landmark",
+            "help": "Document should not have more than one banner landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-banner?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-banner",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one banner landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header class=\"site-header\">",
+                    "target": [
+                        "header"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-contentinfo",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one contentinfo landmark",
+            "help": "Document should not have more than one contentinfo landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-contentinfo?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-contentinfo",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one contentinfo landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<footer class=\"site-footer\">",
+                    "target": [
+                        "footer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-unique",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "help": "Ensures landmarks are unique",
+            "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-unique",
+                            "data": {
+                                "role": "banner",
+                                "accessibleText": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Landmarks must have a unique role or role/label/title (i.e. accessible name) combination"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header class=\"site-header\">",
+                    "target": [
+                        "header"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a href=\"#content\">Skip to Main Content</a>",
+                    "target": [
+                        "a[href$=\"#content\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "list",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures that lists are structured correctly",
+            "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/list?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "only-listitems",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List element only has direct children that are allowed inside <li> elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<ul class=\"header-menu menu\">",
+                    "target": [
+                        ".header-menu"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "listitem",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures <li> elements are used semantically",
+            "help": "<li> elements must be contained in a <ul> or <ol>",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/listitem?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<li><a class=\"header-link mod-contact\" href=\"/contact-us\"><i class=\"sw-icon-telephone\" aria-hidden=\"true\"></i><span class=\"show-for-medium span\">Contact</span></a></li>",
+                    "target": [
+                        ".header-menu > li:nth-child(1)"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport-large",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> can scale a significant amount",
+            "help": "Users should be able to zoom and scale the text up to 500%",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport-large?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport-large",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "<meta> tag does not prevent significant zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1,user-scalable=no\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "nested-interactive",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+            "help": "Interactive controls must not be nested",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/nested-interactive?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "no-focusable-content",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have focusable descendants"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<img src=\"https://cdn.ecommercedns.uk/files/3/221103/0/2427300/logo.gif\" alt=\"Gifts for Geeks LTD\" class=\"logo-image\">",
+                    "target": [
+                        ".logo-image"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "page-has-heading-one",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+            "help": "Page should contain a level-one heading",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/page-has-heading-one?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-heading-one",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1 class=\"page-title\">\n                                    Welcome\n                                </h1>",
+                                    "target": [
+                                        "h1"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Page has at least one level-one heading"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en\" class=\"js\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "All page content is contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"body-content\">",
+                    "target": [
+                        ".body-content"
+                    ]
+                }
+            ]
+        }
+    ],
+    "violations": [
+        {
+            "id": "aria-allowed-attr",
+            "impact": "critical",
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures ARIA attributes are allowed for an element's role",
+            "help": "Elements must only use allowed ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-attr",
+                            "data": [
+                                "aria-expanded=\"false\""
+                            ],
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute is not allowed: aria-expanded=\"false\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<a data-toggle=\"account-dropdown\" class=\"account-link header-link mod-account\" aria-controls=\"account-dropdown\" data-is-focus=\"false\" data-yeti-box=\"account-dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\"><i class=\"sw-icon-user1\" aria-hidden=\"true\"></i><span class=\"span\">Account</span></a>",
+                    "target": [
+                        ".account-link"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded=\"false\""
+                },
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-attr",
+                            "data": [
+                                "aria-expanded=\"false\""
+                            ],
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute is not allowed: aria-expanded=\"false\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<a class=\"header-currency-select header-link mod-currency\" data-toggle=\"currency-dropdown-large\" aria-controls=\"currency-dropdown-large\" data-is-focus=\"false\" data-yeti-box=\"currency-dropdown-large\" aria-haspopup=\"true\" aria-expanded=\"false\">",
+                    "target": [
+                        "a[data-toggle=\"currency-dropdown-large\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded=\"false\""
+                },
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-attr",
+                            "data": [
+                                "aria-expanded=\"true\""
+                            ],
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute is not allowed: aria-expanded=\"true\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<div id=\"main-nav-wrapper\" class=\"main-nav-wrapper show-for-large\" data-toggler=\".show-for-large\" aria-expanded=\"true\">",
+                    "target": [
+                        "#main-nav-wrapper"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded=\"true\""
+                },
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-attr",
+                            "data": [
+                                "aria-expanded=\"true\""
+                            ],
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute is not allowed: aria-expanded=\"true\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<span id=\"contact-text\" data-toggler=\".hide\" data-name=\"button_call_us\" aria-expanded=\"true\">Call Us</span>",
+                    "target": [
+                        "#contact-text"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  ARIA attribute is not allowed: aria-expanded=\"true\""
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-focus",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag131"
+            ],
+            "description": "Ensures aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "focusable-not-tabbable",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"/checkout/basket\" class=\"button lg checkout with-arrow expanded no-margin\">",
+                                    "target": [
+                                        ".checkout"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"#\" data-close=\"\">Or, Continue shopping</a>",
+                                    "target": [
+                                        "a[href=\"#\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Focusable content should have tabindex='-1' or be removed from the DOM"
+                        }
+                    ],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<div class=\"off-canvas off-canvas-basket position-right is-transition-overlap\" id=\"offCanvasBasket\" data-off-canvas=\"4bspbp-off-canvas\" data-transition=\"overlap\" aria-hidden=\"true\">",
+                    "target": [
+                        "#offCanvasBasket"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Focusable content should have tabindex='-1' or be removed from the DOM"
+                },
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "focusable-not-tabbable",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<a class=\"button mobile-menu-button expanded\" tabindex=\"0\"><i class=\"sw-icon-user\" aria-hidden=\"true\"></i><span>Your Account</span></a>",
+                                    "target": [
+                                        "li[aria-label=\"Your Account\"] > .mobile-menu-button.button.expanded"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">Back</a>",
+                                    "target": [
+                                        "li[aria-label=\"Your Account\"] > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .js-drilldown-back > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"/account/login\"><span>My Account</span></a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(3) > a[href$=\"login\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"/account/create\"><span>Register</span></a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(4) > a[href$=\"create\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"/account/trade-application\">\n                                    Trade Account Registration\n                                </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(5) > a[href$=\"trade-application\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<a class=\"button mobile-menu-button expanded\" href=\"/wishlist\"><i class=\"sw-icon-heart1\" aria-hidden=\"true\"></i><span>Wishlist</span></a>",
+                                    "target": [
+                                        ".mobile-menu-button.button[href$=\"wishlist\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">\n                        Figure Cases\n                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(3) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">Back</a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(3) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .js-drilldown-back > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/dreadnought-army-figure-case\">\n                                        Dreadnought Army Figure Case (XL)\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(3) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(3) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/tyrant-army-figure-case\">\n                                        Tyrant Army Figure Case (L)\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(3) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(4) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/defender-figure-case\">\n                                        Defender Figure Case (M)\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(3) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(5) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/kingmaker-figure-case\">\n                                        Kingmaker Figure Case (M)\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(3) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(6) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/skirmisher-figure-case\">\n                                        Skirmisher Figure Case (S)\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(3) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(7) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/companion-skirmish-case\">\n                                        Companion Skirmish Case (S)\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(3) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(8) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/backpacks-xl\">\n                                        Backpacks (XL)\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(3) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(9) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/ranger-magnetic-case---40mm-s\">\n                                        Ranger Magnetic Case - 40mm (S)\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(3) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(10) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/ranger-magnetic-case---55mm-s\">\n                                        Ranger Magnetic Case - 55mm (S)\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(3) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(11) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/ranger-magnetic-case---75mm-s\">\n                                        Ranger Magnetic Case - 75mm (S)\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(3) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(12) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">\n                        Storage Foam\n                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(4) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">Back</a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(4) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .js-drilldown-back > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/full-size-trays\">\n                                        Full Size Trays\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(4) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(3) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/games-workshop-trays\">\n                                        Games Workshop Trays\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(4) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(4) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/half-size-trays\">\n                                        Half Size trays\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(4) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(5) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/shadespire-trays\">\n                                        Shadespire Trays\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(4) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(6) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/star-wars-legion-1\">\n                                        Star Wars Legion\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(4) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(7) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/x-wing-trays\">\n                                        X-Wing trays\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(4) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(8) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">\n                        Games Workshop\n                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(5) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">Back</a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(5) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .js-drilldown-back > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/aeronautica-imperialis\">\n                                        Aeronautica Imperialis\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(5) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(3) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/black-library\">\n                                        Black Library\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(5) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(4) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/blood-bowl\">\n                                        Blood Bowl\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(5) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(5) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/citadel-figure-cases-1\">\n                                        Citadel Figure Cases\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(5) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(6) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/citadel-paints-and-painting-accessories\">\n                                        Citadel Paints and Painting Accessories\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(5) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(7) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/citadel-tools-and-modeling-accessories\">\n                                        Citadel Tools and Modeling Accessories\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(5) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(8) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/scenery-1\">\n                                        Games Workshop Scenery\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(5) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(9) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/lord-of-the-rings\">\n                                        Lord Of The Rings\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(5) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(10) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/necromunda\">\n                                        Necromunda\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(5) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(11) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/the-old-world\">\n                                        The Old World\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(5) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(12) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/warcry\">\n                                        Warcry\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(5) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(13) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/warhammer-30k\">\n                                        Warhammer 30k\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(5) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(14) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/warhammer-40k\">\n                                        Warhammer 40K\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(5) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(15) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/warhammer-aos\">\n                                        Warhammer Age of Sigmar\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(5) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(16) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/warhammer-quest\">\n                                        Warhammer Quest\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(5) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(17) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/warhammer-underworlds\">\n                                        Warhammer Underworlds\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(5) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(18) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/white-dwarf\">\n                                        White Dwarf\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(5) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(19) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">\n                        Magic Sealed Products\n                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(6) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">Back</a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(6) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .js-drilldown-back > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/mtg-booster-boxes\">\n                                        MTG Booster Boxes\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(6) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(3) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/mtg-boosters\">\n                                        Mtg Boosters\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(6) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(4) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/mtg-bundles-fat-packs\">\n                                        MTG Bundles / Fat Packs\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(6) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(5) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/event-decks\">\n                                        Special Decks\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(6) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(6) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/pre-release-packs\">\n                                        Pre-release Packs\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(6) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(7) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/commander\">\n                                        Commander\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(6) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(8) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/deck-builder-toolkit\">\n                                        Deck Builder Toolkit\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(6) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(9) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/intro-packs-2\">\n                                        INTRO PACKS\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(6) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(10) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/spellbooks\">\n                                        Spellbooks\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(6) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(11) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">\n                        Yu-Gi-Oh\n                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(7) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">Back</a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(7) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .js-drilldown-back > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/accessories\">\n                                        Accessories\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(7) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(3) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/booster-boxes-1\">\n                                        Booster Boxes\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(7) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(4) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/boosters\">\n                                        Boosters\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(7) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(5) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/decks-and-special-editions\">\n                                        Decks and Special Editions\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(7) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(6) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/sealed-product-1\">\n                                        Sealed Product\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(7) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(7) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">\n                        Scenery\n                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(8) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">Back</a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(8) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .js-drilldown-back > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/sci-fi-gothic\">\n                                        Scenery\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(8) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(3) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/scenery-1\">\n                                        Games Workshop Scenery\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(8) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(4) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">\n                        Marvel Crisis Protocol\n                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(9) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">Back</a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(9) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .js-drilldown-back > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/getting-started-marvel-crisis-protocol\">\n                                        Getting Started Marvel Crisis Protocol\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(9) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(3) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/hero-sets\">\n                                        Hero Sets\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(9) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(4) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/mcp-terrain\">\n                                        MCP Terrain\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(9) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(5) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">\n                        Star Wars\n                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(10) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">Back</a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(10) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .js-drilldown-back > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/imperial-assault\">\n                                        Imperial Assault\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(10) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(3) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/star-wars-armada\">\n                                        Star Wars Armada\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(10) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(4) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/star-wars-legion\">\n                                        Star Wars Legion\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(10) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(5) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/x-wing-miniatures-game\">\n                                        X-Wing Miniatures Game\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(10) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(6) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">\n                        Pokemon TCG\n                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(11) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">Back</a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(11) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .js-drilldown-back > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/booster-boxes\">\n                                        Booster Boxes\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(11) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(3) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/booster-packs\">\n                                        Booster Packs\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(11) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(4) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/sealed-product\">\n                                        Sealed Product\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(11) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(5) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/tickets\">\n                        Tickets\n                    </a>",
+                                    "target": [
+                                        ".mobile-menu > li[role=\"menuitem\"]:nth-child(12) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">\n                        Vallejo\n                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(13) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">Back</a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(13) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .js-drilldown-back > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/paints\">\n                                        Paints\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(13) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(3) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">\n                        3D Prints &amp; Accessories\n                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(14) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">Back</a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(14) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .js-drilldown-back > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/sci-fi-gothic\">\n                                        Scenery\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(14) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(3) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/3d-printer-resin\">\n                                        3D Printer Resin\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(14) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(4) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/40k-futuristic-models\">\n                                        40K &amp; Futuristic Models\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(14) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(5) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/fabelzels-chaos-dwarfs\">\n                                        Fabelzel's Chaos Dwarfs\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(14) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(6) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">\n                        Army Painter\n                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(15) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">Back</a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(15) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .js-drilldown-back > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/army-painter-sprays-and-paints\">\n                                        Army Painter Sprays and Paints\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(15) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(3) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/battlefield-scenics\">\n                                        Battlefield Scenics\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(15) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(4) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/glues-tools-and-brushes\">\n                                        Glues, Tools and Brushes\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(15) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(5) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/board-games\">\n                        Board Games\n                    </a>",
+                                    "target": [
+                                        ".mobile-menu > li[role=\"menuitem\"]:nth-child(16) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">\n                        Card Games\n                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(17) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">Back</a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(17) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .js-drilldown-back > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/assortment\">\n                                        Assortment\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(17) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(3) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/card-folders\">\n                                        Card Folders\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(17) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(4) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/card-sleeves\">\n                                        Card Sleeves\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(17) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(5) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/deck-boxes\">\n                                        Deck Boxes\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(17) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(6) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/digimon\">\n                                        Digimon\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(17) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(7) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/disney-lorcana\">\n                                        Disney Lorcana\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(17) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(8) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/one-piece-card-game\">\n                                        One Piece Card Game\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(17) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(9) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/playmats\">\n                                        Playmats\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(17) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(10) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/cardfight-vanguard-1\">\n                        Cardfight Vanguard\n                    </a>",
+                                    "target": [
+                                        ".mobile-menu > li[role=\"menuitem\"]:nth-child(18) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/cards-against-humanity\">\n                        Cards Against Humanity\n                    </a>",
+                                    "target": [
+                                        ".mobile-menu > li[role=\"menuitem\"]:nth-child(19) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/january-sale\">\n                        Clearance Sale\n                    </a>",
+                                    "target": [
+                                        ".mobile-menu > li[role=\"menuitem\"]:nth-child(20) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">\n                        Dice\n                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(21) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">Back</a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(21) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .js-drilldown-back > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/12-mm-dice\">\n                                        12 mm Dice\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(21) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(3) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/polyhedrals\">\n                                        Polyhedrals\n                                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(21) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(4) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/dragonball-super-tcg\">\n                        Dragonball Super TCG\n                    </a>",
+                                    "target": [
+                                        ".mobile-menu > li[role=\"menuitem\"]:nth-child(22) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"/categories\">\n                        View All\n                    </a>",
+                                    "target": [
+                                        "li[role=\"menuitem\"]:nth-child(23) > a[href$=\"categories\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">\n                        Brands\n                    </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(24) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a tabindex=\"0\">Back</a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(24) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .js-drilldown-back > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/anycubic\">\n                                    Anycubic\n                                </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(24) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(3) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/arcane-tinman\">\n                                    Arcane Tinmen\n                                </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(24) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(4) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/army-painter\">\n                                    Army Painter\n                                </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(24) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(5) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/asmodee\">\n                                    Asmodee\n                                </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(24) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(6) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/atomic-mass-games\">\n                                    Atomic Mass Games\n                                </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(24) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(7) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/bandai\">\n                                    Bandai\n                                </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(24) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(8) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/battle-foam-1\">\n                                    Battle Foam\n                                </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(24) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(9) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/bushiroad\">\n                                    Bushiroad\n                                </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(24) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(10) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/cardfight-vanguard\">\n                                    Cardfight Vanguard\n                                </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(24) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(11) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/elegoo\">\n                                    Elegoo\n                                </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(24) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(12) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/fabelzel\">\n                                    Fabelzel\n                                </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(24) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(13) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/fantasy-flight-games\">\n                                    Fantasy Flight Games\n                                </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(24) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(14) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/final-fantasy\">\n                                    Final Fantasy\n                                </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(24) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(15) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/flames-of-war\">\n                                    Flames of War\n                                </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(24) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(16) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/funko\">\n                                    Funko\n                                </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(24) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(17) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/gale-force-9\">\n                                    Gale Force 9\n                                </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(24) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(18) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/games-workshop-1\">\n                                    Games Workshop\n                                </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-parent[aria-haspopup=\"true\"][role=\"menuitem\"]:nth-child(24) > .nested.is-drilldown-submenu.drilldown-submenu-cover-previous > .is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(19) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/gloomhaven\">\n                                    Gloomhaven\n                                </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(20) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/hasbro\">\n                                    Hasbro\n                                </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(21) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"https://www.giftsforgeeks.org.uk/jazwares\">\n                                    Jazwares\n                                </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(22) > a"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"/brands\">\n                                    View All\n                                </a>",
+                                    "target": [
+                                        ".is-drilldown-submenu-item.is-submenu-item[role=\"menuitem\"]:nth-child(23) > a[href$=\"brands\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"/blog\">\n                        Blog\n                    </a>",
+                                    "target": [
+                                        ".sub-list[role=\"menuitem\"]:nth-child(25) > a[href$=\"blog\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"/\">\n                            HOME\n                        </a>",
+                                    "target": [
+                                        "#list_responsive > a[href=\"/\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<a href=\"/contact-us\">\n                            CONTACT US\n                        </a>",
+                                    "target": [
+                                        ".sub-list[role=\"menuitem\"]:nth-child(27) > a[href$=\"contact-us\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Focusable content should have tabindex='-1' or be removed from the DOM"
+                        }
+                    ],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<div class=\"off-canvas position-left medium off-canvas-mobile is-transition-push\" id=\"offCanvasMobile\" data-off-canvas=\"dvlu7h-off-canvas\" aria-hidden=\"true\">",
+                    "target": [
+                        "#offCanvasMobile"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Focusable content should have tabindex='-1' or be removed from the DOM"
+                }
+            ]
+        },
+        {
+            "id": "button-name",
+            "impact": "critical",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures buttons have discernible text",
+            "help": "Buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/button-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "button-has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element does not have inner text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        },
+                        {
+                            "id": "presentational-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<button type=\"submit\" class=\"button\"><i class=\"sw-icon-search1\" aria-hidden=\"true\"></i></button>",
+                    "target": [
+                        ".large-6.show-for-large.col-cell > .header-search-form[action=\"/search/products\"][method=\"get\"] > .input-group.mod-icon.mod-rounded > .input-group-button > button[type=\"submit\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                }
+            ]
+        },
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#319295",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.69,
+                                "fontSize": "7.5pt (9.99625px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<header class=\"site-header\">",
+                                    "target": [
+                                        "header"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.69 (foreground color: #319295, background color: #ffffff, font size: 7.5pt (9.99625px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span class=\"span\">Basket</span>",
+                    "target": [
+                        ".mod-basket > .span"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.69 (foreground color: #319295, background color: #ffffff, font size: 7.5pt (9.99625px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#319295",
+                                "contrastRatio": 3.69,
+                                "fontSize": "10.4pt (13.8875px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"/contact-us\" class=\"button filled md footer-contact\" data-name=\"button_contact_details\" id=\"button_contact_details\">\n                                Contact Details\n                            </a>",
+                                    "target": [
+                                        "#button_contact_details"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.69 (foreground color: #ffffff, background color: #319295, font size: 10.4pt (13.8875px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/contact-us\" class=\"button filled md footer-contact\" data-name=\"button_contact_details\" id=\"button_contact_details\">\n                                Contact Details\n                            </a>",
+                    "target": [
+                        "#button_contact_details"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.69 (foreground color: #ffffff, background color: #319295, font size: 10.4pt (13.8875px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#319295",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.69,
+                                "fontSize": "10.4pt (13.8875px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<button class=\"button border md footer-call hide-for-ts\" data-toggle=\"contact-number contact-text\">",
+                                    "target": [
+                                        "button[data-toggle=\"contact-number contact-text\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.69 (foreground color: #319295, background color: #ffffff, font size: 10.4pt (13.8875px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span id=\"contact-text\" data-toggler=\".hide\" data-name=\"button_call_us\" aria-expanded=\"true\">Call Us</span>",
+                    "target": [
+                        "#contact-text"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.69 (foreground color: #319295, background color: #ffffff, font size: 10.4pt (13.8875px), font weight: bold). Expected contrast ratio of 4.5:1"
+                }
+            ]
+        },
+        {
+            "id": "heading-order",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order invalid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h3 class=\"page-subtitle\">Personal information</h3>",
+                    "target": [
+                        ".page-subtitle:nth-child(1)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Heading order invalid"
+                }
+            ]
+        },
+        {
+            "id": "landmark-one-main",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has a main landmark",
+            "help": "Document should have one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-one-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-main",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have a main landmark"
+                        }
+                    ],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<html lang=\"en\" class=\"js\">",
+                    "target": [
+                        "html"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport",
+            "impact": "critical",
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice",
+                "ACT"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> does not disable text scaling and zooming",
+            "help": "Zooming and scaling should not be disabled",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport",
+                            "data": "user-scalable=no",
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "user-scalable=no on <meta> tag disables zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1,user-scalable=no\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  user-scalable=no on <meta> tag disables zooming on mobile devices"
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"announcement-bar callout\"><div class=\"wide-container\"><div class=\"row expanded column\"><div class=\"inner text-center\"><span>    \n    \n            Free economy shipping on orders over \u00a360* when you enter the code FREESHIP\n    \n    </span></div></div></div></div>",
+                    "target": [
+                        ".announcement-bar"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"block-header text-center\"><h1 class=\"page-title\">\n                                    Welcome\n                                </h1></div>",
+                    "target": [
+                        ".block-header"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h3 class=\"page-subtitle\">Personal information</h3>",
+                    "target": [
+                        ".page-subtitle:nth-child(1)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<label class=\"field-container\"><span class=\"field-label\">First Name</span><input type=\"text\" name=\"firstname\" class=\"required\" placeholder=\"First name\" aria-required=\"true\"></label>",
+                    "target": [
+                        ".form-with-validation > .field-container:nth-child(2)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<label class=\"field-container\"><span class=\"field-label\">Last Name</span><input type=\"text\" name=\"lastname\" class=\"form-control required\" placeholder=\"Last name\" aria-required=\"true\"></label>",
+                    "target": [
+                        ".form-with-validation > .field-container:nth-child(3)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<input type=\"checkbox\" id=\"add-address\" class=\"add-address-information\">",
+                    "target": [
+                        "#add-address"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<label for=\"add-address\">Add address information</label>",
+                    "target": [
+                        "label[for=\"add-address\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h3 class=\"page-subtitle padding-top-sm\">Sign in information</h3>",
+                    "target": [
+                        ".page-subtitle.padding-top-sm"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<label class=\"field-container\"><span class=\"field-label\">Email Address</span><input type=\"email\" name=\"email\" class=\"required jsv_email\" placeholder=\"Email address\" autocomplete=\"off\" aria-required=\"true\"></label>",
+                    "target": [
+                        ".form-with-validation > .field-container:nth-child(6)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<label class=\"field-container\"><span class=\"field-label\">Password</span><input type=\"password\" name=\"password\" id=\"password1\" value=\"\" placeholder=\"Password\" required=\"\" aria-required=\"true\"></label>",
+                    "target": [
+                        ".field-container:nth-child(7)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<label class=\"field-container\"><span class=\"field-label\">Confirm your password</span><input type=\"password\" name=\"password_confirm\" value=\"\" placeholder=\"Confirm your password\" required=\"\" aria-required=\"true\"></label>",
+                    "target": [
+                        ".field-container:nth-child(8)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"margin-bottom\"><input id=\"newsletter\" type=\"checkbox\" name=\"marketing\"><label for=\"newsletter\">I am happy to receive marketing communications</label></div>",
+                    "target": [
+                        ".margin-bottom"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div id=\"__shopwired_cookie_consent_container\" style=\"left: 20px; bottom: 20px; position: fixed; background-color: rgba(0, 0, 0, 0.8); padding: 15px 20px 20px; width: 320px; z-index: 9999; box-sizing: border-box; backface-visibility: hidden; display: block;\">",
+                    "target": [
+                        "#__shopwired_cookie_consent_container"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                }
+            ]
+        }
+    ]
+}

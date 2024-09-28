@@ -1,0 +1,3421 @@
+{
+    "testEngine": {
+        "name": "axe-core",
+        "version": "4.4.3"
+    },
+    "testRunner": {
+        "name": "axe"
+    },
+    "timestamp": "2024-09-26T20:47:07.565Z",
+    "url": "https://noveltranslate.com/",
+    "toolOptions": {
+        "resultTypes": [
+            "violations"
+        ],
+        "reporter": "v1"
+    },
+    "passes": [
+        {
+            "id": "aria-allowed-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures ARIA attributes are allowed for an element's role",
+            "help": "Elements must only use allowed ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attributes are used correctly for the defined role"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "aria-unsupported-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute is supported"
+                        },
+                        {
+                            "id": "aria-prohibited-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "ARIA attribute is allowed"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a href=\"https://noveltranslate.com/\" aria-current=\"page\">Home</a>",
+                    "target": [
+                        "a[aria-current=\"page\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-allowed-role",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "best-practice"
+            ],
+            "description": "Ensures role attribute has an appropriate value for the element",
+            "help": "ARIA role should be appropriate for the element",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-role?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is allowed for given element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div role=\"tabpanel\" class=\"c-tabs-item\" style=\"height: auto !important;\">",
+                    "target": [
+                        ".c-page:nth-child(3) > .c-page__content > .tab-content-wrap > .c-tabs-item[role=\"tabpanel\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-body",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures aria-hidden='true' is not present on the document body.",
+            "help": "aria-hidden='true' must not be present on the document body",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-hidden-body",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "No aria-hidden attribute is present on document body"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<body class=\"home page-template page-template-page-templates page-template-front-page page-template-page-templatesfront-page-php page page-id-2220 wp-embed-responsive header-style-1 sticky-enabled sticky-style-1 text-ui-dark aa-prefix-novel-\">",
+                    "target": [
+                        "body"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-focus",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag131"
+            ],
+            "description": "Ensures aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "focusable-modal-open",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements while a modal is open"
+                        },
+                        {
+                            "id": "focusable-disabled",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        },
+                        {
+                            "id": "focusable-not-tabbable",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<span aria-hidden=\"true\">\u00d7</span>",
+                    "target": [
+                        "#form-login > .modal-dialog[role=\"document\"] > .modal-content > .modal-header > .close[data-dismiss=\"modal\"][aria-label=\"Close\"] > span[aria-hidden=\"true\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-required-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures elements with ARIA roles have all required ARIA attributes",
+            "help": "Required ARIA attributes must be provided",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-required-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-required-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "All required ARIA attributes are present"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div role=\"tabpanel\" class=\"c-tabs-item\" style=\"height: auto !important;\">",
+                    "target": [
+                        ".c-page:nth-child(3) > .c-page__content > .tab-content-wrap > .c-tabs-item[role=\"tabpanel\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-roles",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all elements with a role attribute use a valid value",
+            "help": "ARIA roles used must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-roles?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "fallbackrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Only one role value used"
+                        },
+                        {
+                            "id": "invalidrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is valid"
+                        },
+                        {
+                            "id": "abstractrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Abstract roles are not used"
+                        },
+                        {
+                            "id": "unsupportedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is supported"
+                        },
+                        {
+                            "id": "deprecatedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is not deprecated"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<div role=\"tabpanel\" class=\"c-tabs-item\" style=\"height: auto !important;\">",
+                    "target": [
+                        ".c-page:nth-child(3) > .c-page__content > .tab-content-wrap > .c-tabs-item[role=\"tabpanel\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr-value",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all ARIA attributes have valid values",
+            "help": "ARIA attributes must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr-value?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "aria-valid-attr-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute values are valid"
+                        },
+                        {
+                            "id": "aria-errormessage",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "aria-errormessage exists and references elements visible to screen readers that use a supported aria-errormessage technique"
+                        },
+                        {
+                            "id": "aria-level",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-level values are valid"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"https://noveltranslate.com/\" aria-current=\"page\">Home</a>",
+                    "target": [
+                        "a[aria-current=\"page\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures attributes that begin with aria- are valid ARIA attributes",
+            "help": "ARIA attributes must conform to valid names",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-valid-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute name is valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"https://noveltranslate.com/\" aria-current=\"page\">Home</a>",
+                    "target": [
+                        "a[aria-current=\"page\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "avoid-inline-spacing",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag21aa",
+                "wcag1412"
+            ],
+            "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+            "help": "Inline text spacing must be adjustable with custom stylesheets",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/avoid-inline-spacing?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "avoid-inline-spacing",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No inline styles with '!important' that affect text spacing has been specified"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"wrap\" style=\"height: auto !important;\">",
+                    "target": [
+                        ".wrap"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "button-name",
+            "impact": "critical",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures buttons have discernible text",
+            "help": "Buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/button-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute exists and is not empty"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">\n                        <span aria-hidden=\"true\">\u00d7</span></button>",
+                    "target": [
+                        "#form-login > .modal-dialog[role=\"document\"] > .modal-content > .modal-header > .close[data-dismiss=\"modal\"][aria-label=\"Close\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "bypass",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag241",
+                "section508",
+                "section508.22.o"
+            ],
+            "description": "Ensures each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+            "help": "Page must have means to bypass repeated blocks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/bypass?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "header-present",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1 class=\"item-title h2\"></h1>",
+                                    "target": [
+                                        "h1"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2>New novels</h2>",
+                                    "target": [
+                                        "h2:nth-child(2)"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h5\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                            <a href=\"https://noveltranslate.com/novel/it-makes-sense-for-me-to-be-a-demon-in-the-second-dimension-right/\">It makes sense for me to be a demon in the second dimension, right?</a>\n                        </h3>",
+                                    "target": [
+                                        ".page-listing-item:nth-child(1) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(1) > .page-item-detail.text > .item-summary > .post-title.font-title > .h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h5\">",
+                                    "target": [
+                                        ".page-listing-item:nth-child(1) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(2) > .page-item-detail.text > .item-summary > .post-title.font-title > .h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h5\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                            <a href=\"https://noveltranslate.com/novel/diversity-domination-starting-from-the-resident-evil-lottery/\">Diversity Domination: Starting from the Resident Evil Lottery</a>\n                        </h3>",
+                                    "target": [
+                                        ".page-listing-item:nth-child(1) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(3) > .page-item-detail.text > .item-summary > .post-title.font-title > .h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h5\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                            <a href=\"https://noveltranslate.com/novel/madam-you-dont-want-your-husband-to-know-right/\">Madam, you don\u2019t want your husband to know, right?</a>\n                        </h3>",
+                                    "target": [
+                                        ".page-listing-item:nth-child(2) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(1) > .page-item-detail.text > .item-summary > .post-title.font-title > .h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h5\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                            <a href=\"https://noveltranslate.com/novel/ace-of-diamonds-a-world-class-speedball-signed-at-the-start/\">Ace of Diamonds: A world-class speedball signed at the start</a>\n                        </h3>",
+                                    "target": [
+                                        ".page-listing-item:nth-child(2) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(2) > .page-item-detail.text > .item-summary > .post-title.font-title > .h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h5\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                            <a href=\"https://noveltranslate.com/novel/honghuang-at-the-beginning-i-was-regarded-as-pangu-let-me-open-the-sky/\">Honghuang: At the beginning, I was regarded as Pangu, let me open the sky</a>\n                        </h3>",
+                                    "target": [
+                                        ".page-listing-item:nth-child(2) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(3) > .page-item-detail.text > .item-summary > .post-title.font-title > .h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h5\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                            <a href=\"https://noveltranslate.com/novel/the-war-of-resistance-the-ten-year-old-warlord/\">The War of Resistance: The Ten-Year-Old Warlord</a>\n                        </h3>",
+                                    "target": [
+                                        ".page-listing-item:nth-child(3) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(1) > .page-item-detail.text > .item-summary > .post-title.font-title > .h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h5\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                            <a href=\"https://noveltranslate.com/novel/voyage-cat-fruit-fantasy-beast-species-god-of-destruction-form/\">Voyage: Cat Fruit Fantasy Beast Species God of Destruction Form</a>\n                        </h3>",
+                                    "target": [
+                                        ".page-listing-item:nth-child(3) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(2) > .page-item-detail.text > .item-summary > .post-title.font-title > .h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h5\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                            <a href=\"https://noveltranslate.com/novel/comprehensive-comic-group-chat-yanqing-template-sister-sagiri/\">Comprehensive comic group chat: Yanqing template, sister Sagiri?</a>\n                        </h3>",
+                                    "target": [
+                                        ".page-listing-item:nth-child(3) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(3) > .page-item-detail.text > .item-summary > .post-title.font-title > .h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h5\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                            <a href=\"https://noveltranslate.com/novel/at-the-beginning-of-the-comprehensive-manga-emperor-keke-was-drawn/\">At the beginning of the comprehensive manga, Emperor Keke was drawn</a>\n                        </h3>",
+                                    "target": [
+                                        ".page-listing-item:nth-child(4) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(1) > .page-item-detail.text > .item-summary > .post-title.font-title > .h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h5\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                            <a href=\"https://noveltranslate.com/novel/infinite-inner-roll-roll-up-and-roll-me-to-be-invincible/\">Infinite inner roll, roll up and roll me to be invincible!</a>\n                        </h3>",
+                                    "target": [
+                                        ".page-listing-item:nth-child(4) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(2) > .page-item-detail.text > .item-summary > .post-title.font-title > .h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h5\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                            <a href=\"https://noveltranslate.com/novel/people-are-in-fantasy-and-i-can-communicate-with-the-world/\">People are in fantasy, and I can communicate with the world!</a>\n                        </h3>",
+                                    "target": [
+                                        ".page-listing-item:nth-child(4) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(3) > .page-item-detail.text > .item-summary > .post-title.font-title > .h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h5\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                            <a href=\"https://noveltranslate.com/novel/nba-a-sven-thug-under-the-eyes-of-the-emperor-2/\">NBA: A sven thug under the eyes of the emperor</a>\n                        </h3>",
+                                    "target": [
+                                        ".page-listing-item:nth-child(5) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(1) > .page-item-detail.text > .item-summary > .post-title.font-title > .h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h5\">",
+                                    "target": [
+                                        ".page-listing-item:nth-child(5) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(2) > .page-item-detail.text > .item-summary > .post-title.font-title > .h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h5\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                            <a href=\"https://noveltranslate.com/novel/low-level-honghuang-daozu-join-the-chat-group-at-the-beginning/\">Low-level Honghuang Daozu, join the chat group at the beginning</a>\n                        </h3>",
+                                    "target": [
+                                        ".page-listing-item:nth-child(5) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(3) > .page-item-detail.text > .item-summary > .post-title.font-title > .h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h5\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                            <a href=\"https://noveltranslate.com/novel/full-time-hunter-bind-a-prison-at-the-beginning/\">Full-time hunter: Bind a prison at the beginning</a>\n                        </h3>",
+                                    "target": [
+                                        ".page-listing-item:nth-child(6) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(1) > .page-item-detail.text > .item-summary > .post-title.font-title > .h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h5\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                            <a href=\"https://noveltranslate.com/novel/fishing-in-the-sky-starting-from-fishing-for-elf-balls/\">Fishing in the sky: Starting from fishing for elf balls</a>\n                        </h3>",
+                                    "target": [
+                                        ".page-listing-item:nth-child(6) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(2) > .page-item-detail.text > .item-summary > .post-title.font-title > .h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h5\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                            <a href=\"https://noveltranslate.com/novel/nba-a-sven-thug-under-the-eyes-of-the-emperor/\">NBA: A sven thug under the eyes of the emperor</a>\n                        </h3>",
+                                    "target": [
+                                        ".page-listing-item:nth-child(6) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(3) > .page-item-detail.text > .item-summary > .post-title.font-title > .h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h5\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                            <a href=\"https://noveltranslate.com/novel/my-understanding-is-against-the-sky-and-i-create-the-ability-to-practice/\">My understanding is against the sky, and I create the ability to practice</a>\n                        </h3>",
+                                    "target": [
+                                        ".page-listing-item:nth-child(7) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(1) > .page-item-detail.text > .item-summary > .post-title.font-title > .h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h5\">\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t                            <a href=\"https://noveltranslate.com/novel/all-people-god-level-necromancer-the-country-takes-me-to-rob-the-tomb/\">All people: God-level necromancer, the country takes me to rob the tomb!</a>\n                        </h3>",
+                                    "target": [
+                                        ".page-listing-item:nth-child(7) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(2) > .page-item-detail.text > .item-summary > .post-title.font-title > .h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"h5\">",
+                                    "target": [
+                                        ".page-listing-item:nth-child(7) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(3) > .page-item-detail.text > .item-summary > .post-title.font-title > .h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2>Latest Updates</h2>",
+                                    "target": [
+                                        "h2:nth-child(5)"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3>\n                            <a href=\"https://noveltranslate.com/\" title=\"Novel Translate\" tabindex=\"-1\">Sign in</a>\n                        </h3>",
+                                    "target": [
+                                        "#login > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3>\n                            <a href=\"https://noveltranslate.com/\" title=\"Novel Translate\" tabindex=\"-1\">Sign Up</a>\n                        </h3>",
+                                    "target": [
+                                        "#sign-up > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3>\n                            <a href=\"javascript:void(0)\" class=\"to-reset\">Lost your password?</a>\n                        </h3>",
+                                    "target": [
+                                        "#reset > h3"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Page has a heading"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en-US\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#000000",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 21,
+                                "fontSize": "10.0pt (13.3333px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 21"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input type=\"text\" placeholder=\"Search...\" name=\"s\" value=\"\">",
+                    "target": [
+                        "#blog-post-search > input[placeholder=\"Search...\"][name=\"s\"][type=\"text\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "document-title",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag242",
+                "ACT"
+            ],
+            "description": "Ensures each HTML document contains a non-empty <title> element",
+            "help": "Documents must have <title> element to aid in navigation",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/document-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "doc-has-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has a non-empty <title> element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en-US\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-active",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value of active elements is unique",
+            "help": "IDs of active elements must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-active",
+                            "data": "aswift_2",
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has no active elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<iframe id=\"aswift_2\" name=\"aswift_2\" browsingtopics=\"true\" style=\"left: 0px; position: absolute; top: 0px; border: 0px; width: 1200px; height: 0px;\" sandbox=\"allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation\" width=\"1200\" height=\"0\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" vspace=\"0\" hspace=\"0\" allowtransparency=\"true\" scrolling=\"no\" allow=\"attribution-reporting; run-ad-auction\" src=\"https://googleads.g.doubleclick.net/pagead/ads?gdpr=0&amp;us_privacy=1---&amp;gpp_sid=-1&amp;client=ca-pub-6416668893038604&amp;output=html&amp;h=280&amp;adk=1213588912&amp;adf=2369281301&amp;pi=t.aa~a.108489206~rp.4&amp;w=1200&amp;abgtt=7&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1727383625&amp;rafmt=1&amp;to=qs&amp;pwprc=8871305848&amp;format=1200x280&amp;url=https%3A%2F%2Fnoveltranslate.com%2F&amp;host=ca-host-pub-2644536267352236&amp;fwr=0&amp;pra=3&amp;rpe=1&amp;resp_fmts=3&amp;wgl=1&amp;fa=40&amp;uach=WyJXaW5kb3dzIiwiMTAuMC4wIiwieDg2IiwiIiwiMTI5LjAuNjY2OC4yOSIsbnVsbCwwLG51bGwsIjY0IixbWyJIZWFkbGVzc0Nocm9tZSIsIjEyOS4wLjY2NjguMjkiXSxbIk5vdD1BP0JyYW5kIiwiOC4wLjAuMCJdLFsiQ2hyb21pdW0iLCIxMjkuMC42NjY4LjI5Il1dLDBd&amp;dt=1727383625118&amp;bpp=1&amp;bdt=703&amp;idt=-M&amp;shv=r20240924&amp;mjsv=m202409230101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3Def8668bf61846f9d%3AT%3D1727383535%3ART%3D1727383535%3AS%3DALNI_MYWfQTLZvljJHVQLAROOz5uQpE13A&amp;gpic=UID%3D00000f064ae68e9f%3AT%3D1727383535%3ART%3D1727383535%3AS%3DALNI_MYeFZUIIYhyXY-KZDqtZlEUZQ4X7A&amp;eo_id_str=ID%3Dfa9abcfa63cb9414%3AT%3D1727383535%3ART%3D1727383535%3AS%3DAA-AfjYzlZTp5Tw3jAQG7zs4aC5M&amp;prev_fmts=0x0%2C1200x280&amp;nras=3&amp;correlator=7500192847727&amp;frm=20&amp;pv=1&amp;u_tz=-240&amp;u_his=2&amp;u_h=720&amp;u_w=1280&amp;u_ah=720&amp;u_aw=1280&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=40&amp;ady=1585&amp;biw=1280&amp;bih=720&amp;scr_x=0&amp;scr_y=0&amp;eid=44759876%2C44759927%2C44759837%2C31087427%2C31087438%2C31087440%2C44795922%2C95341937&amp;oid=2&amp;pvsid=3718475350727726&amp;tmod=1053137906&amp;uas=0&amp;nvt=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1280%2C0%2C1280%2C720%2C1280%2C720&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=1152&amp;bc=31&amp;bz=1&amp;td=1&amp;tdf=2&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=3&amp;uci=a!3&amp;btvi=2&amp;fsb=1&amp;dtd=160\" data-google-container-id=\"a!3\" tabindex=\"0\" title=\"Advertisement\" aria-label=\"Advertisement\" data-google-query-id=\"CMeLlpC94YgDFWEkaAgd1BI15Q\" data-load-complete=\"true\">",
+                    "target": [
+                        "#aswift_2"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "novel-ready",
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<script id=\"novel-ready\">",
+                    "target": [
+                        "#novel-ready"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "empty-heading",
+            "impact": "minor",
+            "tags": [
+                "cat.name-role-value",
+                "best-practice"
+            ],
+            "description": "Ensures headings have discernible text",
+            "help": "Headings should not be empty",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/empty-heading?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h2>New novels</h2>",
+                    "target": [
+                        "h2:nth-child(2)"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "empty-table-header",
+            "impact": null,
+            "tags": [
+                "wcag131",
+                "cat.aria"
+            ],
+            "description": "Ensures table headers have discernible text",
+            "help": "Table header text must not be empty",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/empty-table-header?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<th class=\"genre\">Genre</th>",
+                    "target": [
+                        "th:nth-child(1)"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "form-field-multiple-labels",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag332"
+            ],
+            "description": "Ensures form field does not have multiple label elements",
+            "help": "Form field must not have multiple label elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/form-field-multiple-labels?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "multiple-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Form field does not have multiple label elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"text\" placeholder=\"Search...\" name=\"s\" value=\"\">",
+                    "target": [
+                        "#blog-post-search > input[placeholder=\"Search...\"][name=\"s\"][type=\"text\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "frame-title",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag241",
+                "wcag412",
+                "section508",
+                "section508.22.i"
+            ],
+            "description": "Ensures <iframe> and <frame> elements have an accessible name",
+            "help": "Frames must have an accessible name",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/frame-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "non-empty-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a title attribute"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute exists and is not empty"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<iframe id=\"aswift_2\" name=\"aswift_2\" browsingtopics=\"true\" style=\"left: 0px; position: absolute; top: 0px; border: 0px; width: 1200px; height: 0px;\" sandbox=\"allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation\" width=\"1200\" height=\"0\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" vspace=\"0\" hspace=\"0\" allowtransparency=\"true\" scrolling=\"no\" allow=\"attribution-reporting; run-ad-auction\" src=\"https://googleads.g.doubleclick.net/pagead/ads?gdpr=0&amp;us_privacy=1---&amp;gpp_sid=-1&amp;client=ca-pub-6416668893038604&amp;output=html&amp;h=280&amp;adk=1213588912&amp;adf=2369281301&amp;pi=t.aa~a.108489206~rp.4&amp;w=1200&amp;abgtt=7&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1727383625&amp;rafmt=1&amp;to=qs&amp;pwprc=8871305848&amp;format=1200x280&amp;url=https%3A%2F%2Fnoveltranslate.com%2F&amp;host=ca-host-pub-2644536267352236&amp;fwr=0&amp;pra=3&amp;rpe=1&amp;resp_fmts=3&amp;wgl=1&amp;fa=40&amp;uach=WyJXaW5kb3dzIiwiMTAuMC4wIiwieDg2IiwiIiwiMTI5LjAuNjY2OC4yOSIsbnVsbCwwLG51bGwsIjY0IixbWyJIZWFkbGVzc0Nocm9tZSIsIjEyOS4wLjY2NjguMjkiXSxbIk5vdD1BP0JyYW5kIiwiOC4wLjAuMCJdLFsiQ2hyb21pdW0iLCIxMjkuMC42NjY4LjI5Il1dLDBd&amp;dt=1727383625118&amp;bpp=1&amp;bdt=703&amp;idt=-M&amp;shv=r20240924&amp;mjsv=m202409230101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3Def8668bf61846f9d%3AT%3D1727383535%3ART%3D1727383535%3AS%3DALNI_MYWfQTLZvljJHVQLAROOz5uQpE13A&amp;gpic=UID%3D00000f064ae68e9f%3AT%3D1727383535%3ART%3D1727383535%3AS%3DALNI_MYeFZUIIYhyXY-KZDqtZlEUZQ4X7A&amp;eo_id_str=ID%3Dfa9abcfa63cb9414%3AT%3D1727383535%3ART%3D1727383535%3AS%3DAA-AfjYzlZTp5Tw3jAQG7zs4aC5M&amp;prev_fmts=0x0%2C1200x280&amp;nras=3&amp;correlator=7500192847727&amp;frm=20&amp;pv=1&amp;u_tz=-240&amp;u_his=2&amp;u_h=720&amp;u_w=1280&amp;u_ah=720&amp;u_aw=1280&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=40&amp;ady=1585&amp;biw=1280&amp;bih=720&amp;scr_x=0&amp;scr_y=0&amp;eid=44759876%2C44759927%2C44759837%2C31087427%2C31087438%2C31087440%2C44795922%2C95341937&amp;oid=2&amp;pvsid=3718475350727726&amp;tmod=1053137906&amp;uas=0&amp;nvt=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1280%2C0%2C1280%2C720%2C1280%2C720&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=1152&amp;bc=31&amp;bz=1&amp;td=1&amp;tdf=2&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=3&amp;uci=a!3&amp;btvi=2&amp;fsb=1&amp;dtd=160\" data-google-container-id=\"a!3\" tabindex=\"0\" title=\"Advertisement\" aria-label=\"Advertisement\" data-google-query-id=\"CMeLlpC94YgDFWEkaAgd1BI15Q\" data-load-complete=\"true\">",
+                    "target": [
+                        "#aswift_2"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "heading-order",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": {
+                                "headingOrder": [
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(2) > ins > div > iframe"
+                                        ],
+                                        "level": -1
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(3) > ins > div > iframe"
+                                        ],
+                                        "level": -1
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(4) > div > div > div > div > div > div > div > div:nth-child(1) > div > div:nth-child(1) > h1"
+                                        ],
+                                        "level": 1
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(4) > div > div > div > div > div > div > div > div:nth-child(2) > div > h2:nth-child(2)"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(4) > div > div > div > div > div > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(4) > div > div > div > div > div > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(4) > div > div > div > div > div > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(4) > div > div > div > div > div > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div:nth-child(1) > div:nth-child(2) > ins > div > iframe"
+                                        ],
+                                        "level": -1
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(4) > div > div > div > div > div > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(4) > div > div > div > div > div > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(4) > div > div > div > div > div > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(4) > div > div > div > div > div > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(4) > div > div > div > div > div > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(4) > div > div > div > div > div > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div:nth-child(3) > div:nth-child(1) > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(4) > div > div > div > div > div > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(4) > div > div > div > div > div > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(4) > div > div > div > div > div > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div:nth-child(4) > div:nth-child(1) > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(4) > div > div > div > div > div > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div:nth-child(5) > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(4) > div > div > div > div > div > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div:nth-child(5) > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(4) > div > div > div > div > div > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div:nth-child(5) > div:nth-child(1) > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(4) > div > div > div > div > div > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div:nth-child(6) > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(4) > div > div > div > div > div > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div:nth-child(6) > div:nth-child(1) > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(4) > div > div > div > div > div > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div:nth-child(6) > div:nth-child(1) > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(4) > div > div > div > div > div > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div:nth-child(7) > div > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(4) > div > div > div > div > div > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div:nth-child(7) > div > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(4) > div > div > div > div > div > div > div > div:nth-child(2) > div > div:nth-child(3) > div > div > div > div > div:nth-child(7) > div > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div > div:nth-child(4) > div > div > div > div > div > div > div > div:nth-child(2) > div > h2:nth-child(5)"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > div:nth-child(2) > div > div > div:nth-child(2) > div > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > div:nth-child(3) > div > div > div:nth-child(2) > div > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > div:nth-child(4) > div > div > div:nth-child(2) > div > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    }
+                                ]
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h1 class=\"item-title h2\"></h1>",
+                    "target": [
+                        "h1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-has-lang",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures every HTML document has a lang attribute",
+            "help": "<html> element must have a lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-has-lang?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "The <html> element has a lang attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en-US\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-lang-valid",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures the lang attribute of the <html> element has a valid value",
+            "help": "<html> element must have a valid value for the lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-lang-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "valid-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Value of lang attribute is included in the list of valid languages"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<html lang=\"en-US\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "identical-links-same-purpose",
+            "impact": "minor",
+            "tags": [
+                "cat.semantics",
+                "wcag2aaa",
+                "wcag249"
+            ],
+            "description": "Ensure that links with the same accessible name serve a similar purpose",
+            "help": "Links with the same name must have a similar purpose",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/identical-links-same-purpose?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "identical-links-same-purpose",
+                            "data": {
+                                "name": "novel translate",
+                                "urlProps": {
+                                    "protocol": "http:",
+                                    "hostname": "noveltranslate.com",
+                                    "port": "",
+                                    "pathname": "/",
+                                    "search": {},
+                                    "hash": "",
+                                    "filename": ""
+                                }
+                            },
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "There are no other links with the same name, that go to a different URL"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a class=\"logo\" href=\"https://noveltranslate.com/\" title=\"Novel Translate\">",
+                    "target": [
+                        ".logo"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures <img> elements have alternate text or a role of none or presentation",
+            "help": "Images must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-alt",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has an alt attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "alt-space-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has a valid alt attribute value"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img width=\"1408\" height=\"210\" class=\"img-responsive\" src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201408%20210'%3E%3C/svg%3E\" alt=\"Novel Translate\" data-lazy-src=\"https://noveltranslate.com/wp-content/uploads/2020/06/Noveltranslate2.png\">",
+                    "target": [
+                        "img[width=\"1408\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-redundant-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ],
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-redundant-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img width=\"1408\" height=\"210\" class=\"img-responsive\" src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201408%20210'%3E%3C/svg%3E\" alt=\"Novel Translate\" data-lazy-src=\"https://noveltranslate.com/wp-content/uploads/2020/06/Noveltranslate2.png\">",
+                    "target": [
+                        "img[width=\"1408\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "input-button-name",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "section508",
+                "section508.22.a"
+            ],
+            "description": "Ensures input buttons have discernible text",
+            "help": "Input buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/input-button-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "non-empty-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has a non-empty value attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input type=\"submit\" value=\"Search\">",
+                    "target": [
+                        "#blog-post-search > input[value=\"Search\"][type=\"submit\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label-title-only",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "best-practice"
+            ],
+            "description": "Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes",
+            "help": "Form elements should have a visible label",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "title-only",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Form element does not solely use title attribute for its label"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"text\" placeholder=\"Search...\" name=\"s\" value=\"\">",
+                    "target": [
+                        "#blog-post-search > input[placeholder=\"Search...\"][name=\"s\"][type=\"text\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag412",
+                "wcag131",
+                "section508",
+                "section508.22.n",
+                "ACT"
+            ],
+            "description": "Ensures every form element has a label",
+            "help": "Form elements must have labels",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "non-empty-placeholder",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a placeholder attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "hidden-explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element has a visible explicit <label>"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"text\" placeholder=\"Search...\" name=\"s\" value=\"\">",
+                    "target": [
+                        "#blog-post-search > input[placeholder=\"Search...\"][name=\"s\"][type=\"text\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-banner-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the banner landmark is at top level",
+            "help": "Banner landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-banner-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "banner"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The banner landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header class=\"site-header\">",
+                    "target": [
+                        "header"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-contentinfo-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the contentinfo landmark is at top level",
+            "help": "Contentinfo landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-contentinfo-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "contentinfo"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The contentinfo landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<footer class=\"site-footer\">",
+                    "target": [
+                        "footer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-banner",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one banner landmark",
+            "help": "Document should not have more than one banner landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-banner?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-banner",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one banner landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header class=\"site-header\">",
+                    "target": [
+                        "header"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-contentinfo",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one contentinfo landmark",
+            "help": "Document should not have more than one contentinfo landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-contentinfo?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-contentinfo",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one contentinfo landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<footer class=\"site-footer\">",
+                    "target": [
+                        "footer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-unique",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "help": "Ensures landmarks are unique",
+            "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-unique",
+                            "data": {
+                                "role": "banner",
+                                "accessibleText": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Landmarks must have a unique role or role/label/title (i.e. accessible name) combination"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header class=\"site-header\">",
+                    "target": [
+                        "header"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a class=\"logo\" href=\"https://noveltranslate.com/\" title=\"Novel Translate\">",
+                    "target": [
+                        ".logo"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "list",
+            "impact": "serious",
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures that lists are structured correctly",
+            "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/list?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "only-listitems",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List element only has direct children that are allowed inside <li> elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<ul class=\"search-main-menu\">",
+                    "target": [
+                        ".c-header__top > .search-main-menu"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "listitem",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures <li> elements are used semantically",
+            "help": "<li> elements must be contained in a <ul> or <ol>",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/listitem?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<li>",
+                    "target": [
+                        ".c-header__top > .search-main-menu > li"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport-large",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> can scale a significant amount",
+            "help": "Users should be able to zoom and scale the text up to 500%",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport-large?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport-large",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "<meta> tag does not prevent significant zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice",
+                "ACT"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> does not disable text scaling and zooming",
+            "help": "Zooming and scaling should not be disabled",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "<meta> tag does not disable zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "nested-interactive",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+            "help": "Interactive controls must not be nested",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/nested-interactive?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "no-focusable-content",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have focusable descendants"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input type=\"submit\" value=\"Search\">",
+                    "target": [
+                        "#blog-post-search > input[value=\"Search\"][type=\"submit\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "page-has-heading-one",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+            "help": "Page should contain a level-one heading",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/page-has-heading-one?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-heading-one",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1 class=\"item-title h2\"></h1>",
+                                    "target": [
+                                        "h1"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Page has at least one level-one heading"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en-US\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "All page content is contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"wrap\" style=\"height: auto !important;\">",
+                    "target": [
+                        ".wrap"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "tabindex",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures tabindex attribute values are not greater than 0",
+            "help": "Elements should not have tabindex greater than zero",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/tabindex?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "tabindex",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have a tabindex greater than 0"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<iframe id=\"aswift_2\" name=\"aswift_2\" browsingtopics=\"true\" style=\"left: 0px; position: absolute; top: 0px; border: 0px; width: 1200px; height: 0px;\" sandbox=\"allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation\" width=\"1200\" height=\"0\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" vspace=\"0\" hspace=\"0\" allowtransparency=\"true\" scrolling=\"no\" allow=\"attribution-reporting; run-ad-auction\" src=\"https://googleads.g.doubleclick.net/pagead/ads?gdpr=0&amp;us_privacy=1---&amp;gpp_sid=-1&amp;client=ca-pub-6416668893038604&amp;output=html&amp;h=280&amp;adk=1213588912&amp;adf=2369281301&amp;pi=t.aa~a.108489206~rp.4&amp;w=1200&amp;abgtt=7&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1727383625&amp;rafmt=1&amp;to=qs&amp;pwprc=8871305848&amp;format=1200x280&amp;url=https%3A%2F%2Fnoveltranslate.com%2F&amp;host=ca-host-pub-2644536267352236&amp;fwr=0&amp;pra=3&amp;rpe=1&amp;resp_fmts=3&amp;wgl=1&amp;fa=40&amp;uach=WyJXaW5kb3dzIiwiMTAuMC4wIiwieDg2IiwiIiwiMTI5LjAuNjY2OC4yOSIsbnVsbCwwLG51bGwsIjY0IixbWyJIZWFkbGVzc0Nocm9tZSIsIjEyOS4wLjY2NjguMjkiXSxbIk5vdD1BP0JyYW5kIiwiOC4wLjAuMCJdLFsiQ2hyb21pdW0iLCIxMjkuMC42NjY4LjI5Il1dLDBd&amp;dt=1727383625118&amp;bpp=1&amp;bdt=703&amp;idt=-M&amp;shv=r20240924&amp;mjsv=m202409230101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3Def8668bf61846f9d%3AT%3D1727383535%3ART%3D1727383535%3AS%3DALNI_MYWfQTLZvljJHVQLAROOz5uQpE13A&amp;gpic=UID%3D00000f064ae68e9f%3AT%3D1727383535%3ART%3D1727383535%3AS%3DALNI_MYeFZUIIYhyXY-KZDqtZlEUZQ4X7A&amp;eo_id_str=ID%3Dfa9abcfa63cb9414%3AT%3D1727383535%3ART%3D1727383535%3AS%3DAA-AfjYzlZTp5Tw3jAQG7zs4aC5M&amp;prev_fmts=0x0%2C1200x280&amp;nras=3&amp;correlator=7500192847727&amp;frm=20&amp;pv=1&amp;u_tz=-240&amp;u_his=2&amp;u_h=720&amp;u_w=1280&amp;u_ah=720&amp;u_aw=1280&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=40&amp;ady=1585&amp;biw=1280&amp;bih=720&amp;scr_x=0&amp;scr_y=0&amp;eid=44759876%2C44759927%2C44759837%2C31087427%2C31087438%2C31087440%2C44795922%2C95341937&amp;oid=2&amp;pvsid=3718475350727726&amp;tmod=1053137906&amp;uas=0&amp;nvt=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1280%2C0%2C1280%2C720%2C1280%2C720&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=1152&amp;bc=31&amp;bz=1&amp;td=1&amp;tdf=2&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=3&amp;uci=a!3&amp;btvi=2&amp;fsb=1&amp;dtd=160\" data-google-container-id=\"a!3\" tabindex=\"0\" title=\"Advertisement\" aria-label=\"Advertisement\" data-google-query-id=\"CMeLlpC94YgDFWEkaAgd1BI15Q\" data-load-complete=\"true\">",
+                    "target": [
+                        "#aswift_2"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "table-duplicate-name",
+            "impact": null,
+            "tags": [
+                "cat.tables",
+                "best-practice"
+            ],
+            "description": "Ensure the <caption> element does not contain the same text as the summary attribute",
+            "help": "tables should not have the same summary and caption",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/table-duplicate-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "same-caption-summary",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Content of summary attribute and <caption> are not duplicated"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<table class=\"manga-shortcodes manga-chapters-listing\">",
+                    "target": [
+                        "table"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "td-headers-attr",
+            "impact": null,
+            "tags": [
+                "cat.tables",
+                "wcag2a",
+                "wcag131",
+                "section508",
+                "section508.22.g"
+            ],
+            "description": "Ensure that each cell in a table that uses the headers attribute refers only to other cells in that table",
+            "help": "Table cells that use the headers attribute must only refer to cells in the same table",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/td-headers-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "td-headers-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "The headers attribute is exclusively used to refer to other cells in the table"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<table class=\"manga-shortcodes manga-chapters-listing\">",
+                    "target": [
+                        "table"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "th-has-data-cells",
+            "impact": null,
+            "tags": [
+                "cat.tables",
+                "wcag2a",
+                "wcag131",
+                "section508",
+                "section508.22.g"
+            ],
+            "description": "Ensure that <th> elements and elements with role=columnheader/rowheader have data cells they describe",
+            "help": "Table headers in a data table must refer to data cells",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/th-has-data-cells?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "th-has-data-cells",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "All table header cells refer to data cells"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<table class=\"manga-shortcodes manga-chapters-listing\">",
+                    "target": [
+                        "table"
+                    ]
+                }
+            ]
+        }
+    ],
+    "violations": [
+        {
+            "id": "aria-dialog-name",
+            "impact": "serious",
+            "tags": [
+                "cat.aria",
+                "best-practice"
+            ],
+            "description": "Ensures every ARIA dialog and alertdialog node has an accessible name",
+            "help": "ARIA dialog and alertdialog nodes should have an accessible name",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-dialog-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<div class=\"modal fade\" id=\"form-login\" tabindex=\"-1\" role=\"dialog\">",
+                    "target": [
+                        "#form-login"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<div class=\"modal fade\" id=\"form-sign-up\" tabindex=\"-1\" role=\"dialog\">",
+                    "target": [
+                        "#form-sign-up"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<div class=\"modal fade\" id=\"form-reset\" tabindex=\"-1\" role=\"dialog\">",
+                    "target": [
+                        "#form-reset"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                }
+            ]
+        },
+        {
+            "id": "button-name",
+            "impact": "critical",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures buttons have discernible text",
+            "help": "Buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/button-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "button-has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element does not have inner text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        },
+                        {
+                            "id": "presentational-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<button type=\"button\" class=\"menu_icon__open\">\n            <span></span> <span></span> <span></span>\n        </button>",
+                    "target": [
+                        ".menu_icon__open"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                },
+                {
+                    "any": [
+                        {
+                            "id": "button-has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element does not have inner text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        },
+                        {
+                            "id": "presentational-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<button class=\"menu_icon__close\">\n            <span></span> <span></span>\n        </button>",
+                    "target": [
+                        ".menu_icon__close"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                }
+            ]
+        },
+        {
+            "id": "empty-heading",
+            "impact": "minor",
+            "tags": [
+                "cat.name-role-value",
+                "best-practice"
+            ],
+            "description": "Ensures headings have discernible text",
+            "help": "Headings should not be empty",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/empty-heading?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<h1 class=\"item-title h2\"></h1>",
+                    "target": [
+                        "h1"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                }
+            ]
+        },
+        {
+            "id": "frame-title-unique",
+            "impact": "serious",
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ],
+            "description": "Ensures <iframe> and <frame> elements contain a unique title attribute",
+            "help": "Frames should have a unique title attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/frame-title-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "unique-frame-title",
+                            "data": "advertisement",
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element's title attribute is not unique"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<iframe id=\"aswift_2\" name=\"aswift_2\" browsingtopics=\"true\" style=\"left: 0px; position: absolute; top: 0px; border: 0px; width: 1200px; height: 0px;\" sandbox=\"allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation\" width=\"1200\" height=\"0\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" vspace=\"0\" hspace=\"0\" allowtransparency=\"true\" scrolling=\"no\" allow=\"attribution-reporting; run-ad-auction\" src=\"https://googleads.g.doubleclick.net/pagead/ads?gdpr=0&amp;us_privacy=1---&amp;gpp_sid=-1&amp;client=ca-pub-6416668893038604&amp;output=html&amp;h=280&amp;adk=1213588912&amp;adf=2369281301&amp;pi=t.aa~a.108489206~rp.4&amp;w=1200&amp;abgtt=7&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1727383625&amp;rafmt=1&amp;to=qs&amp;pwprc=8871305848&amp;format=1200x280&amp;url=https%3A%2F%2Fnoveltranslate.com%2F&amp;host=ca-host-pub-2644536267352236&amp;fwr=0&amp;pra=3&amp;rpe=1&amp;resp_fmts=3&amp;wgl=1&amp;fa=40&amp;uach=WyJXaW5kb3dzIiwiMTAuMC4wIiwieDg2IiwiIiwiMTI5LjAuNjY2OC4yOSIsbnVsbCwwLG51bGwsIjY0IixbWyJIZWFkbGVzc0Nocm9tZSIsIjEyOS4wLjY2NjguMjkiXSxbIk5vdD1BP0JyYW5kIiwiOC4wLjAuMCJdLFsiQ2hyb21pdW0iLCIxMjkuMC42NjY4LjI5Il1dLDBd&amp;dt=1727383625118&amp;bpp=1&amp;bdt=703&amp;idt=-M&amp;shv=r20240924&amp;mjsv=m202409230101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3Def8668bf61846f9d%3AT%3D1727383535%3ART%3D1727383535%3AS%3DALNI_MYWfQTLZvljJHVQLAROOz5uQpE13A&amp;gpic=UID%3D00000f064ae68e9f%3AT%3D1727383535%3ART%3D1727383535%3AS%3DALNI_MYeFZUIIYhyXY-KZDqtZlEUZQ4X7A&amp;eo_id_str=ID%3Dfa9abcfa63cb9414%3AT%3D1727383535%3ART%3D1727383535%3AS%3DAA-AfjYzlZTp5Tw3jAQG7zs4aC5M&amp;prev_fmts=0x0%2C1200x280&amp;nras=3&amp;correlator=7500192847727&amp;frm=20&amp;pv=1&amp;u_tz=-240&amp;u_his=2&amp;u_h=720&amp;u_w=1280&amp;u_ah=720&amp;u_aw=1280&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=40&amp;ady=1585&amp;biw=1280&amp;bih=720&amp;scr_x=0&amp;scr_y=0&amp;eid=44759876%2C44759927%2C44759837%2C31087427%2C31087438%2C31087440%2C44795922%2C95341937&amp;oid=2&amp;pvsid=3718475350727726&amp;tmod=1053137906&amp;uas=0&amp;nvt=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1280%2C0%2C1280%2C720%2C1280%2C720&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=1152&amp;bc=31&amp;bz=1&amp;td=1&amp;tdf=2&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=3&amp;uci=a!3&amp;btvi=2&amp;fsb=1&amp;dtd=160\" data-google-container-id=\"a!3\" tabindex=\"0\" title=\"Advertisement\" aria-label=\"Advertisement\" data-google-query-id=\"CMeLlpC94YgDFWEkaAgd1BI15Q\" data-load-complete=\"true\">",
+                    "target": [
+                        "#aswift_2"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element's title attribute is not unique"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "unique-frame-title",
+                            "data": "advertisement",
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element's title attribute is not unique"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<iframe id=\"aswift_1\" name=\"aswift_1\" browsingtopics=\"true\" style=\"left: 0px; position: absolute; top: 0px; border: 0px; width: 1200px; height: 0px;\" sandbox=\"allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation\" width=\"1200\" height=\"0\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" vspace=\"0\" hspace=\"0\" allowtransparency=\"true\" scrolling=\"no\" allow=\"attribution-reporting; run-ad-auction\" src=\"https://googleads.g.doubleclick.net/pagead/ads?client=ca-pub-6416668893038604&amp;output=html&amp;h=280&amp;adk=1213588912&amp;adf=2369281301&amp;pi=t.aa~a.108489206~rp.4&amp;w=1200&amp;abgtt=7&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1727383625&amp;rafmt=1&amp;to=qs&amp;pwprc=8871305848&amp;format=1200x280&amp;url=https%3A%2F%2Fnoveltranslate.com%2F&amp;host=ca-host-pub-2644536267352236&amp;fwr=0&amp;pra=3&amp;rpe=1&amp;resp_fmts=3&amp;wgl=1&amp;fa=40&amp;uach=WyJXaW5kb3dzIiwiMTAuMC4wIiwieDg2IiwiIiwiMTI5LjAuNjY2OC4yOSIsbnVsbCwwLG51bGwsIjY0IixbWyJIZWFkbGVzc0Nocm9tZSIsIjEyOS4wLjY2NjguMjkiXSxbIk5vdD1BP0JyYW5kIiwiOC4wLjAuMCJdLFsiQ2hyb21pdW0iLCIxMjkuMC42NjY4LjI5Il1dLDBd&amp;dt=1727383624818&amp;bpp=2&amp;bdt=402&amp;idt=191&amp;shv=r20240924&amp;mjsv=m202409230101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie_enabled=1&amp;eoidce=1&amp;prev_fmts=0x0&amp;nras=2&amp;correlator=7500192847727&amp;frm=20&amp;pv=1&amp;u_tz=-240&amp;u_his=2&amp;u_h=720&amp;u_w=1280&amp;u_ah=720&amp;u_aw=1280&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=40&amp;ady=1585&amp;biw=1280&amp;bih=720&amp;scr_x=0&amp;scr_y=0&amp;eid=44759876%2C44759927%2C44759837%2C31087427%2C31087438%2C31087440%2C44795922%2C95341937&amp;oid=2&amp;pvsid=3718475350727726&amp;tmod=1053137906&amp;uas=0&amp;nvt=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1280%2C0%2C1280%2C720%2C1280%2C720&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=1152&amp;bc=31&amp;bz=1&amp;td=1&amp;tdf=2&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=2&amp;uci=a!2&amp;btvi=1&amp;fsb=1&amp;dtd=195\" data-google-container-id=\"a!2\" tabindex=\"0\" title=\"Advertisement\" aria-label=\"Advertisement\" data-google-query-id=\"CP_LhZC94YgDFW0kaAgd6QgtZQ\" data-load-complete=\"true\">",
+                    "target": [
+                        "#aswift_1"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element's title attribute is not unique"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "unique-frame-title",
+                            "data": "advertisement",
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element's title attribute is not unique"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<iframe id=\"aswift_3\" name=\"aswift_3\" browsingtopics=\"true\" style=\"left:0;position:absolute;top:0;border:0;width:1200px;height:280px;\" sandbox=\"allow-forms allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts allow-top-navigation-by-user-activation\" width=\"1200\" height=\"280\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\" vspace=\"0\" hspace=\"0\" allowtransparency=\"true\" scrolling=\"no\" allow=\"attribution-reporting; run-ad-auction\" src=\"https://googleads.g.doubleclick.net/pagead/ads?gdpr=0&amp;us_privacy=1---&amp;gpp_sid=-1&amp;client=ca-pub-6416668893038604&amp;output=html&amp;h=280&amp;adk=249172916&amp;adf=578681917&amp;pi=t.aa~a.3675882197~rp.4&amp;w=1200&amp;abgtt=7&amp;fwrn=4&amp;fwrnh=100&amp;lmt=1727383625&amp;rafmt=1&amp;to=qs&amp;pwprc=8871305848&amp;format=1200x280&amp;url=https%3A%2F%2Fnoveltranslate.com%2F&amp;host=ca-host-pub-2644536267352236&amp;fwr=0&amp;pra=3&amp;rpe=1&amp;resp_fmts=3&amp;wgl=1&amp;fa=40&amp;uach=WyJXaW5kb3dzIiwiMTAuMC4wIiwieDg2IiwiIiwiMTI5LjAuNjY2OC4yOSIsbnVsbCwwLG51bGwsIjY0IixbWyJIZWFkbGVzc0Nocm9tZSIsIjEyOS4wLjY2NjguMjkiXSxbIk5vdD1BP0JyYW5kIiwiOC4wLjAuMCJdLFsiQ2hyb21pdW0iLCIxMjkuMC42NjY4LjI5Il1dLDBd&amp;dt=1727383625118&amp;bpp=1&amp;bdt=703&amp;idt=1&amp;shv=r20240924&amp;mjsv=m202409230101&amp;ptt=9&amp;saldr=aa&amp;abxe=1&amp;cookie=ID%3Def8668bf61846f9d%3AT%3D1727383535%3ART%3D1727383535%3AS%3DALNI_MYWfQTLZvljJHVQLAROOz5uQpE13A&amp;gpic=UID%3D00000f064ae68e9f%3AT%3D1727383535%3ART%3D1727383535%3AS%3DALNI_MYeFZUIIYhyXY-KZDqtZlEUZQ4X7A&amp;eo_id_str=ID%3Dfa9abcfa63cb9414%3AT%3D1727383535%3ART%3D1727383535%3AS%3DAA-AfjYzlZTp5Tw3jAQG7zs4aC5M&amp;prev_fmts=0x0%2C1200x280%2C1200x280&amp;nras=4&amp;correlator=7500192847727&amp;frm=20&amp;pv=1&amp;u_tz=-240&amp;u_his=2&amp;u_h=720&amp;u_w=1280&amp;u_ah=720&amp;u_aw=1280&amp;u_cd=24&amp;u_sd=1&amp;dmc=8&amp;adx=40&amp;ady=2756&amp;biw=1280&amp;bih=720&amp;scr_x=0&amp;scr_y=0&amp;eid=44759876%2C44759927%2C44759837%2C31087427%2C31087438%2C31087440%2C44795922%2C95341937&amp;oid=2&amp;pvsid=3718475350727726&amp;tmod=1053137906&amp;uas=0&amp;nvt=1&amp;fc=1920&amp;brdim=0%2C0%2C0%2C0%2C1280%2C0%2C1280%2C720%2C1280%2C720&amp;vis=1&amp;rsz=%7C%7Cs%7C&amp;abl=NS&amp;fu=1152&amp;bc=31&amp;bz=1&amp;td=1&amp;tdf=2&amp;psd=W251bGwsbnVsbCxudWxsLDNd&amp;nt=1&amp;ifi=4&amp;uci=a!4&amp;btvi=3&amp;fsb=1&amp;dtd=164\" data-google-container-id=\"a!4\" tabindex=\"0\" title=\"Advertisement\" aria-label=\"Advertisement\" data-google-query-id=\"CMS7lpC94YgDFZ0CaAgdErEGRA\" data-load-complete=\"true\">",
+                    "target": [
+                        "#aswift_3"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element's title attribute is not unique"
+                }
+            ]
+        },
+        {
+            "id": "landmark-one-main",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has a main landmark",
+            "help": "Document should have one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-one-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-main",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have a main landmark"
+                        }
+                    ],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<html lang=\"en-US\">",
+                    "target": [
+                        "html"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"javascript:;\" class=\"open-search-main-menu\"> <i class=\"icon ion-ios-search\"></i>\n            <i class=\"icon ion-android-close\"></i> </a>",
+                    "target": [
+                        ".open-search-main-menu"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                }
+            ]
+        },
+        {
+            "id": "list",
+            "impact": "serious",
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures that lists are structured correctly",
+            "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/list?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "only-listitems",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<i class=\"mobile-icon icon ion-md-more\"></i>",
+                                    "target": [
+                                        ".mobile-icon"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "List element has direct children that are not allowed inside <li> elements"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<ul class=\"sub-nav_list list-inline second-menu\">",
+                    "target": [
+                        ".sub-nav_list"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  List element has direct children that are not allowed inside <li> elements"
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h2>New novels</h2>",
+                    "target": [
+                        "h2:nth-child(2)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img decoding=\"async\" width=\"110\" height=\"150\" src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20110%20150'%3E%3C/svg%3E\" data-lazy-srcset=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-29-110x150.jpg 110w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-29-175x238.jpg 175w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-29-350x476.jpg 350w\" data-lazy-sizes=\"(max-width: 110px) 100vw, 110px\" class=\"img-responsive\" style=\"\" alt=\"cover\" data-lazy-src=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-29-110x150.jpg\">",
+                    "target": [
+                        "#manga-item-2538217 > a > img[decoding=\"async\"][width=\"110\"][height=\"150\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"item-summary\">",
+                    "target": [
+                        ".page-listing-item:nth-child(1) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(1) > .page-item-detail.text > .item-summary"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img decoding=\"async\" width=\"110\" height=\"150\" src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20110%20150'%3E%3C/svg%3E\" data-lazy-srcset=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-28-110x150.jpg 110w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-28-175x238.jpg 175w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-28-350x476.jpg 350w\" data-lazy-sizes=\"(max-width: 110px) 100vw, 110px\" class=\"img-responsive\" style=\"\" alt=\"cover\" data-lazy-src=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-28-110x150.jpg\">",
+                    "target": [
+                        "#manga-item-2537782 > a > img[decoding=\"async\"][width=\"110\"][height=\"150\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"item-summary\">",
+                    "target": [
+                        ".page-listing-item:nth-child(1) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(2) > .page-item-detail.text > .item-summary"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img decoding=\"async\" width=\"110\" height=\"150\" src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20110%20150'%3E%3C/svg%3E\" data-lazy-srcset=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-27-110x150.jpg 110w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-27-175x238.jpg 175w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-27-350x476.jpg 350w\" data-lazy-sizes=\"(max-width: 110px) 100vw, 110px\" class=\"img-responsive\" style=\"\" alt=\"cover\" data-lazy-src=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-27-110x150.jpg\">",
+                    "target": [
+                        "#manga-item-2537638 > a > img[decoding=\"async\"][width=\"110\"][height=\"150\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"item-summary\">",
+                    "target": [
+                        ".page-listing-item:nth-child(1) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(3) > .page-item-detail.text > .item-summary"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img decoding=\"async\" width=\"110\" height=\"150\" src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20110%20150'%3E%3C/svg%3E\" data-lazy-srcset=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-26-110x150.jpg 110w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-26-175x238.jpg 175w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-26-350x476.jpg 350w\" data-lazy-sizes=\"(max-width: 110px) 100vw, 110px\" class=\"img-responsive\" style=\"\" alt=\"cover\" data-lazy-src=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-26-110x150.jpg\">",
+                    "target": [
+                        "#manga-item-2537503 > a > img[decoding=\"async\"][width=\"110\"][height=\"150\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"item-summary\">",
+                    "target": [
+                        ".page-listing-item:nth-child(2) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(1) > .page-item-detail.text > .item-summary"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img decoding=\"async\" width=\"110\" height=\"150\" src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20110%20150'%3E%3C/svg%3E\" data-lazy-srcset=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-25-110x150.jpg 110w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-25-175x238.jpg 175w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-25-350x476.jpg 350w\" data-lazy-sizes=\"(max-width: 110px) 100vw, 110px\" class=\"img-responsive\" style=\"\" alt=\"cover\" data-lazy-src=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-25-110x150.jpg\">",
+                    "target": [
+                        "#manga-item-2537263 > a > img[decoding=\"async\"][width=\"110\"][height=\"150\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"item-summary\">",
+                    "target": [
+                        ".page-listing-item:nth-child(2) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(2) > .page-item-detail.text > .item-summary"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img decoding=\"async\" width=\"110\" height=\"150\" src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20110%20150'%3E%3C/svg%3E\" data-lazy-srcset=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-24-110x150.jpg 110w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-24-175x238.jpg 175w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-24-350x476.jpg 350w\" data-lazy-sizes=\"(max-width: 110px) 100vw, 110px\" class=\"img-responsive\" style=\"\" alt=\"cover\" data-lazy-src=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-24-110x150.jpg\">",
+                    "target": [
+                        "#manga-item-2537212 > a > img[decoding=\"async\"][width=\"110\"][height=\"150\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"item-summary\">",
+                    "target": [
+                        ".page-listing-item:nth-child(2) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(3) > .page-item-detail.text > .item-summary"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img decoding=\"async\" width=\"110\" height=\"150\" src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20110%20150'%3E%3C/svg%3E\" data-lazy-srcset=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-23-110x150.jpg 110w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-23-175x238.jpg 175w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-23-350x476.jpg 350w\" data-lazy-sizes=\"(max-width: 110px) 100vw, 110px\" class=\"img-responsive\" style=\"\" alt=\"cover\" data-lazy-src=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-23-110x150.jpg\">",
+                    "target": [
+                        "#manga-item-2536813 > a > img[decoding=\"async\"][width=\"110\"][height=\"150\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"item-summary\">",
+                    "target": [
+                        ".page-listing-item:nth-child(3) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(1) > .page-item-detail.text > .item-summary"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img decoding=\"async\" width=\"110\" height=\"150\" src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20110%20150'%3E%3C/svg%3E\" data-lazy-srcset=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-22-110x150.jpg 110w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-22-175x238.jpg 175w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-22-350x476.jpg 350w\" data-lazy-sizes=\"(max-width: 110px) 100vw, 110px\" class=\"img-responsive\" style=\"\" alt=\"cover\" data-lazy-src=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-22-110x150.jpg\">",
+                    "target": [
+                        "#manga-item-2536717 > a > img[decoding=\"async\"][width=\"110\"][height=\"150\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"item-summary\">",
+                    "target": [
+                        ".page-listing-item:nth-child(3) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(2) > .page-item-detail.text > .item-summary"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img decoding=\"async\" width=\"110\" height=\"150\" src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20110%20150'%3E%3C/svg%3E\" data-lazy-srcset=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-21-110x150.jpg 110w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-21-175x238.jpg 175w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-21-350x476.jpg 350w\" data-lazy-sizes=\"(max-width: 110px) 100vw, 110px\" class=\"img-responsive\" style=\"\" alt=\"cover\" data-lazy-src=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-21-110x150.jpg\">",
+                    "target": [
+                        "#manga-item-2536585 > a > img[decoding=\"async\"][width=\"110\"][height=\"150\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"item-summary\">",
+                    "target": [
+                        ".page-listing-item:nth-child(3) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(3) > .page-item-detail.text > .item-summary"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img decoding=\"async\" width=\"110\" height=\"150\" src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20110%20150'%3E%3C/svg%3E\" data-lazy-srcset=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-20-110x150.jpg 110w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-20-175x238.jpg 175w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-20-350x476.jpg 350w\" data-lazy-sizes=\"(max-width: 110px) 100vw, 110px\" class=\"img-responsive\" style=\"\" alt=\"cover\" data-lazy-src=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-20-110x150.jpg\">",
+                    "target": [
+                        "#manga-item-2536584 > a > img[decoding=\"async\"][width=\"110\"][height=\"150\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"item-summary\">",
+                    "target": [
+                        ".page-listing-item:nth-child(4) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(1) > .page-item-detail.text > .item-summary"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"col-12 col-md-4 badge-pos-1\">",
+                    "target": [
+                        ".page-listing-item:nth-child(4) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(2)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img decoding=\"async\" width=\"110\" height=\"150\" src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20110%20150'%3E%3C/svg%3E\" data-lazy-srcset=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-18-110x150.jpg 110w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-18-175x238.jpg 175w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-18-350x476.jpg 350w\" data-lazy-sizes=\"(max-width: 110px) 100vw, 110px\" class=\"img-responsive\" style=\"\" alt=\"cover\" data-lazy-src=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-18-110x150.jpg\">",
+                    "target": [
+                        "#manga-item-2536004 > a > img[decoding=\"async\"][width=\"110\"][height=\"150\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"item-summary\">",
+                    "target": [
+                        ".page-listing-item:nth-child(4) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(3) > .page-item-detail.text > .item-summary"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img decoding=\"async\" width=\"110\" height=\"150\" src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20110%20150'%3E%3C/svg%3E\" data-lazy-srcset=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-17-110x150.jpg 110w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-17-175x238.jpg 175w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-17-350x476.jpg 350w\" data-lazy-sizes=\"(max-width: 110px) 100vw, 110px\" class=\"img-responsive\" style=\"\" alt=\"cover\" data-lazy-src=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-17-110x150.jpg\">",
+                    "target": [
+                        "#manga-item-2535620 > a > img[decoding=\"async\"][width=\"110\"][height=\"150\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"item-summary\">",
+                    "target": [
+                        ".page-listing-item:nth-child(5) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(1) > .page-item-detail.text > .item-summary"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img decoding=\"async\" width=\"110\" height=\"150\" src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20110%20150'%3E%3C/svg%3E\" data-lazy-srcset=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-16-110x150.jpg 110w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-16-175x238.jpg 175w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-16-350x476.jpg 350w\" data-lazy-sizes=\"(max-width: 110px) 100vw, 110px\" class=\"img-responsive\" style=\"\" alt=\"cover\" data-lazy-src=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-16-110x150.jpg\">",
+                    "target": [
+                        "#manga-item-2535619 > a > img[decoding=\"async\"][width=\"110\"][height=\"150\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"item-summary\">",
+                    "target": [
+                        ".page-listing-item:nth-child(5) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(2) > .page-item-detail.text > .item-summary"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img decoding=\"async\" width=\"110\" height=\"150\" src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20110%20150'%3E%3C/svg%3E\" data-lazy-srcset=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-15-110x150.jpg 110w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-15-175x238.jpg 175w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-15-350x476.jpg 350w\" data-lazy-sizes=\"(max-width: 110px) 100vw, 110px\" class=\"img-responsive\" style=\"\" alt=\"cover\" data-lazy-src=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-15-110x150.jpg\">",
+                    "target": [
+                        "#manga-item-2534707 > a > img[decoding=\"async\"][width=\"110\"][height=\"150\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"item-summary\">",
+                    "target": [
+                        ".page-listing-item:nth-child(5) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(3) > .page-item-detail.text > .item-summary"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img decoding=\"async\" width=\"110\" height=\"150\" src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20110%20150'%3E%3C/svg%3E\" data-lazy-srcset=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-14-110x150.jpg 110w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-14-175x238.jpg 175w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-14-350x476.jpg 350w\" data-lazy-sizes=\"(max-width: 110px) 100vw, 110px\" class=\"img-responsive\" style=\"\" alt=\"cover\" data-lazy-src=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-14-110x150.jpg\">",
+                    "target": [
+                        "#manga-item-2534706 > a > img[decoding=\"async\"][width=\"110\"][height=\"150\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"item-summary\">",
+                    "target": [
+                        ".page-listing-item:nth-child(6) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(1) > .page-item-detail.text > .item-summary"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img decoding=\"async\" width=\"110\" height=\"150\" src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20110%20150'%3E%3C/svg%3E\" data-lazy-srcset=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-13-110x150.jpg 110w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-13-220x300.jpg 220w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-13-175x238.jpg 175w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-13-350x476.jpg 350w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-13.jpg 500w\" data-lazy-sizes=\"(max-width: 110px) 100vw, 110px\" class=\"img-responsive\" style=\"\" alt=\"cover\" data-lazy-src=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-13-110x150.jpg\">",
+                    "target": [
+                        "#manga-item-2534705 > a > img[decoding=\"async\"][width=\"110\"][height=\"150\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"item-summary\">",
+                    "target": [
+                        ".page-listing-item:nth-child(6) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(2) > .page-item-detail.text > .item-summary"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img decoding=\"async\" width=\"110\" height=\"150\" src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20110%20150'%3E%3C/svg%3E\" data-lazy-srcset=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-12-110x150.jpg 110w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-12-175x238.jpg 175w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-12-350x476.jpg 350w\" data-lazy-sizes=\"(max-width: 110px) 100vw, 110px\" class=\"img-responsive\" style=\"\" alt=\"cover\" data-lazy-src=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-12-110x150.jpg\">",
+                    "target": [
+                        "#manga-item-2534704 > a > img[decoding=\"async\"][width=\"110\"][height=\"150\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"item-summary\">",
+                    "target": [
+                        ".page-listing-item:nth-child(6) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(3) > .page-item-detail.text > .item-summary"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img decoding=\"async\" width=\"110\" height=\"150\" src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20110%20150'%3E%3C/svg%3E\" data-lazy-srcset=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-11-110x150.jpg 110w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-11-175x238.jpg 175w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-11-350x476.jpg 350w\" data-lazy-sizes=\"(max-width: 110px) 100vw, 110px\" class=\"img-responsive\" style=\"\" alt=\"cover\" data-lazy-src=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-11-110x150.jpg\">",
+                    "target": [
+                        "#manga-item-2534702 > a > img[decoding=\"async\"][width=\"110\"][height=\"150\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"item-summary\">",
+                    "target": [
+                        ".page-listing-item:nth-child(7) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(1) > .page-item-detail.text > .item-summary"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img decoding=\"async\" width=\"110\" height=\"150\" src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20110%20150'%3E%3C/svg%3E\" data-lazy-srcset=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-10-110x150.jpg 110w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-10-175x238.jpg 175w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-10-350x476.jpg 350w\" data-lazy-sizes=\"(max-width: 110px) 100vw, 110px\" class=\"img-responsive\" style=\"\" alt=\"cover\" data-lazy-src=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-10-110x150.jpg\">",
+                    "target": [
+                        "#manga-item-2534701 > a > img[decoding=\"async\"][width=\"110\"][height=\"150\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"item-summary\">",
+                    "target": [
+                        ".page-listing-item:nth-child(7) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(2) > .page-item-detail.text > .item-summary"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img decoding=\"async\" width=\"110\" height=\"150\" src=\"data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20110%20150'%3E%3C/svg%3E\" data-lazy-srcset=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-9-110x150.jpg 110w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-9-175x238.jpg 175w, https://noveltranslate.com/wp-content/uploads/2023/09/cover-9-350x476.jpg 350w\" data-lazy-sizes=\"(max-width: 110px) 100vw, 110px\" class=\"img-responsive\" style=\"\" alt=\"cover\" data-lazy-src=\"https://noveltranslate.com/wp-content/uploads/2023/09/cover-9-110x150.jpg\">",
+                    "target": [
+                        "#manga-item-2534700 > a > img[decoding=\"async\"][width=\"110\"][height=\"150\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"item-summary\">",
+                    "target": [
+                        ".page-listing-item:nth-child(7) > .row-eq-height.row > .col-md-4.badge-pos-1.col-12:nth-child(3) > .page-item-detail.text > .item-summary"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h2>Latest Updates</h2>",
+                    "target": [
+                        "h2:nth-child(5)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"c-page\">",
+                    "target": [
+                        ".c-page:nth-child(6)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"tptn_counter\" id=\"tptn_counter_2220\">(Visited 324,029 times, 39 visits today)</div>",
+                    "target": [
+                        "#tptn_counter_2220"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,2544 @@
+{
+    "testEngine": {
+        "name": "axe-core",
+        "version": "4.4.3"
+    },
+    "testRunner": {
+        "name": "axe"
+    },
+    "timestamp": "2024-09-27T15:02:20.792Z",
+    "url": "https://zstacklife.com/",
+    "toolOptions": {
+        "resultTypes": [
+            "violations"
+        ],
+        "reporter": "v1"
+    },
+    "passes": [
+        {
+            "id": "aria-allowed-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures ARIA attributes are allowed for an element's role",
+            "help": "Elements must only use allowed ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attributes are used correctly for the defined role"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "aria-unsupported-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute is supported"
+                        },
+                        {
+                            "id": "aria-prohibited-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "ARIA attribute is allowed"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<button class=\"t4s-drawer-menu__close t4s-pe-none t4s-op-0 t4s-pf\" data-drawer-close=\"\" aria-label=\"Close menu, categories\">",
+                    "target": [
+                        ".t4s-drawer-menu__close"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-allowed-role",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "best-practice"
+            ],
+            "description": "Ensures role attribute has an appropriate value for the element",
+            "help": "ARIA role should be appropriate for the element",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-role?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is allowed for given element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<svg class=\"t4s-icon-select-arrow\" width=\"10\" height=\"10\" role=\"presentation\" viewBox=\"0 0 19 12\"><use xlink:href=\"#t4s-select-arrow\"></use></svg>",
+                    "target": [
+                        ".t4s-lh-1.t4s-d-flex[href$=\"all\"] > .t4s-icon-select-arrow[width=\"10\"][height=\"10\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-body",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures aria-hidden='true' is not present on the document body.",
+            "help": "aria-hidden='true' must not be present on the document body",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-hidden-body",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "No aria-hidden attribute is present on document body"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<body class=\"template-index \" data-upcart-cart-enabled=\"true\">",
+                    "target": [
+                        "body"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-focus",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag131"
+            ],
+            "description": "Ensures aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "focusable-modal-open",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements while a modal is open"
+                        },
+                        {
+                            "id": "focusable-disabled",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        },
+                        {
+                            "id": "focusable-not-tabbable",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<svg class=\"t4s-icon t4s-icon--search\" aria-hidden=\"true\" focusable=\"false\" role=\"presentation\"><use href=\"#icon-h-search\"></use></svg>",
+                    "target": [
+                        ".t4s-icon--search"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-required-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures elements with ARIA roles have all required ARIA attributes",
+            "help": "Required ARIA attributes must be provided",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-required-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-required-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "All required ARIA attributes are present"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<svg class=\"t4s-icon-select-arrow\" width=\"10\" height=\"10\" role=\"presentation\" viewBox=\"0 0 19 12\"><use xlink:href=\"#t4s-select-arrow\"></use></svg>",
+                    "target": [
+                        ".t4s-lh-1.t4s-d-flex[href$=\"all\"] > .t4s-icon-select-arrow[width=\"10\"][height=\"10\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-roles",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all elements with a role attribute use a valid value",
+            "help": "ARIA roles used must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-roles?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "fallbackrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Only one role value used"
+                        },
+                        {
+                            "id": "invalidrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is valid"
+                        },
+                        {
+                            "id": "abstractrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Abstract roles are not used"
+                        },
+                        {
+                            "id": "unsupportedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is supported"
+                        },
+                        {
+                            "id": "deprecatedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is not deprecated"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<svg class=\"t4s-icon-select-arrow\" width=\"10\" height=\"10\" role=\"presentation\" viewBox=\"0 0 19 12\"><use xlink:href=\"#t4s-select-arrow\"></use></svg>",
+                    "target": [
+                        ".t4s-lh-1.t4s-d-flex[href$=\"all\"] > .t4s-icon-select-arrow[width=\"10\"][height=\"10\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr-value",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all ARIA attributes have valid values",
+            "help": "ARIA attributes must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr-value?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "aria-valid-attr-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute values are valid"
+                        },
+                        {
+                            "id": "aria-errormessage",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "aria-errormessage exists and references elements visible to screen readers that use a supported aria-errormessage technique"
+                        },
+                        {
+                            "id": "aria-level",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-level values are valid"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button class=\"t4s-drawer-menu__close t4s-pe-none t4s-op-0 t4s-pf\" data-drawer-close=\"\" aria-label=\"Close menu, categories\">",
+                    "target": [
+                        ".t4s-drawer-menu__close"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures attributes that begin with aria- are valid ARIA attributes",
+            "help": "ARIA attributes must conform to valid names",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-valid-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute name is valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button class=\"t4s-drawer-menu__close t4s-pe-none t4s-op-0 t4s-pf\" data-drawer-close=\"\" aria-label=\"Close menu, categories\">",
+                    "target": [
+                        ".t4s-drawer-menu__close"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "avoid-inline-spacing",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag21aa",
+                "wcag1412"
+            ],
+            "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+            "help": "Inline text spacing must be adjustable with custom stylesheets",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/avoid-inline-spacing?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "avoid-inline-spacing",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No inline styles with '!important' that affect text spacing has been specified"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header id=\"shopify-section-header-inline\" class=\"shopify-section t4s-section t4s-section-header calc-pos-submenu\" style=\"--t4s-max-width: 1270px; --t4s-max-height: 612.7031px;\">",
+                    "target": [
+                        "#shopify-section-header-inline"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "button-name",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures buttons have discernible text",
+            "help": "Buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/button-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "button-has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has inner text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button data-agreemail-btn=\"\" type=\"submit\" class=\"t4s-w-100 t4s-newsletter__submit t4s-truncate t4s-btn-loading__svg\">",
+                    "target": [
+                        ".t4s-newsletter__submit"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "bypass",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag241",
+                "section508",
+                "section508.22.o"
+            ],
+            "description": "Ensures each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+            "help": "Page must have means to bypass repeated blocks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/bypass?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "internal-link-present",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Valid skip link found"
+                        },
+                        {
+                            "id": "header-present",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h3 class=\"t4s-section-title t4s-title\"><span>Frequently Asked Questions</span></h3>",
+                                    "target": [
+                                        ".t4s_des_title_1 > .t4s-section-title.t4s-title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"t4s-section-title t4s-title\"><span>Z Blog</span></h3>",
+                                    "target": [
+                                        ".t4s_des_title_2 > .t4s-section-title.t4s-title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"t4s-post-title\"><a href=\"/blogs/news/get-prepared-then-take-in-the-show\" class=\"t4s-post-text-color\">Get Prepared. Then Take In The Show.</a></h3>",
+                                    "target": [
+                                        "article:nth-child(1) > .t4s-post-inner > .t4s-post-info > .t4s-post-title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"t4s-post-title\"><a href=\"/blogs/news/achy-legs-poor-sleep-and-this-must-have-mineral\" class=\"t4s-post-text-color\">Achy Legs, Poor Sleep and This Must-Have Mineral</a></h3>",
+                                    "target": [
+                                        "article:nth-child(2) > .t4s-post-inner > .t4s-post-info > .t4s-post-title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"t4s-post-title\"><a href=\"/blogs/news/stressed-and-sleeping-less-try-this\" class=\"t4s-post-text-color\">Stressed and Sleeping Less? Try This.</a></h3>",
+                                    "target": [
+                                        "article:nth-child(3) > .t4s-post-inner > .t4s-post-info > .t4s-post-title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"t4s-col-heading t4s-fnt-fm-inherit\">Get in touch</h3>",
+                                    "target": [
+                                        ".bl-781e090c-7609-4a66-b19d-4d4e73658e15 > .t4s-text-start.t4s-text-md-start.t4s-col-inner > .t4s-footer-heading.t4s-justify-content-between.t4s-d-flex:nth-child(1) > .t4s-col-heading"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"t4s-col-heading t4s-fnt-fm-inherit\">Products</h3>",
+                                    "target": [
+                                        ".bl-footer-6 > .t4s-text-start.t4s-text-md-start.t4s-col-inner > .t4s-footer-heading.t4s-justify-content-between.t4s-d-flex:nth-child(1) > .t4s-col-heading"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"t4s-col-heading t4s-fnt-fm-inherit\">Information</h3>",
+                                    "target": [
+                                        ".bl-footer-8 > .t4s-text-start.t4s-text-md-start.t4s-col-inner > .t4s-footer-heading.t4s-justify-content-between.t4s-d-flex:nth-child(1) > .t4s-col-heading"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"t4s-col-heading t4s-fnt-fm-inherit\">Terms &amp; Policies</h3>",
+                                    "target": [
+                                        ".bl-footer-10 > .t4s-text-start.t4s-text-md-start.t4s-col-inner > .t4s-footer-heading.t4s-justify-content-between.t4s-d-flex:nth-child(1) > .t4s-col-heading"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"upcart-header-text\">Cart \u2022 0</h2>",
+                                    "target": [
+                                        "h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3>Your cart is empty</h3>",
+                                    "target": [
+                                        ".styles_CartPreview__empty__WFP86 > h3"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Page has a heading"
+                        },
+                        {
+                            "id": "landmark",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<main id=\"MainContent\" class=\"content-for-layout focus-none\" role=\"main\" tabindex=\"-1\">",
+                                    "target": [
+                                        "#MainContent"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Page has a landmark region"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"t4sp-theme t4s-wrapper__full_width rtl_false swatch_color_style_2 pr_border_style_1 pr_img_effect_2 enable_eff_img1_true badge_shape_1 css_for_wis_app_false shadow_round_img_true t4s-header__inline is-remove-unavai-2 t4_compare_false is-catalog__mode-false js t4sp-sticky t4sp-no-hover t4s-browser-Chrome t4s-platform-Windows\" lang=\"en\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#050505",
+                                "contrastRatio": 20.38,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 20.38"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a class=\"t4s-lh-1 t4s-d-flex t4s-align-items-center t4s-pr\" href=\"/collections/all\" target=\"_self\">Products<svg class=\"t4s-icon-select-arrow\" width=\"10\" height=\"10\" role=\"presentation\" viewBox=\"0 0 19 12\"><use xlink:href=\"#t4s-select-arrow\"></use></svg></a>",
+                    "target": [
+                        ".t4s-lh-1.t4s-d-flex[href$=\"all\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "document-title",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag242",
+                "ACT"
+            ],
+            "description": "Ensures each HTML document contains a non-empty <title> element",
+            "help": "Documents must have <title> element to aid in navigation",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/document-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "doc-has-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has a non-empty <title> element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"t4sp-theme t4s-wrapper__full_width rtl_false swatch_color_style_2 pr_border_style_1 pr_img_effect_2 enable_eff_img1_true badge_shape_1 css_for_wis_app_false shadow_round_img_true t4s-header__inline is-remove-unavai-2 t4_compare_false is-catalog__mode-false js t4sp-sticky t4sp-no-hover t4s-browser-Chrome t4s-platform-Windows\" lang=\"en\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-active",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value of active elements is unique",
+            "help": "IDs of active elements must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-active",
+                            "data": "MainContent",
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has no active elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<main id=\"MainContent\" class=\"content-for-layout focus-none\" role=\"main\" tabindex=\"-1\">",
+                    "target": [
+                        "#MainContent"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-aria",
+            "impact": "critical",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value used in ARIA and in labels is unique",
+            "help": "IDs used in ARIA and labels must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-aria",
+                            "data": "ShippingProvince_mini_cart",
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<select id=\"ShippingProvince_mini_cart\" name=\"province\" data-default=\"\">",
+                    "target": [
+                        "#ShippingProvince_mini_cart"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "ecom-theme-helpers",
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<script type=\"text/javascript\" id=\"ecom-theme-helpers\" async=\"async\">",
+                    "target": [
+                        "#ecom-theme-helpers"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "empty-heading",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "best-practice"
+            ],
+            "description": "Ensures headings have discernible text",
+            "help": "Headings should not be empty",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/empty-heading?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h3 class=\"t4s-section-title t4s-title\"><span>Frequently Asked Questions</span></h3>",
+                    "target": [
+                        ".t4s_des_title_1 > .t4s-section-title.t4s-title"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "form-field-multiple-labels",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag332"
+            ],
+            "description": "Ensures form field does not have multiple label elements",
+            "help": "Form field must not have multiple label elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/form-field-multiple-labels?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "multiple-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Form field does not have multiple label elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"email\" name=\"contact[email]\" placeholder=\"Your email address\" value=\"\" class=\"t4s-text-center t4s-text-md-start t4s-newsletter__email\" required=\"required\">",
+                    "target": [
+                        ".t4s-newsletter__email"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "heading-order",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": {
+                                "headingOrder": [
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(4) > main:nth-child(7) > section:nth-child(10) > div:nth-child(3) > div > div > div:nth-child(2) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(4) > main:nth-child(7) > section:nth-child(11) > div:nth-child(7) > div > div:nth-child(2) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(4) > main:nth-child(7) > section:nth-child(11) > div:nth-child(7) > div > div:nth-child(5) > article:nth-child(1) > div > div:nth-child(2) > h3:nth-child(2)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(4) > main:nth-child(7) > section:nth-child(11) > div:nth-child(7) > div > div:nth-child(5) > article:nth-child(2) > div > div:nth-child(2) > h3:nth-child(2)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(4) > main:nth-child(7) > section:nth-child(11) > div:nth-child(7) > div > div:nth-child(5) > article:nth-child(3) > div > div:nth-child(2) > h3:nth-child(2)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(4) > footer:nth-child(8) > section:nth-child(1) > div:nth-child(6) > div > div > div:nth-child(2) > div > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(4) > footer:nth-child(8) > section:nth-child(1) > div:nth-child(6) > div > div > div:nth-child(3) > div > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(4) > footer:nth-child(8) > section:nth-child(1) > div:nth-child(6) > div > div > div:nth-child(4) > div > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(4) > footer:nth-child(8) > section:nth-child(1) > div:nth-child(6) > div > div > div:nth-child(5) > div > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(36) > div:nth-child(8) > div > div:nth-child(2) > div > div:nth-child(1) > div > h2:nth-child(1)"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(36) > div:nth-child(8) > div > div:nth-child(2) > div > div:nth-child(2) > h3"
+                                        ],
+                                        "level": 3
+                                    }
+                                ]
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h3 class=\"t4s-section-title t4s-title\"><span>Frequently Asked Questions</span></h3>",
+                    "target": [
+                        ".t4s_des_title_1 > .t4s-section-title.t4s-title"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-has-lang",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures every HTML document has a lang attribute",
+            "help": "<html> element must have a lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-has-lang?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "The <html> element has a lang attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"t4sp-theme t4s-wrapper__full_width rtl_false swatch_color_style_2 pr_border_style_1 pr_img_effect_2 enable_eff_img1_true badge_shape_1 css_for_wis_app_false shadow_round_img_true t4s-header__inline is-remove-unavai-2 t4_compare_false is-catalog__mode-false js t4sp-sticky t4sp-no-hover t4s-browser-Chrome t4s-platform-Windows\" lang=\"en\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-lang-valid",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures the lang attribute of the <html> element has a valid value",
+            "help": "<html> element must have a valid value for the lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-lang-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "valid-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Value of lang attribute is included in the list of valid languages"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<html class=\"t4sp-theme t4s-wrapper__full_width rtl_false swatch_color_style_2 pr_border_style_1 pr_img_effect_2 enable_eff_img1_true badge_shape_1 css_for_wis_app_false shadow_round_img_true t4s-header__inline is-remove-unavai-2 t4_compare_false is-catalog__mode-false js t4sp-sticky t4sp-no-hover t4s-browser-Chrome t4s-platform-Windows\" lang=\"en\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "identical-links-same-purpose",
+            "impact": "minor",
+            "tags": [
+                "cat.semantics",
+                "wcag2aaa",
+                "wcag249"
+            ],
+            "description": "Ensure that links with the same accessible name serve a similar purpose",
+            "help": "Links with the same name must have a similar purpose",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/identical-links-same-purpose?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "identical-links-same-purpose",
+                            "data": {
+                                "name": "skip to content",
+                                "urlProps": {
+                                    "protocol": "http:",
+                                    "hostname": "zstacklife.com",
+                                    "port": "",
+                                    "pathname": "/",
+                                    "search": {},
+                                    "hash": "",
+                                    "filename": ""
+                                }
+                            },
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "There are no other links with the same name, that go to a different URL"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a class=\"skip-to-content-link visually-hidden\" href=\"#MainContent\">Skip to content</a>",
+                    "target": [
+                        ".skip-to-content-link"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures <img> elements have alternate text or a role of none or presentation",
+            "help": "Images must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-alt",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has an alt attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "alt-space-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has a valid alt attribute value"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img loading=\"lazy\" class=\"header__normal-logo t4s-d-none t4s-d-lg-block\" src=\"https://cdn.shopify.com/s/files/1/0529/4951/6454/files/z-stack-logo-new.svg?v=1678280552\" alt=\"Logo\" width=\"90\" height=\"85\" style=\"width: 80px\">",
+                    "target": [
+                        ".header__normal-logo"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-redundant-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ],
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-redundant-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img loading=\"lazy\" class=\"header__normal-logo t4s-d-none t4s-d-lg-block\" src=\"https://cdn.shopify.com/s/files/1/0529/4951/6454/files/z-stack-logo-new.svg?v=1678280552\" alt=\"Logo\" width=\"90\" height=\"85\" style=\"width: 80px\">",
+                    "target": [
+                        ".header__normal-logo"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label-title-only",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "best-practice"
+            ],
+            "description": "Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes",
+            "help": "Form elements should have a visible label",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "title-only",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Form element does not solely use title attribute for its label"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"email\" name=\"contact[email]\" placeholder=\"Your email address\" value=\"\" class=\"t4s-text-center t4s-text-md-start t4s-newsletter__email\" required=\"required\">",
+                    "target": [
+                        ".t4s-newsletter__email"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag412",
+                "wcag131",
+                "section508",
+                "section508.22.n",
+                "ACT"
+            ],
+            "description": "Ensures every form element has a label",
+            "help": "Form elements must have labels",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "non-empty-placeholder",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a placeholder attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "hidden-explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element has a visible explicit <label>"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"email\" name=\"contact[email]\" placeholder=\"Your email address\" value=\"\" class=\"t4s-text-center t4s-text-md-start t4s-newsletter__email\" required=\"required\">",
+                    "target": [
+                        ".t4s-newsletter__email"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-banner-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the banner landmark is at top level",
+            "help": "Banner landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-banner-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "banner"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The banner landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header id=\"shopify-section-header-inline\" class=\"shopify-section t4s-section t4s-section-header calc-pos-submenu\" style=\"--t4s-max-width: 1270px; --t4s-max-height: 612.7031px;\">",
+                    "target": [
+                        "#shopify-section-header-inline"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-contentinfo-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the contentinfo landmark is at top level",
+            "help": "Contentinfo landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-contentinfo-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "contentinfo"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The contentinfo landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<footer id=\"t4s-footer\">",
+                    "target": [
+                        "#t4s-footer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-main-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the main landmark is at top level",
+            "help": "Main landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-main-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "main"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The main landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<main id=\"MainContent\" class=\"content-for-layout focus-none\" role=\"main\" tabindex=\"-1\">",
+                    "target": [
+                        "#MainContent"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-banner",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one banner landmark",
+            "help": "Document should not have more than one banner landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-banner?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-banner",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one banner landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header id=\"shopify-section-header-inline\" class=\"shopify-section t4s-section t4s-section-header calc-pos-submenu\" style=\"--t4s-max-width: 1270px; --t4s-max-height: 612.7031px;\">",
+                    "target": [
+                        "#shopify-section-header-inline"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-contentinfo",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one contentinfo landmark",
+            "help": "Document should not have more than one contentinfo landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-contentinfo?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-contentinfo",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one contentinfo landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<footer id=\"t4s-footer\">",
+                    "target": [
+                        "#t4s-footer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-main",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one main landmark",
+            "help": "Document should not have more than one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-main",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one main landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<main id=\"MainContent\" class=\"content-for-layout focus-none\" role=\"main\" tabindex=\"-1\">",
+                    "target": [
+                        "#MainContent"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-one-main",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has a main landmark",
+            "help": "Document should have one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-one-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-main",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<main id=\"MainContent\" class=\"content-for-layout focus-none\" role=\"main\" tabindex=\"-1\">",
+                                    "target": [
+                                        "#MainContent"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Document has at least one main landmark"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"t4sp-theme t4s-wrapper__full_width rtl_false swatch_color_style_2 pr_border_style_1 pr_img_effect_2 enable_eff_img1_true badge_shape_1 css_for_wis_app_false shadow_round_img_true t4s-header__inline is-remove-unavai-2 t4_compare_false is-catalog__mode-false js t4sp-sticky t4sp-no-hover t4s-browser-Chrome t4s-platform-Windows\" lang=\"en\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-unique",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "help": "Ensures landmarks are unique",
+            "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-unique",
+                            "data": {
+                                "role": "banner",
+                                "accessibleText": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Landmarks must have a unique role or role/label/title (i.e. accessible name) combination"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header id=\"shopify-section-header-inline\" class=\"shopify-section t4s-section t4s-section-header calc-pos-submenu\" style=\"--t4s-max-width: 1270px; --t4s-max-height: 612.7031px;\">",
+                    "target": [
+                        "#shopify-section-header-inline"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a class=\"skip-to-content-link visually-hidden\" href=\"#MainContent\">Skip to content</a>",
+                    "target": [
+                        ".skip-to-content-link"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "list",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures that lists are structured correctly",
+            "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/list?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "only-listitems",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List element only has direct children that are allowed inside <li> elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<ul data-menu-nav=\"\" id=\"t4s-nav-ul\" class=\"t4s-nav__ul t4s-d-inline-flex t4s-flex-wrap t4s-align-items-center\">",
+                    "target": [
+                        "#t4s-nav-ul"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "listitem",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures <li> elements are used semantically",
+            "help": "<li> elements must be contained in a <ul> or <ol>",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/listitem?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<li id=\"item_334013b4-82f3-4046-8371-eaf3c3340153\" data-placement=\"bottom\" class=\"t4s-type__drop t4s-menu-item has--children menu-has__offsets menu-pos__left\">",
+                    "target": [
+                        "#item_334013b4-82f3-4046-8371-eaf3c3340153"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport-large",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> can scale a significant amount",
+            "help": "Users should be able to zoom and scale the text up to 500%",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport-large?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport-large",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "<meta> tag does not prevent significant zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice",
+                "ACT"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> does not disable text scaling and zooming",
+            "help": "Zooming and scaling should not be disabled",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "<meta> tag does not disable zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width,initial-scale=1\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "nested-interactive",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+            "help": "Interactive controls must not be nested",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/nested-interactive?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "no-focusable-content",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have focusable descendants"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<img loading=\"lazy\" class=\"header__normal-logo t4s-d-none t4s-d-lg-block\" src=\"https://cdn.shopify.com/s/files/1/0529/4951/6454/files/z-stack-logo-new.svg?v=1678280552\" alt=\"Logo\" width=\"90\" height=\"85\" style=\"width: 80px\">",
+                    "target": [
+                        ".header__normal-logo"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "presentation-role-conflict",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "best-practice"
+            ],
+            "description": "Flags elements whose role is none or presentation and which cause the role conflict resolution to trigger.",
+            "help": "Elements of role none or presentation should be flagged",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/presentation-role-conflict?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "is-element-focusable",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element is focusable."
+                        },
+                        {
+                            "id": "has-global-aria-attribute",
+                            "data": [],
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has global ARIA attributes: "
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<svg class=\"t4s-icon-select-arrow\" width=\"10\" height=\"10\" role=\"presentation\" viewBox=\"0 0 19 12\"><use xlink:href=\"#t4s-select-arrow\"></use></svg>",
+                    "target": [
+                        ".t4s-lh-1.t4s-d-flex[href$=\"all\"] > .t4s-icon-select-arrow[width=\"10\"][height=\"10\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "All page content is contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<noscript><iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-M7SVJKB\"\nheight=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></noscript>",
+                    "target": [
+                        "noscript"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "scrollable-region-focusable",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag211"
+            ],
+            "description": "Ensure elements that have scrollable content are accessible by keyboard",
+            "help": "Scrollable region must have keyboard access",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/scrollable-region-focusable?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "focusable-content",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Element contains focusable elements"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"t4sp-theme t4s-wrapper__full_width rtl_false swatch_color_style_2 pr_border_style_1 pr_img_effect_2 enable_eff_img1_true badge_shape_1 css_for_wis_app_false shadow_round_img_true t4s-header__inline is-remove-unavai-2 t4_compare_false is-catalog__mode-false js t4sp-sticky t4sp-no-hover t4s-browser-Chrome t4s-platform-Windows\" lang=\"en\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "tabindex",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures tabindex attribute values are not greater than 0",
+            "help": "Elements should not have tabindex greater than zero",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/tabindex?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "tabindex",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have a tabindex greater than 0"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<main id=\"MainContent\" class=\"content-for-layout focus-none\" role=\"main\" tabindex=\"-1\">",
+                    "target": [
+                        "#MainContent"
+                    ]
+                }
+            ]
+        }
+    ],
+    "violations": [
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#b9a16b",
+                                "contrastRatio": 2.5,
+                                "fontSize": "12.0pt (16px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"/products/z-shield\" target=\"_self\" class=\" t4s-btn t4s-btn-custom  t4s-pe-auto t4s-fnt-fm-inherit t4s-hidden-mobile-false t4s-btn-style-default t4s-btn-effect-default\" id=\"b_a432789a-9f4c-40a1-aa5d-c23852f1ff64\" style=\"--animation: ;--delay-animation:s;--button-icon-w:0px;--button-icon-w-mb:0px;--pri-cl:#b9a16b;--second-cl:#ffffff;--pri-cl-hover:#222222;--second-cl-hover:#ffffff;--button-fs:16px;--button-fw:600; --button-pd-lr:35px;--button-bdr:0px;--button-ls:0px;--button-mh:42px;--button-mgb:0px;--button-mgb-mb:0px;--button-fs-mb:18px;--button-mh-mb:36px;--button-pd-lr-mb:35px;--button-ls-mb:0px;\">",
+                                    "target": [
+                                        "#b_a432789a-9f4c-40a1-aa5d-c23852f1ff64"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.5 (foreground color: #ffffff, background color: #b9a16b, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/products/z-shield\" target=\"_self\" class=\" t4s-btn t4s-btn-custom  t4s-pe-auto t4s-fnt-fm-inherit t4s-hidden-mobile-false t4s-btn-style-default t4s-btn-effect-default\" id=\"b_a432789a-9f4c-40a1-aa5d-c23852f1ff64\" style=\"--animation: ;--delay-animation:s;--button-icon-w:0px;--button-icon-w-mb:0px;--pri-cl:#b9a16b;--second-cl:#ffffff;--pri-cl-hover:#222222;--second-cl-hover:#ffffff;--button-fs:16px;--button-fw:600; --button-pd-lr:35px;--button-bdr:0px;--button-ls:0px;--button-mh:42px;--button-mgb:0px;--button-mgb-mb:0px;--button-fs-mb:18px;--button-mh-mb:36px;--button-pd-lr-mb:35px;--button-ls-mb:0px;\">",
+                    "target": [
+                        "#b_a432789a-9f4c-40a1-aa5d-c23852f1ff64"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.5 (foreground color: #ffffff, background color: #b9a16b, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#686868",
+                                "bgColor": "#8feff9",
+                                "contrastRatio": 4.21,
+                                "fontSize": "12.0pt (16px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"/products/z-stack-kids\" target=\"_self\" class=\" t4s-btn t4s-btn-custom  t4s-pe-auto t4s-fnt-fm-inherit t4s-hidden-mobile-false t4s-btn-style-default t4s-btn-effect-default\" id=\"b_d1196122-0d6f-4ae6-9b3c-212c5d547c33\" style=\"--animation: ;--delay-animation:s;--button-icon-w:0px;--button-icon-w-mb:0px;--pri-cl:#8feff9;--second-cl:#686868;--pri-cl-hover:#b9a16b;--second-cl-hover:#ffffff;--button-fs:16px;--button-fw:600; --button-pd-lr:22px;--button-bdr:0px;--button-ls:0px;--button-mh:42px;--button-mgb:0px;--button-mgb-mb:0px;--button-fs-mb:17px;--button-mh-mb:36px;--button-pd-lr-mb:25px;--button-ls-mb:0px;\">",
+                                    "target": [
+                                        "#b_d1196122-0d6f-4ae6-9b3c-212c5d547c33"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 4.21 (foreground color: #686868, background color: #8feff9, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/products/z-stack-kids\" target=\"_self\" class=\" t4s-btn t4s-btn-custom  t4s-pe-auto t4s-fnt-fm-inherit t4s-hidden-mobile-false t4s-btn-style-default t4s-btn-effect-default\" id=\"b_d1196122-0d6f-4ae6-9b3c-212c5d547c33\" style=\"--animation: ;--delay-animation:s;--button-icon-w:0px;--button-icon-w-mb:0px;--pri-cl:#8feff9;--second-cl:#686868;--pri-cl-hover:#b9a16b;--second-cl-hover:#ffffff;--button-fs:16px;--button-fw:600; --button-pd-lr:22px;--button-bdr:0px;--button-ls:0px;--button-mh:42px;--button-mgb:0px;--button-mgb-mb:0px;--button-fs-mb:17px;--button-mh-mb:36px;--button-pd-lr-mb:25px;--button-ls-mb:0px;\">",
+                    "target": [
+                        "#b_d1196122-0d6f-4ae6-9b3c-212c5d547c33"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.21 (foreground color: #686868, background color: #8feff9, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#b9a16b",
+                                "contrastRatio": 2.5,
+                                "fontSize": "12.0pt (16px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"/products/z-dtox\" target=\"_self\" class=\" t4s-btn t4s-btn-custom  t4s-pe-auto t4s-fnt-fm-inherit t4s-hidden-mobile-false t4s-btn-style-default t4s-btn-effect-default\" id=\"b_6cb7dc38-5ac8-48ff-ac69-09f0dd78f134\" style=\"--animation: ;--delay-animation:s;--button-icon-w:0px;--button-icon-w-mb:0px;--pri-cl:#b9a16b;--second-cl:#ffffff;--pri-cl-hover:#222222;--second-cl-hover:#ffffff;--button-fs:16px;--button-fw:600; --button-pd-lr:40px;--button-bdr:0px;--button-ls:0px;--button-mh:42px;--button-mgb:0px;--button-mgb-mb:0px;--button-fs-mb:18px;--button-mh-mb:36px;--button-pd-lr-mb:42px;--button-ls-mb:0px;\">",
+                                    "target": [
+                                        "#b_6cb7dc38-5ac8-48ff-ac69-09f0dd78f134"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.5 (foreground color: #ffffff, background color: #b9a16b, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/products/z-dtox\" target=\"_self\" class=\" t4s-btn t4s-btn-custom  t4s-pe-auto t4s-fnt-fm-inherit t4s-hidden-mobile-false t4s-btn-style-default t4s-btn-effect-default\" id=\"b_6cb7dc38-5ac8-48ff-ac69-09f0dd78f134\" style=\"--animation: ;--delay-animation:s;--button-icon-w:0px;--button-icon-w-mb:0px;--pri-cl:#b9a16b;--second-cl:#ffffff;--pri-cl-hover:#222222;--second-cl-hover:#ffffff;--button-fs:16px;--button-fw:600; --button-pd-lr:40px;--button-bdr:0px;--button-ls:0px;--button-mh:42px;--button-mgb:0px;--button-mgb-mb:0px;--button-fs-mb:18px;--button-mh-mb:36px;--button-pd-lr-mb:42px;--button-ls-mb:0px;\">",
+                    "target": [
+                        "#b_6cb7dc38-5ac8-48ff-ac69-09f0dd78f134"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.5 (foreground color: #ffffff, background color: #b9a16b, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#f5f5f5",
+                                "bgColor": "#a18444",
+                                "contrastRatio": 3.26,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"/products/z-shield\" target=\"_self\" class=\"t4s-bl-item t4s-animation-none t4s-btn t4s-btn-custom  t4s-pe-auto t4s-fnt-fm-inherit t4s-animation-none t4s-hidden-mobile-false t4s-btn-style-default t4s-btn-effect-default\" id=\"b_d10c3863-e33b-4ebf-a28c-2af4c1f25968\" style=\"--animation:none ;--delay-animation:0.8s;--button-icon-w:0px;--button-icon-w-mb:0px;--pri-cl:#a18444;--second-cl:#f5f5f5;--pri-cl-hover:#222222;--second-cl-hover:#e1c056;--button-fs:14px;--button-fw:400; --button-pd-lr:30px;--button-bdr:0px;--button-ls:0px;--button-mh:42px;--button-mgb:0px;--button-mgb-mb:0px;--button-fs-mb:16px;--button-mh-mb:36px;--button-pd-lr-mb:15px;--button-ls-mb:0px;\">",
+                                    "target": [
+                                        "#b_d10c3863-e33b-4ebf-a28c-2af4c1f25968"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.26 (foreground color: #f5f5f5, background color: #a18444, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/products/z-shield\" target=\"_self\" class=\"t4s-bl-item t4s-animation-none t4s-btn t4s-btn-custom  t4s-pe-auto t4s-fnt-fm-inherit t4s-animation-none t4s-hidden-mobile-false t4s-btn-style-default t4s-btn-effect-default\" id=\"b_d10c3863-e33b-4ebf-a28c-2af4c1f25968\" style=\"--animation:none ;--delay-animation:0.8s;--button-icon-w:0px;--button-icon-w-mb:0px;--pri-cl:#a18444;--second-cl:#f5f5f5;--pri-cl-hover:#222222;--second-cl-hover:#e1c056;--button-fs:14px;--button-fw:400; --button-pd-lr:30px;--button-bdr:0px;--button-ls:0px;--button-mh:42px;--button-mgb:0px;--button-mgb-mb:0px;--button-fs-mb:16px;--button-mh-mb:36px;--button-pd-lr-mb:15px;--button-ls-mb:0px;\">",
+                    "target": [
+                        "#b_d10c3863-e33b-4ebf-a28c-2af4c1f25968"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.26 (foreground color: #f5f5f5, background color: #a18444, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#e1c056",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 1.76,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"https://zstacklife.com/products/z-stack-kids?variant=41579270897830\" target=\"_self\" class=\"t4s-bl-item t4s-animation-none t4s-btn t4s-btn-custom  t4s-pe-auto t4s-fnt-fm-inherit t4s-animation-none t4s-hidden-mobile-false t4s-btn-style-default t4s-btn-effect-default\" id=\"b_b5019728-41f6-43ca-93b3-8c2614cb35d0\" style=\"--animation:none ;--delay-animation:0.8s;--button-icon-w:0px;--button-icon-w-mb:0px;--pri-cl:#ffffff;--second-cl:#e1c056;--pri-cl-hover:#222222;--second-cl-hover:#ffffff;--button-fs:14px;--button-fw:400; --button-pd-lr:30px;--button-bdr:0px;--button-ls:0px;--button-mh:42px;--button-mgb:0px;--button-mgb-mb:0px;--button-fs-mb:16px;--button-mh-mb:36px;--button-pd-lr-mb:15px;--button-ls-mb:0px;\">",
+                                    "target": [
+                                        "#b_b5019728-41f6-43ca-93b3-8c2614cb35d0"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 1.76 (foreground color: #e1c056, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://zstacklife.com/products/z-stack-kids?variant=41579270897830\" target=\"_self\" class=\"t4s-bl-item t4s-animation-none t4s-btn t4s-btn-custom  t4s-pe-auto t4s-fnt-fm-inherit t4s-animation-none t4s-hidden-mobile-false t4s-btn-style-default t4s-btn-effect-default\" id=\"b_b5019728-41f6-43ca-93b3-8c2614cb35d0\" style=\"--animation:none ;--delay-animation:0.8s;--button-icon-w:0px;--button-icon-w-mb:0px;--pri-cl:#ffffff;--second-cl:#e1c056;--pri-cl-hover:#222222;--second-cl-hover:#ffffff;--button-fs:14px;--button-fw:400; --button-pd-lr:30px;--button-bdr:0px;--button-ls:0px;--button-mh:42px;--button-mgb:0px;--button-mgb-mb:0px;--button-fs-mb:16px;--button-mh-mb:36px;--button-pd-lr-mb:15px;--button-ls-mb:0px;\">",
+                    "target": [
+                        "#b_b5019728-41f6-43ca-93b3-8c2614cb35d0"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.76 (foreground color: #e1c056, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#9b9b9b",
+                                "bgColor": "#fdfdfd",
+                                "contrastRatio": 2.74,
+                                "fontSize": "11.3pt (15px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"t4s-165840317838104065-0\" class=\"t4s-tab-content\" data-t4s-tab-content=\"\" style=\"display: block;\">",
+                                    "target": [
+                                        "#t4s-165840317838104065-0"
+                                    ]
+                                },
+                                {
+                                    "html": "<div class=\"t4s-section-inner t4s_se_template--17346700869798__1658403178f42e93f1 t4s-container-wrap \" style=\"--bg-color: #f5f5f5;--bg-gradient: ;--border-cl: ;--mg-top: 50px;--mg-right: auto;--mg-bottom: 50px;--mg-left:auto;--pd-top: 50px;--pd-right: 0px;--pd-bottom: 50px;--pd-left: 0px;--mgtb-top: 50px;--mgtb-right: auto;--mgtb-bottom: 50px;--mgtb-left: auto;--pdtb-top: 50px;--pdtb-right: 0px;--pdtb-bottom: 50px;--pdtb-left: 0px;--mgmb-top: 50px;--mgmb-right: auto;--mgmb-bottom: 30px;--mgmb-left: auto;--pdmb-top: 50px;--pdmb-right: 0px;--pdmb-bottom: 50px;--pdmb-left: 0px;\">",
+                                    "target": [
+                                        ".t4s_se_template--17346700869798__1658403178f42e93f1"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.74 (foreground color: #9b9b9b, background color: #fdfdfd, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://zstacklife.com/pages/about-dr-vladimir-zelenko-md\" title=\"https://zstacklife.com/pages/about-dr-vladimir-zelenko-md\">+ Click here to read more about Dr. Vladimir Zelenko</a>",
+                    "target": [
+                        "p:nth-child(2) > a"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.74 (foreground color: #9b9b9b, background color: #fdfdfd, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#a18444",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.55,
+                                "fontSize": "12.0pt (16px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"t4s-website-wrapper\">",
+                                    "target": [
+                                        ".t4s-website-wrapper"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.55 (foreground color: #a18444, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/blogs/news/get-prepared-then-take-in-the-show\" class=\"t4s-post-text-color\">Get Prepared. Then Take In The Show.</a>",
+                    "target": [
+                        "article:nth-child(1) > .t4s-post-inner > .t4s-post-info > .t4s-post-title > .t4s-post-text-color"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.55 (foreground color: #a18444, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#a18444",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.55,
+                                "fontSize": "12.0pt (16px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"t4s-website-wrapper\">",
+                                    "target": [
+                                        ".t4s-website-wrapper"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.55 (foreground color: #a18444, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/blogs/news/achy-legs-poor-sleep-and-this-must-have-mineral\" class=\"t4s-post-text-color\">Achy Legs, Poor Sleep and This Must-Have Mineral</a>",
+                    "target": [
+                        "article:nth-child(2) > .t4s-post-inner > .t4s-post-info > .t4s-post-title > .t4s-post-text-color"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.55 (foreground color: #a18444, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#a18444",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.55,
+                                "fontSize": "12.0pt (16px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"t4s-website-wrapper\">",
+                                    "target": [
+                                        ".t4s-website-wrapper"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.55 (foreground color: #a18444, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/blogs/news/stressed-and-sleeping-less-try-this\" class=\"t4s-post-text-color\">Stressed and Sleeping Less? Try This.</a>",
+                    "target": [
+                        "article:nth-child(3) > .t4s-post-inner > .t4s-post-info > .t4s-post-title > .t4s-post-text-color"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.55 (foreground color: #a18444, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#878787",
+                                "bgColor": "#fafafa",
+                                "contrastRatio": 3.44,
+                                "fontSize": "9.8pt (13px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"t4s-section-inner t4s_se_template--17346700869798__1658402965569896b1 t4s-container-wrap t4s-parallax \" data-parallax-t4strue=\"\" data-speed=\"0.2\" style=\"--bg-color: #fafafa;--bg-gradient: ;--border-cl: ;--mg-top: ;--mg-right: auto;--mg-bottom: ;--mg-left:auto;--pd-top: 50px;--pd-right: ;--pd-bottom: 20px;--pd-left: ;--mgtb-top: ;--mgtb-right: auto;--mgtb-bottom: ;--mgtb-left: auto;--pdtb-top: 50px;--pdtb-right: ;--pdtb-bottom: 20px;--pdtb-left: ;--mgmb-top: 50px;--mgmb-right: auto;--mgmb-bottom: 50px;--mgmb-left: auto;--pdmb-top: 50px;--pdmb-right: ;--pdmb-bottom: 20px;--pdmb-left: ;\">",
+                                    "target": [
+                                        ".t4s_se_template--17346700869798__1658402965569896b1"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.44 (foreground color: #878787, background color: #fafafa, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<input type=\"email\" name=\"contact[email]\" placeholder=\"Your email address\" value=\"\" class=\"t4s-text-center t4s-text-md-start t4s-newsletter__email\" required=\"required\">",
+                    "target": [
+                        ".t4s-newsletter__email"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.44 (foreground color: #878787, background color: #fafafa, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-aria",
+            "impact": "critical",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value used in ARIA and in labels is unique",
+            "help": "IDs used in ARIA and labels must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-aria",
+                            "data": "ShippingCountry_mini_cart",
+                            "relatedNodes": [
+                                {
+                                    "html": "<input type=\"text\" id=\"ShippingCountry_mini_cart\" name=\"zip\" value=\"\">",
+                                    "target": [
+                                        "input[name=\"zip\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "critical",
+                            "message": "Document has multiple elements referenced with ARIA with the same id attribute: ShippingCountry_mini_cart"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<select id=\"ShippingCountry_mini_cart\" name=\"country\" data-default=\"United States\">",
+                    "target": [
+                        "select[name=\"country\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple elements referenced with ARIA with the same id attribute: ShippingCountry_mini_cart"
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a class=\"t4s-pr\" href=\"/search\" data-drawer-options=\"{ &quot;id&quot;:&quot;#t4s-search-hidden&quot; }\">\n\t\t\t\t<svg class=\"t4s-icon t4s-icon--search\" aria-hidden=\"true\" focusable=\"false\" role=\"presentation\"><use href=\"#icon-h-search\"></use></svg>\n\t\t\t</a>",
+                    "target": [
+                        ".t4s-pr[href$=\"search\"][data-drawer-options=\"{ \\\"id\\\":\\\"#t4s-search-hidden\\\" }\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a class=\"t4s-pr\" href=\"/account\" data-drawer-delay=\"\" data-drawer-options=\"{ &quot;id&quot;:&quot;#t4s-login-sidebar&quot; }\">\n\t\t\t<svg class=\"t4s-icon t4s-icon--account\" aria-hidden=\"true\" focusable=\"false\" role=\"presentation\"><use href=\"#icon-h-account\"></use></svg>\n      </a>",
+                    "target": [
+                        "a[data-drawer-delay=\"\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"/products/z-shield\" target=\"_self\" class=\"t4s-d-block t4s_ratio t4s_ratio_hasmb\" style=\"--aspect-ratioapt: 1.2962962962962963;--aspect-ratioaptmb: 1.2962962962962963;\">",
+                    "target": [
+                        ".t4s-eff-img-zoom.t4s_ratioadapt.t4s-banner-item > .t4s-banner-inner > .t4s_ratio_hasmb.t4s_ratio[href$=\"z-shield\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"/products/z-shield\" target=\"_self\" class=\"t4s-d-block t4s_ratio t4s_ratio_hasmb\" style=\"--aspect-ratioapt: 1.236842105263158;--aspect-ratioaptmb: 0.7528230865746549;\">",
+                    "target": [
+                        ".t4s-eff-dark-overlay.t4s-eff-img-rotate.t4s_ratioadapt > .t4s-banner-inner > .t4s_ratio_hasmb.t4s_ratio[href$=\"z-shield\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"https://zstacklife.com/products/z-stack-kids?variant=41579270897830\" target=\"_self\" class=\"t4s-d-block t4s_ratio t4s_ratio_hasmb\" style=\"--aspect-ratioapt: 1.5029940119760479;--aspect-ratioaptmb: 0.7537537537537538;\">",
+                    "target": [
+                        ".bl-a0c00c0e-032b-4500-91cf-7432f5bed203 > .t4s-eff-dark-overlay.t4s-eff-img-rotate.t4s_ratioadapt > .t4s-banner-inner > .t4s_ratio_hasmb.t4s_ratio.t4s-d-block"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"https://zstacklife.com/products/z-stack?variant=42139958739110\" target=\"_self\" class=\"t4s-d-block t4s_ratio t4s_ratio_hasmb\" style=\"--aspect-ratioapt: 1.2378449408672798;--aspect-ratioaptmb: 0.7527272727272727;\">",
+                    "target": [
+                        ".bl-16583988600f299d32-0 > .t4s-eff-dark-overlay.t4s-eff-img-rotate.t4s_ratioadapt > .t4s-banner-inner > .t4s_ratio_hasmb.t4s_ratio.t4s-d-block"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                }
+            ]
+        },
+        {
+            "id": "page-has-heading-one",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+            "help": "Page should contain a level-one heading",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/page-has-heading-one?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-heading-one",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Page must have a level-one heading"
+                        }
+                    ],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<html class=\"t4sp-theme t4s-wrapper__full_width rtl_false swatch_color_style_2 pr_border_style_1 pr_img_effect_2 enable_eff_img1_true badge_shape_1 css_for_wis_app_false shadow_round_img_true t4s-header__inline is-remove-unavai-2 t4_compare_false is-catalog__mode-false js t4sp-sticky t4sp-no-hover t4s-browser-Chrome t4s-platform-Windows\" lang=\"en\">",
+                    "target": [
+                        "html"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h2 class=\"upcart-header-text\">Cart \u2022 0</h2>",
+                    "target": [
+                        "h2"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"styles_CartPreview__empty__WFP86\"><h3>Your cart is empty</h3></div>",
+                    "target": [
+                        ".styles_CartPreview__empty__WFP86"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                }
+            ]
+        }
+    ]
+}

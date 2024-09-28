@@ -1,0 +1,2677 @@
+{
+    "testEngine": {
+        "name": "axe-core",
+        "version": "4.4.3"
+    },
+    "testRunner": {
+        "name": "axe"
+    },
+    "timestamp": "2024-09-26T06:01:33.013Z",
+    "url": "https://www.snapview.de/",
+    "toolOptions": {
+        "resultTypes": [
+            "violations"
+        ],
+        "reporter": "v1"
+    },
+    "passes": [
+        {
+            "id": "aria-allowed-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures ARIA attributes are allowed for an element's role",
+            "help": "Elements must only use allowed ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attributes are used correctly for the defined role"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "aria-unsupported-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute is supported"
+                        },
+                        {
+                            "id": "aria-prohibited-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "ARIA attribute is allowed"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<div class=\"n2-section-smartslider fitvidsignore\" data-ssid=\"42\" tabindex=\"0\" role=\"region\" aria-label=\"Slider\">",
+                    "target": [
+                        "div[data-ssid=\"42\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-allowed-role",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "best-practice"
+            ],
+            "description": "Ensures role attribute has an appropriate value for the element",
+            "help": "ARIA role should be appropriate for the element",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-role?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is allowed for given element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"elementor-menu-toggle\" role=\"button\" tabindex=\"0\" aria-label=\"Menu Toggle\" aria-expanded=\"false\" style=\"\">",
+                    "target": [
+                        ".elementor-menu-toggle"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-dialog-name",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "best-practice"
+            ],
+            "description": "Ensures every ARIA dialog and alertdialog node has an accessible name",
+            "help": "ARIA dialog and alertdialog nodes should have an accessible name",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-dialog-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute exists and references elements that are visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div id=\"BorlabsCookieBox\" class=\"BorlabsCookie\" role=\"dialog\" aria-labelledby=\"CookieBoxTextHeadline\" aria-describedby=\"CookieBoxTextDescription\" aria-modal=\"true\">",
+                    "target": [
+                        "#BorlabsCookieBox"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-body",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures aria-hidden='true' is not present on the document body.",
+            "help": "aria-hidden='true' must not be present on the document body",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-hidden-body",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "No aria-hidden attribute is present on document body"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<body class=\"home page-template-default page page-id-8084 elementor-default elementor-kit-67 elementor-page elementor-page-8084 borlabs-position-fix e--ua-blink e--ua-webkit\" data-elementor-device-mode=\"desktop\" style=\"overflow-x: hidden;\">",
+                    "target": [
+                        "body"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-focus",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag131"
+            ],
+            "description": "Ensures aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "focusable-modal-open",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements while a modal is open"
+                        },
+                        {
+                            "id": "focusable-disabled",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        },
+                        {
+                            "id": "focusable-not-tabbable",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<i aria-hidden=\"true\" role=\"presentation\" class=\"elementor-menu-toggle__icon--open eicon-menu-bar\"></i>",
+                    "target": [
+                        ".elementor-menu-toggle__icon--open"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-required-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures elements with ARIA roles have all required ARIA attributes",
+            "help": "Required ARIA attributes must be provided",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-required-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-required-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "All required ARIA attributes are present"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"n2-section-smartslider fitvidsignore\" data-ssid=\"42\" tabindex=\"0\" role=\"region\" aria-label=\"Slider\">",
+                    "target": [
+                        "div[data-ssid=\"42\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-roles",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all elements with a role attribute use a valid value",
+            "help": "ARIA roles used must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-roles?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "fallbackrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Only one role value used"
+                        },
+                        {
+                            "id": "invalidrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is valid"
+                        },
+                        {
+                            "id": "abstractrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Abstract roles are not used"
+                        },
+                        {
+                            "id": "unsupportedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is supported"
+                        },
+                        {
+                            "id": "deprecatedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is not deprecated"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<div class=\"n2-section-smartslider fitvidsignore\" data-ssid=\"42\" tabindex=\"0\" role=\"region\" aria-label=\"Slider\">",
+                    "target": [
+                        "div[data-ssid=\"42\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr-value",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all ARIA attributes have valid values",
+            "help": "ARIA attributes must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr-value?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "aria-valid-attr-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute values are valid"
+                        },
+                        {
+                            "id": "aria-errormessage",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "aria-errormessage exists and references elements visible to screen readers that use a supported aria-errormessage technique"
+                        },
+                        {
+                            "id": "aria-level",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-level values are valid"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"n2-section-smartslider fitvidsignore\" data-ssid=\"42\" tabindex=\"0\" role=\"region\" aria-label=\"Slider\">",
+                    "target": [
+                        "div[data-ssid=\"42\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures attributes that begin with aria- are valid ARIA attributes",
+            "help": "ARIA attributes must conform to valid names",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-valid-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute name is valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"n2-section-smartslider fitvidsignore\" data-ssid=\"42\" tabindex=\"0\" role=\"region\" aria-label=\"Slider\">",
+                    "target": [
+                        "div[data-ssid=\"42\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "avoid-inline-spacing",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag21aa",
+                "wcag1412"
+            ],
+            "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+            "help": "Inline text spacing must be adjustable with custom stylesheets",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/avoid-inline-spacing?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "avoid-inline-spacing",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No inline styles with '!important' that affect text spacing has been specified"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<body class=\"home page-template-default page page-id-8084 elementor-default elementor-kit-67 elementor-page elementor-page-8084 borlabs-position-fix e--ua-blink e--ua-webkit\" data-elementor-device-mode=\"desktop\" style=\"overflow-x: hidden;\">",
+                    "target": [
+                        "body"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "bypass",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag241",
+                "section508",
+                "section508.22.o"
+            ],
+            "description": "Ensures each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+            "help": "Page must have means to bypass repeated blocks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/bypass?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "internal-link-present",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Valid skip link found"
+                        },
+                        {
+                            "id": "header-present",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Ihr kompetenter Partner</h2>",
+                                    "target": [
+                                        ".elementor-element-fde4899 > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Digitalisieren Sie Ihren Vertrieb mit unserer Premium-Software f\u00fcr Online-Beratung.</h2>",
+                                    "target": [
+                                        ".elementor-element-fca2594 > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Mit Online-beratung n\u00e4her am kunden.</h2>",
+                                    "target": [
+                                        ".elementor-element-5ea6a2e > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Durch Online-Beratung den Kundendialog optimieren, Vertriebs- und Beratungskosten senken und Fallabschlussquoten erh\u00f6hen.</h2>",
+                                    "target": [
+                                        ".elementor-element-5b4702d > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">100% DSGVO-konformit\u00e4t</h2>",
+                                    "target": [
+                                        ".elementor-element-7bfc789 > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Datenschutz und Datensicherheit sind uns ein besonderes Anliegen. Wir schreiben IT-Sicherheit nicht nur in Bezug auf Sie, sondern auch auf Ihre Kunden gro\u00df.</h2>",
+                                    "target": [
+                                        ".elementor-element-070f688 > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Mehr Effizienz</h2>",
+                                    "target": [
+                                        ".elementor-element-1279d14 > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Mehr Abschl\u00fcsse\n</h2>",
+                                    "target": [
+                                        ".elementor-element-c16d2a1 > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Neue Kundengruppen</h2>",
+                                    "target": [
+                                        ".elementor-element-db395a7 > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Mehr Service</h2>",
+                                    "target": [
+                                        ".elementor-element-168113a > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Mehr Flexibilit\u00e4t\n</h2>",
+                                    "target": [
+                                        ".elementor-element-3d1aa9b > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Mehr Kundenbindung\n</h2>",
+                                    "target": [
+                                        ".elementor-element-9137c55 > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Full service</h2>",
+                                    "target": [
+                                        ".elementor-element-f3f68d4 > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Wir begleiten Sie von A bis Z bei der Einf\u00fchrung Ihrer Online-Beratung. Ob intern oder bei externen Partnern wie Maklern oder Agenturen. Von der Planung, der Integration bis hin zur individuellen Schulung und Einweisung.</h2>",
+                                    "target": [
+                                        ".elementor-element-657504a > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Online-Beratung und Vertrieb f\u00fcr Banken\nund Versicherungen mit Snapview.</h2>",
+                                    "target": [
+                                        ".elementor-element-d8eff8c > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"elementor-heading-title elementor-size-default\">Nehmen Sie Kontakt mit uns auf und sprechen Sie mit einem unserer Experten.</h3>",
+                                    "target": [
+                                        "h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h4 class=\"elementor-icon-box-title\">\n\t\t\t\t\t\t<a href=\"tel:%20+49-8958-80-11-33-0\">\n\t\t\t\t\t\t\t+49 89 189 170 999\t\t\t\t\t\t</a>\n\t\t\t\t\t</h4>",
+                                    "target": [
+                                        ".elementor-element-2d06917 > .elementor-widget-container > .elementor-icon-box-wrapper > .elementor-icon-box-content > h4"
+                                    ]
+                                },
+                                {
+                                    "html": "<h4 class=\"elementor-icon-box-title\">\n\t\t\t\t\t\t<a href=\"https://www.snapview.de/kontakt/\">\n\t\t\t\t\t\t\tZum Kontaktformular\t\t\t\t\t\t</a>\n\t\t\t\t\t</h4>",
+                                    "target": [
+                                        ".elementor-element-82e05ed > .elementor-widget-container > .elementor-icon-box-wrapper > .elementor-icon-box-content > h4"
+                                    ]
+                                },
+                                {
+                                    "html": "<h4 class=\"elementor-icon-box-title\">\n\t\t\t\t\t\t<a href=\"mailto:verkauf-snapview@bsi-software.com%20\" target=\"_blank\">\n\t\t\t\t\t\t\tverkauf-snapview@bsi-software.com \t\t\t\t\t\t</a>\n\t\t\t\t\t</h4>",
+                                    "target": [
+                                        ".elementor-element-0ccff58 > .elementor-widget-container > .elementor-icon-box-wrapper > .elementor-icon-box-content > h4"
+                                    ]
+                                },
+                                {
+                                    "html": "<span role=\"heading\" aria-level=\"3\" class=\"_brlbs-h3\" id=\"CookieBoxTextHeadline\">\n                                                Datenschutzeinstellungen                                            </span>",
+                                    "target": [
+                                        "#CookieBoxTextHeadline"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Page has a heading"
+                        },
+                        {
+                            "id": "landmark",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<main id=\"content\" class=\"site-main post-8084 page type-page status-publish has-post-thumbnail hentry\">",
+                                    "target": [
+                                        "#content"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Page has a landmark region"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"de-DE\" class=\"n2webp\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#1c4b63",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 9.39,
+                                "fontSize": "13.2pt (17.6px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 9.39"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"https://www.snapview.de/funktionen/\" class=\"elementor-item\">Funktionen</a>",
+                    "target": [
+                        "#menu-1-7c06ae54 > .menu-item-3489.menu-item.menu-item-type-post_type > .elementor-item"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "document-title",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag242",
+                "ACT"
+            ],
+            "description": "Ensures each HTML document contains a non-empty <title> element",
+            "help": "Documents must have <title> element to aid in navigation",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/document-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "doc-has-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has a non-empty <title> element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"de-DE\" class=\"n2webp\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-active",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value of active elements is unique",
+            "help": "IDs of active elements must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-active",
+                            "data": "checkbox-statistics",
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has no active elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input id=\"checkbox-statistics\" tabindex=\"0\" type=\"checkbox\" name=\"cookieGroup[]\" value=\"statistics\" checked=\"\" data-borlabs-cookie-checkbox=\"\">",
+                    "target": [
+                        "#checkbox-statistics"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-aria",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value used in ARIA and in labels is unique",
+            "help": "IDs used in ARIA and labels must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-aria",
+                            "data": "CookieBoxTextHeadline",
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<span role=\"heading\" aria-level=\"3\" class=\"_brlbs-h3\" id=\"CookieBoxTextHeadline\">\n                                                Datenschutzeinstellungen                                            </span>",
+                    "target": [
+                        "#CookieBoxTextHeadline"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": "minor",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "wp-emoji-styles-inline-css",
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<style id=\"wp-emoji-styles-inline-css\">",
+                    "target": [
+                        "#wp-emoji-styles-inline-css"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "empty-heading",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "best-practice"
+            ],
+            "description": "Ensures headings have discernible text",
+            "help": "Headings should not be empty",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/empty-heading?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Ihr kompetenter Partner</h2>",
+                    "target": [
+                        ".elementor-element-fde4899 > .elementor-widget-container > h2"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "form-field-multiple-labels",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag332"
+            ],
+            "description": "Ensures form field does not have multiple label elements",
+            "help": "Form field must not have multiple label elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/form-field-multiple-labels?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "multiple-label",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<label class=\"_brlbs-checkbox\">",
+                                    "target": [
+                                        "li:nth-child(1) > ._brlbs-checkbox"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Form field does not have multiple label elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input id=\"checkbox-essential\" tabindex=\"0\" type=\"checkbox\" name=\"cookieGroup[]\" value=\"essential\" checked=\"\" disabled=\"\" data-borlabs-cookie-checkbox=\"\">",
+                    "target": [
+                        "#checkbox-essential"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "heading-order",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": {
+                                "headingOrder": [
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div > div > section:nth-child(1) > div > div:nth-child(1) > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div > div > section:nth-child(1) > div > div:nth-child(1) > div > div:nth-child(2) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div > div > section:nth-child(5) > div > div > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div > div > section:nth-child(5) > div > div > div > div:nth-child(2) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div > div > section:nth-child(6) > div:nth-child(2) > div > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div > div > section:nth-child(6) > div:nth-child(2) > div > div > section:nth-child(2) > div > div:nth-child(1) > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div > div > section:nth-child(7) > div > div:nth-child(1) > div > div:nth-child(2) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div > div > section:nth-child(7) > div > div:nth-child(3) > div > div:nth-child(2) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div > div > section:nth-child(8) > div > div:nth-child(2) > div > div:nth-child(2) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div > div > section:nth-child(8) > div > div:nth-child(4) > div > div:nth-child(2) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div > div > section:nth-child(9) > div > div:nth-child(1) > div > div:nth-child(2) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div > div > section:nth-child(9) > div > div:nth-child(3) > div > div:nth-child(2) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div > div > section:nth-child(11) > div:nth-child(2) > div > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div > div > section:nth-child(11) > div:nth-child(2) > div > div > div:nth-child(2) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(4) > div > div > section:nth-child(12) > div:nth-child(2) > div > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(5) > section:nth-child(1) > div:nth-child(2) > div > div > div > div > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(5) > section:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div > div > div > div > div:nth-child(2) > h4"
+                                        ],
+                                        "level": 4
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(5) > section:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div > div > div > div > div:nth-child(2) > h4"
+                                        ],
+                                        "level": 4
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(5) > section:nth-child(2) > div:nth-child(2) > div:nth-child(3) > div > div > div > div > div:nth-child(2) > h4"
+                                        ],
+                                        "level": 4
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(8) > div:nth-child(2) > div > div > div > div:nth-child(1) > div > div > div:nth-child(1) > div:nth-child(1) > div > div:nth-child(1) > span:nth-child(2)"
+                                        ],
+                                        "level": 3
+                                    }
+                                ]
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Ihr kompetenter Partner</h2>",
+                    "target": [
+                        ".elementor-element-fde4899 > .elementor-widget-container > h2"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-has-lang",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures every HTML document has a lang attribute",
+            "help": "<html> element must have a lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-has-lang?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "The <html> element has a lang attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"de-DE\" class=\"n2webp\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-lang-valid",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures the lang attribute of the <html> element has a valid value",
+            "help": "<html> element must have a valid value for the lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-lang-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "valid-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Value of lang attribute is included in the list of valid languages"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<html lang=\"de-DE\" class=\"n2webp\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "identical-links-same-purpose",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "wcag2aaa",
+                "wcag249"
+            ],
+            "description": "Ensure that links with the same accessible name serve a similar purpose",
+            "help": "Links with the same name must have a similar purpose",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/identical-links-same-purpose?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "identical-links-same-purpose",
+                            "data": {
+                                "name": "skip to content",
+                                "urlProps": {
+                                    "protocol": "http:",
+                                    "hostname": "www.snapview.de",
+                                    "port": "",
+                                    "pathname": "/",
+                                    "search": {},
+                                    "hash": "",
+                                    "filename": ""
+                                }
+                            },
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "There are no other links with the same name, that go to a different URL"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a class=\"skip-link screen-reader-text\" href=\"#content\">Skip to content</a>",
+                    "target": [
+                        ".skip-link"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures <img> elements have alternate text or a role of none or presentation",
+            "help": "Images must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-alt",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has an alt attribute"
+                        },
+                        {
+                            "id": "presentational-role",
+                            "data": {
+                                "role": "presentation"
+                            },
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element's default semantics were overriden with role=\"presentation\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "alt-space-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has a valid alt attribute value"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img fetchpriority=\"high\" width=\"1783\" height=\"405\" src=\"https://www.snapview.de/wp-content/uploads/2020/05/cropped-cropped-snapview-logo-1.png\" class=\"attachment-full size-full wp-image-9099\" alt=\"\" srcset=\"https://www.snapview.de/wp-content/uploads/2020/05/cropped-cropped-snapview-logo-1.png 1783w, https://www.snapview.de/wp-content/uploads/2020/05/cropped-cropped-snapview-logo-1-300x68.png 300w, https://www.snapview.de/wp-content/uploads/2020/05/cropped-cropped-snapview-logo-1-1024x233.png 1024w, https://www.snapview.de/wp-content/uploads/2020/05/cropped-cropped-snapview-logo-1-768x174.png 768w, https://www.snapview.de/wp-content/uploads/2020/05/cropped-cropped-snapview-logo-1-1536x349.png 1536w\" sizes=\"(max-width: 1783px) 100vw, 1783px\">",
+                    "target": [
+                        ".wp-image-9099"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-redundant-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ],
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-redundant-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img fetchpriority=\"high\" width=\"1783\" height=\"405\" src=\"https://www.snapview.de/wp-content/uploads/2020/05/cropped-cropped-snapview-logo-1.png\" class=\"attachment-full size-full wp-image-9099\" alt=\"\" srcset=\"https://www.snapview.de/wp-content/uploads/2020/05/cropped-cropped-snapview-logo-1.png 1783w, https://www.snapview.de/wp-content/uploads/2020/05/cropped-cropped-snapview-logo-1-300x68.png 300w, https://www.snapview.de/wp-content/uploads/2020/05/cropped-cropped-snapview-logo-1-1024x233.png 1024w, https://www.snapview.de/wp-content/uploads/2020/05/cropped-cropped-snapview-logo-1-768x174.png 768w, https://www.snapview.de/wp-content/uploads/2020/05/cropped-cropped-snapview-logo-1-1536x349.png 1536w\" sizes=\"(max-width: 1783px) 100vw, 1783px\">",
+                    "target": [
+                        ".wp-image-9099"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label-title-only",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "best-practice"
+            ],
+            "description": "Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes",
+            "help": "Form elements should have a visible label",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "title-only",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Form element does not solely use title attribute for its label"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input id=\"checkbox-essential\" tabindex=\"0\" type=\"checkbox\" name=\"cookieGroup[]\" value=\"essential\" checked=\"\" disabled=\"\" data-borlabs-cookie-checkbox=\"\">",
+                    "target": [
+                        "#checkbox-essential"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag412",
+                "wcag131",
+                "section508",
+                "section508.22.n",
+                "ACT"
+            ],
+            "description": "Ensures every form element has a label",
+            "help": "Form elements must have labels",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "implicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element has an implicit (wrapped) <label>"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "hidden-explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element has a visible explicit <label>"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input id=\"checkbox-essential\" tabindex=\"0\" type=\"checkbox\" name=\"cookieGroup[]\" value=\"essential\" checked=\"\" disabled=\"\" data-borlabs-cookie-checkbox=\"\">",
+                    "target": [
+                        "#checkbox-essential"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-main-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the main landmark is at top level",
+            "help": "Main landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-main-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "main"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The main landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<main id=\"content\" class=\"site-main post-8084 page type-page status-publish has-post-thumbnail hentry\">",
+                    "target": [
+                        "#content"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-main",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one main landmark",
+            "help": "Document should not have more than one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-main",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one main landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<main id=\"content\" class=\"site-main post-8084 page type-page status-publish has-post-thumbnail hentry\">",
+                    "target": [
+                        "#content"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-one-main",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has a main landmark",
+            "help": "Document should have one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-one-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-main",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<main id=\"content\" class=\"site-main post-8084 page type-page status-publish has-post-thumbnail hentry\">",
+                                    "target": [
+                                        "#content"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Document has at least one main landmark"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"de-DE\" class=\"n2webp\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-unique",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "help": "Ensures landmarks are unique",
+            "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-unique",
+                            "data": {
+                                "role": "navigation",
+                                "accessibleText": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Landmarks must have a unique role or role/label/title (i.e. accessible name) combination"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<nav class=\"elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-overline e--animation-none\">",
+                    "target": [
+                        ".elementor-nav-menu--main"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a class=\"skip-link screen-reader-text\" href=\"#content\">Skip to content</a>",
+                    "target": [
+                        ".skip-link"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "list",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures that lists are structured correctly",
+            "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/list?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "only-listitems",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List element only has direct children that are allowed inside <li> elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<ul id=\"menu-1-7c06ae54\" class=\"elementor-nav-menu\" data-smartmenus-id=\"17273304924456377\">",
+                    "target": [
+                        "#menu-1-7c06ae54"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "listitem",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures <li> elements are used semantically",
+            "help": "<li> elements must be contained in a <ul> or <ol>",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/listitem?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-3489\"><a href=\"https://www.snapview.de/funktionen/\" class=\"elementor-item\">Funktionen</a></li>",
+                    "target": [
+                        "#menu-1-7c06ae54 > .menu-item-3489.menu-item.menu-item-type-post_type"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport-large",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> can scale a significant amount",
+            "help": "Users should be able to zoom and scale the text up to 500%",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport-large?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport-large",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "<meta> tag does not prevent significant zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice",
+                "ACT"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> does not disable text scaling and zooming",
+            "help": "Zooming and scaling should not be disabled",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "<meta> tag does not disable zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "nested-interactive",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+            "help": "Interactive controls must not be nested",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/nested-interactive?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "no-focusable-content",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have focusable descendants"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input id=\"checkbox-essential\" tabindex=\"0\" type=\"checkbox\" name=\"cookieGroup[]\" value=\"essential\" checked=\"\" disabled=\"\" data-borlabs-cookie-checkbox=\"\">",
+                    "target": [
+                        "#checkbox-essential"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "All page content is contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<noscript><iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-K6MHWZH\"\nheight=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></noscript>",
+                    "target": [
+                        "noscript"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "skip-link",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensure all skip links have a focusable target",
+            "help": "The skip-link target should exist and be focusable",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/skip-link?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "skip-link",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Skip link target exists"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a class=\"skip-link screen-reader-text\" href=\"#content\">Skip to content</a>",
+                    "target": [
+                        ".skip-link"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "tabindex",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures tabindex attribute values are not greater than 0",
+            "help": "Elements should not have tabindex greater than zero",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/tabindex?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "tabindex",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have a tabindex greater than 0"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"n2-section-smartslider fitvidsignore\" data-ssid=\"42\" tabindex=\"0\" role=\"region\" aria-label=\"Slider\">",
+                    "target": [
+                        "div[data-ssid=\"42\"]"
+                    ]
+                }
+            ]
+        }
+    ],
+    "violations": [
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#277eaa",
+                                "bgColor": "#2a8fc2",
+                                "contrastRatio": 1.24,
+                                "fontSize": "11.3pt (15px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a class=\"elementor-button elementor-button-link elementor-size-sm elementor-animation-grow\" href=\"https://www.snapview.de/kontakt/\">\n\t\t\t\t\t\t<span class=\"elementor-button-content-wrapper\">\n\t\t\t\t\t\t\t\t\t<span class=\"elementor-button-text\">Jetzt Beratungstermin vereinbaren!</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t</a>",
+                                    "target": [
+                                        ".elementor-element-4ca814f > .elementor-widget-container > .elementor-button-wrapper > .elementor-animation-grow.elementor-button.elementor-button-link"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 1.24 (foreground color: #277eaa, background color: #2a8fc2, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span class=\"elementor-button-text\">Jetzt Beratungstermin vereinbaren!</span>",
+                    "target": [
+                        ".elementor-element-4ca814f > .elementor-widget-container > .elementor-button-wrapper > .elementor-animation-grow.elementor-button.elementor-button-link > .elementor-button-content-wrapper > .elementor-button-text"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.24 (foreground color: #277eaa, background color: #2a8fc2, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#2c97cd",
+                                "bgColor": "#113446",
+                                "contrastRatio": 4,
+                                "fontSize": "9.6pt (12.8px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"elementor-widget-wrap elementor-element-populated\">",
+                                    "target": [
+                                        ".elementor-element-a6a2102 > .elementor-element-populated.elementor-widget-wrap"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 4 (foreground color: #2c97cd, background color: #113446, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Ihr kompetenter Partner</h2>",
+                    "target": [
+                        ".elementor-element-fde4899 > .elementor-widget-container > h2"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4 (foreground color: #2c97cd, background color: #113446, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#277eaa",
+                                "bgColor": "#2a8fc2",
+                                "contrastRatio": 1.24,
+                                "fontSize": "11.3pt (15px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a class=\"elementor-button elementor-button-link elementor-size-sm elementor-animation-grow\" href=\"https://www.snapview.de/kontakt/\">\n\t\t\t\t\t\t<span class=\"elementor-button-content-wrapper\">\n\t\t\t\t\t\t\t\t\t<span class=\"elementor-button-text\">Jetzt Bera\u00adtungs\u00adtermin vereinbaren</span>\n\t\t\t\t\t</span>\n\t\t\t\t\t</a>",
+                                    "target": [
+                                        ".elementor-element-fc252dd > .elementor-widget-container > .elementor-button-wrapper > .elementor-animation-grow.elementor-button.elementor-button-link"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 1.24 (foreground color: #277eaa, background color: #2a8fc2, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span class=\"elementor-button-text\">Jetzt Bera\u00adtungs\u00adtermin vereinbaren</span>",
+                    "target": [
+                        ".elementor-element-fc252dd > .elementor-widget-container > .elementor-button-wrapper > .elementor-animation-grow.elementor-button.elementor-button-link > .elementor-button-content-wrapper > .elementor-button-text"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.24 (foreground color: #277eaa, background color: #2a8fc2, font size: 11.3pt (15px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#2c97cd",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.27,
+                                "fontSize": "9.6pt (12.8px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-39a60cc elementor-section-full_width elementor-section-height-default elementor-section-height-default\" data-id=\"39a60cc\" data-element_type=\"section\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">",
+                                    "target": [
+                                        ".elementor-element-39a60cc"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.27 (foreground color: #2c97cd, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\">Mit Online-beratung n\u00e4her am kunden.</h2>",
+                    "target": [
+                        ".elementor-element-5ea6a2e > .elementor-widget-container > h2"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.27 (foreground color: #2c97cd, background color: #ffffff, font size: 9.6pt (12.8px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#727474",
+                                "bgColor": "#aaafb1",
+                                "contrastRatio": 2.12,
+                                "fontSize": "17.1pt (22.75px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"_brlbs-bar _brlbs-bar-advanced _brlbs-animated _brlbs-fadeInDown\">",
+                                    "target": [
+                                        "._brlbs-bar"
+                                    ]
+                                },
+                                {
+                                    "html": "<div class=\"bottom-center _brlbs-block-content _brlbs-bg-animation show-cookie-box _brlbs-bg-dark\" style=\"\">",
+                                    "target": [
+                                        ".bottom-center"
+                                    ]
+                                },
+                                {
+                                    "html": "<div class=\"elementor-widget-wrap elementor-element-populated\">",
+                                    "target": [
+                                        ".elementor-element-a6a2102 > .elementor-element-populated.elementor-widget-wrap"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.12 (foreground color: #727474, background color: #aaafb1, font size: 17.1pt (22.75px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span role=\"heading\" aria-level=\"3\" class=\"_brlbs-h3\" id=\"CookieBoxTextHeadline\">\n                                                Datenschutzeinstellungen                                            </span>",
+                    "target": [
+                        "#CookieBoxTextHeadline"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.12 (foreground color: #727474, background color: #aaafb1, font size: 17.1pt (22.75px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#579fc3",
+                                "bgColor": "#aaafb1",
+                                "contrastRatio": 1.32,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"_brlbs-bar _brlbs-bar-advanced _brlbs-animated _brlbs-fadeInDown\">",
+                                    "target": [
+                                        "._brlbs-bar"
+                                    ]
+                                },
+                                {
+                                    "html": "<div class=\"bottom-center _brlbs-block-content _brlbs-bg-animation show-cookie-box _brlbs-bg-dark\" style=\"\">",
+                                    "target": [
+                                        ".bottom-center"
+                                    ]
+                                },
+                                {
+                                    "html": "<div class=\"elementor-widget-wrap elementor-element-populated\">",
+                                    "target": [
+                                        ".elementor-element-a6a2102 > .elementor-element-populated.elementor-widget-wrap"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 1.32 (foreground color: #579fc3, background color: #aaafb1, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a class=\"_brlbs-cursor\" href=\"#\" data-cookie-individual=\"\">Einstellungen</a>",
+                    "target": [
+                        "._brlbs-text-revoke > ._brlbs-cursor[data-cookie-individual=\"\"][href=\"#\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.32 (foreground color: #579fc3, background color: #aaafb1, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#a8d2ea",
+                                "bgColor": "#007cc1",
+                                "contrastRatio": 2.81,
+                                "fontSize": "13.1pt (17.5px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"#\" tabindex=\"0\" role=\"button\" class=\"_brlbs-btn _brlbs-btn-accept-all _brlbs-cursor\" data-cookie-accept-all=\"\">\n                                            Alle akzeptieren                                        </a>",
+                                    "target": [
+                                        ".col-sm-3 > ._brlbs-accept:nth-child(1) > ._brlbs-btn-accept-all._brlbs-btn[data-cookie-accept-all=\"\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.81 (foreground color: #a8d2ea, background color: #007cc1, font size: 13.1pt (17.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"#\" tabindex=\"0\" role=\"button\" class=\"_brlbs-btn _brlbs-btn-accept-all _brlbs-cursor\" data-cookie-accept-all=\"\">\n                                            Alle akzeptieren                                        </a>",
+                    "target": [
+                        ".col-sm-3 > ._brlbs-accept:nth-child(1) > ._brlbs-btn-accept-all._brlbs-btn[data-cookie-accept-all=\"\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.81 (foreground color: #a8d2ea, background color: #007cc1, font size: 13.1pt (17.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#8c8c8c",
+                                "bgColor": "#f7f7f7",
+                                "contrastRatio": 3.12,
+                                "fontSize": "13.1pt (17.5px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"#\" tabindex=\"0\" role=\"button\" id=\"CookieBoxSaveButton\" class=\"_brlbs-btn _brlbs-cursor\" data-cookie-accept=\"\">\n                                            Speichern                                        </a>",
+                                    "target": [
+                                        "#CookieBoxSaveButton"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.12 (foreground color: #8c8c8c, background color: #f7f7f7, font size: 13.1pt (17.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"#\" tabindex=\"0\" role=\"button\" id=\"CookieBoxSaveButton\" class=\"_brlbs-btn _brlbs-cursor\" data-cookie-accept=\"\">\n                                            Speichern                                        </a>",
+                    "target": [
+                        "#CookieBoxSaveButton"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.12 (foreground color: #8c8c8c, background color: #f7f7f7, font size: 13.1pt (17.5px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": "minor",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "Ebene_1",
+                            "relatedNodes": [
+                                {
+                                    "html": "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" id=\"Ebene_1\" x=\"0px\" y=\"0px\" viewBox=\"0 0 67.4 64.7\" style=\"enable-background:new 0 0 67.4 64.7;\" xml:space=\"preserve\">",
+                                    "target": [
+                                        ":root"
+                                    ]
+                                },
+                                {
+                                    "html": "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" id=\"Ebene_1\" x=\"0px\" y=\"0px\" viewBox=\"0 0 67.4 64.7\" style=\"enable-background:new 0 0 67.4 64.7;\" xml:space=\"preserve\">",
+                                    "target": [
+                                        ":root"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: Ebene_1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" id=\"Ebene_1\" x=\"0px\" y=\"0px\" viewBox=\"0 0 67.4 64.7\" style=\"enable-background:new 0 0 67.4 64.7;\" xml:space=\"preserve\">",
+                    "target": [
+                        ":root"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: Ebene_1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "SVGID_1_",
+                            "relatedNodes": [
+                                {
+                                    "html": "<linearGradient id=\"SVGID_1_\" gradientUnits=\"userSpaceOnUse\" x1=\"32.6179\" y1=\"15.0374\" x2=\"49.1264\" y2=\"15.0374\">",
+                                    "target": [
+                                        "lineargradient[x1=\"32.6179\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<linearGradient id=\"SVGID_1_\" gradientUnits=\"userSpaceOnUse\" x1=\"21.3683\" y1=\"11.2182\" x2=\"41.7006\" y2=\"11.2182\">",
+                                    "target": [
+                                        "lineargradient[x1=\"21.3683\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: SVGID_1_"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<linearGradient id=\"SVGID_1_\" gradientUnits=\"userSpaceOnUse\" x1=\"36.7158\" y1=\"23.2989\" x2=\"47.4944\" y2=\"23.2989\">",
+                    "target": [
+                        "lineargradient[x1=\"36.7158\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: SVGID_1_"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "SVGID_2_",
+                            "relatedNodes": [
+                                {
+                                    "html": "<linearGradient id=\"SVGID_2_\" gradientUnits=\"userSpaceOnUse\" x1=\"32.426\" y1=\"19.9968\" x2=\"48.9341\" y2=\"19.9968\">",
+                                    "target": [
+                                        "lineargradient[y1=\"19.9968\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<linearGradient id=\"SVGID_2_\" gradientUnits=\"userSpaceOnUse\" x1=\"15.8892\" y1=\"18.6316\" x2=\"47.1797\" y2=\"18.6316\">",
+                                    "target": [
+                                        "lineargradient[y1=\"18.6316\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: SVGID_2_"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<linearGradient id=\"SVGID_2_\" gradientUnits=\"userSpaceOnUse\" x1=\"42.4706\" y1=\"12.8719\" x2=\"62.0931\" y2=\"12.8719\">",
+                    "target": [
+                        "lineargradient[x1=\"42.4706\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: SVGID_2_"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "SVGID_3_",
+                            "relatedNodes": [
+                                {
+                                    "html": "<linearGradient id=\"SVGID_3_\" gradientUnits=\"userSpaceOnUse\" x1=\"32.426\" y1=\"24.9885\" x2=\"48.9341\" y2=\"24.9885\">",
+                                    "target": [
+                                        "lineargradient[y1=\"24.9885\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<linearGradient id=\"SVGID_3_\" gradientUnits=\"userSpaceOnUse\" x1=\"15.8892\" y1=\"23.7985\" x2=\"47.1797\" y2=\"23.7985\">",
+                                    "target": [
+                                        "lineargradient[y1=\"23.7985\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: SVGID_3_"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<linearGradient id=\"SVGID_3_\" gradientUnits=\"userSpaceOnUse\" x1=\"39.9189\" y1=\"18.2647\" x2=\"55.3333\" y2=\"18.2647\">",
+                    "target": [
+                        "lineargradient[x1=\"39.9189\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: SVGID_3_"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "SVGID_4_",
+                            "relatedNodes": [
+                                {
+                                    "html": "<linearGradient id=\"SVGID_4_\" gradientUnits=\"userSpaceOnUse\" x1=\"15.8892\" y1=\"29.1899\" x2=\"47.1797\" y2=\"29.1899\">",
+                                    "target": [
+                                        "lineargradient[y1=\"29.1899\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: SVGID_4_"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<linearGradient id=\"SVGID_4_\" gradientUnits=\"userSpaceOnUse\" x1=\"32.426\" y1=\"29.9807\" x2=\"48.9341\" y2=\"29.9807\">",
+                    "target": [
+                        "lineargradient[y1=\"29.9807\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: SVGID_4_"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "SVGID_5_",
+                            "relatedNodes": [
+                                {
+                                    "html": "<linearGradient id=\"SVGID_5_\" gradientUnits=\"userSpaceOnUse\" x1=\"15.9111\" y1=\"40.1975\" x2=\"34.6706\" y2=\"40.1975\">",
+                                    "target": [
+                                        "lineargradient[y1=\"40.1975\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: SVGID_5_"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<linearGradient id=\"SVGID_5_\" gradientUnits=\"userSpaceOnUse\" x1=\"32.426\" y1=\"34.9667\" x2=\"44.6298\" y2=\"34.9667\">",
+                    "target": [
+                        "lineargradient[y1=\"34.9667\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: SVGID_5_"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "SVGID_6_",
+                            "relatedNodes": [
+                                {
+                                    "html": "<linearGradient id=\"SVGID_6_\" gradientUnits=\"userSpaceOnUse\" x1=\"15.9111\" y1=\"45.5891\" x2=\"26.2464\" y2=\"45.5891\">",
+                                    "target": [
+                                        "lineargradient[y1=\"45.5891\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: SVGID_6_"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<linearGradient id=\"SVGID_6_\" gradientUnits=\"userSpaceOnUse\" x1=\"16.01\" y1=\"19.4294\" x2=\"28.0406\" y2=\"19.4294\">",
+                    "target": [
+                        "lineargradient[x1=\"16.01\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: SVGID_6_"
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"https://www.snapview.de\">",
+                    "target": [
+                        ".elementor-element-2dbc8e7c > .elementor-widget-container > a[href$=\"www.snapview.de\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"tel:%20+49-8958-80-11-33-0\" class=\"elementor-icon elementor-animation-shrink\" tabindex=\"-1\">",
+                    "target": [
+                        ".elementor-icon.elementor-animation-shrink[href=\"tel:%20+49-8958-80-11-33-0\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://www.snapview.de/kontakt/\" class=\"elementor-icon elementor-animation-shrink\" tabindex=\"-1\">",
+                    "target": [
+                        ".elementor-element-82e05ed > .elementor-widget-container > .elementor-icon-box-wrapper > .elementor-icon-box-icon > .elementor-icon.elementor-animation-shrink"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"mailto:verkauf-snapview@bsi-software.com%20\" target=\"_blank\" class=\"elementor-icon elementor-animation-shrink\" tabindex=\"-1\">",
+                    "target": [
+                        ".elementor-icon-box-icon > .elementor-icon.elementor-animation-shrink[target=\"_blank\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"https://www.snapview.de\">",
+                    "target": [
+                        ".elementor-element-2f5fbf0 > .elementor-widget-container > a[href$=\"www.snapview.de\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                }
+            ]
+        },
+        {
+            "id": "page-has-heading-one",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+            "help": "Page should contain a level-one heading",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/page-has-heading-one?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-heading-one",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Page must have a level-one heading"
+                        }
+                    ],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<html lang=\"de-DE\" class=\"n2webp\">",
+                    "target": [
+                        "html"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-6115fe6\" data-id=\"6115fe6\" data-element_type=\"column\">",
+                    "target": [
+                        ".elementor-element-6115fe6"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"elementor-column elementor-col-33 elementor-top-column elementor-element elementor-element-07c123a elementor-hidden-tablet elementor-hidden-phone\" data-id=\"07c123a\" data-element_type=\"column\">",
+                    "target": [
+                        ".elementor-element-07c123a"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-5aeeb46 elementor-section-full_width elementor-section-content-middle elementor-section-height-default elementor-section-height-default\" data-id=\"5aeeb46\" data-element_type=\"section\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">",
+                    "target": [
+                        ".elementor-element-5aeeb46"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"elementor-icon-box-content\">\n\n\t\t\t\t\t\t\t\t\t<h4 class=\"elementor-icon-box-title\">\n\t\t\t\t\t\t<a href=\"tel:%20+49-8958-80-11-33-0\">\n\t\t\t\t\t\t\t+49 89 189 170 999\t\t\t\t\t\t</a>\n\t\t\t\t\t</h4>\n\t\t\t\t\n\t\t\t\t\n\t\t\t</div>",
+                    "target": [
+                        ".elementor-element-2d06917 > .elementor-widget-container > .elementor-icon-box-wrapper > .elementor-icon-box-content"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"elementor-icon-box-content\">\n\n\t\t\t\t\t\t\t\t\t<h4 class=\"elementor-icon-box-title\">\n\t\t\t\t\t\t<a href=\"https://www.snapview.de/kontakt/\">\n\t\t\t\t\t\t\tZum Kontaktformular\t\t\t\t\t\t</a>\n\t\t\t\t\t</h4>\n\t\t\t\t\n\t\t\t\t\n\t\t\t</div>",
+                    "target": [
+                        ".elementor-element-82e05ed > .elementor-widget-container > .elementor-icon-box-wrapper > .elementor-icon-box-content"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"elementor-icon-box-content\">\n\n\t\t\t\t\t\t\t\t\t<h4 class=\"elementor-icon-box-title\">\n\t\t\t\t\t\t<a href=\"mailto:verkauf-snapview@bsi-software.com%20\" target=\"_blank\">\n\t\t\t\t\t\t\tverkauf-snapview@bsi-software.com \t\t\t\t\t\t</a>\n\t\t\t\t\t</h4>\n\t\t\t\t\n\t\t\t\t\n\t\t\t</div>",
+                    "target": [
+                        ".elementor-element-0ccff58 > .elementor-widget-container > .elementor-icon-box-wrapper > .elementor-icon-box-content"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-d1f337e elementor-section-content-middle elementor-section-full_width elementor-section-height-default elementor-section-height-default\" data-id=\"d1f337e\" data-element_type=\"section\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">",
+                    "target": [
+                        ".elementor-element-d1f337e"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-fcbf9ec elementor-section-content-middle elementor-reverse-mobile elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"fcbf9ec\" data-element_type=\"section\" data-settings=\"{&quot;background_background&quot;:&quot;classic&quot;}\">",
+                    "target": [
+                        ".elementor-element-fcbf9ec"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                }
+            ]
+        }
+    ]
+}

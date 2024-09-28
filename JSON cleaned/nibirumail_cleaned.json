@@ -1,0 +1,2919 @@
+{
+    "testEngine": {
+        "name": "axe-core",
+        "version": "4.4.3"
+    },
+    "testRunner": {
+        "name": "axe"
+    },
+    "timestamp": "2024-09-26T14:57:51.348Z",
+    "url": "https://nibirumail.com/cookies/",
+    "toolOptions": {
+        "resultTypes": [
+            "violations"
+        ],
+        "reporter": "v1"
+    },
+    "passes": [
+        {
+            "id": "aria-hidden-body",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures aria-hidden='true' is not present on the document body.",
+            "help": "aria-hidden='true' must not be present on the document body",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-hidden-body",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "No aria-hidden attribute is present on document body"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<body>",
+                    "target": [
+                        "body"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-focus",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag131"
+            ],
+            "description": "Ensures aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "focusable-modal-open",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements while a modal is open"
+                        },
+                        {
+                            "id": "focusable-disabled",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        },
+                        {
+                            "id": "focusable-not-tabbable",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<i class=\"fa fa-bars\" aria-hidden=\"true\"></i>",
+                    "target": [
+                        ".fa-bars"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "avoid-inline-spacing",
+            "impact": "serious",
+            "tags": [
+                "cat.structure",
+                "wcag21aa",
+                "wcag1412"
+            ],
+            "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+            "help": "Inline text spacing must be adjustable with custom stylesheets",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/avoid-inline-spacing?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "avoid-inline-spacing",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No inline styles with '!important' that affect text spacing has been specified"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div style=\"position: absolute; top: -10000px; width: 0px; height: 0px;\"><div></div></div>",
+                    "target": [
+                        "#fb-root > div"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "button-name",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures buttons have discernible text",
+            "help": "Buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/button-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "button-has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has inner text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button class=\"btn btn-primary btn-block btn-lg\" type=\"submit\">ANALIZZA</button>",
+                    "target": [
+                        ".btn-lg[type=\"submit\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "bypass",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag241",
+                "section508",
+                "section508.22.o"
+            ],
+            "description": "Ensures each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+            "help": "Page must have means to bypass repeated blocks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/bypass?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "header-present",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1>Cookie Policy Generator &amp; GDPR</h1>",
+                                    "target": [
+                                        "h1"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3>Analizza il tuo sito web</h3>",
+                                    "target": [
+                                        ".col-md-4:nth-child(1) > .page-header > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3>Utilizza il codice</h3>",
+                                    "target": [
+                                        ".col-md-4:nth-child(2) > .page-header > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3>Blocca i cookie terze parti</h3>",
+                                    "target": [
+                                        ".col-md-4:nth-child(3) > .page-header > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2>Scopri come adeguare il tuo sito</h2>",
+                                    "target": [
+                                        ".container.text-center:nth-child(11) > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3>FREE COOKIES</h3>",
+                                    "target": [
+                                        "#freecookies > .panel-heading.text-center > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3>SMALL COOKIES</h3>",
+                                    "target": [
+                                        "#SMALL > .panel-heading.text-center > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3>MEDIUM COOKIES</h3>",
+                                    "target": [
+                                        "#MEDIUM > .panel-heading.text-center > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3>LARGE COOKIES</h3>",
+                                    "target": [
+                                        "#LARGE > .panel-heading.text-center > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"text-center\">I nostri servizi. In dettaglio.</h2>",
+                                    "target": [
+                                        ".container:nth-child(12) > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h4><i class=\"fa fa-smile-o\"></i> Numero cookies</h4>",
+                                    "target": [
+                                        ".row:nth-child(3) > .col-md-3:nth-child(1) > h4"
+                                    ]
+                                },
+                                {
+                                    "html": "<h4><i class=\"fa fa-search-plus\"></i> Tipologia di cookies</h4>",
+                                    "target": [
+                                        ".row:nth-child(3) > .col-md-3:nth-child(2) > h4"
+                                    ]
+                                },
+                                {
+                                    "html": "<h4><i class=\"fa fa-flag-checkered\"></i> Cookie Banner</h4>",
+                                    "target": [
+                                        ".row:nth-child(3) > .col-md-3:nth-child(3) > h4"
+                                    ]
+                                },
+                                {
+                                    "html": "<h4><i class=\"fa fa-gavel\"></i> Cookie Policy</h4>",
+                                    "target": [
+                                        ".row:nth-child(3) > .col-md-3:nth-child(4) > h4"
+                                    ]
+                                },
+                                {
+                                    "html": "<h4><i class=\"fa fa-shield\"></i> Blocco preventivo</h4>",
+                                    "target": [
+                                        ".row:nth-child(5) > .col-md-3:nth-child(1) > h4"
+                                    ]
+                                },
+                                {
+                                    "html": "<h4><i class=\"fa fa-medkit\"></i> Supporto ed assistenza</h4>",
+                                    "target": [
+                                        ".row:nth-child(5) > .col-md-3:nth-child(2) > h4"
+                                    ]
+                                },
+                                {
+                                    "html": "<h4><i class=\"fa fa-tachometer\"></i> Monitoraggio Cookies</h4>",
+                                    "target": [
+                                        ".row:nth-child(5) > .col-md-3:nth-child(3) > h4"
+                                    ]
+                                },
+                                {
+                                    "html": "<h4><i class=\"fa fa-question-circle\"></i> Need more?</h4>",
+                                    "target": [
+                                        ".row:nth-child(5) > .col-md-3:nth-child(4) > h4"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"text-center\">Siamo versatili. Come i nostri servizi.</h2>",
+                                    "target": [
+                                        ".container:nth-child(15) > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3>Programma Nibirumail Partner</h3>",
+                                    "target": [
+                                        ".col-md-4:nth-child(1) > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3>Offerte per webmaster</h3>",
+                                    "target": [
+                                        ".col-md-4:nth-child(2) > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3>Do you Wordpress?</h3>",
+                                    "target": [
+                                        ".col-md-4:nth-child(3) > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h4>CookieLetter</h4>",
+                                    "target": [
+                                        ".col-md-4:nth-child(1) > h4"
+                                    ]
+                                },
+                                {
+                                    "html": "<h4>Desideri approfondire?</h4>",
+                                    "target": [
+                                        ".col-md-4:nth-child(2) > h4"
+                                    ]
+                                },
+                                {
+                                    "html": "<h4>Diventa fan su Facebook</h4>",
+                                    "target": [
+                                        ".col-md-4:nth-child(3) > h4"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Page has a heading"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#3390d6",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.44,
+                                "fontSize": "22.5pt (30px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "3:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 3.44"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"/\" class=\"nunito\">nibirumail</a>",
+                    "target": [
+                        ".col-xs-4 > .nibirumail > .nunito[href=\"/\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "document-title",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag242",
+                "ACT"
+            ],
+            "description": "Ensures each HTML document contains a non-empty <title> element",
+            "help": "Documents must have <title> element to aid in navigation",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/document-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "doc-has-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has a non-empty <title> element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-aria",
+            "impact": "critical",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value used in ARIA and in labels is unique",
+            "help": "IDs used in ARIA and labels must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-aria",
+                            "data": "navbar",
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div id=\"navbar\" class=\"navbar-collapse collapse\">",
+                    "target": [
+                        "#navbar"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": "minor",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "facebook-jssdk",
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<script id=\"facebook-jssdk\" src=\"//connect.facebook.net/it_IT/sdk.js#xfbml=1&amp;version=v2.3&amp;appId=246967871987191\"></script>",
+                    "target": [
+                        "#facebook-jssdk"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "empty-heading",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "best-practice"
+            ],
+            "description": "Ensures headings have discernible text",
+            "help": "Headings should not be empty",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/empty-heading?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h1>Cookie Policy Generator &amp; GDPR</h1>",
+                    "target": [
+                        "h1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "form-field-multiple-labels",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag332"
+            ],
+            "description": "Ensures form field does not have multiple label elements",
+            "help": "Form field must not have multiple label elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/form-field-multiple-labels?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "multiple-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Form field does not have multiple label elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"text\" class=\"form-control input-block input-lg\" autofocus=\"autofocus\" name=\"url\" required=\"required\" value=\"\" placeholder=\"indica l'indirizzo del tuo sito...\">",
+                    "target": [
+                        ".input-block"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "heading-order",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": {
+                                "headingOrder": [
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(7) > div > h1:nth-child(1)"
+                                        ],
+                                        "level": 1
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(8) > div > div:nth-child(1) > div:nth-child(1) > h3:nth-child(2)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(8) > div > div:nth-child(2) > div:nth-child(1) > h3:nth-child(2)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(8) > div > div:nth-child(3) > div:nth-child(1) > h3:nth-child(2)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(11) > h2:nth-child(1)"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(11) > div:nth-child(3) > div:nth-child(1) > div > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(11) > div:nth-child(3) > div:nth-child(2) > div > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(11) > div:nth-child(3) > div:nth-child(3) > div > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(11) > div:nth-child(3) > div:nth-child(4) > div > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(12) > h2:nth-child(1)"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(12) > div:nth-child(3) > div:nth-child(1) > h4:nth-child(1)"
+                                        ],
+                                        "level": 4
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(12) > div:nth-child(3) > div:nth-child(2) > h4:nth-child(1)"
+                                        ],
+                                        "level": 4
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(12) > div:nth-child(3) > div:nth-child(3) > h4:nth-child(1)"
+                                        ],
+                                        "level": 4
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(12) > div:nth-child(3) > div:nth-child(4) > h4:nth-child(1)"
+                                        ],
+                                        "level": 4
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(12) > div:nth-child(5) > div:nth-child(1) > h4:nth-child(1)"
+                                        ],
+                                        "level": 4
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(12) > div:nth-child(5) > div:nth-child(2) > h4:nth-child(1)"
+                                        ],
+                                        "level": 4
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(12) > div:nth-child(5) > div:nth-child(3) > h4:nth-child(1)"
+                                        ],
+                                        "level": 4
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(12) > div:nth-child(5) > div:nth-child(4) > h4:nth-child(1)"
+                                        ],
+                                        "level": 4
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(15) > h2:nth-child(1)"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(15) > div:nth-child(3) > div:nth-child(1) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(15) > div:nth-child(3) > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(15) > div:nth-child(3) > div:nth-child(3) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(16) > div > div > div:nth-child(1) > h4:nth-child(1)"
+                                        ],
+                                        "level": 4
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(16) > div > div > div:nth-child(2) > h4:nth-child(1)"
+                                        ],
+                                        "level": 4
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(16) > div > div > div:nth-child(3) > h4:nth-child(1)"
+                                        ],
+                                        "level": 4
+                                    }
+                                ]
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h1>Cookie Policy Generator &amp; GDPR</h1>",
+                    "target": [
+                        "h1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-has-lang",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures every HTML document has a lang attribute",
+            "help": "<html> element must have a lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-has-lang?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "The <html> element has a lang attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-lang-valid",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures the lang attribute of the <html> element has a valid value",
+            "help": "<html> element must have a valid value for the lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-lang-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "valid-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Value of lang attribute is included in the list of valid languages"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<html lang=\"en\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "identical-links-same-purpose",
+            "impact": "minor",
+            "tags": [
+                "cat.semantics",
+                "wcag2aaa",
+                "wcag249"
+            ],
+            "description": "Ensure that links with the same accessible name serve a similar purpose",
+            "help": "Links with the same name must have a similar purpose",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/identical-links-same-purpose?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "identical-links-same-purpose",
+                            "data": {
+                                "name": "nibirumail",
+                                "urlProps": {
+                                    "protocol": "http:",
+                                    "hostname": "nibirumail.com",
+                                    "port": "",
+                                    "pathname": "/",
+                                    "search": {},
+                                    "hash": "",
+                                    "filename": ""
+                                }
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a style=\"color: #666;\" href=\"https://nibirumail.com\" target=\"_blank\">Nibirumail</a>",
+                                    "target": [
+                                        "p:nth-child(2) > .small > a[href$=\"nibirumail.com\"][target=\"_blank\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<a style=\"color: #666;\" href=\"https://nibirumail.com\" target=\"_blank\">Nibirumail</a>",
+                                    "target": [
+                                        "p:nth-child(4) > .small > a[href$=\"nibirumail.com\"][target=\"_blank\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "There are no other links with the same name, that go to a different URL"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"/\" class=\"nunito\">nibirumail</a>",
+                    "target": [
+                        ".col-xs-4 > .nibirumail > .nunito[href=\"/\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label-title-only",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "best-practice"
+            ],
+            "description": "Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes",
+            "help": "Form elements should have a visible label",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "title-only",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Form element does not solely use title attribute for its label"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"text\" class=\"form-control input-block input-lg\" autofocus=\"autofocus\" name=\"url\" required=\"required\" value=\"\" placeholder=\"indica l'indirizzo del tuo sito...\">",
+                    "target": [
+                        ".input-block"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag412",
+                "wcag131",
+                "section508",
+                "section508.22.n",
+                "ACT"
+            ],
+            "description": "Ensures every form element has a label",
+            "help": "Form elements must have labels",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "non-empty-placeholder",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a placeholder attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "hidden-explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element has a visible explicit <label>"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"text\" class=\"form-control input-block input-lg\" autofocus=\"autofocus\" name=\"url\" required=\"required\" value=\"\" placeholder=\"indica l'indirizzo del tuo sito...\">",
+                    "target": [
+                        ".input-block"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-banner-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the banner landmark is at top level",
+            "help": "Banner landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-banner-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "banner"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The banner landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header id=\"header_desktop\" class=\"hidden-xs\">",
+                    "target": [
+                        "#header_desktop"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-banner",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one banner landmark",
+            "help": "Document should not have more than one banner landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-banner?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-banner",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one banner landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header id=\"header_desktop\" class=\"hidden-xs\">",
+                    "target": [
+                        "#header_desktop"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-unique",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "help": "Ensures landmarks are unique",
+            "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-unique",
+                            "data": {
+                                "role": "banner",
+                                "accessibleText": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Landmarks must have a unique role or role/label/title (i.e. accessible name) combination"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header id=\"header_desktop\" class=\"hidden-xs\">",
+                    "target": [
+                        "#header_desktop"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a href=\"/\" class=\"nunito\">nibirumail</a>",
+                    "target": [
+                        ".col-xs-4 > .nibirumail > .nunito[href=\"/\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "list",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures that lists are structured correctly",
+            "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/list?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "only-listitems",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List element only has direct children that are allowed inside <li> elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<ul id=\"menu-main-menu\" class=\"menu\">",
+                    "target": [
+                        "#menu-main-menu"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "listitem",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures <li> elements are used semantically",
+            "help": "<li> elements must be contained in a <ul> or <ol>",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/listitem?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<li id=\"menu-item-151\" class=\"menu-item menu-item-type-custom menu-item-object-custom menu-item-151\"><a href=\"https://nibirumail.com/cookies/\"><strong>Cookie Policy</strong></a></li>",
+                    "target": [
+                        "#menu-item-151"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport-large",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> can scale a significant amount",
+            "help": "Users should be able to zoom and scale the text up to 500%",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport-large?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport-large",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "<meta> tag does not prevent significant zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice",
+                "ACT"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> does not disable text scaling and zooming",
+            "help": "Zooming and scaling should not be disabled",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "<meta> tag does not disable zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "nested-interactive",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+            "help": "Interactive controls must not be nested",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/nested-interactive?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "no-focusable-content",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have focusable descendants"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button class=\"btn btn-primary btn-block btn-lg\" type=\"submit\">ANALIZZA</button>",
+                    "target": [
+                        ".btn-lg[type=\"submit\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "page-has-heading-one",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+            "help": "Page should contain a level-one heading",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/page-has-heading-one?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-heading-one",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1>Cookie Policy Generator &amp; GDPR</h1>",
+                                    "target": [
+                                        "h1"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Page has at least one level-one heading"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "All page content is contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div id=\"fb-root\" class=\" fb_reset\"><div style=\"position: absolute; top: -10000px; width: 0px; height: 0px;\"><div></div></div></div>",
+                    "target": [
+                        "#fb-root"
+                    ]
+                }
+            ]
+        }
+    ],
+    "violations": [
+        {
+            "id": "avoid-inline-spacing",
+            "impact": "serious",
+            "tags": [
+                "cat.structure",
+                "wcag21aa",
+                "wcag1412"
+            ],
+            "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+            "help": "Inline text spacing must be adjustable with custom stylesheets",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/avoid-inline-spacing?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "avoid-inline-spacing",
+                            "data": [
+                                "line-height"
+                            ],
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Remove '!important' from inline style line-height, as overriding this is not supported by most browsers"
+                        }
+                    ],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span style=\"font-size: 12px; line-height: 18px !important;\">",
+                    "target": [
+                        ".text-justify > span > span"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Remove '!important' from inline style line-height, as overriding this is not supported by most browsers"
+                }
+            ]
+        },
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#999999",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 2.84,
+                                "fontSize": "15.0pt (20px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<header id=\"header_desktop\" class=\"hidden-xs\">",
+                                    "target": [
+                                        "#header_desktop"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.84 (foreground color: #999999, background color: #ffffff, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span class=\"hidden-sm hidden-md\">Build online utilities. Faster.</span>",
+                    "target": [
+                        ".nibirumail > .hidden-sm.hidden-md"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.84 (foreground color: #999999, background color: #ffffff, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#777777",
+                                "bgColor": "#f8f8f8",
+                                "contrastRatio": 4.21,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<nav class=\"navbar navbar-default navbar-primary\">",
+                                    "target": [
+                                        "nav"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 4.21 (foreground color: #777777, background color: #f8f8f8, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/cookies/analisi/\">Scansione <span class=\"free\">free</span></a>",
+                    "target": [
+                        "li:nth-child(1) > a[href$=\"analisi/\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.21 (foreground color: #777777, background color: #f8f8f8, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#777777",
+                                "bgColor": "#f8f8f8",
+                                "contrastRatio": 4.21,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<nav class=\"navbar navbar-default navbar-primary\">",
+                                    "target": [
+                                        "nav"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 4.21 (foreground color: #777777, background color: #f8f8f8, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/cookies/script/\">.script <span class=\"free\">free</span></a>",
+                    "target": [
+                        "li:nth-child(2) > a[href$=\"script/\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.21 (foreground color: #777777, background color: #f8f8f8, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#777777",
+                                "bgColor": "#f8f8f8",
+                                "contrastRatio": 4.21,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<nav class=\"navbar navbar-default navbar-primary\">",
+                                    "target": [
+                                        "nav"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 4.21 (foreground color: #777777, background color: #f8f8f8, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/cookies/blocca-cookie/\">.blocker <span class=\"premium\">premium</span></a>",
+                    "target": [
+                        "li:nth-child(3) > a[href$=\"blocca-cookie/\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.21 (foreground color: #777777, background color: #f8f8f8, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#3390d6",
+                                "contrastRatio": 3.44,
+                                "fontSize": "9.0pt (12px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<span class=\"premium\">premium</span>",
+                                    "target": [
+                                        ".premium"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.44 (foreground color: #ffffff, background color: #3390d6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span class=\"premium\">premium</span>",
+                    "target": [
+                        ".premium"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.44 (foreground color: #ffffff, background color: #3390d6, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#777777",
+                                "bgColor": "#f8f8f8",
+                                "contrastRatio": 4.21,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<nav class=\"navbar navbar-default navbar-primary\">",
+                                    "target": [
+                                        "nav"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 4.21 (foreground color: #777777, background color: #f8f8f8, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/cookies/privacy-generator/\">Privacy Policy Generator <span class=\"free\">new</span></a>",
+                    "target": [
+                        "a[href$=\"privacy-generator/\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.21 (foreground color: #777777, background color: #f8f8f8, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#3390d6",
+                                "bgColor": "#f8f8f8",
+                                "contrastRatio": 3.24,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<nav class=\"navbar navbar-default navbar-primary\">",
+                                    "target": [
+                                        "nav"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.24 (foreground color: #3390d6, background color: #f8f8f8, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/cookies/packages/\" style=\"font-weight: bold; color: #3390d6\">Adegua il tuo sito</a>",
+                    "target": [
+                        "li:nth-child(5) > a[href$=\"packages/\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.24 (foreground color: #3390d6, background color: #f8f8f8, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#777777",
+                                "bgColor": "#f8f8f8",
+                                "contrastRatio": 4.21,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<nav class=\"navbar navbar-default navbar-primary\">",
+                                    "target": [
+                                        "nav"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 4.21 (foreground color: #777777, background color: #f8f8f8, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/cookies/cookiepedia/\">Cookiepedia</a>",
+                    "target": [
+                        "li:nth-child(6) > a[href$=\"cookiepedia/\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.21 (foreground color: #777777, background color: #f8f8f8, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#777777",
+                                "bgColor": "#f8f8f8",
+                                "contrastRatio": 4.21,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<nav class=\"navbar navbar-default navbar-primary\">",
+                                    "target": [
+                                        "nav"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 4.21 (foreground color: #777777, background color: #f8f8f8, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<p class=\"navbar-text\">Hai un account?</p>",
+                    "target": [
+                        ".navbar-text"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.21 (foreground color: #777777, background color: #f8f8f8, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#777777",
+                                "bgColor": "#f8f8f8",
+                                "contrastRatio": 4.21,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<nav class=\"navbar navbar-default navbar-primary\">",
+                                    "target": [
+                                        "nav"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 4.21 (foreground color: #777777, background color: #f8f8f8, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"#\" class=\"dropdown-toggle\" data-toggle=\"dropdown\">Accedi <span class=\"caret\"></span></a>",
+                    "target": [
+                        ".dropdown-toggle"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.21 (foreground color: #777777, background color: #f8f8f8, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#3390d6",
+                                "contrastRatio": 3.44,
+                                "fontSize": "12.8pt (17px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<button class=\"btn btn-primary btn-block btn-lg\" type=\"submit\">ANALIZZA</button>",
+                                    "target": [
+                                        ".btn-lg[type=\"submit\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.44 (foreground color: #ffffff, background color: #3390d6, font size: 12.8pt (17px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<button class=\"btn btn-primary btn-block btn-lg\" type=\"submit\">ANALIZZA</button>",
+                    "target": [
+                        ".btn-lg[type=\"submit\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.44 (foreground color: #ffffff, background color: #3390d6, font size: 12.8pt (17px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#57ac57",
+                                "contrastRatio": 2.82,
+                                "fontSize": "18.0pt (24px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "3:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"panel-heading  text-center\">\n\t\t\t\t\t<h3>FREE COOKIES</h3>\n\t\t\t\t\t</div>",
+                                    "target": [
+                                        "#freecookies > .panel-heading.text-center"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.82 (foreground color: #ffffff, background color: #57ac57, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<h3>FREE COOKIES</h3>",
+                    "target": [
+                        "#freecookies > .panel-heading.text-center > h3"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.82 (foreground color: #ffffff, background color: #57ac57, font size: 18.0pt (24px), font weight: normal). Expected contrast ratio of 3:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#65c965",
+                                "contrastRatio": 2.08,
+                                "fontSize": "30.0pt (40px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "3:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"panel-body text-center\">\n\t\t\t\t\t\t<p class=\"lead\" style=\"font-size:40px\"><strong>GRATUITO</strong></p>\n\t\t\t\t\t</div>",
+                                    "target": [
+                                        "#freecookies > .panel-body.text-center"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.08 (foreground color: #ffffff, background color: #65c965, font size: 30.0pt (40px), font weight: bold). Expected contrast ratio of 3:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<strong>GRATUITO</strong>",
+                    "target": [
+                        "#freecookies > .panel-body.text-center > .lead > strong"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.08 (foreground color: #ffffff, background color: #65c965, font size: 30.0pt (40px), font weight: bold). Expected contrast ratio of 3:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#777777",
+                                "contrastRatio": 4.47,
+                                "fontSize": "9.0pt (12px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<span class=\"badge\">FREE</span>",
+                                    "target": [
+                                        "#freecookies > .list-group.list-group-flush > .list-group-item:nth-child(4) > .badge"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 4.47 (foreground color: #ffffff, background color: #777777, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span class=\"badge\">FREE</span>",
+                    "target": [
+                        "#freecookies > .list-group.list-group-flush > .list-group-item:nth-child(4) > .badge"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.47 (foreground color: #ffffff, background color: #777777, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#777777",
+                                "contrastRatio": 4.47,
+                                "fontSize": "9.0pt (12px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<span class=\"badge\">FREE</span>",
+                                    "target": [
+                                        ".list-group-item:nth-child(5) > .badge"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 4.47 (foreground color: #ffffff, background color: #777777, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span class=\"badge\">FREE</span>",
+                    "target": [
+                        ".list-group-item:nth-child(5) > .badge"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.47 (foreground color: #ffffff, background color: #777777, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#5cb85c",
+                                "contrastRatio": 2.48,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a class=\"btn btn-lg btn-block btn-success\" href=\"/cookies/script.php\">PROVALO</a>",
+                                    "target": [
+                                        ".btn-success"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.48 (foreground color: #ffffff, background color: #5cb85c, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a class=\"btn btn-lg btn-block btn-success\" href=\"/cookies/script.php\">PROVALO</a>",
+                    "target": [
+                        ".btn-success"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.48 (foreground color: #ffffff, background color: #5cb85c, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#777777",
+                                "contrastRatio": 4.47,
+                                "fontSize": "9.0pt (12px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<span class=\"badge\">PRO</span>",
+                                    "target": [
+                                        "#SMALL > .list-group.list-group-flush > .list-group-item:nth-child(4) > .badge"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 4.47 (foreground color: #ffffff, background color: #777777, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span class=\"badge\">PRO</span>",
+                    "target": [
+                        "#SMALL > .list-group.list-group-flush > .list-group-item:nth-child(4) > .badge"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.47 (foreground color: #ffffff, background color: #777777, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#3390d6",
+                                "contrastRatio": 3.44,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a class=\"btn btn-lg btn-block btn-primary\" href=\"https://nibirumail.com/cookies/packages-configurator.php?pack=SMALL\">ORDINA</a>",
+                                    "target": [
+                                        "#SMALL > .panel-footer > .btn-lg.btn-primary.btn"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.44 (foreground color: #ffffff, background color: #3390d6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a class=\"btn btn-lg btn-block btn-primary\" href=\"https://nibirumail.com/cookies/packages-configurator.php?pack=SMALL\">ORDINA</a>",
+                    "target": [
+                        "#SMALL > .panel-footer > .btn-lg.btn-primary.btn"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.44 (foreground color: #ffffff, background color: #3390d6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#777777",
+                                "contrastRatio": 4.47,
+                                "fontSize": "9.0pt (12px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<span class=\"badge\">PRO</span>",
+                                    "target": [
+                                        "#MEDIUM > .list-group.list-group-flush > .list-group-item:nth-child(4) > .badge"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 4.47 (foreground color: #ffffff, background color: #777777, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span class=\"badge\">PRO</span>",
+                    "target": [
+                        "#MEDIUM > .list-group.list-group-flush > .list-group-item:nth-child(4) > .badge"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.47 (foreground color: #ffffff, background color: #777777, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#3390d6",
+                                "contrastRatio": 3.44,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a class=\"btn btn-lg btn-block btn-primary\" href=\"https://nibirumail.com/cookies/packages-configurator.php?pack=MEDIUM\">ORDINA</a>",
+                                    "target": [
+                                        "#MEDIUM > .panel-footer > .btn-lg.btn-primary.btn"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.44 (foreground color: #ffffff, background color: #3390d6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a class=\"btn btn-lg btn-block btn-primary\" href=\"https://nibirumail.com/cookies/packages-configurator.php?pack=MEDIUM\">ORDINA</a>",
+                    "target": [
+                        "#MEDIUM > .panel-footer > .btn-lg.btn-primary.btn"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.44 (foreground color: #ffffff, background color: #3390d6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#777777",
+                                "contrastRatio": 4.47,
+                                "fontSize": "9.0pt (12px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<span class=\"badge\">PRO</span>",
+                                    "target": [
+                                        "#LARGE > .list-group.list-group-flush > .list-group-item:nth-child(4) > .badge"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 4.47 (foreground color: #ffffff, background color: #777777, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span class=\"badge\">PRO</span>",
+                    "target": [
+                        "#LARGE > .list-group.list-group-flush > .list-group-item:nth-child(4) > .badge"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.47 (foreground color: #ffffff, background color: #777777, font size: 9.0pt (12px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#3390d6",
+                                "contrastRatio": 3.44,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a class=\"btn btn-lg btn-block btn-primary\" href=\"https://nibirumail.com/cookies/packages-configurator.php?pack=LARGE\">ORDINA</a>",
+                                    "target": [
+                                        "#LARGE > .panel-footer > .btn-lg.btn-primary.btn"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.44 (foreground color: #ffffff, background color: #3390d6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a class=\"btn btn-lg btn-block btn-primary\" href=\"https://nibirumail.com/cookies/packages-configurator.php?pack=LARGE\">ORDINA</a>",
+                    "target": [
+                        "#LARGE > .panel-footer > .btn-lg.btn-primary.btn"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.44 (foreground color: #ffffff, background color: #3390d6, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#337ab7",
+                                "bgColor": "#fafafa",
+                                "contrastRatio": 4.36,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div style=\"background: #fafafa; margin-top: 60px; padding: 30px 0;\">",
+                                    "target": [
+                                        "div:nth-child(16)"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 4.36 (foreground color: #337ab7, background color: #fafafa, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://nibirumail.com/privacy/\" target=\"_blank\">privacy policy</a>",
+                    "target": [
+                        "label[for=\"nibirumail_privacy\"] > a[target=\"_blank\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.36 (foreground color: #337ab7, background color: #fafafa, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#337ab7",
+                                "bgColor": "#fafafa",
+                                "contrastRatio": 4.36,
+                                "fontSize": "12.8pt (17px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div style=\"background: #fafafa; margin-top: 60px; padding: 30px 0;\">",
+                                    "target": [
+                                        "div:nth-child(16)"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 4.36 (foreground color: #337ab7, background color: #fafafa, font size: 12.8pt (17px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a target=\"_blank\" href=\"https://nibirumail.com/cookies/cookiepedia/\">Cookiepedia</a>",
+                    "target": [
+                        "p:nth-child(2) > a[target=\"_blank\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.36 (foreground color: #337ab7, background color: #fafafa, font size: 12.8pt (17px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#337ab7",
+                                "bgColor": "#fafafa",
+                                "contrastRatio": 4.36,
+                                "fontSize": "12.8pt (17px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div style=\"background: #fafafa; margin-top: 60px; padding: 30px 0;\">",
+                                    "target": [
+                                        "div:nth-child(16)"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 4.36 (foreground color: #337ab7, background color: #fafafa, font size: 12.8pt (17px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a target=\"_blank\" href=\"http://www.lenus.it/2015/05/cookie-law-italia-nuova-legge-sui-cookie-dal-2-giugno-2015/\">Cookie Law Italia 2 Giugno</a>",
+                    "target": [
+                        "p:nth-child(3) > a[target=\"_blank\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.36 (foreground color: #337ab7, background color: #fafafa, font size: 12.8pt (17px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#337ab7",
+                                "bgColor": "#fafafa",
+                                "contrastRatio": 4.36,
+                                "fontSize": "12.8pt (17px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div style=\"background: #fafafa; margin-top: 60px; padding: 30px 0;\">",
+                                    "target": [
+                                        "div:nth-child(16)"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 4.36 (foreground color: #337ab7, background color: #fafafa, font size: 12.8pt (17px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a target=\"_blank\" href=\"https://nibirumail.com/cookies/testing/adsense.php\">Come bloccare i cookie di Google AdSense</a>",
+                    "target": [
+                        "p:nth-child(4) > a[target=\"_blank\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.36 (foreground color: #337ab7, background color: #fafafa, font size: 12.8pt (17px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#999999",
+                                "bgColor": "#f1f1f1",
+                                "contrastRatio": 2.52,
+                                "fontSize": "8.9pt (11.9px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"footer\">",
+                                    "target": [
+                                        "#footer"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.52 (foreground color: #999999, background color: #f1f1f1, font size: 8.9pt (11.9px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<p class=\"small\" style=\"color: #999\"> \n\t\t\t\t\t\t\u00a9 Lenus Media. proud to communicate.<br>\t\t\t\n\t\t\t\t\t\tViale Marconi, 53 - 84013 Cava de' Tirreni, SA<br>\n\t\t\t\t\t\tP.IVA 04635230651 | <a style=\"color: #999; text-decoration: underline;\" href=\"mailto:support@lenusmedia.com\">support@lenusmedia.com</a>\n\t\t\t\t\t</p>",
+                    "target": [
+                        ".col-md-4 > .small"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.52 (foreground color: #999999, background color: #f1f1f1, font size: 8.9pt (11.9px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#999999",
+                                "bgColor": "#f1f1f1",
+                                "contrastRatio": 2.52,
+                                "fontSize": "8.9pt (11.9px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"footer\">",
+                                    "target": [
+                                        "#footer"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.52 (foreground color: #999999, background color: #f1f1f1, font size: 8.9pt (11.9px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a style=\"color: #999; text-decoration: underline;\" href=\"mailto:support@lenusmedia.com\">support@lenusmedia.com</a>",
+                    "target": [
+                        "a[href=\"mailto:support@lenusmedia.com\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.52 (foreground color: #999999, background color: #f1f1f1, font size: 8.9pt (11.9px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#808080",
+                                "bgColor": "#f1f1f1",
+                                "contrastRatio": 3.49,
+                                "fontSize": "7.6pt (10.115px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"footer\">",
+                                    "target": [
+                                        "#footer"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.49 (foreground color: #808080, background color: #f1f1f1, font size: 7.6pt (10.115px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<div class=\"small\">",
+                    "target": [
+                        ".col-md-8 > .small"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.49 (foreground color: #808080, background color: #f1f1f1, font size: 7.6pt (10.115px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-aria",
+            "impact": "critical",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value used in ARIA and in labels is unique",
+            "help": "IDs used in ARIA and labels must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-aria",
+                            "data": "nibirumail_email",
+                            "relatedNodes": [
+                                {
+                                    "html": "<input type=\"email\" class=\"form-control\" name=\"nibirumail_email\" id=\"nibirumail_email\" placeholder=\"Indirizzo email\" required=\"required\">",
+                                    "target": [
+                                        ".form-group:nth-child(5) > input[type=\"email\"][name=\"nibirumail_email\"][placeholder=\"Indirizzo email\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "critical",
+                            "message": "Document has multiple elements referenced with ARIA with the same id attribute: nibirumail_email"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<input type=\"email\" class=\"form-control\" name=\"nibirumail_email\" id=\"nibirumail_email\" placeholder=\"Indirizzo email\" required=\"required\">",
+                    "target": [
+                        ".form-group:nth-child(6) > input[type=\"email\"][name=\"nibirumail_email\"][placeholder=\"Indirizzo email\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple elements referenced with ARIA with the same id attribute: nibirumail_email"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-aria",
+                            "data": "nibirumail_pass",
+                            "relatedNodes": [
+                                {
+                                    "html": "<input type=\"password\" class=\"form-control\" id=\"nibirumail_pass\" name=\"nibirumail_pass\" placeholder=\"Password\" required=\"required\">",
+                                    "target": [
+                                        ".form-group:nth-child(6) > input[type=\"password\"][name=\"nibirumail_pass\"][placeholder=\"Password\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "critical",
+                            "message": "Document has multiple elements referenced with ARIA with the same id attribute: nibirumail_pass"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<input type=\"password\" class=\"form-control\" id=\"nibirumail_pass\" name=\"nibirumail_pass\" placeholder=\"Password\" required=\"required\">",
+                    "target": [
+                        ".form-group:nth-child(7) > input[type=\"password\"][name=\"nibirumail_pass\"][placeholder=\"Password\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple elements referenced with ARIA with the same id attribute: nibirumail_pass"
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": "minor",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "nibirumail_login_form",
+                            "relatedNodes": [
+                                {
+                                    "html": "<form id=\"nibirumail_login_form\" method=\"post\" action=\"https://nibirumail.com/db/builder/\" role=\"form\" accept-charset=\"UTF-8\">",
+                                    "target": [
+                                        ".modal-body > .row > .col-md-12 > form[role=\"form\"][accept-charset=\"UTF-8\"][method=\"post\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: nibirumail_login_form"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<form id=\"nibirumail_login_form\" method=\"post\" action=\"https://nibirumail.com/db/builder/\" role=\"form\" accept-charset=\"UTF-8\">",
+                    "target": [
+                        "li > .row > .col-md-12 > form[role=\"form\"][accept-charset=\"UTF-8\"][method=\"post\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: nibirumail_login_form"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "nibirumail_res",
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"nibirumail_res\">&nbsp;</div>",
+                                    "target": [
+                                        "#analisi > div:nth-child(1)"
+                                    ]
+                                },
+                                {
+                                    "html": "<div id=\"nibirumail_res\">&nbsp;</div>",
+                                    "target": [
+                                        "#nibirumail_form > div"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: nibirumail_res"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<div id=\"nibirumail_res\">&nbsp;</div>",
+                    "target": [
+                        "form[role=\"form\"][accept-charset=\"UTF-8\"][method=\"post\"] > div:nth-child(1)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: nibirumail_res"
+                }
+            ]
+        },
+        {
+            "id": "heading-order",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order invalid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h3>Analizza il tuo sito web</h3>",
+                    "target": [
+                        ".col-md-4:nth-child(1) > .page-header > h3"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Heading order invalid"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order invalid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h4><i class=\"fa fa-smile-o\"></i> Numero cookies</h4>",
+                    "target": [
+                        ".row:nth-child(3) > .col-md-3:nth-child(1) > h4"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Heading order invalid"
+                }
+            ]
+        },
+        {
+            "id": "landmark-one-main",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has a main landmark",
+            "help": "Document should have one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-one-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-main",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have a main landmark"
+                        }
+                    ],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<html lang=\"en\">",
+                    "target": [
+                        "html"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h1>Cookie Policy Generator &amp; GDPR</h1>",
+                    "target": [
+                        "h1"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"col-md-9 text-left\"> \n\t\t\t\t<input type=\"text\" class=\"form-control input-block input-lg\" autofocus=\"autofocus\" name=\"url\" required=\"required\" value=\"\" placeholder=\"indica l'indirizzo del tuo sito...\">\n\t\t\t</div>",
+                    "target": [
+                        ".col-md-9"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p>Analizza il tuo sito web per scoprire come <strong style=\"border-bottom: 1px dashed #fff;\">adeguarlo alla Cookie Law e al GDPR</strong></p>",
+                    "target": [
+                        ".container > p:nth-child(3)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p class=\"text-center\"><strong>8,758,981+</strong> cookie policy generate attraverso Cookie Policy Generator</p>",
+                    "target": [
+                        ".jumbotron > .container > .text-center"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"container text-center\">",
+                    "target": [
+                        ".container.text-center:nth-child(8)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"container text-center\">",
+                    "target": [
+                        ".container.text-center:nth-child(11)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"container\">",
+                    "target": [
+                        ".container:nth-child(12)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"container\">",
+                    "target": [
+                        ".container:nth-child(15)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h4>CookieLetter</h4>",
+                    "target": [
+                        ".col-md-4:nth-child(1) > h4"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p class=\"form-group\">\n\t\t\t\t<input name=\"nibirumail_email\" type=\"text\" class=\"form-control\" required=\"required\" placeholder=\"Indirizzo email\">\n\t\t\t\t</p>",
+                    "target": [
+                        "#nibirumail_form > .form-group"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<label for=\"nibirumail_privacy\"><input id=\"nibirumail_privacy\" type=\"checkbox\" name=\"nibirumail_privacy\" value=\"1\"> Ho letto ed accetto la <a href=\"https://nibirumail.com/privacy/\" target=\"_blank\">privacy policy</a>.</label>",
+                    "target": [
+                        "label[for=\"nibirumail_privacy\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"col-md-4\">",
+                    "target": [
+                        "div:nth-child(16) > .container > .row > .col-md-4:nth-child(2)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h4>Diventa fan su Facebook</h4>",
+                    "target": [
+                        ".col-md-4:nth-child(3) > h4"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div id=\"footer\">",
+                    "target": [
+                        "#footer"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div id=\"nibirumail_cookie_advice\" style=\"z-index: 2147483647; position: fixed; bottom: 0px; left: 0px; width: 100%; background: rgb(0, 0, 0); color: rgb(255, 255, 255); text-align: center; padding: 15px 0px; font-size: 12px;\">",
+                    "target": [
+                        "#nibirumail_cookie_advice"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                }
+            ]
+        }
+    ]
+}

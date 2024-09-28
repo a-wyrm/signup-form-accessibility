@@ -1,0 +1,847 @@
+{
+    "testEngine": {
+        "name": "axe-core",
+        "version": "4.4.3"
+    },
+    "testRunner": {
+        "name": "axe"
+    },
+    "timestamp": "2024-09-26T04:07:47.851Z",
+    "url": "http://www.solidfiles.com/",
+    "toolOptions": {
+        "resultTypes": [
+            "violations"
+        ],
+        "reporter": "v1"
+    },
+    "passes": [
+        {
+            "id": "aria-hidden-body",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures aria-hidden='true' is not present on the document body.",
+            "help": "aria-hidden='true' must not be present on the document body",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-hidden-body",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "No aria-hidden attribute is present on document body"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<body>",
+                    "target": [
+                        "body"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "bypass",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag241",
+                "section508",
+                "section508.22.o"
+            ],
+            "description": "Ensures each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+            "help": "Page must have means to bypass repeated blocks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/bypass?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "header-present",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1>We're having a terrible day</h1>",
+                                    "target": [
+                                        "h1"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Page has a heading"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html>",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#1b99b9",
+                                "contrastRatio": 3.33,
+                                "fontSize": "33.0pt (44px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "3:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 3.33"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h1>We're having a terrible day</h1>",
+                    "target": [
+                        "h1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "document-title",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag242",
+                "ACT"
+            ],
+            "description": "Ensures each HTML document contains a non-empty <title> element",
+            "help": "Documents must have <title> element to aid in navigation",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/document-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "doc-has-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has a non-empty <title> element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html>",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "empty-heading",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "best-practice"
+            ],
+            "description": "Ensures headings have discernible text",
+            "help": "Headings should not be empty",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/empty-heading?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h1>We're having a terrible day</h1>",
+                    "target": [
+                        "h1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "heading-order",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": {
+                                "headingOrder": [
+                                    {
+                                        "ancestry": [
+                                            "html > body > div > h1:nth-child(1)"
+                                        ],
+                                        "level": 1
+                                    }
+                                ]
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h1>We're having a terrible day</h1>",
+                    "target": [
+                        "h1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "identical-links-same-purpose",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "wcag2aaa",
+                "wcag249"
+            ],
+            "description": "Ensure that links with the same accessible name serve a similar purpose",
+            "help": "Links with the same name must have a similar purpose",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/identical-links-same-purpose?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "identical-links-same-purpose",
+                            "data": {
+                                "name": "contact support",
+                                "urlProps": {
+                                    "protocol": "mailto:",
+                                    "hostname": "",
+                                    "port": "",
+                                    "pathname": "/",
+                                    "search": {},
+                                    "hash": "",
+                                    "filename": "support@solidfiles.com"
+                                }
+                            },
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "There are no other links with the same name, that go to a different URL"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"mailto:support@solidfiles.com\">Contact Support</a>",
+                    "target": [
+                        "a[href=\"mailto:support@solidfiles.com\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-redundant-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ],
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-redundant-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img width=\"163\" src=\"data:image/png;base64,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\">",
+                    "target": [
+                        "img"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a href=\"mailto:support@solidfiles.com\">Contact Support</a>",
+                    "target": [
+                        "a[href=\"mailto:support@solidfiles.com\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "listitem",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures <li> elements are used semantically",
+            "help": "<li> elements must be contained in a <ul> or <ol>",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/listitem?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<li><a href=\"mailto:support@solidfiles.com\">Contact Support</a></li>",
+                    "target": [
+                        "li:nth-child(1)"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "nested-interactive",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+            "help": "Interactive controls must not be nested",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/nested-interactive?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "no-focusable-content",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have focusable descendants"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<img width=\"163\" src=\"data:image/png;base64,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\">",
+                    "target": [
+                        "img"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "page-has-heading-one",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+            "help": "Page should contain a level-one heading",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/page-has-heading-one?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-heading-one",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1>We're having a terrible day</h1>",
+                                    "target": [
+                                        "h1"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Page has at least one level-one heading"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html>",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "All page content is contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h1>We're having a terrible day</h1>",
+                    "target": [
+                        "h1"
+                    ]
+                }
+            ]
+        }
+    ],
+    "violations": [
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#1b99b9",
+                                "contrastRatio": 3.33,
+                                "fontSize": "15.0pt (20px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body>",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.33 (foreground color: #ffffff, background color: #1b99b9, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<p>Sorry, we're temporarily unavailable. Please try again in a little while and contact us if the problem persists.</p>",
+                    "target": [
+                        "p"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.33 (foreground color: #ffffff, background color: #1b99b9, font size: 15.0pt (20px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#1b99b9",
+                                "contrastRatio": 3.33,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body>",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.33 (foreground color: #ffffff, background color: #1b99b9, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"mailto:support@solidfiles.com\">Contact Support</a>",
+                    "target": [
+                        "a[href=\"mailto:support@solidfiles.com\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.33 (foreground color: #ffffff, background color: #1b99b9, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#1b99b9",
+                                "contrastRatio": 3.33,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body>",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.33 (foreground color: #ffffff, background color: #1b99b9, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"http://status.solidfiles.com\">Status</a>",
+                    "target": [
+                        "a[href$=\"status.solidfiles.com\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.33 (foreground color: #ffffff, background color: #1b99b9, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#1b99b9",
+                                "contrastRatio": 3.33,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body>",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.33 (foreground color: #ffffff, background color: #1b99b9, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://www.twitter.com/solidfiles\">@solidfiles</a>",
+                    "target": [
+                        "li:nth-child(3) > a"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.33 (foreground color: #ffffff, background color: #1b99b9, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+            ]
+        },
+        {
+            "id": "html-has-lang",
+            "impact": "serious",
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures every HTML document has a lang attribute",
+            "help": "<html> element must have a lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-has-lang?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-lang",
+                            "data": {
+                                "messageKey": "noLang"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "The <html> element does not have a lang attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<html>",
+                    "target": [
+                        "html"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  The <html> element does not have a lang attribute"
+                }
+            ]
+        },
+        {
+            "id": "image-alt",
+            "impact": "critical",
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures <img> elements have alternate text or a role of none or presentation",
+            "help": "Images must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-alt",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element does not have an alt attribute"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        },
+                        {
+                            "id": "presentational-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<img width=\"163\" src=\"data:image/png;base64,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\">",
+                    "target": [
+                        "img"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                }
+            ]
+        },
+        {
+            "id": "landmark-one-main",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has a main landmark",
+            "help": "Document should have one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-one-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-main",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have a main landmark"
+                        }
+                    ],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<html>",
+                    "target": [
+                        "html"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+                }
+            ]
+        },
+        {
+            "id": "list",
+            "impact": "serious",
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures that lists are structured correctly",
+            "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/list?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "only-listitems",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List element has direct children that are not allowed inside <li> elements"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<ul><li><a href=\"mailto:support@solidfiles.com\">Contact Support</a></li>\u2014<li><a href=\"http://status.solidfiles.com\">Status</a></li>\u2014<li><a href=\"https://www.twitter.com/solidfiles\">@solidfiles</a></li></ul>",
+                    "target": [
+                        "ul"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  List element has direct children that are not allowed inside <li> elements"
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"error\">",
+                    "target": [
+                        ".error"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                }
+            ]
+        }
+    ]
+}

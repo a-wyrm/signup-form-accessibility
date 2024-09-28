@@ -1,0 +1,2766 @@
+{
+    "testEngine": {
+        "name": "axe-core",
+        "version": "4.4.3"
+    },
+    "testRunner": {
+        "name": "axe"
+    },
+    "timestamp": "2024-09-26T13:31:06.536Z",
+    "url": "https://bigislandgazette.com/",
+    "toolOptions": {
+        "resultTypes": [
+            "violations"
+        ],
+        "reporter": "v1"
+    },
+    "passes": [
+        {
+            "id": "aria-allowed-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures ARIA attributes are allowed for an element's role",
+            "help": "Elements must only use allowed ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attributes are used correctly for the defined role"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "aria-unsupported-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute is supported"
+                        },
+                        {
+                            "id": "aria-prohibited-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "ARIA attribute is allowed"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a href=\"https://bigislandgazette.com/\" aria-current=\"page\" class=\"elementor-item elementor-item-active\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07</a>",
+                    "target": [
+                        "#menu-1-2bae37f > .menu-item-32.menu-item-home.current-menu-item > .elementor-item-active[aria-current=\"page\"][href$=\"bigislandgazette.com/\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-allowed-role",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "best-practice"
+            ],
+            "description": "Ensures role attribute has an appropriate value for the element",
+            "help": "ARIA role should be appropriate for the element",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-role?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is allowed for given element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"elementor-menu-toggle\" role=\"button\" tabindex=\"0\" aria-label=\"Menu Toggle\" aria-expanded=\"false\" style=\"\">",
+                    "target": [
+                        ".elementor-menu-toggle"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-body",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures aria-hidden='true' is not present on the document body.",
+            "help": "aria-hidden='true' must not be present on the document body",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-hidden-body",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "No aria-hidden attribute is present on document body"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<body class=\"home page-template page-template-elementor_header_footer page page-id-17 wp-custom-logo elementor-default elementor-template-full-width elementor-kit-6 elementor-page elementor-page-17 e--ua-blink e--ua-webkit\" data-elementor-device-mode=\"desktop\">",
+                    "target": [
+                        "body"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-focus",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag131"
+            ],
+            "description": "Ensures aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "focusable-modal-open",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements while a modal is open"
+                        },
+                        {
+                            "id": "focusable-disabled",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        },
+                        {
+                            "id": "focusable-not-tabbable",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<i aria-hidden=\"true\" role=\"presentation\" class=\"elementor-menu-toggle__icon--open eicon-menu-bar\"></i>",
+                    "target": [
+                        ".elementor-menu-toggle__icon--open"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-required-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures elements with ARIA roles have all required ARIA attributes",
+            "help": "Required ARIA attributes must be provided",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-required-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-required-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "All required ARIA attributes are present"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"https://k9wyyl.com/123thgo\" target=\"_blank\" rel=\"nofollow\" class=\"elementor-button-link elementor-button elementor-size-sm\" role=\"button\">\n\t\t\t\t\t\t<span class=\"elementor-button-content-wrapper\">\n\t\t\t\t\t\t<span class=\"elementor-button-text\">\u0e40\u0e02\u0e49\u0e32\u0e2a\u0e39\u0e48\u0e23\u0e30\u0e1a\u0e1a</span>\n\t\t</span>\n\t\t\t\t\t</a>",
+                    "target": [
+                        ".elementor-element-edf39c6 > .elementor-widget-container > .elementor-button-wrapper > .elementor-button-link.elementor-button.elementor-size-sm"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-required-children",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures elements with an ARIA role that require child roles contain them",
+            "help": "Certain ARIA roles must contain particular children",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-required-children?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-required-children",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Required ARIA children are present"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"elementor-toggle\" role=\"tablist\">",
+                    "target": [
+                        ".elementor-toggle"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-required-parent",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures elements with an ARIA role that require parent roles are contained by them",
+            "help": "Certain ARIA roles must be contained by particular parents",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-required-parent?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-required-parent",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Required ARIA parent role present"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h3 id=\"elementor-tab-title-1781\" class=\"elementor-tab-title\" data-tab=\"1\" role=\"tab\" aria-controls=\"elementor-tab-content-1781\" aria-expanded=\"false\">",
+                    "target": [
+                        "#elementor-tab-title-1781"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-roles",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all elements with a role attribute use a valid value",
+            "help": "ARIA roles used must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-roles?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "fallbackrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Only one role value used"
+                        },
+                        {
+                            "id": "invalidrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is valid"
+                        },
+                        {
+                            "id": "abstractrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Abstract roles are not used"
+                        },
+                        {
+                            "id": "unsupportedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is supported"
+                        },
+                        {
+                            "id": "deprecatedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is not deprecated"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a href=\"https://k9wyyl.com/123thgo\" target=\"_blank\" rel=\"nofollow\" class=\"elementor-button-link elementor-button elementor-size-sm\" role=\"button\">\n\t\t\t\t\t\t<span class=\"elementor-button-content-wrapper\">\n\t\t\t\t\t\t<span class=\"elementor-button-text\">\u0e40\u0e02\u0e49\u0e32\u0e2a\u0e39\u0e48\u0e23\u0e30\u0e1a\u0e1a</span>\n\t\t</span>\n\t\t\t\t\t</a>",
+                    "target": [
+                        ".elementor-element-edf39c6 > .elementor-widget-container > .elementor-button-wrapper > .elementor-button-link.elementor-button.elementor-size-sm"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr-value",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all ARIA attributes have valid values",
+            "help": "ARIA attributes must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr-value?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "aria-valid-attr-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute values are valid"
+                        },
+                        {
+                            "id": "aria-errormessage",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "aria-errormessage exists and references elements visible to screen readers that use a supported aria-errormessage technique"
+                        },
+                        {
+                            "id": "aria-level",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-level values are valid"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"https://bigislandgazette.com/\" aria-current=\"page\" class=\"elementor-item elementor-item-active\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07</a>",
+                    "target": [
+                        "#menu-1-2bae37f > .menu-item-32.menu-item-home.current-menu-item > .elementor-item-active[aria-current=\"page\"][href$=\"bigislandgazette.com/\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures attributes that begin with aria- are valid ARIA attributes",
+            "help": "ARIA attributes must conform to valid names",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-valid-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute name is valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"https://bigislandgazette.com/\" aria-current=\"page\" class=\"elementor-item elementor-item-active\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07</a>",
+                    "target": [
+                        "#menu-1-2bae37f > .menu-item-32.menu-item-home.current-menu-item > .elementor-item-active[aria-current=\"page\"][href$=\"bigislandgazette.com/\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "avoid-inline-spacing",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag21aa",
+                "wcag1412"
+            ],
+            "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+            "help": "Inline text spacing must be adjustable with custom stylesheets",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/avoid-inline-spacing?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "avoid-inline-spacing",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No inline styles with '!important' that affect text spacing has been specified"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<span style=\"color: #006208;\">\u0e21\u0e35\u0e40\u0e01\u0e21\u0e43\u0e2b\u0e49\u0e40\u0e25\u0e37\u0e2d\u0e01\u0e40\u0e25\u0e48\u0e19\u0e2b\u0e25\u0e32\u0e01\u0e2b\u0e25\u0e32\u0e22</span>",
+                    "target": [
+                        "li:nth-child(1) > strong > span"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "bypass",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag241",
+                "section508",
+                "section508.22.o"
+            ],
+            "description": "Ensures each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+            "help": "Page must have means to bypass repeated blocks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/bypass?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "internal-link-present",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Valid skip link found"
+                        },
+                        {
+                            "id": "header-present",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1 class=\"elementor-heading-title elementor-size-default\"><span id=\"slxt_web_trng_fak_thxn_Auto_mimi_khan_ta_web_slxt_xandab_1_slxt_taek_ngay\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e1d\u0e32\u0e01\u0e16\u0e2d\u0e19 Auto \u0e44\u0e21\u0e48\u0e21\u0e35\u0e02\u0e31\u0e49\u0e19\u0e15\u0e48\u0e33 \u0e40\u0e27\u0e47\u0e1a\u0e2a\u0e25\u0e47\u0e2d\u0e15 \u0e2d\u0e31\u0e19\u0e14\u0e31\u0e1a 1 \u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e41\u0e15\u0e01\u0e07\u0e48\u0e32\u0e22</span></h1>",
+                                    "target": [
+                                        "h1"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\"><span id=\"slxt_web_trng_khux_xari_slxt_rab_wx_leth_tha_ngein_di_cring_him\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e04\u0e37\u0e2d\u0e2d\u0e30\u0e44\u0e23 ? \u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e23\u0e31\u0e1a\u0e27\u0e2d\u0e40\u0e25\u0e17 \u0e17\u0e33\u0e40\u0e07\u0e34\u0e19\u0e44\u0e14\u0e49\u0e08\u0e23\u0e34\u0e07\u0e44\u0e2b\u0e21 ?</span></h2>",
+                                    "target": [
+                                        ".elementor-element-87812de > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\"><span id=\"slxt_web_trng_xx_to_web_trng_thi_di_thisud_ni_thiy_taek_ngay_ka_ran_ti_cak_seirf_hlak\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e2d\u0e2d\u0e42\u0e15\u0e49 \u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e17\u0e35\u0e48\u0e14\u0e35\u0e17\u0e35\u0e48\u0e2a\u0e38\u0e14 \u0e43\u0e19\u0e44\u0e17\u0e22 \u0e41\u0e15\u0e01\u0e07\u0e48\u0e32\u0e22 \u0e01\u0e32\u0e23\u0e31\u0e19\u0e15\u0e35\u0e08\u0e32\u0e01\u0e40\u0e0b\u0e34\u0e23\u0e4c\u0e1f\u0e2b\u0e25\u0e31\u0e01</span></h2>",
+                                    "target": [
+                                        ".elementor-element-7951662 > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\"><span id=\"hetuphl_thi_khwr_leuxk_pan_slxt_kab_slxt_web_trng_web_thae_mi_phan_xeyent_mi_xari_bang\">\u0e40\u0e2b\u0e15\u0e38\u0e1c\u0e25\u0e17\u0e35\u0e48\u0e04\u0e27\u0e23\u0e40\u0e25\u0e37\u0e2d\u0e01 \u0e1b\u0e31\u0e48\u0e19\u0e2a\u0e25\u0e47\u0e2d\u0e15 \u0e01\u0e31\u0e1a \u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e40\u0e27\u0e47\u0e1a\u0e41\u0e17\u0e49 \u0e44\u0e21\u0e48\u0e1c\u0e48\u0e32\u0e19\u0e40\u0e2d\u0e40\u0e22\u0e48\u0e19\u0e15\u0e4c \u0e21\u0e35\u0e2d\u0e30\u0e44\u0e23\u0e1a\u0e49\u0e32\u0e07 ?</span></h2>",
+                                    "target": [
+                                        ".elementor-element-deb1cce > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\"><span id=\"kem_slxt_taek_ngay_slxt_web_trng_rwm_khay_kem_chan_na_ni_thiy_bonas_cad_hnak_cad_tem_100\">\u0e40\u0e01\u0e21\u0e2a\u0e25\u0e47\u0e2d\u0e15 \u0e41\u0e15\u0e01\u0e07\u0e48\u0e32\u0e22 \u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e23\u0e27\u0e21\u0e04\u0e48\u0e32\u0e22\u0e40\u0e01\u0e21\u0e0a\u0e31\u0e49\u0e19\u0e19\u0e33 \u0e43\u0e19\u0e44\u0e17\u0e22 \u0e42\u0e1a\u0e19\u0e31\u0e2a\u0e08\u0e31\u0e14\u0e2b\u0e19\u0e31\u0e01\u0e08\u0e31\u0e14\u0e40\u0e15\u0e47\u0e21 100%</span></h2>",
+                                    "target": [
+                                        ".elementor-element-4108f59 > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\"><span id=\"slxt_web_trng_web_slxt_thae_100_thun_nxy_k_len_di_len_di_thuk_phaeltfxrm_xxnlin\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e40\u0e27\u0e47\u0e1a\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e41\u0e17\u0e49 100% \u0e17\u0e38\u0e19\u0e19\u0e49\u0e2d\u0e22\u0e01\u0e47\u0e40\u0e25\u0e48\u0e19\u0e44\u0e14\u0e49 \u0e40\u0e25\u0e48\u0e19\u0e44\u0e14\u0e49\u0e17\u0e38\u0e01\u0e41\u0e1e\u0e25\u0e15\u0e1f\u0e2d\u0e23\u0e4c\u0e21\u0e2d\u0e2d\u0e19\u0e44\u0e25\u0e19\u0e4c</span></h2>",
+                                    "target": [
+                                        ".elementor-element-5d3b722 > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\"><span id=\"slxt_web_trng_rwm_6_web_kem_slxt_web_trng_mimi_phan_xeyent_mimi_khan_ta_len_ngay_mi_lxkh_yussexr\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e23\u0e27\u0e21 6 \u0e40\u0e27\u0e47\u0e1a \u0e40\u0e01\u0e21\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07\u0e44\u0e21\u0e48\u0e21\u0e35\u0e1c\u0e48\u0e32\u0e19\u0e40\u0e2d\u0e40\u0e22\u0e48\u0e19\u0e15\u0e4c \u0e44\u0e21\u0e48\u0e21\u0e35\u0e02\u0e31\u0e49\u0e19\u0e15\u0e48\u0e33 \u0e40\u0e25\u0e48\u0e19\u0e07\u0e48\u0e32\u0e22 \u0e44\u0e21\u0e48\u0e25\u0e47\u0e2d\u0e04\u0e22\u0e39\u0e2a\u0e40\u0e0b\u0e2d\u0e23\u0e4c</span></h2>",
+                                    "target": [
+                                        ".elementor-element-b4e084f > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"elementor-heading-title elementor-size-default\"><span id=\"K9Win\">K9Win</span></h3>",
+                                    "target": [
+                                        ".elementor-element-f3b5228 > .elementor-widget-container > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"elementor-heading-title elementor-size-default\"><span id=\"FAFA168\">FAFA168</span></h3>",
+                                    "target": [
+                                        ".elementor-element-6b4349b > .elementor-widget-container > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"elementor-heading-title elementor-size-default\"><span id=\"FAFA178\">FAFA178</span></h3>",
+                                    "target": [
+                                        ".elementor-element-bd26c57 > .elementor-widget-container > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"elementor-heading-title elementor-size-default\"><span id=\"FAFA365\">FAFA365</span></h3>",
+                                    "target": [
+                                        ".elementor-element-4969101 > .elementor-widget-container > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"elementor-heading-title elementor-size-default\"><span id=\"M88\">M88</span></h3>",
+                                    "target": [
+                                        ".elementor-element-e603c73 > .elementor-widget-container > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"elementor-heading-title elementor-size-default\"><span id=\"Fun88\">Fun88</span></h3>",
+                                    "target": [
+                                        ".elementor-element-179d8a9 > .elementor-widget-container > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\"><span id=\"slxt_web_trng_than_smay_slxt_web_trng_taek_ngay_mimi_khan_ta_thxn_ngein_wi_1_bath_k_thxn_di_mi_txng_tha_theirn\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e17\u0e31\u0e19\u0e2a\u0e21\u0e31\u0e22 \u0e2a\u0e25\u0e47\u0e2d\u0e15 \u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e41\u0e15\u0e01\u0e07\u0e48\u0e32\u0e22 \u0e44\u0e21\u0e48\u0e21\u0e35\u0e02\u0e31\u0e49\u0e19\u0e15\u0e48\u0e33 \u0e16\u0e2d\u0e19\u0e40\u0e07\u0e34\u0e19\u0e44\u0e27 1 \u0e1a\u0e32\u0e17 \u0e01\u0e47 \u0e16\u0e2d\u0e19\u0e44\u0e14\u0e49 \u0e44\u0e21\u0e48\u0e15\u0e49\u0e2d\u0e07\u0e17\u0e33\u0e40\u0e17\u0e34\u0e23\u0e4c\u0e19</span></h2>",
+                                    "target": [
+                                        ".elementor-element-cdea32c > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\"><span id=\"slxt_web_trng_web_slxt_him_lasud_2024_Slot_wallet_mankhng_plxdphay_tha_kari_di_mhasal\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e40\u0e27\u0e47\u0e1a\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e43\u0e2b\u0e21\u0e48\u0e25\u0e48\u0e32\u0e2a\u0e38\u0e14 2024 Slot wallet \u0e21\u0e31\u0e48\u0e19\u0e04\u0e07\u0e1b\u0e25\u0e2d\u0e14\u0e20\u0e31\u0e22 \u0e17\u0e33\u0e01\u0e33\u0e44\u0e23\u0e44\u0e14\u0e49\u0e21\u0e2b\u0e32\u0e28\u0e32\u0e25</span></h2>",
+                                    "target": [
+                                        ".elementor-element-bb5c270 > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\"><span id=\"rwm_kem_slxt_pg_web_trng_taek_hnak_cak_slxt_web_trng_kha_RTP_sung_taek_hnak_mi_kem_hin_bang\">\u0e23\u0e27\u0e21\u0e40\u0e01\u0e21 \u0e2a\u0e25\u0e47\u0e2d\u0e15 pg \u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e41\u0e15\u0e01\u0e2b\u0e19\u0e31\u0e01 \u0e08\u0e32\u0e01 \u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e04\u0e48\u0e32 RTP \u0e2a\u0e39\u0e07 \u0e41\u0e15\u0e01\u0e2b\u0e19\u0e31\u0e01 \u0e21\u0e35\u0e40\u0e01\u0e21\u0e44\u0e2b\u0e19\u0e1a\u0e49\u0e32\u0e07 ?</span></h2>",
+                                    "target": [
+                                        ".elementor-element-bc8f35a > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"elementor-heading-title elementor-size-default\"><span id=\"Yakuza_Honor\">Yakuza Honor</span></h3>",
+                                    "target": [
+                                        ".elementor-element-dec864b > .elementor-widget-container > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"elementor-heading-title elementor-size-default\"><span id=\"Zombie_Outbreak\">Zombie Outbreak</span></h3>",
+                                    "target": [
+                                        ".elementor-element-c566a3f > .elementor-widget-container > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"elementor-heading-title elementor-size-default\"><span id=\"Fortune_Dragon\">Fortune Dragon</span></h3>",
+                                    "target": [
+                                        ".elementor-element-d8ad601 > .elementor-widget-container > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"elementor-heading-title elementor-size-default\"><span id=\"Forge_of_Wealth\">Forge of Wealth</span></h3>",
+                                    "target": [
+                                        ".elementor-element-435178e > .elementor-widget-container > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"elementor-heading-title elementor-size-default\"><span id=\"Rave_Party_Fever\">Rave Party Fever</span></h3>",
+                                    "target": [
+                                        ".elementor-element-e2b7a00 > .elementor-widget-container > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"elementor-heading-title elementor-size-default\"><span id=\"Totem_Wonders\">Totem Wonders</span></h3>",
+                                    "target": [
+                                        ".elementor-element-4530c6b > .elementor-widget-container > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\"><span id=\"slxt_web_trng_web_slxt_him_lasud_yxd_niym_2024_ni_thiy_rwm_kem_hlak_hlay_thim_hi_len_di_kxn_khir\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e40\u0e27\u0e47\u0e1a\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e43\u0e2b\u0e21\u0e48\u0e25\u0e48\u0e32\u0e2a\u0e38\u0e14 \u0e22\u0e2d\u0e14\u0e19\u0e34\u0e22\u0e21 2024 \u0e43\u0e19\u0e44\u0e17\u0e22 \u0e23\u0e27\u0e21\u0e40\u0e01\u0e21\u0e2b\u0e25\u0e32\u0e01\u0e2b\u0e25\u0e32\u0e22\u0e18\u0e35\u0e21\u0e43\u0e2b\u0e49\u0e40\u0e25\u0e48\u0e19\u0e44\u0e14\u0e49\u0e01\u0e48\u0e2d\u0e19\u0e43\u0e04\u0e23</span></h2>",
+                                    "target": [
+                                        ".elementor-element-7512c16 > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\"><span id=\"slxt_web_trng_web_slxt_web_trng_khay_hiy_web_trng_slxt_fak_thxn_mimi_khan_ta_1_bath_k_thxn_di_cring_100\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e40\u0e27\u0e47\u0e1a\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07\u0e04\u0e48\u0e32\u0e22\u0e43\u0e2b\u0e0d\u0e48 \u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e1d\u0e32\u0e01\u0e16\u0e2d\u0e19 \u0e44\u0e21\u0e48\u0e21\u0e35 \u0e02\u0e31\u0e49\u0e19\u0e15\u0e48\u0e33 1 \u0e1a\u0e32\u0e17\u0e01\u0e47 \u0e16\u0e2d\u0e19\u0e44\u0e14\u0e49 \u0e08\u0e23\u0e34\u0e07 100%</span></h2>",
+                                    "target": [
+                                        ".elementor-element-b41440f > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\"><span id=\"kheld_lab_kar_deim_phan_slxt_web_trng_thi_tha_ngein_di_sung_thun_nxy_k_taek_hnak\">\u0e40\u0e04\u0e25\u0e47\u0e14\u0e25\u0e31\u0e1a\u0e01\u0e32\u0e23\u0e40\u0e14\u0e34\u0e21\u0e1e\u0e31\u0e19 \u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e17\u0e35\u0e48\u0e17\u0e33\u0e40\u0e07\u0e34\u0e19\u0e44\u0e14\u0e49\u0e2a\u0e39\u0e07 \u0e17\u0e38\u0e19\u0e19\u0e49\u0e2d\u0e22\u0e01\u0e47\u0e41\u0e15\u0e01\u0e2b\u0e19\u0e31\u0e01</span></h2>",
+                                    "target": [
+                                        ".elementor-element-30059ef > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\"><span id=\"slxt_web_trng_taek_hnak_mi_lxkh_yus_web_trng_slxt_2024_tha_ngein_di_mi_xan_mi_cakad_yxd_thxn_tx_wan\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e41\u0e15\u0e01\u0e2b\u0e19\u0e31\u0e01 \u0e44\u0e21\u0e48\u0e25\u0e47\u0e2d\u0e04\u0e22\u0e39\u0e2a \u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07\u0e2a\u0e25\u0e47\u0e2d\u0e15 2024 \u0e17\u0e33\u0e40\u0e07\u0e34\u0e19\u0e44\u0e14\u0e49\u0e44\u0e21\u0e48\u0e2d\u0e31\u0e49\u0e19 \u0e44\u0e21\u0e48\u0e08\u0e33\u0e01\u0e31\u0e14\u0e22\u0e2d\u0e14\u0e16\u0e2d\u0e19\u0e15\u0e48\u0e2d\u0e27\u0e31\u0e19</span></h2>",
+                                    "target": [
+                                        ".elementor-element-902e727 > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\"><span id=\"len_slxt_web_trng_phan_True_Wallet_mi_cud_den_xyangri\">\u0e40\u0e25\u0e48\u0e19 \u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e1c\u0e48\u0e32\u0e19 True Wallet \u0e21\u0e35\u0e08\u0e38\u0e14\u0e40\u0e14\u0e48\u0e19\u0e2d\u0e22\u0e48\u0e32\u0e07\u0e44\u0e23 ?</span></h2>",
+                                    "target": [
+                                        ".elementor-element-664fe28 > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"elementor-heading-title elementor-size-default\"><span id=\"fak-thxn_mimi_khan_ta\">\u0e1d\u0e32\u0e01-\u0e16\u0e2d\u0e19\u0e44\u0e21\u0e48\u0e21\u0e35\u0e02\u0e31\u0e49\u0e19\u0e15\u0e48\u0e33</span></h3>",
+                                    "target": [
+                                        ".elementor-element-be09e97 > .elementor-widget-container > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"elementor-heading-title elementor-size-default\"><span id=\"fak-thxn_rabb_xx_to\">\u0e1d\u0e32\u0e01-\u0e16\u0e2d\u0e19\u0e23\u0e30\u0e1a\u0e1a\u0e2d\u0e2d\u0e42\u0e15\u0e49</span></h3>",
+                                    "target": [
+                                        ".elementor-element-9112953 > .elementor-widget-container > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"elementor-heading-title elementor-size-default\"><span id=\"mimi_kha_thrrmneiym\">\u0e44\u0e21\u0e48\u0e21\u0e35\u0e04\u0e48\u0e32\u0e18\u0e23\u0e23\u0e21\u0e40\u0e19\u0e35\u0e22\u0e21</span></h3>",
+                                    "target": [
+                                        ".elementor-element-2051b4c > .elementor-widget-container > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"elementor-heading-title elementor-size-default\"><span id=\"tha_raykar_di_tlxd_24_chm\">\u0e17\u0e33\u0e23\u0e32\u0e22\u0e01\u0e32\u0e23\u0e44\u0e14\u0e49\u0e15\u0e25\u0e2d\u0e14 24 \u0e0a\u0e21.</span></h3>",
+                                    "target": [
+                                        ".elementor-element-68aa72c > .elementor-widget-container > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\"><span id=\"slxt_web_trng_web_slxt_API_thae_khunphaph_chan_na_web_trng_slxt_ma_raeng_cak_tang_prathes\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e40\u0e27\u0e47\u0e1a\u0e2a\u0e25\u0e47\u0e2d\u0e15 API \u0e41\u0e17\u0e49 \u0e04\u0e38\u0e13\u0e20\u0e32\u0e1e\u0e0a\u0e31\u0e49\u0e19\u0e19\u0e33 \u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e21\u0e32\u0e41\u0e23\u0e07 \u0e08\u0e32\u0e01\u0e15\u0e48\u0e32\u0e07\u0e1b\u0e23\u0e30\u0e40\u0e17\u0e28</span></h2>",
+                                    "target": [
+                                        ".elementor-element-c4d2ebf > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\"><span id=\"FAQs_khatham_thi_phb_bxy\">FAQs \u0e04\u0e33\u0e16\u0e32\u0e21\u0e17\u0e35\u0e48\u0e1e\u0e1a\u0e1a\u0e48\u0e2d\u0e22 </span></h2>",
+                                    "target": [
+                                        ".elementor-element-06768c5 > .elementor-widget-container > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"elementor-heading-title elementor-size-default\"><span id=\"slxt_web_trng_smakhr_smachik_fri_mimi_kha_thrrmneiym_slxt_web_trng_brikar_di_yeiym_tlxd_tlxd_24_chawmong\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e2a\u0e21\u0e31\u0e04\u0e23\u0e2a\u0e21\u0e32\u0e0a\u0e34\u0e01\u0e1f\u0e23\u0e35 \u0e44\u0e21\u0e48\u0e21\u0e35\u0e04\u0e48\u0e32\u0e18\u0e23\u0e23\u0e21\u0e40\u0e19\u0e35\u0e22\u0e21 \u0e2a\u0e25\u0e47\u0e2d\u0e15 \u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e1a\u0e23\u0e34\u0e01\u0e32\u0e23\u0e14\u0e35\u0e40\u0e22\u0e35\u0e48\u0e22\u0e21\u0e15\u0e25\u0e2d\u0e14 \u0e15\u0e25\u0e2d\u0e14 24 \u0e0a\u0e31\u0e48\u0e27\u0e42\u0e21\u0e07</span></h2>",
+                                    "target": [
+                                        ".elementor-element-19d0cd8 > .elementor-widget-container > h2"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Page has a heading"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en-US\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#000000",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 21,
+                                "fontSize": "13.5pt (18px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 21"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<span class=\"elementor-button-text\">\u0e40\u0e02\u0e49\u0e32\u0e2a\u0e39\u0e48\u0e23\u0e30\u0e1a\u0e1a</span>",
+                    "target": [
+                        ".elementor-element-edf39c6 > .elementor-widget-container > .elementor-button-wrapper > .elementor-button-link.elementor-button.elementor-size-sm > .elementor-button-content-wrapper > .elementor-button-text"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "document-title",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag242",
+                "ACT"
+            ],
+            "description": "Ensures each HTML document contains a non-empty <title> element",
+            "help": "Documents must have <title> element to aid in navigation",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/document-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "doc-has-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has a non-empty <title> element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en-US\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-aria",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value used in ARIA and in labels is unique",
+            "help": "IDs used in ARIA and labels must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-aria",
+                            "data": "elementor-tab-title-1781",
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h3 id=\"elementor-tab-title-1781\" class=\"elementor-tab-title\" data-tab=\"1\" role=\"tab\" aria-controls=\"elementor-tab-content-1781\" aria-expanded=\"false\">",
+                    "target": [
+                        "#elementor-tab-title-1781"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "wp-emoji-styles-inline-css",
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<style id=\"wp-emoji-styles-inline-css\">",
+                    "target": [
+                        "#wp-emoji-styles-inline-css"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "empty-heading",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "best-practice"
+            ],
+            "description": "Ensures headings have discernible text",
+            "help": "Headings should not be empty",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/empty-heading?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h1 class=\"elementor-heading-title elementor-size-default\"><span id=\"slxt_web_trng_fak_thxn_Auto_mimi_khan_ta_web_slxt_xandab_1_slxt_taek_ngay\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e1d\u0e32\u0e01\u0e16\u0e2d\u0e19 Auto \u0e44\u0e21\u0e48\u0e21\u0e35\u0e02\u0e31\u0e49\u0e19\u0e15\u0e48\u0e33 \u0e40\u0e27\u0e47\u0e1a\u0e2a\u0e25\u0e47\u0e2d\u0e15 \u0e2d\u0e31\u0e19\u0e14\u0e31\u0e1a 1 \u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e41\u0e15\u0e01\u0e07\u0e48\u0e32\u0e22</span></h1>",
+                    "target": [
+                        "h1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "heading-order",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": {
+                                "headingOrder": [
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(2) > div > div > div > div:nth-child(1) > div > h1:nth-child(2)"
+                                        ],
+                                        "level": 1
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(3) > div > div > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(4) > div > div > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(5) > div > div:nth-child(2) > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(6) > div > div > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(7) > div > div > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(8) > div > div > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(9) > div > div:nth-child(1) > div > div:nth-child(1) > div > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(9) > div > div:nth-child(2) > div > div:nth-child(1) > div > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(9) > div > div:nth-child(3) > div > div:nth-child(1) > div > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(10) > div > div:nth-child(1) > div > div:nth-child(1) > div > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(10) > div > div:nth-child(2) > div > div:nth-child(1) > div > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(10) > div > div:nth-child(3) > div > div:nth-child(1) > div > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(11) > div > div > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(12) > div > div > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(13) > div > div > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(14) > div > div:nth-child(1) > div > div:nth-child(2) > div > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(14) > div > div:nth-child(2) > div > div:nth-child(2) > div > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(14) > div > div:nth-child(3) > div > div:nth-child(2) > div > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(15) > div > div:nth-child(1) > div > div:nth-child(2) > div > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(15) > div > div:nth-child(2) > div > div:nth-child(2) > div > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(15) > div > div:nth-child(3) > div > div:nth-child(2) > div > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(16) > div > div > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(17) > div > div > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(18) > div > div:nth-child(2) > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(19) > div > div > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(20) > div > div > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(21) > div > div > div > div:nth-child(1) > div > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(22) > div > div > div > div:nth-child(1) > div > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(23) > div > div > div > div:nth-child(1) > div > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(24) > div > div > div > div:nth-child(1) > div > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(25) > div > div > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(26) > div > div > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(26) > div > div > div > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(1) > h3:nth-child(1)"
+                                        ],
+                                        "level": -1
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(26) > div > div > div > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": -1
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(26) > div > div > div > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(3) > h3:nth-child(1)"
+                                        ],
+                                        "level": -1
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section:nth-child(27) > div > div > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    }
+                                ]
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h1 class=\"elementor-heading-title elementor-size-default\"><span id=\"slxt_web_trng_fak_thxn_Auto_mimi_khan_ta_web_slxt_xandab_1_slxt_taek_ngay\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e1d\u0e32\u0e01\u0e16\u0e2d\u0e19 Auto \u0e44\u0e21\u0e48\u0e21\u0e35\u0e02\u0e31\u0e49\u0e19\u0e15\u0e48\u0e33 \u0e40\u0e27\u0e47\u0e1a\u0e2a\u0e25\u0e47\u0e2d\u0e15 \u0e2d\u0e31\u0e19\u0e14\u0e31\u0e1a 1 \u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e41\u0e15\u0e01\u0e07\u0e48\u0e32\u0e22</span></h1>",
+                    "target": [
+                        "h1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-has-lang",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures every HTML document has a lang attribute",
+            "help": "<html> element must have a lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-has-lang?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "The <html> element has a lang attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en-US\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-lang-valid",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures the lang attribute of the <html> element has a valid value",
+            "help": "<html> element must have a valid value for the lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-lang-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "valid-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Value of lang attribute is included in the list of valid languages"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<html lang=\"en-US\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "identical-links-same-purpose",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "wcag2aaa",
+                "wcag249"
+            ],
+            "description": "Ensure that links with the same accessible name serve a similar purpose",
+            "help": "Links with the same name must have a similar purpose",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/identical-links-same-purpose?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "identical-links-same-purpose",
+                            "data": {
+                                "name": "skip to content",
+                                "urlProps": {
+                                    "protocol": "http:",
+                                    "hostname": "bigislandgazette.com",
+                                    "port": "",
+                                    "pathname": "/",
+                                    "search": {},
+                                    "hash": "",
+                                    "filename": ""
+                                }
+                            },
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "There are no other links with the same name, that go to a different URL"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a class=\"skip-link screen-reader-text\" href=\"#content\">Skip to content</a>",
+                    "target": [
+                        ".skip-link"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures <img> elements have alternate text or a role of none or presentation",
+            "help": "Images must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-alt",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has an alt attribute"
+                        },
+                        {
+                            "id": "presentational-role",
+                            "data": {
+                                "role": "presentation"
+                            },
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element's default semantics were overriden with role=\"presentation\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "alt-space-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has a valid alt attribute value"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img width=\"250\" height=\"70\" src=\"https://bigislandgazette.com/wp-content/uploads/2023/04/logo-fafa123.png\" class=\"attachment-full size-full wp-image-397\" alt=\"\">",
+                    "target": [
+                        ".elementor-element-f1902bd > .elementor-widget-container > a[href$=\"bigislandgazette.com\"] > .wp-image-397[width=\"250\"][height=\"70\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-redundant-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ],
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-redundant-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img width=\"250\" height=\"70\" src=\"https://bigislandgazette.com/wp-content/uploads/2023/04/logo-fafa123.png\" class=\"attachment-full size-full wp-image-397\" alt=\"\">",
+                    "target": [
+                        ".elementor-element-f1902bd > .elementor-widget-container > a[href$=\"bigislandgazette.com\"] > .wp-image-397[width=\"250\"][height=\"70\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a class=\"skip-link screen-reader-text\" href=\"#content\">Skip to content</a>",
+                    "target": [
+                        ".skip-link"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "list",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures that lists are structured correctly",
+            "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/list?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "only-listitems",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List element only has direct children that are allowed inside <li> elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<ul id=\"menu-1-2bae37f\" class=\"elementor-nav-menu\" data-smartmenus-id=\"172735746614136\">",
+                    "target": [
+                        "#menu-1-2bae37f"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "listitem",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures <li> elements are used semantically",
+            "help": "<li> elements must be contained in a <ul> or <ol>",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/listitem?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<li class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-17 current_page_item menu-item-32\"><a href=\"https://bigislandgazette.com/\" aria-current=\"page\" class=\"elementor-item elementor-item-active\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07</a></li>",
+                    "target": [
+                        "#menu-1-2bae37f > .menu-item-32.menu-item-home.current-menu-item"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport-large",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> can scale a significant amount",
+            "help": "Users should be able to zoom and scale the text up to 500%",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport-large?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport-large",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "<meta> tag does not prevent significant zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice",
+                "ACT"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> does not disable text scaling and zooming",
+            "help": "Zooming and scaling should not be disabled",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "<meta> tag does not disable zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "nested-interactive",
+            "impact": "serious",
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+            "help": "Interactive controls must not be nested",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/nested-interactive?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "no-focusable-content",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have focusable descendants"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"https://k9wyyl.com/123thgo\" target=\"_blank\" rel=\"nofollow\" class=\"elementor-button-link elementor-button elementor-size-sm\" role=\"button\">\n\t\t\t\t\t\t<span class=\"elementor-button-content-wrapper\">\n\t\t\t\t\t\t<span class=\"elementor-button-text\">\u0e40\u0e02\u0e49\u0e32\u0e2a\u0e39\u0e48\u0e23\u0e30\u0e1a\u0e1a</span>\n\t\t</span>\n\t\t\t\t\t</a>",
+                    "target": [
+                        ".elementor-element-edf39c6 > .elementor-widget-container > .elementor-button-wrapper > .elementor-button-link.elementor-button.elementor-size-sm"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "page-has-heading-one",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+            "help": "Page should contain a level-one heading",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/page-has-heading-one?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-heading-one",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1 class=\"elementor-heading-title elementor-size-default\"><span id=\"slxt_web_trng_fak_thxn_Auto_mimi_khan_ta_web_slxt_xandab_1_slxt_taek_ngay\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e1d\u0e32\u0e01\u0e16\u0e2d\u0e19 Auto \u0e44\u0e21\u0e48\u0e21\u0e35\u0e02\u0e31\u0e49\u0e19\u0e15\u0e48\u0e33 \u0e40\u0e27\u0e47\u0e1a\u0e2a\u0e25\u0e47\u0e2d\u0e15 \u0e2d\u0e31\u0e19\u0e14\u0e31\u0e1a 1 \u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e41\u0e15\u0e01\u0e07\u0e48\u0e32\u0e22</span></h1>",
+                                    "target": [
+                                        "h1"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Page has at least one level-one heading"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en-US\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "All page content is contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div data-elementor-type=\"header\" data-elementor-id=\"10\" class=\"elementor elementor-10 elementor-location-header\">",
+                    "target": [
+                        ".elementor-10"
+                    ]
+                }
+            ]
+        }
+    ],
+    "violations": [
+        {
+            "id": "landmark-one-main",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has a main landmark",
+            "help": "Document should have one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-one-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-main",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have a main landmark"
+                        }
+                    ],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<html lang=\"en-US\">",
+                    "target": [
+                        "html"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+                }
+            ]
+        },
+        {
+            "id": "landmark-unique",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "help": "Ensures landmarks are unique",
+            "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-unique",
+                            "data": {
+                                "role": "navigation",
+                                "accessibleText": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<nav class=\"elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-underline e--animation-fade\">",
+                                    "target": [
+                                        ".elementor-element-20477081 > .elementor-widget-container > .elementor-nav-menu--main.elementor-nav-menu--layout-horizontal.e--pointer-underline"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<nav class=\"elementor-nav-menu--main elementor-nav-menu__container elementor-nav-menu--layout-horizontal e--pointer-underline e--animation-fade\">",
+                    "target": [
+                        ".elementor-element-2bae37f > .elementor-widget-container > .elementor-nav-menu--main.elementor-nav-menu--layout-horizontal.e--pointer-underline"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"https://bigislandgazette.com\">\n\t\t\t\t\t\t\t<img width=\"250\" height=\"70\" src=\"https://bigislandgazette.com/wp-content/uploads/2023/04/logo-fafa123.png\" class=\"attachment-full size-full wp-image-397\" alt=\"\">\t\t\t\t\t\t\t\t</a>",
+                    "target": [
+                        ".elementor-element-f1902bd > .elementor-widget-container > a[href$=\"bigislandgazette.com\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"https://k9wyyl.com/123thgo\" target=\"_blank\">",
+                    "target": [
+                        ".elementor-element-3ce1a6b > .elementor-widget-container > a[href$=\"123thgo\"][target=\"_blank\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"https://k9wyyl.com/123thgo\" target=\"_blank\">",
+                    "target": [
+                        ".elementor-element-575dd00 > .elementor-widget-container > a[href$=\"123thgo\"][target=\"_blank\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"https://bigislandgazette.com\">\n\t\t\t\t\t\t\t<img width=\"250\" height=\"70\" src=\"https://bigislandgazette.com/wp-content/uploads/2023/04/logo-fafa123.png\" class=\"attachment-medium size-medium wp-image-397\" alt=\"\" loading=\"lazy\">\t\t\t\t\t\t\t\t</a>",
+                    "target": [
+                        ".elementor-element-18795a9b > .elementor-widget-container > a[href$=\"bigislandgazette.com\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                }
+            ]
+        },
+        {
+            "id": "nested-interactive",
+            "impact": "serious",
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+            "help": "Interactive controls must not be nested",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/nested-interactive?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "no-focusable-content",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"\" class=\"elementor-toggle-title\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e40\u0e2a\u0e35\u0e48\u0e22\u0e07\u0e25\u0e47\u0e2d\u0e04\u0e22\u0e39\u0e2a\u0e44\u0e2b\u0e21 ?</a>",
+                                    "target": [
+                                        "#slxt_web_trng_seiyng_lxkh_yu_s_him > .elementor-toggle-title[href=\"\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has focusable descendants"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<h3 id=\"elementor-tab-title-1781\" class=\"elementor-tab-title\" data-tab=\"1\" role=\"tab\" aria-controls=\"elementor-tab-content-1781\" aria-expanded=\"false\">",
+                    "target": [
+                        "#elementor-tab-title-1781"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has focusable descendants"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "no-focusable-content",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"\" class=\"elementor-toggle-title\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e1b\u0e25\u0e2d\u0e14\u0e20\u0e31\u0e22\u0e2b\u0e23\u0e37\u0e2d\u0e44\u0e21\u0e48 ?</a>",
+                                    "target": [
+                                        "#slxt_web_trng_plxdphay_hrux_mi > .elementor-toggle-title[href=\"\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has focusable descendants"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<h3 id=\"elementor-tab-title-1782\" class=\"elementor-tab-title\" data-tab=\"2\" role=\"tab\" aria-controls=\"elementor-tab-content-1782\" aria-expanded=\"false\">",
+                    "target": [
+                        "#elementor-tab-title-1782"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has focusable descendants"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "no-focusable-content",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"\" class=\"elementor-toggle-title\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e1d\u0e32\u0e01\u0e1c\u0e48\u0e32\u0e19\u0e27\u0e2d\u0e40\u0e25\u0e17\u0e21\u0e35\u0e02\u0e31\u0e49\u0e19\u0e15\u0e48\u0e33\u0e44\u0e2b\u0e21 ?</a>",
+                                    "target": [
+                                        "#slxt_web_trng_fak_phan_wx_leth_mi_khan_ta_him > .elementor-toggle-title[href=\"\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has focusable descendants"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<h3 id=\"elementor-tab-title-1783\" class=\"elementor-tab-title\" data-tab=\"3\" role=\"tab\" aria-controls=\"elementor-tab-content-1783\" aria-expanded=\"false\">",
+                    "target": [
+                        "#elementor-tab-title-1783"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has focusable descendants"
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a class=\"skip-link screen-reader-text\" href=\"#content\">Skip to content</a>",
+                    "target": [
+                        ".skip-link"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a href=\"https://bigislandgazette.com\">\n\t\t\t\t\t\t\t<img width=\"250\" height=\"70\" src=\"https://bigislandgazette.com/wp-content/uploads/2023/04/logo-fafa123.png\" class=\"attachment-full size-full wp-image-397\" alt=\"\">\t\t\t\t\t\t\t\t</a>",
+                    "target": [
+                        ".elementor-element-f1902bd > .elementor-widget-container > a[href$=\"bigislandgazette.com\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-3b2c77a elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"3b2c77a\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-3b2c77a"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h1 class=\"elementor-heading-title elementor-size-default\"><span id=\"slxt_web_trng_fak_thxn_Auto_mimi_khan_ta_web_slxt_xandab_1_slxt_taek_ngay\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e1d\u0e32\u0e01\u0e16\u0e2d\u0e19 Auto \u0e44\u0e21\u0e48\u0e21\u0e35\u0e02\u0e31\u0e49\u0e19\u0e15\u0e48\u0e33 \u0e40\u0e27\u0e47\u0e1a\u0e2a\u0e25\u0e47\u0e2d\u0e15 \u0e2d\u0e31\u0e19\u0e14\u0e31\u0e1a 1 \u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e41\u0e15\u0e01\u0e07\u0e48\u0e32\u0e22</span></h1>",
+                    "target": [
+                        "h1"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p>",
+                    "target": [
+                        ".elementor-element-44a3a53 > .elementor-widget-container > p:nth-child(2)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p>",
+                    "target": [
+                        "p:nth-child(3)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"elementor-element elementor-element-80e633c elementor-widget elementor-widget-shortcode\" data-id=\"80e633c\" data-element_type=\"widget\" data-widget_type=\"shortcode.default\">",
+                    "target": [
+                        ".elementor-element-80e633c"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-15f8b14 elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"15f8b14\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-15f8b14"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-8f7e8cf elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"8f7e8cf\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-8f7e8cf"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-69db136 elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"69db136\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-69db136"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-c9b027e elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"c9b027e\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-c9b027e"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-5394a70 elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"5394a70\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-5394a70"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-00f4b3f elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"00f4b3f\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-00f4b3f"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-ad61c46 elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"ad61c46\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-ad61c46"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-d7ed6f0 elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"d7ed6f0\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-d7ed6f0"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-fd28845 elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"fd28845\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-fd28845"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-10aaaa0 elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"10aaaa0\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-10aaaa0"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-7928137 elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"7928137\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-7928137"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-9f63909 elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"9f63909\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-9f63909"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-0eff8d3 elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"0eff8d3\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-0eff8d3"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-f17fc19 elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"f17fc19\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-f17fc19"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-a7ed8cc elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"a7ed8cc\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-a7ed8cc"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-96f397f elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"96f397f\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-96f397f"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-3e25b63 elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"3e25b63\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-3e25b63"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-a84ebeb elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"a84ebeb\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-a84ebeb"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-5eb0cc9 elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"5eb0cc9\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-5eb0cc9"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-ffea2f3 elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"ffea2f3\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-ffea2f3"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-dd9cbd4 elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"dd9cbd4\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-dd9cbd4"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-41e1354 elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"41e1354\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-41e1354"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-a54fb7a elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"a54fb7a\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-a54fb7a"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"elementor-element elementor-element-06768c5 elementor-widget elementor-widget-heading\" data-id=\"06768c5\" data-element_type=\"widget\" data-widget_type=\"heading.default\">",
+                    "target": [
+                        ".elementor-element-06768c5"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a href=\"\" class=\"elementor-toggle-title\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e40\u0e2a\u0e35\u0e48\u0e22\u0e07\u0e25\u0e47\u0e2d\u0e04\u0e22\u0e39\u0e2a\u0e44\u0e2b\u0e21 ?</a>",
+                    "target": [
+                        "#slxt_web_trng_seiyng_lxkh_yu_s_him > .elementor-toggle-title[href=\"\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a href=\"\" class=\"elementor-toggle-title\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e1b\u0e25\u0e2d\u0e14\u0e20\u0e31\u0e22\u0e2b\u0e23\u0e37\u0e2d\u0e44\u0e21\u0e48 ?</a>",
+                    "target": [
+                        "#slxt_web_trng_plxdphay_hrux_mi > .elementor-toggle-title[href=\"\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a href=\"\" class=\"elementor-toggle-title\">\u0e2a\u0e25\u0e47\u0e2d\u0e15\u0e40\u0e27\u0e47\u0e1a\u0e15\u0e23\u0e07 \u0e1d\u0e32\u0e01\u0e1c\u0e48\u0e32\u0e19\u0e27\u0e2d\u0e40\u0e25\u0e17\u0e21\u0e35\u0e02\u0e31\u0e49\u0e19\u0e15\u0e48\u0e33\u0e44\u0e2b\u0e21 ?</a>",
+                    "target": [
+                        "#slxt_web_trng_fak_phan_wx_leth_mi_khan_ta_him > .elementor-toggle-title[href=\"\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-top-section elementor-element elementor-element-c8715da elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"c8715da\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-c8715da"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"elementor-section elementor-inner-section elementor-element elementor-element-2198306 elementor-section-boxed elementor-section-height-default elementor-section-height-default\" data-id=\"2198306\" data-element_type=\"section\">",
+                    "target": [
+                        ".elementor-element-2198306"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                }
+            ]
+        },
+        {
+            "id": "skip-link",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensure all skip links have a focusable target",
+            "help": "The skip-link target should exist and be focusable",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/skip-link?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "skip-link",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "No skip link target"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a class=\"skip-link screen-reader-text\" href=\"#content\">Skip to content</a>",
+                    "target": [
+                        ".skip-link"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  No skip link target"
+                }
+            ]
+        }
+    ]
+}
