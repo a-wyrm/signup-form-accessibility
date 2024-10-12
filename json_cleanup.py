@@ -1,6 +1,6 @@
 import json
 import os
-
+import csv
 
 def remove_inapplicable(source_file, destination_folder):
 
@@ -18,8 +18,6 @@ def remove_inapplicable(source_file, destination_folder):
   with open(destination_file, "w") as f:
     json.dump(data, f, indent=4)
 
-  #print(f"Copied and modified file saved to: {destination_file}")
-
 def check_violations(json_file_path, target_path1, target_path2):
   with open(json_file_path) as f:
     data = json.load(f)
@@ -35,11 +33,24 @@ def check_violations(json_file_path, target_path1, target_path2):
       with open(destination_file, "w") as f:
         json.dump(data, f, indent=4)
                   
-source_path = "./Cleaned JSON/"
+
+def count_violations(json_file_path, file_name, csv_file_path):
+    """Count violations in file."""
+    with open(csv_file_path, 'a', newline='') as csvfile:
+        writer = csv.writer(csvfile)
+        name = file_name.split("_")
+        with open(json_file_path) as f:
+            data = json.load(f)
+            length = len(data['violations'])
+            writer.writerow([name[0], length])
+
+    
+source_path = "./Cleaned JSON/Failed/WCAG AA/"
 destination_folder1 = "./Passed"
 destination_folder2 = "./Failed"
 items = os.listdir(source_path)
 
 for i in range(len(items)):
     #remove_inapplicable(source_path+items[i], "./Cleaned JSON/")
-    check_violations(source_path+items[i], destination_folder1, destination_folder2)
+    csv_file_path = 'violation_list1.csv'
+    count_violations(source_path+items[i], items[i], csv_file_path)

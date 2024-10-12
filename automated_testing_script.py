@@ -17,11 +17,7 @@ def remove_inapplicable(source_file, destination_folder):
   # Copy the modified data to a new file
   with open(destination_file, "w") as f:
     json.dump(data, f, indent=4)
-
-  #print(f"Copied and modified file saved to: {destination_file}")
-
-
-
+    
 
 # script that checks if there are any violations
 def check_violations(json_file_path, target_path1, target_path2):

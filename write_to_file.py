@@ -12,6 +12,6 @@ def list_files_to_csv(folder_path, csv_file_path):
             writer.writerow([name[0]])
 
 if __name__ == "__main__":
-    folder_path = './Cleaned JSON/Failed/WCAG AA'
-    csv_file_path = 'website_list3.csv'
+    folder_path = './Cleaned JSON/Failed/Best Practices'
+    csv_file_path = 'website_list1.csv'
     list_files_to_csv(folder_path, csv_file_path)
