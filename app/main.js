@@ -1,20 +1,36 @@
-// Loop through items in JSON data.
-fetch('./metric.json')
-  .then(response => response.json())
-  .then(data => {
-    Object.entries(data).forEach(function([metricName, hostData]) {
-
+function createCheckboxElement(metricName, hostData) {
   var $checkbox = $("<input type='checkbox' id='" + metricName + "' value='" + metricName +"'>");
   var $label = $("<label for='" + metricName + "'>" + hostData.name + "</label>");
   var $divs = $("<div class='checkbox-space'></div>");
-  $divs = $divs.append($checkbox, $label);
-  $('.checkbox-container').append($divs);
+  $divs.append($checkbox, $label);
+  return $divs;
+}
 
+
+fetch('./metric.json')
+  .then(response => response.json())
+  .then(data => {
+    Object.entries(data).forEach(([metricName, hostData]) => {
+      const $checkboxDiv = createCheckboxElement(metricName, hostData);
+      $('.checkbox-container').append($checkboxDiv);
     });
-})
-.catch(error => {
-  console.error("Error fetching JSON:", error);
-});
+  })
+  .catch(error => {
+    console.error("Error fetching JSON:", error);
+  });
+
+fetch('./password_managers.json')
+  .then(response => response.json())
+  .then(data => {
+    Object.entries(data).forEach(([metricName, hostData]) => {
+      const $checkboxDiv = createCheckboxElement(metricName, hostData);
+      $('.checkbox-container').append($checkboxDiv);
+    });
+  })
+  .catch(error => {
+    console.error("Error fetching JSON:", error);
+  });
+
 
 
 function exportToCSV() {
