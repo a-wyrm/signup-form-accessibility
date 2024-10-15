@@ -1,7 +1,22 @@
-function createCheckboxElement(metricName, hostData) {
+
+
+
+function createCheckboxElement(metricName, hostData, className) {
   var $checkbox = $("<input type='checkbox' id='" + metricName + "' value='" + metricName +"'>");
   var $label = $("<label for='" + metricName + "'>" + hostData.name + "</label>");
-  var $divs = $("<div class='checkbox-space'></div>");
+  var $divs = $("<ul class='" + className +"'>");
+
+  var $li = $('<li id="popup" class="info-popup"></div>')
+  $divs.append($li);
+
+  $divs.on('mouseover', function() {
+    $li.text(hostData.desc); // Set popup content
+    $li.addClass('show'); // Show the popup on hover
+  });
+  $divs.on('mouseout', function() {
+    $li.removeClass('show'); // Hide the popup on mouseout
+  });
+
   $divs.append($checkbox, $label);
   return $divs;
 }
@@ -11,7 +26,7 @@ fetch('./metric.json')
   .then(response => response.json())
   .then(data => {
     Object.entries(data).forEach(([metricName, hostData]) => {
-      const $checkboxDiv = createCheckboxElement(metricName, hostData);
+      const $checkboxDiv = createCheckboxElement(metricName, hostData, 'checkbox-space');
       $('.checkbox-container').append($checkboxDiv);
     });
   })
@@ -23,7 +38,7 @@ fetch('./password_managers.json')
   .then(response => response.json())
   .then(data => {
     Object.entries(data).forEach(([metricName, hostData]) => {
-      const $checkboxDiv = createCheckboxElement(metricName, hostData);
+      const $checkboxDiv = createCheckboxElement(metricName, hostData, 'checkbox-space');
       $('.checkbox-container').append($checkboxDiv);
     });
   })
