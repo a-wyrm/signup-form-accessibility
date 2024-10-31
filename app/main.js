@@ -4,9 +4,9 @@
 function createCheckboxElement(metricName, hostData, className) {
   var $checkbox = $("<input type='checkbox' id='" + metricName + "' value='" + metricName +"'>");
   var $label = $("<label for='" + metricName + "'>" + hostData.name + "</label>");
-  var $divs = $("<ul class='" + className +"'>");
+  var $divs = $("<div class='" + className +"'>");
 
-  var $disc_dev = $("<ul class='" + hostData.desc +"'>");
+  var $descDiv = $("<div class='desc'>" + hostData.desc + "</div>");
 
   /*   var $li = $('<li id="popup" class="info-popup"></div>')
     $divs.append($li);
@@ -19,8 +19,8 @@ function createCheckboxElement(metricName, hostData, className) {
       $li.removeClass('show'); // Hide the popup on mouseout
     });
   */
-  $divs.append($checkbox, $label);
-  $divs.append($disc_dev)
+
+  $divs.append($checkbox, $label, $descDiv);
   return $divs;
 }
 
@@ -58,12 +58,12 @@ function exportToCSV() {
   const data = [];
   $('input[type=checkbox]').each( function () {
     var labelText = $(this).next().text();
-    const thisVal = (this.checked ? data.push(labelText) : "");
+    this.checked ? data.push(labelText) : "";
   });
-  console.log(data);
 
-  const csvContent = data.map(item => `${item.label}`).join('\n');
-  const blob = new Blob([csvContent], { type: 'text/csv' });
+  const grab_text = $('#issues_box').val();
+  var csvContent = data.map(item => `${item}`).join('\n');
+  const blob = new Blob([csvContent, '\n', "Other issues: " + grab_text], { type: 'text/csv' });
   
   const a = document.createElement('a');
   a.href = URL.createObjectURL(blob);
