@@ -7,5 +7,5 @@ Are password managers able to effectively interact with websites (Hutchinson et 
 Does the website pass authentication-related WCAG criterion
 
 
-autofilling of passwords is sufficient
+autofilling of passwords is sufficient -- only apply iff no autofill password
 https://www.w3.org/WAI/WCAG22/Understanding/redundant-entry
