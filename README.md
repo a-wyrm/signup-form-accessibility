@@ -9,3 +9,6 @@ Does the website pass authentication-related WCAG criterion
 
 autofilling of passwords is sufficient -- only apply iff no autofill password
 https://www.w3.org/WAI/WCAG22/Understanding/redundant-entry
+
+Version 130.0.6723.92
+Bitwarden: 2024.10.1
