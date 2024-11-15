@@ -12,3 +12,5 @@ https://www.w3.org/WAI/WCAG22/Understanding/redundant-entry
 
 Version 130.0.6723.92
 Bitwarden: 2024.10.1
+
+TikTok as a case study
