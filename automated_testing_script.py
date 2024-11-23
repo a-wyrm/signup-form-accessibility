@@ -67,8 +67,8 @@ def wcag_check(json_file_path):
             return
                
 
-source_path = "./Cleaned JSON/Failed/"
-destination_folder1 = "./Cleaned JSON/Failed/Best Practices"
+source_path = "./Processed Data/Cleaned JSON/Failed/"
+destination_folder1 = "./Processed Data/Cleaned JSON/Failed/Best Practices"
 destination_folder2 = "./Failed"
 items = os.listdir(source_path)
 
