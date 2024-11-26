@@ -8,7 +8,6 @@ Version 130.0.6723.92
 Bitwarden: 2024.10.1
 
 check if popups are inaccessible
-check if forms with both reg and login have reg_fill_wrong_form
 autocomplete
 
 TikTok as a case study
