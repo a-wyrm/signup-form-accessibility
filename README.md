@@ -7,7 +7,6 @@ Does the website pass authentication-related WCAG criterion
 Version 130.0.6723.92
 Bitwarden: 2024.10.1
 
-check if popups are inaccessible
 autocomplete
 
 TikTok as a case study
@@ -21,3 +20,5 @@ Subtle issues with sign up forms:
 Passwords don't allow the user to see their password. This can especially be an issue if the user is required to re-enter a password.
 Sign up forms having both registry and sign in forms and are not labelled properly.
 Errors are not properly highlighted using either an alert, aria-live, or aria-invalid labels.
+
+Pop-ups with form elements in them are also evaluated. On Input is added if a pop up takes priority input and doesn't inform the user that it is a popup using aria labels or alerts
