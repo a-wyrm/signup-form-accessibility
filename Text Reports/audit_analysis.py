@@ -2,6 +2,20 @@ import os
 import csv
 
 csv_data = ["Website Name", "Error", "Number of Errors"]
+def check_reports(json_file_path, violations_dict):
+    with open(json_file_path, 'r', newline='') as csvfile:
+        reader = csv.reader(csvfile)
+        for row in reader:
+            if len(row) >= 1:
+                first_column_value = row[1]
+                violations_dict[first_column_value] = violations_dict.get(first_column_value, 0) + 1
+        
+        with open('Popular.csv', 'a', newline='') as report_file:
+            writer = csv.DictWriter(report_file, fieldnames=['Website Name', "Error", "Number of Errors"])
+            writer.writeheader()
+            for violation_id, count in violations_dict.items():
+                writer.writerow({'Website Name': items[i], 'Error': violation_id, 'Number of Errors': count})
+        
 
 def audit_checker(json_file_path):
     with open(json_file_path, 'r', newline='') as csvfile:
@@ -26,8 +40,10 @@ def audit_checker(json_file_path):
                
 
 #source_path = "./Full Accessibility Audit/"
-source_path = "./Text Reports/"
+source_path = "./Text Reports/Popular/"
 items = os.listdir(source_path)
 
 for i in range(len(items)):
-    audit_checker(source_path+items[i])
+    v = {}
+    check_reports(source_path+items[i], v)
+
