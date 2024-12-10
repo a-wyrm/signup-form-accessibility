@@ -1,5 +1,6 @@
 import os
 import csv
+from collections import Counter
 
 csv_data = ["Website Name", "Error", "Number of Errors"]
 def check_reports(json_file_path, violations_dict):
@@ -38,12 +39,17 @@ def audit_checker(json_file_path):
                 writer.writerow({'Website Name': file_name, 'Error': violation_id, 'Number of Errors': count})
 
                
+def count_errors(json_file_path):
+  with open(json_file_path, 'r') as f:
+      column = (row[2] for row in csv.reader(f))
+      print("Most frequent value: {0}".format(Counter(column).most_common()[0][0]))
+
 
 #source_path = "./Full Accessibility Audit/"
-source_path = "./Text Reports/Popular/"
+source_path = "./Text Reports/Less Popular/"
 items = os.listdir(source_path)
 
 for i in range(len(items)):
     v = {}
-    check_reports(source_path+items[i], v)
+    count_errors(source_path+items[i])
 
