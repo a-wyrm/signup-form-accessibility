@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -30,14 +31,20 @@ extensions_item = WebDriverWait(extensions_item_list_shadow_root, 10).until(EC.p
 extension_id = extensions_item.get_attribute("id")
 
 # Get URLS
-sign_up_url_path = os.path.join(dir_path, 'extension', 'selenium_automated_testing', 'signup_urls.csv') 
+sign_up_url_path = os.path.join(dir_path, 'extension', 'selenium_automated_testing', 'signup_urls_small.csv') 
 df = pd.read_csv(sign_up_url_path, usecols = ['Signup'])
 
 
 def activate_extension():
+    driver.execute_script("window.open('');")
+    driver.switch_to.window(driver.window_handles[-1]) 
     driver.get('chrome-extension://'+extension_id+'/popup.html')
+    time.sleep(10)
+    driver.close() 
 
 for url in df['Signup']:
     driver.get(url)
-    driver.implicitly_wait(10)
+    time.sleep(5)
+    activate_extension()
+    #driver.implicitly_wait(10)
 driver.quit()

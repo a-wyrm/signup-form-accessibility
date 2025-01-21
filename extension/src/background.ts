@@ -35,9 +35,25 @@ chrome.webNavigation.onHistoryStateUpdated.addListener(function(details) {
   chrome.tabs.sendMessage(details.tabId, { action: 'pageUpdated' });
 });
 
+
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
   let tabId = sender?.tab?.id;
   if (tabId) {
+    chrome.runtime.sendMessage(
+      { messageType: "page_storage_cleared" },
+      function (response) {
+        if (!chrome.runtime.lastError) {
+          console.log("Page type data cleared");
+        }
+      }
+    );
+    if (msg.action === "createDiv") {
+      const div = document.createElement("div");
+      document.body.appendChild(div);
+      div.setAttribute("id", "GWSECExtensionID");
+      div.innerText = msg.pageTypeText;
+      div.style.display = 'none';
+    }
     if (msg.messageType === "page_signals") {
       const res = predict(msg.pageSignals);
       if (res.sendMessage) {
@@ -51,12 +67,13 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
   return true;
 });
 
+
 chrome.tabs.onUpdated.addListener(function (tabId, info) {
   if (info.status === "loading") {
     chrome.storage.local.set(
       { [tabId]: { isLogin: false, isSignup: false } },
       function () {
-        console.log("Page type stroage cleared.");
+        console.log("Page type storage cleared.");
       }
     );
     chrome.runtime.sendMessage(

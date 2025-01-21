@@ -1,13 +1,14 @@
+/*global chrome*/
 let currentTab;
 
 function updatePageType(){
+  let pageTypeText = "";
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     currentTab = tabs[0];
     const tabId = currentTab.id;
     console.log("currentTab", tabId);
     const tabIdStr = tabId.toString();
     chrome.storage.local.get([tabIdStr], function (results) {
-      let pageTypeText = "";
       let result = results[tabIdStr];
       if (result.isLogin) {
         pageTypeText = "Detected Login page.";
@@ -20,7 +21,9 @@ function updatePageType(){
         document.getElementById("ml_result").innerHTML = pageTypeText;
       }
     });
+    chrome.tabs.sendMessage(currentTab.id, { action: "createDiv", pageTypeText });
   });
+
 }
 
 updatePageType();
