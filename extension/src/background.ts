@@ -36,9 +36,26 @@ chrome.webNavigation.onHistoryStateUpdated.addListener(function(details) {
 });
 
 
+function sendInjection(){
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    var currentTab = tabs[0];
+    const tabId = currentTab.id || '';
+    const tabIdStr = tabId.toString();
+
+    // inject script
+    chrome.scripting.executeScript({
+      target: { tabId: tabId || 0, allFrames: true },
+      files: ['js/inject_id.js'],
+    });
+
+
+  });
+}
+
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
   let tabId = sender?.tab?.id;
   if (tabId) {
+    const tabIdStr = tabId.toString();
     chrome.runtime.sendMessage(
       { messageType: "page_storage_cleared" },
       function (response) {
@@ -47,18 +64,20 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
         }
       }
     );
-    if (msg.action === "createDiv") {
-      const div = document.createElement("div");
-      document.body.appendChild(div);
-      div.setAttribute("id", "GWSECExtensionID");
-      div.innerText = msg.pageTypeText;
-      div.style.display = 'none';
-    }
     if (msg.messageType === "page_signals") {
       const res = predict(msg.pageSignals);
       if (res.sendMessage) {
         chrome.storage.local.set({ [tabId]: res }, function () {
           console.log("Page type data saved");
+          sendInjection();
+          chrome.runtime.onMessage.addListener(
+            function(request, sender, sendResponse) {
+              if (request.action === 'getDetectionStatus') {
+                console.log(res)
+                sendResponse({ status: JSON.stringify(res) });           
+              }
+            }
+          );
         });
       }
     }
@@ -73,6 +92,15 @@ chrome.tabs.onUpdated.addListener(function (tabId, info) {
     chrome.storage.local.set(
       { [tabId]: { isLogin: false, isSignup: false } },
       function () {
+/*         sendInjection();
+        chrome.runtime.onMessage.addListener(
+          function(request, sender, sendResponse) {
+            if (request.action === 'getDetectionStatus') {
+              console.log({ isLogin: false, isSignup: false })
+              sendResponse({ status: { isLogin: false, isSignup: false } });           
+            }
+          }
+        ); */
         console.log("Page type storage cleared.");
       }
     );

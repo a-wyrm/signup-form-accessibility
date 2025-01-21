@@ -21,6 +21,7 @@ function updatePageType(){
         document.getElementById("ml_result").innerHTML = pageTypeText;
       }
     });
+    
     chrome.tabs.sendMessage(currentTab.id, { action: "createDiv", pageTypeText });
   });
 
