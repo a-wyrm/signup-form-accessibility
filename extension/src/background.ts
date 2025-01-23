@@ -40,14 +40,12 @@ function sendInjection(){
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     var currentTab = tabs[0];
     const tabId = currentTab.id || '';
-    const tabIdStr = tabId.toString();
 
     // inject script
     chrome.scripting.executeScript({
       target: { tabId: tabId || 0, allFrames: true },
       files: ['js/inject_id.js'],
     });
-
 
   });
 }
@@ -92,16 +90,11 @@ chrome.tabs.onUpdated.addListener(function (tabId, info) {
     chrome.storage.local.set(
       { [tabId]: { isLogin: false, isSignup: false } },
       function () {
-/*         sendInjection();
-        chrome.runtime.onMessage.addListener(
-          function(request, sender, sendResponse) {
-            if (request.action === 'getDetectionStatus') {
-              console.log({ isLogin: false, isSignup: false })
-              sendResponse({ status: { isLogin: false, isSignup: false } });           
-            }
-          }
-        ); */
         console.log("Page type storage cleared.");
+        chrome.scripting.executeScript({
+          target: { tabId: tabId || 0, allFrames: true },
+          files: ['js/inject_tag.js'],
+        });
       }
     );
     chrome.runtime.sendMessage(
