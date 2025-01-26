@@ -3,7 +3,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import time, os
+import time, os, csv
 import pandas as pd
 from selenium.webdriver.chrome.service import Service
 
@@ -35,16 +35,34 @@ sign_up_url_path = os.path.join(dir_path, 'extension', 'selenium_automated_testi
 df = pd.read_csv(sign_up_url_path, usecols = ['Signup'])
 
 
-def activate_extension():
-    driver.execute_script("window.open('');")
-    driver.switch_to.window(driver.window_handles[-1]) 
-    driver.get('chrome-extension://'+extension_id+'/popup.html')
-    time.sleep(10)
-    driver.close() 
+# CSV function
+header = ['Website URL', 'Status']
 
-for url in df['Signup']:
-    driver.get(url)
-    time.sleep(5)
-    activate_extension()
-    #driver.implicitly_wait(10)
-driver.quit()
+with open('test_signup.csv', 'a', encoding='UTF8', newline='') as f:
+    writer = csv.writer(f)
+    writer.writerow(header)
+
+    written_data = []
+
+    def activate_extension():
+        id_tag = 'detectedWhat'
+        try:
+            div_element = driver.find_element(By.ID, id_tag)
+            inner_html = div_element.get_attribute("innerHTML")
+            print(inner_html)
+            written_data.append(inner_html)
+            writer.writerow(written_data)
+        except:
+            print("Unable to get id (website likely unavailable).")
+            written_data.append('INVALID')
+            writer.writerow(written_data)
+        
+        written_data.clear()
+
+    for url in df['Signup']:
+        driver.get(url)
+        written_data.append(url)
+        time.sleep(5)
+        activate_extension()
+        #driver.implicitly_wait(10)
+    driver.quit()
