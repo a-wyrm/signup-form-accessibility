@@ -2,11 +2,11 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.common.exceptions import WebDriverException, TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
-import time, os, csv
+import time, os, csv, requests
 import pandas as pd
 from selenium.webdriver.chrome.service import Service
-
 
 # get extension path
 dir_path = os.getcwd()
@@ -16,6 +16,7 @@ service = Service()
 options = webdriver.ChromeOptions()
 options.add_argument("load-extension=" + extension_dir)
 options.add_argument("--no-sandbox")
+options.add_argument('--remote-debugging-pipe')
 driver = webdriver.Chrome(service=service, options=options)
 driver.maximize_window()
 driver.get("chrome://extensions/")
@@ -40,8 +41,6 @@ header = ['Website URL', 'Status']
 
 with open('test_signup.csv', 'a', encoding='UTF8', newline='') as f:
     writer = csv.writer(f)
-    writer.writerow(header)
-
     written_data = []
 
     def activate_extension():
@@ -60,9 +59,16 @@ with open('test_signup.csv', 'a', encoding='UTF8', newline='') as f:
         written_data.clear()
 
     for url in df['Signup']:
-        driver.get(url)
-        written_data.append(url)
-        time.sleep(5)
-        activate_extension()
-        #driver.implicitly_wait(10)
+        try:
+            driver.get(url)
+            written_data.append(url)
+            time.sleep(5)
+            activate_extension()
+        except WebDriverException or TimeoutException or requests.exceptions.ReadTimeout as e:
+            print(f"Error {e} at {url}.")
+            written_data.append(url)
+            written_data.append('INVALID')
+            writer.writerow(written_data)
+            written_data.clear()
+
     driver.quit()
