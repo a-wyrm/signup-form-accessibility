@@ -4,6 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import WebDriverException, TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 import time, os, csv, requests
+import json
 import pandas as pd
 from selenium.webdriver.chrome.service import Service
 
@@ -43,73 +44,40 @@ df = pd.read_csv(sign_up_url_path, usecols = ['Signup'])
 #    written_data = []
 
 
-def generate_csv_from_local_storage(driver, filename="local_storage_data.csv", keys_to_extract=None):
+def get_chrome_local_storage(driver, key=None):
     """
-    Generates a CSV file from data stored in the browser's local storage.
-
+    Retrieves data from chrome.storage.local.
     Args:
-        driver: A Selenium WebDriver instance.
-        filename: The name of the CSV file to create (default: "local_storage_data.csv").
-        keys_to_extract: A list of specific keys to extract from local storage. If None, all keys are extracted.
-
+        driver: The Selenium WebDriver instance.
+        key (optional): The specific key to retrieve. If None, returns all data.
     Returns:
-        True if the CSV file was successfully created, False otherwise.  Prints errors.
+        A dictionary containing the data, or None if an error occurs.  Returns
+        the value associated with 'key' if 'key' is not None.
     """
 
+    # https://stackoverflow.com/questions/18150774/get-all-keys-from-chrome-storage
     try:
-        # Inject JavaScript to get local storage data.  This handles JSON stringification.
+
         script = """
-        let data = {};
-        const keys = Object.keys(localStorage);
-
-        if (arguments[0] === null) { // Extract all if keys_to_extract is None
-          keys.forEach(key => {
+        let storage = {};
+        for (let i = 0; i < localStorage.length; i++) {
+            let key = localStorage.key(i);
+            let value = localStorage.getItem(key);
             try {
-              const value = localStorage.getItem(key);
-              // Attempt parsing JSON. If it fails, treat as a regular string.
-              data[key] = JSON.parse(value);
+                storage[key] = JSON.parse(value); // Attempt to parse as JSON
             } catch (e) {
-              data[key] = value;
+                storage[key] = value; // If not JSON, store as string
             }
-          });
-        } else { // Extract only specified keys
-            arguments[0].forEach(key => {
-                try {
-                  const value = localStorage.getItem(key);
-                  data[key] = JSON.parse(value);
-                } catch (e) {
-                  data[key] = value;
-                }
-            });
         }
-
-        return data;
-
+        return storage;
         """
-
-        local_storage_data = driver.execute_script(script, keys_to_extract)
-
-
-        if not local_storage_data:
-            print("No data found in local storage.")
-            return False
-
-        with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
-            writer = csv.writer(csvfile)
-
-            # Write header row (keys)
-            header = list(local_storage_data.keys())  # Get the keys dynamically
-            writer.writerow(header)
-
-            # Write data rows
-            writer.writerow(local_storage_data.values())
-
-        print(f"CSV file '{filename}' created successfully.")
-        return True
+        result = driver.execute_script(script)
+        driver.execute_script(f'alert("{result}")')
+        return result
 
     except Exception as e:
-        print(f"An error occurred: {e}")
-        return False
+        print(f"Error retrieving local storage: {e}")
+        return None
 
 
 def activate_extension():
@@ -127,11 +95,11 @@ def activate_extension():
     
     #written_data.clear()
 
-generate_csv_from_local_storage(driver)
 
-""" for url in df['Signup']:
+for url in df['Signup']:
     try:
         driver.get(url)
+        get_chrome_local_storage(driver)
         #written_data.append(url)
         time.sleep(5)
         #activate_extension()
@@ -140,6 +108,6 @@ generate_csv_from_local_storage(driver)
         #written_data.append(url)
         #written_data.append('INVALID')
         #writer.writerow(written_data)
-        #written_data.clear() """
+        #written_data.clear()
 
 driver.quit()
