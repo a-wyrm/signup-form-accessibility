@@ -44,35 +44,27 @@ df = pd.read_csv(sign_up_url_path, usecols = ['Signup'])
 #    written_data = []
 
 
-def get_chrome_local_storage(driver, key=None):
+def get_chrome_local_storage(driver):
     """
     Retrieves data from chrome.storage.local.
+
     Args:
         driver: The Selenium WebDriver instance.
-        key (optional): The specific key to retrieve. If None, returns all data.
+
     Returns:
-        A dictionary containing the data, or None if an error occurs.  Returns
-        the value associated with 'key' if 'key' is not None.
+        A dictionary containing the data, or None if an error occurs.
     """
 
-    # https://stackoverflow.com/questions/18150774/get-all-keys-from-chrome-storage
     try:
-
         script = """
-        let storage = {};
-        for (let i = 0; i < localStorage.length; i++) {
-            let key = localStorage.key(i);
-            let value = localStorage.getItem(key);
-            try {
-                storage[key] = JSON.parse(value); // Attempt to parse as JSON
-            } catch (e) {
-                storage[key] = value; // If not JSON, store as string
-            }
-        }
-        return storage;
-        """
+            return new Promise(resolve => {
+                chrome.runtime.sendMessage({type: "getLocalDataAndKeys"}, function(response) {
+                resolve(response);
+                });
+            });
+                """
         result = driver.execute_script(script)
-        driver.execute_script(f'alert("{result}")')
+        print(result)
         return result
 
     except Exception as e:
@@ -99,7 +91,6 @@ def activate_extension():
 for url in df['Signup']:
     try:
         driver.get(url)
-        get_chrome_local_storage(driver)
         #written_data.append(url)
         time.sleep(5)
         #activate_extension()
@@ -109,5 +100,8 @@ for url in df['Signup']:
         #written_data.append('INVALID')
         #writer.writerow(written_data)
         #written_data.clear()
+    
+    get_chrome_local_storage(driver)
+
 
 driver.quit()

@@ -36,6 +36,19 @@ chrome.webNavigation.onHistoryStateUpdated.addListener(function(details) {
 });
 
 
+chrome.runtime.onMessage.addListener(
+  function(request, sender, sendResponse) {
+    if (request.type === "getLocalData") {
+      chrome.storage.local.get(null, function(items: any) {
+        sendResponse(JSON.stringify({key: Object.keys(items), 
+                                    data: items})); // Send the data back
+      });
+      return true; // Important: Indicate asynchronous response
+    }
+  });
+
+
+// unused
 function sendInjection(){
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     var currentTab = tabs[0];
@@ -50,7 +63,8 @@ function sendInjection(){
   });
 }
 
-function sendDetection(res: any){
+// unused
+/* function sendDetection(res: any){
   //sendInjection();
   chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
@@ -60,7 +74,7 @@ function sendDetection(res: any){
       }
     }
   );
-}
+} */
 
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
   console.log("MESSAGE: ", msg);
