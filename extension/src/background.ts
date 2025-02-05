@@ -50,45 +50,68 @@ function sendInjection(){
   });
 }
 
-chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
-  let tabId = sender?.tab?.id;
-  if (tabId) {
-    const tabIdStr = tabId.toString();
-    chrome.runtime.sendMessage(
-      { messageType: "page_storage_cleared" },
-      function (response) {
-        if (!chrome.runtime.lastError) {
-          console.log("Page type data cleared");
-        }
-      }
-    );
-    if (msg.messageType === "page_signals") {
-      const res = predict(msg.pageSignals);
-      if (res.sendMessage) {
-        chrome.storage.local.set({ [tabId]: res }, function () {
-          console.log("Page type data saved");
-          sendInjection();
-          chrome.runtime.onMessage.addListener(
-            function(request, sender, sendResponse) {
-              if (request.action === 'getDetectionStatus') {
-                console.log(res)
-                sendResponse({ status: JSON.stringify(res) });           
-              }
-            }
-          );
-        });
+function sendDetection(res: any){
+  //sendInjection();
+  chrome.runtime.onMessage.addListener(
+    function(request, sender, sendResponse) {
+      if (request.action === 'getDetectionStatus') {
+        console.log("In sendDetection: ", res)
+        sendResponse({ status: JSON.stringify(res) });           
       }
     }
+  );
+}
+
+chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
+  console.log("MESSAGE: ", msg);
+  let tabId = sender?.tab?.id;
+
+  if (tabId) {
+    chrome.tabs.get(tabId, function(tab) {
+
+      const tabUrl = tab.url; // Extract URL
+      if (!tabUrl) {
+          console.error("Tab URL is undefined or null");
+          sendResponse({ status: "Error", message: "Tab URL is undefined or null" });
+          return;
+      }
+
+      chrome.runtime.sendMessage(
+        { messageType: "page_storage_cleared" },
+        function (response) {
+          if (!chrome.runtime.lastError) {
+            console.log("Page type data cleared.");
+            sendResponse({ status: "None"});  
+          }
+        }
+      );
+
+      if (msg.messageType === "page_signals") {
+        const res = predict(msg.pageSignals);
+        if (res.sendMessage) {
+          chrome.storage.local.set({ [tabUrl]: res }, function () {
+            console.log("Page type data saved.");
+            console.log("In 1st: ", JSON.stringify(res));
+          });
+        }
+      }
+    });
   }
+
   Promise.resolve("").then((result) => sendResponse(result));
   return true;
 });
 
+chrome.tabs.onUpdated.addListener(function (tabId, info, tab) {
+  const tabUrl = tab.url; // Extract URL
+      if (!tabUrl) {
+          console.error("Tab URL is undefined or null");
+          return;
+      }
 
-chrome.tabs.onUpdated.addListener(function (tabId, info) {
   if (info.status === "loading") {
     chrome.storage.local.set(
-      { [tabId]: { isLogin: false, isSignup: false } },
+      { [tabUrl]: { isLogin: false, isSignup: false } },
       function () {
         console.log("Page type storage cleared.");
         chrome.scripting.executeScript({
@@ -101,7 +124,7 @@ chrome.tabs.onUpdated.addListener(function (tabId, info) {
       { messageType: "page_storage_cleared" },
       function (response) {
         if (!chrome.runtime.lastError) {
-          console.log("Page type data cleared");
+          console.log("Page type data cleared.");
         }
       }
     );
