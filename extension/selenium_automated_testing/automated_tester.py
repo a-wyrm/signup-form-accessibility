@@ -44,33 +44,6 @@ df = pd.read_csv(sign_up_url_path, usecols = ['Signup'])
 #    written_data = []
 
 
-def get_chrome_local_storage(driver):
-    """
-    Retrieves data from chrome.storage.local.
-
-    Args:
-        driver: The Selenium WebDriver instance.
-
-    Returns:
-        A dictionary containing the data, or None if an error occurs.
-    """
-
-    try:
-        script = """
-            return new Promise(resolve => {
-                chrome.runtime.sendMessage({type: "getLocalDataAndKeys"}, function(response) {
-                resolve(response);
-                });
-            });
-                """
-        result = driver.execute_script(script)
-        print(result)
-        return result
-
-    except Exception as e:
-        print(f"Error retrieving local storage: {e}")
-        return None
-
 
 def activate_extension():
     id_tag = 'detectedWhat'
@@ -100,8 +73,6 @@ for url in df['Signup']:
         #written_data.append('INVALID')
         #writer.writerow(written_data)
         #written_data.clear()
-    
-    get_chrome_local_storage(driver)
 
 
 driver.quit()
