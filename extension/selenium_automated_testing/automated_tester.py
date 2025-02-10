@@ -64,7 +64,7 @@ with open('test_signup.csv', 'a', encoding='UTF8', newline='') as f:
             written_data.append(url)
             time.sleep(5)
             activate_extension()
-        except WebDriverException or TimeoutException or requests.exceptions.ReadTimeout as e:
+        except WebDriverException or TimeoutException or requests.exceptions.ReadTimeout or ConnectionResetError as e:
             print(f"Error {e} at {url}.")
             written_data.append(url)
             written_data.append('INVALID')
