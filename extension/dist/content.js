@@ -9,6 +9,7 @@ function sendPageSignals() {
     if (existingDiv){
         existingDiv.remove();
     }
+    
     var div = document.createElement("div");
     div.setAttribute("id", "detectedWhat");
     div.innerText = JSON.stringify(response);

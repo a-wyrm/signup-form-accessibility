@@ -4,7 +4,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import WebDriverException, TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 import time, os, csv, requests
-import json
 import pandas as pd
 from selenium.webdriver.chrome.service import Service
 
@@ -37,42 +36,40 @@ df = pd.read_csv(sign_up_url_path, usecols = ['Signup'])
 
 
 # CSV function
-#header = ['Website URL', 'Status']
+header = ['Website URL', 'Status']
 
-#with open('test_signup.csv', 'a', encoding='UTF8', newline='') as f:
-#    writer = csv.writer(f)
-#    written_data = []
+with open('test_signup.csv', 'a', encoding='UTF8', newline='') as f:
+    writer = csv.writer(f)
+    written_data = []
 
-
-
-def activate_extension():
-    id_tag = 'detectedWhat'
-    try:
-        div_element = driver.find_element(By.ID, id_tag)
-        inner_html = div_element.get_attribute("innerHTML")
-        print(inner_html)
-        #written_data.append(inner_html)
-        #writer.writerow(written_data)
-    except:
-        print("Unable to get id (website likely unavailable).")
-        #written_data.append('INVALID')
-        #writer.writerow(written_data)
-    
-    #written_data.clear()
+    def activate_extension():
+        id_tag = 'detectedWhat'
+        try:
+            div_element = driver.find_element(By.ID, id_tag)
+            inner_html = div_element.get_attribute("innerHTML")
+            print(inner_html)
+            written_data.append(inner_html)
+            writer.writerow(written_data)
+        except:
+            print("Unable to get id (website likely unavailable).")
+            written_data.append('No data')
+            writer.writerow(written_data)
+        
+        written_data.clear()
 
 
-for url in df['Signup']:
-    try:
-        driver.get(url)
-        #written_data.append(url)
-        time.sleep(5)
-        #activate_extension()
-    except WebDriverException or TimeoutException or requests.exceptions.ReadTimeout as e:
-        print(f"Error {e} at {url}.")
-        #written_data.append(url)
-        #written_data.append('INVALID')
-        #writer.writerow(written_data)
-        #written_data.clear()
+    for url in df['Signup']:
+        try:
+            driver.get(url)
+            written_data.append(url)
+            time.sleep(5)
+            activate_extension()
+        except WebDriverException or TimeoutException or requests.exceptions.ReadTimeout as e:
+            print(f"Error {e} at {url}.")
+            written_data.append(url)
+            written_data.append('INVALID')
+            writer.writerow(written_data)
+            written_data.clear()
 
 
 driver.quit()
