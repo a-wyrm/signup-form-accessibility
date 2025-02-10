@@ -13,6 +13,11 @@ extension_dir = os.path.join(dir_path, 'extension', 'dist')
 
 service = Service()
 options = webdriver.ChromeOptions()
+options.add_argument("--incognito")
+# The crucial part:  Enable the loaded extension in incognito
+options.add_argument("--enable-automation")  # May be needed for some extensions
+options.add_argument("--test-type")  # May be needed for some extensions
+options.add_argument("--disable-extensions-except=" + extension_dir)
 options.add_argument("load-extension=" + extension_dir)
 options.add_argument("--no-sandbox")
 options.add_argument('--remote-debugging-pipe')
