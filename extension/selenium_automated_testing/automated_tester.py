@@ -57,7 +57,7 @@ with open('test_signup.csv', 'a', encoding='UTF8', newline='') as f:
         
         written_data.clear()
 
-
+ 
     for url in df['Signup']:
         try:
             driver.get(url)
