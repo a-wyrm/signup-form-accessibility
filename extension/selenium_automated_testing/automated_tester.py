@@ -56,12 +56,14 @@ with open('test_signup.csv', 'a', encoding='UTF8', newline='') as f:
             writer.writerow(written_data)
         
         written_data.clear()
+        return
 
  
     for url in df['Signup']:
         try:
             driver.get(url)
             written_data.append(url)
+            driver.set_page_load_timeout(35)
             time.sleep(5)
             activate_extension()
         except WebDriverException or TimeoutException or requests.exceptions.ReadTimeout or ConnectionResetError as e:
