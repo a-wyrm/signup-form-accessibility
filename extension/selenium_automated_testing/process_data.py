@@ -4,40 +4,47 @@ import pandas as pd
 # get extension path
 dir_path = os.getcwd()
 extension_dir = os.path.join(dir_path, 'extension', 'selenium_automated_testing', 'test_signup.csv')
-df = pd.read_csv(extension_dir, usecols = ['Status'])
+df = pd.read_csv(extension_dir, usecols = ['Website', 'Status'])
 
 def create_separate():
     output_dir = os.path.join(dir_path, 'output_csvs')
     os.makedirs(output_dir, exist_ok=True)
 
 
-    sign_up_str = "{""isLogin"":false,""isSignup"":true,"'sendMessage'":true}"
-    login_str = "{""isLogin"":true,""isSignup"":false,"'sendMessage'":true}"
-
+    sign_up_str = "True"
+    login_str = "False"
+    retest_str = "No data"
 
     sign_up = []
     login = []
+    retest = []
     other_df = []
 
-    with open(extension_dir, 'r', newline='', encoding='utf-8') as csvfile:
-        reader = csv.reader(csvfile)
-        for url in df['Status']:
-            print(url)
-            try:
+    for i, row in df.iterrows():
+        website = row['Website']
+        status = row['Status']
+        try:
+            if status == sign_up_str:
+                sign_up.append([website, status])
+            elif status == login_str:
+                login.append([website, status])
+            elif status == retest_str:
+                retest.append([website, status])
+            else:
+                other_df.append([website, status])
+        except ValueError:
+            print(f"Skipping invalid row: {website}, {status}")
 
-                if url == sign_up_str:
-                    sign_up.append(url)
-                elif url == login_str:
-                    login.append(url)
-                else:
-                    other_df.append(url)
-            except ValueError:
-                continue
-                #print(f"Skipping invalid row: {row}")
-    
 
-    #sign_up.to_csv(os.path.join(output_dir, 'sign_up_urls.csv'), index=False)
-    #login.to_csv(os.path.join(output_dir, 'login_urls.csv'), index=False)
+    sign_up_df = pd.DataFrame(sign_up, columns=['Website', 'Status'])
+    login_df = pd.DataFrame(login, columns=['Website', 'Status'])
+    retest_df = pd.DataFrame(retest, columns=['Website', 'Status'])
+    other_df = pd.DataFrame(other_df, columns=['Website', 'Status'])
+
+    sign_up_df.to_csv(os.path.join(output_dir, "sign_up.csv"), index=False)
+    login_df.to_csv(os.path.join(output_dir, "login.csv"), index=False)
+    retest_df.to_csv(os.path.join(output_dir, "retest_urls.csv"), index=False)
+    other_df.to_csv(os.path.join(output_dir, "other.csv"), index=False)
 
 
 create_separate()
