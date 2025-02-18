@@ -16,6 +16,8 @@ options = webdriver.ChromeOptions()
 options.add_argument("load-extension=" + extension_dir)
 options.add_argument("--no-sandbox")
 options.add_argument('--remote-debugging-pipe')
+#options.add_experimental_option("excludeSwitches", ["enable-automation"])
+#options.add_experimental_option("useAutomationExtension", False)
 driver = webdriver.Chrome(service=service, options=options)
 driver.maximize_window()
 driver.get("chrome://extensions/")
@@ -32,7 +34,7 @@ extension_id = extensions_item.get_attribute("id")
 
 # Get URLS
 sign_up_url_path = os.path.join(dir_path, 'extension', 'selenium_automated_testing', 'output_csvs', 'retest_urls.csv') 
-df = pd.read_csv(sign_up_url_path, usecols = ['Signup'])
+df = pd.read_csv(sign_up_url_path, usecols = ['Website'])
 
 
 # CSV function
@@ -60,7 +62,7 @@ def initial_test():
             return
 
     
-        for url in df['Signup']:
+        for url in df['Website']:
             try:
                 driver.get(url)
                 written_data.append(url)
