@@ -1,12 +1,6 @@
 17436
 82% are serious issues
 
-Are password managers able to effectively interact with websites (Hutchinson et al and Huaman et al)
-Does the website pass authentication-related WCAG criterion
-
-Version 130.0.6723.92
-Bitwarden: 2024.10.1
-
 TikTok as a case study
 adtargeting.io as a case study for good forms
 
