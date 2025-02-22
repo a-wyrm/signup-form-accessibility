@@ -3,7 +3,7 @@ import pandas as pd
 
 # get extension path
 dir_path = os.getcwd()
-extension_dir = os.path.join(dir_path, 'extension', 'selenium_automated_testing', 'test_signup.csv')
+extension_dir = os.path.join(dir_path, 'extension', 'selenium_automated_testing', 'retested_signups.csv')
 df = pd.read_csv(extension_dir, usecols = ['Website', 'Status'])
 
 def create_separate():
@@ -41,10 +41,10 @@ def create_separate():
     retest_df = pd.DataFrame(retest, columns=['Website', 'Status'])
     other_df = pd.DataFrame(other_df, columns=['Website', 'Status'])
 
-    sign_up_df.to_csv(os.path.join(output_dir, "sign_up.csv"), index=False)
-    login_df.to_csv(os.path.join(output_dir, "login.csv"), index=False)
-    retest_df.to_csv(os.path.join(output_dir, "retest_urls.csv"), index=False)
-    other_df.to_csv(os.path.join(output_dir, "other.csv"), index=False)
+    sign_up_df.to_csv(os.path.join(output_dir, "sign_up_retested.csv"), index=False)
+    login_df.to_csv(os.path.join(output_dir, "login_retested.csv"), index=False)
+    retest_df.to_csv(os.path.join(output_dir, "no_data_urls.csv"), index=False)
+    other_df.to_csv(os.path.join(output_dir, "other_retested.csv"), index=False)
 
 
 create_separate()
