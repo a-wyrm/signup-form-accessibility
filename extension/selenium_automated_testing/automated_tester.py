@@ -108,7 +108,7 @@ def initial_test():
                 driver.get(url)
                 written_data.append(url)
                 driver.set_page_load_timeout(35)
-                time.sleep(7)
+                time.sleep(5)
                 activate_extension(driver, writer, written_data)
             except (WebDriverException, TimeoutException, requests.exceptions.ReadTimeout, ConnectionResetError) as e:
                 print(f"Error {e} at {url}.")
