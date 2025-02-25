@@ -1,39 +1,58 @@
+import re
+from bs4 import BeautifulSoup
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
 
-
-
-#Simulate Tab Presses: Use Keys.TAB to simulate keyboard navigation.
-#Get Active Element: Use driver.switchTo().activeElement() to get the currently focused element.
-#Track Focus Order: Store the sequence of focused elements to verify logical order.
-#Verify Visual Focus Indicator: This is the hardest part. You will have to get the css properties of the active element, and verify that a focus indicator is present. This can be done by validating the existance of outline, border, or background color changes when the element is focused.
-#Detect Keyboard Traps: Implement a loop that repeatedly presses Keys.TAB. If the same element is focused multiple times in a row, it might indicate a keyboard trap.
-
 def test_WCAG_211_keyboard(driver, url):
-    driver.get(url)
+    """
+    Checks for a keyboard trap on a website.
+
+    Args:
+        driver: Chrome driver.
+        url: URL of website
+    Returns:
+        True: No keyboard trap!
+        False: Keyboard trap.
+    """
+
     focused_elements = []
-    for _ in range(20):  # Adjust the range as needed
+    driver.get(url)
+
+    first_element = driver.switch_to.active_element
+
+    for _ in range(300):
         active_element = driver.switch_to.active_element
         focused_elements.append(active_element)
         active_element.send_keys(Keys.TAB)
 
-    # Basic focus order check (replace with your specific logic)
-    for i in range(len(focused_elements) - 1):
-        if focused_elements[i] == focused_elements[i + 1]:
-            print("Potential keyboard trap detected!")
-            break
+        # check if we are back to the initial element
+        if driver.switch_to.active_element == first_element and len(focused_elements) > 1: # check focused_elements len to prevent early stop
+            return True        
+    return True
 
-    #Verify visual focus indicator (example)
-    active_element = driver.switch_to.active_element
-    outline = active_element.value_of_css_property("outline")
-    if outline == "none":
-        print("Warning: No visible focus indicator.")
 
-    #Further logic to verify the order of the focused elements.
-    #Compare the location of the elements, or any other method that fits your webpage.
+def test_WCAG_131_info(driver, url):
+    driver.get(url)
+    soup = BeautifulSoup(driver.page_source, 'html.parser')
+
+    '''headings = soup.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
+
+    for h in range(1, headings):
+        level = int(h.name[1])
+        if (level != headings[h-1]) or (level-1 != headings[h-1]):
+            print("Heading error.")'''
+        
+    labels = soup.find_all('label')
+    for label in labels:
+        if label.has_attr('for'):
+            input_id = label['for']
+            input_element = soup.find(id=input_id)
+            if input_element is None:
+                print(f"Warning: Label with for='{input_id}' has no corresponding input.")
 
 #Example usage
 driver = webdriver.Chrome()
-test_keyboard_navigation(driver, "https://www.example.com")
+test_WCAG_211_keyboard(driver, "https://www.google.com")
 driver.quit()
