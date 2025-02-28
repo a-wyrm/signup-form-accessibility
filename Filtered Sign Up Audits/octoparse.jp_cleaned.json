@@ -1,0 +1,2109 @@
+{
+    "testEngine": {
+        "name": "axe-core",
+        "version": "4.4.3"
+    },
+    "testRunner": {
+        "name": "axe"
+    },
+    "timestamp": "2024-09-26T13:35:56.634Z",
+    "url": "https://identity.octoparse.com/IntersignUp?lang=ja-JP&returnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DOctoparse%26scope%3Dopenid%2520profile%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fwww.octoparse.jp%252Flogin-callback%26nonce%3DI3EV20gr_O75gUNbtxFlg9QF7UOrlrq-81gMOW3yUVk%26state%3DevYokV7beIVGPcjQgr2FnMC-ZzxI6-Ixbf96LtRwoRE%26registry%3Dtrue%26language%3Dja-JP%26origin%3Dja-JP%26language%3Dja-JP%26client_id%3DOctoparse",
+    "toolOptions": {
+        "resultTypes": [
+            "violations"
+        ],
+        "reporter": "v1"
+    },
+    "passes": [
+        {
+            "id": "aria-allowed-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures ARIA attributes are allowed for an element's role",
+            "help": "Elements must only use allowed ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attributes are used correctly for the defined role"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "aria-unsupported-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute is supported"
+                        },
+                        {
+                            "id": "aria-prohibited-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "ARIA attribute is allowed"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<span role=\"img\" aria-label=\"eye-invisible\" tabindex=\"-1\" class=\"anticon anticon-eye-invisible ant-input-password-icon\">",
+                    "target": [
+                        ".anticon"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-allowed-role",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "best-practice"
+            ],
+            "description": "Ensures role attribute has an appropriate value for the element",
+            "help": "ARIA role should be appropriate for the element",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-role?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is allowed for given element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"ant-divider ant-divider-horizontal ant-divider-with-text ant-divider-with-text-center ant-divider-plain\" role=\"separator\"><span class=\"ant-divider-inner-text\">or</span></div>",
+                    "target": [
+                        ".ant-divider"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-body",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures aria-hidden='true' is not present on the document body.",
+            "help": "aria-hidden='true' must not be present on the document body",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-hidden-body",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "No aria-hidden attribute is present on document body"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<body>",
+                    "target": [
+                        "body"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-focus",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag131"
+            ],
+            "description": "Ensures aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "focusable-modal-open",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements while a modal is open"
+                        },
+                        {
+                            "id": "focusable-disabled",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        },
+                        {
+                            "id": "focusable-not-tabbable",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<svg viewBox=\"64 64 896 896\" focusable=\"false\" data-icon=\"eye-invisible\" width=\"1em\" height=\"1em\" fill=\"currentColor\" aria-hidden=\"true\">",
+                    "target": [
+                        "svg[viewBox=\"64 64 896 896\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-required-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures elements with ARIA roles have all required ARIA attributes",
+            "help": "Required ARIA attributes must be provided",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-required-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-required-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "All required ARIA attributes are present"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"ant-divider ant-divider-horizontal ant-divider-with-text ant-divider-with-text-center ant-divider-plain\" role=\"separator\"><span class=\"ant-divider-inner-text\">or</span></div>",
+                    "target": [
+                        ".ant-divider"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-roles",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all elements with a role attribute use a valid value",
+            "help": "ARIA roles used must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-roles?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "fallbackrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Only one role value used"
+                        },
+                        {
+                            "id": "invalidrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is valid"
+                        },
+                        {
+                            "id": "abstractrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Abstract roles are not used"
+                        },
+                        {
+                            "id": "unsupportedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is supported"
+                        },
+                        {
+                            "id": "deprecatedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is not deprecated"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<div class=\"ant-divider ant-divider-horizontal ant-divider-with-text ant-divider-with-text-center ant-divider-plain\" role=\"separator\"><span class=\"ant-divider-inner-text\">or</span></div>",
+                    "target": [
+                        ".ant-divider"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr-value",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all ARIA attributes have valid values",
+            "help": "ARIA attributes must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr-value?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "aria-valid-attr-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute values are valid"
+                        },
+                        {
+                            "id": "aria-errormessage",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "aria-errormessage exists and references elements visible to screen readers that use a supported aria-errormessage technique"
+                        },
+                        {
+                            "id": "aria-level",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-level values are valid"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<span role=\"img\" aria-label=\"eye-invisible\" tabindex=\"-1\" class=\"anticon anticon-eye-invisible ant-input-password-icon\">",
+                    "target": [
+                        ".anticon"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures attributes that begin with aria- are valid ARIA attributes",
+            "help": "ARIA attributes must conform to valid names",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-valid-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute name is valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<span role=\"img\" aria-label=\"eye-invisible\" tabindex=\"-1\" class=\"anticon anticon-eye-invisible ant-input-password-icon\">",
+                    "target": [
+                        ".anticon"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "autocomplete-valid",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag21aa",
+                "wcag135"
+            ],
+            "description": "Ensure the autocomplete attribute is correct and suitable for the form field",
+            "help": "autocomplete attribute must be used correctly",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/autocomplete-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "autocomplete-valid",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "the autocomplete attribute is correctly formatted"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input autocomplete=\"off\" placeholder=\"\u30e1\u30fc\u30eb\" id=\"new_email\" class=\"ant-input ant-input-borderless\" type=\"text\" value=\"\">",
+                    "target": [
+                        "#new_email"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "avoid-inline-spacing",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag21aa",
+                "wcag1412"
+            ],
+            "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+            "help": "Inline text spacing must be adjustable with custom stylesheets",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/avoid-inline-spacing?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "avoid-inline-spacing",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No inline styles with '!important' that affect text spacing has been specified"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"login-btn\" style=\"margin-bottom: 0px;\">",
+                    "target": [
+                        ".login-btn"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "button-name",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures buttons have discernible text",
+            "help": "Buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/button-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "button-has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has inner text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button type=\"button\" class=\"ant-btn ant-btn-default microsoft-btn false\"><img src=\"/assets/google2.545c726b.svg\" alt=\"google\" width=\"20\"></button>",
+                    "target": [
+                        "a:nth-child(1) > .ant-btn-default.microsoft-btn[type=\"button\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#3d3d3d",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 10.86,
+                                "fontSize": "27.0pt (36px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "3:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 10.86"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"left-title\">Octoparse\u3078\u3088\u3046\u3053\u305d</div>",
+                    "target": [
+                        ".left-title"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "document-title",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag242",
+                "ACT"
+            ],
+            "description": "Ensures each HTML document contains a non-empty <title> element",
+            "help": "Documents must have <title> element to aid in navigation",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/document-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "doc-has-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has a non-empty <title> element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en-US\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-active",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value of active elements is unique",
+            "help": "IDs of active elements must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-active",
+                            "data": "new_email",
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has no active elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input autocomplete=\"off\" placeholder=\"\u30e1\u30fc\u30eb\" id=\"new_email\" class=\"ant-input ant-input-borderless\" type=\"text\" value=\"\">",
+                    "target": [
+                        "#new_email"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": "minor",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "root",
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div id=\"root\">",
+                    "target": [
+                        "#root"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "form-field-multiple-labels",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag332"
+            ],
+            "description": "Ensures form field does not have multiple label elements",
+            "help": "Form field must not have multiple label elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/form-field-multiple-labels?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "multiple-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Form field does not have multiple label elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input autocomplete=\"off\" placeholder=\"\u30e1\u30fc\u30eb\" id=\"new_email\" class=\"ant-input ant-input-borderless\" type=\"text\" value=\"\">",
+                    "target": [
+                        "#new_email"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-has-lang",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures every HTML document has a lang attribute",
+            "help": "<html> element must have a lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-has-lang?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "The <html> element has a lang attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en-US\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-lang-valid",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures the lang attribute of the <html> element has a valid value",
+            "help": "<html> element must have a valid value for the lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-lang-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "valid-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Value of lang attribute is included in the list of valid languages"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<html lang=\"en-US\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "identical-links-same-purpose",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "wcag2aaa",
+                "wcag249"
+            ],
+            "description": "Ensure that links with the same accessible name serve a similar purpose",
+            "help": "Links with the same name must have a similar purpose",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/identical-links-same-purpose?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "identical-links-same-purpose",
+                            "data": {
+                                "name": "\u30ed\u30b0\u30a4\u30f3",
+                                "urlProps": {
+                                    "protocol": "http:",
+                                    "hostname": "identity.octoparse.com",
+                                    "port": "",
+                                    "pathname": "/Interlogin/",
+                                    "search": {
+                                        "lang": "ja-JP",
+                                        "returnUrl": "/connect/authorize/callback?client_id=Octoparse&scope=openid%20profile&response_type=code&redirect_uri=https%3A%2F%2Fwww.octoparse.jp%2Flogin-callback&nonce=I3EV20gr_O75gUNbtxFlg9QF7UOrlrq-81gMOW3yUVk&state=evYokV7beIVGPcjQgr2FnMC-ZzxI6-Ixbf96LtRwoRE&registry=true&language=ja-JP&origin=ja-JP&language=ja-JP&client_id=Octoparse"
+                                    },
+                                    "hash": "",
+                                    "filename": ""
+                                }
+                            },
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "There are no other links with the same name, that go to a different URL"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"/Interlogin?lang=ja-JP&amp;returnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DOctoparse%26scope%3Dopenid%2520profile%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fwww.octoparse.jp%252Flogin-callback%26nonce%3DI3EV20gr_O75gUNbtxFlg9QF7UOrlrq-81gMOW3yUVk%26state%3DevYokV7beIVGPcjQgr2FnMC-ZzxI6-Ixbf96LtRwoRE%26registry%3Dtrue%26language%3Dja-JP%26origin%3Dja-JP%26language%3Dja-JP%26client_id%3DOctoparse\">",
+                    "target": [
+                        ".login-btn > a"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-alt",
+            "impact": "critical",
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures <img> elements have alternate text or a role of none or presentation",
+            "help": "Images must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-alt",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has an alt attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "alt-space-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has a valid alt attribute value"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img src=\"/assets/google2.545c726b.svg\" alt=\"google\" width=\"20\">",
+                    "target": [
+                        "img[src$=\"google2.545c726b.svg\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-redundant-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ],
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-redundant-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img src=\"data:image/png;base64,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\">",
+                    "target": [
+                        "img:nth-child(4)"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label-title-only",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "best-practice"
+            ],
+            "description": "Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes",
+            "help": "Form elements should have a visible label",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "title-only",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Form element does not solely use title attribute for its label"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input autocomplete=\"off\" placeholder=\"\u30e1\u30fc\u30eb\" id=\"new_email\" class=\"ant-input ant-input-borderless\" type=\"text\" value=\"\">",
+                    "target": [
+                        "#new_email"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag412",
+                "wcag131",
+                "section508",
+                "section508.22.n",
+                "ACT"
+            ],
+            "description": "Ensures every form element has a label",
+            "help": "Form elements must have labels",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "non-empty-placeholder",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a placeholder attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "hidden-explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element has a visible explicit <label>"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input autocomplete=\"off\" placeholder=\"\u30e1\u30fc\u30eb\" id=\"new_email\" class=\"ant-input ant-input-borderless\" type=\"text\" value=\"\">",
+                    "target": [
+                        "#new_email"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a href=\"/Interlogin?lang=ja-JP&amp;returnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3DOctoparse%26scope%3Dopenid%2520profile%26response_type%3Dcode%26redirect_uri%3Dhttps%253A%252F%252Fwww.octoparse.jp%252Flogin-callback%26nonce%3DI3EV20gr_O75gUNbtxFlg9QF7UOrlrq-81gMOW3yUVk%26state%3DevYokV7beIVGPcjQgr2FnMC-ZzxI6-Ixbf96LtRwoRE%26registry%3Dtrue%26language%3Dja-JP%26origin%3Dja-JP%26language%3Dja-JP%26client_id%3DOctoparse\">",
+                    "target": [
+                        ".login-btn > a"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport-large",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> can scale a significant amount",
+            "help": "Users should be able to zoom and scale the text up to 500%",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport-large?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport-large",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "<meta> tag does not prevent significant zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice",
+                "ACT"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> does not disable text scaling and zooming",
+            "help": "Zooming and scaling should not be disabled",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "<meta> tag does not disable zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "nested-interactive",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+            "help": "Interactive controls must not be nested",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/nested-interactive?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "no-focusable-content",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have focusable descendants"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAAoCAYAAABerrI1AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAb7SURBVHgB7VlrbBRVFP5mdvZZ2t2+KQilPBQQsUWsArEU1PhKNApqNCS+fpgoSjSCMdEYRWOMRjQ+MCq+lcTEd4iCClh5WWhLgbZAEaH0sbRL99Hd7m53dq5nZmenHXar3V34UdMvOb0zp/fce765d+aec5bDWWCMOaipJlmltqMO3NAbIlRNzbMYpWTi0EgRoXJqtpE44rqIKOFwhxee/gEwRcMrFozjVEtOveZQPjEbDqugG5xJEsIdp0m6abCoYsIxZRTtOt4aHOMglF+Y4KAn7EZXXyfC0bA8G9TpFIkTiOtn5c9XdIJKSCayLk5IYgwfbW7B+p9acMoThj8iQTIYyBsejDfQtQCJWiaQqLptj85H9fTc+BOCp64JR9euh7+uGXwgBCHKIJDzRokmlTgYmdwO3mffcyMcHz2tkenp78GGhg+wo70G/REfuS1CMNAY9EQMPIsJETHIOlX/2Y31g6QQ226yICoxPLVhFzZsOYIBmlB2HDKhFNC1+Q8cWP0yoh0uxXlO4lKyd4fceHzLk2h1N8ccV0iM3D5OalVc8f6mQ/jw52ZEZEf4FEZS0d/WiX0rnwPz+iEgdUSkCF7a8SpaXC0QUnuWGuJeV8t/3P4w3v2hkba/hHRx5N0vMeDrQ7po6jmMrSd+RybQLcWp7j609/iRCc7UH0ImOOA8SK9AFJlAR8pHKyVmsEoyQi4PMkEgEkSmSP2lGQUYIzVaMEZqtCCl8zHHasSaW+ZQa6LQKBaABSiEem37KV0/jk7NvMsuRcnVCzCu7AJYivMpKIlNJccWjMImqd2FgdY2iLVNEH+r12yrShehwJYHXj37ldiOgkN1OmoZgmIAJ7xHsM+5HSILZUbKajJgxcJSFNvNms4TFPHpXqd2P/mWa1C67HrYZ08fNKRYMNoXhBQMkpMceKsZfJVN9hCSx4/T8+7Rul5cOFORkeCEtxWv1D6G3nAn0iY1Esx9ZqXuPtLrRecn38P97VZIFK0LjIOlqABZs6fBvmwpLDPLhh3r9T/XUTDtV2I/gZbtiokLUDXpau3/U+wzcF3Z7dh4+A2d3TknNRTRQBD7V6yBf2djLCpncjpC0tULcf9R9G/cDMuEInBOd1L7mrYanA50EaFYQFvTtgUz8+egyFas9bEJOQl255VU9y+74Nm9nyZJHqUzil7Ek04l9fgv8PRCXVJUAbtZS/coxwpiT+cvCX3PKylPXWZx4Ns3vKO08ZzULFhgNsTe5zrnTvx47HMcdTfg7Gd2Xj/pqWVRScAGG1n4Ie5WFC/A8osewFTHrASzlFZKoI1tNemfg0gZrScYSdo/98pynHrrS6SLh39+SHmn4klirtWOpxe9gHnjK2k78phTOB9P5LyK1duWIyR5NTudhzlZJpTkZQ37hBfPKlbOqqFwBQbQTil/MhRUV6Jg8eXg/iVt5ScUgLOYMBL4wh7Un67V6RzmfEzKma7T6VZq7rRC/PbaMmxv7MSmvW1odfrg6hdhNhuxtHwi1t5ZkTDR+zvbIUoMyWDIsmLOhy9qn/QofdKNMMBaXADb7Kmw37pE+aT3XPtoUvurJldRfcKvHMLy4VuSVYLls+/S9RmIhqg4cybRmCUBZb/M4w8zp7ufuXwhRnmW7v99IZE9+c1hZl61meGRLWxba6+ib3z+TeZpatX1lSSJiT4/G3C6FIn6AkxSx4u6+1hn2W3Mfe9alipESWQbm99id/04j63YVKHpdSt18G8X1n3VgLkzCnBBYQ6K82ywmIyg7SsXoZQ0v+1MEI0dPnxR24UOf0SpJoEfLCa0ff8rjq3/AkVymLS4EuNmTKEwKU8fJvlDSlEmooZJ0fZuzb6ppwXNlNIrYZJWDmNqiBTXMao2daHZVYu/vE1KNQnDbT9vXxjf7GjF17uPUz1PLX/JZTCDIWmJbLjKCC0revc0wLezQS2FcdrhO1yJLI6ak7vwXv0HyodBdnZoNSl5iSxx/rHUY7RgjNRowRipYQeh763NmGaNOD7G+HxkgjzL+MGxcA4wOdeMKXkWpA06Giw3LUQmqCis0q4zJiXQafhw1SQUZY8sfksG05IKGCsvRrqwCtmonnyzdp9RPmWkbXd35QQ8tqQU6cJ0yTTkv7MGnCk9VxzmPNw/dzVK7VoK4klrpCyzAUUOGx5aOhUrl06hkz21zIkXBBjs2ci5YREK1z4Iw/iClOw5ms8iWFHmmI47Zj5AudVCpaCj4mPlSg4C5dYbCOPgcZcScMmxnlqfwuDPoPItjxybEbNKsmESEndv96469SfQ2CT8kJ9A470FqwXG0hIIhbkJ9p19XYpoP4MqLAZLZXLLU7iWbylEcdYEJa8agkaSah2pUY7vSO6jVfT8H86pj0kqiMytMiFZ8Q/91Q36g5PxxgAAAABJRU5ErkJggg==\">",
+                    "target": [
+                        "img:nth-child(4)"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "All page content is contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div id=\"root\">",
+                    "target": [
+                        "#root"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "role-img-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures [role='img'] elements have alternate text",
+            "help": "[role='img'] elements must have an alternative text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/role-img-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute exists and is not empty"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<span role=\"img\" aria-label=\"eye-invisible\" tabindex=\"-1\" class=\"anticon anticon-eye-invisible ant-input-password-icon\">",
+                    "target": [
+                        ".anticon"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "tabindex",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures tabindex attribute values are not greater than 0",
+            "help": "Elements should not have tabindex greater than zero",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/tabindex?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "tabindex",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have a tabindex greater than 0"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<span role=\"img\" aria-label=\"eye-invisible\" tabindex=\"-1\" class=\"anticon anticon-eye-invisible ant-input-password-icon\">",
+                    "target": [
+                        ".anticon"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "valid-lang",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2aa",
+                "wcag312"
+            ],
+            "description": "Ensures lang attributes have valid values",
+            "help": "lang attribute must have a valid value",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/valid-lang?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "valid-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Value of lang attribute is included in the list of valid languages"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<div class=\"page\" lang=\"ja-JP\">",
+                    "target": [
+                        ".page"
+                    ]
+                }
+            ]
+        }
+    ],
+    "violations": [
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#7f7f7f",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 4,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body>",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 4 (foreground color: #7f7f7f, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<div class=\"tips\">\u3044\u3064\u3067\u3082\u3001\u3069\u3053\u3067\u3082\u3001\u3059\u3070\u3084\u304f\u30c7\u30fc\u30bf\u3092</div>",
+                    "target": [
+                        ".tips"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4 (foreground color: #7f7f7f, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#7f7f7f",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 4,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body>",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 4 (foreground color: #7f7f7f, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<div class=\"brands\">15,000\u793e\u4ee5\u4e0a\u306e\u30b0\u30ed\u30fc\u30d0\u30eb\u4f01\u696d\u3068\u30b9\u30bf\u30fc\u30c8\u30a2\u30c3\u30d7\u306b\u4fe1\u983c\u3055\u308c\u3066\u3044\u307e\u3059</div>",
+                    "target": [
+                        ".brands"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4 (foreground color: #7f7f7f, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#b2b2b2",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 2.12,
+                                "fontSize": "9.0pt (12px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body>",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.12 (foreground color: #b2b2b2, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span>More</span>",
+                    "target": [
+                        ".brands-icon > div:nth-child(2) > span"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.12 (foreground color: #b2b2b2, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#3470ff",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 4.27,
+                                "fontSize": "12.0pt (16px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"sign\" lang=\"ja-JP\">",
+                                    "target": [
+                                        ".sign"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 4.27 (foreground color: #3470ff, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span>\u30ed\u30b0\u30a4\u30f3</span>",
+                    "target": [
+                        "a > span"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.27 (foreground color: #3470ff, background color: #ffffff, font size: 12.0pt (16px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#b2b2b2",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 2.12,
+                                "fontSize": "9.0pt (12px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"sign\" lang=\"ja-JP\">",
+                                    "target": [
+                                        ".sign"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.12 (foreground color: #b2b2b2, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span class=\"ant-divider-inner-text\">or</span>",
+                    "target": [
+                        ".ant-divider-inner-text"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.12 (foreground color: #b2b2b2, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#3470ff",
+                                "contrastRatio": 4.27,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<button id=\"button\" type=\"submit\" class=\"ant-btn ant-btn-primary btn-click\"><span>\u7d9a\u304d</span></button>",
+                                    "target": [
+                                        "#button"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 4.27 (foreground color: #ffffff, background color: #3470ff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span>\u7d9a\u304d</span>",
+                    "target": [
+                        "#button > span"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.27 (foreground color: #ffffff, background color: #3470ff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#3470ff",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 4.27,
+                                "fontSize": "9.0pt (12px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"sign\" lang=\"ja-JP\">",
+                                    "target": [
+                                        ".sign"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 4.27 (foreground color: #3470ff, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<div class=\"signing\">\u767b\u9332\u3059\u308b\u3053\u3068\u306b\u3088\u308a\u3001\u672c\u898f\u7d04\u306b\u540c\u610f\u3057\u305f\u3082\u306e\u3068\u307f\u306a\u3055\u308c\u307e\u3059\u3002</div>",
+                    "target": [
+                        ".signing"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.27 (foreground color: #3470ff, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": "minor",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "clip0_296_19060",
+                            "relatedNodes": [
+                                {
+                                    "html": "<clipPath id=\"clip0_296_19060\"><rect width=\"16\" height=\"16\" fill=\"white\"></rect></clipPath>",
+                                    "target": [
+                                        ".item:nth-child(2) > svg[viewBox=\"0 0 16 16\"][width=\"16\"][height=\"16\"] > defs > clippath"
+                                    ]
+                                },
+                                {
+                                    "html": "<clipPath id=\"clip0_296_19060\"><rect width=\"16\" height=\"16\" fill=\"white\"></rect></clipPath>",
+                                    "target": [
+                                        ".item:nth-child(3) > svg[viewBox=\"0 0 16 16\"][width=\"16\"][height=\"16\"] > defs > clippath"
+                                    ]
+                                },
+                                {
+                                    "html": "<clipPath id=\"clip0_296_19060\"><rect width=\"16\" height=\"16\" fill=\"white\"></rect></clipPath>",
+                                    "target": [
+                                        ".item:nth-child(4) > svg[viewBox=\"0 0 16 16\"][width=\"16\"][height=\"16\"] > defs > clippath"
+                                    ]
+                                },
+                                {
+                                    "html": "<clipPath id=\"clip0_296_19060\"><rect width=\"16\" height=\"16\" fill=\"white\"></rect></clipPath>",
+                                    "target": [
+                                        ".item:nth-child(5) > svg[viewBox=\"0 0 16 16\"][width=\"16\"][height=\"16\"] > defs > clippath"
+                                    ]
+                                },
+                                {
+                                    "html": "<clipPath id=\"clip0_296_19060\"><rect width=\"16\" height=\"16\" fill=\"white\"></rect></clipPath>",
+                                    "target": [
+                                        ".item:nth-child(6) > svg[viewBox=\"0 0 16 16\"][width=\"16\"][height=\"16\"] > defs > clippath"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: clip0_296_19060"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<clipPath id=\"clip0_296_19060\"><rect width=\"16\" height=\"16\" fill=\"white\"></rect></clipPath>",
+                    "target": [
+                        ".item:nth-child(1) > svg[viewBox=\"0 0 16 16\"][width=\"16\"][height=\"16\"] > defs > clippath"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: clip0_296_19060"
+                }
+            ]
+        },
+        {
+            "id": "image-alt",
+            "impact": "critical",
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures <img> elements have alternate text or a role of none or presentation",
+            "help": "Images must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-alt",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element does not have an alt attribute"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        },
+                        {
+                            "id": "presentational-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADUAAAAoCAYAAABerrI1AAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAb7SURBVHgB7VlrbBRVFP5mdvZZ2t2+KQilPBQQsUWsArEU1PhKNApqNCS+fpgoSjSCMdEYRWOMRjQ+MCq+lcTEd4iCClh5WWhLgbZAEaH0sbRL99Hd7m53dq5nZmenHXar3V34UdMvOb0zp/fce765d+aec5bDWWCMOaipJlmltqMO3NAbIlRNzbMYpWTi0EgRoXJqtpE44rqIKOFwhxee/gEwRcMrFozjVEtOveZQPjEbDqugG5xJEsIdp0m6abCoYsIxZRTtOt4aHOMglF+Y4KAn7EZXXyfC0bA8G9TpFIkTiOtn5c9XdIJKSCayLk5IYgwfbW7B+p9acMoThj8iQTIYyBsejDfQtQCJWiaQqLptj85H9fTc+BOCp64JR9euh7+uGXwgBCHKIJDzRokmlTgYmdwO3mffcyMcHz2tkenp78GGhg+wo70G/REfuS1CMNAY9EQMPIsJETHIOlX/2Y31g6QQ226yICoxPLVhFzZsOYIBmlB2HDKhFNC1+Q8cWP0yoh0uxXlO4lKyd4fceHzLk2h1N8ccV0iM3D5OalVc8f6mQ/jw52ZEZEf4FEZS0d/WiX0rnwPz+iEgdUSkCF7a8SpaXC0QUnuWGuJeV8t/3P4w3v2hkba/hHRx5N0vMeDrQ7po6jmMrSd+RybQLcWp7j609/iRCc7UH0ImOOA8SK9AFJlAR8pHKyVmsEoyQi4PMkEgEkSmSP2lGQUYIzVaMEZqtCCl8zHHasSaW+ZQa6LQKBaABSiEem37KV0/jk7NvMsuRcnVCzCu7AJYivMpKIlNJccWjMImqd2FgdY2iLVNEH+r12yrShehwJYHXj37ldiOgkN1OmoZgmIAJ7xHsM+5HSILZUbKajJgxcJSFNvNms4TFPHpXqd2P/mWa1C67HrYZ08fNKRYMNoXhBQMkpMceKsZfJVN9hCSx4/T8+7Rul5cOFORkeCEtxWv1D6G3nAn0iY1Esx9ZqXuPtLrRecn38P97VZIFK0LjIOlqABZs6fBvmwpLDPLhh3r9T/XUTDtV2I/gZbtiokLUDXpau3/U+wzcF3Z7dh4+A2d3TknNRTRQBD7V6yBf2djLCpncjpC0tULcf9R9G/cDMuEInBOd1L7mrYanA50EaFYQFvTtgUz8+egyFas9bEJOQl255VU9y+74Nm9nyZJHqUzil7Ek04l9fgv8PRCXVJUAbtZS/coxwpiT+cvCX3PKylPXWZx4Ns3vKO08ZzULFhgNsTe5zrnTvx47HMcdTfg7Gd2Xj/pqWVRScAGG1n4Ie5WFC/A8osewFTHrASzlFZKoI1tNemfg0gZrScYSdo/98pynHrrS6SLh39+SHmn4klirtWOpxe9gHnjK2k78phTOB9P5LyK1duWIyR5NTudhzlZJpTkZQ37hBfPKlbOqqFwBQbQTil/MhRUV6Jg8eXg/iVt5ScUgLOYMBL4wh7Un67V6RzmfEzKma7T6VZq7rRC/PbaMmxv7MSmvW1odfrg6hdhNhuxtHwi1t5ZkTDR+zvbIUoMyWDIsmLOhy9qn/QofdKNMMBaXADb7Kmw37pE+aT3XPtoUvurJldRfcKvHMLy4VuSVYLls+/S9RmIhqg4cybRmCUBZb/M4w8zp7ufuXwhRnmW7v99IZE9+c1hZl61meGRLWxba6+ib3z+TeZpatX1lSSJiT4/G3C6FIn6AkxSx4u6+1hn2W3Mfe9alipESWQbm99id/04j63YVKHpdSt18G8X1n3VgLkzCnBBYQ6K82ywmIyg7SsXoZQ0v+1MEI0dPnxR24UOf0SpJoEfLCa0ff8rjq3/AkVymLS4EuNmTKEwKU8fJvlDSlEmooZJ0fZuzb6ppwXNlNIrYZJWDmNqiBTXMao2daHZVYu/vE1KNQnDbT9vXxjf7GjF17uPUz1PLX/JZTCDIWmJbLjKCC0revc0wLezQS2FcdrhO1yJLI6ak7vwXv0HyodBdnZoNSl5iSxx/rHUY7RgjNRowRipYQeh763NmGaNOD7G+HxkgjzL+MGxcA4wOdeMKXkWpA06Giw3LUQmqCis0q4zJiXQafhw1SQUZY8sfksG05IKGCsvRrqwCtmonnyzdp9RPmWkbXd35QQ8tqQU6cJ0yTTkv7MGnCk9VxzmPNw/dzVK7VoK4klrpCyzAUUOGx5aOhUrl06hkz21zIkXBBjs2ci5YREK1z4Iw/iClOw5ms8iWFHmmI47Zj5AudVCpaCj4mPlSg4C5dYbCOPgcZcScMmxnlqfwuDPoPItjxybEbNKsmESEndv96469SfQ2CT8kJ9A470FqwXG0hIIhbkJ9p19XYpoP4MqLAZLZXLLU7iWbylEcdYEJa8agkaSah2pUY7vSO6jVfT8H86pj0kqiMytMiFZ8Q/91Q36g5PxxgAAAABJRU5ErkJggg==\">",
+                    "target": [
+                        "img:nth-child(4)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-alt",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element does not have an alt attribute"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        },
+                        {
+                            "id": "presentational-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<img src=\"data:image/png;base64,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\">",
+                    "target": [
+                        "img:nth-child(6)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                }
+            ]
+        },
+        {
+            "id": "landmark-one-main",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has a main landmark",
+            "help": "Document should have one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-one-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-main",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have a main landmark"
+                        }
+                    ],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<html lang=\"en-US\">",
+                    "target": [
+                        "html"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a class=\"logo\" href=\"https://www.octoparse.jp\" target=\"_blank\">",
+                    "target": [
+                        ".logo"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                }
+            ]
+        },
+        {
+            "id": "page-has-heading-one",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+            "help": "Page should contain a level-one heading",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/page-has-heading-one?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-heading-one",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Page must have a level-one heading"
+                        }
+                    ],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<html lang=\"en-US\">",
+                    "target": [
+                        "html"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"left-title\">Octoparse\u3078\u3088\u3046\u3053\u305d</div>",
+                    "target": [
+                        ".left-title"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"tips\">\u3044\u3064\u3067\u3082\u3001\u3069\u3053\u3067\u3082\u3001\u3059\u3070\u3084\u304f\u30c7\u30fc\u30bf\u3092</div>",
+                    "target": [
+                        ".tips"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<span>\u3059\u3050\u5229\u7528\u53ef\u80fd\u3001\u6570\u767e\u4eba\u6c17\u30b5\u30a4\u30c8\u306e\u30af\u30ed\u30fc\u30e9\u30fc</span>",
+                    "target": [
+                        ".item:nth-child(1) > span"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<span>\u30ce\u30fc\u30b3\u30fc\u30c9\u3067\u30af\u30ed\u30fc\u30e9\u30fc\u69cb\u7bc9</span>",
+                    "target": [
+                        ".item:nth-child(2) > span"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<span>\u81ea\u52d5\u691c\u51fa\u3067\u7c21\u5358\u30bb\u30c3\u30c8\u30a2\u30c3\u30d7</span>",
+                    "target": [
+                        ".item:nth-child(3) > span"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<span>99%\u306e\u30a6\u30a7\u30d6\u30b5\u30a4\u30c8\u3092\u30ab\u30b9\u30bf\u30de\u30a4\u30ba\u3067\u53d6\u5f97\u53ef\u80fd</span>",
+                    "target": [
+                        ".item:nth-child(4) > span"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<span>IP\u5909\u66f4\u3068CAPTCHA\u4ee3\u884c\u306b\u3088\u308b\u30d6\u30ed\u30c3\u30af\u56de\u907f</span>",
+                    "target": [
+                        ".item:nth-child(5) > span"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<span>\u753b\u50cf/CSV/Excel\u4ee5\u5916\u3001API\u3067DB/Google Sheets\u306b\u30a8\u30af\u30b9\u30dd\u30fc\u30c8</span>",
+                    "target": [
+                        ".item:nth-child(6) > span"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"brands\">15,000\u793e\u4ee5\u4e0a\u306e\u30b0\u30ed\u30fc\u30d0\u30eb\u4f01\u696d\u3068\u30b9\u30bf\u30fc\u30c8\u30a2\u30c3\u30d7\u306b\u4fe1\u983c\u3055\u308c\u3066\u3044\u307e\u3059</div>",
+                    "target": [
+                        ".brands"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img src=\"data:image/png;base64,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\">",
+                    "target": [
+                        "img:nth-child(4)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<img src=\"data:image/png;base64,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\">",
+                    "target": [
+                        "img:nth-child(6)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<span>More</span>",
+                    "target": [
+                        ".brands-icon > div:nth-child(2) > span"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"sign-title\">\u7121\u6599\u767b\u9332</div>",
+                    "target": [
+                        ".sign-title"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"login-btn\" style=\"margin-bottom: 0px;\">",
+                    "target": [
+                        ".login-btn"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"ant-divider ant-divider-horizontal ant-divider-with-text ant-divider-with-text-center ant-divider-plain\" role=\"separator\"><span class=\"ant-divider-inner-text\">or</span></div>",
+                    "target": [
+                        ".ant-divider"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"ant-form-item\">",
+                    "target": [
+                        ".ant-form-item:nth-child(1)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"ant-form-item password-form-item-sign\">",
+                    "target": [
+                        ".password-form-item-sign"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a href=\"/api/terms-and-conditions?lang=ja-JP\" target=\"_blank\"><div class=\"signing\">\u767b\u9332\u3059\u308b\u3053\u3068\u306b\u3088\u308a\u3001\u672c\u898f\u7d04\u306b\u540c\u610f\u3057\u305f\u3082\u306e\u3068\u307f\u306a\u3055\u308c\u307e\u3059\u3002</div></a>",
+                    "target": [
+                        ".sign > a[target=\"_blank\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                }
+            ]
+        }
+    ]
+}

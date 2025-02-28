@@ -1,0 +1,2567 @@
+{
+    "testEngine": {
+        "name": "axe-core",
+        "version": "4.4.3"
+    },
+    "testRunner": {
+        "name": "axe"
+    },
+    "timestamp": "2024-09-26T17:28:53.560Z",
+    "url": "https://www.thepoolfactory.com/account/register",
+    "toolOptions": {
+        "resultTypes": [
+            "violations"
+        ],
+        "reporter": "v1"
+    },
+    "passes": [
+        {
+            "id": "aria-allowed-attr",
+            "impact": "serious",
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures ARIA attributes are allowed for an element's role",
+            "help": "Elements must only use allowed ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attributes are used correctly for the defined role"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "aria-unsupported-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute is supported"
+                        },
+                        {
+                            "id": "aria-prohibited-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "ARIA attribute is allowed"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"search\" name=\"q\" id=\"bc-sf-search-box-0\" value=\"\" placeholder=\"Search...\" aria-live=\"polite\" class=\"ui-autocomplete-input bc-sf-search-box\" autocomplete=\"off\" data-search-box=\"#bc-sf-search-box-0\">",
+                    "target": [
+                        "#bc-sf-search-box-0"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-allowed-role",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "best-practice"
+            ],
+            "description": "Ensures role attribute has an appropriate value for the element",
+            "help": "ARIA role should be appropriate for the element",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-role?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is allowed for given element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<form action=\"/search\" method=\"get\" role=\"search\" class=\"header__search-form\">",
+                    "target": [
+                        ".col-xl-4 > .header__search-form[action=\"/search\"][method=\"get\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-command-name",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures every ARIA button, link and menuitem has an accessible name",
+            "help": "ARIA commands must have an accessible name",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-command-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute exists and is not empty"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"swiper-button-prev\" tabindex=\"0\" role=\"button\" aria-label=\"Previous slide\"></div>",
+                    "target": [
+                        ".swiper-button-prev"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-body",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures aria-hidden='true' is not present on the document body.",
+            "help": "aria-hidden='true' must not be present on the document body",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-hidden-body",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "No aria-hidden attribute is present on document body"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<body id=\"create-account\" class=\"template-register swym-ready swym-buttons-loaded\">",
+                    "target": [
+                        "#create-account"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-focus",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag131"
+            ],
+            "description": "Ensures aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "focusable-modal-open",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements while a modal is open"
+                        },
+                        {
+                            "id": "focusable-disabled",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        },
+                        {
+                            "id": "focusable-not-tabbable",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<iframe aria-hidden=\"true\" data-hcaptcha-widget-id=\"072bt6ft23k6\" data-hcaptcha-response=\"\" src=\"https://newassets.hcaptcha.com/captcha/v1/70b4624/static/hcaptcha.html#frame=checkbox-invisible\" style=\"display: none;\"></iframe>",
+                    "target": [
+                        "iframe[data-hcaptcha-widget-id=\"072bt6ft23k6\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-required-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures elements with ARIA roles have all required ARIA attributes",
+            "help": "Required ARIA attributes must be provided",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-required-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-required-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "All required ARIA attributes are present"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<form action=\"/search\" method=\"get\" role=\"search\" class=\"header__search-form\">",
+                    "target": [
+                        ".col-xl-4 > .header__search-form[action=\"/search\"][method=\"get\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-roles",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all elements with a role attribute use a valid value",
+            "help": "ARIA roles used must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-roles?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "fallbackrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Only one role value used"
+                        },
+                        {
+                            "id": "invalidrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is valid"
+                        },
+                        {
+                            "id": "abstractrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Abstract roles are not used"
+                        },
+                        {
+                            "id": "unsupportedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is supported"
+                        },
+                        {
+                            "id": "deprecatedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is not deprecated"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<form action=\"/search\" method=\"get\" role=\"search\" class=\"header__search-form\">",
+                    "target": [
+                        ".col-xl-4 > .header__search-form[action=\"/search\"][method=\"get\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr-value",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all ARIA attributes have valid values",
+            "help": "ARIA attributes must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr-value?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "aria-valid-attr-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute values are valid"
+                        },
+                        {
+                            "id": "aria-errormessage",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "aria-errormessage exists and references elements visible to screen readers that use a supported aria-errormessage technique"
+                        },
+                        {
+                            "id": "aria-level",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-level values are valid"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"affirm-site-modal\" data-page_type=\"banner\" data-affirm-color=\"white\" data-learnmore-show=\"false\" aria-label=\"Finance your pool purchase with Affirm - Affirm Financing (opens in modal)\" style=\"cursor: pointer;\">",
+                    "target": [
+                        ".text-right.col.d-lg-block > .header__bar-affirm > .affirm-site-modal[data-page_type=\"banner\"][data-affirm-color=\"white\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures attributes that begin with aria- are valid ARIA attributes",
+            "help": "ARIA attributes must conform to valid names",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-valid-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute name is valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"affirm-site-modal\" data-page_type=\"banner\" data-affirm-color=\"white\" data-learnmore-show=\"false\" aria-label=\"Finance your pool purchase with Affirm - Affirm Financing (opens in modal)\" style=\"cursor: pointer;\">",
+                    "target": [
+                        ".text-right.col.d-lg-block > .header__bar-affirm > .affirm-site-modal[data-page_type=\"banner\"][data-affirm-color=\"white\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "autocomplete-valid",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag21aa",
+                "wcag135"
+            ],
+            "description": "Ensure the autocomplete attribute is correct and suitable for the form field",
+            "help": "autocomplete attribute must be used correctly",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/autocomplete-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "autocomplete-valid",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "the autocomplete attribute is correctly formatted"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input type=\"search\" name=\"q\" id=\"bc-sf-search-box-0\" value=\"\" placeholder=\"Search...\" aria-live=\"polite\" class=\"ui-autocomplete-input bc-sf-search-box\" autocomplete=\"off\" data-search-box=\"#bc-sf-search-box-0\">",
+                    "target": [
+                        "#bc-sf-search-box-0"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "avoid-inline-spacing",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag21aa",
+                "wcag1412"
+            ],
+            "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+            "help": "Inline text spacing must be adjustable with custom stylesheets",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/avoid-inline-spacing?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "avoid-inline-spacing",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No inline styles with '!important' that affect text spacing has been specified"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"supports-no-cookies js no-touch\" lang=\"en\" style=\"--header-height: 162.984px; --header-panel-height: 91px;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "button-name",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures buttons have discernible text",
+            "help": "Buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/button-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "button-has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has inner text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button type=\"submit\" class=\"button btn header__search-btn\" onclick=\"beforeSubmitSearchForm('#bc-sf-search-box-0', event)\">",
+                    "target": [
+                        ".col-xl-4 > .header__search-form[action=\"/search\"][method=\"get\"] > .btn.header__search-btn"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "bypass",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag241",
+                "section508",
+                "section508.22.o"
+            ],
+            "description": "Ensures each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+            "help": "Page must have means to bypass repeated blocks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/bypass?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "internal-link-present",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Valid skip link found"
+                        },
+                        {
+                            "id": "header-present",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1 class=\"h2\">Create Account</h1>",
+                                    "target": [
+                                        "h1"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"h1 mb-4 text-center\">We carry the Best Brands in the Pool Industry</h2>",
+                                    "target": [
+                                        "h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"footer__title\">\n                      <span class=\"footer-open-close__opener\">Swimming Pools</span>\n                    </h3>",
+                                    "target": [
+                                        ".footer-open-close--alt > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"footer__title\">\n                      <span class=\"footer-open-close__opener\">Help</span>\n                    </h3>",
+                                    "target": [
+                                        ".col-lg-3:nth-child(2) > .footer-open-close.footer__nav:nth-child(2) > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"footer__title\">\n                      <span class=\"footer-open-close__opener\">Pool Supplies</span>\n                    </h3>",
+                                    "target": [
+                                        ".col-lg-3:nth-child(3) > .footer-open-close.footer__nav > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"footer__title\">\n                      <span class=\"footer-open-close__opener\">Popular Categories</span>\n                    </h3>",
+                                    "target": [
+                                        ".col-lg-3:nth-child(4) > .footer-open-close.footer__nav > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"footer__title\">\n                      <span class=\"footer-open-close__opener\">Customer Service</span>\n                    </h3>",
+                                    "target": [
+                                        ".col-lg-3:nth-child(5) > .footer-open-close.footer__nav > h3"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Page has a heading"
+                        },
+                        {
+                            "id": "landmark",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<main role=\"main\" id=\"main\">",
+                                    "target": [
+                                        "#main"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Page has a landmark region"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"supports-no-cookies js no-touch\" lang=\"en\" style=\"--header-height: 162.984px; --header-panel-height: 91px;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#082f50",
+                                "contrastRatio": 13.7,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 13.7"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"/pages/reviews-testimonials\">Read our 82,000+ verified reviews</a>",
+                    "target": [
+                        ".col.d-lg-block.d-none:nth-child(1) > div > a[href$=\"reviews-testimonials\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "document-title",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag242",
+                "ACT"
+            ],
+            "description": "Ensures each HTML document contains a non-empty <title> element",
+            "help": "Documents must have <title> element to aid in navigation",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/document-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "doc-has-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has a non-empty <title> element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"supports-no-cookies js no-touch\" lang=\"en\" style=\"--header-height: 162.984px; --header-panel-height: 91px;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-active",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value of active elements is unique",
+            "help": "IDs of active elements must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-active",
+                            "data": "bc-sf-search-box-0",
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has no active elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input type=\"search\" name=\"q\" id=\"bc-sf-search-box-0\" value=\"\" placeholder=\"Search...\" aria-live=\"polite\" class=\"ui-autocomplete-input bc-sf-search-box\" autocomplete=\"off\" data-search-box=\"#bc-sf-search-box-0\">",
+                    "target": [
+                        "#bc-sf-search-box-0"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-aria",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value used in ARIA and in labels is unique",
+            "help": "IDs used in ARIA and labels must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-aria",
+                            "data": "FirstName",
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input type=\"text\" name=\"customer[first_name]\" id=\"FirstName\" placeholder=\"First Name\" autofocus=\"\">",
+                    "target": [
+                        "#FirstName"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": "minor",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "shopify-digital-wallet",
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta id=\"shopify-digital-wallet\" name=\"shopify-digital-wallet\" content=\"/47486599330/digital_wallets/dialog\">",
+                    "target": [
+                        "#shopify-digital-wallet"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "empty-heading",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "best-practice"
+            ],
+            "description": "Ensures headings have discernible text",
+            "help": "Headings should not be empty",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/empty-heading?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h1 class=\"h2\">Create Account</h1>",
+                    "target": [
+                        "h1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "form-field-multiple-labels",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag332"
+            ],
+            "description": "Ensures form field does not have multiple label elements",
+            "help": "Form field must not have multiple label elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/form-field-multiple-labels?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "multiple-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Form field does not have multiple label elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"search\" name=\"q\" id=\"bc-sf-search-box-0\" value=\"\" placeholder=\"Search...\" aria-live=\"polite\" class=\"ui-autocomplete-input bc-sf-search-box\" autocomplete=\"off\" data-search-box=\"#bc-sf-search-box-0\">",
+                    "target": [
+                        "#bc-sf-search-box-0"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "heading-order",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": {
+                                "headingOrder": [
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > main:nth-child(2) > div > div > div > div:nth-child(1) > h1"
+                                        ],
+                                        "level": 1
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > div:nth-child(3) > div > div > h2:nth-child(1)"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > div:nth-child(4) > footer > div:nth-child(1) > div > div > div:nth-child(2) > nav:nth-child(1) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > div:nth-child(4) > footer > div:nth-child(1) > div > div > div:nth-child(2) > nav:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > div:nth-child(4) > footer > div:nth-child(1) > div > div > div:nth-child(3) > nav > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > div:nth-child(4) > footer > div:nth-child(1) > div > div > div:nth-child(4) > nav > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > div:nth-child(4) > footer > div:nth-child(1) > div > div > div:nth-child(5) > nav:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    }
+                                ]
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h1 class=\"h2\">Create Account</h1>",
+                    "target": [
+                        "h1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-has-lang",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures every HTML document has a lang attribute",
+            "help": "<html> element must have a lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-has-lang?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "The <html> element has a lang attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"supports-no-cookies js no-touch\" lang=\"en\" style=\"--header-height: 162.984px; --header-panel-height: 91px;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-lang-valid",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures the lang attribute of the <html> element has a valid value",
+            "help": "<html> element must have a valid value for the lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-lang-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "valid-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Value of lang attribute is included in the list of valid languages"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<html class=\"supports-no-cookies js no-touch\" lang=\"en\" style=\"--header-height: 162.984px; --header-panel-height: 91px;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "identical-links-same-purpose",
+            "impact": "minor",
+            "tags": [
+                "cat.semantics",
+                "wcag2aaa",
+                "wcag249"
+            ],
+            "description": "Ensure that links with the same accessible name serve a similar purpose",
+            "help": "Links with the same name must have a similar purpose",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/identical-links-same-purpose?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "identical-links-same-purpose",
+                            "data": {
+                                "name": "read our 82000 verified reviews",
+                                "urlProps": {
+                                    "protocol": "http:",
+                                    "hostname": "www.thepoolfactory.com",
+                                    "port": "",
+                                    "pathname": "/pages/reviews-testimonials/",
+                                    "search": {},
+                                    "hash": "",
+                                    "filename": ""
+                                }
+                            },
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "There are no other links with the same name, that go to a different URL"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"/pages/reviews-testimonials\">Read our 82,000+ verified reviews</a>",
+                    "target": [
+                        ".col.d-lg-block.d-none:nth-child(1) > div > a[href$=\"reviews-testimonials\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures <img> elements have alternate text or a role of none or presentation",
+            "help": "Images must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-alt",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has an alt attribute"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "alt-space-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has a valid alt attribute value"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img src=\"//www.thepoolfactory.com/cdn/shop/t/358/assets/logo.svg?v=156975085458743828511724767385\" alt=\"The Pool Factory logo\" title=\"The Pool Factory\">",
+                    "target": [
+                        ".header__panel-logo > .logo > a[href=\"/\"] > img[alt=\"The Pool Factory logo\"][title=\"The Pool Factory\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-redundant-alt",
+            "impact": "minor",
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ],
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-redundant-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img src=\"//www.thepoolfactory.com/cdn/shop/t/358/assets/logo.svg?v=156975085458743828511724767385\" alt=\"The Pool Factory logo\" title=\"The Pool Factory\">",
+                    "target": [
+                        ".header__panel-logo > .logo > a[href=\"/\"] > img[alt=\"The Pool Factory logo\"][title=\"The Pool Factory\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "input-button-name",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "section508",
+                "section508.22.a"
+            ],
+            "description": "Ensures input buttons have discernible text",
+            "help": "Input buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/input-button-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "non-empty-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has a non-empty value attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input type=\"submit\" value=\"Create\" class=\"button w-100\">",
+                    "target": [
+                        ".w-100"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label-title-only",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "best-practice"
+            ],
+            "description": "Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes",
+            "help": "Form elements should have a visible label",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "title-only",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Form element does not solely use title attribute for its label"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"search\" name=\"q\" id=\"bc-sf-search-box-0\" value=\"\" placeholder=\"Search...\" aria-live=\"polite\" class=\"ui-autocomplete-input bc-sf-search-box\" autocomplete=\"off\" data-search-box=\"#bc-sf-search-box-0\">",
+                    "target": [
+                        "#bc-sf-search-box-0"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag412",
+                "wcag131",
+                "section508",
+                "section508.22.n",
+                "ACT"
+            ],
+            "description": "Ensures every form element has a label",
+            "help": "Form elements must have labels",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "non-empty-placeholder",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a placeholder attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "hidden-explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element has a visible explicit <label>"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"search\" name=\"q\" id=\"bc-sf-search-box-0\" value=\"\" placeholder=\"Search...\" aria-live=\"polite\" class=\"ui-autocomplete-input bc-sf-search-box\" autocomplete=\"off\" data-search-box=\"#bc-sf-search-box-0\">",
+                    "target": [
+                        "#bc-sf-search-box-0"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-banner-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the banner landmark is at top level",
+            "help": "Banner landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-banner-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "banner"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The banner landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header id=\"header\">",
+                    "target": [
+                        "#header"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-contentinfo-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the contentinfo landmark is at top level",
+            "help": "Contentinfo landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-contentinfo-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "contentinfo"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The contentinfo landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<footer id=\"footer\">",
+                    "target": [
+                        "#footer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-main-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the main landmark is at top level",
+            "help": "Main landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-main-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "main"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The main landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<main role=\"main\" id=\"main\">",
+                    "target": [
+                        "#main"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-banner",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one banner landmark",
+            "help": "Document should not have more than one banner landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-banner?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-banner",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one banner landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header id=\"header\">",
+                    "target": [
+                        "#header"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-contentinfo",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one contentinfo landmark",
+            "help": "Document should not have more than one contentinfo landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-contentinfo?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-contentinfo",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one contentinfo landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<footer id=\"footer\">",
+                    "target": [
+                        "#footer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-main",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one main landmark",
+            "help": "Document should not have more than one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-main",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one main landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<main role=\"main\" id=\"main\">",
+                    "target": [
+                        "#main"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-one-main",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has a main landmark",
+            "help": "Document should have one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-one-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-main",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<main role=\"main\" id=\"main\">",
+                                    "target": [
+                                        "#main"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Document has at least one main landmark"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"supports-no-cookies js no-touch\" lang=\"en\" style=\"--header-height: 162.984px; --header-panel-height: 91px;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-unique",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "help": "Ensures landmarks are unique",
+            "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-unique",
+                            "data": {
+                                "role": "banner",
+                                "accessibleText": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Landmarks must have a unique role or role/label/title (i.e. accessible name) combination"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header id=\"header\">",
+                    "target": [
+                        "#header"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a href=\"/pages/reviews-testimonials\">Read our 82,000+ verified reviews</a>",
+                    "target": [
+                        ".col.d-lg-block.d-none:nth-child(1) > div > a[href$=\"reviews-testimonials\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "list",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures that lists are structured correctly",
+            "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/list?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "only-listitems",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List element only has direct children that are allowed inside <li> elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<ul class=\"header__link-list\">\n            \n              <li>\n                <a href=\"/account/register\">Register</a>\n              </li>\n              <li>\n                <a href=\"/account/login\">Log in</a>\n              </li>\n            \n          </ul>",
+                    "target": [
+                        ".text-right.col > .header__link-list"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "listitem",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures <li> elements are used semantically",
+            "help": "<li> elements must be contained in a <ul> or <ol>",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/listitem?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<li>\n                <a href=\"/account/register\">Register</a>\n              </li>",
+                    "target": [
+                        ".text-right.col > .header__link-list > li:nth-child(1)"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport-large",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> can scale a significant amount",
+            "help": "Users should be able to zoom and scale the text up to 500%",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport-large?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport-large",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "<meta> tag does not prevent significant zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "nested-interactive",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+            "help": "Interactive controls must not be nested",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/nested-interactive?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "no-focusable-content",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have focusable descendants"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<img src=\"//www.thepoolfactory.com/cdn/shop/t/358/assets/logo.svg?v=156975085458743828511724767385\" alt=\"The Pool Factory logo\" title=\"The Pool Factory\">",
+                    "target": [
+                        ".header__panel-logo > .logo > a[href=\"/\"] > img[alt=\"The Pool Factory logo\"][title=\"The Pool Factory\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "page-has-heading-one",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+            "help": "Page should contain a level-one heading",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/page-has-heading-one?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-heading-one",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1 class=\"h2\">Create Account</h1>",
+                                    "target": [
+                                        "h1"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Page has at least one level-one heading"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"supports-no-cookies js no-touch\" lang=\"en\" style=\"--header-height: 162.984px; --header-panel-height: 91px;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "All page content is contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<noscript><iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-T4Z36DF\"\n    height=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></noscript>",
+                    "target": [
+                        "noscript"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "svg-img-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures <svg> elements with an img, graphics-document or graphics-symbol role have an accessible text",
+            "help": "<svg> elements with an img role must have an alternative text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/svg-img-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute exists and is not empty"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<svg class=\"icon icon--search\" role=\"img\" aria-label=\"Icon Search\" width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">",
+                    "target": [
+                        ".col-xl-4 > .header__search-form[action=\"/search\"][method=\"get\"] > .btn.header__search-btn > .icon--search[aria-label=\"Icon Search\"][height=\"16\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "tabindex",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures tabindex attribute values are not greater than 0",
+            "help": "Elements should not have tabindex greater than zero",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/tabindex?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "tabindex",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have a tabindex greater than 0"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"section page-section\" id=\"content\" tabindex=\"0\">",
+                    "target": [
+                        "#content"
+                    ]
+                }
+            ]
+        }
+    ],
+    "violations": [
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#00abbf",
+                                "contrastRatio": 2.77,
+                                "fontSize": "9.0pt (12px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"info\"><span>Protected by hCaptcha</span><ul class=\"links\"><li><a href=\"https://hcaptcha.com/privacy\" target=\"_blank\" class=\"privacy\">Privacy</a></li><li><a href=\"https://hcaptcha.com/terms\" target=\"_blank\" class=\"terms\">Terms</a></li></ul></div>",
+                                    "target": [
+                                        ".info"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.77 (foreground color: #ffffff, background color: #00abbf, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span>Protected by hCaptcha</span>",
+                    "target": [
+                        ".info > span"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.77 (foreground color: #ffffff, background color: #00abbf, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#00abbf",
+                                "contrastRatio": 2.77,
+                                "fontSize": "7.5pt (10px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"info\"><span>Protected by hCaptcha</span><ul class=\"links\"><li><a href=\"https://hcaptcha.com/privacy\" target=\"_blank\" class=\"privacy\">Privacy</a></li><li><a href=\"https://hcaptcha.com/terms\" target=\"_blank\" class=\"terms\">Terms</a></li></ul></div>",
+                                    "target": [
+                                        ".info"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.77 (foreground color: #ffffff, background color: #00abbf, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://hcaptcha.com/privacy\" target=\"_blank\" class=\"privacy\">Privacy</a>",
+                    "target": [
+                        ".privacy"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.77 (foreground color: #ffffff, background color: #00abbf, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#00abbf",
+                                "contrastRatio": 2.77,
+                                "fontSize": "7.5pt (10px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"info\"><span>Protected by hCaptcha</span><ul class=\"links\"><li><a href=\"https://hcaptcha.com/privacy\" target=\"_blank\" class=\"privacy\">Privacy</a></li><li><a href=\"https://hcaptcha.com/terms\" target=\"_blank\" class=\"terms\">Terms</a></li></ul></div>",
+                                    "target": [
+                                        ".info"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.77 (foreground color: #ffffff, background color: #00abbf, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://hcaptcha.com/terms\" target=\"_blank\" class=\"terms\">Terms</a>",
+                    "target": [
+                        ".terms"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.77 (foreground color: #ffffff, background color: #00abbf, font size: 7.5pt (10px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": "minor",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "swym-snippet",
+                            "relatedNodes": [
+                                {
+                                    "html": "<script id=\"swym-snippet\">",
+                                    "target": [
+                                        "#create-account > script:nth-child(22)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: swym-snippet"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<script id=\"swym-snippet\">",
+                    "target": [
+                        "#create-account > script:nth-child(14)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: swym-snippet"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "safari-flasher-pre",
+                            "relatedNodes": [
+                                {
+                                    "html": "<style id=\"safari-flasher-pre\"></style>",
+                                    "target": [
+                                        "style:nth-child(23)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: safari-flasher-pre"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<style id=\"safari-flasher-pre\"></style>",
+                    "target": [
+                        "style:nth-child(16)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: safari-flasher-pre"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "swym-product-view-defaults",
+                            "relatedNodes": [
+                                {
+                                    "html": "<style id=\"swym-product-view-defaults\">\n  /* Hide when not loaded */\n  .swym-button.swym-add-to-wishlist-view-product:not(.swym-loaded){\n    display: none;\n  }\n</style>",
+                                    "target": [
+                                        "style:nth-child(25)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: swym-product-view-defaults"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<style id=\"swym-product-view-defaults\">\n  /* Hide when not loaded */\n  .swym-button.swym-add-to-wishlist-view-product:not(.swym-loaded){\n    display: none;\n  }\n</style>",
+                    "target": [
+                        "style:nth-child(18)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: swym-product-view-defaults"
+                }
+            ]
+        },
+        {
+            "id": "image-redundant-alt",
+            "impact": "minor",
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ],
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-redundant-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img data-src=\"//www.thepoolfactory.com/cdn/shop/files/pleatco-logos-250x250_50x50.jpg?v=1698343173\" class=\"lazyload\" data-sizes=\"auto\" alt=\"Pleatco\" title=\"Pleatco\" src=\"//www.thepoolfactory.com/cdn/shop/t/358/assets/img-placeholder_50x50_crop_center.png?v=149528732049019734111724767385\">",
+                    "target": [
+                        ".swiper-slide-duplicate[data-index=\"10\"][data-swiper-slide-index=\"9\"] > .brands-gallery__item.justify-content-center[href$=\"pleatco\"] > .brands-gallery__logo > picture > .lazyload[alt=\"Pleatco\"][title=\"Pleatco\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img data-src=\"//www.thepoolfactory.com/cdn/shop/files/solaxx-logos-250x250_1_50x50.jpg?v=1616421252\" class=\"lazyload\" data-sizes=\"auto\" alt=\"Solaxx Pool Products\" title=\"Solaxx Pool Products\" src=\"//www.thepoolfactory.com/cdn/shop/t/358/assets/img-placeholder_50x50_crop_center.png?v=149528732049019734111724767385\">",
+                    "target": [
+                        ".swiper-slide-duplicate[data-index=\"11\"][data-swiper-slide-index=\"10\"] > .brands-gallery__item.justify-content-center.flex-column > .brands-gallery__logo > picture > .lazyload[alt=\"Solaxx Pool Products\"][title=\"Solaxx Pool Products\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img data-src=\"//www.thepoolfactory.com/cdn/shop/files/swimline-logos-250x250_50x50.jpg?v=1698343302\" class=\"lazyload\" data-sizes=\"auto\" alt=\"Swimline\" title=\"Swimline\" src=\"//www.thepoolfactory.com/cdn/shop/t/358/assets/img-placeholder_50x50_crop_center.png?v=149528732049019734111724767385\">",
+                    "target": [
+                        ".swiper-slide-duplicate[data-index=\"12\"][data-swiper-slide-index=\"11\"] > .brands-gallery__item.justify-content-center[href$=\"swimline\"] > .brands-gallery__logo > picture > .lazyload[alt=\"Swimline\"][title=\"Swimline\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img data-src=\"//www.thepoolfactory.com/cdn/shop/files/sw-series-logos-250x250_50x50.jpg?v=1698343260\" class=\"lazyautosizes ls-is-cached lazyloaded\" data-sizes=\"auto\" alt=\"Saltwater Series\" title=\"Saltwater Series\" src=\"//www.thepoolfactory.com/cdn/shop/files/sw-series-logos-250x250_50x50.jpg?v=1698343260\" sizes=\"50px\">",
+                    "target": [
+                        ".ls-is-cached[alt=\"Saltwater Series\"][title=\"Saltwater Series\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img data-src=\"//www.thepoolfactory.com/cdn/shop/files/vinyl-works-logos-250x250_50x50.jpg?v=1698343400\" class=\"lazyautosizes ls-is-cached lazyloaded\" data-sizes=\"auto\" alt=\"Vinyl Works\" title=\"Vinyl Works\" src=\"//www.thepoolfactory.com/cdn/shop/files/vinyl-works-logos-250x250_50x50.jpg?v=1698343400\" sizes=\"50px\">",
+                    "target": [
+                        ".ls-is-cached[alt=\"Vinyl Works\"][title=\"Vinyl Works\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img data-src=\"//www.thepoolfactory.com/cdn/shop/files/confer-logos-250x250_2_50x50.jpg?v=1616421501\" class=\"lazyautosizes ls-is-cached lazyloaded\" data-sizes=\"auto\" alt=\"Confer Plastics\" title=\"Confer Plastics\" src=\"//www.thepoolfactory.com/cdn/shop/files/confer-logos-250x250_2_50x50.jpg?v=1616421501\" sizes=\"50px\">",
+                    "target": [
+                        ".ls-is-cached[alt=\"Confer Plastics\"][title=\"Confer Plastics\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img data-src=\"//www.thepoolfactory.com/cdn/shop/files/champlain-plastics-250x250_50x50.jpg?v=1708441041\" class=\"lazyautosizes ls-is-cached lazyloaded\" data-sizes=\"auto\" alt=\"Champlain Plastics\" title=\"Champlain Plastics\" src=\"//www.thepoolfactory.com/cdn/shop/files/champlain-plastics-250x250_50x50.jpg?v=1708441041\" sizes=\"50px\">",
+                    "target": [
+                        ".ls-is-cached[alt=\"Champlain Plastics\"][title=\"Champlain Plastics\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img data-src=\"//www.thepoolfactory.com/cdn/shop/files/gli-logos-250x250_50x50.jpg?v=1698342916\" class=\"lazyautosizes ls-is-cached lazyloaded\" data-sizes=\"auto\" alt=\"GLI Pool Products\" title=\"GLI Pool Products\" src=\"//www.thepoolfactory.com/cdn/shop/files/gli-logos-250x250_50x50.jpg?v=1698342916\" sizes=\"50px\">",
+                    "target": [
+                        ".ls-is-cached[alt=\"GLI Pool Products\"][title=\"GLI Pool Products\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img data-src=\"//www.thepoolfactory.com/cdn/shop/files/gladon-logos-250x250_50x50.jpg?v=1698343013\" class=\"lazyautosizes lazyloaded\" data-sizes=\"auto\" alt=\"Gladon\" title=\"Gladon\" src=\"//www.thepoolfactory.com/cdn/shop/files/gladon-logos-250x250_50x50.jpg?v=1698343013\" sizes=\"50px\">",
+                    "target": [
+                        ".lazyloaded[alt=\"Gladon\"][title=\"Gladon\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img data-src=\"//www.thepoolfactory.com/cdn/shop/files/hayward-logos-250x250_1_50x50.jpg?v=1616421300\" class=\"lazyautosizes ls-is-cached lazyloaded\" data-sizes=\"auto\" alt=\"Hayward\" title=\"Hayward\" src=\"//www.thepoolfactory.com/cdn/shop/files/hayward-logos-250x250_1_50x50.jpg?v=1616421300\" sizes=\"50px\">",
+                    "target": [
+                        ".ls-is-cached[alt=\"Hayward\"][title=\"Hayward\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img data-src=\"//www.thepoolfactory.com/cdn/shop/files/hydrotools-logos-250x250_50x50.jpg?v=1616425200\" class=\"lazyautosizes ls-is-cached lazyloaded\" data-sizes=\"auto\" alt=\"HydroTools\" title=\"HydroTools\" src=\"//www.thepoolfactory.com/cdn/shop/files/hydrotools-logos-250x250_50x50.jpg?v=1616425200\" sizes=\"50px\">",
+                    "target": [
+                        "img[alt=\"HydroTools\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img data-src=\"//www.thepoolfactory.com/cdn/shop/files/pleatco-logos-250x250_50x50.jpg?v=1698343173\" class=\"lazyload\" data-sizes=\"auto\" alt=\"Pleatco\" title=\"Pleatco\" src=\"//www.thepoolfactory.com/cdn/shop/t/358/assets/img-placeholder_50x50_crop_center.png?v=149528732049019734111724767385\">",
+                    "target": [
+                        ".swiper-slide[data-index=\"10\"][data-swiper-slide-index=\"9\"]:nth-child(16) > .brands-gallery__item.justify-content-center[href$=\"pleatco\"] > .brands-gallery__logo > picture > .lazyload[alt=\"Pleatco\"][title=\"Pleatco\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img data-src=\"//www.thepoolfactory.com/cdn/shop/files/solaxx-logos-250x250_1_50x50.jpg?v=1616421252\" class=\"lazyload\" data-sizes=\"auto\" alt=\"Solaxx Pool Products\" title=\"Solaxx Pool Products\" src=\"//www.thepoolfactory.com/cdn/shop/t/358/assets/img-placeholder_50x50_crop_center.png?v=149528732049019734111724767385\">",
+                    "target": [
+                        ".swiper-slide[data-index=\"11\"][data-swiper-slide-index=\"10\"]:nth-child(17) > .brands-gallery__item.justify-content-center.flex-column > .brands-gallery__logo > picture > .lazyload[alt=\"Solaxx Pool Products\"][title=\"Solaxx Pool Products\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img data-src=\"//www.thepoolfactory.com/cdn/shop/files/swimline-logos-250x250_50x50.jpg?v=1698343302\" class=\"lazyload\" data-sizes=\"auto\" alt=\"Swimline\" title=\"Swimline\" src=\"//www.thepoolfactory.com/cdn/shop/t/358/assets/img-placeholder_50x50_crop_center.png?v=149528732049019734111724767385\">",
+                    "target": [
+                        ".swiper-slide[data-index=\"12\"][data-swiper-slide-index=\"11\"]:nth-child(18) > .brands-gallery__item.justify-content-center[href$=\"swimline\"] > .brands-gallery__logo > picture > .lazyload[alt=\"Swimline\"][title=\"Swimline\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img data-src=\"//www.thepoolfactory.com/cdn/shop/files/sw-series-logos-250x250_50x50.jpg?v=1698343260\" class=\"lazyload\" data-sizes=\"auto\" alt=\"Saltwater Series\" title=\"Saltwater Series\" src=\"//www.thepoolfactory.com/cdn/shop/t/358/assets/img-placeholder_50x50_crop_center.png?v=149528732049019734111724767385\">",
+                    "target": [
+                        ".lazyload[alt=\"Saltwater Series\"][title=\"Saltwater Series\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img data-src=\"//www.thepoolfactory.com/cdn/shop/files/vinyl-works-logos-250x250_50x50.jpg?v=1698343400\" class=\"lazyload\" data-sizes=\"auto\" alt=\"Vinyl Works\" title=\"Vinyl Works\" src=\"//www.thepoolfactory.com/cdn/shop/t/358/assets/img-placeholder_50x50_crop_center.png?v=149528732049019734111724767385\">",
+                    "target": [
+                        ".lazyload[alt=\"Vinyl Works\"][title=\"Vinyl Works\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img data-src=\"//www.thepoolfactory.com/cdn/shop/files/confer-logos-250x250_2_50x50.jpg?v=1616421501\" class=\"lazyload\" data-sizes=\"auto\" alt=\"Confer Plastics\" title=\"Confer Plastics\" src=\"//www.thepoolfactory.com/cdn/shop/t/358/assets/img-placeholder_50x50_crop_center.png?v=149528732049019734111724767385\">",
+                    "target": [
+                        ".lazyload[alt=\"Confer Plastics\"][title=\"Confer Plastics\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img data-src=\"//www.thepoolfactory.com/cdn/shop/files/champlain-plastics-250x250_50x50.jpg?v=1708441041\" class=\"lazyload\" data-sizes=\"auto\" alt=\"Champlain Plastics\" title=\"Champlain Plastics\" src=\"//www.thepoolfactory.com/cdn/shop/t/358/assets/img-placeholder_50x50_crop_center.png?v=149528732049019734111724767385\">",
+                    "target": [
+                        ".lazyload[alt=\"Champlain Plastics\"][title=\"Champlain Plastics\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img data-src=\"//www.thepoolfactory.com/cdn/shop/files/gli-logos-250x250_50x50.jpg?v=1698342916\" class=\"lazyload\" data-sizes=\"auto\" alt=\"GLI Pool Products\" title=\"GLI Pool Products\" src=\"//www.thepoolfactory.com/cdn/shop/t/358/assets/img-placeholder_50x50_crop_center.png?v=149528732049019734111724767385\">",
+                    "target": [
+                        ".lazyload[alt=\"GLI Pool Products\"][title=\"GLI Pool Products\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img data-src=\"//www.thepoolfactory.com/cdn/shop/files/gladon-logos-250x250_50x50.jpg?v=1698343013\" class=\"lazyload\" data-sizes=\"auto\" alt=\"Gladon\" title=\"Gladon\" src=\"//www.thepoolfactory.com/cdn/shop/t/358/assets/img-placeholder_50x50_crop_center.png?v=149528732049019734111724767385\">",
+                    "target": [
+                        ".lazyload[alt=\"Gladon\"][title=\"Gladon\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                },
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element contains <img> element with alt text that duplicates existing text"
+                        }
+                    ],
+                    "impact": "minor",
+                    "html": "<img data-src=\"//www.thepoolfactory.com/cdn/shop/files/hayward-logos-250x250_1_50x50.jpg?v=1616421300\" class=\"lazyload\" data-sizes=\"auto\" alt=\"Hayward\" title=\"Hayward\" src=\"//www.thepoolfactory.com/cdn/shop/t/358/assets/img-placeholder_50x50_crop_center.png?v=149528732049019734111724767385\">",
+                    "target": [
+                        ".lazyload[alt=\"Hayward\"][title=\"Hayward\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element contains <img> element with alt text that duplicates existing text"
+                }
+            ]
+        },
+        {
+            "id": "landmark-unique",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "help": "Ensures landmarks are unique",
+            "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-unique",
+                            "data": {
+                                "role": "navigation",
+                                "accessibleText": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<nav class=\"col-4 col-lg-1 d-flex flex-wrap align-items-center justify-content-end\">",
+                                    "target": [
+                                        ".justify-content-end"
+                                    ]
+                                },
+                                {
+                                    "html": "<nav class=\"footer__nav footer-open-close footer-open-close--alt\">",
+                                    "target": [
+                                        ".footer-open-close--alt"
+                                    ]
+                                },
+                                {
+                                    "html": "<nav class=\"footer__nav footer-open-close\">",
+                                    "target": [
+                                        ".col-lg-3:nth-child(2) > .footer-open-close.footer__nav:nth-child(2)"
+                                    ]
+                                },
+                                {
+                                    "html": "<nav class=\"footer__nav footer-open-close\">",
+                                    "target": [
+                                        ".col-lg-3:nth-child(3) > .footer-open-close.footer__nav"
+                                    ]
+                                },
+                                {
+                                    "html": "<nav class=\"footer__nav footer-open-close\">",
+                                    "target": [
+                                        ".col-lg-3:nth-child(4) > .footer-open-close.footer__nav"
+                                    ]
+                                },
+                                {
+                                    "html": "<nav class=\"footer__nav footer-open-close\">",
+                                    "target": [
+                                        ".col-lg-3:nth-child(5) > .footer-open-close.footer__nav"
+                                    ]
+                                },
+                                {
+                                    "html": "<nav class=\"footer__nav footer__nav--alt\">",
+                                    "target": [
+                                        ".footer__nav--alt"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<nav class=\"menu__drop d-none d-lg-block text-blue\">",
+                    "target": [
+                        ".text-blue"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport",
+            "impact": "critical",
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice",
+                "ACT"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> does not disable text scaling and zooming",
+            "help": "Zooming and scaling should not be disabled",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport",
+                            "data": "user-scalable",
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "user-scalable on <meta> tag disables zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, height=device-height, minimum-scale=1.0, user-scalable=0\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  user-scalable on <meta> tag disables zooming on mobile devices"
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h2 class=\"h1 mb-4 text-center\">We carry the Best Brands in the Pool Industry</h2>",
+                    "target": [
+                        "h2"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"swiper-wrapper\" style=\"transform: translate3d(-1170px, 0px, 0px); transition-duration: 0ms;\">",
+                    "target": [
+                        ".swiper-wrapper"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div id=\"shop-hcaptcha-badge-container\">",
+                    "target": [
+                        "#shop-hcaptcha-badge-container"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                }
+            ]
+        }
+    ]
+}
