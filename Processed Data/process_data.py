@@ -66,18 +66,22 @@ def valid_signups():
                     with open(file_path, 'r', encoding='utf-8') as jsonfile:
                         audit_data = json.load(jsonfile)
                         if 'url' in audit_data and audit_data['url'] in to_array:
-                            output_file_path = os.path.join("Filtered Sign Up Audits", file)
+                            index = np.where(to_array == audit_data['url'])[0]
+                            if len(index) > 0:
+                                to_array = np.delete(to_array, index[0])
+                            """ output_file_path = os.path.join("Filtered Sign Up Audits", file)
                             if not os.path.isfile(output_file_path):
                                 shutil.copy2(file_path, output_file_path)
                                 print(f"Copied: {file}")
-                                check_diff.append(audit_data['url'])
+                            
+                            check_diff.append(audit_data['url']) """
 
                 except FileNotFoundError:
                     print(f"Warning: File not found {file}")
     
-    #diff = np.setdiff1d(to_array, check_diff)
-    #data_d = pd.DataFrame(diff, columns=['Values'])
-    #data_d.to_csv("difference", index=False)
+    data_d = pd.DataFrame(to_array, columns=['Values'])
+    data_d.to_csv("not_saved.csv", index=False)
+
 
 valid_signups()
 
@@ -96,26 +100,36 @@ def edit_sting(url):
 
     return url_name
 
+
+dict_to_walk = os.path.join(dir_path, 'Filtered Sign Up Audits')
+
 def get_diff_audits(directory):
 
     for x in directory['Values']:
         link_name = edit_sting(x)
+
         #print(link_name)
 
-        for root, _, files in os.walk(dict_to_walk):
-            for file in files:
-                if file.endswith('.json'):
-                    # Name of file
-                    file_name = edit_sting(file)
+    for root, _, files in os.walk(dict_to_walk):
+        for file in files:
+            if file.endswith('.json'):
+                # Name of file
+                file_name = edit_sting(file)
+                print(file_name)
 
-                    file_path = os.path.join(root, file)
+"""                     file_path = os.path.join(root, file)
 
                     if file_name == link_name:
                         output_file_path = os.path.join("Filtered Sign Up Audits", file)
                         shutil.copy2(file_path, output_file_path)
                         print(f"Copied: {file}")
-                        break
 
+                        break
+    
+    diff = np.setdiff1d(check_diff_file, check_diff_link)
+    data_d = pd.DataFrame(diff, columns=['Values'])
+    data_d.to_csv("difference2.csv", index=False)
+ """
 difference_dir = os.path.join(dir_path, 'Processed Data', 'difference.csv')
 difference_dir = pd.read_csv(difference_dir, usecols = ['Values'])
 #get_diff_audits(difference_dir)
