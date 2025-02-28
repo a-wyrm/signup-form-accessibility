@@ -1,0 +1,3497 @@
+{
+    "testEngine": {
+        "name": "axe-core",
+        "version": "4.4.3"
+    },
+    "testRunner": {
+        "name": "axe"
+    },
+    "timestamp": "2024-09-27T06:26:45.658Z",
+    "url": "https://satkit.com/en-gb/register",
+    "toolOptions": {
+        "resultTypes": [
+            "violations"
+        ],
+        "reporter": "v1"
+    },
+    "passes": [
+        {
+            "id": "aria-allowed-role",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "best-practice"
+            ],
+            "description": "Ensures role attribute has an appropriate value for the element",
+            "help": "ARIA role should be appropriate for the element",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-role?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is allowed for given element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div id=\"login-form-popup\" class=\"modal fade\" role=\"dialog\">",
+                    "target": [
+                        "#login-form-popup"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-body",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures aria-hidden='true' is not present on the document body.",
+            "help": "aria-hidden='true' must not be present on the document body",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-hidden-body",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "No aria-hidden attribute is present on document body"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<body class=\"\">",
+                    "target": [
+                        "body"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-focus",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag131"
+            ],
+            "description": "Ensures aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "focusable-modal-open",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements while a modal is open"
+                        },
+                        {
+                            "id": "focusable-disabled",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        },
+                        {
+                            "id": "focusable-not-tabbable",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<i class=\"fa fa-question-circle\" aria-hidden=\"true\"></i>",
+                    "target": [
+                        ".fa-question-circle[aria-hidden=\"true\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "avoid-inline-spacing",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag21aa",
+                "wcag1412"
+            ],
+            "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+            "help": "Inline text spacing must be adjustable with custom stylesheets",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/avoid-inline-spacing?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "avoid-inline-spacing",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No inline styles with '!important' that affect text spacing has been specified"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div id=\"custom-field1\" class=\"form-group custom-field\" data-sort=\"2\" style=\"display: block;\">",
+                    "target": [
+                        "#custom-field1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "button-name",
+            "impact": "critical",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures buttons have discernible text",
+            "help": "Buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/button-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "button-has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has inner text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button type=\"button\" class=\"btn btn-menu btn-block dropdown-toggle\" data-toggle=\"dropdown\">\n\t\t\t\t\t<i class=\"fa fa-bars\"></i>\n\t\t\t\t\tCategories \n\t\t\t\t</button>",
+                    "target": [
+                        ".menu_fix > nav > .btn-menu.btn-block.dropdown-toggle"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "bypass",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag241",
+                "section508",
+                "section508.22.o"
+            ],
+            "description": "Ensures each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+            "help": "Page must have means to bypass repeated blocks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/bypass?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "internal-link-present",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Valid skip link found"
+                        },
+                        {
+                            "id": "header-present",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1>Account</h1>",
+                                    "target": [
+                                        "h1"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3>+34 977 276 047</h3>",
+                                    "target": [
+                                        ".col-sm-6.col-md-3:nth-child(1) > .block-banner-footer > .text-footer-banner > .banner-title-footer > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3>WORKING TIME</h3>",
+                                    "target": [
+                                        ".col-sm-6.col-md-3:nth-child(2) > .block-banner-footer > .text-footer-banner > .banner-title-footer > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3>FREE SHIPPING </h3>",
+                                    "target": [
+                                        ".col-sm-6.col-md-3:nth-child(3) > .block-banner-footer > .text-footer-banner > .banner-title-footer > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3>RETURNS</h3>",
+                                    "target": [
+                                        ".col-sm-6.col-md-3:nth-child(4) > .block-banner-footer > .text-footer-banner > .banner-title-footer > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3> \n\t\tINFORMATION</h3>",
+                                    "target": [
+                                        ".col-sm-3:nth-child(1) > h3:nth-child(1)"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3> \n\t\t</h3>",
+                                    "target": [
+                                        "h3:nth-child(3)"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3> \n\t\tEXTRAS</h3>",
+                                    "target": [
+                                        ".col-sm-3:nth-child(2) > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3> \n\t\tYOUR ACCOUNT</h3>",
+                                    "target": [
+                                        ".col-sm-3:nth-child(3) > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3>Contact</h3>",
+                                    "target": [
+                                        ".col-sm-3:nth-child(4) > h3"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Page has a heading"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html dir=\"ltr\" lang=\"en\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "messageKey": "hidden"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is hidden"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input type=\"text\" name=\"email\" value=\"\" placeholder=\"E-Mail Address\" id=\"input-email\" class=\"form-control\">",
+                    "target": [
+                        "input[name=\"email\"][placeholder=\"E-Mail Address\"][type=\"text\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "document-title",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag242",
+                "ACT"
+            ],
+            "description": "Ensures each HTML document contains a non-empty <title> element",
+            "help": "Documents must have <title> element to aid in navigation",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/document-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "doc-has-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has a non-empty <title> element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html dir=\"ltr\" lang=\"en\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-active",
+            "impact": "serious",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value of active elements is unique",
+            "help": "IDs of active elements must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-active",
+                            "data": "wishlist-total",
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has no active elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a rel=\"nofollow\" class=\"btn btn-link\" href=\"https://satkit.com/en-gb/wishlist\" id=\"wishlist-total\" title=\"Wish List (0)\"><i class=\"fa fa-heart fa-fw\"></i> <span class=\"hidden-xs hidden-sm hidden-md\">Wish List (0)</span></a>",
+                    "target": [
+                        "#wishlist-total"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-aria",
+            "impact": "critical",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value used in ARIA and in labels is unique",
+            "help": "IDs used in ARIA and labels must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-aria",
+                            "data": "input-firstname",
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input type=\"text\" name=\"firstname\" value=\"\" placeholder=\"First Name\" id=\"input-firstname\" class=\"form-control\">",
+                    "target": [
+                        "#input-firstname"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": "minor",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "back-top",
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<p id=\"back-top\" style=\"display: none;\"><a rel=\"nofollow\" class=\"btn btn-default\" href=\"#top\"><i class=\"fa fa-chevron-up\" style=\"font-size:18px;\"></i></a></p>",
+                    "target": [
+                        "#back-top"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "empty-heading",
+            "impact": "minor",
+            "tags": [
+                "cat.name-role-value",
+                "best-practice"
+            ],
+            "description": "Ensures headings have discernible text",
+            "help": "Headings should not be empty",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/empty-heading?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h1>Account</h1>",
+                    "target": [
+                        "h1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "form-field-multiple-labels",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag332"
+            ],
+            "description": "Ensures form field does not have multiple label elements",
+            "help": "Form field must not have multiple label elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/form-field-multiple-labels?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "multiple-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Form field does not have multiple label elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"text\" name=\"search\" value=\"\" placeholder=\"Search\" class=\"form-control input-lg search-autocomplete\" autocompleteserach=\"off\">",
+                    "target": [
+                        "#search-fixed-top > .input-group > .input-lg.search-autocomplete[name=\"search\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "heading-order",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": {
+                                "headingOrder": [
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(6) > div:nth-child(2) > div:nth-child(1) > h1:nth-child(1)"
+                                        ],
+                                        "level": 1
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > footer:nth-child(10) > div > div:nth-child(1) > div > div:nth-child(1) > div > div:nth-child(2) > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > footer:nth-child(10) > div > div:nth-child(1) > div > div:nth-child(2) > div > div:nth-child(2) > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > footer:nth-child(10) > div > div:nth-child(1) > div > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > footer:nth-child(10) > div > div:nth-child(1) > div > div:nth-child(4) > div > div:nth-child(2) > div:nth-child(1) > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > footer:nth-child(10) > div > div:nth-child(2) > div > div:nth-child(1) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > footer:nth-child(10) > div > div:nth-child(2) > div > div:nth-child(1) > h3:nth-child(3)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > footer:nth-child(10) > div > div:nth-child(2) > div > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > footer:nth-child(10) > div > div:nth-child(2) > div > div:nth-child(3) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > footer:nth-child(10) > div > div:nth-child(2) > div > div:nth-child(4) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    }
+                                ]
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h1>Account</h1>",
+                    "target": [
+                        "h1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-has-lang",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures every HTML document has a lang attribute",
+            "help": "<html> element must have a lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-has-lang?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "The <html> element has a lang attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html dir=\"ltr\" lang=\"en\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-lang-valid",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures the lang attribute of the <html> element has a valid value",
+            "help": "<html> element must have a valid value for the lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-lang-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "valid-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Value of lang attribute is included in the list of valid languages"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<html dir=\"ltr\" lang=\"en\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "identical-links-same-purpose",
+            "impact": "minor",
+            "tags": [
+                "cat.semantics",
+                "wcag2aaa",
+                "wcag249"
+            ],
+            "description": "Ensure that links with the same accessible name serve a similar purpose",
+            "help": "Links with the same name must have a similar purpose",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/identical-links-same-purpose?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "identical-links-same-purpose",
+                            "data": {
+                                "name": "wish list 0",
+                                "urlProps": {
+                                    "protocol": "http:",
+                                    "hostname": "satkit.com",
+                                    "port": "",
+                                    "pathname": "/en-gb/wishlist/",
+                                    "search": {},
+                                    "hash": "",
+                                    "filename": ""
+                                }
+                            },
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "There are no other links with the same name, that go to a different URL"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a rel=\"nofollow\" class=\"btn btn-link\" href=\"https://satkit.com/en-gb/wishlist\" id=\"wishlist-total\" title=\"Wish List (0)\"><i class=\"fa fa-heart fa-fw\"></i> <span class=\"hidden-xs hidden-sm hidden-md\">Wish List (0)</span></a>",
+                    "target": [
+                        "#wishlist-total"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures <img> elements have alternate text or a role of none or presentation",
+            "help": "Images must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-alt",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has an alt attribute"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "alt-space-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has a valid alt attribute value"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img src=\"https://satkit.com/image/catalog/logo/logo-400-png.png\" title=\"Satkit.com Online shop\" alt=\"Satkit.com Online shop\" class=\"img-responsive\">",
+                    "target": [
+                        "img"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-redundant-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ],
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-redundant-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img src=\"https://satkit.com/image/catalog/logo/logo-400-png.png\" title=\"Satkit.com Online shop\" alt=\"Satkit.com Online shop\" class=\"img-responsive\">",
+                    "target": [
+                        "img"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "input-button-name",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "section508",
+                "section508.22.a"
+            ],
+            "description": "Ensures input buttons have discernible text",
+            "help": "Input buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/input-button-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "non-empty-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has a non-empty value attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input type=\"submit\" value=\"Continue\" class=\"btn btn-primary\">",
+                    "target": [
+                        ".btn-primary"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label-title-only",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "best-practice"
+            ],
+            "description": "Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes",
+            "help": "Form elements should have a visible label",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "title-only",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Form element does not solely use title attribute for its label"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"text\" name=\"search\" value=\"\" placeholder=\"Search\" class=\"form-control input-lg search-autocomplete\" autocompleteserach=\"off\">",
+                    "target": [
+                        "#search-fixed-top > .input-group > .input-lg.search-autocomplete[name=\"search\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label",
+            "impact": "critical",
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag412",
+                "wcag131",
+                "section508",
+                "section508.22.n",
+                "ACT"
+            ],
+            "description": "Ensures every form element has a label",
+            "help": "Form elements must have labels",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "non-empty-placeholder",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a placeholder attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "hidden-explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element has a visible explicit <label>"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"text\" name=\"search\" value=\"\" placeholder=\"Search\" class=\"form-control input-lg search-autocomplete\" autocompleteserach=\"off\">",
+                    "target": [
+                        "#search-fixed-top > .input-group > .input-lg.search-autocomplete[name=\"search\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-banner-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the banner landmark is at top level",
+            "help": "Banner landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-banner-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "banner"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The banner landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header>",
+                    "target": [
+                        "header"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-complementary-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the complementary landmark or aside is at top level",
+            "help": "Aside should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-complementary-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "complementary"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The complementary landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<aside id=\"column-right\" class=\"col-sm-4 col-md-3 hidden-xs\">",
+                    "target": [
+                        "#column-right"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-contentinfo-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the contentinfo landmark is at top level",
+            "help": "Contentinfo landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-contentinfo-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "contentinfo"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The contentinfo landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<footer>",
+                    "target": [
+                        "footer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-banner",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one banner landmark",
+            "help": "Document should not have more than one banner landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-banner?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-banner",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one banner landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header>",
+                    "target": [
+                        "header"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-contentinfo",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one contentinfo landmark",
+            "help": "Document should not have more than one contentinfo landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-contentinfo?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-contentinfo",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one contentinfo landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<footer>",
+                    "target": [
+                        "footer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-unique",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "help": "Ensures landmarks are unique",
+            "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-unique",
+                            "data": {
+                                "role": "banner",
+                                "accessibleText": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Landmarks must have a unique role or role/label/title (i.e. accessible name) combination"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header>",
+                    "target": [
+                        "header"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a rel=\"nofollow\" class=\"btn btn-link\" href=\"https://satkit.com/en-gb/wishlist\" id=\"wishlist-total\" title=\"Wish List (0)\"><i class=\"fa fa-heart fa-fw\"></i> <span class=\"hidden-xs hidden-sm hidden-md\">Wish List (0)</span></a>",
+                    "target": [
+                        "#wishlist-total"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "list",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures that lists are structured correctly",
+            "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/list?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "only-listitems",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List element only has direct children that are allowed inside <li> elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<ul class=\"nav navbar-nav\">",
+                    "target": [
+                        ".navbar-collapse > .nav.navbar-nav"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "listitem",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures <li> elements are used semantically",
+            "help": "<li> elements must be contained in a <ul> or <ol>",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/listitem?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<li><button onclick=\"location='payment'\" type=\"button\" class=\"btn btn-link\"><i class=\"fa fa-money\"></i> Payment</button></li>",
+                    "target": [
+                        ".navbar-collapse > .nav.navbar-nav > li:nth-child(1)"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport-large",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> can scale a significant amount",
+            "help": "Users should be able to zoom and scale the text up to 500%",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport-large?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport-large",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "<meta> tag does not prevent significant zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice",
+                "ACT"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> does not disable text scaling and zooming",
+            "help": "Zooming and scaling should not be disabled",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "<meta> tag does not disable zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "nested-interactive",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+            "help": "Interactive controls must not be nested",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/nested-interactive?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "no-focusable-content",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have focusable descendants"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button type=\"button\" class=\"btn btn-menu btn-block dropdown-toggle\" data-toggle=\"dropdown\">\n\t\t\t\t\t<i class=\"fa fa-bars\"></i>\n\t\t\t\t\tCategories \n\t\t\t\t</button>",
+                    "target": [
+                        ".menu_fix > nav > .btn-menu.btn-block.dropdown-toggle"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "page-has-heading-one",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+            "help": "Page should contain a level-one heading",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/page-has-heading-one?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-heading-one",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1>Account</h1>",
+                                    "target": [
+                                        "h1"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Page has at least one level-one heading"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html dir=\"ltr\" lang=\"en\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "All page content is contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div id=\"top-fixed\" class=\"hidden-xs hidden-sm\">",
+                    "target": [
+                        "#top-fixed"
+                    ]
+                }
+            ]
+        }
+    ],
+    "violations": [
+        {
+            "id": "button-name",
+            "impact": "critical",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures buttons have discernible text",
+            "help": "Buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/button-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "button-has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element does not have inner text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        },
+                        {
+                            "id": "presentational-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<button type=\"button\" class=\"btn btn-search\"><i class=\"fa fa-search\"></i></button>",
+                    "target": [
+                        "#search-fixed-top > .input-group > .button_search.input-group-btn > .btn-search"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                },
+                {
+                    "any": [
+                        {
+                            "id": "button-has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element does not have inner text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        },
+                        {
+                            "id": "presentational-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<button type=\"button\" class=\"btn btn-search\"><i class=\"fa fa-search\"></i></button>",
+                    "target": [
+                        "#searchtop > .input-group > .button_search.input-group-btn > .btn-search"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element does not have inner text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                }
+            ]
+        },
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#999999",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 2.84,
+                                "fontSize": "9.0pt (12px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body class=\"\">",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.84 (foreground color: #999999, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<div class=\"text_after_phone\">Monday to Friday 9:00 to 16:30</div>",
+                    "target": [
+                        ".text-xs-center > div > .contact-header > .dropdown-toggle[data-toggle=\"dropdown\"] > .text_after_phone"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.84 (foreground color: #999999, background color: #ffffff, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#dddddd",
+                                "bgColor": "#2b8cdb",
+                                "contrastRatio": 2.63,
+                                "fontSize": "9.8pt (13px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<button type=\"button\" data-toggle=\"dropdown\" data-loading-text=\"Loading...\" class=\"btn btn-block dropdown-toggle\">",
+                                    "target": [
+                                        ".col-sm-push-8 > .shopping-cart > .btn-group.btn-block > .btn-block.dropdown-toggle[data-loading-text=\"Loading...\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.63 (foreground color: #dddddd, background color: #2b8cdb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span class=\"text_product\">Products,</span>",
+                    "target": [
+                        ".col-sm-push-8 > .shopping-cart > .btn-group.btn-block > .btn-block.dropdown-toggle[data-loading-text=\"Loading...\"] > .cart-total > .products > .text_product"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.63 (foreground color: #dddddd, background color: #2b8cdb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#dddddd",
+                                "bgColor": "#2b8cdb",
+                                "contrastRatio": 2.63,
+                                "fontSize": "9.8pt (13px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<button type=\"button\" data-toggle=\"dropdown\" data-loading-text=\"Loading...\" class=\"btn btn-block dropdown-toggle\">",
+                                    "target": [
+                                        ".col-sm-push-8 > .shopping-cart > .btn-group.btn-block > .btn-block.dropdown-toggle[data-loading-text=\"Loading...\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.63 (foreground color: #dddddd, background color: #2b8cdb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span class=\"prices\">on <b>0,00\u20ac</b></span>",
+                    "target": [
+                        ".col-sm-push-8 > .shopping-cart > .btn-group.btn-block > .btn-block.dropdown-toggle[data-loading-text=\"Loading...\"] > .cart-total > .prices"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.63 (foreground color: #dddddd, background color: #2b8cdb, font size: 9.8pt (13px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#2b8cdb",
+                                "contrastRatio": 3.57,
+                                "fontSize": "9.8pt (13px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<button type=\"button\" data-toggle=\"dropdown\" data-loading-text=\"Loading...\" class=\"btn btn-block dropdown-toggle\">",
+                                    "target": [
+                                        ".col-sm-push-8 > .shopping-cart > .btn-group.btn-block > .btn-block.dropdown-toggle[data-loading-text=\"Loading...\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.57 (foreground color: #ffffff, background color: #2b8cdb, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<b>0,00\u20ac</b>",
+                    "target": [
+                        ".col-sm-push-8 > .shopping-cart > .btn-group.btn-block > .btn-block.dropdown-toggle[data-loading-text=\"Loading...\"] > .cart-total > .prices > b"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.57 (foreground color: #ffffff, background color: #2b8cdb, font size: 9.8pt (13px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#2b8cdb",
+                                "contrastRatio": 3.57,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<button type=\"button\" class=\"btn btn-menu btn-block dropdown-toggle\" data-toggle=\"dropdown\">\n\t\t\t\t\t<i class=\"fa fa-bars\"></i>\n\t\t\t\t\tCategories \n\t\t\t\t</button>",
+                                    "target": [
+                                        ".col-md-pull-9 > nav > .btn-menu.btn-block.dropdown-toggle"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.57 (foreground color: #ffffff, background color: #2b8cdb, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<button type=\"button\" class=\"btn btn-menu btn-block dropdown-toggle\" data-toggle=\"dropdown\">\n\t\t\t\t\t<i class=\"fa fa-bars\"></i>\n\t\t\t\t\tCategories \n\t\t\t\t</button>",
+                    "target": [
+                        ".col-md-pull-9 > nav > .btn-menu.btn-block.dropdown-toggle"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.57 (foreground color: #ffffff, background color: #2b8cdb, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#23a1d1",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 2.96,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<ul class=\"breadcrumb\">\n        <li><a href=\"https://satkit.com/en-gb/\"><i class=\"fa fa-home\"></i></a></li>\n        <li><a href=\"https://satkit.com/en-gb/account\">Account</a></li>\n        <li><a href=\"https://satkit.com/en-gb/register\">Register</a></li>\n      </ul>",
+                                    "target": [
+                                        ".breadcrumb"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.96 (foreground color: #23a1d1, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://satkit.com/en-gb/account\">Account</a>",
+                    "target": [
+                        ".breadcrumb > li:nth-child(2) > a"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.96 (foreground color: #23a1d1, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#23a1d1",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 2.96,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<ul class=\"breadcrumb\">\n        <li><a href=\"https://satkit.com/en-gb/\"><i class=\"fa fa-home\"></i></a></li>\n        <li><a href=\"https://satkit.com/en-gb/account\">Account</a></li>\n        <li><a href=\"https://satkit.com/en-gb/register\">Register</a></li>\n      </ul>",
+                                    "target": [
+                                        ".breadcrumb"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.96 (foreground color: #23a1d1, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://satkit.com/en-gb/register\">Register</a>",
+                    "target": [
+                        ".breadcrumb > li:nth-child(3) > a"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.96 (foreground color: #23a1d1, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#23a1d1",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 2.96,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body class=\"\">",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.96 (foreground color: #23a1d1, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://satkit.com/en-gb/login\">login page</a>",
+                    "target": [
+                        "p > a[href$=\"login\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.96 (foreground color: #23a1d1, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#23a1d1",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 2.96,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body class=\"\">",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.96 (foreground color: #23a1d1, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<b>Privacy Policy</b>",
+                    "target": [
+                        ".agree > b"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.96 (foreground color: #23a1d1, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#2b8cdb",
+                                "contrastRatio": 3.57,
+                                "fontSize": "9.0pt (12px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<input type=\"submit\" value=\"Continue\" class=\"btn btn-primary\">",
+                                    "target": [
+                                        ".btn-primary"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.57 (foreground color: #ffffff, background color: #2b8cdb, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<input type=\"submit\" value=\"Continue\" class=\"btn btn-primary\">",
+                    "target": [
+                        ".btn-primary"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.57 (foreground color: #ffffff, background color: #2b8cdb, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#888888",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.54,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"https://satkit.com/en-gb/login\" class=\"list-group-item\"><i class=\"fa fa-sign-in\"></i> Login</a>",
+                                    "target": [
+                                        ".list-group-item[href$=\"login\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://satkit.com/en-gb/login\" class=\"list-group-item\"><i class=\"fa fa-sign-in\"></i> Login</a>",
+                    "target": [
+                        ".list-group-item[href$=\"login\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#888888",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.54,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"https://satkit.com/en-gb/register\" class=\"list-group-item\"><i class=\"fa fa-pencil\"></i> Register</a>",
+                                    "target": [
+                                        ".list-group-item:nth-child(2)"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://satkit.com/en-gb/register\" class=\"list-group-item\"><i class=\"fa fa-pencil\"></i> Register</a>",
+                    "target": [
+                        ".list-group-item:nth-child(2)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#888888",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.54,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"https://satkit.com/index.php?route=account/forgotten\" class=\"list-group-item\"><i class=\"fa fa-question-circle\"></i> Forgotten Password</a>",
+                                    "target": [
+                                        ".list-group-item:nth-child(3)"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://satkit.com/index.php?route=account/forgotten\" class=\"list-group-item\"><i class=\"fa fa-question-circle\"></i> Forgotten Password</a>",
+                    "target": [
+                        ".list-group-item:nth-child(3)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#888888",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.54,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"https://satkit.com/en-gb/account\" class=\"list-group-item\"><i class=\"fa fa-user\"></i> My Account</a>",
+                                    "target": [
+                                        ".list-group-item:nth-child(4)"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://satkit.com/en-gb/account\" class=\"list-group-item\"><i class=\"fa fa-user\"></i> My Account</a>",
+                    "target": [
+                        ".list-group-item:nth-child(4)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#888888",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.54,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"https://satkit.com/index.php?route=account/address\" class=\"list-group-item\"><i class=\"fa fa-home\"></i> Address Book</a>",
+                                    "target": [
+                                        ".list-group-item:nth-child(5)"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://satkit.com/index.php?route=account/address\" class=\"list-group-item\"><i class=\"fa fa-home\"></i> Address Book</a>",
+                    "target": [
+                        ".list-group-item:nth-child(5)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#888888",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.54,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"https://satkit.com/en-gb/wishlist\" class=\"list-group-item\"><i class=\"fa fa-heart-o\"></i> Wish List</a>",
+                                    "target": [
+                                        ".list-group-item:nth-child(6)"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://satkit.com/en-gb/wishlist\" class=\"list-group-item\"><i class=\"fa fa-heart-o\"></i> Wish List</a>",
+                    "target": [
+                        ".list-group-item:nth-child(6)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#888888",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.54,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"https://satkit.com/index.php?route=account/order\" class=\"list-group-item\"><i class=\"fa fa-file-o\"></i> Order History</a>",
+                                    "target": [
+                                        ".list-group-item:nth-child(7)"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://satkit.com/index.php?route=account/order\" class=\"list-group-item\"><i class=\"fa fa-file-o\"></i> Order History</a>",
+                    "target": [
+                        ".list-group-item:nth-child(7)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#888888",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.54,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"https://satkit.com/index.php?route=account/download\" class=\"list-group-item\"><i class=\"fa fa-download\"></i> Downloads</a>",
+                                    "target": [
+                                        ".list-group-item:nth-child(8)"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://satkit.com/index.php?route=account/download\" class=\"list-group-item\"><i class=\"fa fa-download\"></i> Downloads</a>",
+                    "target": [
+                        ".list-group-item:nth-child(8)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#888888",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.54,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"https://satkit.com/index.php?route=account/recurring\" class=\"list-group-item\"><i class=\"fa fa-clock-o \"></i> Recurring payments</a>",
+                                    "target": [
+                                        ".list-group-item:nth-child(9)"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://satkit.com/index.php?route=account/recurring\" class=\"list-group-item\"><i class=\"fa fa-clock-o \"></i> Recurring payments</a>",
+                    "target": [
+                        ".list-group-item:nth-child(9)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#888888",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.54,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"https://satkit.com/index.php?route=account/reward\" class=\"list-group-item\"><i class=\"fa fa-diamond\"></i> Reward Points</a>",
+                                    "target": [
+                                        ".list-group-item:nth-child(10)"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://satkit.com/index.php?route=account/reward\" class=\"list-group-item\"><i class=\"fa fa-diamond\"></i> Reward Points</a>",
+                    "target": [
+                        ".list-group-item:nth-child(10)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#888888",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.54,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"https://satkit.com/index.php?route=account/return\" class=\"list-group-item\"><i class=\"fa fa-exchange\"></i> Returns</a>",
+                                    "target": [
+                                        ".list-group-item:nth-child(11)"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://satkit.com/index.php?route=account/return\" class=\"list-group-item\"><i class=\"fa fa-exchange\"></i> Returns</a>",
+                    "target": [
+                        ".list-group-item:nth-child(11)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#888888",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.54,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"https://satkit.com/index.php?route=account/transaction\" class=\"list-group-item\"><i class=\"fa fa-credit-card\"></i> Transactions</a>",
+                                    "target": [
+                                        ".list-group-item:nth-child(12)"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://satkit.com/index.php?route=account/transaction\" class=\"list-group-item\"><i class=\"fa fa-credit-card\"></i> Transactions</a>",
+                    "target": [
+                        ".list-group-item:nth-child(12)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#888888",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.54,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<a href=\"https://satkit.com/index.php?route=account/newsletter\" class=\"list-group-item\"><i class=\"fa fa-envelope-o\"></i> Newsletter</a>",
+                                    "target": [
+                                        ".list-group-item:nth-child(13)"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://satkit.com/index.php?route=account/newsletter\" class=\"list-group-item\"><i class=\"fa fa-envelope-o\"></i> Newsletter</a>",
+                    "target": [
+                        ".list-group-item:nth-child(13)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.54 (foreground color: #888888, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-active",
+            "impact": "serious",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value of active elements is unique",
+            "help": "IDs of active elements must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-active",
+                            "data": "change_category",
+                            "relatedNodes": [
+                                {
+                                    "html": "<button id=\"change_category\" type=\"button\" class=\"btn btn-search-select dropdown-toggle\" data-toggle=\"dropdown\">\n\t\t             \t\t<span class=\"category-name\">All Categories&nbsp;</span>&nbsp;<span class=\"fa fa-angle-down fa-fw car-down\"></span>\n\t</button>",
+                                    "target": [
+                                        "#searchtop > .input-group > .categories.input-group-btn > .btn-search-select.dropdown-toggle[data-toggle=\"dropdown\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Document has active elements with the same id attribute: change_category"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<button id=\"change_category\" type=\"button\" class=\"btn btn-search-select dropdown-toggle\" data-toggle=\"dropdown\">\n\t\t             \t\t<span class=\"category-name\">All Categories&nbsp;</span>&nbsp;<span class=\"fa fa-angle-down fa-fw car-down\"></span>\n\t</button>",
+                    "target": [
+                        "#search-fixed-top > .input-group > .categories.input-group-btn > .btn-search-select.dropdown-toggle[data-toggle=\"dropdown\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has active elements with the same id attribute: change_category"
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-aria",
+            "impact": "critical",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value used in ARIA and in labels is unique",
+            "help": "IDs used in ARIA and labels must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-aria",
+                            "data": "input-email",
+                            "relatedNodes": [
+                                {
+                                    "html": "<input type=\"email\" name=\"email\" value=\"\" placeholder=\"E-Mail Address\" id=\"input-email\" class=\"form-control\">",
+                                    "target": [
+                                        "input[type=\"email\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "critical",
+                            "message": "Document has multiple elements referenced with ARIA with the same id attribute: input-email"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<input type=\"text\" name=\"email\" value=\"\" placeholder=\"E-Mail Address\" id=\"input-email\" class=\"form-control\">",
+                    "target": [
+                        "input[name=\"email\"][placeholder=\"E-Mail Address\"][type=\"text\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple elements referenced with ARIA with the same id attribute: input-email"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-aria",
+                            "data": "input-password",
+                            "relatedNodes": [
+                                {
+                                    "html": "<input type=\"password\" name=\"password\" value=\"\" placeholder=\"Password\" id=\"input-password\" class=\"form-control\">",
+                                    "target": [
+                                        ".col-sm-10 > input[name=\"password\"][placeholder=\"Password\"][type=\"password\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "critical",
+                            "message": "Document has multiple elements referenced with ARIA with the same id attribute: input-password"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<input type=\"password\" name=\"password\" value=\"\" placeholder=\"Password\" id=\"input-password\" class=\"form-control\">",
+                    "target": [
+                        ".input-group > input[name=\"password\"][placeholder=\"Password\"][type=\"password\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple elements referenced with ARIA with the same id attribute: input-password"
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": "minor",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu",
+                            "relatedNodes": [
+                                {
+                                    "html": "<nav id=\"menu\" class=\"btn-group btn-block\">",
+                                    "target": [
+                                        ".col-md-pull-9 > nav"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<nav id=\"menu\" class=\"btn-group btn-block\">",
+                    "target": [
+                        ".menu_fix > nav"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-list",
+                            "relatedNodes": [
+                                {
+                                    "html": "<ul id=\"menu-list\" class=\"dropdown-menu\">",
+                                    "target": [
+                                        ".col-md-pull-9 > nav > .dropdown-menu"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-list"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<ul id=\"menu-list\" class=\"dropdown-menu\">",
+                    "target": [
+                        ".menu_fix > nav > .dropdown-menu"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-list"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-amazon-0",
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"menu-amazon-0\" class=\"ns-dd dropdown-menu-simple nsmenu-type-category-simple\">",
+                                    "target": [
+                                        ".col-md-pull-9 > nav > .dropdown-menu > .dropdown[data-submenu-id=\"menu-amazon-0\"] > .ns-dd.dropdown-menu-simple.nsmenu-type-category-simple"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-amazon-0"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<div id=\"menu-amazon-0\" class=\"ns-dd dropdown-menu-simple nsmenu-type-category-simple\">",
+                    "target": [
+                        ".menu_fix > nav > .dropdown-menu > .dropdown[data-submenu-id=\"menu-amazon-0\"] > .ns-dd.dropdown-menu-simple.nsmenu-type-category-simple"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-amazon-0"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-amazon-1",
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"menu-amazon-1\" class=\"ns-dd dropdown-menu-simple nsmenu-type-category-simple\">",
+                                    "target": [
+                                        ".col-md-pull-9 > nav > .dropdown-menu > .dropdown[data-submenu-id=\"menu-amazon-1\"] > .ns-dd.dropdown-menu-simple.nsmenu-type-category-simple"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-amazon-1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<div id=\"menu-amazon-1\" class=\"ns-dd dropdown-menu-simple nsmenu-type-category-simple\">",
+                    "target": [
+                        ".menu_fix > nav > .dropdown-menu > .dropdown[data-submenu-id=\"menu-amazon-1\"] > .ns-dd.dropdown-menu-simple.nsmenu-type-category-simple"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-amazon-1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-amazon-2",
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"menu-amazon-2\" class=\"ns-dd dropdown-menu-simple nsmenu-type-category-simple\">",
+                                    "target": [
+                                        ".col-md-pull-9 > nav > .dropdown-menu > .dropdown[data-submenu-id=\"menu-amazon-2\"] > .ns-dd.dropdown-menu-simple.nsmenu-type-category-simple"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-amazon-2"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<div id=\"menu-amazon-2\" class=\"ns-dd dropdown-menu-simple nsmenu-type-category-simple\">",
+                    "target": [
+                        ".menu_fix > nav > .dropdown-menu > .dropdown[data-submenu-id=\"menu-amazon-2\"] > .ns-dd.dropdown-menu-simple.nsmenu-type-category-simple"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-amazon-2"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-amazon-5",
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"menu-amazon-5\" class=\"ns-dd dropdown-menu-simple nsmenu-type-category-simple\">",
+                                    "target": [
+                                        ".col-md-pull-9 > nav > .dropdown-menu > .dropdown[data-submenu-id=\"menu-amazon-5\"] > .ns-dd.dropdown-menu-simple.nsmenu-type-category-simple"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-amazon-5"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<div id=\"menu-amazon-5\" class=\"ns-dd dropdown-menu-simple nsmenu-type-category-simple\">",
+                    "target": [
+                        ".menu_fix > nav > .dropdown-menu > .dropdown[data-submenu-id=\"menu-amazon-5\"] > .ns-dd.dropdown-menu-simple.nsmenu-type-category-simple"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-amazon-5"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-amazon-8",
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"menu-amazon-8\" class=\"ns-dd dropdown-menu-simple nsmenu-type-category-simple\">",
+                                    "target": [
+                                        ".col-md-pull-9 > nav > .dropdown-menu > .dropdown[data-submenu-id=\"menu-amazon-8\"] > .ns-dd.dropdown-menu-simple.nsmenu-type-category-simple"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-amazon-8"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<div id=\"menu-amazon-8\" class=\"ns-dd dropdown-menu-simple nsmenu-type-category-simple\">",
+                    "target": [
+                        ".menu_fix > nav > .dropdown-menu > .dropdown[data-submenu-id=\"menu-amazon-8\"] > .ns-dd.dropdown-menu-simple.nsmenu-type-category-simple"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-amazon-8"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-amazon-9",
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"menu-amazon-9\" class=\"ns-dd dropdown-menu-simple nsmenu-type-category-simple\">",
+                                    "target": [
+                                        ".col-md-pull-9 > nav > .dropdown-menu > .dropdown[data-submenu-id=\"menu-amazon-9\"] > .ns-dd.dropdown-menu-simple.nsmenu-type-category-simple"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-amazon-9"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<div id=\"menu-amazon-9\" class=\"ns-dd dropdown-menu-simple nsmenu-type-category-simple\">",
+                    "target": [
+                        ".menu_fix > nav > .dropdown-menu > .dropdown[data-submenu-id=\"menu-amazon-9\"] > .ns-dd.dropdown-menu-simple.nsmenu-type-category-simple"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-amazon-9"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-amazon-10",
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"menu-amazon-10\" class=\"ns-dd dropdown-menu-simple nsmenu-type-category-simple\">",
+                                    "target": [
+                                        ".col-md-pull-9 > nav > .dropdown-menu > .dropdown[data-submenu-id=\"menu-amazon-10\"] > .ns-dd.dropdown-menu-simple.nsmenu-type-category-simple"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-amazon-10"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<div id=\"menu-amazon-10\" class=\"ns-dd dropdown-menu-simple nsmenu-type-category-simple\">",
+                    "target": [
+                        ".menu_fix > nav > .dropdown-menu > .dropdown[data-submenu-id=\"menu-amazon-10\"] > .ns-dd.dropdown-menu-simple.nsmenu-type-category-simple"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-amazon-10"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-amazon-11",
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"menu-amazon-11\" class=\"ns-dd dropdown-menu-simple nsmenu-type-category-simple\">",
+                                    "target": [
+                                        ".col-md-pull-9 > nav > .dropdown-menu > .dropdown[data-submenu-id=\"menu-amazon-11\"] > .ns-dd.dropdown-menu-simple.nsmenu-type-category-simple"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-amazon-11"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<div id=\"menu-amazon-11\" class=\"ns-dd dropdown-menu-simple nsmenu-type-category-simple\">",
+                    "target": [
+                        ".menu_fix > nav > .dropdown-menu > .dropdown[data-submenu-id=\"menu-amazon-11\"] > .ns-dd.dropdown-menu-simple.nsmenu-type-category-simple"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-amazon-11"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-amazon-12",
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"menu-amazon-12\" class=\"ns-dd dropdown-menu-simple nsmenu-type-category-simple\">",
+                                    "target": [
+                                        ".col-md-pull-9 > nav > .dropdown-menu > .dropdown[data-submenu-id=\"menu-amazon-12\"] > .ns-dd.dropdown-menu-simple.nsmenu-type-category-simple"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-amazon-12"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<div id=\"menu-amazon-12\" class=\"ns-dd dropdown-menu-simple nsmenu-type-category-simple\">",
+                    "target": [
+                        ".menu_fix > nav > .dropdown-menu > .dropdown[data-submenu-id=\"menu-amazon-12\"] > .ns-dd.dropdown-menu-simple.nsmenu-type-category-simple"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-amazon-12"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "phone",
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"phone\">",
+                                    "target": [
+                                        ".text-xs-center > div"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: phone"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<div id=\"phone\">",
+                    "target": [
+                        ".phone_fix > div"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: phone"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "cart",
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"cart\" class=\"btn-group btn-block\">",
+                                    "target": [
+                                        ".col-sm-push-8 > .shopping-cart > .btn-group.btn-block"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: cart"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<div id=\"cart\" class=\"btn-group btn-block\">",
+                    "target": [
+                        ".cart_fix > .shopping-cart > .btn-group.btn-block"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: cart"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "search",
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"search\" class=\"input-group \">",
+                                    "target": [
+                                        "#searchtop > .input-group"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: search"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<div id=\"search\" class=\"input-group \">",
+                    "target": [
+                        "#search-fixed-top > .input-group"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: search"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "selected_category",
+                            "relatedNodes": [
+                                {
+                                    "html": "<input id=\"selected_category\" type=\"hidden\" name=\"category_id\" value=\"0\">",
+                                    "target": [
+                                        "input[type=\"hidden\"][name=\"category_id\"][value=\"0\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: selected_category"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<input id=\"selected_category\" type=\"hidden\" name=\"category_id\" value=\"\">",
+                    "target": [
+                        "input[type=\"hidden\"][name=\"category_id\"][value=\"\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: selected_category"
+                }
+            ]
+        },
+        {
+            "id": "empty-heading",
+            "impact": "minor",
+            "tags": [
+                "cat.name-role-value",
+                "best-practice"
+            ],
+            "description": "Ensures headings have discernible text",
+            "help": "Headings should not be empty",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/empty-heading?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<h3> \n\t\t</h3>",
+                    "target": [
+                        "h3:nth-child(3)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                }
+            ]
+        },
+        {
+            "id": "heading-order",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order invalid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h3>+34 977 276 047</h3>",
+                    "target": [
+                        ".col-sm-6.col-md-3:nth-child(1) > .block-banner-footer > .text-footer-banner > .banner-title-footer > h3"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Heading order invalid"
+                }
+            ]
+        },
+        {
+            "id": "label",
+            "impact": "critical",
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag412",
+                "wcag131",
+                "section508",
+                "section508.22.n",
+                "ACT"
+            ],
+            "description": "Ensures every form element has a label",
+            "help": "Form elements must have labels",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "implicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element does not have an implicit (wrapped) <label>"
+                        },
+                        {
+                            "id": "explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element does not have an explicit <label>"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        },
+                        {
+                            "id": "non-empty-placeholder",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no placeholder attribute"
+                        },
+                        {
+                            "id": "presentational-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<input type=\"checkbox\" name=\"agree\" value=\"1\">",
+                    "target": [
+                        "input[type=\"checkbox\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                }
+            ]
+        },
+        {
+            "id": "landmark-one-main",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has a main landmark",
+            "help": "Document should have one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-one-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-main",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have a main landmark"
+                        }
+                    ],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<html dir=\"ltr\" lang=\"en\">",
+                    "target": [
+                        "html"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+                }
+            ]
+        },
+        {
+            "id": "landmark-unique",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "help": "Ensures landmarks are unique",
+            "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-unique",
+                            "data": {
+                                "role": "navigation",
+                                "accessibleText": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<nav id=\"top\">",
+                                    "target": [
+                                        "#top"
+                                    ]
+                                },
+                                {
+                                    "html": "<nav class=\"navbar-collapse\">",
+                                    "target": [
+                                        ".navbar-collapse"
+                                    ]
+                                },
+                                {
+                                    "html": "<nav id=\"additional-menu\" class=\"navbar hmenu_type\">",
+                                    "target": [
+                                        "#additional-menu"
+                                    ]
+                                },
+                                {
+                                    "html": "<nav id=\"menu\" class=\"btn-group btn-block\">",
+                                    "target": [
+                                        ".col-md-pull-9 > nav"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<nav id=\"menu\" class=\"btn-group btn-block\">",
+                    "target": [
+                        ".menu_fix > nav"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"https://satkit.com/en-gb/\"><i class=\"fa fa-home\"></i></a>",
+                    "target": [
+                        "li:nth-child(1) > a[href$=\"en-gb/\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"additional-tel dth\">\n\t\t\t\t\t\t\t\t \n\t\t\t\t\t\t\t\t\t<div class=\"icon-image\"><i class=\"fa fa-phone-square\"></i></div>\t\n\t\t\t\t\t\t\t\t \n\t\t\t\t\t\t\t\t<div class=\"tel-info dtch\">\n\t\t\t\t\t\t\t\t+34 977 276 047\n\t\t\t\t\t\t\t\t</div>\n\t\t\t\t\t\t\t</div>",
+                    "target": [
+                        ".phone_fix > div > .contact-header > .dropdown-toggle[data-toggle=\"dropdown\"] > .additional-tel.dth:nth-child(1)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"text_after_phone\">Monday to Friday 9:00 to 16:30</div>",
+                    "target": [
+                        ".phone_fix > div > .contact-header > .dropdown-toggle[data-toggle=\"dropdown\"] > .text_after_phone"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<input type=\"text\" name=\"search\" value=\"\" placeholder=\"Search\" class=\"form-control input-lg search-autocomplete\" autocompleteserach=\"off\">",
+                    "target": [
+                        "#search-fixed-top > .input-group > .input-lg.search-autocomplete[name=\"search\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<ul class=\"breadcrumb\">\n        <li><a href=\"https://satkit.com/en-gb/\"><i class=\"fa fa-home\"></i></a></li>\n        <li><a href=\"https://satkit.com/en-gb/account\">Account</a></li>\n        <li><a href=\"https://satkit.com/en-gb/register\">Register</a></li>\n      </ul>",
+                    "target": [
+                        ".breadcrumb"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h1>Account</h1>",
+                    "target": [
+                        "h1"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p>If you already have an account with us, please login at the <a href=\"https://satkit.com/en-gb/login\">login page</a>.</p>",
+                    "target": [
+                        "#content > p"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<legend>Your Personal Details</legend>",
+                    "target": [
+                        "#account > legend"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"form-group required\">",
+                    "target": [
+                        "#account > .required.form-group:nth-child(3)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div id=\"custom-field1\" class=\"form-group custom-field\" data-sort=\"2\" style=\"display: block;\">",
+                    "target": [
+                        "#custom-field1"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"form-group required\">",
+                    "target": [
+                        ".required.form-group:nth-child(5)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"form-group required\">",
+                    "target": [
+                        ".required.form-group:nth-child(6)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"form-group required\">",
+                    "target": [
+                        ".required.form-group:nth-child(7)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<fieldset>",
+                    "target": [
+                        "fieldset:nth-child(2)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<fieldset>",
+                    "target": [
+                        "fieldset:nth-child(3)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"buttons\">",
+                    "target": [
+                        ".buttons"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                }
+            ]
+        }
+    ]
+}

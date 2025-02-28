@@ -1,0 +1,1711 @@
+{
+    "testEngine": {
+        "name": "axe-core",
+        "version": "4.4.3"
+    },
+    "testRunner": {
+        "name": "axe"
+    },
+    "timestamp": "2024-09-28T01:25:36.249Z",
+    "url": "https://cooltoad.com/account/create_new_account",
+    "toolOptions": {
+        "resultTypes": [
+            "violations"
+        ],
+        "reporter": "v1"
+    },
+    "passes": [
+        {
+            "id": "aria-hidden-body",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures aria-hidden='true' is not present on the document body.",
+            "help": "aria-hidden='true' must not be present on the document body",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-hidden-body",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "No aria-hidden attribute is present on document body"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<body>",
+                    "target": [
+                        "body"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "avoid-inline-spacing",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag21aa",
+                "wcag1412"
+            ],
+            "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+            "help": "Inline text spacing must be adjustable with custom stylesheets",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/avoid-inline-spacing?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "avoid-inline-spacing",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No inline styles with '!important' that affect text spacing has been specified"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<ul style=\"position:relative;float:left;\">\n\t\t\t\t<li><a href=\"/\"> Home </a></li>\n\t\t\t\t<li><a href=\"/music\"> Music </a></li>\n\t\t\t</ul>",
+                    "target": [
+                        "ul"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#000000",
+                                "contrastRatio": 21,
+                                "fontSize": "11.3pt (15px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 21"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"/\"> Home </a>",
+                    "target": [
+                        "li:nth-child(1) > a[href=\"/\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "document-title",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag242",
+                "ACT"
+            ],
+            "description": "Ensures each HTML document contains a non-empty <title> element",
+            "help": "Documents must have <title> element to aid in navigation",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/document-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "doc-has-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has a non-empty <title> element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html>",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-active",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value of active elements is unique",
+            "help": "IDs of active elements must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-active",
+                            "data": "passField",
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has no active elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input class=\"ti\" id=\"passField\" type=\"password\" name=\"password\" required=\"\" pattern=\".{8,16}\">",
+                    "target": [
+                        "#passField"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "commercejs",
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<script type=\"text/javascript\" id=\"commercejs\" async=\"\" src=\"https://d35m0nfeeqvaj5.cloudfront.net/commerce-js.iife.js\"></script>",
+                    "target": [
+                        "#commercejs"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "empty-table-header",
+            "impact": "minor",
+            "tags": [
+                "wcag131",
+                "cat.aria"
+            ],
+            "description": "Ensures table headers have discernible text",
+            "help": "Table header text must not be empty",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/empty-table-header?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<th colspan=\"3\" class=\"signUpFormHeading\">Account Access Information</th>",
+                    "target": [
+                        "tr:nth-child(1) > .signUpFormHeading[colspan=\"3\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "form-field-multiple-labels",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag332"
+            ],
+            "description": "Ensures form field does not have multiple label elements",
+            "help": "Form field must not have multiple label elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/form-field-multiple-labels?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "multiple-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Form field does not have multiple label elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input class=\"ti\" type=\"text\" name=\"username\" value=\"\" required=\"\" autofocus=\"true\">",
+                    "target": [
+                        "th:nth-child(3) > input[type=\"text\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "identical-links-same-purpose",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "wcag2aaa",
+                "wcag249"
+            ],
+            "description": "Ensure that links with the same accessible name serve a similar purpose",
+            "help": "Links with the same name must have a similar purpose",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/identical-links-same-purpose?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "identical-links-same-purpose",
+                            "data": {
+                                "name": "home",
+                                "urlProps": {
+                                    "protocol": "http:",
+                                    "hostname": "cooltoad.com",
+                                    "port": "",
+                                    "pathname": "/",
+                                    "search": {},
+                                    "hash": "",
+                                    "filename": ""
+                                }
+                            },
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "There are no other links with the same name, that go to a different URL"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"/\"> Home </a>",
+                    "target": [
+                        "li:nth-child(1) > a[href=\"/\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-redundant-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ],
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-redundant-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img id=\"logoPic\" src=\"https://cooltoad.com/rsrcs/imgs/ctlogo.png\">",
+                    "target": [
+                        "#logoPic"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label-title-only",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "best-practice"
+            ],
+            "description": "Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes",
+            "help": "Form elements should have a visible label",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "title-only",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Form element does not solely use title attribute for its label"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input class=\"ti\" type=\"text\" name=\"username\" value=\"\" required=\"\" autofocus=\"true\">",
+                    "target": [
+                        "th:nth-child(3) > input[type=\"text\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label",
+            "impact": "critical",
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag412",
+                "wcag131",
+                "section508",
+                "section508.22.n",
+                "ACT"
+            ],
+            "description": "Ensures every form element has a label",
+            "help": "Form elements must have labels",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "non-empty-placeholder",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a placeholder attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "hidden-explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element has a visible explicit <label>"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"TEXT\" name=\"username\" placeholder=\"john23 or john23@cooltoad.com\" style=\"padding-left:2.5px;width:200px;\" required=\"\" autofocus=\"\" maxlength=\"30\">",
+                    "target": [
+                        "td[colspan=\"2\"] > input[type=\"TEXT\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a href=\"/\"> Home </a>",
+                    "target": [
+                        "li:nth-child(1) > a[href=\"/\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "list",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures that lists are structured correctly",
+            "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/list?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "only-listitems",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List element only has direct children that are allowed inside <li> elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<ul style=\"position:relative;float:left;\">\n\t\t\t\t<li><a href=\"/\"> Home </a></li>\n\t\t\t\t<li><a href=\"/music\"> Music </a></li>\n\t\t\t</ul>",
+                    "target": [
+                        "ul"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "listitem",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures <li> elements are used semantically",
+            "help": "<li> elements must be contained in a <ul> or <ol>",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/listitem?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<li><a href=\"/\"> Home </a></li>",
+                    "target": [
+                        "li:nth-child(1)"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "nested-interactive",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+            "help": "Interactive controls must not be nested",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/nested-interactive?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "no-focusable-content",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have focusable descendants"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<img id=\"logoPic\" src=\"https://cooltoad.com/rsrcs/imgs/ctlogo.png\">",
+                    "target": [
+                        "#logoPic"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "All page content is contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"topBar\"></div>",
+                    "target": [
+                        ".topBar"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "table-duplicate-name",
+            "impact": null,
+            "tags": [
+                "cat.tables",
+                "best-practice"
+            ],
+            "description": "Ensure the <caption> element does not contain the same text as the summary attribute",
+            "help": "tables should not have the same summary and caption",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/table-duplicate-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "same-caption-summary",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Content of summary attribute and <caption> are not duplicated"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<table id=\"signUpForm\">",
+                    "target": [
+                        "#signUpForm"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "td-headers-attr",
+            "impact": null,
+            "tags": [
+                "cat.tables",
+                "wcag2a",
+                "wcag131",
+                "section508",
+                "section508.22.g"
+            ],
+            "description": "Ensure that each cell in a table that uses the headers attribute refers only to other cells in that table",
+            "help": "Table cells that use the headers attribute must only refer to cells in the same table",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/td-headers-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "td-headers-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "The headers attribute is exclusively used to refer to other cells in the table"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<table id=\"signUpForm\">",
+                    "target": [
+                        "#signUpForm"
+                    ]
+                }
+            ]
+        }
+    ],
+    "violations": [
+        {
+            "id": "html-has-lang",
+            "impact": "serious",
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures every HTML document has a lang attribute",
+            "help": "<html> element must have a lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-has-lang?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-lang",
+                            "data": {
+                                "messageKey": "noLang"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "The <html> element does not have a lang attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<html>",
+                    "target": [
+                        "html"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  The <html> element does not have a lang attribute"
+                }
+            ]
+        },
+        {
+            "id": "image-alt",
+            "impact": "critical",
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures <img> elements have alternate text or a role of none or presentation",
+            "help": "Images must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-alt",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element does not have an alt attribute"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        },
+                        {
+                            "id": "presentational-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<img id=\"logoPic\" src=\"https://cooltoad.com/rsrcs/imgs/ctlogo.png\">",
+                    "target": [
+                        "#logoPic"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-alt",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element does not have an alt attribute"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        },
+                        {
+                            "id": "presentational-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<img id=\"logoText\" src=\"https://cooltoad.com/rsrcs/imgs/cooltoad_logotext1.png\">",
+                    "target": [
+                        "#logoText"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element does not have an alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                }
+            ]
+        },
+        {
+            "id": "input-image-alt",
+            "impact": "critical",
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures <input type=\"image\"> elements have alternate text",
+            "help": "Image buttons must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/input-image-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "non-empty-alt",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has no alt attribute"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<input class=\"signUpBtn\" type=\"image\" src=\"/rsrcs/imgs/signupbutton.png\">",
+                    "target": [
+                        ".signUpBtn"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has no alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "non-empty-alt",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has no alt attribute"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<input class=\"smallLeftButton\" type=\"image\" src=\"https://cooltoad.com//rsrcs/imgs/signinbutton.png\">",
+                    "target": [
+                        ".smallLeftButton"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has no alt attribute\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                }
+            ]
+        },
+        {
+            "id": "label",
+            "impact": "critical",
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag412",
+                "wcag131",
+                "section508",
+                "section508.22.n",
+                "ACT"
+            ],
+            "description": "Ensures every form element has a label",
+            "help": "Form elements must have labels",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "implicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element does not have an implicit (wrapped) <label>"
+                        },
+                        {
+                            "id": "explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element does not have an explicit <label>"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        },
+                        {
+                            "id": "non-empty-placeholder",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no placeholder attribute"
+                        },
+                        {
+                            "id": "presentational-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<input class=\"ti\" type=\"text\" name=\"username\" value=\"\" required=\"\" autofocus=\"true\">",
+                    "target": [
+                        "th:nth-child(3) > input[type=\"text\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                },
+                {
+                    "any": [
+                        {
+                            "id": "implicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element does not have an implicit (wrapped) <label>"
+                        },
+                        {
+                            "id": "explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element does not have an explicit <label>"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        },
+                        {
+                            "id": "non-empty-placeholder",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no placeholder attribute"
+                        },
+                        {
+                            "id": "presentational-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<input class=\"ti\" id=\"passField\" type=\"password\" name=\"password\" required=\"\" pattern=\".{8,16}\">",
+                    "target": [
+                        "#passField"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                },
+                {
+                    "any": [
+                        {
+                            "id": "implicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element does not have an implicit (wrapped) <label>"
+                        },
+                        {
+                            "id": "explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element does not have an explicit <label>"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        },
+                        {
+                            "id": "non-empty-placeholder",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no placeholder attribute"
+                        },
+                        {
+                            "id": "presentational-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<input class=\"ti\" type=\"password\" name=\"password1\" required=\"\">",
+                    "target": [
+                        "input[name=\"password1\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                },
+                {
+                    "any": [
+                        {
+                            "id": "implicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element does not have an implicit (wrapped) <label>"
+                        },
+                        {
+                            "id": "explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element does not have an explicit <label>"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        },
+                        {
+                            "id": "non-empty-placeholder",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no placeholder attribute"
+                        },
+                        {
+                            "id": "presentational-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<input class=\"ti\" type=\"email\" name=\"alt_eml\" required=\"\" value=\"\">",
+                    "target": [
+                        "input[type=\"email\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                },
+                {
+                    "any": [
+                        {
+                            "id": "implicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element does not have an implicit (wrapped) <label>"
+                        },
+                        {
+                            "id": "explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element does not have an explicit <label>"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        },
+                        {
+                            "id": "non-empty-placeholder",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no placeholder attribute"
+                        },
+                        {
+                            "id": "presentational-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<input type=\"password\" name=\"password\" style=\"padding-left:2.5px;width:200px;\" maxlength=\"16\">",
+                    "target": [
+                        "input[maxlength=\"16\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                }
+            ]
+        },
+        {
+            "id": "landmark-one-main",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has a main landmark",
+            "help": "Document should have one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-one-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-main",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have a main landmark"
+                        }
+                    ],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<html>",
+                    "target": [
+                        "html"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"/\"><div style=\"float:left;\">\n\t<img id=\"logoPic\" src=\"https://cooltoad.com/rsrcs/imgs/ctlogo.png\"><br>\n\t<img id=\"logoText\" src=\"https://cooltoad.com/rsrcs/imgs/cooltoad_logotext1.png\">\n</div></a>",
+                    "target": [
+                        ".container > a[href=\"/\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                }
+            ]
+        },
+        {
+            "id": "page-has-heading-one",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+            "help": "Page should contain a level-one heading",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/page-has-heading-one?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-heading-one",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Page must have a level-one heading"
+                        }
+                    ],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<html>",
+                    "target": [
+                        "html"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"main\">",
+                    "target": [
+                        ".main"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a href=\"/\"><div style=\"float:left;\">\n\t<img id=\"logoPic\" src=\"https://cooltoad.com/rsrcs/imgs/ctlogo.png\"><br>\n\t<img id=\"logoText\" src=\"https://cooltoad.com/rsrcs/imgs/cooltoad_logotext1.png\">\n</div></a>",
+                    "target": [
+                        ".container > a[href=\"/\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div id=\"bigBox2header2\">\n      Sign-Up\n    </div>",
+                    "target": [
+                        "#bigBox2header2"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<tr>\n            <th colspan=\"3\" class=\"signUpFormHeading\">Account Access Information</th>\n          </tr>",
+                    "target": [
+                        "#signUpForm > tbody > tr:nth-child(1)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<tr>",
+                    "target": [
+                        "#signUpForm > tbody > tr:nth-child(4)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<tr>\n            <th></th>\n            <th></th>\n            <th style=\"font-size:11px;\">\n            Password must be between 8-16 characters\n            </th>\n          </tr>",
+                    "target": [
+                        "tr:nth-child(6)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<tr>\n            <th>Password</th>\n            <th>:</th>\n            <td>\n            <input class=\"ti\" id=\"passField\" type=\"password\" name=\"password\" required=\"\" pattern=\".{8,16}\">\n            </td>\n          </tr>",
+                    "target": [
+                        "tr:nth-child(7)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<tr>\n            <th>Confirm Password</th>\n            <th>:</th>\n            <td>\n            <input class=\"ti\" type=\"password\" name=\"password1\" required=\"\">\n            </td>\n          </tr>",
+                    "target": [
+                        "tr:nth-child(9)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<tr>\n            <th colspan=\"3\" class=\"signUpFormHeading\">Account Security</th>\n          </tr>",
+                    "target": [
+                        "tr:nth-child(11)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<tr>\n            <th>Alternative Email</th>\n            <th>:</th>\n            <td>\n            <input class=\"ti\" type=\"email\" name=\"alt_eml\" required=\"\" value=\"\">\n            </td>\n          </tr>",
+                    "target": [
+                        "tr:nth-child(14)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<tr>\n\t\t\t\t\t<td style=\"color:white;text-align:left;\">Username:&nbsp; </td>\n\t\t\t\t\t<td colspan=\"2\">\n\t\t\t\t\t<input type=\"TEXT\" name=\"username\" placeholder=\"john23 or john23@cooltoad.com\" style=\"padding-left:2.5px;width:200px;\" required=\"\" autofocus=\"\" maxlength=\"30\">\n\t\t\t\t\t</td>\n\t\t\t\t</tr>",
+                    "target": [
+                        "form[action=\"/user/login\"] > table > tbody > tr:nth-child(1)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<tr>\n\t\t\t\t\t<td style=\"color:white;\">Password:&nbsp;</td>\n\t\t\t\t\t<td colspan=\"2\">\n\t\t\t\t\t<input type=\"password\" name=\"password\" style=\"padding-left:2.5px;width:200px;\" maxlength=\"16\">\n\t\t\t\t\t</td>\n\t\t\t\t</tr>",
+                    "target": [
+                        "form[action=\"/user/login\"] > table > tbody > tr:nth-child(3)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<td><a style=\"float:right;color:lightyellow;text-decoration:none;\" href=\"/account/forgot_password\">Forgot Password?</a></td>",
+                    "target": [
+                        "tr:nth-child(4) > td:nth-child(3)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"footer\">\n\t<div class=\"fbox\">\n\t\t<b><u>Contact Us</u>\n\t\t<br>\n\t\tinfo@cooltoad.com</b>\n\t</div>\n</div>",
+                    "target": [
+                        ".footer"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                }
+            ]
+        }
+    ]
+}

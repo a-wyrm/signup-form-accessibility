@@ -1,0 +1,3528 @@
+{
+    "testEngine": {
+        "name": "axe-core",
+        "version": "4.4.3"
+    },
+    "testRunner": {
+        "name": "axe"
+    },
+    "timestamp": "2024-09-26T05:30:39.314Z",
+    "url": "https://catalove.com/account/login/",
+    "toolOptions": {
+        "resultTypes": [
+            "violations"
+        ],
+        "reporter": "v1"
+    },
+    "passes": [
+        {
+            "id": "aria-allowed-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures ARIA attributes are allowed for an element's role",
+            "help": "Elements must only use allowed ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attributes are used correctly for the defined role"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "aria-unsupported-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute is supported"
+                        },
+                        {
+                            "id": "aria-prohibited-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "ARIA attribute is allowed"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a id=\"navbarDropdownMenuLink\" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"nav-link active\">Negozio<i class=\"fa fa-angle-down\"></i></a>",
+                    "target": [
+                        "#navbarDropdownMenuLink"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-allowed-role",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "best-practice"
+            ],
+            "description": "Ensures role attribute has an appropriate value for the element",
+            "help": "ARIA role should be appropriate for the element",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-role?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is allowed for given element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"modal fade\" id=\"subsModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"SubscriptionModal\" aria-hidden=\"true\">",
+                    "target": [
+                        "#subsModal"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-command-name",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures every ARIA button, link and menuitem has an accessible name",
+            "help": "ARIA commands must have an accessible name",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-command-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute exists and is not empty"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div id=\"cookiescript_close\" tabindex=\"0\" role=\"button\" aria-label=\"Close\">\u00d7</div>",
+                    "target": [
+                        "#cookiescript_close"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-body",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures aria-hidden='true' is not present on the document body.",
+            "help": "aria-hidden='true' must not be present on the document body",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-hidden-body",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "No aria-hidden attribute is present on document body"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<body>",
+                    "target": [
+                        "body"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-focus",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag131"
+            ],
+            "description": "Ensures aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "focusable-modal-open",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements while a modal is open"
+                        },
+                        {
+                            "id": "focusable-disabled",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        },
+                        {
+                            "id": "focusable-not-tabbable",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"modal fade\" id=\"subsModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"SubscriptionModal\" aria-hidden=\"true\">",
+                    "target": [
+                        "#subsModal"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-required-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures elements with ARIA roles have all required ARIA attributes",
+            "help": "Required ARIA attributes must be provided",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-required-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-required-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "All required ARIA attributes are present"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div id=\"cookiescript_injected\" tabindex=\"0\" role=\"alert\" aria-live=\"assertive\" data-nosnippet=\"\" class=\"\" style=\"opacity: 0.2;\">",
+                    "target": [
+                        "#cookiescript_injected"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-roles",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all elements with a role attribute use a valid value",
+            "help": "ARIA roles used must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-roles?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "fallbackrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Only one role value used"
+                        },
+                        {
+                            "id": "invalidrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is valid"
+                        },
+                        {
+                            "id": "abstractrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Abstract roles are not used"
+                        },
+                        {
+                            "id": "unsupportedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is supported"
+                        },
+                        {
+                            "id": "deprecatedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is not deprecated"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<div id=\"cookiescript_injected\" tabindex=\"0\" role=\"alert\" aria-live=\"assertive\" data-nosnippet=\"\" class=\"\" style=\"opacity: 0.2;\">",
+                    "target": [
+                        "#cookiescript_injected"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr-value",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all ARIA attributes have valid values",
+            "help": "ARIA attributes must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr-value?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "aria-valid-attr-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute values are valid"
+                        },
+                        {
+                            "id": "aria-errormessage",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "aria-errormessage exists and references elements visible to screen readers that use a supported aria-errormessage technique"
+                        },
+                        {
+                            "id": "aria-level",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-level values are valid"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a id=\"navbarDropdownMenuLink\" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"nav-link active\">Negozio<i class=\"fa fa-angle-down\"></i></a>",
+                    "target": [
+                        "#navbarDropdownMenuLink"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures attributes that begin with aria- are valid ARIA attributes",
+            "help": "ARIA attributes must conform to valid names",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-valid-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute name is valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a id=\"navbarDropdownMenuLink\" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"nav-link active\">Negozio<i class=\"fa fa-angle-down\"></i></a>",
+                    "target": [
+                        "#navbarDropdownMenuLink"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "autocomplete-valid",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag21aa",
+                "wcag135"
+            ],
+            "description": "Ensure the autocomplete attribute is correct and suitable for the form field",
+            "help": "autocomplete attribute must be used correctly",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/autocomplete-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "autocomplete-valid",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "the autocomplete attribute is correctly formatted"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input type=\"search\" id=\"menu-search\" autocomplete=\"off\" placeholder=\"Cerca...\" aria-label=\"Search\" class=\"form-control mr-2 col w-100\" name=\"q\" required=\"\" data-clear-btn=\"true\">",
+                    "target": [
+                        "#menu-search"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "avoid-inline-spacing",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag21aa",
+                "wcag1412"
+            ],
+            "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+            "help": "Inline text spacing must be adjustable with custom stylesheets",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/avoid-inline-spacing?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "avoid-inline-spacing",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No inline styles with '!important' that affect text spacing has been specified"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"/ads-disclosure/\" class=\"nav-link\" style=\"white-space: nowrap;\">Ads Disclosure</a>",
+                    "target": [
+                        ".nav-link[href$=\"ads-disclosure/\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "button-name",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures buttons have discernible text",
+            "help": "Buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/button-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "button-has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has inner text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button type=\"submit\" class=\"btn btn-search btn-pink my-2 my-0 col-auto d-none d-lg-block\" id=\"submit-search\">\n                        Cerca\n                    </button>",
+                    "target": [
+                        "#submit-search"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "bypass",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag241",
+                "section508",
+                "section508.22.o"
+            ],
+            "description": "Ensures each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+            "help": "Page must have means to bypass repeated blocks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/bypass?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "header-present",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h6 class=\"text-uppercase mb-0\">Login</h6>",
+                                    "target": [
+                                        ".col-lg-5:nth-child(1) > .block > .block-header > .mb-0.text-uppercase"
+                                    ]
+                                },
+                                {
+                                    "html": "<h6 class=\"text-uppercase mb-0\">Nuovo Account</h6>",
+                                    "target": [
+                                        ".col-lg-5:nth-child(2) > .block > .block-header > .mb-0.text-uppercase"
+                                    ]
+                                },
+                                {
+                                    "html": "<h5>Controlla la tua casella di posta e verifica il tuo indirizzo email per ricevere promozioni speciali, consigli esclusivi e le tendenze del momento.</h5>",
+                                    "target": [
+                                        ".container > h5"
+                                    ]
+                                },
+                                {
+                                    "html": "<h6 class=\"text-uppercase text-dark mb-3\">Negozio</h6>",
+                                    "target": [
+                                        ".col-lg-2.col-md-3.mb-lg-0:nth-child(2) > .text-dark.text-uppercase.mb-3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h6 class=\"text-uppercase text-dark mb-3\">Pagine</h6>",
+                                    "target": [
+                                        ".col-lg-2.col-md-3.mb-lg-0:nth-child(3) > .text-dark.text-uppercase.mb-3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h6 class=\"text-uppercase text-dark mb-3\">About Catalove</h6>",
+                                    "target": [
+                                        ".col-lg-2.col-md-3.mb-lg-0:nth-child(4) > .text-dark.text-uppercase.mb-3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h6 class=\"text-uppercase text-dark mb-3\">TOS</h6>",
+                                    "target": [
+                                        ".col-lg-2.col-md-3.mb-lg-0:nth-child(5) > .text-dark.text-uppercase.mb-3"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Page has a heading"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"it\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#0d0d0d",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 19.46,
+                                "fontSize": "10.8pt (14.4px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 19.46"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a id=\"navbarDropdownMenuLink\" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"nav-link active\">Negozio<i class=\"fa fa-angle-down\"></i></a>",
+                    "target": [
+                        "#navbarDropdownMenuLink"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "document-title",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag242",
+                "ACT"
+            ],
+            "description": "Ensures each HTML document contains a non-empty <title> element",
+            "help": "Documents must have <title> element to aid in navigation",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/document-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "doc-has-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has a non-empty <title> element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"it\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-active",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value of active elements is unique",
+            "help": "IDs of active elements must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-active",
+                            "data": "logo",
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has no active elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"/\" class=\"navbar-brand\" id=\"logo\"></a>",
+                    "target": [
+                        "#logo"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-aria",
+            "impact": "critical",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value used in ARIA and in labels is unique",
+            "help": "IDs used in ARIA and labels must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-aria",
+                            "data": "navbarCollapse",
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div id=\"navbarCollapse\" class=\"collapse navbar-collapse\">",
+                    "target": [
+                        "#navbarCollapse"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "search-mobile-toggler",
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button type=\"button\" id=\"search-mobile-toggler\" class=\"navbar-toggler navbar-toggler-right\"><i class=\"fa fa-search\"></i></button>",
+                    "target": [
+                        "#search-mobile-toggler"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "empty-heading",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "best-practice"
+            ],
+            "description": "Ensures headings have discernible text",
+            "help": "Headings should not be empty",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/empty-heading?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h6 class=\"text-uppercase mb-0\">Login</h6>",
+                    "target": [
+                        ".col-lg-5:nth-child(1) > .block > .block-header > .mb-0.text-uppercase"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "empty-table-header",
+            "impact": null,
+            "tags": [
+                "wcag131",
+                "cat.aria"
+            ],
+            "description": "Ensures table headers have discernible text",
+            "help": "Table header text must not be empty",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/empty-table-header?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<th scope=\"col\" data-cs-i18n-text=\"{&quot;it&quot;:&quot;Nome&quot;,&quot;en&quot;:&quot;Name&quot;}\">Nome</th>",
+                    "target": [
+                        ".cookiescript_report_strict > .cookiescript_tablewrap > table > thead > tr > th[data-cs-i18n-text=\"{\\\"it\\\":\\\"Nome\\\",\\\"en\\\":\\\"Name\\\"}\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "form-field-multiple-labels",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag332"
+            ],
+            "description": "Ensures form field does not have multiple label elements",
+            "help": "Form field must not have multiple label elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/form-field-multiple-labels?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "multiple-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Form field does not have multiple label elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"search\" id=\"menu-search\" autocomplete=\"off\" placeholder=\"Cerca...\" aria-label=\"Search\" class=\"form-control mr-2 col w-100\" name=\"q\" required=\"\" data-clear-btn=\"true\">",
+                    "target": [
+                        "#menu-search"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "heading-order",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": {
+                                "headingOrder": [
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section > div > div > div:nth-child(1) > div > div:nth-child(1) > h6"
+                                        ],
+                                        "level": 6
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(3) > section > div > div > div:nth-child(2) > div > div:nth-child(1) > h6"
+                                        ],
+                                        "level": 6
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(5) > div > h5:nth-child(1)"
+                                        ],
+                                        "level": 5
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > footer:nth-child(6) > div:nth-child(1) > div > div > div:nth-child(2) > h6:nth-child(1)"
+                                        ],
+                                        "level": 6
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > footer:nth-child(6) > div:nth-child(1) > div > div > div:nth-child(3) > h6:nth-child(1)"
+                                        ],
+                                        "level": 6
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > footer:nth-child(6) > div:nth-child(1) > div > div > div:nth-child(4) > h6:nth-child(1)"
+                                        ],
+                                        "level": 6
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > footer:nth-child(6) > div:nth-child(1) > div > div > div:nth-child(5) > h6:nth-child(1)"
+                                        ],
+                                        "level": 6
+                                    }
+                                ]
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h6 class=\"text-uppercase mb-0\">Login</h6>",
+                    "target": [
+                        ".col-lg-5:nth-child(1) > .block > .block-header > .mb-0.text-uppercase"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-has-lang",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures every HTML document has a lang attribute",
+            "help": "<html> element must have a lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-has-lang?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "The <html> element has a lang attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"it\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-lang-valid",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures the lang attribute of the <html> element has a valid value",
+            "help": "<html> element must have a valid value for the lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-lang-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "valid-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Value of lang attribute is included in the list of valid languages"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<html lang=\"it\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "identical-links-same-purpose",
+            "impact": "minor",
+            "tags": [
+                "cat.semantics",
+                "wcag2aaa",
+                "wcag249"
+            ],
+            "description": "Ensure that links with the same accessible name serve a similar purpose",
+            "help": "Links with the same name must have a similar purpose",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/identical-links-same-purpose?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "identical-links-same-purpose",
+                            "data": {
+                                "name": "negozio",
+                                "urlProps": {
+                                    "protocol": "http:",
+                                    "hostname": "catalove.com",
+                                    "port": "",
+                                    "pathname": "/account/login/",
+                                    "search": {},
+                                    "hash": "",
+                                    "filename": ""
+                                }
+                            },
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "There are no other links with the same name, that go to a different URL"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a id=\"navbarDropdownMenuLink\" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"nav-link active\">Negozio<i class=\"fa fa-angle-down\"></i></a>",
+                    "target": [
+                        "#navbarDropdownMenuLink"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures <img> elements have alternate text or a role of none or presentation",
+            "help": "Images must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-alt",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has an alt attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "alt-space-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has a valid alt attribute value"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img width=\"20\" height=\"15\" src=\"/static/dist/flag/it.svg\" alt=\"it\" class=\"topbar-flag\">",
+                    "target": [
+                        "#langsDropdown > img[src$=\"it.svg\"][alt=\"it\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-redundant-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ],
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-redundant-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img width=\"20\" height=\"15\" src=\"/static/dist/flag/it.svg\" alt=\"it\" class=\"topbar-flag\">",
+                    "target": [
+                        "#langsDropdown > img[src$=\"it.svg\"][alt=\"it\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label-title-only",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "best-practice"
+            ],
+            "description": "Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes",
+            "help": "Form elements should have a visible label",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "title-only",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Form element does not solely use title attribute for its label"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"search\" id=\"menu-search\" autocomplete=\"off\" placeholder=\"Cerca...\" aria-label=\"Search\" class=\"form-control mr-2 col w-100\" name=\"q\" required=\"\" data-clear-btn=\"true\">",
+                    "target": [
+                        "#menu-search"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag412",
+                "wcag131",
+                "section508",
+                "section508.22.n",
+                "ACT"
+            ],
+            "description": "Ensures every form element has a label",
+            "help": "Form elements must have labels",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute exists and is not empty"
+                        },
+                        {
+                            "id": "non-empty-placeholder",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a placeholder attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "hidden-explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element has a visible explicit <label>"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"search\" id=\"menu-search\" autocomplete=\"off\" placeholder=\"Cerca...\" aria-label=\"Search\" class=\"form-control mr-2 col w-100\" name=\"q\" required=\"\" data-clear-btn=\"true\">",
+                    "target": [
+                        "#menu-search"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-banner-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the banner landmark is at top level",
+            "help": "Banner landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-banner-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "banner"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The banner landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header class=\"header\">",
+                    "target": [
+                        "header"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-contentinfo-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the contentinfo landmark is at top level",
+            "help": "Contentinfo landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-contentinfo-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "contentinfo"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The contentinfo landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<footer class=\"main-footer\">",
+                    "target": [
+                        "footer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-banner",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one banner landmark",
+            "help": "Document should not have more than one banner landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-banner?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-banner",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one banner landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header class=\"header\">",
+                    "target": [
+                        "header"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-unique",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "help": "Ensures landmarks are unique",
+            "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-unique",
+                            "data": {
+                                "role": "banner",
+                                "accessibleText": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Landmarks must have a unique role or role/label/title (i.e. accessible name) combination"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header class=\"header\">",
+                    "target": [
+                        "header"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a id=\"navbarDropdownMenuLink\" href=\"#\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\" class=\"nav-link active\">Negozio<i class=\"fa fa-angle-down\"></i></a>",
+                    "target": [
+                        "#navbarDropdownMenuLink"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "list",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures that lists are structured correctly",
+            "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/list?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "only-listitems",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List element only has direct children that are allowed inside <li> elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<ul class=\"navbar-nav pt-3 pt-lg-0 mr-5\">",
+                    "target": [
+                        ".navbar-nav.pt-3.pt-lg-0:nth-child(1)"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "listitem",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures <li> elements are used semantically",
+            "help": "<li> elements must be contained in a <ul> or <ol>",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/listitem?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<li class=\"nav-item dropdown\">",
+                    "target": [
+                        ".dropdown.nav-item"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport-large",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> can scale a significant amount",
+            "help": "Users should be able to zoom and scale the text up to 500%",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport-large?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport-large",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "<meta> tag does not prevent significant zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice",
+                "ACT"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> does not disable text scaling and zooming",
+            "help": "Zooming and scaling should not be disabled",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "<meta> tag does not disable zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "nested-interactive",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+            "help": "Interactive controls must not be nested",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/nested-interactive?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "no-focusable-content",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have focusable descendants"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<img width=\"20\" height=\"15\" src=\"/static/dist/flag/it.svg\" alt=\"it\" class=\"topbar-flag\">",
+                    "target": [
+                        "#langsDropdown > img[src$=\"it.svg\"][alt=\"it\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "All page content is contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header class=\"header\">",
+                    "target": [
+                        "header"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "scope-attr-valid",
+            "impact": null,
+            "tags": [
+                "cat.tables",
+                "best-practice"
+            ],
+            "description": "Ensures the scope attribute is used correctly on tables",
+            "help": "scope attribute should be used correctly",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/scope-attr-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "html5-scope",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Scope attribute is only used on table header elements (<th>)"
+                        },
+                        {
+                            "id": "scope-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Scope attribute is used correctly"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<th scope=\"col\" data-cs-i18n-text=\"{&quot;it&quot;:&quot;Nome&quot;,&quot;en&quot;:&quot;Name&quot;}\">Nome</th>",
+                    "target": [
+                        ".cookiescript_report_strict > .cookiescript_tablewrap > table > thead > tr > th[data-cs-i18n-text=\"{\\\"it\\\":\\\"Nome\\\",\\\"en\\\":\\\"Name\\\"}\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "scrollable-region-focusable",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag211"
+            ],
+            "description": "Ensure elements that have scrollable content are accessible by keyboard",
+            "help": "Scrollable region must have keyboard access",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/scrollable-region-focusable?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "focusable-content",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Element contains focusable elements"
+                        },
+                        {
+                            "id": "focusable-element",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Element is focusable"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div id=\"cookiescript_injected\" tabindex=\"0\" role=\"alert\" aria-live=\"assertive\" data-nosnippet=\"\" class=\"\" style=\"opacity: 0.2;\">",
+                    "target": [
+                        "#cookiescript_injected"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "tabindex",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures tabindex attribute values are not greater than 0",
+            "help": "Elements should not have tabindex greater than zero",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/tabindex?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "tabindex",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have a tabindex greater than 0"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div id=\"cookiescript_injected\" tabindex=\"0\" role=\"alert\" aria-live=\"assertive\" data-nosnippet=\"\" class=\"\" style=\"opacity: 0.2;\">",
+                    "target": [
+                        "#cookiescript_injected"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "table-duplicate-name",
+            "impact": null,
+            "tags": [
+                "cat.tables",
+                "best-practice"
+            ],
+            "description": "Ensure the <caption> element does not contain the same text as the summary attribute",
+            "help": "tables should not have the same summary and caption",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/table-duplicate-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "same-caption-summary",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Content of summary attribute and <caption> are not duplicated"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<table class=\"cookiescript_fullreport\" data-cs-table-report=\"cookiescript\">",
+                    "target": [
+                        ".cookiescript_report_strict > .cookiescript_tablewrap > table"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "td-headers-attr",
+            "impact": null,
+            "tags": [
+                "cat.tables",
+                "wcag2a",
+                "wcag131",
+                "section508",
+                "section508.22.g"
+            ],
+            "description": "Ensure that each cell in a table that uses the headers attribute refers only to other cells in that table",
+            "help": "Table cells that use the headers attribute must only refer to cells in the same table",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/td-headers-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "td-headers-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "The headers attribute is exclusively used to refer to other cells in the table"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<table class=\"cookiescript_fullreport\" data-cs-table-report=\"cookiescript\">",
+                    "target": [
+                        ".cookiescript_report_strict > .cookiescript_tablewrap > table"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "th-has-data-cells",
+            "impact": null,
+            "tags": [
+                "cat.tables",
+                "wcag2a",
+                "wcag131",
+                "section508",
+                "section508.22.g"
+            ],
+            "description": "Ensure that <th> elements and elements with role=columnheader/rowheader have data cells they describe",
+            "help": "Table headers in a data table must refer to data cells",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/th-has-data-cells?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "th-has-data-cells",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "All table header cells refer to data cells"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<table class=\"cookiescript_fullreport\" data-cs-table-report=\"cookiescript\">",
+                    "target": [
+                        ".cookiescript_report_strict > .cookiescript_tablewrap > table"
+                    ]
+                }
+            ]
+        }
+    ],
+    "violations": [
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#868e96",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.32,
+                                "fontSize": "9.4pt (12.6px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body>",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.32 (foreground color: #868e96, background color: #ffffff, font size: 9.4pt (12.6px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<label for=\"id_username\" class=\"form-label\">Username</label>",
+                    "target": [
+                        "label[for=\"id_username\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.32 (foreground color: #868e96, background color: #ffffff, font size: 9.4pt (12.6px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#868e96",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.32,
+                                "fontSize": "9.4pt (12.6px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body>",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.32 (foreground color: #868e96, background color: #ffffff, font size: 9.4pt (12.6px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<label for=\"id_password\" class=\"form-label\">Password</label>",
+                    "target": [
+                        "label[for=\"id_password\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.32 (foreground color: #868e96, background color: #ffffff, font size: 9.4pt (12.6px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#868e96",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.32,
+                                "fontSize": "10.8pt (14.4px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body>",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.32 (foreground color: #868e96, background color: #ffffff, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/account/password_reset/\" class=\"text-secondary font-weight-bold text-decoration-none\">Hai dimenticato la tua password?</a>",
+                    "target": [
+                        "a[href$=\"password_reset/\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.32 (foreground color: #868e96, background color: #ffffff, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#868e96",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.32,
+                                "fontSize": "9.4pt (12.6px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body>",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.32 (foreground color: #868e96, background color: #ffffff, font size: 9.4pt (12.6px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<label for=\"reg-name\" class=\"form-label\">Username</label>",
+                    "target": [
+                        "label[for=\"reg-name\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.32 (foreground color: #868e96, background color: #ffffff, font size: 9.4pt (12.6px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#868e96",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.32,
+                                "fontSize": "9.4pt (12.6px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body>",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.32 (foreground color: #868e96, background color: #ffffff, font size: 9.4pt (12.6px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<label for=\"reg-email\" class=\"form-label\">Email</label>",
+                    "target": [
+                        "label[for=\"reg-email\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.32 (foreground color: #868e96, background color: #ffffff, font size: 9.4pt (12.6px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#868e96",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.32,
+                                "fontSize": "9.4pt (12.6px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body>",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.32 (foreground color: #868e96, background color: #ffffff, font size: 9.4pt (12.6px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<label for=\"reg-password\" class=\"form-label\">Password</label>",
+                    "target": [
+                        "label[for=\"reg-password\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.32 (foreground color: #868e96, background color: #ffffff, font size: 9.4pt (12.6px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#868e96",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.32,
+                                "fontSize": "9.4pt (12.6px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body>",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.32 (foreground color: #868e96, background color: #ffffff, font size: 9.4pt (12.6px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<label for=\"reg-password-conf\" class=\"form-label\">Conferma la password</label>",
+                    "target": [
+                        "label[for=\"reg-password-conf\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.32 (foreground color: #868e96, background color: #ffffff, font size: 9.4pt (12.6px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#e63946",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 4.16,
+                                "fontSize": "10.8pt (14.4px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body>",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 4.16 (foreground color: #e63946, background color: #ffffff, font size: 10.8pt (14.4px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/privacy-policy/\" target=\"_blank\">Privacy Policy</a>",
+                    "target": [
+                        ".form-check-label[for=\"seen-tos\"] > a[href$=\"privacy-policy/\"][target=\"_blank\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.16 (foreground color: #e63946, background color: #ffffff, font size: 10.8pt (14.4px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#fa255e",
+                                "contrastRatio": 3.82,
+                                "fontSize": "13.5pt (18px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"subscribed-success w-100 py-3\">",
+                                    "target": [
+                                        ".subscribed-success"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.82 (foreground color: #ffffff, background color: #fa255e, font size: 13.5pt (18px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<h5>Controlla la tua casella di posta e verifica il tuo indirizzo email per ricevere promozioni speciali, consigli esclusivi e le tendenze del momento.</h5>",
+                    "target": [
+                        ".container > h5"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.82 (foreground color: #ffffff, background color: #fa255e, font size: 13.5pt (18px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#fa255e",
+                                "contrastRatio": 3.82,
+                                "fontSize": "9.4pt (12.6px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"subscribed-success w-100 py-3\">",
+                                    "target": [
+                                        ".subscribed-success"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.82 (foreground color: #ffffff, background color: #fa255e, font size: 9.4pt (12.6px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<p class=\"text-sm mb-0\">Non trovi la mail di conferma? Controlla anche nelle caselle promozione e posta indesiderata.</p>",
+                    "target": [
+                        ".container > p"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.82 (foreground color: #ffffff, background color: #fa255e, font size: 9.4pt (12.6px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#868e96",
+                                "bgColor": "#dee2e6",
+                                "contrastRatio": 2.55,
+                                "fontSize": "10.8pt (14.4px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"py-3 py-lg-5 py-sm-6 bg-gray-300 text-muted\">",
+                                    "target": [
+                                        ".py-lg-5"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<p class=\"text-secondary\">Una ricerca, tutta la moda.</p>",
+                    "target": [
+                        ".col-lg-4 > p"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#868e96",
+                                "bgColor": "#dee2e6",
+                                "contrastRatio": 2.55,
+                                "fontSize": "10.8pt (14.4px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"py-3 py-lg-5 py-sm-6 bg-gray-300 text-muted\">",
+                                    "target": [
+                                        ".py-lg-5"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/store/gender_woman/\" class=\"text-secondary font-weight-bold text-decoration-none text-capitalize\">donna</a>",
+                    "target": [
+                        "a[href$=\"gender_woman/\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#868e96",
+                                "bgColor": "#dee2e6",
+                                "contrastRatio": 2.55,
+                                "fontSize": "10.8pt (14.4px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"py-3 py-lg-5 py-sm-6 bg-gray-300 text-muted\">",
+                                    "target": [
+                                        ".py-lg-5"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/store/gender_man/\" class=\"text-secondary font-weight-bold text-decoration-none text-capitalize\">uomo</a>",
+                    "target": [
+                        "a[href$=\"gender_man/\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#868e96",
+                                "bgColor": "#dee2e6",
+                                "contrastRatio": 2.55,
+                                "fontSize": "10.8pt (14.4px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"py-3 py-lg-5 py-sm-6 bg-gray-300 text-muted\">",
+                                    "target": [
+                                        ".py-lg-5"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/store/gender_child/\" class=\"text-secondary font-weight-bold text-decoration-none text-capitalize\">bambino</a>",
+                    "target": [
+                        "a[href$=\"gender_child/\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#868e96",
+                                "bgColor": "#dee2e6",
+                                "contrastRatio": 2.55,
+                                "fontSize": "10.8pt (14.4px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"py-3 py-lg-5 py-sm-6 bg-gray-300 text-muted\">",
+                                    "target": [
+                                        ".py-lg-5"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/promo/\" class=\"text-secondary font-weight-bold text-decoration-none\">Offerte</a>",
+                    "target": [
+                        ".text-decoration-none.text-secondary[href$=\"promo/\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#868e96",
+                                "bgColor": "#dee2e6",
+                                "contrastRatio": 2.55,
+                                "fontSize": "10.8pt (14.4px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"py-3 py-lg-5 py-sm-6 bg-gray-300 text-muted\">",
+                                    "target": [
+                                        ".py-lg-5"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/magazine/\" class=\"text-secondary font-weight-bold text-decoration-none\">Magazine</a>",
+                    "target": [
+                        ".text-decoration-none.text-secondary[href$=\"magazine/\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#868e96",
+                                "bgColor": "#dee2e6",
+                                "contrastRatio": 2.55,
+                                "fontSize": "10.8pt (14.4px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"py-3 py-lg-5 py-sm-6 bg-gray-300 text-muted\">",
+                                    "target": [
+                                        ".py-lg-5"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/faq/\" class=\"text-secondary font-weight-bold text-decoration-none\">F.A.Q.</a>",
+                    "target": [
+                        "a[href$=\"faq/\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#868e96",
+                                "bgColor": "#dee2e6",
+                                "contrastRatio": 2.55,
+                                "fontSize": "10.8pt (14.4px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"py-3 py-lg-5 py-sm-6 bg-gray-300 text-muted\">",
+                                    "target": [
+                                        ".py-lg-5"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/contacts/\" class=\"text-secondary font-weight-bold text-decoration-none\">Contatti</a>",
+                    "target": [
+                        "a[href$=\"contacts/\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#868e96",
+                                "bgColor": "#dee2e6",
+                                "contrastRatio": 2.55,
+                                "fontSize": "10.8pt (14.4px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"py-3 py-lg-5 py-sm-6 bg-gray-300 text-muted\">",
+                                    "target": [
+                                        ".py-lg-5"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/partnership/\" class=\"text-secondary font-weight-bold text-decoration-none\">Diventa partner</a>",
+                    "target": [
+                        "a[href$=\"partnership/\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#868e96",
+                                "bgColor": "#dee2e6",
+                                "contrastRatio": 2.55,
+                                "fontSize": "10.8pt (14.4px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"py-3 py-lg-5 py-sm-6 bg-gray-300 text-muted\">",
+                                    "target": [
+                                        ".py-lg-5"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/privacy-policy/\" class=\"text-secondary font-weight-bold text-decoration-none\">Privacy Policy</a>",
+                    "target": [
+                        ".text-decoration-none.text-secondary[href$=\"privacy-policy/\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#868e96",
+                                "bgColor": "#dee2e6",
+                                "contrastRatio": 2.55,
+                                "fontSize": "10.8pt (14.4px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"py-3 py-lg-5 py-sm-6 bg-gray-300 text-muted\">",
+                                    "target": [
+                                        ".py-lg-5"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/tos/\" class=\"text-secondary font-weight-bold text-decoration-none\">Termini e Condizioni</a>",
+                    "target": [
+                        "a[href$=\"tos/\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#868e96",
+                                "bgColor": "#dee2e6",
+                                "contrastRatio": 2.55,
+                                "fontSize": "10.8pt (14.4px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"py-3 py-lg-5 py-sm-6 bg-gray-300 text-muted\">",
+                                    "target": [
+                                        ".py-lg-5"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/cookie-policy/\" class=\"text-secondary font-weight-bold text-decoration-none\">Cookie Policy</a>",
+                    "target": [
+                        ".mb-2:nth-child(3) > a[href$=\"cookie-policy/\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#868e96",
+                                "bgColor": "#dee2e6",
+                                "contrastRatio": 2.55,
+                                "fontSize": "10.8pt (14.4px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"py-3 py-lg-5 py-sm-6 bg-gray-300 text-muted\">",
+                                    "target": [
+                                        ".py-lg-5"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"/ads-disclosure/\" class=\"text-secondary font-weight-bold text-decoration-none\">Ads Disclosure</a>",
+                    "target": [
+                        ".text-decoration-none.text-secondary[href$=\"ads-disclosure/\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.55 (foreground color: #868e96, background color: #dee2e6, font size: 10.8pt (14.4px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#dddddd",
+                                "bgColor": "#d5d5d5",
+                                "contrastRatio": 1.08,
+                                "fontSize": "12.8pt (17px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"cookiescript_injected\" tabindex=\"0\" role=\"alert\" aria-live=\"assertive\" data-nosnippet=\"\" class=\"\" style=\"opacity: 0.2;\">",
+                                    "target": [
+                                        "#cookiescript_injected"
+                                    ]
+                                },
+                                {
+                                    "html": "<body>",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 1.08 (foreground color: #dddddd, background color: #d5d5d5, font size: 12.8pt (17px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<div id=\"cookiescript_header\" data-cs-i18n-text=\"{&quot;it&quot;:&quot;Questo sito web utilizza cookie&quot;,&quot;en&quot;:&quot;This website uses cookies&quot;}\">Questo sito web utilizza cookie</div>",
+                    "target": [
+                        "#cookiescript_header"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.08 (foreground color: #dddddd, background color: #d5d5d5, font size: 12.8pt (17px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#dcdcdc",
+                                "bgColor": "#d5d5d5",
+                                "contrastRatio": 1.07,
+                                "fontSize": "9.0pt (12px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"cookiescript_injected\" tabindex=\"0\" role=\"alert\" aria-live=\"assertive\" data-nosnippet=\"\" class=\"\" style=\"opacity: 0.2;\">",
+                                    "target": [
+                                        "#cookiescript_injected"
+                                    ]
+                                },
+                                {
+                                    "html": "<body>",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 1.07 (foreground color: #dcdcdc, background color: #d5d5d5, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span data-cs-desc-box=\"true\" data-cs-i18n-text=\"{&quot;it&quot;:&quot;Questo sito utilizza cookie e tecnologie similari per il suo funzionamento e per l\\u2019erogazione dei servizi in esso presenti, cookie analitici (propri e di terze parti) per comprendere e migliorare l\\u2019esperienza di navigazione dell\\u2019utente, nonch\\u00e9 cookie di profilazione (propri e di terze parti) per inviarti pubblicit\\u00e0 in linea con le tue preferenze manifestate nell\\u2019ambito della navigazione in rete.<br>",
+                    "target": [
+                        "span[data-cs-desc-box=\"true\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.07 (foreground color: #dcdcdc, background color: #d5d5d5, font size: 9.0pt (12px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#dcdcdc",
+                                "bgColor": "#d5d5d5",
+                                "contrastRatio": 1.07,
+                                "fontSize": "8.3pt (11px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"cookiescript_injected\" tabindex=\"0\" role=\"alert\" aria-live=\"assertive\" data-nosnippet=\"\" class=\"\" style=\"opacity: 0.2;\">",
+                                    "target": [
+                                        "#cookiescript_injected"
+                                    ]
+                                },
+                                {
+                                    "html": "<body>",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 1.07 (foreground color: #dcdcdc, background color: #d5d5d5, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a id=\"cookiescript_readmore\" data-cs-i18n-text=\"{&quot;it&quot;:&quot;In conformit\\u00e0 con la nostra policy per i cookie.&quot;,&quot;en&quot;:&quot;In compliance with our cookie policy.&quot;}\" data-cs-i18n-url=\"{&quot;it&quot;:&quot;https:\\/\\/catalove.com\\/cookie-policy\\/&quot;,&quot;en&quot;:&quot;\\/cookie-policy\\/&quot;}\" href=\"https://catalove.com/cookie-policy/\" target=\"_blank\">",
+                    "target": [
+                        "#cookiescript_readmore"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.07 (foreground color: #dcdcdc, background color: #d5d5d5, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#dddddd",
+                                "bgColor": "#d5d5d5",
+                                "contrastRatio": 1.08,
+                                "fontSize": "8.3pt (11px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"cookiescript_injected\" tabindex=\"0\" role=\"alert\" aria-live=\"assertive\" data-nosnippet=\"\" class=\"\" style=\"opacity: 0.2;\">",
+                                    "target": [
+                                        "#cookiescript_injected"
+                                    ]
+                                },
+                                {
+                                    "html": "<body>",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 1.08 (foreground color: #dddddd, background color: #d5d5d5, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span class=\"cookiescript_checkbox_text\" data-cs-i18n-text=\"{&quot;it&quot;:&quot;Performance&quot;,&quot;en&quot;:&quot;Performance&quot;}\">Performance</span>",
+                    "target": [
+                        ".cookiescript_checkbox:nth-child(2) > .cookiescript_checkbox_label > .cookiescript_checkbox_text"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.08 (foreground color: #dddddd, background color: #d5d5d5, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#dddddd",
+                                "bgColor": "#d5d5d5",
+                                "contrastRatio": 1.08,
+                                "fontSize": "8.3pt (11px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"cookiescript_injected\" tabindex=\"0\" role=\"alert\" aria-live=\"assertive\" data-nosnippet=\"\" class=\"\" style=\"opacity: 0.2;\">",
+                                    "target": [
+                                        "#cookiescript_injected"
+                                    ]
+                                },
+                                {
+                                    "html": "<body>",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 1.08 (foreground color: #dddddd, background color: #d5d5d5, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span class=\"cookiescript_checkbox_text\" data-cs-i18n-text=\"{&quot;it&quot;:&quot;Targeting&quot;,&quot;en&quot;:&quot;Targeting&quot;}\">Targeting</span>",
+                    "target": [
+                        ".cookiescript_checkbox:nth-child(3) > .cookiescript_checkbox_label > .cookiescript_checkbox_text"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.08 (foreground color: #dddddd, background color: #d5d5d5, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#dddddd",
+                                "bgColor": "#d5d5d5",
+                                "contrastRatio": 1.08,
+                                "fontSize": "8.3pt (11px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"cookiescript_injected\" tabindex=\"0\" role=\"alert\" aria-live=\"assertive\" data-nosnippet=\"\" class=\"\" style=\"opacity: 0.2;\">",
+                                    "target": [
+                                        "#cookiescript_injected"
+                                    ]
+                                },
+                                {
+                                    "html": "<body>",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 1.08 (foreground color: #dddddd, background color: #d5d5d5, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span class=\"cookiescript_checkbox_text\" data-cs-i18n-text=\"{&quot;it&quot;:&quot;Funzionalit\\u00e0&quot;,&quot;en&quot;:&quot;Functionality&quot;}\">Funzionalit\u00e0</span>",
+                    "target": [
+                        ".cookiescript_checkbox:nth-child(4) > .cookiescript_checkbox_label > .cookiescript_checkbox_text"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.08 (foreground color: #dddddd, background color: #d5d5d5, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#89cb89",
+                                "bgColor": "#6bbe6b",
+                                "contrastRatio": 1.19,
+                                "fontSize": "8.3pt (11px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"cookiescript_accept\" tabindex=\"0\" role=\"button\" data-cs-i18n-text=\"{&quot;it&quot;:&quot;Accetta tutto&quot;,&quot;en&quot;:&quot;Accept all&quot;}\">Accetta tutto</div>",
+                                    "target": [
+                                        "#cookiescript_accept"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 1.19 (foreground color: #89cb89, background color: #6bbe6b, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<div id=\"cookiescript_accept\" tabindex=\"0\" role=\"button\" data-cs-i18n-text=\"{&quot;it&quot;:&quot;Accetta tutto&quot;,&quot;en&quot;:&quot;Accept all&quot;}\">Accetta tutto</div>",
+                    "target": [
+                        "#cookiescript_accept"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.19 (foreground color: #89cb89, background color: #6bbe6b, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#575757",
+                                "bgColor": "#2d2d2d",
+                                "contrastRatio": 1.9,
+                                "fontSize": "8.3pt (11px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"cookiescript_reject\" tabindex=\"0\" role=\"button\" data-cs-i18n-text=\"{&quot;it&quot;:&quot;Rifiuta tutto&quot;,&quot;en&quot;:&quot;Decline all&quot;}\">Rifiuta tutto</div>",
+                                    "target": [
+                                        "#cookiescript_reject"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 1.9 (foreground color: #575757, background color: #2d2d2d, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<div id=\"cookiescript_reject\" tabindex=\"0\" role=\"button\" data-cs-i18n-text=\"{&quot;it&quot;:&quot;Rifiuta tutto&quot;,&quot;en&quot;:&quot;Decline all&quot;}\">Rifiuta tutto</div>",
+                    "target": [
+                        "#cookiescript_reject"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.9 (foreground color: #575757, background color: #2d2d2d, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#dcdcdc",
+                                "bgColor": "#d5d5d5",
+                                "contrastRatio": 1.07,
+                                "fontSize": "8.3pt (11px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"cookiescript_injected\" tabindex=\"0\" role=\"alert\" aria-live=\"assertive\" data-nosnippet=\"\" class=\"\" style=\"opacity: 0.2;\">",
+                                    "target": [
+                                        "#cookiescript_injected"
+                                    ]
+                                },
+                                {
+                                    "html": "<body>",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 1.07 (foreground color: #dcdcdc, background color: #d5d5d5, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span data-cs-show-title=\"cookie-script\" data-cs-i18n-text=\"{&quot;it&quot;:&quot;Mostra dettagli&quot;,&quot;en&quot;:&quot;Show details&quot;}\">Mostra dettagli</span>",
+                    "target": [
+                        "span[data-cs-show-title=\"cookie-script\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.07 (foreground color: #dcdcdc, background color: #d5d5d5, font size: 8.3pt (11px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-aria",
+            "impact": "critical",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value used in ARIA and in labels is unique",
+            "help": "IDs used in ARIA and labels must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-aria",
+                            "data": "seen-tos",
+                            "relatedNodes": [
+                                {
+                                    "html": "<input type=\"checkbox\" id=\"seen-tos\" class=\"form-check-input\" required=\"required\">",
+                                    "target": [
+                                        ".form-group > .form-check.mt-3 > .form-check-input[type=\"checkbox\"][required=\"required\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "critical",
+                            "message": "Document has multiple elements referenced with ARIA with the same id attribute: seen-tos"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<input type=\"checkbox\" id=\"seen-tos\" class=\"form-check-input\" required=\"required\">",
+                    "target": [
+                        ".form-check.mt-3.mb-2 > .form-check-input[type=\"checkbox\"][required=\"required\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple elements referenced with ARIA with the same id attribute: seen-tos"
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-contentinfo",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one contentinfo landmark",
+            "help": "Document should not have more than one contentinfo landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-contentinfo?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-contentinfo",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"cookiescript_reportdate\" role=\"contentinfo\">",
+                                    "target": [
+                                        "#cookiescript_reportdate"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Document has more than one contentinfo landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<footer class=\"main-footer\">",
+                    "target": [
+                        "footer"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has more than one contentinfo landmark"
+                }
+            ]
+        },
+        {
+            "id": "landmark-one-main",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has a main landmark",
+            "help": "Document should have one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-one-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-main",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have a main landmark"
+                        }
+                    ],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<html lang=\"it\">",
+                    "target": [
+                        "html"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+                }
+            ]
+        },
+        {
+            "id": "landmark-unique",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "help": "Ensures landmarks are unique",
+            "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-unique",
+                            "data": {
+                                "role": "contentinfo",
+                                "accessibleText": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"cookiescript_reportdate\" role=\"contentinfo\">",
+                                    "target": [
+                                        "#cookiescript_reportdate"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<footer class=\"main-footer\">",
+                    "target": [
+                        "footer"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"/\" class=\"navbar-brand\" id=\"logo\"></a>",
+                    "target": [
+                        "#logo"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"/account/login/\" class=\"nav-link pl-0\">\n                            <span class=\"text-sm mr-2 mr-lg-0 text-uppercase font-weight-bold d-sm-inline d-lg-none\">Log in</span>\n                            <i class=\"fa fa-user-o ml-0 ml-lg-1\"></i>\n                        </a>",
+                    "target": [
+                        ".pl-0"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                }
+            ]
+        },
+        {
+            "id": "page-has-heading-one",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+            "help": "Page should contain a level-one heading",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/page-has-heading-one?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-heading-one",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Page must have a level-one heading"
+                        }
+                    ],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<html lang=\"it\">",
+                    "target": [
+                        "html"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"block-header\">\n                            <h6 class=\"text-uppercase mb-0\">Login</h6>\n                        </div>",
+                    "target": [
+                        ".col-lg-5:nth-child(1) > .block > .block-header"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"form-group\">",
+                    "target": [
+                        "#login-form > .form-group:nth-child(2)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"form-group\">",
+                    "target": [
+                        "#login-form > .form-group:nth-child(3)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"mb-4\">\n                                    <a href=\"/account/password_reset/\" class=\"text-secondary font-weight-bold text-decoration-none\">Hai dimenticato la tua password?</a>\n                                </div>",
+                    "target": [
+                        "#login-form > .mb-4"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"block-header\">\n                            <h6 class=\"text-uppercase mb-0\">Nuovo Account</h6>\n                        </div>",
+                    "target": [
+                        ".col-lg-5:nth-child(2) > .block > .block-header"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<label for=\"reg-name\" class=\"form-label\">Username</label>",
+                    "target": [
+                        "label[for=\"reg-name\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<input id=\"reg-name\" type=\"text\" class=\"form-control\" required=\"required\">",
+                    "target": [
+                        "#reg-name"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<label for=\"reg-email\" class=\"form-label\">Email</label>",
+                    "target": [
+                        "label[for=\"reg-email\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<input id=\"reg-email\" type=\"email\" class=\"form-control\" required=\"required\">",
+                    "target": [
+                        "#reg-email"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"form-group\">\n                                    <label for=\"reg-password\" class=\"form-label\">Password</label>\n                                    <input id=\"reg-password\" type=\"password\" class=\"form-control\" required=\"required\">\n                                </div>",
+                    "target": [
+                        ".form-group:nth-child(4)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<label for=\"reg-password-conf\" class=\"form-label\">Conferma la password</label>",
+                    "target": [
+                        "label[for=\"reg-password-conf\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<input id=\"reg-password-conf\" type=\"password\" class=\"form-control\">",
+                    "target": [
+                        "#reg-password-conf"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"form-check mt-3 mb-2\">",
+                    "target": [
+                        ".form-check.mt-3.mb-2"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"subscribed-success w-100 py-3\">",
+                    "target": [
+                        ".subscribed-success"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                }
+            ]
+        }
+    ]
+}

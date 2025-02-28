@@ -1,0 +1,3112 @@
+{
+    "testEngine": {
+        "name": "axe-core",
+        "version": "4.4.3"
+    },
+    "testRunner": {
+        "name": "axe"
+    },
+    "timestamp": "2024-09-26T14:21:06.539Z",
+    "url": "https://www.machine-a.com/account/register/",
+    "toolOptions": {
+        "resultTypes": [
+            "violations"
+        ],
+        "reporter": "v1"
+    },
+    "passes": [
+        {
+            "id": "aria-allowed-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures ARIA attributes are allowed for an element's role",
+            "help": "Elements must only use allowed ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attributes are used correctly for the defined role"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "aria-unsupported-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute is supported"
+                        },
+                        {
+                            "id": "aria-prohibited-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "ARIA attribute is allowed"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<button class=\"nav--toggle\" aria-label=\"Open menu\">\n        <div class=\"nav--hamburger\">\n          <span></span>\n          <span></span>\n          <span></span>\n        </div>\n      </button>",
+                    "target": [
+                        ".nav--toggle"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-allowed-role",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "best-practice"
+            ],
+            "description": "Ensures role attribute has an appropriate value for the element",
+            "help": "ARIA role should be appropriate for the element",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-role?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is allowed for given element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<form class=\"search-bar--form\" id=\"searchFormDesktop\" action=\"/search\" method=\"get\" role=\"search\">",
+                    "target": [
+                        "#searchFormDesktop"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-body",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures aria-hidden='true' is not present on the document body.",
+            "help": "aria-hidden='true' must not be present on the document body",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-hidden-body",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "No aria-hidden attribute is present on document body"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<body id=\"dom-root\" style=\"opacity: 1; --globalHeight: 720px; --dynamicHeight: 720px;\">",
+                    "target": [
+                        "#dom-root"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-focus",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag131"
+            ],
+            "description": "Ensures aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "focusable-modal-open",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements while a modal is open"
+                        },
+                        {
+                            "id": "focusable-disabled",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        },
+                        {
+                            "id": "focusable-not-tabbable",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div tabindex=\"-1\" aria-hidden=\"true\" id=\"web-pixels-manager-sandbox-container\" data-shopify-privacy=\"exclude\" style=\"height: 0px !important; width: 0px !important; position: fixed !important; visibility: hidden !important; overflow: hidden !important; z-index: -100 !important; margin: 0px !important; padding: 0px !important; border: 0px !important;\">",
+                    "target": [
+                        "#web-pixels-manager-sandbox-container"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-required-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures elements with ARIA roles have all required ARIA attributes",
+            "help": "Required ARIA attributes must be provided",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-required-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-required-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "All required ARIA attributes are present"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<main id=\"main\" role=\"main\" tabindex=\"-1\" class=\"announce customers/register customers/register--view customers/register-\">",
+                    "target": [
+                        "#main"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-roles",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all elements with a role attribute use a valid value",
+            "help": "ARIA roles used must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-roles?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "fallbackrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Only one role value used"
+                        },
+                        {
+                            "id": "invalidrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is valid"
+                        },
+                        {
+                            "id": "abstractrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Abstract roles are not used"
+                        },
+                        {
+                            "id": "unsupportedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is supported"
+                        },
+                        {
+                            "id": "deprecatedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is not deprecated"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<main id=\"main\" role=\"main\" tabindex=\"-1\" class=\"announce customers/register customers/register--view customers/register-\">",
+                    "target": [
+                        "#main"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr-value",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all ARIA attributes have valid values",
+            "help": "ARIA attributes must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr-value?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "aria-valid-attr-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute values are valid"
+                        },
+                        {
+                            "id": "aria-errormessage",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "aria-errormessage exists and references elements visible to screen readers that use a supported aria-errormessage technique"
+                        },
+                        {
+                            "id": "aria-level",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-level values are valid"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button class=\"nav--toggle\" aria-label=\"Open menu\">\n        <div class=\"nav--hamburger\">\n          <span></span>\n          <span></span>\n          <span></span>\n        </div>\n      </button>",
+                    "target": [
+                        ".nav--toggle"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures attributes that begin with aria- are valid ARIA attributes",
+            "help": "ARIA attributes must conform to valid names",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-valid-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute name is valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button class=\"nav--toggle\" aria-label=\"Open menu\">\n        <div class=\"nav--hamburger\">\n          <span></span>\n          <span></span>\n          <span></span>\n        </div>\n      </button>",
+                    "target": [
+                        ".nav--toggle"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "avoid-inline-spacing",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag21aa",
+                "wcag1412"
+            ],
+            "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+            "help": "Inline text spacing must be adjustable with custom stylesheets",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/avoid-inline-spacing?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "avoid-inline-spacing",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No inline styles with '!important' that affect text spacing has been specified"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"js\" lang=\"en\" style=\"--scroll-y: 0px;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "button-name",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures buttons have discernible text",
+            "help": "Buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/button-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute exists and is not empty"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button class=\"nav--toggle\" aria-label=\"Open menu\">\n        <div class=\"nav--hamburger\">\n          <span></span>\n          <span></span>\n          <span></span>\n        </div>\n      </button>",
+                    "target": [
+                        ".nav--toggle"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "bypass",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag241",
+                "section508",
+                "section508.22.o"
+            ],
+            "description": "Ensures each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+            "help": "Page must have means to bypass repeated blocks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/bypass?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "header-present",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1 class=\"t__heading1\">Create Account</h1>",
+                                    "target": [
+                                        "h1"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"t__body footer--title\">Links</h3>",
+                                    "target": [
+                                        ".footer--links > .footer--title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"t__body footer--title\">Follow Us</h3>",
+                                    "target": [
+                                        ".footer--social > .footer--title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"t__body footer--title\">Join the community</h3>",
+                                    "target": [
+                                        ".footer--newsletter > .footer--title"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"t__body\">We Accept</h3>",
+                                    "target": [
+                                        ".footer--payment > h3"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Page has a heading"
+                        },
+                        {
+                            "id": "landmark",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<main id=\"main\" role=\"main\" tabindex=\"-1\" class=\"announce customers/register customers/register--view customers/register-\">",
+                                    "target": [
+                                        "#main"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Page has a landmark region"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"js\" lang=\"en\" style=\"--scroll-y: 0px;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "messageKey": "hidden"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is hidden"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input id=\"quickSearch\" type=\"text\" class=\"inp\" name=\"q\" value=\"\" placeholder=\"Type your search here...\" autocomplete=\"off\">",
+                    "target": [
+                        "#quickSearch"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "document-title",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag242",
+                "ACT"
+            ],
+            "description": "Ensures each HTML document contains a non-empty <title> element",
+            "help": "Documents must have <title> element to aid in navigation",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/document-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "doc-has-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has a non-empty <title> element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"js\" lang=\"en\" style=\"--scroll-y: 0px;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-active",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value of active elements is unique",
+            "help": "IDs of active elements must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-active",
+                            "data": "miniCartClose",
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has no active elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button class=\"mini-cart--close\" id=\"miniCartClose\">",
+                    "target": [
+                        "#miniCartClose"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-aria",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value used in ARIA and in labels is unique",
+            "help": "IDs used in ARIA and labels must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-aria",
+                            "data": "pi-unionpay",
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<title id=\"pi-unionpay\">Union Pay</title>",
+                    "target": [
+                        "#pi-unionpay"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": "minor",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "shopify-digital-wallet",
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta id=\"shopify-digital-wallet\" name=\"shopify-digital-wallet\" content=\"/4174348399/digital_wallets/dialog\">",
+                    "target": [
+                        "#shopify-digital-wallet"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "empty-heading",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "best-practice"
+            ],
+            "description": "Ensures headings have discernible text",
+            "help": "Headings should not be empty",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/empty-heading?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h1 class=\"t__heading1\">Create Account</h1>",
+                    "target": [
+                        "h1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "form-field-multiple-labels",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag332"
+            ],
+            "description": "Ensures form field does not have multiple label elements",
+            "help": "Form field must not have multiple label elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/form-field-multiple-labels?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "multiple-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Form field does not have multiple label elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<select name=\"currency\"><option value=\"EUR\">EUR \u20ac</option><option value=\"GBP\" selected=\"selected\">GBP \u00a3</option><option value=\"JPY\">JPY \u00a5</option><option value=\"KRW\">KRW \u20a9</option><option value=\"USD\">USD $</option></select>",
+                    "target": [
+                        "select"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "frame-title-unique",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ],
+            "description": "Ensures <iframe> and <frame> elements contain a unique title attribute",
+            "help": "Frames should have a unique title attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/frame-title-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "unique-frame-title",
+                            "data": "ds chat",
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element's title attribute is unique"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<iframe id=\"widgetIframe\" src=\"https://ds.distancesales.com/chat?brand=webMachineAProd\" frameborder=\"0\" title=\"DS Chat\"></iframe>",
+                    "target": [
+                        "#widgetIframe"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "frame-title",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag241",
+                "wcag412",
+                "section508",
+                "section508.22.i"
+            ],
+            "description": "Ensures <iframe> and <frame> elements have an accessible name",
+            "help": "Frames must have an accessible name",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/frame-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "non-empty-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<iframe id=\"widgetIframe\" src=\"https://ds.distancesales.com/chat?brand=webMachineAProd\" frameborder=\"0\" title=\"DS Chat\"></iframe>",
+                    "target": [
+                        "#widgetIframe"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "heading-order",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": {
+                                "headingOrder": [
+                                    {
+                                        "ancestry": [
+                                            "html > body > main:nth-child(5) > div:nth-child(3) > div > div:nth-child(2) > div:nth-child(1) > h1"
+                                        ],
+                                        "level": 1
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(6) > div > div:nth-child(1) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(6) > div > div:nth-child(2) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(6) > div > div:nth-child(3) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(6) > div > div:nth-child(3) > div:nth-child(4) > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > iframe:nth-child(24)"
+                                        ],
+                                        "level": -1
+                                    }
+                                ]
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h1 class=\"t__heading1\">Create Account</h1>",
+                    "target": [
+                        "h1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-has-lang",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures every HTML document has a lang attribute",
+            "help": "<html> element must have a lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-has-lang?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "The <html> element has a lang attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"js\" lang=\"en\" style=\"--scroll-y: 0px;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-lang-valid",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures the lang attribute of the <html> element has a valid value",
+            "help": "<html> element must have a valid value for the lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-lang-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "valid-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Value of lang attribute is included in the list of valid languages"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<html class=\"js\" lang=\"en\" style=\"--scroll-y: 0px;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "identical-links-same-purpose",
+            "impact": "minor",
+            "tags": [
+                "cat.semantics",
+                "wcag2aaa",
+                "wcag249"
+            ],
+            "description": "Ensure that links with the same accessible name serve a similar purpose",
+            "help": "Links with the same name must have a similar purpose",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/identical-links-same-purpose?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "identical-links-same-purpose",
+                            "data": {
+                                "name": "machinea",
+                                "urlProps": {
+                                    "protocol": "http:",
+                                    "hostname": "www.machine-a.com",
+                                    "port": "",
+                                    "pathname": "/",
+                                    "search": {},
+                                    "hash": "",
+                                    "filename": ""
+                                }
+                            },
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "There are no other links with the same name, that go to a different URL"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"/\" title=\"Machine-A Home\">\n        <img alt=\"Machine-A\" width=\"129\" height=\"19\" src=\"//www.machine-a.com/cdn/shop/t/93/assets/machine-a-logo.svg?v=171594433439302282051684762210\">\n      </a>",
+                    "target": [
+                        "a[href=\"/\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures <img> elements have alternate text or a role of none or presentation",
+            "help": "Images must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-alt",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has an alt attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "alt-space-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has a valid alt attribute value"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img alt=\"Machine-A\" width=\"129\" height=\"19\" src=\"//www.machine-a.com/cdn/shop/t/93/assets/machine-a-logo.svg?v=171594433439302282051684762210\">",
+                    "target": [
+                        "a[href=\"/\"] > img[alt=\"Machine-A\"][width=\"129\"][height=\"19\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-redundant-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ],
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-redundant-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img alt=\"Machine-A\" width=\"129\" height=\"19\" src=\"//www.machine-a.com/cdn/shop/t/93/assets/machine-a-logo.svg?v=171594433439302282051684762210\">",
+                    "target": [
+                        "a[href=\"/\"] > img[alt=\"Machine-A\"][width=\"129\"][height=\"19\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "input-button-name",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "section508",
+                "section508.22.a"
+            ],
+            "description": "Ensures input buttons have discernible text",
+            "help": "Input buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/input-button-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "non-empty-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has a non-empty value attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input class=\"btn btn__negative btn__stretch\" type=\"submit\" value=\"Register\">",
+                    "target": [
+                        ".btn__negative"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label-title-only",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "best-practice"
+            ],
+            "description": "Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes",
+            "help": "Form elements should have a visible label",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "title-only",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Form element does not solely use title attribute for its label"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<select name=\"currency\"><option value=\"EUR\">EUR \u20ac</option><option value=\"GBP\" selected=\"selected\">GBP \u00a3</option><option value=\"JPY\">JPY \u00a5</option><option value=\"KRW\">KRW \u20a9</option><option value=\"USD\">USD $</option></select>",
+                    "target": [
+                        "select"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label",
+            "impact": "critical",
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag412",
+                "wcag131",
+                "section508",
+                "section508.22.n",
+                "ACT"
+            ],
+            "description": "Ensures every form element has a label",
+            "help": "Form elements must have labels",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "non-empty-placeholder",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a placeholder attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "hidden-explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element has a visible explicit <label>"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input class=\"inp\" type=\"text\" placeholder=\"First Name\" name=\"customer[first_name]\" required=\"\">",
+                    "target": [
+                        "input[placeholder=\"First Name\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-main-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the main landmark is at top level",
+            "help": "Main landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-main-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "main"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The main landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<main id=\"main\" role=\"main\" tabindex=\"-1\" class=\"announce customers/register customers/register--view customers/register-\">",
+                    "target": [
+                        "#main"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-main",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one main landmark",
+            "help": "Document should not have more than one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-main",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one main landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<main id=\"main\" role=\"main\" tabindex=\"-1\" class=\"announce customers/register customers/register--view customers/register-\">",
+                    "target": [
+                        "#main"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-one-main",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has a main landmark",
+            "help": "Document should have one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-one-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-main",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<main id=\"main\" role=\"main\" tabindex=\"-1\" class=\"announce customers/register customers/register--view customers/register-\">",
+                                    "target": [
+                                        "#main"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Document has at least one main landmark"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"js\" lang=\"en\" style=\"--scroll-y: 0px;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-unique",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "help": "Ensures landmarks are unique",
+            "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-unique",
+                            "data": {
+                                "role": "main",
+                                "accessibleText": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Landmarks must have a unique role or role/label/title (i.e. accessible name) combination"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<main id=\"main\" role=\"main\" tabindex=\"-1\" class=\"announce customers/register customers/register--view customers/register-\">",
+                    "target": [
+                        "#main"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a href=\"/\" title=\"Machine-A Home\">\n        <img alt=\"Machine-A\" width=\"129\" height=\"19\" src=\"//www.machine-a.com/cdn/shop/t/93/assets/machine-a-logo.svg?v=171594433439302282051684762210\">\n      </a>",
+                    "target": [
+                        "a[href=\"/\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "list",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures that lists are structured correctly",
+            "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/list?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "only-listitems",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List element only has direct children that are allowed inside <li> elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<ol>",
+                    "target": [
+                        "ol"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "listitem",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures <li> elements are used semantically",
+            "help": "<li> elements must be contained in a <ul> or <ol>",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/listitem?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<li>View your Order History within your account, track how many Objects IV Life you\u2019ve accumulated, how long for, and what they\u2019ve taken you through.</li>",
+                    "target": [
+                        "li:nth-child(1)"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport-large",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> can scale a significant amount",
+            "help": "Users should be able to zoom and scale the text up to 500%",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport-large?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport-large",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "<meta> tag does not prevent significant zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1, user-scalable=0\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "nested-interactive",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+            "help": "Interactive controls must not be nested",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/nested-interactive?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "no-focusable-content",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have focusable descendants"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button class=\"nav--toggle\" aria-label=\"Open menu\">\n        <div class=\"nav--hamburger\">\n          <span></span>\n          <span></span>\n          <span></span>\n        </div>\n      </button>",
+                    "target": [
+                        ".nav--toggle"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "page-has-heading-one",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+            "help": "Page should contain a level-one heading",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/page-has-heading-one?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-heading-one",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1 class=\"t__heading1\">Create Account</h1>",
+                                    "target": [
+                                        "h1"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Page has at least one level-one heading"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html class=\"js\" lang=\"en\" style=\"--scroll-y: 0px;\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "All page content is contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div id=\"shopify-section-banner\" class=\"shopify-section banner\"><div class=\"banner--content\">\n    <p class=\"t__body\">\n      \n      \n      \n    </p>\n</div>\n\n  </div>",
+                    "target": [
+                        "#shopify-section-banner"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "svg-img-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures <svg> elements with an img, graphics-document or graphics-symbol role have an accessible text",
+            "help": "<svg> elements with an img role must have an alternative text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/svg-img-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "svg-non-empty-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a child that is a title"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute exists and references elements that are visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<svg class=\"payment-methods--item--logo\" viewBox=\"-36 25 38 24\" xmlns=\"http://www.w3.org/2000/svg\" width=\"38\" height=\"24\" role=\"img\" aria-labelledby=\"pi-unionpay\">",
+                    "target": [
+                        ".payment-methods--item--logo"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "tabindex",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures tabindex attribute values are not greater than 0",
+            "help": "Elements should not have tabindex greater than zero",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/tabindex?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "tabindex",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have a tabindex greater than 0"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<main id=\"main\" role=\"main\" tabindex=\"-1\" class=\"announce customers/register customers/register--view customers/register-\">",
+                    "target": [
+                        "#main"
+                    ]
+                }
+            ]
+        }
+    ],
+    "violations": [
+        {
+            "id": "duplicate-id",
+            "impact": "minor",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "Mobile",
+                            "relatedNodes": [
+                                {
+                                    "html": "<g id=\"Mobile\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\">",
+                                    "target": [
+                                        ".nav--search > svg[width=\"14px\"][viewBox=\"0 0 14 14\"][height=\"14px\"] > g[stroke-linecap=\"round\"][stroke-linejoin=\"round\"][stroke=\"none\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<g id=\"Mobile\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\">",
+                                    "target": [
+                                        "svg[width=\"12px\"] > g[stroke-linecap=\"round\"][stroke-linejoin=\"round\"][stroke=\"none\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: Mobile"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<g id=\"Mobile\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"round\" stroke-linejoin=\"round\">",
+                    "target": [
+                        ".nav--search__m > svg[width=\"14px\"][viewBox=\"0 0 14 14\"][height=\"14px\"] > g[stroke-linecap=\"round\"][stroke-linejoin=\"round\"][stroke=\"none\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: Mobile"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "iPhone---Menu",
+                            "relatedNodes": [
+                                {
+                                    "html": "<g id=\"iPhone---Menu\" transform=\"translate(-61.000000, -85.000000)\" stroke=\"#FFFFFF\">",
+                                    "target": [
+                                        ".nav--search > svg[width=\"14px\"][viewBox=\"0 0 14 14\"][height=\"14px\"] > g[stroke-linecap=\"round\"][stroke-linejoin=\"round\"][stroke=\"none\"] > g[stroke=\"#FFFFFF\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<g id=\"iPhone---Menu\" transform=\"translate(-341.000000, -85.000000)\" stroke=\"#FFFFFF\">",
+                                    "target": [
+                                        "svg[width=\"12px\"] > g[stroke-linecap=\"round\"][stroke-linejoin=\"round\"][stroke=\"none\"] > g[stroke=\"#FFFFFF\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: iPhone---Menu"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<g id=\"iPhone---Menu\" transform=\"translate(-61.000000, -85.000000)\" stroke=\"#FFFFFF\">",
+                    "target": [
+                        ".nav--search__m > svg[width=\"14px\"][viewBox=\"0 0 14 14\"][height=\"14px\"] > g[stroke-linecap=\"round\"][stroke-linejoin=\"round\"][stroke=\"none\"] > g[stroke=\"#FFFFFF\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: iPhone---Menu"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "search",
+                            "relatedNodes": [
+                                {
+                                    "html": "<g id=\"search\" transform=\"translate(62.000000, 86.000000)\">\n                <line x1=\"12\" y1=\"12\" x2=\"9.6\" y2=\"9.6\" id=\"Path\"></line>\n                <circle id=\"Oval\" cx=\"4.8\" cy=\"4.8\" r=\"4.8\"></circle>\n            </g>",
+                                    "target": [
+                                        ".nav--search > svg[width=\"14px\"][viewBox=\"0 0 14 14\"][height=\"14px\"] > g[stroke-linecap=\"round\"][stroke-linejoin=\"round\"][stroke=\"none\"] > g[stroke=\"#FFFFFF\"] > g"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: search"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<g id=\"search\" transform=\"translate(62.000000, 86.000000)\">\n                <line x1=\"12\" y1=\"12\" x2=\"9.6\" y2=\"9.6\" id=\"Path\"></line>\n                <circle id=\"Oval\" cx=\"4.8\" cy=\"4.8\" r=\"4.8\"></circle>\n            </g>",
+                    "target": [
+                        ".nav--search__m > svg[width=\"14px\"][viewBox=\"0 0 14 14\"][height=\"14px\"] > g[stroke-linecap=\"round\"][stroke-linejoin=\"round\"][stroke=\"none\"] > g[stroke=\"#FFFFFF\"] > g"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: search"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "Path",
+                            "relatedNodes": [
+                                {
+                                    "html": "<line x1=\"12\" y1=\"12\" x2=\"9.6\" y2=\"9.6\" id=\"Path\"></line>",
+                                    "target": [
+                                        ".nav--search > svg[width=\"14px\"][viewBox=\"0 0 14 14\"][height=\"14px\"] > g[stroke-linecap=\"round\"][stroke-linejoin=\"round\"][stroke=\"none\"] > g[stroke=\"#FFFFFF\"] > g > line"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M3.07692308,4 L3.07692308,2 C3.07692308,0.8952 3.93769231,0 5,0 L5,0 C6.06230769,0 6.92307692,0.8952 6.92307692,2 L6.92307692,4\" id=\"Path\"></path>",
+                                    "target": [
+                                        "#bag-20 > path"
+                                    ]
+                                },
+                                {
+                                    "html": "<polyline id=\"Path\" points=\"0 0 4 4 0 8\"></polyline>",
+                                    "target": [
+                                        ".nav--menu--item--link[title=\"SHOP \"][href$=\"all-items\"] > svg[width=\"6px\"][viewBox=\"0 0 6 10\"][height=\"10px\"] > g[stroke-linecap=\"square\"][stroke=\"none\"][fill-rule=\"evenodd\"] > g[stroke=\"#FFFFFF\"] > g > polyline"
+                                    ]
+                                },
+                                {
+                                    "html": "<polyline id=\"Path\" points=\"0 0 4 4 0 8\"></polyline>",
+                                    "target": [
+                                        ".nav--menu--item--link[title=\"Browse Designers\"][href$=\"designers\"] > svg[width=\"6px\"][viewBox=\"0 0 6 10\"][height=\"10px\"] > g[stroke-linecap=\"square\"][stroke=\"none\"][fill-rule=\"evenodd\"] > g[stroke=\"#FFFFFF\"] > g > polyline"
+                                    ]
+                                },
+                                {
+                                    "html": "<polyline id=\"Path\" points=\"0 0 4 4 0 8\"></polyline>",
+                                    "target": [
+                                        ".nav--menu--item--link[title=\"Editorial Archive\"][href$=\"editorial-archive\"] > svg[width=\"6px\"][viewBox=\"0 0 6 10\"][height=\"10px\"] > g[stroke-linecap=\"square\"][stroke=\"none\"][fill-rule=\"evenodd\"] > g[stroke=\"#FFFFFF\"] > g > polyline"
+                                    ]
+                                },
+                                {
+                                    "html": "<polyline id=\"Path\" points=\"0 0 4 4 0 8\"></polyline>",
+                                    "target": [
+                                        ".nav--menu--item--link[title=\"As seen on you\"][href$=\"as-seen-on-you\"] > svg[width=\"6px\"][viewBox=\"0 0 6 10\"][height=\"10px\"] > g[stroke-linecap=\"square\"][stroke=\"none\"][fill-rule=\"evenodd\"] > g[stroke=\"#FFFFFF\"] > g > polyline"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M0,29.0909091 L0,2.90909091 C0,1.30909091 1.30909091,0 2.90909091,0 L40.7272727,0 C42.3272727,0 43.6363636,1.30909091 43.6363636,2.90909091 L43.6363636,29.0909091 C43.6363636,30.6909091 42.3272727,32 40.7272727,32 L2.90909091,32 C1.30909091,32 0,30.6909091 0,29.0909091 Z\" id=\"Path\" stroke=\"#FFFFFF\" stroke-linecap=\"square\">",
+                                    "target": [
+                                        "#amex > path[stroke-linecap=\"square\"][stroke=\"#FFFFFF\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M27.4443636,19.0589091 C27.1367273,19.7403636 26.9898182,20.0443636 26.5934545,20.6465455 C26.0414545,21.4872727 25.2625455,22.5345455 24.2974545,22.5432727 C23.44,22.5512727 23.2196364,21.9854545 22.056,21.992 C20.8923636,21.9985455 20.6494545,22.5534545 19.792,22.5455402 C18.8269091,22.5367273 18.0894545,21.5912727 17.5367273,20.7498182 C15.992,18.3985455 15.8305455,15.6392727 16.7832727,14.1723636 C17.4603636,13.1294545 18.5287273,12.52 19.5330909,12.52 C20.5556364,12.52 21.1985455,13.0807273 22.0443636,13.0807273 C22.8647273,13.0807273 23.3643636,12.5192727 24.5469091,12.5192727 C25.4407273,12.5192727 26.3876364,13.0058182 27.0625455,13.8465455 C24.8516364,15.0581818 25.2109091,18.2145455 27.4443636,19.0589091 L27.4443636,19.0589091 Z\" id=\"Path\" fill=\"#FFFFFF\">",
+                                    "target": [
+                                        "#apple-card > path[fill=\"#FFFFFF\"]:nth-child(1)"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M23.6501818,11.5796364 C24.08,11.0283636 24.4058182,10.2501818 24.2872727,9.45454545 C23.5854545,9.50254545 22.7650909,9.94909091 22.2858182,10.5309091 C21.8509091,11.0589091 21.4916364,11.8421818 21.6312727,12.6036364 C22.3970909,12.6276364 23.1898182,12.1701818 23.6501818,11.5796364 L23.6501818,11.5796364 Z\" id=\"Path\" fill=\"#FFFFFF\">",
+                                    "target": [
+                                        "#apple-card > path[fill=\"#FFFFFF\"]:nth-child(2)"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M0,29.0909091 L0,2.90909091 C0,1.30909091 1.30909091,0 2.90909091,0 L40.7272727,0 C42.3272727,0 43.6363636,1.30909091 43.6363636,2.90909091 L43.6363636,29.0909091 C43.6363636,30.6909091 42.3272727,32 40.7272727,32 L2.90909091,32 C1.30909091,32 0,30.6909091 0,29.0909091 Z\" id=\"Path\" stroke=\"#FFFFFF\" stroke-linecap=\"square\">",
+                                    "target": [
+                                        "#apple-card > path[stroke-linecap=\"square\"][stroke=\"#FFFFFF\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M0,29.0909091 L0,2.90909091 C0,1.30909091 1.30909091,0 2.90909091,0 L40.7272727,0 C42.3272727,0 43.6363636,1.30909091 43.6363636,2.90909091 L43.6363636,29.0909091 C43.6363636,30.6909091 42.3272727,32 40.7272727,32 L2.90909091,32 C1.30909091,32 0,30.6909091 0,29.0909091 Z\" id=\"Path\" stroke=\"#FFFFFF\" stroke-linecap=\"square\">",
+                                    "target": [
+                                        "#diners-club > path[stroke-linecap=\"square\"][stroke=\"#FFFFFF\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M17.4545455,12.6705455 L17.4545455,19.3294545 C18.7374545,18.768 19.6363636,17.4901818 19.6363636,16 C19.6363636,14.5098182 18.7374545,13.232 17.4545455,12.6705455 Z\" id=\"Path\" fill=\"#FFFFFF\" fill-rule=\"nonzero\"></path>",
+                                    "target": [
+                                        "#diners-club > path[fill-rule=\"nonzero\"][fill=\"#FFFFFF\"]:nth-child(2)"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M12.3636364,16 C12.3636364,17.4901818 13.2625455,18.768 14.5454545,19.3294545 L14.5454545,12.6705455 C13.2625455,13.232 12.3636364,14.5098182 12.3636364,16 Z\" id=\"Path\" fill=\"#FFFFFF\" fill-rule=\"nonzero\"></path>",
+                                    "target": [
+                                        "#diners-club > path[fill-rule=\"nonzero\"][fill=\"#FFFFFF\"]:nth-child(3)"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M22.8130909,13.112 C21.1796364,13.112 19.8523636,14.3883636 19.8523636,15.9643636 C19.8523636,17.6407273 21.1207273,18.8916364 22.8130909,18.8916364 C24.464,18.8916364 25.7658185,17.6225455 25.7658185,15.9963636 C25.7665455,14.3810909 24.4741818,13.112 22.8130909,13.112 Z\" id=\"Path\" fill=\"#FFFFFF\" fill-rule=\"nonzero\">",
+                                    "target": [
+                                        "#discover > path[fill-rule=\"nonzero\"][fill=\"#FFFFFF\"]:nth-child(1)"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M13.216,15.3447273 C12.5643636,15.1061818 12.3745455,14.9469091 12.3745455,14.6465455 C12.3745455,14.2974545 12.7149091,14.0327273 13.1825455,14.0327273 C13.5069091,14.0327273 13.7738182,14.1629091 14.0589091,14.48 L14.6218182,13.7410909 C14.1563636,13.3316364 13.5992727,13.1236364 12.992,13.1236364 C12.0094545,13.1236364 11.2603636,13.8072727 11.2603636,14.7112727 C11.2603636,15.4785455 11.6087273,15.8683636 12.6247273,16.2378182 C13.0494545,16.3854545 13.2654545,16.4865455 13.3745455,16.5549091 C13.5912727,16.6952727 13.6989091,16.8952727 13.6989091,17.1272727 C13.6989091,17.5789091 13.3410909,17.9112727 12.8574545,17.9112727 C12.3425455,17.9112727 11.9258182,17.6530909 11.6763636,17.1694545 L10.9781818,17.8458182 C11.4770909,18.5767273 12.0756364,18.904 12.8996364,18.904 C14.024,18.904 14.816,18.1512727 14.816,17.0792727 C14.8152727,16.1949091 14.448,15.7949091 13.216,15.3447273 Z\" id=\"Path\" fill=\"#FFFFFF\" fill-rule=\"nonzero\">",
+                                    "target": [
+                                        "#discover > path[fill-rule=\"nonzero\"][fill=\"#FFFFFF\"]:nth-child(4)"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M15.1556364,15.9941818 C15.1556364,17.6269091 16.4370909,18.8923636 18.0872727,18.8923636 C18.5527273,18.8923636 18.9512727,18.8007273 19.4421818,18.5687273 L19.4421818,17.2923636 C19.008,17.7287273 18.6269091,17.9003636 18.1345455,17.9003636 C17.0443636,17.9003636 16.272,17.1112727 16.272,15.9861818 C16.272,14.9221818 17.0690909,14.08 18.0872727,14.08 C18.6007273,14.08 18.9934545,14.2618182 19.4421818,14.7047273 L19.4421818,13.4298182 C18.968,13.1905455 18.5789091,13.0909091 18.1098182,13.0909091 C16.4690909,13.0909091 15.1556364,14.3810909 15.1556364,15.9941818 Z\" id=\"Path\" fill=\"#FFFFFF\" fill-rule=\"nonzero\">",
+                                    "target": [
+                                        "#discover > path[fill-rule=\"nonzero\"][fill=\"#FFFFFF\"]:nth-child(5)"
+                                    ]
+                                },
+                                {
+                                    "html": "<polygon id=\"Path\" fill=\"#FFFFFF\" fill-rule=\"nonzero\" points=\"28.216 16.944 26.7352727 13.2167273 25.5541818 13.2167273 27.9083636 18.9090909 28.4887273 18.9090909 30.888 13.2167273 29.7170909 13.2167273\"></polygon>",
+                                    "target": [
+                                        "polygon:nth-child(6)"
+                                    ]
+                                },
+                                {
+                                    "html": "<polygon id=\"Path\" fill=\"#FFFFFF\" fill-rule=\"nonzero\" points=\"31.3796364 18.7687273 34.4501818 18.7687273 34.4501818 17.8283636 32.4632727 17.8283636 32.4632727 16.3294545 34.3752727 16.3294545 34.3752727 15.3883636 32.4632727 15.3883636 32.4632727 14.1563636 34.4501818 14.1563636 34.4501818 13.2167273 31.3796364 13.2167273\">",
+                                    "target": [
+                                        "polygon:nth-child(7)"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M0,29.0909091 L0,2.90909091 C0,1.30909091 1.30909091,0 2.90909091,0 L40.7272727,0 C42.3272727,0 43.6363636,1.30909091 43.6363636,2.90909091 L43.6363636,29.0909091 C43.6363636,30.6909091 42.3272727,32 40.7272727,32 L2.90909091,32 C1.30909091,32 0,30.6909091 0,29.0909091 Z\" id=\"Path\" stroke=\"#FFFFFF\" stroke-linecap=\"square\">",
+                                    "target": [
+                                        "#discover > path[stroke-linecap=\"square\"][stroke=\"#FFFFFF\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M40.7272727,32 L2.90909091,32 C1.30443365,31.9952076 0.00479243798,30.6955664 0,29.0909091 L0,2.90909091 C0.00479243798,1.30443365 1.30443365,0.00479243798 2.90909091,0 L40.7272727,0 C42.33193,0.00479243798 43.6315712,1.30443365 43.6363636,2.90909091 L43.6363636,29.0909091 C43.6315712,30.6955664 42.33193,31.9952076 40.7272727,32 Z\" id=\"Path\" stroke=\"#FFFFFF\" stroke-linecap=\"square\">",
+                                    "target": [
+                                        "#g-pay > path[stroke-linecap=\"square\"][stroke=\"#FFFFFF\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M40.7272727,32 L2.90909091,32 C1.30443365,31.9952076 0.00479243798,30.6955664 0,29.0909091 L0,2.90909091 C0.00479243798,1.30443365 1.30443365,0.00479243798 2.90909091,2.58379177e-15 L40.7272727,2.58379177e-15 C42.33193,0.00479243798 43.6315712,1.30443365 43.6363636,2.90909091 L43.6363636,29.0909091 C43.6315712,30.6955664 42.33193,31.9952076 40.7272727,32 Z\" id=\"Path\" stroke=\"#FFFFFF\" stroke-linecap=\"square\">",
+                                    "target": [
+                                        "#maestro > path[stroke-linecap=\"square\"][stroke=\"#FFFFFF\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M0,29.0909091 L0,2.90909091 C0.00479243798,1.30443365 1.30443365,0.00479243798 2.90909091,2.58379177e-15 L40.7272727,2.58379177e-15 C42.33193,0.00479243798 43.6315712,1.30443365 43.6363636,2.90909091 L43.6363636,29.0909091 C43.6315712,30.6955664 42.33193,31.9952076 40.7272727,32 L2.90909091,32 C1.30443365,31.9952076 0.00479243798,30.6955664 0,29.0909091 Z\" id=\"Path\" stroke=\"#FFFFFF\" stroke-linecap=\"square\">",
+                                    "target": [
+                                        "#mastercard > path[stroke-linecap=\"square\"][stroke=\"#FFFFFF\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M23.4843636,13.9927273 L22.2581818,13.9927273 C22.1410909,13.9927273 22.0312727,14.0509091 21.9650909,14.1476364 L20.2734545,16.6385455 L19.5563636,14.2450909 C19.5112727,14.0952727 19.3738182,13.9927273 19.2174545,13.9927273 L18.0123636,13.9927273 C17.8669091,13.9927273 17.7643636,14.136 17.8116364,14.2734545 L19.1614545,18.2363636 L17.8916364,20.0283636 C17.792,20.1694545 17.8923636,20.3636364 18.0647273,20.3636364 L19.2894545,20.3636364 C19.4058182,20.3636364 19.5141818,20.3069091 19.5803636,20.2116364 L23.6581818,14.3265455 C23.7563636,14.1854545 23.6552727,13.9927273 23.4843636,13.9927273 Z\" id=\"Path\" fill=\"#FFFFFF\" fill-rule=\"nonzero\">",
+                                    "target": [
+                                        "#paypal > path[fill-rule=\"nonzero\"][fill=\"#FFFFFF\"]:nth-child(5)"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M36.5949091,11.816 L35.5490909,18.4676364 C35.5287273,18.5963636 35.6283636,18.7127273 35.7585455,18.7127273 L36.8101818,18.7127273 C36.9847273,18.7127273 37.1323636,18.5861818 37.16,18.4138182 L38.1912727,11.8814545 C38.2116364,11.7527273 38.112,11.6363636 37.9810909,11.6363636 L36.8043636,11.6363636 C36.6996364,11.6363636 36.6109091,11.7127273 36.5949091,11.816 Z\" id=\"Path\" fill=\"#FFFFFF\" fill-rule=\"nonzero\">",
+                                    "target": [
+                                        "path[fill-rule=\"nonzero\"][fill=\"#FFFFFF\"]:nth-child(6)"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M0,29.0909091 L0,2.90909091 C0,1.30909091 1.30909091,0 2.90909091,0 L40.7272727,0 C42.3272727,0 43.6363636,1.30909091 43.6363636,2.90909091 L43.6363636,29.0909091 C43.6363636,30.6909091 42.3272727,32 40.7272727,32 L2.90909091,32 C1.30909091,32 0,30.6909091 0,29.0909091 Z\" id=\"Path\" stroke=\"#FFFFFF\" stroke-linecap=\"square\">",
+                                    "target": [
+                                        "#paypal > path[stroke-linecap=\"square\"][stroke=\"#FFFFFF\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M41,32 L3,32 C1.343,32 0,30.657 0,29 L0,3 C0,1.343 1.343,0 3,0 L30,0 L41,0 C42.657,0 44,1.343 44,3 L44,29 C44,30.657 42.657,32 41,32 Z\" id=\"Path\"></path>",
+                                    "target": [
+                                        "#apple-card-copy > path"
+                                    ]
+                                },
+                                {
+                                    "html": "<polygon id=\"Path\" fill=\"#FFFFFF\" fill-rule=\"nonzero\" points=\"17.6138182 20.2385455 19.9170909 20.2385455 21.3592727 11.7832727 19.0545455 11.7832727\"></polygon>",
+                                    "target": [
+                                        "#visa > polygon"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M26.0058182,15.1781818 C25.2,14.7869091 24.7069091,14.5258182 24.712,14.1301818 C24.712,13.7789091 25.1294545,13.4029091 26.032,13.4029091 C26.7701818,13.3912727 27.3650909,13.5418182 27.9636364,13.8247273 L28.2763636,11.992 C27.8189091,11.8203636 27.1032727,11.6363636 26.2101818,11.6363636 C23.9330909,11.6363636 22.3287273,12.7832727 22.3156364,14.4269091 C22.3025455,15.6414545 23.4610909,16.3192727 24.3352727,16.7236364 C25.232,17.1381818 25.5338182,17.4021818 25.5294545,17.7723636 C25.5236364,18.3389091 24.8130909,18.5978182 24.1505455,18.5978182 C23.128,18.5978182 22.6123636,18.44 21.6843636,18.0196364 L21.3607273,19.9127273 C21.8989091,20.1483636 22.8945455,20.3534545 23.928,20.3636364 C26.3505455,20.3636364 27.9229091,19.2298182 27.9410909,17.4749091 C27.9490909,16.5134545 27.3352727,15.7810909 26.0058182,15.1781818 Z\" id=\"Path\" fill=\"#FFFFFF\" fill-rule=\"nonzero\">",
+                                    "target": [
+                                        "#visa > path[fill-rule=\"nonzero\"][fill=\"#FFFFFF\"]:nth-child(2)"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M15.6807273,11.7898182 L13.4247273,17.5556364 L13.184,16.384 L12.376,12.4989091 C12.2363636,11.9636364 11.832,11.8036364 11.3316364,11.7854545 L7.61527273,11.7854545 L7.58618182,11.9614545 C8.49018182,12.1803636 9.29818182,12.496 10.0065455,12.8887273 L12.0552727,20.232 L14.4938182,20.2290909 L18.1221818,11.7905455 L15.6807273,11.7905455 L15.6807273,11.7898182 Z\" id=\"Path\" fill=\"#FFFFFF\" fill-rule=\"nonzero\">",
+                                    "target": [
+                                        "#visa > path[fill-rule=\"nonzero\"][fill=\"#FFFFFF\"]:nth-child(4)"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M0,29.0909091 L0,2.90909091 C0,1.30909091 1.30909091,0 2.90909091,0 L40.7272727,0 C42.3272727,0 43.6363636,1.30909091 43.6363636,2.90909091 L43.6363636,29.0909091 C43.6363636,30.6909091 42.3272727,32 40.7272727,32 L2.90909091,32 C1.30909091,32 0,30.6909091 0,29.0909091 Z\" id=\"Path\" stroke=\"#FFFFFF\" stroke-linecap=\"square\">",
+                                    "target": [
+                                        "#visa > path[stroke-linecap=\"square\"][stroke=\"#FFFFFF\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: Path"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<line x1=\"12\" y1=\"12\" x2=\"9.6\" y2=\"9.6\" id=\"Path\"></line>",
+                    "target": [
+                        ".nav--search__m > svg[width=\"14px\"][viewBox=\"0 0 14 14\"][height=\"14px\"] > g[stroke-linecap=\"round\"][stroke-linejoin=\"round\"][stroke=\"none\"] > g[stroke=\"#FFFFFF\"] > g > line"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: Path"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "Oval",
+                            "relatedNodes": [
+                                {
+                                    "html": "<circle id=\"Oval\" cx=\"4.8\" cy=\"4.8\" r=\"4.8\"></circle>",
+                                    "target": [
+                                        ".nav--search > svg[width=\"14px\"][viewBox=\"0 0 14 14\"][height=\"14px\"] > g[stroke-linecap=\"round\"][stroke-linejoin=\"round\"][stroke=\"none\"] > g[stroke=\"#FFFFFF\"] > g > circle[cx=\"4.8\"][cy=\"4.8\"][r=\"4.8\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<circle id=\"Oval\" fill=\"#FFFFFF\" fill-rule=\"nonzero\" opacity=\"0.85\" cx=\"26.9090909\" cy=\"16\" r=\"8\"></circle>",
+                                    "target": [
+                                        "circle[opacity=\"0.85\"][cx=\"26.9090909\"][cy=\"16\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<circle id=\"Oval\" fill=\"#FFFFFF\" fill-rule=\"nonzero\" opacity=\"0.5\" cx=\"16.7272727\" cy=\"16\" r=\"8\"></circle>",
+                                    "target": [
+                                        "circle[opacity=\"0.5\"][cx=\"16.7272727\"][cy=\"16\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<circle id=\"Oval\" fill=\"#FFFFFF\" fill-rule=\"nonzero\" opacity=\"0.85\" cx=\"16.7272727\" cy=\"16\" r=\"8\"></circle>",
+                                    "target": [
+                                        "circle[opacity=\"0.85\"][cx=\"16.7272727\"][cy=\"16\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<circle id=\"Oval\" fill=\"#FFFFFF\" fill-rule=\"nonzero\" opacity=\"0.5\" cx=\"26.9090909\" cy=\"16\" r=\"8\"></circle>",
+                                    "target": [
+                                        "circle[opacity=\"0.5\"][cx=\"26.9090909\"][cy=\"16\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: Oval"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<circle id=\"Oval\" cx=\"4.8\" cy=\"4.8\" r=\"4.8\"></circle>",
+                    "target": [
+                        ".nav--search__m > svg[width=\"14px\"][viewBox=\"0 0 14 14\"][height=\"14px\"] > g[stroke-linecap=\"round\"][stroke-linejoin=\"round\"][stroke=\"none\"] > g[stroke=\"#FFFFFF\"] > g > circle[cx=\"4.8\"][cy=\"4.8\"][r=\"4.8\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: Oval"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "Rectangle",
+                            "relatedNodes": [
+                                {
+                                    "html": "<rect id=\"Rectangle\" fill=\"#FFFFFF\" fill-rule=\"nonzero\" x=\"9.48727273\" y=\"13.2167273\" width=\"1.07927273\" height=\"5.55272727\"></rect>",
+                                    "target": [
+                                        "rect[x=\"9.48727273\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: Rectangle"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<rect id=\"Rectangle\" x=\"0\" y=\"4\" width=\"10\" height=\"8\"></rect>",
+                    "target": [
+                        "rect[x=\"0\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: Rectangle"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "Desktop",
+                            "relatedNodes": [
+                                {
+                                    "html": "<g id=\"Desktop\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"square\">",
+                                    "target": [
+                                        ".nav--menu--item--link[title=\"Browse Designers\"][href$=\"designers\"] > svg[width=\"6px\"][viewBox=\"0 0 6 10\"][height=\"10px\"] > g[stroke-linecap=\"square\"][stroke=\"none\"][fill-rule=\"evenodd\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<g id=\"Desktop\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"square\">",
+                                    "target": [
+                                        ".nav--menu--item--link[title=\"Editorial Archive\"][href$=\"editorial-archive\"] > svg[width=\"6px\"][viewBox=\"0 0 6 10\"][height=\"10px\"] > g[stroke-linecap=\"square\"][stroke=\"none\"][fill-rule=\"evenodd\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<g id=\"Desktop\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"square\">",
+                                    "target": [
+                                        ".nav--menu--item--link[title=\"As seen on you\"][href$=\"as-seen-on-you\"] > svg[width=\"6px\"][viewBox=\"0 0 6 10\"][height=\"10px\"] > g[stroke-linecap=\"square\"][stroke=\"none\"][fill-rule=\"evenodd\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<g id=\"Desktop\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">",
+                                    "target": [
+                                        ".payment-methods--item:nth-child(1) > svg[width=\"46px\"][viewBox=\"0 0 46 34\"][height=\"34px\"] > g[stroke=\"none\"][fill-rule=\"evenodd\"][stroke-width=\"1\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<g id=\"Desktop\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">",
+                                    "target": [
+                                        ".payment-methods--item:nth-child(2) > svg[width=\"46px\"][viewBox=\"0 0 46 34\"][height=\"34px\"] > g[stroke=\"none\"][fill-rule=\"evenodd\"][stroke-width=\"1\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<g id=\"Desktop\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">",
+                                    "target": [
+                                        ".payment-methods--item:nth-child(3) > svg[width=\"45px\"][viewBox=\"0 0 45 34\"][height=\"34px\"] > g[stroke=\"none\"][fill-rule=\"evenodd\"][stroke-width=\"1\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<g id=\"Desktop\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">",
+                                    "target": [
+                                        ".payment-methods--item:nth-child(4) > svg[width=\"45px\"][viewBox=\"0 0 45 34\"][height=\"34px\"] > g[stroke=\"none\"][fill-rule=\"evenodd\"][stroke-width=\"1\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<g id=\"Desktop\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">",
+                                    "target": [
+                                        ".payment-methods--item:nth-child(5) > svg[width=\"46px\"][viewBox=\"0 0 46 34\"][height=\"34px\"] > g[stroke=\"none\"][fill-rule=\"evenodd\"][stroke-width=\"1\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<g id=\"Desktop\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">",
+                                    "target": [
+                                        ".payment-methods--item:nth-child(6) > svg[width=\"46px\"][viewBox=\"0 0 46 34\"][height=\"34px\"] > g[stroke=\"none\"][fill-rule=\"evenodd\"][stroke-width=\"1\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<g id=\"Desktop\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">",
+                                    "target": [
+                                        ".payment-methods--item:nth-child(7) > svg[width=\"46px\"][viewBox=\"0 0 46 34\"][height=\"34px\"] > g[stroke=\"none\"][fill-rule=\"evenodd\"][stroke-width=\"1\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<g id=\"Desktop\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">",
+                                    "target": [
+                                        ".payment-methods--item:nth-child(8) > svg[width=\"45px\"][viewBox=\"0 0 45 34\"][height=\"34px\"] > g[stroke=\"none\"][fill-rule=\"evenodd\"][stroke-width=\"1\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<g id=\"Desktop\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">",
+                                    "target": [
+                                        ".payment-methods--item:nth-child(9) > svg[width=\"46px\"][viewBox=\"0 0 46 34\"][height=\"34px\"] > g[stroke=\"none\"][fill-rule=\"evenodd\"][stroke-width=\"1\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<g id=\"Desktop\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\">",
+                                    "target": [
+                                        ".payment-methods--item:nth-child(11) > svg[width=\"45px\"][viewBox=\"0 0 45 34\"][height=\"34px\"] > g[stroke=\"none\"][fill-rule=\"evenodd\"][stroke-width=\"1\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: Desktop"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<g id=\"Desktop\" stroke=\"none\" stroke-width=\"1\" fill=\"none\" fill-rule=\"evenodd\" stroke-linecap=\"square\">",
+                    "target": [
+                        ".nav--menu--item--link[title=\"SHOP \"][href$=\"all-items\"] > svg[width=\"6px\"][viewBox=\"0 0 6 10\"][height=\"10px\"] > g[stroke-linecap=\"square\"][stroke=\"none\"][fill-rule=\"evenodd\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: Desktop"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "Desktop---Order-History",
+                            "relatedNodes": [
+                                {
+                                    "html": "<g id=\"Desktop---Order-History\" transform=\"translate(-296.000000, -359.000000)\" stroke=\"#FFFFFF\">\n            <g id=\"arrow-sm-right\" transform=\"translate(297.000000, 360.000000)\">\n                <polyline id=\"Path\" points=\"0 0 4 4 0 8\"></polyline>\n            </g>\n        </g>",
+                                    "target": [
+                                        ".nav--menu--item--link[title=\"Browse Designers\"][href$=\"designers\"] > svg[width=\"6px\"][viewBox=\"0 0 6 10\"][height=\"10px\"] > g[stroke-linecap=\"square\"][stroke=\"none\"][fill-rule=\"evenodd\"] > g[stroke=\"#FFFFFF\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<g id=\"Desktop---Order-History\" transform=\"translate(-296.000000, -359.000000)\" stroke=\"#FFFFFF\">\n            <g id=\"arrow-sm-right\" transform=\"translate(297.000000, 360.000000)\">\n                <polyline id=\"Path\" points=\"0 0 4 4 0 8\"></polyline>\n            </g>\n        </g>",
+                                    "target": [
+                                        ".nav--menu--item--link[title=\"Editorial Archive\"][href$=\"editorial-archive\"] > svg[width=\"6px\"][viewBox=\"0 0 6 10\"][height=\"10px\"] > g[stroke-linecap=\"square\"][stroke=\"none\"][fill-rule=\"evenodd\"] > g[stroke=\"#FFFFFF\"]"
+                                    ]
+                                },
+                                {
+                                    "html": "<g id=\"Desktop---Order-History\" transform=\"translate(-296.000000, -359.000000)\" stroke=\"#FFFFFF\">\n            <g id=\"arrow-sm-right\" transform=\"translate(297.000000, 360.000000)\">\n                <polyline id=\"Path\" points=\"0 0 4 4 0 8\"></polyline>\n            </g>\n        </g>",
+                                    "target": [
+                                        ".nav--menu--item--link[title=\"As seen on you\"][href$=\"as-seen-on-you\"] > svg[width=\"6px\"][viewBox=\"0 0 6 10\"][height=\"10px\"] > g[stroke-linecap=\"square\"][stroke=\"none\"][fill-rule=\"evenodd\"] > g[stroke=\"#FFFFFF\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: Desktop---Order-History"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<g id=\"Desktop---Order-History\" transform=\"translate(-296.000000, -359.000000)\" stroke=\"#FFFFFF\">\n            <g id=\"arrow-sm-right\" transform=\"translate(297.000000, 360.000000)\">\n                <polyline id=\"Path\" points=\"0 0 4 4 0 8\"></polyline>\n            </g>\n        </g>",
+                    "target": [
+                        ".nav--menu--item--link[title=\"SHOP \"][href$=\"all-items\"] > svg[width=\"6px\"][viewBox=\"0 0 6 10\"][height=\"10px\"] > g[stroke-linecap=\"square\"][stroke=\"none\"][fill-rule=\"evenodd\"] > g[stroke=\"#FFFFFF\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: Desktop---Order-History"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "arrow-sm-right",
+                            "relatedNodes": [
+                                {
+                                    "html": "<g id=\"arrow-sm-right\" transform=\"translate(297.000000, 360.000000)\">\n                <polyline id=\"Path\" points=\"0 0 4 4 0 8\"></polyline>\n            </g>",
+                                    "target": [
+                                        ".nav--menu--item--link[title=\"Browse Designers\"][href$=\"designers\"] > svg[width=\"6px\"][viewBox=\"0 0 6 10\"][height=\"10px\"] > g[stroke-linecap=\"square\"][stroke=\"none\"][fill-rule=\"evenodd\"] > g[stroke=\"#FFFFFF\"] > g"
+                                    ]
+                                },
+                                {
+                                    "html": "<g id=\"arrow-sm-right\" transform=\"translate(297.000000, 360.000000)\">\n                <polyline id=\"Path\" points=\"0 0 4 4 0 8\"></polyline>\n            </g>",
+                                    "target": [
+                                        ".nav--menu--item--link[title=\"Editorial Archive\"][href$=\"editorial-archive\"] > svg[width=\"6px\"][viewBox=\"0 0 6 10\"][height=\"10px\"] > g[stroke-linecap=\"square\"][stroke=\"none\"][fill-rule=\"evenodd\"] > g[stroke=\"#FFFFFF\"] > g"
+                                    ]
+                                },
+                                {
+                                    "html": "<g id=\"arrow-sm-right\" transform=\"translate(297.000000, 360.000000)\">\n                <polyline id=\"Path\" points=\"0 0 4 4 0 8\"></polyline>\n            </g>",
+                                    "target": [
+                                        ".nav--menu--item--link[title=\"As seen on you\"][href$=\"as-seen-on-you\"] > svg[width=\"6px\"][viewBox=\"0 0 6 10\"][height=\"10px\"] > g[stroke-linecap=\"square\"][stroke=\"none\"][fill-rule=\"evenodd\"] > g[stroke=\"#FFFFFF\"] > g"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: arrow-sm-right"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<g id=\"arrow-sm-right\" transform=\"translate(297.000000, 360.000000)\">\n                <polyline id=\"Path\" points=\"0 0 4 4 0 8\"></polyline>\n            </g>",
+                    "target": [
+                        ".nav--menu--item--link[title=\"SHOP \"][href$=\"all-items\"] > svg[width=\"6px\"][viewBox=\"0 0 6 10\"][height=\"10px\"] > g[stroke-linecap=\"square\"][stroke=\"none\"][fill-rule=\"evenodd\"] > g[stroke=\"#FFFFFF\"] > g"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: arrow-sm-right"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "Desktop---Cart-Empty",
+                            "relatedNodes": [
+                                {
+                                    "html": "<g id=\"Desktop---Cart-Empty\" transform=\"translate(-948.000000, -577.000000)\">",
+                                    "target": [
+                                        ".payment-methods--item:nth-child(2) > svg[width=\"46px\"][viewBox=\"0 0 46 34\"][height=\"34px\"] > g[stroke=\"none\"][fill-rule=\"evenodd\"][stroke-width=\"1\"] > g"
+                                    ]
+                                },
+                                {
+                                    "html": "<g id=\"Desktop---Cart-Empty\" transform=\"translate(-1008.000000, -625.000000)\">",
+                                    "target": [
+                                        ".payment-methods--item:nth-child(3) > svg[width=\"45px\"][viewBox=\"0 0 45 34\"][height=\"34px\"] > g[stroke=\"none\"][fill-rule=\"evenodd\"][stroke-width=\"1\"] > g"
+                                    ]
+                                },
+                                {
+                                    "html": "<g id=\"Desktop---Cart-Empty\" transform=\"translate(-1306.000000, -577.000000)\">",
+                                    "target": [
+                                        ".payment-methods--item:nth-child(4) > svg[width=\"45px\"][viewBox=\"0 0 45 34\"][height=\"34px\"] > g[stroke=\"none\"][fill-rule=\"evenodd\"][stroke-width=\"1\"] > g"
+                                    ]
+                                },
+                                {
+                                    "html": "<g id=\"Desktop---Cart-Empty\" transform=\"translate(-1127.000000, -625.000000)\">",
+                                    "target": [
+                                        ".payment-methods--item:nth-child(5) > svg[width=\"46px\"][viewBox=\"0 0 46 34\"][height=\"34px\"] > g[stroke=\"none\"][fill-rule=\"evenodd\"][stroke-width=\"1\"] > g"
+                                    ]
+                                },
+                                {
+                                    "html": "<g id=\"Desktop---Cart-Empty\" transform=\"translate(-1067.000000, -625.000000)\">",
+                                    "target": [
+                                        ".payment-methods--item:nth-child(6) > svg[width=\"46px\"][viewBox=\"0 0 46 34\"][height=\"34px\"] > g[stroke=\"none\"][fill-rule=\"evenodd\"][stroke-width=\"1\"] > g"
+                                    ]
+                                },
+                                {
+                                    "html": "<g id=\"Desktop---Cart-Empty\" transform=\"translate(-1067.000000, -577.000000)\">",
+                                    "target": [
+                                        ".payment-methods--item:nth-child(7) > svg[width=\"46px\"][viewBox=\"0 0 46 34\"][height=\"34px\"] > g[stroke=\"none\"][fill-rule=\"evenodd\"][stroke-width=\"1\"] > g"
+                                    ]
+                                },
+                                {
+                                    "html": "<g id=\"Desktop---Cart-Empty\" transform=\"translate(-1187.000000, -577.000000)\">",
+                                    "target": [
+                                        ".payment-methods--item:nth-child(8) > svg[width=\"45px\"][viewBox=\"0 0 45 34\"][height=\"34px\"] > g[stroke=\"none\"][fill-rule=\"evenodd\"][stroke-width=\"1\"] > g"
+                                    ]
+                                },
+                                {
+                                    "html": "<g id=\"Desktop---Cart-Empty\" transform=\"translate(-1008.000000, -577.000000)\">",
+                                    "target": [
+                                        ".payment-methods--item:nth-child(11) > svg[width=\"45px\"][viewBox=\"0 0 45 34\"][height=\"34px\"] > g[stroke=\"none\"][fill-rule=\"evenodd\"][stroke-width=\"1\"] > g"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: Desktop---Cart-Empty"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<g id=\"Desktop---Cart-Empty\" transform=\"translate(-1127.000000, -577.000000)\">",
+                    "target": [
+                        ".payment-methods--item:nth-child(1) > svg[width=\"46px\"][viewBox=\"0 0 46 34\"][height=\"34px\"] > g[stroke=\"none\"][fill-rule=\"evenodd\"][stroke-width=\"1\"] > g"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: Desktop---Cart-Empty"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "Shape",
+                            "relatedNodes": [
+                                {
+                                    "html": "<path d=\"M27.6363636,8.72727273 L16,8.72727273 C11.9832727,8.72727273 8.72727273,11.9832727 8.72727273,16 C8.72727273,20.0167273 11.9832727,23.2727273 16,23.2727273 L27.6363636,23.2727273 C31.6530909,23.2727273 34.9090909,20.0167273 34.9090909,16 C34.9090909,11.9832727 31.6530909,8.72727273 27.6363636,8.72727273 Z M16,21.8181818 C12.7869091,21.8181818 10.1818182,19.2130909 10.1818182,16 C10.1818182,12.7869091 12.7869091,10.1818182 16,10.1818182 C19.2130909,10.1818182 21.8181818,12.7869091 21.8181818,16 C21.8181818,19.2130909 19.2130909,21.8181818 16,21.8181818 Z\" id=\"Shape\" fill=\"#FFFFFF\" fill-rule=\"nonzero\">",
+                                    "target": [
+                                        "#diners-club > path[fill-rule=\"nonzero\"][fill=\"#FFFFFF\"]:nth-child(4)"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M6.008,13.2167273 L4.416,13.2167273 L4.416,18.7694545 L5.99781818,18.7694545 C6.83927273,18.7694545 7.44727273,18.5687273 7.97963636,18.1272727 C8.61236364,17.6036364 8.98763636,16.8138182 8.98763636,15.9949091 C8.98763636,14.3549091 7.76290909,13.2167273 6.008,13.2167273 Z M7.27418182,17.3861818 C6.92945455,17.6938182 6.49163636,17.8283636 5.79054545,17.8283636 L5.49963636,17.8283636 L5.49963636,14.1570909 L5.79054545,14.1570909 C6.49163636,14.1570909 6.91272727,14.2829091 7.27418182,14.6058182 C7.64654545,14.9396364 7.87054545,15.4545455 7.87054545,15.9869091 C7.87054545,16.5214545 7.64654545,17.0545455 7.27418182,17.3861818 Z\" id=\"Shape\" fill=\"#FFFFFF\" fill-rule=\"nonzero\">",
+                                    "target": [
+                                        "#discover > path[fill-rule=\"nonzero\"][fill=\"#FFFFFF\"]:nth-child(2)"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M38.7374545,14.8545455 C38.7374545,13.8145455 38.024,13.216 36.7738182,13.216 L35.1658182,13.216 L35.1658182,18.7687273 L36.2516364,18.7687273 L36.2516364,16.536 L36.3927273,16.536 L37.8887273,18.7687273 L39.2210909,18.7687273 L37.4741818,16.4283636 C38.2894545,16.2618182 38.7374545,15.704 38.7374545,14.8545455 Z M36.5650909,15.7694545 L36.2509091,15.7694545 L36.2509091,14.0901818 L36.5832727,14.0901818 C37.2596364,14.0901818 37.6225455,14.3738182 37.6225455,14.9149091 C37.6218182,15.4705455 37.2596364,15.7694545 36.5650909,15.7694545 Z\" id=\"Shape\" fill=\"#FFFFFF\" fill-rule=\"nonzero\">",
+                                    "target": [
+                                        "path[fill-rule=\"nonzero\"][fill=\"#FFFFFF\"]:nth-child(8)"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M3.96299043,0.000254546655 C2.46470704,0.000353145552 1.09457336,0.845417235 0.421990434,2.18425455 C-0.140663478,3.30387404 -0.140663478,4.62363506 0.421990434,5.74325455 C1.09457336,7.08209186 2.46470704,7.92715595 3.96299043,7.92725455 C5.03299043,7.92725455 5.93299043,7.57525455 6.58999043,6.97025455 C7.33799043,6.28025455 7.76999043,5.26025455 7.76999043,4.05425455 C7.76975817,3.78408005 7.7463389,3.51442391 7.69999043,3.24825455 L3.96399043,3.24825455 L3.96399043,4.77425455 L6.10399043,4.77425455 C6.01596551,5.26683234 5.73060351,5.70209969 5.31399043,5.97925455 C4.95799043,6.22025455 4.5,6.35825455 3.96399043,6.35825455 C2.92999043,6.35825455 2.05299043,5.66125455 1.73899043,4.72225455 C1.5731541,4.23018463 1.5731541,3.69732446 1.73899043,3.20525455 C2.05299043,2.26525455 2.92999043,1.56925455 3.96399043,1.56925455 C4.52899356,1.56001214 5.07496164,1.77337072 5.48399043,2.16325455 L6.61599043,1.03325455 C5.89872991,0.35909782 4.94827727,-0.01111997 3.96399043,0.000254546655 L3.96299043,0.000254546655 Z M10.4639904,0.550254547 L10.4639904,7.45025455 L11.3499904,7.45025455 L11.3499904,4.65525455 L12.8149904,4.65525455 C13.4179904,4.65525455 13.9249904,4.45925455 14.3369904,4.06725455 C14.7520308,3.69521192 14.9839551,3.16050769 14.9719904,2.60325455 C14.9804218,2.04901272 14.7489078,1.51817123 14.3369904,1.14725455 C13.9297355,0.752880845 13.3817806,0.537587133 12.8149904,0.549254547 L10.4639904,0.550254547 Z M12.8909904,1.40025455 C13.2033763,1.40570554 13.5002536,1.53737044 13.7139904,1.76525455 C13.9416185,1.98666013 14.0700349,2.2907093 14.0700349,2.60825455 C14.0700349,2.92579979 13.9416185,3.22984897 13.7139904,3.45125455 C13.48495,3.68840978 13.1665458,3.81802243 12.8369904,3.80825455 L11.3499904,3.80825455 L11.3499904,1.40025455 L12.8369904,1.40025455 C12.854988,1.39983407 12.8729929,1.39983407 12.8909904,1.40025455 L12.8909904,1.40025455 Z M17.0149904,2.57525455 C16.1729904,2.57525455 15.5379904,2.88325455 15.1079904,3.50025455 L15.8889904,3.99125455 C16.1769904,3.57425455 16.5689904,3.36525455 17.0639904,3.36525455 C17.3798021,3.36137434 17.6854655,3.4767123 17.9199904,3.68825455 C18.1538054,3.88158795 18.2882145,4.1698698 18.2859904,4.47325455 L18.2859904,4.67525455 C17.9459904,4.48225455 17.5119904,4.38625455 16.9859904,4.38625455 C16.3689904,4.38625455 15.8759904,4.53125455 15.5069904,4.82025455 C15.1369904,5.10825455 14.9529904,5.49725455 14.9529904,5.98525455 C14.9448537,6.43001233 15.1377355,6.8547196 15.4779904,7.14125455 C15.8279904,7.44925455 16.2629904,7.60425455 16.7829904,7.60425455 C17.3929904,7.60425455 17.8809904,7.33425455 18.2479904,6.79425455 L18.2859904,6.79425455 L18.2859904,7.44925455 L19.1339904,7.44925455 L19.1339904,4.54025455 C19.1339904,3.93025455 18.9439904,3.45025455 18.5659904,3.10025455 C18.1859904,2.75025455 17.6699904,2.57525455 17.0149904,2.57525455 L17.0149904,2.57525455 Z M19.2779904,2.72925455 L21.2239904,7.15125455 L20.1259904,9.53125455 L21.0409904,9.53125455 L23.9999904,2.72825455 L23.0349904,2.72825455 L21.6669904,6.11925455 L21.6469904,6.11925455 L20.2409904,2.72925455 L19.2779904,2.72925455 Z M17.1319904,5.09725455 C17.6259904,5.09725455 18.0119904,5.20725455 18.2879904,5.42725455 C18.2879904,5.79925455 18.1409904,6.12325455 17.8479904,6.40025455 C17.5835498,6.6647713 17.2250193,6.81364954 16.8509904,6.81425455 C16.6010856,6.81901823 16.3572519,6.73703359 16.1609904,6.58225455 C15.9757084,6.44821399 15.8665786,6.23293404 15.8679769,6.00425455 C15.8679769,5.74725455 15.9879904,5.53425455 16.2309904,5.35725455 C16.4709904,5.18425455 16.7709904,5.09725455 17.1309904,5.09725455 L17.1319904,5.09725455 Z\" id=\"Shape\">",
+                                    "target": [
+                                        "#Group > path"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M27.5425455,11.6363636 L24.9949091,11.6363636 C24.8210909,11.6363636 24.6727273,11.7629091 24.6450909,11.9352727 L23.6152727,18.4676364 C23.5949091,18.5963636 23.6945455,18.7127273 23.8247273,18.7127273 L25.1316364,18.7127273 C25.2538182,18.7127273 25.3570909,18.624 25.3767273,18.5032727 L25.6690909,16.6516364 C25.696,16.4792727 25.8443636,16.3527273 26.0189091,16.3527273 L26.8247273,16.3527273 C28.5025455,16.3527273 29.4712727,15.5403636 29.7243636,13.9309091 C29.8385455,13.2269091 29.7287273,12.6741818 29.3992727,12.2865455 C29.0370909,11.8610909 28.3949091,11.6363636 27.5425455,11.6363636 Z M27.8363636,14.0218182 C27.6974545,14.936 26.9985455,14.936 26.3229091,14.936 L25.9389091,14.936 L26.2087273,13.2283636 C26.2247273,13.1250909 26.3141818,13.0494545 26.4181818,13.0494545 C26.9774545,13.0494545 27.4690909,13.0261818 27.7127273,13.3112727 C27.8465455,13.4690909 27.8872727,13.7010909 27.8363636,14.0218182 Z\" id=\"Shape\" fill=\"#FFFFFF\" fill-rule=\"nonzero\">",
+                                    "target": [
+                                        "#paypal > path[fill-rule=\"nonzero\"][fill=\"#FFFFFF\"]:nth-child(1)"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M9.37236364,11.6363636 L6.82472727,11.6363636 C6.65090909,11.6363636 6.50254545,11.7629091 6.47490909,11.9352727 L5.44509091,18.4676364 C5.42472727,18.5963636 5.52436364,18.7127273 5.65527273,18.7127273 L6.87127273,18.7127273 C7.04581818,18.7127273 7.19345455,18.5861818 7.22109091,18.4138182 L7.49890909,16.6516364 C7.52581818,16.4792727 7.67418182,16.3527273 7.84872727,16.3527273 L8.65454545,16.3527273 C10.3323636,16.3527273 11.3010909,15.5403636 11.5541818,13.9309091 C11.6683636,13.2269091 11.5585455,12.6741818 11.2290909,12.2865455 C10.8669091,11.8610909 10.2247273,11.6363636 9.37236364,11.6363636 Z M9.66690909,14.0218182 C9.528,14.936 8.82909091,14.936 8.15345455,14.936 L7.76945455,14.936 L8.03927273,13.2283636 C8.05527273,13.1250909 8.14472727,13.0494545 8.24872727,13.0494545 L8.42472727,13.0494545 C8.88436364,13.0494545 9.31854545,13.0494545 9.54254545,13.3112727 C9.67709091,13.4690909 9.71709091,13.7010909 9.66690909,14.0218182 Z\" id=\"Shape\" fill=\"#FFFFFF\" fill-rule=\"nonzero\">",
+                                    "target": [
+                                        "#paypal > path[fill-rule=\"nonzero\"][fill=\"#FFFFFF\"]:nth-child(2)"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M16.9869091,13.9927273 L15.7672727,13.9927273 C15.6625455,13.9927273 15.5738182,14.0690909 15.5578182,14.1723636 L15.504,14.5134545 C15.3854545,14.3418182 15.1505455,13.8785455 13.9781818,13.8785455 C12.6305455,13.8785455 11.4792727,14.8996364 11.2552727,16.3323636 C11.1389091,17.0472727 11.304,17.7301818 11.7090909,18.2065455 C12.0814545,18.6443636 12.6123636,18.8269091 13.2458182,18.8269091 C14.3323636,18.8269091 14.9345455,18.1287273 14.9345455,18.1287273 L14.88,18.4676364 C14.8596364,18.5963636 14.9592727,18.7134545 15.0894545,18.7134545 L16.1883636,18.7134545 C16.3621818,18.7134545 16.5105455,18.5869091 16.5381818,18.4145455 L17.1978182,14.2385455 C17.2174545,14.1090909 17.1178182,13.9927273 16.9869091,13.9927273 Z M15.2865455,16.3672727 C15.1687273,17.064 14.6152727,17.5323636 13.9098182,17.5323636 C13.5556364,17.5323636 13.2727273,17.4181818 13.0909091,17.2029091 C12.9105455,16.9890909 12.8421818,16.6850909 12.8996364,16.3461818 C13.0094545,15.6552727 13.5716364,15.1723636 14.2669091,15.1723636 C14.6130909,15.1723636 14.8945455,15.2872727 15.08,15.5047273 C15.2669091,15.7236364 15.3403636,16.0298182 15.2865455,16.3672727 Z\" id=\"Shape\" fill=\"#FFFFFF\" fill-rule=\"nonzero\">",
+                                    "target": [
+                                        "#paypal > path[fill-rule=\"nonzero\"][fill=\"#FFFFFF\"]:nth-child(3)"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M35.1570909,13.9927273 L33.9374545,13.9927273 C33.8327273,13.9927273 33.744,14.0690909 33.728,14.1723636 L33.6741818,14.5134545 C33.5556364,14.3418182 33.32,13.8785455 32.1483636,13.8785455 C30.8007273,13.8785455 29.6494545,14.8996364 29.4254545,16.3323636 C29.3090909,17.0472727 29.4741818,17.7301818 29.8792727,18.2065455 C30.2516364,18.6443636 30.7825455,18.8269091 31.416,18.8269091 C32.5025455,18.8269091 33.1047273,18.1287273 33.1047273,18.1287273 L33.0501818,18.4676364 C33.0298182,18.5963636 33.1294545,18.7134545 33.2596364,18.7134545 L34.3585455,18.7134545 C34.5323636,18.7134545 34.6807273,18.5869091 34.7083636,18.4145455 L35.368,14.2385455 C35.3869091,14.1090909 35.2872727,13.9927273 35.1570909,13.9927273 Z M33.4567273,16.3672727 C33.3389091,17.064 32.7854545,17.5323636 32.08,17.5323636 C31.7258182,17.5323636 31.4429091,17.4181818 31.2610909,17.2029091 C31.0807273,16.9890909 31.0123636,16.6850909 31.0698182,16.3461818 C31.1796364,15.6552727 31.7418182,15.1723636 32.4370909,15.1723636 C32.7832727,15.1723636 33.0647273,15.2872727 33.2501818,15.5047273 C33.4370909,15.7236364 33.5105455,16.0298182 33.4567273,16.3672727 Z\" id=\"Shape\" fill=\"#FFFFFF\" fill-rule=\"nonzero\">",
+                                    "target": [
+                                        "#paypal > path[fill-rule=\"nonzero\"][fill=\"#FFFFFF\"]:nth-child(4)"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M17.7164005,3.54224641 C17.7164005,5.32558465 16.4580138,6.59787033 14.7003351,6.59787033 L13.0442254,6.59787033 C12.9883718,6.59870616 12.9381814,6.63216647 12.9159277,6.68340214 C12.9089269,6.69998367 12.9052926,6.71779161 12.9052362,6.73579037 L12.9052362,9.07936197 C12.9052373,9.11612664 12.8905598,9.15137014 12.8644631,9.17726612 C12.8383664,9.2031621 12.8030106,9.21756701 12.766247,9.21728616 L11.607291,9.21728616 C11.5305294,9.21728616 11.4682847,9.15505443 11.4682847,9.07829282 L11.4682847,0.626680837 C11.4674092,0.570304369 11.5014505,0.519242402 11.5538336,0.498383122 C11.5707639,0.491298007 11.588938,0.48769148 11.607291,0.48769148 L14.7078191,0.48769148 C16.4580138,0.48769148 17.7164005,1.75997732 17.7164005,3.54331556 L17.7164005,3.54224641 L17.7164005,3.54224641 Z M16.2709129,3.54224641 C16.2709129,2.51800299 15.5674138,1.76959965 14.6137341,1.76959965 L13.0442254,1.76959965 C13.0073632,1.76959965 12.9720107,1.78424311 12.9459452,1.81030864 C12.9198797,1.83637417 12.905228,1.87172662 12.905228,1.90858884 L12.905228,5.1694891 C12.9048305,5.20643862 12.9195013,5.24195759 12.9458638,5.26785068 C12.9718954,5.29400688 13.0073233,5.30864013 13.0442254,5.30850675 L14.6137341,5.30850675 C15.5674138,5.31382403 16.2709129,4.56542069 16.2709129,3.54224641 Z M18.0606661,7.59538506 C18.0358518,7.03873804 18.2966476,6.50787541 18.7524046,6.18731764 C19.204654,5.84946699 19.9113606,5.67412678 20.9495029,5.63777576 L22.0539324,5.59928645 L22.0539324,5.27533472 C22.0539324,4.62636211 21.6155819,4.35266031 20.9120828,4.35266031 C20.2085836,4.35266031 19.7627491,4.59963342 19.6611801,5.00484037 C19.6433857,5.06335181 19.5886708,5.1027465 19.5275366,5.10106365 L18.4348677,5.10106365 C18.3730935,5.10185944 18.3182086,5.0617847 18.3001551,5.00270207 C18.2943698,4.98366381 18.2929088,4.96357395 18.2958785,4.94389895 C18.458389,3.98380438 19.262388,3.2546457 20.9623327,3.2546457 C22.7713305,3.2546457 23.4245797,4.09178829 23.4245797,5.6880257 L23.4245797,9.07936197 C23.4242991,9.11641197 23.4092371,9.15181641 23.3827386,9.17771262 C23.3562402,9.20360884 23.3204989,9.21785309 23.2834522,9.21728201 L22.1822302,9.21728201 C22.1054685,9.21728201 22.043241,9.15505443 22.043241,9.07829282 L22.043241,8.82597398 C22.0439566,8.78310462 22.0179496,8.74430721 21.978023,8.72868155 C21.938598,8.71316152 21.8937277,8.72238718 21.8636242,8.7522028 C21.5321884,9.1092981 20.9997529,9.36696268 20.1455039,9.36696268 C18.8892555,9.36696268 18.0606661,8.71799007 18.0606661,7.59538506 L18.0606661,7.59538506 Z M22.0539324,6.86088064 L22.0539324,6.59787033 L20.6223438,6.67271066 C19.8685947,6.71119998 19.4302442,7.02125279 19.4302442,7.54513513 C19.4302442,8.01983667 19.8322437,8.28284699 20.5357428,8.28284699 C21.4904916,8.28284699 22.0539324,7.76965613 22.0539324,6.86088064 Z M24.5300783,11.7789597 L24.5300783,10.7964131 C24.5306203,10.7547209 24.549851,10.7154744 24.5824666,10.6894983 C24.6148174,10.6633226 24.6570717,10.652759 24.6979345,10.6606313 C24.8668598,10.6916366 25.0379235,10.7076738 25.2100562,10.7076738 C25.8169674,10.7409264 26.3674735,10.3535824 26.541145,9.77110048 L26.6127779,9.54551033 C26.6234538,9.51505722 26.6234538,9.48187846 26.6127779,9.45142534 L24.3194563,3.60211868 C24.2919044,3.53557667 24.3197464,3.45901113 24.3836051,3.42570932 C24.4040261,3.41494143 24.4268076,3.40942977 24.4498923,3.40966445 L25.5618058,3.40966445 C25.6202251,3.40982669 25.6725103,3.44595876 25.693311,3.50054966 L27.2499899,7.62639034 C27.2697238,7.68318769 27.3235082,7.72105194 27.3836334,7.72047534 C27.4435551,7.72040508 27.4970026,7.6827781 27.5172768,7.62639034 L28.8697486,3.51231028 C28.8885702,3.45407488 28.9432693,3.41500408 29.0044612,3.41608699 L30.154864,3.41608699 C30.2262306,3.41650554 30.286406,3.46938699 30.2959915,3.54010812 C30.2985788,3.56292122 30.2956453,3.58602202 30.2874383,3.60746442 L27.8337445,10.1036054 C27.2692346,11.614311 26.301656,11.9992041 25.2357158,11.9992041 C25.0334261,12.0047823 24.8313958,11.981014 24.635924,11.9286404 C24.5681994,11.9120143 24.5227718,11.8484157 24.5290092,11.7789597 L24.5300783,11.7789597 L24.5300783,11.7789597 Z M4.01848114,0.000160327892 C2.55962783,-0.0107431378 1.15147768,0.534852916 0.0808104298,1.52583399 C-0.0136108999,1.61170524 -0.0270510462,1.75537577 0.0498051487,1.85726975 L0.710538382,2.75428461 C0.753882242,2.81552082 0.822228561,2.85429292 0.897028894,2.86007858 C0.971829227,2.86586424 1.04532484,2.83806335 1.09756982,2.78422075 C1.87488823,2.01234177 2.92951465,1.58479052 4.02489602,1.59746688 C6.29148899,1.59746688 7.47503541,3.29099672 7.47503541,4.9652819 C7.47503541,6.78283287 6.23161672,8.06367172 4.44400189,8.08826212 C3.06266316,8.08826212 2.02131337,7.17948664 2.02131337,5.97776471 C2.02371275,5.36233171 2.30383273,4.78087648 2.78361563,4.39542622 C2.8886166,4.30929788 2.9043778,4.1545516 2.8188975,4.04902239 L2.12395154,3.17766707 C2.08155475,3.12353309 2.01890155,3.08904654 1.95048452,3.08218465 C1.88206748,3.07532276 1.81381343,3.09667997 1.7615105,3.14131605 C1.33588284,3.48273952 0.991809115,3.9148406 0.754373434,4.4061177 C0.517786098,4.8963003 0.394638084,5.43347413 0.394070684,5.97776471 C0.394070684,8.04656536 2.16351001,9.66846231 4.43010297,9.68129208 L4.4621774,9.68129208 C7.15322198,9.64707936 9.09907066,7.66701795 9.09907066,4.96100531 C9.09907066,2.5586306 7.31680156,0.000160327892 4.01848114,0.000160327892 L4.01848114,0.000160327892 Z\" id=\"Shape\">",
+                                    "target": [
+                                        "#Shape-2 > path"
+                                    ]
+                                },
+                                {
+                                    "html": "<path d=\"M34.1854545,11.7912727 L32.4043636,11.7912727 C31.8523636,11.7912727 31.44,11.9418182 31.1978182,12.4923636 L27.7752727,20.2407273 L30.1949091,20.2407273 C30.1949091,20.2407273 30.5905455,19.1985455 30.68,18.9701818 C30.9447273,18.9701818 33.2952727,18.9738182 33.6312727,18.9738182 C33.7003636,19.2698182 33.912,20.2407273 33.912,20.2407273 L36.0501818,20.2407273 L34.1854545,11.7912727 Z M31.3432727,17.2407273 C31.4385455,16.9970909 32.3796364,14.5818182 32.5672727,14.0705455 C32.8785455,15.528 32.5752727,14.1141818 33.2567273,17.2407273 L31.3432727,17.2407273 Z\" id=\"Shape\" fill=\"#FFFFFF\" fill-rule=\"nonzero\">",
+                                    "target": [
+                                        "#visa > path[fill-rule=\"nonzero\"][fill=\"#FFFFFF\"]:nth-child(3)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: Shape"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<path d=\"M10.0647273,16.3738182 L12.0974545,16.3738182 L11.0807273,13.88 L10.0647273,16.3738182 Z M38.4,11.6363636 L33.1905455,11.6363636 L31.92,13.008 L30.776,11.6363636 L19.7214545,11.6363636 L18.7047273,13.8807273 L17.6887273,11.6363636 L13.2414545,11.6363636 L13.2414545,12.6334545 L12.7330909,11.6363636 L8.92145455,11.6363636 L5.23636364,20.3636364 L9.68363636,20.3636364 L10.192,18.992 L11.4625455,18.992 L11.9709091,20.3636364 L16.9265455,20.3636364 L16.9265455,19.3665455 L17.3076364,20.3636364 L19.8487273,20.3636364 L20.2298182,19.2414545 L20.2298182,20.3636364 L30.3949091,20.3636364 L31.6654545,18.992 L32.8094545,20.3636364 L38.0189091,20.3636364 L34.7149091,16 L38.4,11.6363636 Z M23.0254545,19.1170909 L21.6276364,19.1170909 L21.6276364,14.2545455 L19.4676364,19.1170909 L18.1970909,19.1170909 L16.0370909,14.2545455 L16.0370909,19.1170909 L13.1149091,19.1170909 L12.6058182,17.7454545 L9.55636364,17.7454545 L9.048,19.1170909 L7.39636364,19.1170909 L10.0647273,12.8836364 L12.2247273,12.8836364 L14.6392727,18.7432727 L14.6392727,12.8836364 L17.0538182,12.8836364 L18.96,17.1229091 L20.7389091,12.8836364 L23.1534545,12.8836364 L23.1534545,19.1170909 L23.0254545,19.1170909 Z M35.6043636,19.1170909 L33.6981818,19.1170909 L32.0465455,16.9978182 L30.1403636,19.1170909 L24.4225455,19.1170909 L24.4225455,12.8836364 L30.2676364,12.8836364 L32.0465455,14.8785455 L33.9527273,12.8836364 L35.7316364,12.8836364 L32.936,16 L35.6043636,19.1170909 Z M25.8203636,14.1301818 L25.8203636,15.2523636 L28.9970909,15.2523636 L28.9970909,16.4989091 L25.8203636,16.4989091 L25.8203636,17.7454545 L29.3781818,17.7454545 L31.0298182,15.8756364 L29.5047273,14.1301818 L25.8203636,14.1301818 Z\" id=\"Shape\" fill=\"#FFFFFF\" fill-rule=\"nonzero\">",
+                    "target": [
+                        "#amex > path[fill-rule=\"nonzero\"][fill=\"#FFFFFF\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: Shape"
+                }
+            ]
+        },
+        {
+            "id": "heading-order",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order invalid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h3 class=\"t__body footer--title\">Links</h3>",
+                    "target": [
+                        ".footer--links > .footer--title"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Heading order invalid"
+                }
+            ]
+        },
+        {
+            "id": "label",
+            "impact": "critical",
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag412",
+                "wcag131",
+                "section508",
+                "section508.22.n",
+                "ACT"
+            ],
+            "description": "Ensures every form element has a label",
+            "help": "Form elements must have labels",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "implicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element does not have an implicit (wrapped) <label>"
+                        },
+                        {
+                            "id": "explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element does not have an explicit <label>"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        },
+                        {
+                            "id": "non-empty-placeholder",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no placeholder attribute"
+                        },
+                        {
+                            "id": "presentational-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<input class=\"inp--checkbox\" type=\"checkbox\" id=\"accepts-marketing\" name=\"customer[accepts_marketing]\">",
+                    "target": [
+                        "#accepts-marketing"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                },
+                {
+                    "any": [
+                        {
+                            "id": "implicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element does not have an implicit (wrapped) <label>"
+                        },
+                        {
+                            "id": "explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element does not have an explicit <label>"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        },
+                        {
+                            "id": "non-empty-placeholder",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no placeholder attribute"
+                        },
+                        {
+                            "id": "presentational-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<input class=\"inp--checkbox\" type=\"checkbox\" id=\"eula-checkbox\" required=\"\">",
+                    "target": [
+                        "#eula-checkbox"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element has no placeholder attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport",
+            "impact": "critical",
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice",
+                "ACT"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> does not disable text scaling and zooming",
+            "help": "Zooming and scaling should not be disabled",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport",
+                            "data": "user-scalable",
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "user-scalable on <meta> tag disables zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1, user-scalable=0\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  user-scalable on <meta> tag disables zooming on mobile devices"
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"nav--logo\">\n      <a href=\"/\" title=\"Machine-A Home\">\n        <img alt=\"Machine-A\" width=\"129\" height=\"19\" src=\"//www.machine-a.com/cdn/shop/t/93/assets/machine-a-logo.svg?v=171594433439302282051684762210\">\n      </a>\n    </div>",
+                    "target": [
+                        ".nav--logo"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<span>Search</span>",
+                    "target": [
+                        ".nav--search > span"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a href=\"/account\" title=\"Account\" class=\"nav--account t__link\">\n        <span>Account</span>\n      </a>",
+                    "target": [
+                        ".nav--account"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<select name=\"currency\"><option value=\"EUR\">EUR \u20ac</option><option value=\"GBP\" selected=\"selected\">GBP \u00a3</option><option value=\"JPY\">JPY \u00a5</option><option value=\"KRW\">KRW \u20a9</option><option value=\"USD\">USD $</option></select>",
+                    "target": [
+                        "select"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a href=\"/collections/all-items\" class=\"nav--menu--item--text\">}_Y5 </a>",
+                    "target": [
+                        ".nav--menu--item--text[href$=\"all-items\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a href=\"/pages/designers\" class=\"nav--menu--item--text\">Ya9mSc !mZC+'z}g</a>",
+                    "target": [
+                        ".nav--menu--item--text[href$=\"designers\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a href=\"/pages/editorial-archive\" class=\"nav--menu--item--text\">wM3lGr#o[ T\\Z:NG`</a>",
+                    "target": [
+                        ".nav--menu--item--text[href$=\"editorial-archive\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<a href=\"/pages/as-seen-on-you\" class=\"nav--menu--item--text\">$- _{~\\ RH 4?]</a>",
+                    "target": [
+                        ".nav--menu--item--text[href$=\"as-seen-on-you\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"nav--menu__sub\">",
+                    "target": [
+                        ".nav--menu__sub"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p class=\"t__heading5 t__uppercase\">Your shopping cart (0)</p>",
+                    "target": [
+                        ".t__uppercase"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"mini-cart--body\">\n        <p class=\"t__body mini-cart--body__empty\">Your cart is empty</p>\n      </div>",
+                    "target": [
+                        ".mini-cart--body"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"footer--links\">",
+                    "target": [
+                        ".footer--links"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"footer--social\">",
+                    "target": [
+                        ".footer--social"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h3 class=\"t__body footer--title\">Join the community</h3>",
+                    "target": [
+                        ".footer--newsletter > .footer--title"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p class=\"t__body\">Do nOt miss the next editorial. Sign up for regular updates plus 10% off your first order.</p>",
+                    "target": [
+                        ".footer--newsletter > .t__body:nth-child(2)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<form id=\"newsletter-footer\">\n      <input id=\"newsletter-footer-input\" class=\"inp footer--newsletter__input\" type=\"email\" placeholder=\"Enter your email address\">\n    </form>",
+                    "target": [
+                        "#newsletter-footer"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h3 class=\"t__body\">We Accept</h3>",
+                    "target": [
+                        ".footer--payment > h3"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"footer--credit\">\n    <p class=\"t__body footer--copyright\">Copyright \u00a9 2024. All Rights Reserved.</p>\n    <p class=\"t__body footer--burn\">Site by <a href=\"https://burnstudio.co.uk\" target=\"_blank\">Burn Studio</a></p></div>",
+                    "target": [
+                        ".footer--credit"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"geolocation--logo\"><img width=\"129\" height=\"19\" alt=\"Machine-A\" src=\"//www.machine-a.com/cdn/shop/t/93/assets/logo-neg.svg?v=86055557173470446881666098832\"></div>",
+                    "target": [
+                        ".geolocation--logo"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"geolocation--flag__wrap\">\n      <img alt=\"Country Flag\" class=\"geolocation--flag\" width=\"75\" height=\"48\" src=\"https://cdn.shopify.com/static/images/flags/us.svg\">\n    </div>",
+                    "target": [
+                        ".geolocation--flag__wrap"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p class=\"t__body\">It looks like you are visiting from <span class=\"geolocation--country-name t__bold\">United States</span></p>",
+                    "target": [
+                        ".geolocation--inner > .t__body:nth-child(3)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p class=\"t__body\">Would you like to change your shipping &amp; currency?</p>",
+                    "target": [
+                        ".geolocation--inner > .t__body:nth-child(4)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p class=\"t__heading6\">Cookies Policy</p>",
+                    "target": [
+                        ".t__heading6"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"t__body\">",
+                    "target": [
+                        ".cookie-consent > .t__body"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                }
+            ]
+        },
+        {
+            "id": "select-name",
+            "impact": "critical",
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag412",
+                "wcag131",
+                "section508",
+                "section508.22.n",
+                "ACT"
+            ],
+            "description": "Ensures select element has an accessible name",
+            "help": "Select element must have an accessible name",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/select-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "implicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element does not have an implicit (wrapped) <label>"
+                        },
+                        {
+                            "id": "explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element does not have an explicit <label>"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        },
+                        {
+                            "id": "presentational-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "critical",
+                    "html": "<select name=\"currency\"><option value=\"EUR\">EUR \u20ac</option><option value=\"GBP\" selected=\"selected\">GBP \u00a3</option><option value=\"JPY\">JPY \u00a5</option><option value=\"KRW\">KRW \u20a9</option><option value=\"USD\">USD $</option></select>",
+                    "target": [
+                        "select"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Form element does not have an implicit (wrapped) <label>\n  Form element does not have an explicit <label>\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute\n  Element's default semantics were not overridden with role=\"none\" or role=\"presentation\""
+                }
+            ]
+        }
+    ]
+}

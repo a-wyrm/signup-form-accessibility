@@ -1,0 +1,3161 @@
+{
+    "testEngine": {
+        "name": "axe-core",
+        "version": "4.4.3"
+    },
+    "testRunner": {
+        "name": "axe"
+    },
+    "timestamp": "2024-09-27T21:30:17.500Z",
+    "url": "https://olivekids.org.au/my-account/",
+    "toolOptions": {
+        "resultTypes": [
+            "violations"
+        ],
+        "reporter": "v1"
+    },
+    "passes": [
+        {
+            "id": "aria-allowed-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures ARIA attributes are allowed for an element's role",
+            "help": "Elements must only use allowed ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attributes are used correctly for the defined role"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "aria-unsupported-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute is supported"
+                        },
+                        {
+                            "id": "aria-prohibited-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "ARIA attribute is allowed"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"text\" class=\"woocommerce-Input woocommerce-Input--text input-text\" name=\"username\" id=\"username\" autocomplete=\"username\" value=\"\" required=\"\" aria-required=\"true\">",
+                    "target": [
+                        "#username"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-allowed-role",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "best-practice"
+            ],
+            "description": "Ensures role attribute has an appropriate value for the element",
+            "help": "ARIA role should be appropriate for the element",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-role?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is allowed for given element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"widget_shopping_cart_live_region screen-reader-text\" role=\"status\"></div>",
+                    "target": [
+                        ".widget_shopping_cart_live_region"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-body",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures aria-hidden='true' is not present on the document body.",
+            "help": "aria-hidden='true' must not be present on the document body",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-hidden-body",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "No aria-hidden attribute is present on document body"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<body class=\"page-template-default page page-id-645 theme-bb-theme give-recurring woocommerce-account woocommerce-page woocommerce-js fl-theme-builder-header fl-theme-builder-footer fl-theme-builder-singular fl-preset-default fl-full-width fl-search-active fl-builder-breakpoint-default\" itemscope=\"itemscope\" itemtype=\"https://schema.org/WebPage\">",
+                    "target": [
+                        "body"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-focus",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag131"
+            ],
+            "description": "Ensures aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "focusable-modal-open",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements while a modal is open"
+                        },
+                        {
+                            "id": "focusable-disabled",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        },
+                        {
+                            "id": "focusable-not-tabbable",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<span class=\"required\" aria-hidden=\"true\">*</span>",
+                    "target": [
+                        "label[for=\"username\"] > .required[aria-hidden=\"true\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-required-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures elements with ARIA roles have all required ARIA attributes",
+            "help": "Required ARIA attributes must be provided",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-required-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-required-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "All required ARIA attributes are present"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"widget_shopping_cart_live_region screen-reader-text\" role=\"status\"></div>",
+                    "target": [
+                        ".widget_shopping_cart_live_region"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-roles",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all elements with a role attribute use a valid value",
+            "help": "ARIA roles used must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-roles?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "fallbackrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Only one role value used"
+                        },
+                        {
+                            "id": "invalidrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is valid"
+                        },
+                        {
+                            "id": "abstractrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Abstract roles are not used"
+                        },
+                        {
+                            "id": "unsupportedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA role is supported"
+                        },
+                        {
+                            "id": "deprecatedrole",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is not deprecated"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<div class=\"widget_shopping_cart_live_region screen-reader-text\" role=\"status\"></div>",
+                    "target": [
+                        ".widget_shopping_cart_live_region"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr-value",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all ARIA attributes have valid values",
+            "help": "ARIA attributes must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr-value?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "aria-valid-attr-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute values are valid"
+                        },
+                        {
+                            "id": "aria-errormessage",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "aria-errormessage exists and references elements visible to screen readers that use a supported aria-errormessage technique"
+                        },
+                        {
+                            "id": "aria-level",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-level values are valid"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input type=\"text\" class=\"woocommerce-Input woocommerce-Input--text input-text\" name=\"username\" id=\"username\" autocomplete=\"username\" value=\"\" required=\"\" aria-required=\"true\">",
+                    "target": [
+                        "#username"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures attributes that begin with aria- are valid ARIA attributes",
+            "help": "ARIA attributes must conform to valid names",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-valid-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute name is valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input type=\"text\" class=\"woocommerce-Input woocommerce-Input--text input-text\" name=\"username\" id=\"username\" autocomplete=\"username\" value=\"\" required=\"\" aria-required=\"true\">",
+                    "target": [
+                        "#username"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "autocomplete-valid",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag21aa",
+                "wcag135"
+            ],
+            "description": "Ensure the autocomplete attribute is correct and suitable for the form field",
+            "help": "autocomplete attribute must be used correctly",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/autocomplete-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "autocomplete-valid",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "the autocomplete attribute is correctly formatted"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input type=\"text\" class=\"woocommerce-Input woocommerce-Input--text input-text\" name=\"username\" id=\"username\" autocomplete=\"username\" value=\"\" required=\"\" aria-required=\"true\">",
+                    "target": [
+                        "#username"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "avoid-inline-spacing",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag21aa",
+                "wcag1412"
+            ],
+            "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+            "help": "Inline text spacing must be adjustable with custom stylesheets",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/avoid-inline-spacing?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "avoid-inline-spacing",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No inline styles with '!important' that affect text spacing has been specified"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"fl-row-content fl-row-fixed-width fl-node-content\" style=\"position: relative;\">",
+                    "target": [
+                        ".fl-node-58dba37bc56b7 > .fl-row-content-wrap > .fl-row-content.fl-row-fixed-width.fl-node-content"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "button-name",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures buttons have discernible text",
+            "help": "Buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/button-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "button-has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has inner text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button type=\"submit\" class=\"woocommerce-button button woocommerce-form-login__submit\" name=\"login\" value=\"Log in\">Log in</button>",
+                    "target": [
+                        ".woocommerce-form-login__submit"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "bypass",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag241",
+                "section508",
+                "section508.22.o"
+            ],
+            "description": "Ensures each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+            "help": "Page must have means to bypass repeated blocks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/bypass?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "header-present",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h2 class=\"fl-heading\"> <span class=\"fl-heading-text\">Sponsorship Portal</span></h2>",
+                                    "target": [
+                                        ".fl-node-5b20e470b7380 > .fl-module-content.fl-node-content > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2>Login</h2>",
+                                    "target": [
+                                        ".u-column1 > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2>Register</h2>",
+                                    "target": [
+                                        ".u-column2 > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"fl-heading\"> <span class=\"fl-heading-text\">About Us</span></h3>",
+                                    "target": [
+                                        ".fl-node-59080ede0885a > .fl-module-content.fl-node-content > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"fl-heading\"> <span class=\"fl-heading-text\">Get in Touch</span></h3>",
+                                    "target": [
+                                        ".fl-node-5fd8ba529cdd8 > .fl-module-content.fl-node-content > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h4 style=\"text-align: center;\"><a href=\"https://olivekids.org.au/contact-us/\">Contact Us</a></h4>",
+                                    "target": [
+                                        "h4"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"fl-heading\"> <span class=\"fl-heading-text\">Follow Us</span></h3>",
+                                    "target": [
+                                        ".fl-node-5fc5eee7d4087 > .fl-module-content.fl-node-content > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"fl-heading\"> <span class=\"fl-heading-text\">Additional Resources</span></h3>",
+                                    "target": [
+                                        ".fl-node-59080ede0876d > .fl-module-content.fl-node-content > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2 class=\"fl-heading\"> <span class=\"fl-heading-text\">Acknowledgement of Country</span></h2>",
+                                    "target": [
+                                        ".fl-node-5fd9db829667b > .fl-module-content.fl-node-content > h2"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Page has a heading"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en-AU\" class=\"chrome chrome129\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#707070",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 4.95,
+                                "fontSize": "12.0pt (16px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 4.95"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<span class=\"menu-item-text\">Home</span>",
+                    "target": [
+                        "#menu-main-menu > .menu-item-home > a[href$=\"olivekids.org.au/\"] > .menu-item-text"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "document-title",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag242",
+                "ACT"
+            ],
+            "description": "Ensures each HTML document contains a non-empty <title> element",
+            "help": "Documents must have <title> element to aid in navigation",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/document-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "doc-has-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has a non-empty <title> element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en-AU\" class=\"chrome chrome129\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-active",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value of active elements is unique",
+            "help": "IDs of active elements must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-active",
+                            "data": "rememberme",
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has no active elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input class=\"woocommerce-form__input woocommerce-form__input-checkbox\" name=\"rememberme\" type=\"checkbox\" id=\"rememberme\" value=\"forever\">",
+                    "target": [
+                        "#rememberme"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-aria",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value used in ARIA and in labels is unique",
+            "help": "IDs used in ARIA and labels must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-aria",
+                            "data": "username",
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input type=\"text\" class=\"woocommerce-Input woocommerce-Input--text input-text\" name=\"username\" id=\"username\" autocomplete=\"username\" value=\"\" required=\"\" aria-required=\"true\">",
+                    "target": [
+                        "#username"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": "minor",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "wc-blocks-integration-css",
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<link rel=\"stylesheet\" id=\"wc-blocks-integration-css\" href=\"https://olivekids.org.au/wp-content/plugins/woocommerce-subscriptions/vendor/woocommerce/subscriptions-core/build/index.css?ver=6.4.0\" type=\"text/css\" media=\"all\">",
+                    "target": [
+                        "#wc-blocks-integration-css"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "empty-heading",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "best-practice"
+            ],
+            "description": "Ensures headings have discernible text",
+            "help": "Headings should not be empty",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/empty-heading?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h2 class=\"fl-heading\"> <span class=\"fl-heading-text\">Sponsorship Portal</span></h2>",
+                    "target": [
+                        ".fl-node-5b20e470b7380 > .fl-module-content.fl-node-content > h2"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "form-field-multiple-labels",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag332"
+            ],
+            "description": "Ensures form field does not have multiple label elements",
+            "help": "Form field must not have multiple label elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/form-field-multiple-labels?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "multiple-label",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<label for=\"username\">Username or email address&nbsp;<span class=\"required\" aria-hidden=\"true\">*</span><span class=\"screen-reader-text\">Required</span></label>",
+                                    "target": [
+                                        "label[for=\"username\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Form field does not have multiple label elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"text\" class=\"woocommerce-Input woocommerce-Input--text input-text\" name=\"username\" id=\"username\" autocomplete=\"username\" value=\"\" required=\"\" aria-required=\"true\">",
+                    "target": [
+                        "#username"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "heading-order",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": {
+                                "headingOrder": [
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div > div > div > div > div > div > div > h2"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div > div > div > div > div > div > div > div > div:nth-child(2) > div:nth-child(1) > h2:nth-child(1)"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div > div > div > div > div > div > div > div > div:nth-child(2) > div:nth-child(2) > h2:nth-child(1)"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > footer:nth-child(4) > div:nth-child(1) > div > div > div > div:nth-child(1) > div > div:nth-child(1) > div > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > footer:nth-child(4) > div:nth-child(1) > div > div > div > div:nth-child(1) > div > div:nth-child(3) > div > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > footer:nth-child(4) > div:nth-child(1) > div > div > div > div:nth-child(1) > div > div:nth-child(4) > div > div > div:nth-child(2) > h4"
+                                        ],
+                                        "level": 4
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > footer:nth-child(4) > div:nth-child(1) > div > div > div > div:nth-child(2) > div > div:nth-child(1) > div > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > footer:nth-child(4) > div:nth-child(1) > div > div > div > div:nth-child(2) > div > div:nth-child(3) > div > h3"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > footer:nth-child(4) > div:nth-child(1) > div > div > div > div:nth-child(3) > div > div:nth-child(1) > div > h2"
+                                        ],
+                                        "level": 2
+                                    }
+                                ]
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h2 class=\"fl-heading\"> <span class=\"fl-heading-text\">Sponsorship Portal</span></h2>",
+                    "target": [
+                        ".fl-node-5b20e470b7380 > .fl-module-content.fl-node-content > h2"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-has-lang",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures every HTML document has a lang attribute",
+            "help": "<html> element must have a lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-has-lang?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "The <html> element has a lang attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en-AU\" class=\"chrome chrome129\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-lang-valid",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures the lang attribute of the <html> element has a valid value",
+            "help": "<html> element must have a valid value for the lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-lang-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "valid-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Value of lang attribute is included in the list of valid languages"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<html lang=\"en-AU\" class=\"chrome chrome129\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "identical-links-same-purpose",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "wcag2aaa",
+                "wcag249"
+            ],
+            "description": "Ensure that links with the same accessible name serve a similar purpose",
+            "help": "Links with the same name must have a similar purpose",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/identical-links-same-purpose?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "identical-links-same-purpose",
+                            "data": {
+                                "name": "oklogo1",
+                                "urlProps": {
+                                    "protocol": "http:",
+                                    "hostname": "olivekids.org.au",
+                                    "port": "",
+                                    "pathname": "/",
+                                    "search": {},
+                                    "hash": "",
+                                    "filename": ""
+                                }
+                            },
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "There are no other links with the same name, that go to a different URL"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"https://olivekids.org.au/\" target=\"_self\" itemprop=\"url\">",
+                    "target": [
+                        "a[itemprop=\"url\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures <img> elements have alternate text or a role of none or presentation",
+            "help": "Images must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-alt",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has an alt attribute"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "alt-space-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has a valid alt attribute value"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img loading=\"lazy\" decoding=\"async\" class=\"fl-photo-img wp-image-416 size-full\" src=\"https://olivekids.org.au/wp-content/uploads/ok-logo-1.png\" alt=\"ok-logo-1\" itemprop=\"image\" height=\"300\" width=\"1381\" title=\"ok-logo-1\" data-no-lazy=\"1\" srcset=\"https://olivekids.org.au/wp-content/uploads/ok-logo-1.png 1381w, https://olivekids.org.au/wp-content/uploads/ok-logo-1-600x130.png 600w, https://olivekids.org.au/wp-content/uploads/ok-logo-1-800x174.png 800w, https://olivekids.org.au/wp-content/uploads/ok-logo-1-768x167.png 768w\" sizes=\"(max-width: 1381px) 100vw, 1381px\">",
+                    "target": [
+                        "img"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-redundant-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ],
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-redundant-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img loading=\"lazy\" decoding=\"async\" class=\"fl-photo-img wp-image-416 size-full\" src=\"https://olivekids.org.au/wp-content/uploads/ok-logo-1.png\" alt=\"ok-logo-1\" itemprop=\"image\" height=\"300\" width=\"1381\" title=\"ok-logo-1\" data-no-lazy=\"1\" srcset=\"https://olivekids.org.au/wp-content/uploads/ok-logo-1.png 1381w, https://olivekids.org.au/wp-content/uploads/ok-logo-1-600x130.png 600w, https://olivekids.org.au/wp-content/uploads/ok-logo-1-800x174.png 800w, https://olivekids.org.au/wp-content/uploads/ok-logo-1-768x167.png 768w\" sizes=\"(max-width: 1381px) 100vw, 1381px\">",
+                    "target": [
+                        "img"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label-title-only",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "best-practice"
+            ],
+            "description": "Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes",
+            "help": "Form elements should have a visible label",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "title-only",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Form element does not solely use title attribute for its label"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"text\" class=\"woocommerce-Input woocommerce-Input--text input-text\" name=\"username\" id=\"username\" autocomplete=\"username\" value=\"\" required=\"\" aria-required=\"true\">",
+                    "target": [
+                        "#username"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag412",
+                "wcag131",
+                "section508",
+                "section508.22.n",
+                "ACT"
+            ],
+            "description": "Ensures every form element has a label",
+            "help": "Form elements must have labels",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element has an explicit <label>"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "hidden-explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element has a visible explicit <label>"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"text\" class=\"woocommerce-Input woocommerce-Input--text input-text\" name=\"username\" id=\"username\" autocomplete=\"username\" value=\"\" required=\"\" aria-required=\"true\">",
+                    "target": [
+                        "#username"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-banner-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the banner landmark is at top level",
+            "help": "Banner landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-banner-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "banner"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The banner landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header class=\"fl-builder-content fl-builder-content-204 fl-builder-global-templates-locked fl-theme-builder-header-sticky\" data-post-id=\"204\" data-type=\"header\" data-sticky=\"1\" data-sticky-breakpoint=\"medium\" data-shrink=\"0\" data-overlay=\"1\" data-overlay-bg=\"default\" data-shrink-image-height=\"50px\" itemscope=\"itemscope\" itemtype=\"http://schema.org/WPHeader\">",
+                    "target": [
+                        "header"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-contentinfo-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the contentinfo landmark is at top level",
+            "help": "Contentinfo landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-contentinfo-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "contentinfo"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The contentinfo landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<footer class=\"fl-builder-content fl-builder-content-277 fl-builder-global-templates-locked\" data-post-id=\"277\" data-type=\"footer\" itemscope=\"itemscope\" itemtype=\"http://schema.org/WPFooter\">",
+                    "target": [
+                        "footer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-banner",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one banner landmark",
+            "help": "Document should not have more than one banner landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-banner?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-banner",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one banner landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header class=\"fl-builder-content fl-builder-content-204 fl-builder-global-templates-locked fl-theme-builder-header-sticky\" data-post-id=\"204\" data-type=\"header\" data-sticky=\"1\" data-sticky-breakpoint=\"medium\" data-shrink=\"0\" data-overlay=\"1\" data-overlay-bg=\"default\" data-shrink-image-height=\"50px\" itemscope=\"itemscope\" itemtype=\"http://schema.org/WPHeader\">",
+                    "target": [
+                        "header"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-contentinfo",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one contentinfo landmark",
+            "help": "Document should not have more than one contentinfo landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-contentinfo?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-contentinfo",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one contentinfo landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<footer class=\"fl-builder-content fl-builder-content-277 fl-builder-global-templates-locked\" data-post-id=\"277\" data-type=\"footer\" itemscope=\"itemscope\" itemtype=\"http://schema.org/WPFooter\">",
+                    "target": [
+                        "footer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-unique",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "help": "Ensures landmarks are unique",
+            "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-unique",
+                            "data": {
+                                "role": "banner",
+                                "accessibleText": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Landmarks must have a unique role or role/label/title (i.e. accessible name) combination"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header class=\"fl-builder-content fl-builder-content-204 fl-builder-global-templates-locked fl-theme-builder-header-sticky\" data-post-id=\"204\" data-type=\"header\" data-sticky=\"1\" data-sticky-breakpoint=\"medium\" data-shrink=\"0\" data-overlay=\"1\" data-overlay-bg=\"default\" data-shrink-image-height=\"50px\" itemscope=\"itemscope\" itemtype=\"http://schema.org/WPHeader\">",
+                    "target": [
+                        "header"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a href=\"https://olivekids.org.au/\" target=\"_self\" itemprop=\"url\">",
+                    "target": [
+                        "a[itemprop=\"url\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "list",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures that lists are structured correctly",
+            "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/list?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "only-listitems",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List element only has direct children that are allowed inside <li> elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<ul id=\"menu-main-menu\" class=\"menu uabb-creative-menu-horizontal uabb-toggle-arrows\">",
+                    "target": [
+                        "#menu-main-menu"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "listitem",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures <li> elements are used semantically",
+            "help": "<li> elements must be contained in a <ul> or <ol>",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/listitem?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<li id=\"menu-item-157\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-home uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/\"><span class=\"menu-item-text\">Home</span></a></li>",
+                    "target": [
+                        "#menu-main-menu > .menu-item-home"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport-large",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> can scale a significant amount",
+            "help": "Users should be able to zoom and scale the text up to 500%",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport-large?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport-large",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "<meta> tag does not prevent significant zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice",
+                "ACT"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> does not disable text scaling and zooming",
+            "help": "Zooming and scaling should not be disabled",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "<meta> tag does not disable zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "nested-interactive",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+            "help": "Interactive controls must not be nested",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/nested-interactive?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "no-focusable-content",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have focusable descendants"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<img loading=\"lazy\" decoding=\"async\" class=\"fl-photo-img wp-image-416 size-full\" src=\"https://olivekids.org.au/wp-content/uploads/ok-logo-1.png\" alt=\"ok-logo-1\" itemprop=\"image\" height=\"300\" width=\"1381\" title=\"ok-logo-1\" data-no-lazy=\"1\" srcset=\"https://olivekids.org.au/wp-content/uploads/ok-logo-1.png 1381w, https://olivekids.org.au/wp-content/uploads/ok-logo-1-600x130.png 600w, https://olivekids.org.au/wp-content/uploads/ok-logo-1-800x174.png 800w, https://olivekids.org.au/wp-content/uploads/ok-logo-1-768x167.png 768w\" sizes=\"(max-width: 1381px) 100vw, 1381px\">",
+                    "target": [
+                        "img"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "All page content is contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"fl-page\">",
+                    "target": [
+                        ".fl-page"
+                    ]
+                }
+            ]
+        }
+    ],
+    "violations": [
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#808080",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.94,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"fl-page-content\" itemprop=\"mainContentOfPage\">",
+                                    "target": [
+                                        ".fl-page-content"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.94 (foreground color: #808080, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<label for=\"username\">Username or email address&nbsp;<span class=\"required\" aria-hidden=\"true\">*</span><span class=\"screen-reader-text\">Required</span></label>",
+                    "target": [
+                        "label[for=\"username\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #808080, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#808080",
+                                "bgColor": "#fcfcfc",
+                                "contrastRatio": 3.84,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<input type=\"text\" class=\"woocommerce-Input woocommerce-Input--text input-text\" name=\"username\" id=\"username\" autocomplete=\"username\" value=\"\" required=\"\" aria-required=\"true\">",
+                                    "target": [
+                                        "#username"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.84 (foreground color: #808080, background color: #fcfcfc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<input type=\"text\" class=\"woocommerce-Input woocommerce-Input--text input-text\" name=\"username\" id=\"username\" autocomplete=\"username\" value=\"\" required=\"\" aria-required=\"true\">",
+                    "target": [
+                        "#username"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #808080, background color: #fcfcfc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#808080",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.94,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"fl-page-content\" itemprop=\"mainContentOfPage\">",
+                                    "target": [
+                                        ".fl-page-content"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.94 (foreground color: #808080, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<label for=\"password\">Password&nbsp;<span class=\"required\" aria-hidden=\"true\">*</span><span class=\"screen-reader-text\">Required</span></label>",
+                    "target": [
+                        "label[for=\"password\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #808080, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#808080",
+                                "bgColor": "#fcfcfc",
+                                "contrastRatio": 3.84,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<input class=\"woocommerce-Input woocommerce-Input--text input-text\" type=\"password\" name=\"password\" id=\"password\" autocomplete=\"current-password\" required=\"\" aria-required=\"true\">",
+                                    "target": [
+                                        "#password"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.84 (foreground color: #808080, background color: #fcfcfc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<input class=\"woocommerce-Input woocommerce-Input--text input-text\" type=\"password\" name=\"password\" id=\"password\" autocomplete=\"current-password\" required=\"\" aria-required=\"true\">",
+                    "target": [
+                        "#password"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #808080, background color: #fcfcfc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#808080",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.94,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"fl-page-content\" itemprop=\"mainContentOfPage\">",
+                                    "target": [
+                                        ".fl-page-content"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.94 (foreground color: #808080, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span>Remember me</span>",
+                    "target": [
+                        ".woocommerce-form-login__rememberme > span"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #808080, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#808080",
+                                "bgColor": "#fcfcfc",
+                                "contrastRatio": 3.84,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<button type=\"submit\" class=\"woocommerce-button button woocommerce-form-login__submit\" name=\"login\" value=\"Log in\">Log in</button>",
+                                    "target": [
+                                        ".woocommerce-form-login__submit"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.84 (foreground color: #808080, background color: #fcfcfc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<button type=\"submit\" class=\"woocommerce-button button woocommerce-form-login__submit\" name=\"login\" value=\"Log in\">Log in</button>",
+                    "target": [
+                        ".woocommerce-form-login__submit"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #808080, background color: #fcfcfc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#428bca",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.63,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"fl-page-content\" itemprop=\"mainContentOfPage\">",
+                                    "target": [
+                                        ".fl-page-content"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.63 (foreground color: #428bca, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://olivekids.org.au/my-account/lost-password/\">Lost your password?</a>",
+                    "target": [
+                        ".woocommerce-LostPassword > a"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.63 (foreground color: #428bca, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#808080",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.94,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"fl-page-content\" itemprop=\"mainContentOfPage\">",
+                                    "target": [
+                                        ".fl-page-content"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.94 (foreground color: #808080, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<label for=\"reg_email\">Email address&nbsp;<span class=\"required\" aria-hidden=\"true\">*</span><span class=\"screen-reader-text\">Required</span></label>",
+                    "target": [
+                        "label[for=\"reg_email\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #808080, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#808080",
+                                "bgColor": "#fcfcfc",
+                                "contrastRatio": 3.84,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<input type=\"email\" class=\"woocommerce-Input woocommerce-Input--text input-text\" name=\"email\" id=\"reg_email\" autocomplete=\"email\" value=\"\" required=\"\" aria-required=\"true\">",
+                                    "target": [
+                                        "#reg_email"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.84 (foreground color: #808080, background color: #fcfcfc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<input type=\"email\" class=\"woocommerce-Input woocommerce-Input--text input-text\" name=\"email\" id=\"reg_email\" autocomplete=\"email\" value=\"\" required=\"\" aria-required=\"true\">",
+                    "target": [
+                        "#reg_email"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #808080, background color: #fcfcfc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#808080",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.94,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"fl-page-content\" itemprop=\"mainContentOfPage\">",
+                                    "target": [
+                                        ".fl-page-content"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.94 (foreground color: #808080, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<label for=\"reg_password\">Password&nbsp;<span class=\"required\" aria-hidden=\"true\">*</span><span class=\"screen-reader-text\">Required</span></label>",
+                    "target": [
+                        "label[for=\"reg_password\"]"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #808080, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#808080",
+                                "bgColor": "#fcfcfc",
+                                "contrastRatio": 3.84,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<input type=\"password\" class=\"woocommerce-Input woocommerce-Input--text input-text\" name=\"password\" id=\"reg_password\" autocomplete=\"new-password\" required=\"\" aria-required=\"true\">",
+                                    "target": [
+                                        "#reg_password"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.84 (foreground color: #808080, background color: #fcfcfc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<input type=\"password\" class=\"woocommerce-Input woocommerce-Input--text input-text\" name=\"password\" id=\"reg_password\" autocomplete=\"new-password\" required=\"\" aria-required=\"true\">",
+                    "target": [
+                        "#reg_password"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #808080, background color: #fcfcfc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#808080",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.94,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"fl-page-content\" itemprop=\"mainContentOfPage\">",
+                                    "target": [
+                                        ".fl-page-content"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.94 (foreground color: #808080, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<span>Subscribe to our newsletter</span>",
+                    "target": [
+                        ".inline > span"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #808080, background color: #ffffff, font size: 10.5pt (14px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#808080",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.94,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"fl-page-content\" itemprop=\"mainContentOfPage\">",
+                                    "target": [
+                                        ".fl-page-content"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.94 (foreground color: #808080, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<p>",
+                    "target": [
+                        ".woocommerce-privacy-policy-text > p"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.94 (foreground color: #808080, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#428bca",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.63,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div class=\"fl-page-content\" itemprop=\"mainContentOfPage\">",
+                                    "target": [
+                                        ".fl-page-content"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.63 (foreground color: #428bca, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://olivekids.org.au/privacy-policy/\" class=\"woocommerce-privacy-policy-link\" target=\"_blank\" rel=\"noopener\">privacy policy</a>",
+                    "target": [
+                        ".woocommerce-privacy-policy-link"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.63 (foreground color: #428bca, background color: #ffffff, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#808080",
+                                "bgColor": "#fcfcfc",
+                                "contrastRatio": 3.84,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<button type=\"submit\" class=\"woocommerce-Button woocommerce-button button woocommerce-form-register__submit\" name=\"register\" value=\"Register\">Register</button>",
+                                    "target": [
+                                        ".woocommerce-Button"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.84 (foreground color: #808080, background color: #fcfcfc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<button type=\"submit\" class=\"woocommerce-Button woocommerce-button button woocommerce-form-register__submit\" name=\"register\" value=\"Register\">Register</button>",
+                    "target": [
+                        ".woocommerce-Button"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.84 (foreground color: #808080, background color: #fcfcfc, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#808080",
+                                "bgColor": "#f2f2f2",
+                                "contrastRatio": 3.52,
+                                "fontSize": "10.5pt (14px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<body class=\"page-template-default page page-id-645 theme-bb-theme give-recurring woocommerce-account woocommerce-page woocommerce-js fl-theme-builder-header fl-theme-builder-footer fl-theme-builder-singular fl-preset-default fl-full-width fl-search-active fl-builder-breakpoint-default\" itemscope=\"itemscope\" itemtype=\"https://schema.org/WebPage\">",
+                                    "target": [
+                                        "body"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.52 (foreground color: #808080, background color: #f2f2f2, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<p style=\"text-align: center;\">\u00a9 2020 Olive Kids. All Rights Reserved.</p>",
+                    "target": [
+                        ".fl-node-59080ede0839a > .fl-module-content.fl-node-content > .fl-rich-text > p"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.52 (foreground color: #808080, background color: #f2f2f2, font size: 10.5pt (14px), font weight: normal). Expected contrast ratio of 4.5:1"
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": "minor",
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-157",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-157\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-home uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/\"><span class=\"menu-item-text\">Home</span></a></li>",
+                                    "target": [
+                                        "#menu-main-menu-1 > .menu-item-home"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-157"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-157\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-home uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/\"><span class=\"menu-item-text\">Home</span></a></li>",
+                    "target": [
+                        "#menu-main-menu > .menu-item-home"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-157"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-464",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-464\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children uabb-has-submenu uabb-creative-menu uabb-cm-style\">",
+                                    "target": [
+                                        "#menu-main-menu-1 > .menu-item-has-children.uabb-has-submenu:nth-child(2)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-464"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-464\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children uabb-has-submenu uabb-creative-menu uabb-cm-style\">",
+                    "target": [
+                        "#menu-main-menu > .menu-item-has-children.uabb-has-submenu:nth-child(2)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-464"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-463",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-463\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/our-kids/\"><span class=\"menu-item-text\">Our Kids</span></a></li>",
+                                    "target": [
+                                        "#menu-main-menu-1 > .menu-item-has-children.uabb-has-submenu:nth-child(2) > .sub-menu > li:nth-child(1)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-463"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-463\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/our-kids/\"><span class=\"menu-item-text\">Our Kids</span></a></li>",
+                    "target": [
+                        "#menu-main-menu > .menu-item-has-children.uabb-has-submenu:nth-child(2) > .sub-menu > li:nth-child(1)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-463"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-460",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-460\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/our-partners/\"><span class=\"menu-item-text\">Our Partners</span></a></li>",
+                                    "target": [
+                                        "#menu-main-menu-1 > .menu-item-has-children.uabb-has-submenu:nth-child(2) > .sub-menu > li:nth-child(2)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-460"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-460\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/our-partners/\"><span class=\"menu-item-text\">Our Partners</span></a></li>",
+                    "target": [
+                        "#menu-main-menu > .menu-item-has-children.uabb-has-submenu:nth-child(2) > .sub-menu > li:nth-child(2)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-460"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-459",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-459\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/our-annual-reports/\"><span class=\"menu-item-text\">Our Annual Reports</span></a></li>",
+                                    "target": [
+                                        "#menu-main-menu-1 > .menu-item-has-children.uabb-has-submenu:nth-child(2) > .sub-menu > li:nth-child(3)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-459"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-459\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/our-annual-reports/\"><span class=\"menu-item-text\">Our Annual Reports</span></a></li>",
+                    "target": [
+                        "#menu-main-menu > .menu-item-has-children.uabb-has-submenu:nth-child(2) > .sub-menu > li:nth-child(3)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-459"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-462",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-462\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children uabb-has-submenu uabb-creative-menu uabb-cm-style\">",
+                                    "target": [
+                                        "#menu-main-menu-1 > .menu-item-has-children.uabb-has-submenu:nth-child(3)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-462"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-462\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children uabb-has-submenu uabb-creative-menu uabb-cm-style\">",
+                    "target": [
+                        "#menu-main-menu > .menu-item-has-children.uabb-has-submenu:nth-child(3)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-462"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-736",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-736\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/our-work/orphan-sponsorship/\"><span class=\"menu-item-text\">Child Sponsorship</span></a></li>",
+                                    "target": [
+                                        "#menu-main-menu-1 > .menu-item-has-children.uabb-has-submenu:nth-child(3) > .sub-menu > li:nth-child(1)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-736"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-736\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/our-work/orphan-sponsorship/\"><span class=\"menu-item-text\">Child Sponsorship</span></a></li>",
+                    "target": [
+                        "#menu-main-menu > .menu-item-has-children.uabb-has-submenu:nth-child(3) > .sub-menu > li:nth-child(1)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-736"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-7694",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-7694\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\">",
+                                    "target": [
+                                        "#menu-main-menu-1 > .menu-item-has-children.uabb-has-submenu:nth-child(3) > .sub-menu > li:nth-child(2)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-7694"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-7694\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\">",
+                    "target": [
+                        "#menu-main-menu > .menu-item-has-children.uabb-has-submenu:nth-child(3) > .sub-menu > li:nth-child(2)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-7694"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-9831",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-9831\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children uabb-has-submenu uabb-creative-menu uabb-cm-style\">",
+                                    "target": [
+                                        "#menu-main-menu-1 > .menu-item-has-children.uabb-has-submenu:nth-child(3) > .sub-menu > .menu-item-has-children.uabb-has-submenu"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-9831"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-9831\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children uabb-has-submenu uabb-creative-menu uabb-cm-style\">",
+                    "target": [
+                        "#menu-main-menu > .menu-item-has-children.uabb-has-submenu:nth-child(3) > .sub-menu > .menu-item-has-children.uabb-has-submenu"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-9831"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-533",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-533\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/our-work/medical-missions/\"><span class=\"menu-item-text\">Medical Programs</span></a></li>",
+                                    "target": [
+                                        "#menu-main-menu-1 > .menu-item-has-children.uabb-has-submenu:nth-child(3) > .sub-menu > .menu-item-has-children.uabb-has-submenu > .sub-menu > li:nth-child(1)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-533"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-533\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/our-work/medical-missions/\"><span class=\"menu-item-text\">Medical Programs</span></a></li>",
+                    "target": [
+                        "#menu-main-menu > .menu-item-has-children.uabb-has-submenu:nth-child(3) > .sub-menu > .menu-item-has-children.uabb-has-submenu > .sub-menu > li:nth-child(1)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-533"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-532",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-532\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/our-work/nutrition-initiative/\"><span class=\"menu-item-text\">Nutrition Initiative</span></a></li>",
+                                    "target": [
+                                        "#menu-main-menu-1 > .menu-item-has-children.uabb-has-submenu:nth-child(3) > .sub-menu > .menu-item-has-children.uabb-has-submenu > .sub-menu > li:nth-child(2)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-532"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-532\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/our-work/nutrition-initiative/\"><span class=\"menu-item-text\">Nutrition Initiative</span></a></li>",
+                    "target": [
+                        "#menu-main-menu > .menu-item-has-children.uabb-has-submenu:nth-child(3) > .sub-menu > .menu-item-has-children.uabb-has-submenu > .sub-menu > li:nth-child(2)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-532"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-531",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-531\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/our-work/education/\"><span class=\"menu-item-text\">Education</span></a></li>",
+                                    "target": [
+                                        "#menu-main-menu-1 > .menu-item-has-children.uabb-has-submenu:nth-child(3) > .sub-menu > .menu-item-has-children.uabb-has-submenu > .sub-menu > li:nth-child(3)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-531"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-531\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/our-work/education/\"><span class=\"menu-item-text\">Education</span></a></li>",
+                    "target": [
+                        "#menu-main-menu > .menu-item-has-children.uabb-has-submenu:nth-child(3) > .sub-menu > .menu-item-has-children.uabb-has-submenu > .sub-menu > li:nth-child(3)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-531"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-461",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-461\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children uabb-has-submenu uabb-creative-menu uabb-cm-style\">",
+                                    "target": [
+                                        "#menu-main-menu-1 > .menu-item-has-children.uabb-has-submenu:nth-child(4)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-461"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-461\" class=\"menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children uabb-has-submenu uabb-creative-menu uabb-cm-style\">",
+                    "target": [
+                        "#menu-main-menu > .menu-item-has-children.uabb-has-submenu:nth-child(4)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-461"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-40850",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-40850\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/get-involved/dinner/\"><span class=\"menu-item-text\">12th Fundraising Dinner</span></a></li>",
+                                    "target": [
+                                        "#menu-main-menu-1 > .menu-item-has-children.uabb-has-submenu:nth-child(4) > .sub-menu > li:nth-child(1)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-40850"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-40850\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/get-involved/dinner/\"><span class=\"menu-item-text\">12th Fundraising Dinner</span></a></li>",
+                    "target": [
+                        "#menu-main-menu > .menu-item-has-children.uabb-has-submenu:nth-child(4) > .sub-menu > li:nth-child(1)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-40850"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-620",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-620\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/get-involved/volunteer-for-olive-kids/\"><span class=\"menu-item-text\">Volunteer for Olive Kids</span></a></li>",
+                                    "target": [
+                                        "#menu-main-menu-1 > .menu-item-has-children.uabb-has-submenu:nth-child(4) > .sub-menu > li:nth-child(2)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-620"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-620\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/get-involved/volunteer-for-olive-kids/\"><span class=\"menu-item-text\">Volunteer for Olive Kids</span></a></li>",
+                    "target": [
+                        "#menu-main-menu > .menu-item-has-children.uabb-has-submenu:nth-child(4) > .sub-menu > li:nth-child(2)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-620"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-458",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-458\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/contact-us/\"><span class=\"menu-item-text\">Contact Us</span></a></li>",
+                                    "target": [
+                                        "#menu-main-menu-1 > li:nth-child(5)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-458"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-458\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/contact-us/\"><span class=\"menu-item-text\">Contact Us</span></a></li>",
+                    "target": [
+                        "#menu-main-menu > li:nth-child(5)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-458"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-534",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-534\" class=\"menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children uabb-has-submenu uabb-creative-menu uabb-cm-style\">",
+                                    "target": [
+                                        "#menu-main-menu-1 > .current-menu-ancestor.current-menu-parent.current_page_parent"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-534"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-534\" class=\"menu-item menu-item-type-post_type menu-item-object-page current-menu-ancestor current-menu-parent current_page_parent current_page_ancestor menu-item-has-children uabb-has-submenu uabb-creative-menu uabb-cm-style\">",
+                    "target": [
+                        "#menu-main-menu > .current-menu-ancestor.current-menu-parent.current_page_parent"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-534"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-621",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-621\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/sponsor-an-orphan/\"><span class=\"menu-item-text\">Sponsor a Child</span></a></li>",
+                                    "target": [
+                                        "#menu-main-menu-1 > .current-menu-ancestor.current-menu-parent.current_page_parent > .sub-menu > li:nth-child(1)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-621"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-621\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/sponsor-an-orphan/\"><span class=\"menu-item-text\">Sponsor a Child</span></a></li>",
+                    "target": [
+                        "#menu-main-menu > .current-menu-ancestor.current-menu-parent.current_page_parent > .sub-menu > li:nth-child(1)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-621"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-678",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-678\" class=\"menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-645 current_page_item uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/my-account/\"><span class=\"menu-item-text\">Sponsor Login</span></a></li>",
+                                    "target": [
+                                        "#menu-main-menu-1 > .current-menu-ancestor.current-menu-parent.current_page_parent > .sub-menu > .current-menu-item.page_item.page-item-645"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-678"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-678\" class=\"menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-645 current_page_item uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/my-account/\"><span class=\"menu-item-text\">Sponsor Login</span></a></li>",
+                    "target": [
+                        "#menu-main-menu > .current-menu-ancestor.current-menu-parent.current_page_parent > .sub-menu > .current-menu-item.page_item.page-item-645"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-678"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "menu-item-457",
+                            "relatedNodes": [
+                                {
+                                    "html": "<li id=\"menu-item-457\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/donate/\"><span class=\"menu-item-text\">Donate</span></a></li>",
+                                    "target": [
+                                        "#menu-main-menu-1 > li:nth-child(7)"
+                                    ]
+                                }
+                            ],
+                            "impact": "minor",
+                            "message": "Document has multiple static elements with the same id attribute: menu-item-457"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "minor",
+                    "html": "<li id=\"menu-item-457\" class=\"menu-item menu-item-type-post_type menu-item-object-page uabb-creative-menu uabb-cm-style\"><a href=\"https://olivekids.org.au/donate/\"><span class=\"menu-item-text\">Donate</span></a></li>",
+                    "target": [
+                        "#menu-main-menu > li:nth-child(7)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Document has multiple static elements with the same id attribute: menu-item-457"
+                }
+            ]
+        },
+        {
+            "id": "landmark-one-main",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has a main landmark",
+            "help": "Document should have one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-one-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-main",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have a main landmark"
+                        }
+                    ],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<html lang=\"en-AU\" class=\"chrome chrome129\">",
+                    "target": [
+                        "html"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"https://www.facebook.com/OliveKids/\" target=\"_self\"> <i class=\"dashicons dashicons-before dashicons-facebook\" aria-hidden=\"true\"></i> </a>",
+                    "target": [
+                        ".fl-icon:nth-child(1) > a[target=\"_self\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"https://www.instagram.com/OliveKids/\" target=\"_self\"> <i class=\"ua-icon ua-icon-instagram-with-circle\" aria-hidden=\"true\"></i> </a>",
+                    "target": [
+                        ".fl-icon:nth-child(2) > a[target=\"_self\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"https://www.twitter.com/OliveKidsAus/\" target=\"_self\"> <i class=\"ua-icon ua-icon-twitter2\" aria-hidden=\"true\"></i> </a>",
+                    "target": [
+                        ".fl-icon:nth-child(3) > a[target=\"_self\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"https://www.youtube.com/OliveKidsAus\" target=\"_self\"> <i class=\"ua-icon ua-icon-youtube-with-circle\" aria-hidden=\"true\"></i> </a>",
+                    "target": [
+                        ".fl-icon:nth-child(4) > a[target=\"_self\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                }
+            ]
+        },
+        {
+            "id": "page-has-heading-one",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+            "help": "Page should contain a level-one heading",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/page-has-heading-one?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-heading-one",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Page must have a level-one heading"
+                        }
+                    ],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<html lang=\"en-AU\" class=\"chrome chrome129\">",
+                    "target": [
+                        "html"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Page must have a level-one heading"
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"fl-row fl-row-full-width fl-row-bg-color fl-node-5b20e470bc3d0 fl-row-default-height fl-row-align-center\" data-node=\"5b20e470bc3d0\">",
+                    "target": [
+                        ".fl-node-5b20e470bc3d0"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h2>Login</h2>",
+                    "target": [
+                        ".u-column1 > h2"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p class=\"woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide\">",
+                    "target": [
+                        ".woocommerce-form-login > .woocommerce-form-row--wide.woocommerce-form-row.form-row-wide:nth-child(1)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p class=\"woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide\">",
+                    "target": [
+                        ".woocommerce-form-login > .woocommerce-form-row--wide.woocommerce-form-row.form-row-wide:nth-child(2)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<label class=\"woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme\"> <input class=\"woocommerce-form__input woocommerce-form__input-checkbox\" name=\"rememberme\" type=\"checkbox\" id=\"rememberme\" value=\"forever\"> <span>Remember me</span> </label>",
+                    "target": [
+                        ".woocommerce-form-login__rememberme"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p class=\"woocommerce-LostPassword lost_password\"> <a href=\"https://olivekids.org.au/my-account/lost-password/\">Lost your password?</a></p>",
+                    "target": [
+                        ".woocommerce-LostPassword"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h2>Register</h2>",
+                    "target": [
+                        ".u-column2 > h2"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p class=\"woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide\">",
+                    "target": [
+                        ".woocommerce-form-register > .woocommerce-form-row--wide.woocommerce-form-row.form-row-wide:nth-child(1)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p class=\"woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide\">",
+                    "target": [
+                        ".woocommerce-form-register > .woocommerce-form-row--wide.woocommerce-form-row.form-row-wide:nth-child(2)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p class=\"form-row form-row-wide mailchimp-newsletter\">",
+                    "target": [
+                        ".mailchimp-newsletter"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"woocommerce-privacy-policy-text\">",
+                    "target": [
+                        ".woocommerce-privacy-policy-text"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                }
+            ]
+        }
+    ]
+}
