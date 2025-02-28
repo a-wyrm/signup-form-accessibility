@@ -10,8 +10,6 @@ fn main() {
         println!("Please input your guess.");
         let secret_number = rand::rng().random_range(1..=100);
 
-        let numb = 1;
-
         let mut guess = String::new();
         io::stdin()
         .read_line(&mut guess)
