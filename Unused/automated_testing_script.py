@@ -1,5 +1,40 @@
-import json
-import os
+# Resources: https://blog.pamelafox.org/2023/07/automated-accessibility-audits-for.html
+# https://playwright.dev/
+# https://pamelafox.github.io/axe-playwright-python/
+
+import json, os, csv
+from playwright.sync_api import sync_playwright
+from axe_core_python.sync_playwright import Axe
+from pathlib import Path
+from urllib.parse import urlparse
+
+
+cwd = Path.cwd()
+axe = Axe()
+
+with open('save.csv', newline='') as csvfile:
+        with sync_playwright() as playwright:
+            reader = csv.DictReader(csvfile)
+            for row in reader:
+                parsed_url = urlparse(row['Values'])
+
+                browser = playwright.chromium.launch()
+                page = browser.new_page()
+
+                # Need to account for 'playwright._impl._errors.Error: Page.goto: net::ERR_EMPTY_RESPONSE' error here
+                try:
+                    page.goto(row['Values'])
+                    results = axe.run(page)
+                    results.save_to_file(cwd/'JSON/', parsed_url.netloc+'.json')
+                    browser.close()
+                except Exception as error:
+                    with open('invalid.csv', 'a', newline='') as invalid_file:
+                        writer = csv.writer(invalid_file)
+                        writer.writerow([row['Values'], str(error)])
+                    continue
+
+
+
 
 # remove and clean file
 def remove_inapplicable(source_file, destination_folder):
@@ -67,7 +102,7 @@ def wcag_check(json_file_path):
             return
                
 
-source_path = "./Processed Data/Cleaned JSON/Failed/"
+""" source_path = "./Processed Data/Cleaned JSON/Failed/"
 destination_folder1 = "./Processed Data/Cleaned JSON/Failed/Best Practices"
 destination_folder2 = "./Failed"
 items = os.listdir(source_path)
@@ -75,4 +110,4 @@ items = os.listdir(source_path)
 for i in range(len(items)):
     #remove_inapplicable(source_path+items[i], "./Cleaned JSON/")
     #check_violations(source_path+items[i], destination_folder1, destination_folder2)
-    wcag_check(source_path+items[i])
+    wcag_check(source_path+items[i]) """

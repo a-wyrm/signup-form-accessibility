@@ -4,7 +4,6 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
-
 def test_WCAG_211_keyboard(driver, url):
     """
     Checks for a keyboard trap on a website.
@@ -30,7 +29,6 @@ def test_WCAG_211_keyboard(driver, url):
         if driver.switch_to.active_element == first_element and len(focused_elements) > 1: # check focused_elements len to prevent early stop
             return False        
     return True
-
 
 def test_WCAG_131_info(driver, url):
     """
@@ -63,7 +61,6 @@ def test_WCAG_131_info(driver, url):
                 return False
 
     return True
-
 
 def test_247_visible(driver, url):
 

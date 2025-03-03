@@ -1,11 +1,12 @@
-import os, json, shutil, re
+import os, json, shutil, csv, re
 import numpy as np
 import pandas as pd
 
 # get extension path
 dir_path = os.getcwd()
-extension_dir = os.path.join(dir_path, 'Processed Data', 'sign_up_final.csv')
-df = pd.read_csv(extension_dir, usecols = ['Website', 'Status'])
+file_dir = os.path.join(dir_path, 'Processed Data', 'save.csv')
+df = pd.read_csv(file_dir, usecols = ['Values'])
+
 
 def create_separate():
     output_dir = os.path.join(dir_path, 'output_csvs')
@@ -47,41 +48,26 @@ def create_separate():
     retest_df.to_csv(os.path.join(output_dir, "no_data_urls.csv"), index=False)
     other_df.to_csv(os.path.join(output_dir, "other_retested.csv"), index=False)
 
-
 dict_to_walk = os.path.join(dir_path, 'Processed Data', 'Cleaned JSON')
 
 def valid_signups():
+    to_array = df['Values'].to_numpy()
 
-    # Create folder
-    if not os.path.exists("Filtered Sign Up Audits"):
-        os.makedirs("Filtered Sign Up Audits")
-
-    to_array = df['Website'].to_numpy()
-    check_diff = []
-    for root, _, files in os.walk(dict_to_walk):
-        for file in files:
-            if file.endswith('.json'):
-                file_path = os.path.join(root, file)
-                try:
-                    with open(file_path, 'r', encoding='utf-8') as jsonfile:
-                        audit_data = json.load(jsonfile)
-                        if 'url' in audit_data and audit_data['url'] in to_array:
-                            index = np.where(to_array == audit_data['url'])[0]
-                            if len(index) > 0:
-                                to_array = np.delete(to_array, index[0])
-                            """ output_file_path = os.path.join("Filtered Sign Up Audits", file)
-                            if not os.path.isfile(output_file_path):
-                                shutil.copy2(file_path, output_file_path)
-                                print(f"Copied: {file}")
-                            
-                            check_diff.append(audit_data['url']) """
-
-                except FileNotFoundError:
-                    print(f"Warning: File not found {file}")
-    
-    data_d = pd.DataFrame(to_array, columns=['Values'])
-    data_d.to_csv("not_saved.csv", index=False)
-
+    with open('not_saved1.csv', 'a', encoding='UTF8', newline='') as f:
+        writer = csv.writer(f)
+        for url in to_array:
+            for root, _, files in os.walk(dict_to_walk):
+                for file in files:
+                    if file.endswith('.json'):
+                        file_path = os.path.join(root, file)
+                        try:
+                            with open(file_path, 'r', encoding='utf-8') as jsonfile:
+                                audit_data = json.load(jsonfile)
+                                if 'url' in audit_data and audit_data['url'] == url:
+                                    print(f'URL: {url} in files!!')
+                                    writer.writerow(url)
+                        except FileNotFoundError:
+                            print(f"Warning: File not found {file}")
 
 valid_signups()
 
@@ -99,9 +85,6 @@ def edit_sting(url):
     url_name = url_name[:last_dot_index]
 
     return url_name
-
-
-dict_to_walk = os.path.join(dir_path, 'Filtered Sign Up Audits')
 
 def get_diff_audits(directory):
 
@@ -130,9 +113,6 @@ def get_diff_audits(directory):
     data_d = pd.DataFrame(diff, columns=['Values'])
     data_d.to_csv("difference2.csv", index=False)
  """
-difference_dir = os.path.join(dir_path, 'Processed Data', 'difference.csv')
-difference_dir = pd.read_csv(difference_dir, usecols = ['Values'])
+#difference_dir = os.path.join(dir_path, 'Processed Data', 'difference.csv')
+#difference_dir = pd.read_csv(difference_dir, usecols = ['Values'])
 #get_diff_audits(difference_dir)
-
-#to_array = df['Website'].to_numpy()
-#print(len(to_array))
