@@ -45,9 +45,9 @@ def count_violations(json_file_path, file_name, csv_file_path):
             writer.writerow([name[0], length])
 
     
-source_path = "./Processed Data/Cleaned JSON/Failed/WCAG AA/"
-destination_folder1 = "./Passed"
-destination_folder2 = "./Failed"
+source_path = "Filtered Sign Up Audits/"
+#destination_folder1 = "./Passed"
+#destination_folder2 = "./Failed"
 items = os.listdir(source_path)
 
 for i in range(len(items)):

@@ -1,6 +1,4 @@
-import json
-import os
-import csv
+import json, os, csv
 
 
 def process_severity(json_file_path, severity_counts):
@@ -71,31 +69,33 @@ def import_violations_and_severity_to_csv(json_file_path, violation_counts, seve
 
 
 # change source path also
-source_path = "./Cleaned JSON/Failed/WCAG A/"
+dir_path = os.getcwd()
+file_dir = os.path.join(dir_path, 'Filtered Sign Up Audits')
 violation_counts = {}
 severity = {}
 severity_counts = {}
-items = os.listdir(source_path)
+items = os.listdir(file_dir)
 
-for i in range(len(items)):
-    import_violations_and_severity_to_csv(source_path+items[i], violation_counts, severity)
+""" for i in range(len(items)):
+    import_violations_and_severity_to_csv(file_dir+"/"+items[i], violation_counts, severity)
     with open('violations_checker.csv', 'w+', newline='') as report_file:
         fieldnames = ['Violation ID', 'Count', 'Severity']
         writer = csv.DictWriter(report_file, fieldnames=fieldnames)
         writer.writeheader()
         for violation_id, count in violation_counts.items():
             writer.writerow({'Violation ID': violation_id, 'Count': count, 'Severity': severity[violation_id]})
-
+ """
 
 
 
 # comment these out if you want to count violations individually
 """ for i in range(len(items)):
-    process_violations(source_path+items[i], violation_counts)
+    process_violations(file_dir+"/"+items[i], violation_counts)
 
     with open('violations_checker.txt', 'w+') as report_file:
         for violation_id, count in violation_counts.items():
-            report_file.write(f"{violation_id}: {count}\n") """
+            report_file.write(f"{violation_id}: {count}\n")
+ """
 
 """ # change this to different functions
 for i in range(len(items)):

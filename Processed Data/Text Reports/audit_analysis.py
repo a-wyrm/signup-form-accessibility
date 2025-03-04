@@ -46,10 +46,10 @@ def count_errors(json_file_path):
 
 
 #source_path = "./Full Accessibility Audit/"
-source_path = "./Text Reports/Less Popular/"
+source_path = "./Filtered Sign Up Audits/"
 items = os.listdir(source_path)
 
 for i in range(len(items)):
     v = {}
-    count_errors(source_path+items[i])
+    audit_checker(source_path+items[i])
 
