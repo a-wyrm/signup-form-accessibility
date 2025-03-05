@@ -83,10 +83,10 @@ def test_253(driver, url):
         if _.has_attr('aria-label'):
 
             aria_label_text = _.get('aria-label').replace(" ", "").lower()
-            print(f"aria-label: {aria_label_text}")
+            #print(f"aria-label: {aria_label_text}")
 
             text_in_element = _.text.replace(" ", "").lower()
-            print(f"element text: {text_in_element}")
+            #print(f"element text: {text_in_element}")
 
             if (aria_label_text not in text_in_element):
                 return False
@@ -96,7 +96,17 @@ def test_253(driver, url):
 
 
 def test_247_visible(driver, url):
+    """
+    Tests that focus is visible.
 
+    Args:
+        driver: Chrome driver.
+        url: URL of website
+    Returns:
+        True: No 2.4.7 violation!
+        False: 2.4.7 violation.
+
+    """
     driver.get(url)
     focusable_elements = driver.find_elements(By.XPATH, "//*[self::a or self::button or self::input or self::textarea or self::select][@href or @tabindex='0' or @type='button' or @type='submit' or @type='reset' or @type='text' or @type='password' or @type='checkbox' or @type='radio' or @type='email' or @type='number' or @type='tel']")
     #print(focusable_elements)
@@ -127,9 +137,29 @@ def test_247_visible(driver, url):
         if focus_style == "none" and border_style == "none" and background_color == "rgba(0, 0, 0, 0)" and element_class.find("focus") != -1: #If no outline, border, or background color change.
             num_of_unfocusable_elements+=1
             #print(f"Element {element} doesn't have a focus.")
+            return False
         else:
             #print(f"Element {element} does have a focus.")
             continue
+    
+    return True
+
+
+def test_331_errorid(driver, url):
+    """
+    Tests that focus is visible.
+
+    Args:
+        driver: Chrome driver.
+        url: URL of website
+    Returns:
+        True: No 2.4.7 violation!
+        False: 2.4.7 violation.
+
+    """
+    driver.get(url)
+
+    return True
 
 
 driver = webdriver.Chrome()
