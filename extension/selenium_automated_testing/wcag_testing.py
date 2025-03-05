@@ -4,8 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 
-def test_WCAG_211_keyboard(driver, url):
-    """
+""" def test_WCAG_211_keyboard(driver, url):
     Checks for a keyboard trap on a website.
 
     Args:
@@ -14,7 +13,7 @@ def test_WCAG_211_keyboard(driver, url):
     Returns:
         True: No keyboard trap!
         False: Keyboard trap.
-    """
+
     focused_elements = []
     driver.get(url)
 
@@ -28,10 +27,10 @@ def test_WCAG_211_keyboard(driver, url):
         # check if we are back to the initial element
         if driver.switch_to.active_element == first_element and len(focused_elements) > 1: # check focused_elements len to prevent early stop
             return False        
-    return True
+    return True """
 
-def test_WCAG_131_info(driver, url):
-    """
+""" def test_WCAG_131_info(driver, url):
+
     Tests that information, structure, and relationships conveyed through presentation can be programmatically determined or are available in text.
 
     Args:
@@ -40,7 +39,7 @@ def test_WCAG_131_info(driver, url):
     Returns:
         True: No 1.3.1 violation!
         False: 1.3.1 violation.
-    """
+
     driver.get(url)
     soup = BeautifulSoup(driver.page_source, 'html.parser')
 
@@ -60,7 +59,41 @@ def test_WCAG_131_info(driver, url):
                 print(f"Warning: Label with for='{input_id}' has no corresponding input.")
                 return False
 
+    return True """
+
+
+def test_253(driver, url):
+    """
+    Tests that aria label matches text of element.
+
+    Args:
+        driver: Chrome driver.
+        url: URL of website
+    Returns:
+        True: No 2.5.3 violation!
+        False: 2.5.3 violation.
+
+    """
+    driver.get(url)
+    soup = BeautifulSoup(driver.page_source, 'html.parser')
+
+    inherits = soup.find_all(['tr', 'thread', 'tbody', 'tfoot', 'table', 'ol', 'ul', 'div', 'dl'])
+
+    for _ in inherits:
+        if _.has_attr('aria-label'):
+
+            aria_label_text = _.get('aria-label').replace(" ", "").lower()
+            print(f"aria-label: {aria_label_text}")
+
+            text_in_element = _.text.replace(" ", "").lower()
+            print(f"element text: {text_in_element}")
+
+            if (aria_label_text not in text_in_element):
+                return False
+            
     return True
+
+
 
 def test_247_visible(driver, url):
 
@@ -103,6 +136,6 @@ driver = webdriver.Chrome()
 
 #passes_131 = test_WCAG_131_info(driver, "https://burtsgh.com/my-account/")
 # passes_131 and
-passes_247 = test_247_visible(driver, "https://burtsgh.com/my-account/")
+passes_247 = test_253(driver, "https://45books.com/account/register")
 
 driver.quit()

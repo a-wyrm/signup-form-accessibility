@@ -89,13 +89,13 @@ items = os.listdir(file_dir)
 
 
 # comment these out if you want to count violations individually
-""" for i in range(len(items)):
+for i in range(len(items)):
     process_violations(file_dir+"/"+items[i], violation_counts)
 
     with open('violations_checker.txt', 'w+') as report_file:
         for violation_id, count in violation_counts.items():
             report_file.write(f"{violation_id}: {count}\n")
- """
+
 
 """ # change this to different functions
 for i in range(len(items)):
