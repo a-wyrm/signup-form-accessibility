@@ -3,6 +3,10 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.support import expected_conditions as EC
+import signup_vocab
 
 """ def test_WCAG_211_keyboard(driver, url):
     Checks for a keyboard trap on a website.
@@ -145,6 +149,16 @@ def test_247_visible(driver, url):
     return True
 
 
+def enter_email(field):
+    for regex in signup_vocab.usernameVocabs:
+        if regex.search(str(field)) or regex.search(str(field.get('type'))) or regex.search(str(field.get('id'))):
+            return field
+
+def enter_pw(field):
+    for regex in signup_vocab.passwordVocabs:
+        if regex.search(str(field)) or regex.search(str(field.get('type'))) or regex.search(str(field.get('id'))):
+            return field
+
 def test_331_errorid(driver, url):
     """
     Tests that focus is visible.
@@ -158,14 +172,78 @@ def test_331_errorid(driver, url):
 
     """
     driver.get(url)
+    soup = BeautifulSoup(driver.page_source, 'lxml')
 
+    buttons = soup.find_all(['button'])
+    potential_buttons = soup.find_all(['div', 'span'], {"class": re.compile(r'btn'), "role": "button"})
+
+    form_fields = soup.find_all(['input'])
+    hidden_tag = soup.find("input", {'type': 'password'}) # fields may be hidden
+    if hidden_tag:
+        form_fields.append(hidden_tag)
+
+    for add_buttons in potential_buttons:
+        buttons.append(add_buttons)
+
+
+    username_email = None
+    password_field = None
+    
+    for field in form_fields:
+        if_username_email = enter_email(field)
+        if_password = enter_pw(field)
+
+        if if_username_email is not None:
+            username_email = if_username_email
+        if if_password is not None:
+            password_field = if_password
+        
+    print(username_email)
+    print(password_field)
+
+    """ for _ in buttons:
+        button_text = _.text.strip()
+        for pattern in signup_vocab.registerVocabs:
+            if pattern.search(button_text):
+                print(f"Clickable button: {_}")
+
+
+
+                try: 
+                    selenium_button = WebDriverWait(driver, 10).until(
+                        EC.element_to_be_clickable((By.XPATH, f"//*[normalize-space()='{button_text}']"))
+                    )
+                    selenium_button.click()
+                    print(f"Clicked button with text: '{button_text}'")
+
+                    time.sleep(5)
+                    return True
+                
+                except Exception as e:
+                    try:
+                        classes = _.get('class')
+                        if classes:
+                            for class_name in classes:
+                                selenium_button = WebDriverWait(driver, 10).until(
+                                    EC.element_to_be_clickable((By.XPATH, f"//*[contains(@class, '{class_name}')]"))
+                                )
+                                if button_text in selenium_button.text: #double check text.
+                                    selenium_button.click()
+                                    print(f"Clicked button with class: '{class_name}' and text: '{button_text}'")
+                                    return True #success
+                    except Exception as e2:
+                        print(f"Failed to click button with class and text '{button_text}': {e2}")
+                        return False
+ """
     return True
 
 
-driver = webdriver.Chrome()
+chrome_options= Options()
+chrome_options.headless= True
+driver = webdriver.Chrome(options=chrome_options)
 
 #passes_131 = test_WCAG_131_info(driver, "https://burtsgh.com/my-account/")
 # passes_131 and
-passes_247 = test_253(driver, "https://45books.com/account/register")
+passes_247 = test_331_errorid(driver, "https://45books.com/account/register")
 
 driver.quit()
