@@ -4,6 +4,8 @@ registerVocabs = [
     re.compile(r'\b(create|free|locate|open|activate)\b', re.IGNORECASE),
     re.compile(r'\b(reg).*?(user)\b', re.IGNORECASE),
     re.compile(r'sign[a-zA-Z\s]+up', re.IGNORECASE),
+    re.compile(r'Play[a-zA-Z\s]', re.IGNORECASE),
+    re.compile(r'submit', re.IGNORECASE),
     re.compile(r'zugang anlegen', re.IGNORECASE),
     re.compile(r'angaben prüfen', re.IGNORECASE),
     re.compile(r'konto erstellen', re.IGNORECASE),
