@@ -1,10 +1,13 @@
-import time, re, random
+import time, re, random, os, csv, json, shutil
+from urllib.parse import urlparse
 from bs4 import BeautifulSoup
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
+from selenium.common.exceptions import NoSuchElementException, StaleElementReferenceException, TimeoutException
+
 from selenium_stealth import stealth
 
 def setup_driver():
@@ -91,7 +94,7 @@ import signup_vocab
     return True """
 
 
-def test_253(driver, url):
+def test_253(driver):
     """
     Tests that aria label matches text of element.
 
@@ -103,7 +106,6 @@ def test_253(driver, url):
         False: 2.5.3 violation.
 
     """
-    driver.get(url)
     soup = BeautifulSoup(driver.page_source, 'html.parser')
 
     inherits = soup.find_all(['tr', 'thread', 'tbody', 'tfoot', 'table', 'ol', 'ul', 'div', 'dl'])
@@ -122,53 +124,60 @@ def test_253(driver, url):
             
     return True
 
-def test_247_visible(driver, url):
+def test_247_visible(driver):
     """
     Tests that focus is visible.
 
     Args:
         driver: Chrome driver.
-        url: URL of website
+
     Returns:
         True: No 2.4.7 violation!
         False: 2.4.7 violation.
-
     """
-    driver.get(url)
-    focusable_elements = driver.find_elements(By.XPATH, "//*[self::a or self::button or self::input or self::textarea or self::select][@href or @tabindex='0' or @type='button' or @type='submit' or @type='reset' or @type='text' or @type='password' or @type='checkbox' or @type='radio' or @type='email' or @type='number' or @type='tel']")
-    #print(focusable_elements)
+    try:
+        focusable_elements = driver.find_elements(By.XPATH, "//*[self::a or self::button or self::input or self::textarea or self::select][(@href and @href != '') or @tabindex='0' or @type='button' or @type='submit' or @type='reset' or @type='text' or @type='password' or @type='checkbox' or @type='radio' or @type='email' or @type='number' or @type='tel']")
+    
+    except Exception as e:
+        print(f"Error finding focusable elements: {e}")
+        return "Error finding focusable element."
+
     num_of_unfocusable_elements = 0
+
     for element in focusable_elements:
+        try:
+            element.send_keys(webdriver.Keys.TAB)
+            time.sleep(0.3) # reduced sleep time to increase speed, adjust as needed.
 
+            element_class = ""
 
-        # Simulate tabbing to the element
-        element.send_keys(webdriver.Keys.TAB)
-        time.sleep(.5)
+            if element.tag_name == 'a':
+                try:
+                    parent_li = element.find_element(By.XPATH, "./..")  # get parent
+                    element_class = parent_li.get_attribute("class") or "" #Handle None return
+                except NoSuchElementException:
+                    element_class = ""
+            elif element.tag_name == 'li':
+                element_class = element.get_attribute("class") or ""
 
-        element_class = ""
+            # Check for visible focus indicators (e.g., outline, border, background change)
+            focus_style = element.value_of_css_property("outline") or ""
+            border_style = element.value_of_css_property("border") or "" 
+            background_color = element.value_of_css_property("background-color") or "" 
 
-        if element.tag_name == 'a':
-            parent_li = element.find_element(By.XPATH, "./..") # get parent
-            element_class = parent_li.get_attribute("class")
-        elif element.tag_name == 'li':
-            element_class = element.get_attribute("class")
+            # Check for visible focus indicators
+            if (focus_style == "none" and border_style == "none" and background_color == "rgba(0, 0, 0, 0)") and "focus" in element_class.lower(): # added lower() to handle different casing, and "in" to avoid needing exact match
+                num_of_unfocusable_elements += 1
+                print(f"Violation found on element: {element}")
+                return False
 
-        #print(element_class)
-
-        # Check for visible focus indicators (e.g., outline, border, background change)
-        focus_style = element.value_of_css_property("outline")
-        border_style = element.value_of_css_property("border")
-        background_color = element.value_of_css_property("background-color")
-    
-
-        if focus_style == "none" and border_style == "none" and background_color == "rgba(0, 0, 0, 0)" and element_class.find("focus") != -1: #If no outline, border, or background color change.
-            num_of_unfocusable_elements+=1
-            #print(f"Element {element} doesn't have a focus.")
-            return False
-        else:
-            #print(f"Element {element} does have a focus.")
+        except (StaleElementReferenceException, NoSuchElementException, TimeoutException) as e:
+            print(f"Element interaction error: {e}")
+            continue #skip to the next Element
+        except Exception as e:
+            print(f"Unexpected error during element check: {e}")
             continue
-    
+
     return True
 
 
@@ -217,12 +226,16 @@ def enter_email_field(driver, input_field):
         except Exception as e2:
             print(f"Failed to click button with class and text '{input_field}': {e2}")
             return False
-
-
 def enter_info(driver, username_email, password_field):
 
-    username_has_required = ('required' in username_email.attrs)
-    pw_has_required = ('required' in password_field.attrs)
+    def has_required_attribute(element):
+        """Helper function to check for 'required' or 'aria-required'."""
+        if element and hasattr(element, 'attrs'):
+            return 'required' in element.attrs or 'aria-required' in element.attrs
+        return False
+
+    username_has_required = has_required_attribute(username_email)
+    pw_has_required = has_required_attribute(password_field)
 
     # We want to get the password field... not the email field
     if password_field and not pw_has_required and username_has_required:
@@ -264,7 +277,7 @@ def find_errors(driver):
 
 def test_331_errorid(driver, url):
     """
-    Tests that focus is visible.
+    Tests that there are error meesages in input fields.
 
     Args:
         driver: Chrome driver.
@@ -274,8 +287,9 @@ def test_331_errorid(driver, url):
         False: 2.4.7 violation.
 
     """
+    parsed_url = urlparse(url)
+    path = parsed_url.path
 
-    driver.get(url)
     soup = BeautifulSoup(driver.page_source, 'lxml')
 
     buttons = soup.find_all(['button'])
@@ -364,16 +378,84 @@ def test_331_errorid(driver, url):
                                 return found_errors
                     except Exception as e2:
                         print(f"Failed to click button with class and text '{button_text}': {e2}")
-                        return "Error"
+                        return "Possible error due to shopify CAPTCHA."
 
-    return "Possible error: may be regex issue"
+    if "/account/" in path:
+        return "Possible error due to shopify CAPTCHA."
+    else:
+        return "Possible regex issue"
 
-driver = setup_driver()
 
-#passes_131 = test_WCAG_131_info(driver, "https://burtsgh.com/my-account/")
-# passes_131 and
-# https://www.athleticsmania.com/?gotoManageAccount
-# https://affcoups.com/register/
-passes_247 = test_331_errorid(driver, "https://www.zopiclonepill.com/my-account/?action=register")
-print(passes_247)
-driver.quit()
+def test_337_reentry(driver):
+    """
+    Tests that there aren't any unnecessary re-entry fields (that is, those that aren't passwords).
+
+    Args:
+        driver: Chrome driver.
+        url: URL of website
+    Returns:
+        True: No 3.3.7 violation!
+        False: 3.3.7 violation.
+
+    """
+    
+    soup = BeautifulSoup(driver.page_source, 'lxml')
+
+    potential_reentry = []
+
+    # Find divs based on ID
+    id_matches = soup.find_all(['input'], id=re.compile(r'(re-enter|reenter|retype|re-type)(?!.*password)', re.IGNORECASE))
+    potential_reentry.extend(id_matches)
+    class_matches = soup.find_all(['input'], class_=re.compile(r'(re-enter|reenter|retype|re-type)(?!.*password)', re.IGNORECASE))
+    potential_reentry.extend(class_matches)
+    name_matches = soup.find_all(['input'], name_=re.compile(r'(re-enter|reenter|retype|re-type)(?!.*password)', re.IGNORECASE))
+    potential_reentry.extend(name_matches)
+
+    if potential_reentry != []:
+        print(f'Potential re-entry forms: {potential_reentry}')
+        return False
+    else:
+        return True
+
+
+if __name__ == "__main__":
+    driver = setup_driver()
+
+    source_path = "./Filtered Sign Up Audits/"
+    destination_path = "./Processed Sign Up Audits/"  # Define the destination folder
+
+    items = os.listdir(source_path)
+
+    header = ['Website URL', '337 Redundant Entry', '331 Error Identification', '247 Focus is Visible', '253 Label in Name']
+    with open('wcag_violations1.csv', 'a', encoding='UTF8', newline='') as f:
+        writer = csv.writer(f)
+        writer.writerow(header)
+
+        written_data = []
+
+        for item in items:  # Iterate directly over items
+            file_path = os.path.join(source_path, item) #create a file path
+            if not os.path.isfile(file_path): #skip if not a file
+                continue
+
+            with open(file_path, "r") as f:
+                data = json.load(f)
+                driver.get(data['url'])
+                written_data.append(data['url'])
+
+                passes_337 = test_337_reentry(driver)
+                written_data.append(passes_337)
+                passes_331 = test_331_errorid(driver, data['url'])
+                written_data.append(passes_331)
+                passes_247 = test_247_visible(driver)
+                written_data.append(passes_247)
+                passes_253 = test_253(driver)
+                written_data.append(passes_253)
+                writer.writerow(written_data)
+                written_data.clear()
+
+            # Move the processed file to the destination folder
+            destination_file_path = os.path.join(destination_path, item)
+            shutil.move(file_path, destination_file_path)
+
+    driver.quit()

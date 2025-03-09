@@ -2,6 +2,7 @@ import re
 registerVocabs = [
     re.compile(r'\b(create|free|locate|open|activate).*?(account|user|profile)\b', re.IGNORECASE),
     re.compile(r'\b(create|free|locate|open|activate)\b', re.IGNORECASE),
+    re.compile(r'create', re.IGNORECASE),
     re.compile(r'\b(reg).*?(user)\b', re.IGNORECASE),
     re.compile(r'sign[a-zA-Z\s]+up', re.IGNORECASE),
     re.compile(r'Play[a-zA-Z\s]', re.IGNORECASE),
