@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.service import Service
-from selenium.common.exceptions import NoSuchElementException, StaleElementReferenceException, TimeoutException
+from selenium.common.exceptions import NoSuchElementException, StaleElementReferenceException, TimeoutException, WebDriverException
 
 from selenium_stealth import stealth
 
@@ -108,16 +108,16 @@ def test_253(driver):
     """
     soup = BeautifulSoup(driver.page_source, 'html.parser')
 
-    inherits = soup.find_all(['tr', 'thread', 'tbody', 'tfoot', 'table', 'ol', 'ul', 'div', 'dl'])
+    inherits = soup.find_all(['tr', 'thread', 'tbody', 'tfoot', 'table', 'ol', 'ul', 'div', 'dl', 'button'])
 
     for _ in inherits:
         if _.has_attr('aria-label'):
 
             aria_label_text = _.get('aria-label').replace(" ", "").lower()
-            #print(f"aria-label: {aria_label_text}")
+            print(f"aria-label: {aria_label_text}")
 
             text_in_element = _.text.replace(" ", "").lower()
-            #print(f"element text: {text_in_element}")
+            print(f"element text: {text_in_element}")
 
             if (aria_label_text not in text_in_element):
                 return False
@@ -172,10 +172,10 @@ def test_247_visible(driver):
                 return False
 
         except (StaleElementReferenceException, NoSuchElementException, TimeoutException) as e:
-            print(f"Element interaction error: {e}")
+            #print(f"Element interaction error: {e}")
             continue #skip to the next Element
         except Exception as e:
-            print(f"Unexpected error during element check: {e}")
+            #print(f"Unexpected error during element check: {e}")
             continue
 
     return True
@@ -255,15 +255,15 @@ def find_errors(driver):
     potential_error_divs = []
 
     # Find divs based on ID
-    id_matches = soup.find_all(['div', 'p' 'ul'], id=re.compile(r'.*(error|err|alert).*', re.IGNORECASE))
+    id_matches = soup.find_all(['div', 'p' 'ul', 'span'], id=re.compile(r'.*(error|err|alert).*', re.IGNORECASE))
     potential_error_divs.extend(id_matches)
 
     # Find divs based on class.
-    class_matches = soup.find_all(['div', 'p', 'ul'], class_=re.compile(r'.*(error|err|alert).*', re.IGNORECASE))
+    class_matches = soup.find_all(['div', 'p', 'ul', 'span'], class_=re.compile(r'.*(error|err|alert).*', re.IGNORECASE))
     potential_error_divs.extend(class_matches)
 
     # Find divs based on role.
-    role_matches = soup.find_all(['div', 'p', 'ul'], role_=re.compile(r'.*(alert).*', re.IGNORECASE))
+    role_matches = soup.find_all(['div', 'p', 'ul', 'span'], role_=re.compile(r'.*(alert).*', re.IGNORECASE))
     potential_error_divs.extend(role_matches)
 
     #remove duplicates
@@ -377,7 +377,7 @@ def test_331_errorid(driver, url):
                                 found_errors = find_errors(driver)
                                 return found_errors
                     except Exception as e2:
-                        print(f"Failed to click button with class and text '{button_text}': {e2}")
+                        #print(f"Failed to click button with class and text '{button_text}': {e2}")
                         return "Possible error due to shopify CAPTCHA."
 
     if "/account/" in path:
@@ -426,33 +426,39 @@ if __name__ == "__main__":
 
     items = os.listdir(source_path)
 
-    header = ['Website URL', '337 Redundant Entry', '331 Error Identification', '247 Focus is Visible', '253 Label in Name']
-    with open('wcag_violations1.csv', 'a', encoding='UTF8', newline='') as f:
+    with open('wcag_violations_hard.csv', 'a', encoding='UTF8', newline='') as f:
         writer = csv.writer(f)
-        writer.writerow(header)
 
         written_data = []
 
-        for item in items:  # Iterate directly over items
-            file_path = os.path.join(source_path, item) #create a file path
-            if not os.path.isfile(file_path): #skip if not a file
-                continue
+        for item in items:
+            file_path = os.path.join(source_path, item) 
+            try:
+                with open(file_path, "r") as f:
+                    data = json.load(f)
+                    driver.get(data['url'])
+                    written_data.append(data['url'])
 
-            with open(file_path, "r") as f:
-                data = json.load(f)
-                driver.get(data['url'])
-                written_data.append(data['url'])
-
-                passes_337 = test_337_reentry(driver)
-                written_data.append(passes_337)
-                passes_331 = test_331_errorid(driver, data['url'])
-                written_data.append(passes_331)
-                passes_247 = test_247_visible(driver)
-                written_data.append(passes_247)
-                passes_253 = test_253(driver)
-                written_data.append(passes_253)
+                    passes_337 = test_337_reentry(driver)
+                    written_data.append(passes_337)
+                    passes_331 = test_331_errorid(driver, data['url'])
+                    written_data.append(passes_331)
+                    passes_247 = test_247_visible(driver)
+                    written_data.append(passes_247)
+                    passes_253 = test_253(driver)
+                    written_data.append(passes_253)
+                    writer.writerow(written_data)
+                    written_data.clear()
+            except (TimeoutException) as e:
+                written_data.append('INVALID')
                 writer.writerow(written_data)
                 written_data.clear()
+                continue
+            except Exception as e:
+                written_data.append('ERROR')
+                writer.writerow(written_data)
+                written_data.clear()
+                continue
 
             # Move the processed file to the destination folder
             destination_file_path = os.path.join(destination_path, item)
