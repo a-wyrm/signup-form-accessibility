@@ -1,1 +1,0 @@
-const notHaveVocabs = ["don't have", "not", 'no'];
