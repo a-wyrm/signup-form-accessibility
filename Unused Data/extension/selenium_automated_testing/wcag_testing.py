@@ -364,12 +364,12 @@ def test_337_reentry(driver):
 if __name__ == "__main__":
     driver = setup_driver()
 
-    source_path = "./Filtered Sign Up Audits/"
-    destination_path = "./Processed Sign Up Audits/"  # Define the destination folder
+    source_path = "./Processed Login Audits/"
+    #destination_path = "./Processed Sign Up Audits/"  # Define the destination folder
 
     items = os.listdir(source_path)
 
-    with open('wcag_violations_hard.csv', 'a', encoding='UTF8', newline='') as f:
+    with open('wcag_login_violations_hard.csv', 'a', encoding='UTF8', newline='') as f:
         writer = csv.writer(f)
 
         written_data = []
@@ -377,6 +377,7 @@ if __name__ == "__main__":
         for item in items:
             file_path = os.path.join(source_path, item) 
             try:
+                written_data.append(item)
                 with open(file_path, "r") as f:
                     data = json.load(f)
                     driver.get(data['url'])
@@ -386,10 +387,10 @@ if __name__ == "__main__":
                     written_data.append(passes_337)
                     passes_331 = test_331_errorid(driver, data['url'])
                     written_data.append(passes_331)
-                    passes_247 = test_247_visible(driver)
-                    written_data.append(passes_247)
-                    passes_253 = test_253(driver)
-                    written_data.append(passes_253)
+                    #passes_247 = test_247_visible(driver)
+                    #written_data.append(passes_247)
+                    #passes_253 = test_253(driver)
+                    #written_data.append(passes_253)
                     writer.writerow(written_data)
                     written_data.clear()
             except (TimeoutException) as e:
@@ -404,7 +405,7 @@ if __name__ == "__main__":
                 continue
 
             # Move the processed file to the destination folder
-            destination_file_path = os.path.join(destination_path, item)
-            shutil.move(file_path, destination_file_path)
+            #destination_file_path = os.path.join(destination_path, item)
+            #shutil.move(file_path, destination_file_path)
 
     driver.quit()

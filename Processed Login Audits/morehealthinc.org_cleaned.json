@@ -1,0 +1,3153 @@
+{
+    "testEngine": {
+        "name": "axe-core",
+        "version": "4.4.3"
+    },
+    "testRunner": {
+        "name": "axe"
+    },
+    "timestamp": "2024-09-27T16:54:22.638Z",
+    "url": "https://www.morehealthinc.org/shop/my-account/",
+    "toolOptions": {
+        "resultTypes": [
+            "violations"
+        ],
+        "reporter": "v1"
+    },
+    "passes": [
+        {
+            "id": "aria-allowed-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures ARIA attributes are allowed for an element's role",
+            "help": "Elements must only use allowed ARIA attributes",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attributes are used correctly for the defined role"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "aria-unsupported-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute is supported"
+                        },
+                        {
+                            "id": "aria-prohibited-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "ARIA attribute is allowed"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input aria-label=\"Name\" type=\"text\" id=\"fieldName\" placeholder=\"First &amp; Last Name\">",
+                    "target": [
+                        "#fieldName"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-allowed-role",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "best-practice"
+            ],
+            "description": "Ensures role attribute has an appropriate value for the element",
+            "help": "ARIA role should be appropriate for the element",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-allowed-role?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-allowed-role",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "ARIA role is allowed for given element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<svg class=\"svg-inline--fa fa-instagram fa-w-14\" aria-hidden=\"true\" data-fa-processed=\"\" aria-label=\"Instagram\" data-prefix=\"fab\" data-icon=\"instagram\" role=\"img\" viewBox=\"0 0 448 512\">",
+                    "target": [
+                        "#sbi_17971151096180984 > .sbi_inner_wrap > .sbi_photo_wrap > .sbi_link > .sbi_instagram_link[title=\"Instagram\"][target=\"_blank\"] > svg[aria-label=\"Instagram\"][data-prefix=\"fab\"][data-icon=\"instagram\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-body",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures aria-hidden='true' is not present on the document body.",
+            "help": "aria-hidden='true' must not be present on the document body",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-body?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-hidden-body",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "No aria-hidden attribute is present on document body"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<body class=\"page-template-default page page-id-8364 page-child parent-pageid-8361 wp-embed-responsive theme-kids-world woocommerce-account woocommerce-page woocommerce-js layout-wide fullwidth-header sticky-header standard-header header-with-topbar woo-type1 woo-store-vacation-shop-closed wpb-js-composer js-comp-ver-6.13.0 vc_responsive\">",
+                    "target": [
+                        "body"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-hidden-focus",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag131"
+            ],
+            "description": "Ensures aria-hidden elements are not focusable nor contain focusable elements",
+            "help": "ARIA hidden element must not be focusable or contain focusable elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-hidden-focus?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "focusable-modal-open",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements while a modal is open"
+                        },
+                        {
+                            "id": "focusable-disabled",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        },
+                        {
+                            "id": "focusable-not-tabbable",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No focusable elements contained within element"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<svg class=\"svg-inline--fa fa-instagram fa-w-14\" aria-hidden=\"true\" data-fa-processed=\"\" aria-label=\"Instagram\" data-prefix=\"fab\" data-icon=\"instagram\" role=\"img\" viewBox=\"0 0 448 512\">",
+                    "target": [
+                        "#sbi_17971151096180984 > .sbi_inner_wrap > .sbi_photo_wrap > .sbi_link > .sbi_instagram_link[title=\"Instagram\"][target=\"_blank\"] > svg[aria-label=\"Instagram\"][data-prefix=\"fab\"][data-icon=\"instagram\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr-value",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures all ARIA attributes have valid values",
+            "help": "ARIA attributes must conform to valid values",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr-value?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "aria-valid-attr-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute values are valid"
+                        },
+                        {
+                            "id": "aria-errormessage",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "aria-errormessage exists and references elements visible to screen readers that use a supported aria-errormessage technique"
+                        },
+                        {
+                            "id": "aria-level",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-level values are valid"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input aria-label=\"Name\" type=\"text\" id=\"fieldName\" placeholder=\"First &amp; Last Name\">",
+                    "target": [
+                        "#fieldName"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "aria-valid-attr",
+            "impact": null,
+            "tags": [
+                "cat.aria",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures attributes that begin with aria- are valid ARIA attributes",
+            "help": "ARIA attributes must conform to valid names",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/aria-valid-attr?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "aria-valid-attr",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "ARIA attribute name is valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input aria-label=\"Name\" type=\"text\" id=\"fieldName\" placeholder=\"First &amp; Last Name\">",
+                    "target": [
+                        "#fieldName"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "autocomplete-valid",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag21aa",
+                "wcag135"
+            ],
+            "description": "Ensure the autocomplete attribute is correct and suitable for the form field",
+            "help": "autocomplete attribute must be used correctly",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/autocomplete-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "autocomplete-valid",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "the autocomplete attribute is correctly formatted"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input type=\"text\" class=\"woocommerce-Input woocommerce-Input--text input-text\" name=\"username\" id=\"username\" autocomplete=\"username\" value=\"\">",
+                    "target": [
+                        "#username"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "avoid-inline-spacing",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag21aa",
+                "wcag1412"
+            ],
+            "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+            "help": "Inline text spacing must be adjustable with custom stylesheets",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/avoid-inline-spacing?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "avoid-inline-spacing",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "No inline styles with '!important' that affect text spacing has been specified"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div id=\"main-header-wrapper-sticky-wrapper\" class=\"sticky-wrapper\" style=\"height: 101px;\">",
+                    "target": [
+                        "#main-header-wrapper-sticky-wrapper"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "button-name",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures buttons have discernible text",
+            "help": "Buttons must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/button-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "button-has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has inner text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<button type=\"submit\" class=\"woocommerce-button button woocommerce-form-login__submit\" name=\"login\" value=\"Log in\">Log in</button>",
+                    "target": [
+                        ".woocommerce-form-login__submit"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "bypass",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag241",
+                "section508",
+                "section508.22.o"
+            ],
+            "description": "Ensures each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+            "help": "Page must have means to bypass repeated blocks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/bypass?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "header-present",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1>My Account</h1>",
+                                    "target": [
+                                        "h1"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2>Login</h2>",
+                                    "target": [
+                                        ".u-column1 > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h2>Register</h2>",
+                                    "target": [
+                                        ".u-column2 > h2"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"widgettitle\">Instagram</h3>",
+                                    "target": [
+                                        "#text-8 > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"widgettitle\">Contact Us</h3>",
+                                    "target": [
+                                        "#text-9 > h3"
+                                    ]
+                                },
+                                {
+                                    "html": "<h3 class=\"widgettitle\">Newsletter Signup</h3>",
+                                    "target": [
+                                        "#text-10 > h3"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Page has a heading"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en-US\" class=\" csstransitions js_active  vc_desktop  vc_transform  vc_transform \" data-cm-hook=\"1\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffffff",
+                                "bgColor": "#624dd6",
+                                "contrastRatio": 5.91,
+                                "fontSize": "12.0pt (16px)",
+                                "fontWeight": "normal",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has sufficient color contrast of 5.91"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a href=\"https://goo.gl/maps/ybsVGfGMGGF2\" target=\"_blank\">3821 Henderson Boulevard, Tampa, Florida 33629</a>",
+                    "target": [
+                        ".text-with-icon:nth-child(1) > a[target=\"_blank\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "document-title",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag242",
+                "ACT"
+            ],
+            "description": "Ensures each HTML document contains a non-empty <title> element",
+            "help": "Documents must have <title> element to aid in navigation",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/document-title?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "doc-has-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has a non-empty <title> element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en-US\" class=\" csstransitions js_active  vc_desktop  vc_transform  vc_transform \" data-cm-hook=\"1\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-active",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value of active elements is unique",
+            "help": "IDs of active elements must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-active?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-active",
+                            "data": "rememberme",
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Document has no active elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input class=\"woocommerce-form__input woocommerce-form__input-checkbox\" name=\"rememberme\" type=\"checkbox\" id=\"rememberme\" value=\"forever\">",
+                    "target": [
+                        "#rememberme"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id-aria",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value used in ARIA and in labels is unique",
+            "help": "IDs used in ARIA and labels must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id-aria?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id-aria",
+                            "data": "username",
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Document has no elements referenced with ARIA or labels that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<input type=\"text\" class=\"woocommerce-Input woocommerce-Input--text input-text\" name=\"username\" id=\"username\" autocomplete=\"username\" value=\"\">",
+                    "target": [
+                        "#username"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "duplicate-id",
+            "impact": null,
+            "tags": [
+                "cat.parsing",
+                "wcag2a",
+                "wcag411"
+            ],
+            "description": "Ensures every id attribute value is unique",
+            "help": "id attribute value must be unique",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/duplicate-id?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "duplicate-id",
+                            "data": "jquery.prettyphoto-css",
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Document has no static elements that share the same id attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<link rel=\"stylesheet\" id=\"jquery.prettyphoto-css\" href=\"https://www.morehealthinc.org/wp-content/plugins/wp-video-lightbox/css/prettyPhoto.css?ver=6.6.2\" type=\"text/css\" media=\"all\">",
+                    "target": [
+                        "#jquery\\.prettyphoto-css"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "empty-heading",
+            "impact": null,
+            "tags": [
+                "cat.name-role-value",
+                "best-practice"
+            ],
+            "description": "Ensures headings have discernible text",
+            "help": "Headings should not be empty",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/empty-heading?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element has text that is visible to screen readers"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h1>My Account</h1>",
+                    "target": [
+                        "h1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "form-field-multiple-labels",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag332"
+            ],
+            "description": "Ensures form field does not have multiple label elements",
+            "help": "Form field must not have multiple label elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/form-field-multiple-labels?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "multiple-label",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<label for=\"username\">Username or email address&nbsp;<span class=\"required\">*</span></label>",
+                                    "target": [
+                                        "label[for=\"username\"]"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Form field does not have multiple label elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"text\" class=\"woocommerce-Input woocommerce-Input--text input-text\" name=\"username\" id=\"username\" autocomplete=\"username\" value=\"\">",
+                    "target": [
+                        "#username"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "heading-order",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the order of headings is semantically correct",
+            "help": "Heading levels should only increase by one",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/heading-order?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "heading-order",
+                            "data": {
+                                "headingOrder": [
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > section:nth-child(1) > div > div:nth-child(1) > h1"
+                                        ],
+                                        "level": 1
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > section > div > div > div:nth-child(2) > div:nth-child(1) > h2:nth-child(1)"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > section > div > div > div:nth-child(2) > div:nth-child(2) > h2:nth-child(1)"
+                                        ],
+                                        "level": 2
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div:nth-child(1) > footer:nth-child(3) > div > div > div:nth-child(2) > aside > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div:nth-child(1) > footer:nth-child(3) > div > div > div:nth-child(3) > aside > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    },
+                                    {
+                                        "ancestry": [
+                                            "html > body > div:nth-child(1) > div:nth-child(1) > footer:nth-child(3) > div > div > div:nth-child(4) > aside > h3:nth-child(1)"
+                                        ],
+                                        "level": 3
+                                    }
+                                ]
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Heading order valid"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<h1>My Account</h1>",
+                    "target": [
+                        "h1"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-has-lang",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures every HTML document has a lang attribute",
+            "help": "<html> element must have a lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-has-lang?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "The <html> element has a lang attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en-US\" class=\" csstransitions js_active  vc_desktop  vc_transform  vc_transform \" data-cm-hook=\"1\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "html-lang-valid",
+            "impact": null,
+            "tags": [
+                "cat.language",
+                "wcag2a",
+                "wcag311",
+                "ACT"
+            ],
+            "description": "Ensures the lang attribute of the <html> element has a valid value",
+            "help": "<html> element must have a valid value for the lang attribute",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/html-lang-valid?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "valid-lang",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Value of lang attribute is included in the list of valid languages"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<html lang=\"en-US\" class=\" csstransitions js_active  vc_desktop  vc_transform  vc_transform \" data-cm-hook=\"1\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "identical-links-same-purpose",
+            "impact": "minor",
+            "tags": [
+                "cat.semantics",
+                "wcag2aaa",
+                "wcag249"
+            ],
+            "description": "Ensure that links with the same accessible name serve a similar purpose",
+            "help": "Links with the same name must have a similar purpose",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/identical-links-same-purpose?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "identical-links-same-purpose",
+                            "data": {
+                                "name": "facebook",
+                                "urlProps": {
+                                    "protocol": "http:",
+                                    "hostname": "www.facebook.com",
+                                    "port": "",
+                                    "pathname": "/pages/More-Health-Inc/164673286901285/",
+                                    "search": {},
+                                    "hash": "",
+                                    "filename": ""
+                                }
+                            },
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "There are no other links with the same name, that go to a different URL"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<a class=\"fa fa-facebook\" title=\"Facebook\" href=\"https://www.facebook.com/pages/More-Health-Inc/164673286901285\"> </a>",
+                    "target": [
+                        ".fa-facebook"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "wcag2a",
+                "wcag111",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures <img> elements have alternate text or a role of none or presentation",
+            "help": "Images must have alternate text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-alt",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has an alt attribute"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "alt-space-value",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Element has a valid alt attribute value"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img class=\"normal_logo\" src=\"https://www.morehealthinc.org/wp-content/uploads/2018/01/more-health-inc-logo.png\" alt=\"More Health, Inc.\" title=\"More Health, Inc.\">",
+                    "target": [
+                        ".normal_logo"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "image-redundant-alt",
+            "impact": null,
+            "tags": [
+                "cat.text-alternatives",
+                "best-practice"
+            ],
+            "description": "Ensure image alternative is not repeated as text",
+            "help": "Alternative text of images should not be repeated as text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/image-redundant-alt?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "duplicate-img-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not duplicate existing text in <img> alt text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<img class=\"normal_logo\" src=\"https://www.morehealthinc.org/wp-content/uploads/2018/01/more-health-inc-logo.png\" alt=\"More Health, Inc.\" title=\"More Health, Inc.\">",
+                    "target": [
+                        ".normal_logo"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label-title-only",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "best-practice"
+            ],
+            "description": "Ensures that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes",
+            "help": "Form elements should have a visible label",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label-title-only?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "title-only",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Form element does not solely use title attribute for its label"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"text\" class=\"woocommerce-Input woocommerce-Input--text input-text\" name=\"username\" id=\"username\" autocomplete=\"username\" value=\"\">",
+                    "target": [
+                        "#username"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "label",
+            "impact": null,
+            "tags": [
+                "cat.forms",
+                "wcag2a",
+                "wcag412",
+                "wcag131",
+                "section508",
+                "section508.22.n",
+                "ACT"
+            ],
+            "description": "Ensures every form element has a label",
+            "help": "Form elements must have labels",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/label?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element has an explicit <label>"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "hidden-explicit-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "Form element has a visible explicit <label>"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<input type=\"text\" class=\"woocommerce-Input woocommerce-Input--text input-text\" name=\"username\" id=\"username\" autocomplete=\"username\" value=\"\">",
+                    "target": [
+                        "#username"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-banner-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the banner landmark is at top level",
+            "help": "Banner landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-banner-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "banner"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The banner landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header id=\"header\">",
+                    "target": [
+                        "#header"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-contentinfo-is-top-level",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the contentinfo landmark is at top level",
+            "help": "Contentinfo landmark should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-contentinfo-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "contentinfo"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The contentinfo landmark is at the top level."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<footer id=\"footer\">",
+                    "target": [
+                        "#footer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-banner",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one banner landmark",
+            "help": "Document should not have more than one banner landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-banner?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-banner",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one banner landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header id=\"header\">",
+                    "target": [
+                        "#header"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-no-duplicate-contentinfo",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has at most one contentinfo landmark",
+            "help": "Document should not have more than one contentinfo landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-no-duplicate-contentinfo?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "page-no-duplicate-contentinfo",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have more than one contentinfo landmark"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<footer id=\"footer\">",
+                    "target": [
+                        "#footer"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "landmark-unique",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "help": "Ensures landmarks are unique",
+            "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-unique",
+                            "data": {
+                                "role": "banner",
+                                "accessibleText": null
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Landmarks must have a unique role or role/label/title (i.e. accessible name) combination"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<header id=\"header\">",
+                    "target": [
+                        "#header"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "non-empty-title",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has a title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is not in tab order or has accessible text"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<a class=\"fa fa-facebook\" title=\"Facebook\" href=\"https://www.facebook.com/pages/More-Health-Inc/164673286901285\"> </a>",
+                    "target": [
+                        ".fa-facebook"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "list",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures that lists are structured correctly",
+            "help": "<ul> and <ol> must only directly contain <li>, <script> or <template> elements",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/list?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "only-listitems",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List element only has direct children that are allowed inside <li> elements"
+                        }
+                    ],
+                    "impact": null,
+                    "html": "<ul class=\"dt-sc-sociable  \">",
+                    "target": [
+                        ".dt-sc-sociable"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "listitem",
+            "impact": null,
+            "tags": [
+                "cat.structure",
+                "wcag2a",
+                "wcag131"
+            ],
+            "description": "Ensures <li> elements are used semantically",
+            "help": "<li> elements must be contained in a <ul> or <ol>",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/listitem?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "listitem",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "List item has a <ul>, <ol> or role=\"list\" parent element"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<li> <a class=\"fa fa-facebook\" title=\"Facebook\" href=\"https://www.facebook.com/pages/More-Health-Inc/164673286901285\"> </a> </li>",
+                    "target": [
+                        ".dt-sc-sociable > li:nth-child(1)"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport-large",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> can scale a significant amount",
+            "help": "Users should be able to zoom and scale the text up to 500%",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport-large?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport-large",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "<meta> tag does not prevent significant zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "meta-viewport",
+            "impact": null,
+            "tags": [
+                "cat.sensory-and-visual-cues",
+                "best-practice",
+                "ACT"
+            ],
+            "description": "Ensures <meta name=\"viewport\"> does not disable text scaling and zooming",
+            "help": "Zooming and scaling should not be disabled",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/meta-viewport?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "meta-viewport",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "critical",
+                            "message": "<meta> tag does not disable zooming on mobile devices"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
+                    "target": [
+                        "meta[name=\"viewport\"]"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "nested-interactive",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag412"
+            ],
+            "description": "Ensures interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+            "help": "Interactive controls must not be nested",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/nested-interactive?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "no-focusable-content",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element does not have focusable descendants"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<img class=\"normal_logo\" src=\"https://www.morehealthinc.org/wp-content/uploads/2018/01/more-health-inc-logo.png\" alt=\"More Health, Inc.\" title=\"More Health, Inc.\">",
+                    "target": [
+                        ".normal_logo"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "page-has-heading-one",
+            "impact": null,
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+            "help": "Page should contain a level-one heading",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/page-has-heading-one?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-heading-one",
+                            "data": null,
+                            "relatedNodes": [
+                                {
+                                    "html": "<h1>My Account</h1>",
+                                    "target": [
+                                        "h1"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "Page has at least one level-one heading"
+                        }
+                    ],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en-US\" class=\" csstransitions js_active  vc_desktop  vc_transform  vc_transform \" data-cm-hook=\"1\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "All page content is contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<div class=\"wrapper\">",
+                    "target": [
+                        ".wrapper"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "scrollable-region-focusable",
+            "impact": null,
+            "tags": [
+                "cat.keyboard",
+                "wcag2a",
+                "wcag211"
+            ],
+            "description": "Ensure elements that have scrollable content are accessible by keyboard",
+            "help": "Scrollable region must have keyboard access",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/scrollable-region-focusable?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "focusable-content",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Element contains focusable elements"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": null,
+                    "html": "<html lang=\"en-US\" class=\" csstransitions js_active  vc_desktop  vc_transform  vc_transform \" data-cm-hook=\"1\">",
+                    "target": [
+                        "html"
+                    ]
+                }
+            ]
+        }
+    ],
+    "violations": [
+        {
+            "id": "color-contrast",
+            "impact": "serious",
+            "tags": [
+                "cat.color",
+                "wcag2aa",
+                "wcag143"
+            ],
+            "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA contrast ratio thresholds",
+            "help": "Elements must have sufficient color contrast",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/color-contrast?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#88d914",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 1.75,
+                                "fontSize": "11.3pt (15px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"main-header-wrapper\" class=\"main-header-wrapper\">",
+                                    "target": [
+                                        "#main-header-wrapper"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 1.75 (foreground color: #88d914, background color: #ffffff, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://www.morehealthinc.org/about/\" style=\"color:#624dd6\">About<span class=\"menu-highlighter\" style=\"text-shadow: 8px 0 #624dd6, -8px 0 #624dd6, 0px 0 #624dd6;\"></span></a>",
+                    "target": [
+                        "#menu-item-12457 > a:nth-child(1)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.75 (foreground color: #88d914, background color: #ffffff, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#dd4f75",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 3.85,
+                                "fontSize": "11.3pt (15px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"main-header-wrapper\" class=\"main-header-wrapper\">",
+                                    "target": [
+                                        "#main-header-wrapper"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 3.85 (foreground color: #dd4f75, background color: #ffffff, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://www.morehealthinc.org/education/\" style=\"color:#624dd6\">Education<span class=\"menu-highlighter\" style=\"text-shadow: 8px 0 #624dd6, -8px 0 #624dd6, 0px 0 #624dd6;\"></span></a>",
+                    "target": [
+                        "#menu-item-12531 > a:nth-child(1)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 3.85 (foreground color: #dd4f75, background color: #ffffff, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#00bab9",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 2.4,
+                                "fontSize": "11.3pt (15px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"main-header-wrapper\" class=\"main-header-wrapper\">",
+                                    "target": [
+                                        "#main-header-wrapper"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.4 (foreground color: #00bab9, background color: #ffffff, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://www.morehealthinc.org/teachers/\" style=\"color:#624dd6\">Teachers<span class=\"menu-highlighter\" style=\"text-shadow: 8px 0 #624dd6, -8px 0 #624dd6, 0px 0 #624dd6;\"></span></a>",
+                    "target": [
+                        "#menu-item-14191 > a"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.4 (foreground color: #00bab9, background color: #ffffff, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#ffd338",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 1.43,
+                                "fontSize": "11.3pt (15px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"main-header-wrapper\" class=\"main-header-wrapper\">",
+                                    "target": [
+                                        "#main-header-wrapper"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 1.43 (foreground color: #ffd338, background color: #ffffff, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://www.morehealthinc.org/get-involved/\" style=\"color:#624dd6\">Get Involved<span class=\"menu-highlighter\" style=\"text-shadow: 8px 0 #624dd6, -8px 0 #624dd6, 0px 0 #624dd6;\"></span></a>",
+                    "target": [
+                        "#menu-item-12569 > a:nth-child(1)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 1.43 (foreground color: #ffd338, background color: #ffffff, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "color-contrast",
+                            "data": {
+                                "fgColor": "#10b6fe",
+                                "bgColor": "#ffffff",
+                                "contrastRatio": 2.29,
+                                "fontSize": "11.3pt (15px)",
+                                "fontWeight": "bold",
+                                "messageKey": null,
+                                "expectedContrastRatio": "4.5:1",
+                                "shadowColor": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<div id=\"main-header-wrapper\" class=\"main-header-wrapper\">",
+                                    "target": [
+                                        "#main-header-wrapper"
+                                    ]
+                                }
+                            ],
+                            "impact": "serious",
+                            "message": "Element has insufficient color contrast of 2.29 (foreground color: #10b6fe, background color: #ffffff, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "serious",
+                    "html": "<a href=\"https://www.morehealthinc.org/stay-connected/\" style=\"color:#624dd6\">Connect<span class=\"menu-highlighter\" style=\"text-shadow: 8px 0 #624dd6, -8px 0 #624dd6, 0px 0 #624dd6;\"></span></a>",
+                    "target": [
+                        "#menu-item-12674 > a:nth-child(1)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 2.29 (foreground color: #10b6fe, background color: #ffffff, font size: 11.3pt (15px), font weight: bold). Expected contrast ratio of 4.5:1"
+                }
+            ]
+        },
+        {
+            "id": "landmark-complementary-is-top-level",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the complementary landmark or aside is at top level",
+            "help": "Aside should not be contained in another landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-complementary-is-top-level?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "complementary"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The complementary landmark is contained in another landmark."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<aside id=\"text-7\" class=\"widget widget_text\">",
+                    "target": [
+                        "#text-7"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  The complementary landmark is contained in another landmark."
+                },
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "complementary"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The complementary landmark is contained in another landmark."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<aside id=\"text-8\" class=\"widget widget_text\">",
+                    "target": [
+                        "#text-8"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  The complementary landmark is contained in another landmark."
+                },
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "complementary"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The complementary landmark is contained in another landmark."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<aside id=\"text-9\" class=\"widget widget_text\">",
+                    "target": [
+                        "#text-9"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  The complementary landmark is contained in another landmark."
+                },
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-top-level",
+                            "data": {
+                                "role": "complementary"
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "The complementary landmark is contained in another landmark."
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<aside id=\"text-10\" class=\"widget widget_text\">",
+                    "target": [
+                        "#text-10"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  The complementary landmark is contained in another landmark."
+                }
+            ]
+        },
+        {
+            "id": "landmark-one-main",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "description": "Ensures the document has a main landmark",
+            "help": "Document should have one main landmark",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-one-main?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [],
+                    "all": [
+                        {
+                            "id": "page-has-main",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Document does not have a main landmark"
+                        }
+                    ],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<html lang=\"en-US\" class=\" csstransitions js_active  vc_desktop  vc_transform  vc_transform \" data-cm-hook=\"1\">",
+                    "target": [
+                        "html"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Document does not have a main landmark"
+                }
+            ]
+        },
+        {
+            "id": "landmark-unique",
+            "impact": "moderate",
+            "tags": [
+                "cat.semantics",
+                "best-practice"
+            ],
+            "help": "Ensures landmarks are unique",
+            "description": "Landmarks should have a unique role or role/label/title (i.e. accessible name) combination",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/landmark-unique?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "landmark-is-unique",
+                            "data": {
+                                "role": "complementary",
+                                "accessibleText": null
+                            },
+                            "relatedNodes": [
+                                {
+                                    "html": "<aside id=\"text-8\" class=\"widget widget_text\">",
+                                    "target": [
+                                        "#text-8"
+                                    ]
+                                },
+                                {
+                                    "html": "<aside id=\"text-9\" class=\"widget widget_text\">",
+                                    "target": [
+                                        "#text-9"
+                                    ]
+                                },
+                                {
+                                    "html": "<aside id=\"text-10\" class=\"widget widget_text\">",
+                                    "target": [
+                                        "#text-10"
+                                    ]
+                                }
+                            ],
+                            "impact": "moderate",
+                            "message": "The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<aside id=\"text-7\" class=\"widget widget_text\">",
+                    "target": [
+                        "#text-7"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  The landmark must have a unique aria-label, aria-labelledby, or title to make landmarks distinguishable"
+                }
+            ]
+        },
+        {
+            "id": "link-name",
+            "impact": "serious",
+            "tags": [
+                "cat.name-role-value",
+                "wcag2a",
+                "wcag412",
+                "wcag244",
+                "section508",
+                "section508.22.a",
+                "ACT"
+            ],
+            "description": "Ensures links have discernible text",
+            "help": "Links must have discernible text",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/link-name?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a href=\"#\"><img src=\"/wp-content/uploads/2018/01/more-health-inc-logo-footer.png\" alt=\"\" title=\"\" class=\"small-logo\"></a>",
+                    "target": [
+                        ".textwidget > a[href=\"#\"]"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a class=\"sbi_photo sbi_imgLiquid_bgSize sbi_imgLiquid_ready\" href=\"https://www.instagram.com/p/Csjys9nrFdX/\" target=\"_blank\" rel=\"nofollow noopener\" data-full-res=\"https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/348242191_546681644343377_4141203879501609033_nfull.jpg\" data-img-src-set=\"{&quot;d&quot;:&quot;https:\\/\\/scontent-lax3-2.cdninstagram.com\\/v\\/t51.2885-15\\/348242191_546681644343377_4141203879501609033_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=YQ4koUxeeZsAX-j-2KC&amp;_nc_ht=scontent-lax3-2.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfA9YWtoUiPbwJ644IpY5Qvo9nIiTP42t756mSCTVSDKYA&amp;oe=6471EE45&quot;,&quot;150&quot;:&quot;https:\\/\\/scontent-lax3-2.cdninstagram.com\\/v\\/t51.2885-15\\/348242191_546681644343377_4141203879501609033_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=YQ4koUxeeZsAX-j-2KC&amp;_nc_ht=scontent-lax3-2.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfA9YWtoUiPbwJ644IpY5Qvo9nIiTP42t756mSCTVSDKYA&amp;oe=6471EE45&quot;,&quot;320&quot;:&quot;https:\\/\\/scontent-lax3-2.cdninstagram.com\\/v\\/t51.2885-15\\/348242191_546681644343377_4141203879501609033_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=YQ4koUxeeZsAX-j-2KC&amp;_nc_ht=scontent-lax3-2.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfA9YWtoUiPbwJ644IpY5Qvo9nIiTP42t756mSCTVSDKYA&amp;oe=6471EE45&quot;,&quot;640&quot;:&quot;https:\\/\\/scontent-lax3-2.cdninstagram.com\\/v\\/t51.2885-15\\/348242191_546681644343377_4141203879501609033_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=YQ4koUxeeZsAX-j-2KC&amp;_nc_ht=scontent-lax3-2.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfA9YWtoUiPbwJ644IpY5Qvo9nIiTP42t756mSCTVSDKYA&amp;oe=6471EE45&quot;}\" style=\"height: 50.9375px; background-image: url(&quot;https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/348242191_546681644343377_4141203879501609033_nthumb.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; padding-bottom: 0px;\">",
+                    "target": [
+                        "#sbi_17971151096180984 > .sbi_inner_wrap > .sbi_photo_wrap > .sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a class=\"sbi_photo sbi_imgLiquid_bgSize sbi_imgLiquid_ready\" href=\"https://www.instagram.com/p/CsUN1RfpvMh/\" target=\"_blank\" rel=\"nofollow noopener\" data-full-res=\"https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/347488036_1594778357699400_4150702642611803402_n.webpfull.jpg\" data-img-src-set=\"{&quot;d&quot;:&quot;https:\\/\\/scontent-iad3-1.cdninstagram.com\\/v\\/t51.29350-15\\/347488036_1594778357699400_4150702642611803402_n.webp?stp=dst-jpg&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=STJe78cOnuQAX_PbJiO&amp;_nc_oc=AQkOhpOa7pvrwXD9d2WJDgj7HIgAenO7IiC699x977sfbYGxK1mIEgkWXK3OiXo6Jzg&amp;_nc_ht=scontent-iad3-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBdhJjXN8itTSWizhtVsQ4ACIjmI0w2BXi7gwD7hfNB_Q&amp;oe=64699937&quot;,&quot;150&quot;:&quot;https:\\/\\/scontent-iad3-1.cdninstagram.com\\/v\\/t51.29350-15\\/347488036_1594778357699400_4150702642611803402_n.webp?stp=dst-jpg&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=STJe78cOnuQAX_PbJiO&amp;_nc_oc=AQkOhpOa7pvrwXD9d2WJDgj7HIgAenO7IiC699x977sfbYGxK1mIEgkWXK3OiXo6Jzg&amp;_nc_ht=scontent-iad3-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBdhJjXN8itTSWizhtVsQ4ACIjmI0w2BXi7gwD7hfNB_Q&amp;oe=64699937&quot;,&quot;320&quot;:&quot;https:\\/\\/scontent-iad3-1.cdninstagram.com\\/v\\/t51.29350-15\\/347488036_1594778357699400_4150702642611803402_n.webp?stp=dst-jpg&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=STJe78cOnuQAX_PbJiO&amp;_nc_oc=AQkOhpOa7pvrwXD9d2WJDgj7HIgAenO7IiC699x977sfbYGxK1mIEgkWXK3OiXo6Jzg&amp;_nc_ht=scontent-iad3-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBdhJjXN8itTSWizhtVsQ4ACIjmI0w2BXi7gwD7hfNB_Q&amp;oe=64699937&quot;,&quot;640&quot;:&quot;https:\\/\\/scontent-iad3-1.cdninstagram.com\\/v\\/t51.29350-15\\/347488036_1594778357699400_4150702642611803402_n.webp?stp=dst-jpg&amp;_nc_cat=105&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=STJe78cOnuQAX_PbJiO&amp;_nc_oc=AQkOhpOa7pvrwXD9d2WJDgj7HIgAenO7IiC699x977sfbYGxK1mIEgkWXK3OiXo6Jzg&amp;_nc_ht=scontent-iad3-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBdhJjXN8itTSWizhtVsQ4ACIjmI0w2BXi7gwD7hfNB_Q&amp;oe=64699937&quot;}\" style=\"height: 50.9375px; background-image: url(&quot;https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/347488036_1594778357699400_4150702642611803402_n.webpthumb.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; padding-bottom: 0px;\">",
+                    "target": [
+                        "#sbi_18194397472252834 > .sbi_inner_wrap > .sbi_photo_wrap > .sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a class=\"sbi_photo sbi_imgLiquid_bgSize sbi_imgLiquid_ready\" href=\"https://www.instagram.com/p/CsJZ5mPOZ-R/\" target=\"_blank\" rel=\"nofollow noopener\" data-full-res=\"https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/346595869_219733190787231_603371290740291574_nfull.jpg\" data-img-src-set=\"{&quot;d&quot;:&quot;https:\\/\\/scontent-iad3-1.cdninstagram.com\\/v\\/t51.2885-15\\/346595869_219733190787231_603371290740291574_n.jpg?_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=UVEhMO6d2XsAX-nS3p5&amp;_nc_ht=scontent-iad3-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCVxtNPp1V1b_UeMRpcvo6dEYgw7SLoyg41vJx3MJDZ-Q&amp;oe=6463AFE7&quot;,&quot;150&quot;:&quot;https:\\/\\/scontent-iad3-1.cdninstagram.com\\/v\\/t51.2885-15\\/346595869_219733190787231_603371290740291574_n.jpg?_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=UVEhMO6d2XsAX-nS3p5&amp;_nc_ht=scontent-iad3-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCVxtNPp1V1b_UeMRpcvo6dEYgw7SLoyg41vJx3MJDZ-Q&amp;oe=6463AFE7&quot;,&quot;320&quot;:&quot;https:\\/\\/scontent-iad3-1.cdninstagram.com\\/v\\/t51.2885-15\\/346595869_219733190787231_603371290740291574_n.jpg?_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=UVEhMO6d2XsAX-nS3p5&amp;_nc_ht=scontent-iad3-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCVxtNPp1V1b_UeMRpcvo6dEYgw7SLoyg41vJx3MJDZ-Q&amp;oe=6463AFE7&quot;,&quot;640&quot;:&quot;https:\\/\\/scontent-iad3-1.cdninstagram.com\\/v\\/t51.2885-15\\/346595869_219733190787231_603371290740291574_n.jpg?_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=UVEhMO6d2XsAX-nS3p5&amp;_nc_ht=scontent-iad3-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCVxtNPp1V1b_UeMRpcvo6dEYgw7SLoyg41vJx3MJDZ-Q&amp;oe=6463AFE7&quot;}\" style=\"height: 50.9375px; background-image: url(&quot;https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/346595869_219733190787231_603371290740291574_nthumb.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; padding-bottom: 0px;\">",
+                    "target": [
+                        "#sbi_18039916150474726 > .sbi_inner_wrap > .sbi_photo_wrap > .sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a class=\"sbi_photo sbi_imgLiquid_bgSize sbi_imgLiquid_ready\" href=\"https://www.instagram.com/p/CsHTWN6u7DX/\" target=\"_blank\" rel=\"nofollow noopener\" data-full-res=\"https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/346035453_252712720642557_2976874127839091137_nfull.jpg\" data-img-src-set=\"{&quot;d&quot;:&quot;https:\\/\\/scontent-iad3-1.cdninstagram.com\\/v\\/t51.2885-15\\/346035453_252712720642557_2976874127839091137_n.jpg?_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=qdqko7nZxacAX8Cuj6o&amp;_nc_ht=scontent-iad3-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCYbB3uA0V0ZZsHGT4RpgSKjuNIySBL-6BZki8SrI-p1w&amp;oe=64628500&quot;,&quot;150&quot;:&quot;https:\\/\\/scontent-iad3-1.cdninstagram.com\\/v\\/t51.2885-15\\/346035453_252712720642557_2976874127839091137_n.jpg?_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=qdqko7nZxacAX8Cuj6o&amp;_nc_ht=scontent-iad3-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCYbB3uA0V0ZZsHGT4RpgSKjuNIySBL-6BZki8SrI-p1w&amp;oe=64628500&quot;,&quot;320&quot;:&quot;https:\\/\\/scontent-iad3-1.cdninstagram.com\\/v\\/t51.2885-15\\/346035453_252712720642557_2976874127839091137_n.jpg?_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=qdqko7nZxacAX8Cuj6o&amp;_nc_ht=scontent-iad3-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCYbB3uA0V0ZZsHGT4RpgSKjuNIySBL-6BZki8SrI-p1w&amp;oe=64628500&quot;,&quot;640&quot;:&quot;https:\\/\\/scontent-iad3-1.cdninstagram.com\\/v\\/t51.2885-15\\/346035453_252712720642557_2976874127839091137_n.jpg?_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=qdqko7nZxacAX8Cuj6o&amp;_nc_ht=scontent-iad3-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCYbB3uA0V0ZZsHGT4RpgSKjuNIySBL-6BZki8SrI-p1w&amp;oe=64628500&quot;}\" style=\"height: 50.9375px; background-image: url(&quot;https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/346035453_252712720642557_2976874127839091137_nthumb.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; padding-bottom: 0px;\">",
+                    "target": [
+                        "#sbi_17972486153469474 > .sbi_inner_wrap > .sbi_photo_wrap > .sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a class=\"sbi_photo sbi_imgLiquid_bgSize sbi_imgLiquid_ready\" href=\"https://www.instagram.com/p/CrytrDVLfwD/\" target=\"_blank\" rel=\"nofollow noopener\" data-full-res=\"https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/345044954_576290341003615_6912486798694715214_nfull.jpg\" data-img-src-set=\"{&quot;d&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/345044954_576290341003615_6912486798694715214_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=ULDYx52HK-sAX-5kiHO&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBiicApycYIcqNHvzG3VrIBmJLro8i4wH5Ldx2llLwlUQ&amp;oe=64589519&quot;,&quot;150&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/345044954_576290341003615_6912486798694715214_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=ULDYx52HK-sAX-5kiHO&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBiicApycYIcqNHvzG3VrIBmJLro8i4wH5Ldx2llLwlUQ&amp;oe=64589519&quot;,&quot;320&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/345044954_576290341003615_6912486798694715214_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=ULDYx52HK-sAX-5kiHO&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBiicApycYIcqNHvzG3VrIBmJLro8i4wH5Ldx2llLwlUQ&amp;oe=64589519&quot;,&quot;640&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/345044954_576290341003615_6912486798694715214_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=ULDYx52HK-sAX-5kiHO&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBiicApycYIcqNHvzG3VrIBmJLro8i4wH5Ldx2llLwlUQ&amp;oe=64589519&quot;}\" style=\"height: 50.9375px; background-image: url(&quot;https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/345044954_576290341003615_6912486798694715214_nthumb.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; padding-bottom: 0px;\">",
+                    "target": [
+                        "#sbi_18362701813022240 > .sbi_inner_wrap > .sbi_photo_wrap > .sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a class=\"sbi_photo sbi_imgLiquid_bgSize sbi_imgLiquid_ready\" href=\"https://www.instagram.com/reel/CreKSCJJgxg/\" target=\"_blank\" rel=\"nofollow noopener\" data-full-res=\"https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/342898235_587895776638767_6005412006581135786_nfull.jpg\" data-img-src-set=\"{&quot;d&quot;:&quot;https:\\/\\/scontent-xsp1-2.cdninstagram.com\\/v\\/t51.29350-15\\/342898235_587895776638767_6005412006581135786_n.jpg?_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=NelYAN8q3SsAX9b-kzn&amp;_nc_ht=scontent-xsp1-2.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfDzCqR9-C0__xRkSoPMP2boCg89MvT5cqfuooJhCoaWuA&amp;oe=644D2125&quot;,&quot;150&quot;:&quot;https:\\/\\/scontent-xsp1-2.cdninstagram.com\\/v\\/t51.29350-15\\/342898235_587895776638767_6005412006581135786_n.jpg?_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=NelYAN8q3SsAX9b-kzn&amp;_nc_ht=scontent-xsp1-2.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfDzCqR9-C0__xRkSoPMP2boCg89MvT5cqfuooJhCoaWuA&amp;oe=644D2125&quot;,&quot;320&quot;:&quot;https:\\/\\/scontent-xsp1-2.cdninstagram.com\\/v\\/t51.29350-15\\/342898235_587895776638767_6005412006581135786_n.jpg?_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=NelYAN8q3SsAX9b-kzn&amp;_nc_ht=scontent-xsp1-2.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfDzCqR9-C0__xRkSoPMP2boCg89MvT5cqfuooJhCoaWuA&amp;oe=644D2125&quot;,&quot;640&quot;:&quot;https:\\/\\/scontent-xsp1-2.cdninstagram.com\\/v\\/t51.29350-15\\/342898235_587895776638767_6005412006581135786_n.jpg?_nc_cat=107&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=NelYAN8q3SsAX9b-kzn&amp;_nc_ht=scontent-xsp1-2.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfDzCqR9-C0__xRkSoPMP2boCg89MvT5cqfuooJhCoaWuA&amp;oe=644D2125&quot;}\" style=\"height: 50.9375px; background-image: url(&quot;https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/342898235_587895776638767_6005412006581135786_nthumb.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; padding-bottom: 0px;\">",
+                    "target": [
+                        "#sbi_17936501807646804 > .sbi_inner_wrap > .sbi_photo_wrap > .sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a class=\"sbi_photo sbi_imgLiquid_bgSize sbi_imgLiquid_ready\" href=\"https://www.instagram.com/p/CreHzL4rBm1/\" target=\"_blank\" rel=\"nofollow noopener\" data-full-res=\"https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/343111935_783870402939800_3642537308613953745_nfull.jpg\" data-img-src-set=\"{&quot;d&quot;:&quot;https:\\/\\/scontent-xsp1-2.cdninstagram.com\\/v\\/t51.2885-15\\/343111935_783870402939800_3642537308613953745_n.jpg?_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=59j0ozdl2JEAX_01DI9&amp;_nc_ht=scontent-xsp1-2.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfDxcGkn_j9AB5vvFCFW-5p9dTbJk4JjtCHIZ_l4BdjRZA&amp;oe=644E9BC4&quot;,&quot;150&quot;:&quot;https:\\/\\/scontent-xsp1-2.cdninstagram.com\\/v\\/t51.2885-15\\/343111935_783870402939800_3642537308613953745_n.jpg?_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=59j0ozdl2JEAX_01DI9&amp;_nc_ht=scontent-xsp1-2.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfDxcGkn_j9AB5vvFCFW-5p9dTbJk4JjtCHIZ_l4BdjRZA&amp;oe=644E9BC4&quot;,&quot;320&quot;:&quot;https:\\/\\/scontent-xsp1-2.cdninstagram.com\\/v\\/t51.2885-15\\/343111935_783870402939800_3642537308613953745_n.jpg?_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=59j0ozdl2JEAX_01DI9&amp;_nc_ht=scontent-xsp1-2.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfDxcGkn_j9AB5vvFCFW-5p9dTbJk4JjtCHIZ_l4BdjRZA&amp;oe=644E9BC4&quot;,&quot;640&quot;:&quot;https:\\/\\/scontent-xsp1-2.cdninstagram.com\\/v\\/t51.2885-15\\/343111935_783870402939800_3642537308613953745_n.jpg?_nc_cat=104&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=59j0ozdl2JEAX_01DI9&amp;_nc_ht=scontent-xsp1-2.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfDxcGkn_j9AB5vvFCFW-5p9dTbJk4JjtCHIZ_l4BdjRZA&amp;oe=644E9BC4&quot;}\" style=\"height: 50.9375px; background-image: url(&quot;https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/343111935_783870402939800_3642537308613953745_nthumb.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; padding-bottom: 0px;\">",
+                    "target": [
+                        "#sbi_18005255005664013 > .sbi_inner_wrap > .sbi_photo_wrap > .sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a class=\"sbi_photo sbi_imgLiquid_bgSize sbi_imgLiquid_ready\" href=\"https://www.instagram.com/p/Crblw0NOoHW/\" target=\"_blank\" rel=\"nofollow noopener\" data-full-res=\"https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/343214749_2488631477960661_5519126315133001632_nfull.jpg\" data-img-src-set=\"{&quot;d&quot;:&quot;https:\\/\\/scontent-xsp1-1.cdninstagram.com\\/v\\/t51.2885-15\\/343214749_2488631477960661_5519126315133001632_n.jpg?_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=MWOurcbmNT8AX_vq5ZY&amp;_nc_ht=scontent-xsp1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBTh4AAhxwFJXRARy9DKPsVdZ8Iao0c2-Eczeek8SLKDA&amp;oe=644C922E&quot;,&quot;150&quot;:&quot;https:\\/\\/scontent-xsp1-1.cdninstagram.com\\/v\\/t51.2885-15\\/343214749_2488631477960661_5519126315133001632_n.jpg?_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=MWOurcbmNT8AX_vq5ZY&amp;_nc_ht=scontent-xsp1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBTh4AAhxwFJXRARy9DKPsVdZ8Iao0c2-Eczeek8SLKDA&amp;oe=644C922E&quot;,&quot;320&quot;:&quot;https:\\/\\/scontent-xsp1-1.cdninstagram.com\\/v\\/t51.2885-15\\/343214749_2488631477960661_5519126315133001632_n.jpg?_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=MWOurcbmNT8AX_vq5ZY&amp;_nc_ht=scontent-xsp1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBTh4AAhxwFJXRARy9DKPsVdZ8Iao0c2-Eczeek8SLKDA&amp;oe=644C922E&quot;,&quot;640&quot;:&quot;https:\\/\\/scontent-xsp1-1.cdninstagram.com\\/v\\/t51.2885-15\\/343214749_2488631477960661_5519126315133001632_n.jpg?_nc_cat=110&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=MWOurcbmNT8AX_vq5ZY&amp;_nc_ht=scontent-xsp1-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBTh4AAhxwFJXRARy9DKPsVdZ8Iao0c2-Eczeek8SLKDA&amp;oe=644C922E&quot;}\" style=\"height: 50.9375px; background-image: url(&quot;https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/343214749_2488631477960661_5519126315133001632_nthumb.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; padding-bottom: 0px;\">",
+                    "target": [
+                        "#sbi_18264466783125414 > .sbi_inner_wrap > .sbi_photo_wrap > .sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a class=\"sbi_photo sbi_imgLiquid_bgSize sbi_imgLiquid_ready\" href=\"https://www.instagram.com/p/CrB6nRLB9VI/\" target=\"_blank\" rel=\"nofollow noopener\" data-full-res=\"https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/328140572_893447918509790_4356492589017669678_nfull.jpg\" data-img-src-set=\"{&quot;d&quot;:&quot;https:\\/\\/scontent-xsp1-3.cdninstagram.com\\/v\\/t51.2885-15\\/328140572_893447918509790_4356492589017669678_n.jpg?_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=6_fIUgFrkZ8AX8RGMx5&amp;_nc_ht=scontent-xsp1-3.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfDzXk2HccCjr-Qje55M-G66jmHNVh5Jvq0V3aC8EQsCzg&amp;oe=643FD782&quot;,&quot;150&quot;:&quot;https:\\/\\/scontent-xsp1-3.cdninstagram.com\\/v\\/t51.2885-15\\/328140572_893447918509790_4356492589017669678_n.jpg?_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=6_fIUgFrkZ8AX8RGMx5&amp;_nc_ht=scontent-xsp1-3.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfDzXk2HccCjr-Qje55M-G66jmHNVh5Jvq0V3aC8EQsCzg&amp;oe=643FD782&quot;,&quot;320&quot;:&quot;https:\\/\\/scontent-xsp1-3.cdninstagram.com\\/v\\/t51.2885-15\\/328140572_893447918509790_4356492589017669678_n.jpg?_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=6_fIUgFrkZ8AX8RGMx5&amp;_nc_ht=scontent-xsp1-3.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfDzXk2HccCjr-Qje55M-G66jmHNVh5Jvq0V3aC8EQsCzg&amp;oe=643FD782&quot;,&quot;640&quot;:&quot;https:\\/\\/scontent-xsp1-3.cdninstagram.com\\/v\\/t51.2885-15\\/328140572_893447918509790_4356492589017669678_n.jpg?_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=6_fIUgFrkZ8AX8RGMx5&amp;_nc_ht=scontent-xsp1-3.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfDzXk2HccCjr-Qje55M-G66jmHNVh5Jvq0V3aC8EQsCzg&amp;oe=643FD782&quot;}\" style=\"height: 50.9375px; background-image: url(&quot;https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/328140572_893447918509790_4356492589017669678_nthumb.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; padding-bottom: 0px;\">",
+                    "target": [
+                        "#sbi_18288350176105562 > .sbi_inner_wrap > .sbi_photo_wrap > .sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a class=\"sbi_photo sbi_imgLiquid_bgSize sbi_imgLiquid_ready\" href=\"https://www.instagram.com/p/CqIeoaVt8s-/\" target=\"_blank\" rel=\"nofollow noopener\" data-full-res=\"https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/337144089_599833825395451_3443124984977871746_nfull.jpg\" data-img-src-set=\"{&quot;d&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/337144089_599833825395451_3443124984977871746_n.jpg?_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=Q0B897H_dk4AX8XZmjE&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfAEelRTJLPaTpKtr8004wQ6pgLrDmZLJmDtHfFBQ89VLQ&amp;oe=642F3334&quot;,&quot;150&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/337144089_599833825395451_3443124984977871746_n.jpg?_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=Q0B897H_dk4AX8XZmjE&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfAEelRTJLPaTpKtr8004wQ6pgLrDmZLJmDtHfFBQ89VLQ&amp;oe=642F3334&quot;,&quot;320&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/337144089_599833825395451_3443124984977871746_n.jpg?_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=Q0B897H_dk4AX8XZmjE&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfAEelRTJLPaTpKtr8004wQ6pgLrDmZLJmDtHfFBQ89VLQ&amp;oe=642F3334&quot;,&quot;640&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/337144089_599833825395451_3443124984977871746_n.jpg?_nc_cat=108&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=Q0B897H_dk4AX8XZmjE&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfAEelRTJLPaTpKtr8004wQ6pgLrDmZLJmDtHfFBQ89VLQ&amp;oe=642F3334&quot;}\" style=\"height: 50.9375px; background-image: url(&quot;https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/337144089_599833825395451_3443124984977871746_nthumb.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; padding-bottom: 0px;\">",
+                    "target": [
+                        "#sbi_17970370181237168 > .sbi_inner_wrap > .sbi_photo_wrap > .sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a class=\"sbi_photo sbi_imgLiquid_bgSize sbi_imgLiquid_ready\" href=\"https://www.instagram.com/p/Cop-i4dtEmx/\" target=\"_blank\" rel=\"nofollow noopener\" data-full-res=\"https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/330567842_1539764829837900_1469164478884140872_nfull.jpg\" data-img-src-set=\"{&quot;d&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/330567842_1539764829837900_1469164478884140872_n.jpg?_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=rBdpO8j23_EAX_yrozw&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBpspCTedT_9g8GRSU96z60RTtodI1zRDcHEz-rZ8OteA&amp;oe=642E2E40&quot;,&quot;150&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/330567842_1539764829837900_1469164478884140872_n.jpg?_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=rBdpO8j23_EAX_yrozw&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBpspCTedT_9g8GRSU96z60RTtodI1zRDcHEz-rZ8OteA&amp;oe=642E2E40&quot;,&quot;320&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/330567842_1539764829837900_1469164478884140872_n.jpg?_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=rBdpO8j23_EAX_yrozw&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBpspCTedT_9g8GRSU96z60RTtodI1zRDcHEz-rZ8OteA&amp;oe=642E2E40&quot;,&quot;640&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/330567842_1539764829837900_1469164478884140872_n.jpg?_nc_cat=102&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=rBdpO8j23_EAX_yrozw&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBpspCTedT_9g8GRSU96z60RTtodI1zRDcHEz-rZ8OteA&amp;oe=642E2E40&quot;}\" style=\"height: 50.9375px; background-image: url(&quot;https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/330567842_1539764829837900_1469164478884140872_nthumb.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; padding-bottom: 0px;\">",
+                    "target": [
+                        "#sbi_17896460975758468 > .sbi_inner_wrap > .sbi_photo_wrap > .sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a class=\"sbi_photo sbi_imgLiquid_bgSize sbi_imgLiquid_ready\" href=\"https://www.instagram.com/p/CodGARLujdO/\" target=\"_blank\" rel=\"nofollow noopener\" data-full-res=\"https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/329639982_745905620117320_5469714753381350647_nfull.jpg\" data-img-src-set=\"{&quot;d&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/329639982_745905620117320_5469714753381350647_n.jpg?_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=ye_xOigXIoQAX-wRE6W&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCqYJo_UF7q3vrRIQrVrLbxVhn9-WTFs9yQmEh2ir25bA&amp;oe=642EE52B&quot;,&quot;150&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/329639982_745905620117320_5469714753381350647_n.jpg?_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=ye_xOigXIoQAX-wRE6W&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCqYJo_UF7q3vrRIQrVrLbxVhn9-WTFs9yQmEh2ir25bA&amp;oe=642EE52B&quot;,&quot;320&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/329639982_745905620117320_5469714753381350647_n.jpg?_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=ye_xOigXIoQAX-wRE6W&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCqYJo_UF7q3vrRIQrVrLbxVhn9-WTFs9yQmEh2ir25bA&amp;oe=642EE52B&quot;,&quot;640&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/329639982_745905620117320_5469714753381350647_n.jpg?_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=ye_xOigXIoQAX-wRE6W&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCqYJo_UF7q3vrRIQrVrLbxVhn9-WTFs9yQmEh2ir25bA&amp;oe=642EE52B&quot;}\" style=\"height: 50.9375px; background-image: url(&quot;https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/329639982_745905620117320_5469714753381350647_nthumb.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; padding-bottom: 0px;\">",
+                    "target": [
+                        "#sbi_17956896749208460 > .sbi_inner_wrap > .sbi_photo_wrap > .sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a class=\"sbi_photo sbi_imgLiquid_bgSize sbi_imgLiquid_ready\" href=\"https://www.instagram.com/p/CodFdNXrV5l/\" target=\"_blank\" rel=\"nofollow noopener\" data-full-res=\"https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/329626766_1832527243767402_4848096076989966893_nfull.jpg\" data-img-src-set=\"{&quot;d&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/329626766_1832527243767402_4848096076989966893_n.jpg?_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=qblC0qql76cAX_pzdkc&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBZQC0ziCGKu1wHs2W5EE-NdSmCWp2aZ_c0jgeUlmFoQg&amp;oe=642E37F7&quot;,&quot;150&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/329626766_1832527243767402_4848096076989966893_n.jpg?_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=qblC0qql76cAX_pzdkc&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBZQC0ziCGKu1wHs2W5EE-NdSmCWp2aZ_c0jgeUlmFoQg&amp;oe=642E37F7&quot;,&quot;320&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/329626766_1832527243767402_4848096076989966893_n.jpg?_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=qblC0qql76cAX_pzdkc&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBZQC0ziCGKu1wHs2W5EE-NdSmCWp2aZ_c0jgeUlmFoQg&amp;oe=642E37F7&quot;,&quot;640&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/329626766_1832527243767402_4848096076989966893_n.jpg?_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=qblC0qql76cAX_pzdkc&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBZQC0ziCGKu1wHs2W5EE-NdSmCWp2aZ_c0jgeUlmFoQg&amp;oe=642E37F7&quot;}\" style=\"height: 50.9375px; background-image: url(&quot;https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/329626766_1832527243767402_4848096076989966893_nthumb.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; padding-bottom: 0px;\">",
+                    "target": [
+                        "#sbi_17860884104885684 > .sbi_inner_wrap > .sbi_photo_wrap > .sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a class=\"sbi_photo sbi_imgLiquid_bgSize sbi_imgLiquid_ready\" href=\"https://www.instagram.com/p/CnP58fDrANK/\" target=\"_blank\" rel=\"nofollow noopener\" data-full-res=\"https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/324778349_1313692746139130_1966962092283983032_nfull.jpg\" data-img-src-set=\"{&quot;d&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/324778349_1313692746139130_1966962092283983032_n.jpg?_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=sRZWWUtFnSYAX-LrOTI&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCzEVi0azKK3x0PquNcrnRnuhXYyID1wNAs8HBSDUpH-Q&amp;oe=642E22BE&quot;,&quot;150&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/324778349_1313692746139130_1966962092283983032_n.jpg?_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=sRZWWUtFnSYAX-LrOTI&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCzEVi0azKK3x0PquNcrnRnuhXYyID1wNAs8HBSDUpH-Q&amp;oe=642E22BE&quot;,&quot;320&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/324778349_1313692746139130_1966962092283983032_n.jpg?_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=sRZWWUtFnSYAX-LrOTI&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCzEVi0azKK3x0PquNcrnRnuhXYyID1wNAs8HBSDUpH-Q&amp;oe=642E22BE&quot;,&quot;640&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/324778349_1313692746139130_1966962092283983032_n.jpg?_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=sRZWWUtFnSYAX-LrOTI&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCzEVi0azKK3x0PquNcrnRnuhXYyID1wNAs8HBSDUpH-Q&amp;oe=642E22BE&quot;}\" style=\"height: 50.9375px; background-image: url(&quot;https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/324778349_1313692746139130_1966962092283983032_nthumb.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; padding-bottom: 0px;\">",
+                    "target": [
+                        "#sbi_17969091806089486 > .sbi_inner_wrap > .sbi_photo_wrap > .sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a class=\"sbi_photo sbi_imgLiquid_bgSize sbi_imgLiquid_ready\" href=\"https://www.instagram.com/p/Cl9ONHzu6LR/\" target=\"_blank\" rel=\"nofollow noopener\" data-full-res=\"https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/318770190_672559781181965_7445338172545165462_nfull.jpg\" data-img-src-set=\"{&quot;d&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/318770190_672559781181965_7445338172545165462_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=PKY81EciXFoAX-CT1I9&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBg0nMlbuY8k5KEtETsETFBqdz63UZILSOs25mYDL5GIg&amp;oe=642E9787&quot;,&quot;150&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/318770190_672559781181965_7445338172545165462_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=PKY81EciXFoAX-CT1I9&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBg0nMlbuY8k5KEtETsETFBqdz63UZILSOs25mYDL5GIg&amp;oe=642E9787&quot;,&quot;320&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/318770190_672559781181965_7445338172545165462_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=PKY81EciXFoAX-CT1I9&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBg0nMlbuY8k5KEtETsETFBqdz63UZILSOs25mYDL5GIg&amp;oe=642E9787&quot;,&quot;640&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/318770190_672559781181965_7445338172545165462_n.jpg?_nc_cat=109&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=PKY81EciXFoAX-CT1I9&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBg0nMlbuY8k5KEtETsETFBqdz63UZILSOs25mYDL5GIg&amp;oe=642E9787&quot;}\" style=\"height: 50.9375px; background-image: url(&quot;https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/318770190_672559781181965_7445338172545165462_nthumb.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; padding-bottom: 0px;\">",
+                    "target": [
+                        "#sbi_17851528268879166 > .sbi_inner_wrap > .sbi_photo_wrap > .sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a class=\"sbi_photo sbi_imgLiquid_bgSize sbi_imgLiquid_ready\" href=\"https://www.instagram.com/p/ClrYJ0lO0wZ/\" target=\"_blank\" rel=\"nofollow noopener\" data-full-res=\"https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/317869462_1213297672603817_3742745247535134296_nfull.jpg\" data-img-src-set=\"{&quot;d&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/317869462_1213297672603817_3742745247535134296_n.jpg?_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=pPIyEccnAWoAX-d10Kj&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfD-Cv4rsBn0DtT7i6nTywz-Voj4SB2ahcYHyfCZDpKEkw&amp;oe=642FB135&quot;,&quot;150&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/317869462_1213297672603817_3742745247535134296_n.jpg?_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=pPIyEccnAWoAX-d10Kj&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfD-Cv4rsBn0DtT7i6nTywz-Voj4SB2ahcYHyfCZDpKEkw&amp;oe=642FB135&quot;,&quot;320&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/317869462_1213297672603817_3742745247535134296_n.jpg?_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=pPIyEccnAWoAX-d10Kj&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfD-Cv4rsBn0DtT7i6nTywz-Voj4SB2ahcYHyfCZDpKEkw&amp;oe=642FB135&quot;,&quot;640&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/317869462_1213297672603817_3742745247535134296_n.jpg?_nc_cat=103&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=pPIyEccnAWoAX-d10Kj&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfD-Cv4rsBn0DtT7i6nTywz-Voj4SB2ahcYHyfCZDpKEkw&amp;oe=642FB135&quot;}\" style=\"height: 50.9375px; background-image: url(&quot;https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/317869462_1213297672603817_3742745247535134296_nthumb.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; padding-bottom: 0px;\">",
+                    "target": [
+                        "#sbi_18067461871337537 > .sbi_inner_wrap > .sbi_photo_wrap > .sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a class=\"sbi_photo sbi_imgLiquid_bgSize sbi_imgLiquid_ready\" href=\"https://www.instagram.com/p/ClozUXFuvFJ/\" target=\"_blank\" rel=\"nofollow noopener\" data-full-res=\"https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/317735398_197577106081115_641219715933904223_nfull.jpg\" data-img-src-set=\"{&quot;d&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/317735398_197577106081115_641219715933904223_n.jpg?_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=uUQvKJITabEAX-Bb2Ao&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBe-cWynWsgYj8WjdrRT7tdmsEsWALhvoYq_FGqNpBlrQ&amp;oe=642EE807&quot;,&quot;150&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/317735398_197577106081115_641219715933904223_n.jpg?_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=uUQvKJITabEAX-Bb2Ao&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBe-cWynWsgYj8WjdrRT7tdmsEsWALhvoYq_FGqNpBlrQ&amp;oe=642EE807&quot;,&quot;320&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/317735398_197577106081115_641219715933904223_n.jpg?_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=uUQvKJITabEAX-Bb2Ao&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBe-cWynWsgYj8WjdrRT7tdmsEsWALhvoYq_FGqNpBlrQ&amp;oe=642EE807&quot;,&quot;640&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/317735398_197577106081115_641219715933904223_n.jpg?_nc_cat=100&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=uUQvKJITabEAX-Bb2Ao&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfBe-cWynWsgYj8WjdrRT7tdmsEsWALhvoYq_FGqNpBlrQ&amp;oe=642EE807&quot;}\" style=\"height: 50.9375px; background-image: url(&quot;https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/317735398_197577106081115_641219715933904223_nthumb.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; padding-bottom: 0px;\">",
+                    "target": [
+                        "#sbi_17954188040332522 > .sbi_inner_wrap > .sbi_photo_wrap > .sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a class=\"sbi_photo sbi_imgLiquid_bgSize sbi_imgLiquid_ready\" href=\"https://www.instagram.com/p/Clj572Gu9uq/\" target=\"_blank\" rel=\"nofollow noopener\" data-full-res=\"https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/317401943_827118205189447_4916832882856313758_nfull.jpg\" data-img-src-set=\"{&quot;d&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/317401943_827118205189447_4916832882856313758_n.jpg?_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=eY9w8OHSMD4AX_SNx72&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfAuaDLuWcvHLW8ORUuHNcIanrUM8FzHP_leteF-GejwKg&amp;oe=642F80F7&quot;,&quot;150&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/317401943_827118205189447_4916832882856313758_n.jpg?_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=eY9w8OHSMD4AX_SNx72&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfAuaDLuWcvHLW8ORUuHNcIanrUM8FzHP_leteF-GejwKg&amp;oe=642F80F7&quot;,&quot;320&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/317401943_827118205189447_4916832882856313758_n.jpg?_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=eY9w8OHSMD4AX_SNx72&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfAuaDLuWcvHLW8ORUuHNcIanrUM8FzHP_leteF-GejwKg&amp;oe=642F80F7&quot;,&quot;640&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/317401943_827118205189447_4916832882856313758_n.jpg?_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=eY9w8OHSMD4AX_SNx72&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfAuaDLuWcvHLW8ORUuHNcIanrUM8FzHP_leteF-GejwKg&amp;oe=642F80F7&quot;}\" style=\"height: 50.9375px; background-image: url(&quot;https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/317401943_827118205189447_4916832882856313758_nthumb.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; padding-bottom: 0px;\">",
+                    "target": [
+                        "#sbi_17951553410489407 > .sbi_inner_wrap > .sbi_photo_wrap > .sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a class=\"sbi_photo sbi_imgLiquid_bgSize sbi_imgLiquid_ready\" href=\"https://www.instagram.com/p/CljV3J2uTEa/\" target=\"_blank\" rel=\"nofollow noopener\" data-full-res=\"https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/317499389_204859611940089_5443042062503932562_nfull.jpg\" data-img-src-set=\"{&quot;d&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/317499389_204859611940089_5443042062503932562_n.jpg?_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=1gate6-3GpUAX-W8vw9&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCYwK1oJIeK7QKnQLNeT0MOzkOQBMSS-pd_SBuOpnTrmw&amp;oe=642E6D73&quot;,&quot;150&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/317499389_204859611940089_5443042062503932562_n.jpg?_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=1gate6-3GpUAX-W8vw9&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCYwK1oJIeK7QKnQLNeT0MOzkOQBMSS-pd_SBuOpnTrmw&amp;oe=642E6D73&quot;,&quot;320&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/317499389_204859611940089_5443042062503932562_n.jpg?_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=1gate6-3GpUAX-W8vw9&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCYwK1oJIeK7QKnQLNeT0MOzkOQBMSS-pd_SBuOpnTrmw&amp;oe=642E6D73&quot;,&quot;640&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/317499389_204859611940089_5443042062503932562_n.jpg?_nc_cat=111&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=1gate6-3GpUAX-W8vw9&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCYwK1oJIeK7QKnQLNeT0MOzkOQBMSS-pd_SBuOpnTrmw&amp;oe=642E6D73&quot;}\" style=\"height: 50.9375px; background-image: url(&quot;https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/317499389_204859611940089_5443042062503932562_nthumb.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; padding-bottom: 0px;\">",
+                    "target": [
+                        "#sbi_18038530573400650 > .sbi_inner_wrap > .sbi_photo_wrap > .sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "has-visible-text",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "minor",
+                            "message": "Element does not have text that is visible to screen readers"
+                        },
+                        {
+                            "id": "aria-label",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-label attribute does not exist or is empty"
+                        },
+                        {
+                            "id": "aria-labelledby",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty"
+                        },
+                        {
+                            "id": "non-empty-title",
+                            "data": {
+                                "messageKey": "noAttr"
+                            },
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element has no title attribute"
+                        }
+                    ],
+                    "all": [],
+                    "none": [
+                        {
+                            "id": "focusable-no-name",
+                            "data": null,
+                            "relatedNodes": [],
+                            "impact": "serious",
+                            "message": "Element is in tab order and does not have accessible text"
+                        }
+                    ],
+                    "impact": "serious",
+                    "html": "<a class=\"sbi_photo sbi_imgLiquid_bgSize sbi_imgLiquid_ready\" href=\"https://www.instagram.com/p/Cli2JyIuvaU/\" target=\"_blank\" rel=\"nofollow noopener\" data-full-res=\"https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/317186012_670790544721279_3297494667302269850_nfull.jpg\" data-img-src-set=\"{&quot;d&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/317186012_670790544721279_3297494667302269850_n.jpg?_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=hmP03PmM734AX8hKnO2&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCLKAMuqb6-f6VZwQjvgV7L2xNV_vkKzc4QPoCqY74WVw&amp;oe=642F2EF4&quot;,&quot;150&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/317186012_670790544721279_3297494667302269850_n.jpg?_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=hmP03PmM734AX8hKnO2&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCLKAMuqb6-f6VZwQjvgV7L2xNV_vkKzc4QPoCqY74WVw&amp;oe=642F2EF4&quot;,&quot;320&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/317186012_670790544721279_3297494667302269850_n.jpg?_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=hmP03PmM734AX8hKnO2&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCLKAMuqb6-f6VZwQjvgV7L2xNV_vkKzc4QPoCqY74WVw&amp;oe=642F2EF4&quot;,&quot;640&quot;:&quot;https:\\/\\/scontent-sin6-1.cdninstagram.com\\/v\\/t51.2885-15\\/317186012_670790544721279_3297494667302269850_n.jpg?_nc_cat=101&amp;ccb=1-7&amp;_nc_sid=8ae9d6&amp;_nc_ohc=hmP03PmM734AX8hKnO2&amp;_nc_ht=scontent-sin6-1.cdninstagram.com&amp;edm=ANo9K5cEAAAA&amp;oh=00_AfCLKAMuqb6-f6VZwQjvgV7L2xNV_vkKzc4QPoCqY74WVw&amp;oe=642F2EF4&quot;}\" style=\"height: 50.9375px; background-image: url(&quot;https://www.morehealthinc.org/wp-content/uploads/sb-instagram-feed-images/317186012_670790544721279_3297494667302269850_nthumb.jpg&quot;); background-size: cover; background-position: center center; background-repeat: no-repeat; padding-bottom: 0px;\">",
+                    "target": [
+                        "#sbi_17953888166484386 > .sbi_inner_wrap > .sbi_photo_wrap > .sbi_photo.sbi_imgLiquid_bgSize.sbi_imgLiquid_ready"
+                    ],
+                    "failureSummary": "Fix all of the following:\n  Element is in tab order and does not have accessible text\n\nFix any of the following:\n  Element does not have text that is visible to screen readers\n  aria-label attribute does not exist or is empty\n  aria-labelledby attribute does not exist, references elements that do not exist or references elements that are empty\n  Element has no title attribute"
+                }
+            ]
+        },
+        {
+            "id": "region",
+            "impact": "moderate",
+            "tags": [
+                "cat.keyboard",
+                "best-practice"
+            ],
+            "description": "Ensures all page content is contained by landmarks",
+            "help": "All page content should be contained by landmarks",
+            "helpUrl": "https://dequeuniversity.com/rules/axe/4.4/region?application=axeAPI",
+            "nodes": [
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<section class=\"main-title-section-wrapper default dt-sc-subtitle-parallax\" style=\"background:rgba(  250 ,  250,  250, 1);\">",
+                    "target": [
+                        ".main-title-section-wrapper"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h2>Login</h2>",
+                    "target": [
+                        ".u-column1 > h2"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p class=\"woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide\">",
+                    "target": [
+                        ".woocommerce-form-login > .woocommerce-form-row--wide.form-row-wide.woocommerce-form-row:nth-child(1)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p class=\"woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide\">",
+                    "target": [
+                        ".woocommerce-form-login > .woocommerce-form-row--wide.form-row-wide.woocommerce-form-row:nth-child(2)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<label class=\"woocommerce-form__label woocommerce-form__label-for-checkbox woocommerce-form-login__rememberme\">\n\t\t\t\t\t<input class=\"woocommerce-form__input woocommerce-form__input-checkbox\" name=\"rememberme\" type=\"checkbox\" id=\"rememberme\" value=\"forever\"> <span>Remember me</span>\n\t\t\t\t</label>",
+                    "target": [
+                        ".woocommerce-form__label"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p class=\"woocommerce-LostPassword lost_password\">\n\t\t\t\t<a href=\"https://www.morehealthinc.org/shop/my-account/lost-password/\">Lost your password?</a>\n\t\t\t</p>",
+                    "target": [
+                        ".woocommerce-LostPassword"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<h2>Register</h2>",
+                    "target": [
+                        ".u-column2 > h2"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p class=\"woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide\">",
+                    "target": [
+                        ".woocommerce-form-register > .woocommerce-form-row--wide.form-row-wide.woocommerce-form-row:nth-child(1)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<p class=\"woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide\">",
+                    "target": [
+                        ".woocommerce-form-register > .woocommerce-form-row--wide.form-row-wide.woocommerce-form-row:nth-child(2)"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"woocommerce-privacy-policy-text\">",
+                    "target": [
+                        ".woocommerce-privacy-policy-text"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                },
+                {
+                    "any": [
+                        {
+                            "id": "region",
+                            "data": {
+                                "isIframe": false
+                            },
+                            "relatedNodes": [],
+                            "impact": "moderate",
+                            "message": "Some page content is not contained by landmarks"
+                        }
+                    ],
+                    "all": [],
+                    "none": [],
+                    "impact": "moderate",
+                    "html": "<div class=\"footer-down\">",
+                    "target": [
+                        ".footer-down"
+                    ],
+                    "failureSummary": "Fix any of the following:\n  Some page content is not contained by landmarks"
+                }
+            ]
+        }
+    ]
+}

@@ -42,8 +42,17 @@ def find_missing_json(csv_file, json_folder, csv_column='JSON Filename'):
         print(f"An unexpected error occurred: {e}")
         return None
 
-csv_file_path = 'wcag_violations_hard copy 2.csv'  # Replace with your CSV file path
-json_folder_path = 'Processed Sign Up Audits'
+
+def find_pd_dups():
+    df = pd.read_csv('login.csv')
+    df = df.drop_duplicates(subset=['JSON Filename'])
+    
+    df.to_csv("dups.csv", index=False)
+
+find_pd_dups()
+
+""" csv_file_path = 'login.csv'  # Replace with your CSV file path
+json_folder_path = 'Login CSVs'
 
 missing_files = find_missing_json(csv_file_path, json_folder_path)
 
@@ -54,4 +63,4 @@ if missing_files:
             f.write(file + '\n')
     print("Missing files saved to missing_files.txt")
 else:
-    print("All JSON files in the folder are accounted for in the CSV.")
+    print("All JSON files in the folder are accounted for in the CSV.") """
